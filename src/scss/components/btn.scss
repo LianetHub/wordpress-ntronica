@@ -190,7 +190,7 @@
 	}
 
 	&.btn--primary {
-		background: $color-accent;
+		background: $color-black;
 		color: $color-white;
 		border: none;
 		box-shadow: 0 rem(6) rem(3) rgba(253, 128, 17, 0.2);
@@ -205,73 +205,73 @@
 
 		.btn__arrow {
 			background: $color-white;
-			color: $color-accent;
+			color: $color-black;
 		}
 
 		&:disabled,
 		&[aria-disabled="true"],
 		&.btn--disabled {
 			opacity: 1;
-			background: $color-accent-muted;
+			background: $color-black;
 			color: $color-white;
 			box-shadow: none;
 
 			.btn__arrow {
 				opacity: 0.55;
 				background: $color-white;
-				color: $color-accent-muted;
+				color: $color-black;
 			}
 		}
 
 		@media (min-width: $md4) and (any-hover: hover) {
 			&:hover:not(:disabled):not([aria-disabled="true"]) {
-				background: $color-accent-hover;
+				background: $color-black;
 				transform: translateY(rem(-2));
 			}
 		}
 
 		@media (max-width: 1199.98px) and (any-hover: hover) {
 			&:hover:not(:disabled):not([aria-disabled="true"]) {
-				background: $color-accent-hover;
+				background: $color-black;
 			}
 		}
 
 		&:active:not(:disabled):not([aria-disabled="true"]) {
-			background: $color-accent-hover;
+			background: $color-black;
 			box-shadow: 0 rem(3) rem(2) rgba(253, 128, 17, 0.2);
 		}
 	}
 
 	&.btn--primary-inverse {
 		background: $color-white;
-		color: $color-accent;
-		box-shadow: 0 rem(6) rem(3) rgba($color-accent, 0.2);
+		color: $color-black;
+		box-shadow: 0 rem(6) rem(3) rgba($color-black, 0.2);
 
 		.btn__text {
-			color: $color-accent;
+			color: $color-black;
 		}
 
 		.btn__arrow {
-			background: $color-accent;
+			background: $color-black;
 			color: $color-white;
 		}
 
 		@media (any-hover: hover) {
 			&:hover:not(:disabled):not([aria-disabled="true"]) {
 				background: $color-white;
-				box-shadow: 0 rem(8) rem(4) rgba($color-accent, 0.28);
+				box-shadow: 0 rem(8) rem(4) rgba($color-black, 0.28);
 			}
 		}
 	}
 
 	&.btn--secondary {
 		background: transparent;
-		border-color: $color-accent;
-		color: $color-accent;
+		border-color: $color-black;
+		color: $color-black;
 
 		@media (any-hover: hover) {
 			&:hover:not(:disabled):not([aria-disabled="true"]) {
-				background: rgba($color-accent, 0.06);
+				background: rgba($color-black, 0.06);
 			}
 		}
 	}
@@ -294,7 +294,7 @@
 		color: $color-black;
 
 		.btn__arrow {
-			background: $color-accent;
+			background: $color-black;
 			color: $color-white;
 		}
 

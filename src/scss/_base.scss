@@ -43,57 +43,57 @@
 
 .content-rail {
 	width: 100%;
-	padding-left: $content-pad-left;
-	padding-right: $content-pad-right;
+	padding-left: 30px;
+	padding-right: 28px;
 	box-sizing: border-box;
 
 	@media (min-width: $md6) {
-		padding-left: $content-pad-left-768;
-		padding-right: $content-pad-right-768;
+		padding-left: 28px;
+		padding-right: 28px;
 	}
 
 	@media (min-width: $md5) {
-		padding-left: $content-pad-left-1024;
-		padding-right: $content-pad-right-1024;
+		padding-left: 138px;
+		padding-right: 30px;
 	}
 
 	@media (min-width: $md4) {
-		padding-left: $content-pad-left-1200;
-		padding-right: $content-pad-right-1200;
+		padding-left: 87px;
+		padding-right: 39px;
 	}
 
 	@media (min-width: $md1) {
-		padding-left: $content-pad-left-2560;
-		padding-right: $content-pad-right-2560;
+		padding-left: 93px;
+		padding-right: 279px;
 	}
 }
 
 .content-rail__inner {
 	width: 100%;
-	max-width: $content-width;
+	max-width: 322px;
 
 	@media (min-width: $md6) {
-		max-width: $content-width-768;
+		max-width: 660px;
 	}
 
 	@media (min-width: $md5) {
-		max-width: $content-width-1024;
+		max-width: 780px;
 	}
 
 	@media (min-width: $md4) {
-		max-width: $content-width-1200;
+		max-width: 840px;
 	}
 
 	@media (min-width: $md3) {
-		max-width: $content-width-1440;
+		max-width: 1080px;
 	}
 
 	@media (min-width: $md2) {
-		max-width: $content-width-1728;
+		max-width: 1368px;
 	}
 
 	@media (min-width: $md1) {
-		max-width: $content-width-2560;
+		max-width: 1914px;
 	}
 }
 
@@ -118,26 +118,26 @@ body {
 }
 
 .site-body {
-	margin-left: $sidebar-width;
+	margin-left: 50px;
 	display: flex;
 	flex-direction: column;
 	min-height: 100vh;
 	min-width: 0;
 
 	@media (min-width: $md6) {
-		margin-left: $sidebar-width-768;
+		margin-left: 52px;
 	}
 
 	@media (min-width: $md5) {
-		margin-left: $sidebar-width-1024;
+		margin-left: 76px;
 	}
 
 	@media (min-width: $md4) {
-		margin-left: $sidebar-width-1200;
+		margin-left: 234px;
 	}
 
 	@media (min-width: $md1) {
-		margin-left: $sidebar-width-2560;
+		margin-left: 274px;
 	}
 }
 
@@ -170,7 +170,7 @@ body {
 	white-space: nowrap;
 }
 
-$scrollbarColor: $color-accent;
+$scrollbarColor: $color-black;
 
 ::-webkit-scrollbar {
 	width: rem(8);
@@ -204,106 +204,106 @@ $scrollbarColor: $color-accent;
 }
 
 .band-full {
-	margin-left: -$sidebar-width;
-	width: calc(100% + #{$sidebar-width});
+	margin-left: -50px;
+	width: calc(100% + 50px);
 	box-sizing: border-box;
 
 	@media (min-width: $md6) {
-		margin-left: -$sidebar-width-768;
-		width: calc(100% + #{$sidebar-width-768});
+		margin-left: -52px;
+		width: calc(100% + 52px);
 	}
 
 	@media (min-width: $md5) {
-		margin-left: -$sidebar-width-1024;
-		width: calc(100% + #{$sidebar-width-1024});
+		margin-left: -76px;
+		width: calc(100% + 76px);
 	}
 
 	@media (min-width: $md4) {
-		margin-left: -$sidebar-width-1200;
-		width: calc(100% + #{$sidebar-width-1200});
+		margin-left: -234px;
+		width: calc(100% + 234px);
 	}
 
 	@media (min-width: $md1) {
-		margin-left: -$sidebar-width-2560;
-		width: calc(100% + #{$sidebar-width-2560});
+		margin-left: -274px;
+		width: calc(100% + 274px);
 	}
 }
 
 .band-full__inner {
-	padding-left: calc(#{$sidebar-width} + #{$content-pad-left});
-	padding-right: $content-pad-right;
+	padding-left: calc(50px + 30px);
+	padding-right: 28px;
 	max-width: none;
 	box-sizing: border-box;
 
 	@media (min-width: $md6) {
-		padding-left: calc(#{$sidebar-width-768} + #{$content-pad-left-768});
-		padding-right: $content-pad-right-768;
+		padding-left: calc(52px + 28px);
+		padding-right: 28px;
 	}
 
 	@media (min-width: $md5) {
-		padding-left: calc(#{$sidebar-width-1024} + #{$content-pad-left-1024});
-		padding-right: $content-pad-right-1024;
+		padding-left: calc(76px + 138px);
+		padding-right: 30px;
 	}
 
 	@media (min-width: $md4) {
-		padding-left: calc(#{$sidebar-width-1200} + #{$content-pad-left-1200});
-		padding-right: $content-pad-right-1200;
+		padding-left: calc(234px + 87px);
+		padding-right: 39px;
 	}
 
 	@media (min-width: $md1) {
-		padding-left: calc(#{$sidebar-width-2560} + #{$content-pad-left-2560});
-		padding-right: $content-pad-right-2560;
+		padding-left: calc(274px + 93px);
+		padding-right: 279px;
 	}
 }
 
 .section-title {
 	font-family: $font-family;
 	font-weight: 700;
-	font-size: rem($fs-section);
-	line-height: rem($lh-section);
+	font-size: rem(20);
+	line-height: rem(14);
 	color: $color-black;
 
 	@media (min-width: $md6) {
-		font-size: rem($fs-section-768);
-		line-height: rem($lh-section-768);
+		font-size: rem(26);
+		line-height: rem(20);
 	}
 
 	@media (min-width: $md3) {
-		font-size: rem($fs-section-1440);
-		line-height: rem($lh-section-1440);
+		font-size: rem(32);
+		line-height: rem(25);
 	}
 
 	@media (min-width: $md2) {
-		font-size: rem($fs-section-1728);
-		line-height: rem($lh-section-1728);
+		font-size: rem(36);
+		line-height: rem(24);
 	}
 
 	@media (min-width: $md1) {
-		font-size: rem($fs-section-2560);
-		line-height: rem($lh-section-2560);
+		font-size: rem(46);
+		line-height: rem(32);
 	}
 }
 
 .section-lead {
 	font-family: $font-family;
 	font-weight: 400;
-	font-size: rem($fs-body);
-	line-height: rem($lh-body);
+	font-size: rem(15);
+	line-height: rem(18);
 	color: $color-black;
 
 	@media (min-width: $md3) {
-		font-size: rem($fs-body-1440);
-		line-height: rem($lh-body-1440);
+		font-size: rem(18);
+		line-height: rem(21);
 	}
 
 	@media (min-width: $md2) {
-		font-size: rem($fs-body-1728);
-		line-height: rem($lh-body-1728);
+		font-size: rem(21);
+		line-height: rem(24);
 	}
 
 	@media (min-width: $md1) {
-		font-size: rem($fs-body-2560);
-		line-height: rem($lh-body-2560);
+		font-size: rem(26);
+		line-height: rem(32);
 	}
 }
 
@@ -312,5 +312,5 @@ $scrollbarColor: $color-accent;
 }
 
 .text-accent {
-	color: $color-accent;
+	color: $color-black;
 }

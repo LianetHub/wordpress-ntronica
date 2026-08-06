@@ -89,7 +89,7 @@
 
 			@media (any-hover: hover) {
 				&:hover {
-					color: $color-accent;
+					color: $color-black;
 				}
 			}
 		}
@@ -131,15 +131,15 @@
 
 		// cookie-notice--accept
 		&--accept {
-			background: $color-accent;
-			border-color: $color-accent;
+			background: $color-black;
+			border-color: $color-black;
 			color: $color-white;
 			box-shadow: 0 rem(4) rem(10) rgba(253, 128, 17, 0.25);
 
 			@media (any-hover: hover) {
 				&:hover {
-					background: $color-accent-hover;
-					border-color: $color-accent-hover;
+					background: $color-black;
+					border-color: $color-black;
 					box-shadow: 0 rem(6) rem(14) rgba(253, 128, 17, 0.35);
 					transform: translateY(rem(-1));
 				}

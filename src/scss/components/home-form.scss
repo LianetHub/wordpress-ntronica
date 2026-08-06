@@ -5,7 +5,7 @@
 	// home-form__row
 	&__row {
 		// uses grid.scss .row
-		--gutter-x: #{$gutter};
+		--gutter-x: 24px;
 		--gutter-y: rem(24);
 		margin-bottom: rem(0);
 
@@ -64,23 +64,23 @@
 	&__label {
 		font-family: $font-family;
 		font-weight: 700;
-		font-size: rem($fs-body);
-		line-height: rem($lh-body);
+		font-size: rem(15);
+		line-height: rem(18);
 		color: $color-black;
 
 		@media (min-width: $md3) {
-			font-size: rem($fs-body-1440);
-			line-height: rem($lh-body-1440);
+			font-size: rem(18);
+			line-height: rem(21);
 		}
 
 		@media (min-width: $md2) {
-			font-size: rem($fs-body-1728);
-			line-height: rem($lh-body-1728);
+			font-size: rem(21);
+			line-height: rem(24);
 		}
 
 		@media (min-width: $md1) {
-			font-size: rem($fs-body-2560);
-			line-height: rem($lh-body-2560);
+			font-size: rem(26);
+			line-height: rem(32);
 		}
 	}
 
@@ -94,30 +94,30 @@
 		border-radius: 0;
 		background: transparent;
 		font-family: $font-family;
-		font-size: rem($fs-body);
-		line-height: rem($lh-body);
+		font-size: rem(15);
+		line-height: rem(18);
 		color: $color-black;
 
 		@media (min-width: $md3) {
 			padding: rem(4) 0;
-			font-size: rem($fs-body-1440);
-			line-height: rem($lh-body-1440);
+			font-size: rem(18);
+			line-height: rem(21);
 		}
 
 		@media (min-width: $md2) {
 			padding: rem(6) 0;
-			font-size: rem($fs-body-1728);
-			line-height: rem($lh-body-1728);
+			font-size: rem(21);
+			line-height: rem(24);
 		}
 
 		@media (min-width: $md1) {
 			padding: rem(8) 0;
-			font-size: rem($fs-body-2560);
-			line-height: rem($lh-body-2560);
+			font-size: rem(26);
+			line-height: rem(32);
 		}
 
 		&:focus {
-			border-bottom-color: $color-accent;
+			border-bottom-color: $color-black;
 		}
 	}
 
@@ -142,7 +142,7 @@
 		border: 2px dashed $color-black;
 		font-family: $font-family;
 		font-weight: 400;
-		font-size: rem($fs-body);
+		font-size: rem(15);
 		line-height: rem(11);
 		color: $color-black;
 		text-transform: uppercase;
@@ -154,19 +154,19 @@
 		}
 
 		@media (min-width: $md3) {
-			font-size: rem($fs-body-1440);
+			font-size: rem(18);
 			line-height: rem(13);
 		}
 
 		@media (min-width: $md2) {
 			height: rem(56);
-			font-size: rem($fs-body-1728);
+			font-size: rem(21);
 			line-height: rem(15);
 		}
 
 		@media (min-width: $md1) {
 			height: rem(74);
-			font-size: rem($fs-body-2560);
+			font-size: rem(26);
 			line-height: rem(19);
 		}
 
@@ -193,30 +193,30 @@
 		width: 100%;
 
 		@media (min-width: $md6) {
-			max-width: $col-6-768;
+			max-width: 318px;
 		}
 
 		@media (min-width: $md5) {
-			max-width: $col-6-1024;
+			max-width: 378px;
 		}
 
 		@media (min-width: $md4) {
-			max-width: $col-3-1200;
+			max-width: 264px;
 		}
 
 		@media (min-width: $md3) {
 			gap: rem(16);
-			max-width: $col-3-1440;
+			max-width: 344px;
 		}
 
 		@media (min-width: $md2) {
 			gap: rem(20);
-			max-width: $col-3-1728;
+			max-width: 440px;
 		}
 
 		@media (min-width: $md1) {
 			gap: rem(24);
-			max-width: $col-3-2560;
+			max-width: 622px;
 		}
 	}
 
@@ -232,7 +232,7 @@
 		background: $color-white;
 		font-family: $font-family;
 		font-weight: 400;
-		font-size: rem($fs-body);
+		font-size: rem(15);
 		line-height: rem(11);
 		color: $color-muted;
 		text-transform: uppercase;
@@ -243,21 +243,21 @@
 
 		@media (min-width: $md3) {
 			padding: rem(12) rem(16);
-			font-size: rem($fs-body-1440);
+			font-size: rem(18);
 			line-height: rem(13);
 		}
 
 		@media (min-width: $md2) {
 			min-height: rem(56);
 			padding: rem(14) rem(20);
-			font-size: rem($fs-body-1728);
+			font-size: rem(21);
 			line-height: rem(15);
 		}
 
 		@media (min-width: $md1) {
 			min-height: rem(74);
 			padding: rem(16) rem(24);
-			font-size: rem($fs-body-2560);
+			font-size: rem(26);
 			line-height: rem(19);
 		}
 

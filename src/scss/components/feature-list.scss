@@ -118,22 +118,22 @@
 		min-width: 0;
 		font-family: $font-family;
 		font-weight: 400;
-		font-size: rem($fs-display-sm);
+		font-size: rem(14);
 		line-height: rem(16);
 		color: $color-black;
 
 		@media (min-width: $md3) {
-			font-size: rem($fs-display-sm-1440);
+			font-size: rem(17);
 			line-height: rem(19);
 		}
 
 		@media (min-width: $md2) {
-			font-size: rem($fs-display-sm-1728);
+			font-size: rem(20);
 			line-height: rem(22);
 		}
 
 		@media (min-width: $md1) {
-			font-size: rem($fs-display-sm-2560);
+			font-size: rem(27);
 			line-height: rem(29);
 		}
 
@@ -156,26 +156,26 @@
 	--gutter-x: rem(11);
 	--gutter-y: rem(0);
 	font-family: $font-family;
-	font-size: rem($fs-body);
-	line-height: rem($lh-body);
+	font-size: rem(15);
+	line-height: rem(18);
 	color: $color-black;
 
 	@media (min-width: $md3) {
 		--gutter-x: rem(13);
-		font-size: rem($fs-body-1440);
-		line-height: rem($lh-body-1440);
+		font-size: rem(18);
+		line-height: rem(21);
 	}
 
 	@media (min-width: $md2) {
 		--gutter-x: rem(15);
-		font-size: rem($fs-body-1728);
-		line-height: rem($lh-body-1728);
+		font-size: rem(21);
+		line-height: rem(24);
 	}
 
 	@media (min-width: $md1) {
 		--gutter-x: rem(19);
-		font-size: rem($fs-body-2560);
-		line-height: rem($lh-body-2560);
+		font-size: rem(26);
+		line-height: rem(32);
 	}
 
 	// contact-list__labels

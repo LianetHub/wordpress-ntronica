@@ -7,7 +7,7 @@ $checkbox-check-mark: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/20
 	flex-shrink: 0;
 	width: rem(32);
 	height: rem(32);
-	border-radius: $radius-checkbox;
+	border-radius: 0;
 	border: rem(1) solid #e8e8e8;
 	background-color: #f6f6f6;
 	background-position: center;
@@ -197,7 +197,7 @@ $checkbox-check-mark: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/20
 	&:has(input[type="checkbox"]:focus-visible) .checkbox__box::before,
 	&:has(input[type="checkbox"]:focus-visible) .checkbox__text::before,
 	&:has(input[type="checkbox"]:focus-visible) .wpcf7-list-item-label::before {
-		outline: 2px solid $color-accent;
+		outline: 2px solid $color-black;
 		outline-offset: 2px;
 	}
 

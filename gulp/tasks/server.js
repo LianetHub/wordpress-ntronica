@@ -13,6 +13,7 @@ export const server = ( done ) => {
 	const proxyUrl = new URL( proxyTarget );
 	const proxyHost = proxyUrl.host;
 	const proxyHostPattern = proxyHost.replace( /\./g, '\\.' );
+	const localHost = 'localhost:3000';
 
 	app.plugins.browsersync.init(
 		{
@@ -21,6 +22,8 @@ export const server = ( done ) => {
 				proxyReq: [
 					( proxyReq ) => {
 						proxyReq.setHeader( 'host', proxyHost );
+						// Upstream gzip ломает rewriteRules / snippet / serveStatic overlay.
+						proxyReq.setHeader( 'accept-encoding', 'identity' );
 					},
 				],
 			},
@@ -32,9 +35,14 @@ export const server = ( done ) => {
 				},
 			],
 			rewriteRules: [
+				// WP Fastest Cache: устаревший минифицированный CSS перебивает тему.
 				{
-					match: new RegExp( `https?://${ proxyHostPattern }`, 'g' ),
-					fn: () => 'http://localhost:3000',
+					match: /<link[^>]+wp-content\/cache\/wpfc-minified[^>]*>/gi,
+					replace: '',
+				},
+				{
+					match: new RegExp( `(?:https?:)?//${ proxyHostPattern }`, 'g' ),
+					replace: `//${ localHost }`,
 				},
 			],
 			port: 3000,

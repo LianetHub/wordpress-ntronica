@@ -23,7 +23,7 @@ $cta-checkbox-checked: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2
 			width: rem(24);
 			height: rem(24);
 			border-radius: rem(4);
-			border: rem(1) solid $color-accent;
+			border: rem(1) solid $color-black;
 			background-color: transparent;
 			background-image: none;
 			background-size: rem(24) rem(24);
@@ -50,7 +50,7 @@ $cta-checkbox-checked: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2
 		color: $color-black;
 
 		a {
-			color: $color-accent;
+			color: $color-black;
 			text-decoration: none;
 		}
 	}
@@ -153,7 +153,7 @@ $cta-checkbox-checked: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2
 
 	@media (any-hover: hover) {
 		&:hover {
-			background: $color-accent;
+			background: $color-black;
 			color: $color-white;
 		}
 	}
@@ -295,7 +295,7 @@ $cf7-error-border: #ff0000;
 			pointer-events: none;
 			cursor: not-allowed;
 			opacity: 1;
-			background: $color-accent-muted;
+			background: $color-black;
 			box-shadow: none;
 
 			.btn__arrow {
@@ -332,7 +332,7 @@ $cf7-error-border: #ff0000;
 			pointer-events: none;
 			cursor: not-allowed;
 			opacity: 1;
-			background: $color-accent-muted;
+			background: $color-black;
 			box-shadow: none;
 
 			.btn__arrow {
@@ -390,7 +390,7 @@ $cf7-error-border: #ff0000;
 	&:has(.wpcf7-submit[disabled]) .form__submit.btn:has(.wpcf7-form-control-wrap) {
 		cursor: not-allowed;
 		opacity: 1;
-		background: $color-accent-muted;
+		background: $color-black;
 		box-shadow: none;
 
 		.btn__arrow {
@@ -403,7 +403,7 @@ $cf7-error-border: #ff0000;
 	&:has(.wpcf7-submit[disabled]) .wpcf7-form-control-wrap:has(.wpcf7-submit) {
 		cursor: not-allowed;
 		opacity: 1;
-		background: $color-accent-muted;
+		background: $color-black;
 		box-shadow: none;
 	}
 
@@ -779,7 +779,7 @@ $cf7-error-border: #ff0000;
 		min-height: rem(40);
 		padding: rem(12) rem(35);
 		border-radius: rem(40);
-		background: $color-accent;
+		background: $color-black;
 		color: $color-white;
 		text-transform: none;
 		letter-spacing: normal;
@@ -796,7 +796,7 @@ $cf7-error-border: #ff0000;
 
 		@media (any-hover: hover) {
 			&:hover {
-				background: $color-accent-hover;
+				background: $color-black;
 			}
 		}
 	}
@@ -947,7 +947,7 @@ $cf7-error-border: #ff0000;
 		min-height: rem(48);
 		padding: rem(10) rem(16);
 		border-radius: rem(52);
-		background: $color-accent;
+		background: $color-black;
 		color: $color-white;
 		box-shadow: 0 rem(2.5) rem(1.2) rgba(253, 128, 17, 0.2);
 		text-transform: none;
@@ -967,7 +967,7 @@ $cf7-error-border: #ff0000;
 
 		@media (any-hover: hover) {
 			&:hover {
-				background: $color-accent-hover;
+				background: $color-black;
 			}
 		}
 	}

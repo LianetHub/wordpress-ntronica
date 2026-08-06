@@ -9,7 +9,7 @@
 	display: flex;
 	flex-direction: column;
 	justify-content: flex-end;
-	width: $sidebar-width;
+	width: 50px;
 	height: 100vh;
 	padding: rem(13) rem(12);
 	background-color: $color-black;
@@ -18,22 +18,22 @@
 
 	@media (min-width: $md6) {
 		padding: rem(13) rem(13);
-		width: $sidebar-width-768;
+		width: 52px;
 	}
 
 	@media (min-width: $md5) {
 		padding: rem(18) rem(18);
-		width: $sidebar-width-1024;
+		width: 76px;
 	}
 
 	@media (min-width: $md4) {
 		justify-content: space-between;
-		width: $sidebar-width-1200;
+		width: 234px;
 		padding: rem(17) rem(20) rem(18);
 	}
 
 	@media (min-width: $md1) {
-		width: $sidebar-width-2560;
+		width: 274px;
 		padding: rem(16) rem(20) rem(18);
 	}
 
@@ -61,13 +61,13 @@
 		display: block;
 		font-family: $font-family;
 		font-weight: 700;
-		font-size: rem($fs-nav);
+		font-size: rem(18);
 		line-height: rem(24);
 		color: $color-white;
 		transition: opacity 0.2s ease;
 
 		@media (min-width: $md1) {
-			font-size: rem($fs-nav-2560);
+			font-size: rem(21);
 		}
 
 		@media (any-hover: hover) {

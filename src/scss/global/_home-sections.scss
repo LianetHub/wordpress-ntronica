@@ -49,7 +49,7 @@
 	// section-overview__layout
 	&__layout {
 		// uses grid.scss .row
-		--gutter-x: #{$gutter};
+		--gutter-x: 24px;
 		--gutter-y: rem(16);
 
 		@media (min-width: $md6) {
@@ -83,8 +83,8 @@
 		min-width: 0;
 		font-family: $font-family;
 		font-weight: 400;
-		font-size: rem($fs-body);
-		line-height: rem($lh-body);
+		font-size: rem(15);
+		line-height: rem(18);
 		color: $color-black;
 
 		@media (min-width: $md6) {
@@ -92,18 +92,18 @@
 		}
 
 		@media (min-width: $md3) {
-			font-size: rem($fs-body-1440);
-			line-height: rem($lh-body-1440);
+			font-size: rem(18);
+			line-height: rem(21);
 		}
 
 		@media (min-width: $md2) {
-			font-size: rem($fs-body-1728);
-			line-height: rem($lh-body-1728);
+			font-size: rem(21);
+			line-height: rem(24);
 		}
 
 		@media (min-width: $md1) {
-			font-size: rem($fs-body-2560);
-			line-height: rem($lh-body-2560);
+			font-size: rem(26);
+			line-height: rem(32);
 		}
 	}
 
@@ -114,7 +114,7 @@
 		font-family: $font-family;
 		font-weight: 700;
 		font-style: italic;
-		font-size: rem($fs-display);
+		font-size: rem(18);
 		line-height: rem(14);
 		color: $color-black;
 
@@ -126,18 +126,18 @@
 
 		@media (min-width: $md3) {
 			margin-bottom: rem(24);
-			font-size: rem($fs-display-1440);
+			font-size: rem(24);
 			line-height: rem(16);
 		}
 
 		@media (min-width: $md2) {
 			margin-bottom: rem(30);
-			font-size: rem($fs-display-1728);
+			font-size: rem(28);
 			line-height: rem(25);
 		}
 
 		@media (min-width: $md1) {
-			font-size: rem($fs-display-2560);
+			font-size: rem(36);
 			line-height: rem(34);
 		}
 	}
@@ -216,40 +216,40 @@
 
 	// section-products__lead
 	&__lead {
-		max-width: $col-6;
+		max-width: 322px;
 		margin-bottom: rem(30);
 
 		@media (min-width: $md6) {
-			max-width: $col-6-768;
+			max-width: 318px;
 		}
 
 		@media (min-width: $md5) {
-			max-width: $col-6-1024;
+			max-width: 378px;
 		}
 
 		@media (min-width: $md4) {
-			max-width: $col-6-1200;
+			max-width: 408px;
 		}
 
 		@media (min-width: $md3) {
-			max-width: $col-6-1440;
+			max-width: 528px;
 			margin-bottom: rem(40);
 		}
 
 		@media (min-width: $md2) {
-			max-width: $col-6-1728;
+			max-width: 672px;
 			margin-bottom: rem(70);
 		}
 
 		@media (min-width: $md1) {
-			max-width: $col-6-2560;
+			max-width: 945px;
 		}
 	}
 
 	// section-products__grid
 	&__grid {
 		// uses grid.scss .row
-		--gutter-x: #{$gutter};
+		--gutter-x: 24px;
 		--gutter-y: rem(30);
 		margin-bottom: rem(30);
 
@@ -319,35 +319,35 @@
 	// section-vacancies__title
 	&__title {
 		margin-bottom: rem(40);
-		max-width: $col-6;
+		max-width: 322px;
 		line-height: rem(24);
 
 		@media (min-width: $md6) {
-			max-width: $col-6-768;
-			line-height: rem($lh-section-768);
+			max-width: 318px;
+			line-height: rem(20);
 		}
 
 		@media (min-width: $md5) {
-			max-width: $col-6-1024;
+			max-width: 378px;
 		}
 
 		@media (min-width: $md4) {
-			max-width: $col-6-1200;
+			max-width: 408px;
 		}
 
 		@media (min-width: $md3) {
 			margin-bottom: rem(50);
-			max-width: $col-6-1440;
+			max-width: 528px;
 		}
 
 		@media (min-width: $md2) {
 			margin-bottom: rem(60);
-			max-width: $col-6-1728;
+			max-width: 672px;
 		}
 
 		@media (min-width: $md1) {
 			margin-bottom: rem(80);
-			max-width: $col-6-2560;
+			max-width: 945px;
 		}
 	}
 
@@ -359,7 +359,7 @@
 	// section-vacancies__grid
 	&__grid {
 		// uses grid.scss .row
-		--gutter-x: #{$gutter};
+		--gutter-x: 24px;
 		--gutter-y: rem(40);
 		align-items: start;
 
@@ -499,33 +499,33 @@
 
 	// section-news__lead
 	&__lead {
-		max-width: $col-6;
+		max-width: 322px;
 		margin-bottom: rem(20);
 
 		@media (min-width: $md6) {
-			max-width: $col-6-768;
+			max-width: 318px;
 		}
 
 		@media (min-width: $md5) {
-			max-width: $col-6-1024;
+			max-width: 378px;
 		}
 
 		@media (min-width: $md4) {
-			max-width: $col-6-1200;
+			max-width: 408px;
 		}
 
 		@media (min-width: $md3) {
-			max-width: $col-6-1440;
+			max-width: 528px;
 			margin-bottom: rem(24);
 		}
 
 		@media (min-width: $md2) {
-			max-width: $col-6-1728;
+			max-width: 672px;
 			margin-bottom: rem(30);
 		}
 
 		@media (min-width: $md1) {
-			max-width: $col-6-2560;
+			max-width: 945px;
 			margin-bottom: rem(36);
 		}
 	}
@@ -533,7 +533,7 @@
 	// section-news__grid
 	&__grid {
 		// uses grid.scss .row
-		--gutter-x: #{$gutter};
+		--gutter-x: 24px;
 		--gutter-y: rem(0);
 		margin-bottom: rem(30);
 
@@ -606,7 +606,7 @@
 	// section-info__grid
 	&__grid {
 		// uses grid.scss .row
-		--gutter-x: #{$gutter};
+		--gutter-x: 24px;
 		--gutter-y: rem(30);
 
 		@media (min-width: $md6) {
@@ -625,23 +625,23 @@
 	&__text {
 		font-family: $font-family;
 		font-weight: 400;
-		font-size: rem($fs-body);
-		line-height: rem($lh-body);
-		color: $color-accent;
+		font-size: rem(15);
+		line-height: rem(18);
+		color: $color-black;
 
 		@media (min-width: $md3) {
-			font-size: rem($fs-body-1440);
-			line-height: rem($lh-body-1440);
+			font-size: rem(18);
+			line-height: rem(21);
 		}
 
 		@media (min-width: $md2) {
-			font-size: rem($fs-body-1728);
-			line-height: rem($lh-body-1728);
+			font-size: rem(21);
+			line-height: rem(24);
 		}
 
 		@media (min-width: $md1) {
-			font-size: rem($fs-body-2560);
-			line-height: rem($lh-body-2560);
+			font-size: rem(26);
+			line-height: rem(32);
 		}
 	}
 }
@@ -676,14 +676,14 @@
 	// section-contact__title
 	&__title {
 		margin-bottom: rem(30);
-		max-width: $col-6;
+		max-width: 322px;
 
 		@media (min-width: $md6) {
-			max-width: $col-6-768;
+			max-width: 318px;
 		}
 
 		@media (min-width: $md5) {
-			max-width: $col-6-1024;
+			max-width: 378px;
 		}
 
 		@media (min-width: $md3) {

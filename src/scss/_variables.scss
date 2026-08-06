@@ -20,9 +20,6 @@ $color-black: #000000;
 $color-bg: #ffffff;
 $color-surface: #f7f7f7;
 $color-surface-hover: #efefef;
-$color-accent: #ff34d6;
-$color-accent-hover: #e02bc0;
-$color-accent-muted: #f9a8e8;
 $color-text: #000000;
 $color-text-body: #000000;
 $color-text-muted: #acadaf;
@@ -35,127 +32,13 @@ $color-whatsapp: #60d669;
 $color-white-muted: rgba(255, 255, 255, 0.05);
 
 // Aliases
-$color-primary: $color-accent;
-$color-primary-hover: $color-accent-hover;
-$color-brand: $color-accent;
-$color-brand-2: $color-accent-hover;
+$color-primary: $color-black;
+$color-primary-hover: $color-black;
+$color-brand: $color-black;
+$color-brand-2: $color-black;
 $color-surface-mint: $color-surface;
 $color-surface-tab: $color-white;
 $color-surface-uikit: $color-surface;
-
-// Layout (Main 430) — collapsed sidebar, single column
-$sidebar-width: 50px;
-$content-pad-left: 30px; // 80 - 50
-$content-pad-right: 28px;
-$content-width: 322px;
-$gutter: 24px;
-$col-3: 322px;
-$col-4: 322px;
-$col-6: 322px;
-
-// Layout (Main 768)
-$sidebar-width-768: 52px;
-$content-pad-left-768: 28px; // 80 - 52
-$content-pad-right-768: 28px;
-$content-width-768: 660px;
-$col-3-768: 204px;
-$col-4-768: 147px;
-$col-6-768: 318px;
-
-// Layout (Main 1024)
-$sidebar-width-1024: 76px;
-$content-pad-left-1024: 138px; // 214 - 76
-$content-pad-right-1024: 30px;
-$content-width-1024: 780px;
-$col-3-1024: 244px;
-$col-4-1024: 177px;
-$col-6-1024: 378px;
-
-// Layout (Main 1200+)
-$sidebar-width-1200: 234px;
-$content-pad-left-1200: 87px;
-$content-pad-right-1200: 39px;
-$content-width-1200: 840px;
-$col-3-1200: 264px;
-$col-4-1200: 192px;
-$col-6-1200: 408px;
-
-// Layout (Main 1440)
-$content-width-1440: 1080px;
-$col-3-1440: 344px;
-$col-4-1440: 252px;
-$col-6-1440: 528px;
-
-// Layout (Main 1728)
-$content-width-1728: 1368px;
-$col-3-1728: 440px;
-$col-4-1728: 324px;
-$col-6-1728: 672px;
-
-// Layout (Main 2560)
-$sidebar-width-2560: 274px;
-$content-pad-left-2560: 93px;
-$content-pad-right-2560: 279px;
-$content-width-2560: 1914px;
-$col-3-2560: 622px;
-$col-4-2560: 460.5px;
-$col-6-2560: 945px;
-
-// Type scale (Main 430)
-$fs-nav: 18px;
-$fs-section: 20px;
-$fs-body: 15px;
-$fs-display: 18px;
-$fs-display-sm: 14px;
-$lh-section: 14px;
-$lh-body: 18px;
-$lh-display: 20px;
-
-// Type scale (Main 768 / 1024 / 1200)
-$fs-section-768: 26px;
-$lh-section-768: 20px;
-
-// Type scale (Main 1440)
-$fs-section-1440: 32px;
-$fs-body-1440: 18px;
-$fs-display-1440: 24px;
-$fs-display-sm-1440: 17px;
-$lh-section-1440: 25px;
-$lh-body-1440: 21px;
-$lh-display-1440: 26px;
-
-// Type scale (Main 1728)
-$fs-section-1728: 36px;
-$fs-body-1728: 21px;
-$fs-display-1728: 28px;
-$fs-display-sm-1728: 20px;
-$lh-section-1728: 24px;
-$lh-body-1728: 24px;
-$lh-display-1728: 30px;
-
-// Type scale (Main 2560)
-$fs-nav-2560: 21px;
-$fs-section-2560: 46px;
-$fs-body-2560: 26px;
-$fs-display-2560: 36px;
-$fs-display-sm-2560: 27px;
-$lh-section-2560: 32px;
-$lh-body-2560: 32px;
-$lh-display-2560: 38px;
-
-// Radii / buttons (legacy UIKit)
-$radius-section: 62px;
-$radius-card: 40px;
-$radius-btn: 52px;
-$radius-btn-secondary: 40px;
-$radius-tab: 100px;
-$radius-checkbox: 0;
-
-$btn-height: 60px;
-$btn-gap: 10px;
-$btn-font-size: 20px;
-$btn-font-size-mobile: 16px;
-$btn-letter-spacing: -0.02em;
 
 // States
 $state-disabled-opacity: 0.3;

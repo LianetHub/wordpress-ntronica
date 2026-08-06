@@ -2,7 +2,6 @@
 /.vscode
 .env
 
-# Локальные тесты (не деплоить)
 /tests/
 /vitest.config.js
 /phpunit.xml
@@ -17,9 +16,4 @@ wp-config.php
 debug.log
 
 .cursor
-
-# Парсинг: тяжёлые артефакты (скрипты и JSON-списки остаются в git)
-/parsing/images/
-/parsing/pages/
-/parsing/logs/
-/parsing/sitemap/*.xml
+.cursorrules

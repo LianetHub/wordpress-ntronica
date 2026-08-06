@@ -1,0 +1,44 @@
+@use "../variables" as *;
+@use "../mixins" as *;
+
+.link-more {
+	display: inline-flex;
+	align-items: center;
+	gap: rem(5);
+	font-family: $font-family;
+	font-weight: 400;
+	font-size: rem($fs-body);
+	line-height: rem(11);
+	color: $color-black;
+	text-transform: uppercase;
+	transition: opacity 0.2s ease;
+
+	@media (min-width: $md3) {
+		gap: rem(6);
+		font-size: rem($fs-body-1440);
+		line-height: rem(13);
+	}
+
+	@media (min-width: $md2) {
+		gap: rem(8);
+		font-size: rem($fs-body-1728);
+		line-height: rem(15);
+	}
+
+	@media (min-width: $md1) {
+		font-size: rem($fs-body-2560);
+		line-height: rem(19);
+	}
+
+	// link-more__arrow
+	&__arrow {
+		font-weight: 700;
+		line-height: 1;
+	}
+
+	@media (any-hover: hover) {
+		&:hover {
+			opacity: 0.65;
+		}
+	}
+}

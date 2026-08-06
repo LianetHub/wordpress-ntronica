@@ -1,0 +1,262 @@
+@use "../variables" as *;
+@use "../mixins" as *;
+
+.product-card {
+	display: flex;
+	flex-direction: column;
+	gap: rem(12);
+
+	@media (min-width: $md6) {
+		gap: rem(10);
+	}
+
+	@media (min-width: $md3) {
+		gap: rem(14);
+	}
+
+	@media (min-width: $md2) {
+		gap: rem(16);
+	}
+
+	@media (min-width: $md1) {
+		gap: rem(20);
+	}
+
+	// product-card__media
+	&__media {
+		position: relative;
+		width: 100%;
+		aspect-ratio: 322 / 214;
+		overflow: hidden;
+		background-color: $color-placeholder;
+
+		@media (min-width: $md6) {
+			aspect-ratio: 204 / 136;
+		}
+
+		@media (min-width: $md5) {
+			aspect-ratio: 244 / 163;
+		}
+
+		@media (min-width: $md4) {
+			aspect-ratio: 264 / 176;
+		}
+
+		@media (min-width: $md3) {
+			aspect-ratio: 344 / 229;
+		}
+
+		@media (min-width: $md2) {
+			aspect-ratio: 440 / 293;
+		}
+
+		@media (min-width: $md1) {
+			aspect-ratio: 622 / 414;
+		}
+	}
+
+	// product-card__img
+	&__img {
+		display: block;
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		object-position: center bottom;
+	}
+
+	// product-card__title
+	&__title {
+		font-family: $font-family;
+		font-weight: 500;
+		font-size: rem($fs-display);
+		line-height: rem($lh-display);
+		color: $color-black;
+
+		@media (min-width: $md3) {
+			font-size: rem($fs-display-1440);
+			line-height: rem($lh-display-1440);
+		}
+
+		@media (min-width: $md2) {
+			font-size: rem($fs-display-1728);
+			line-height: rem($lh-display-1728);
+		}
+
+		@media (min-width: $md1) {
+			font-size: rem($fs-display-2560);
+			line-height: rem($lh-display-2560);
+		}
+	}
+}
+
+.news-card {
+	display: flex;
+	flex-direction: column;
+
+	// news-card__media
+	&__media {
+		width: 100%;
+		height: rem(206);
+		background-color: $color-placeholder;
+
+		@media (min-width: $md6) {
+			height: rem(106);
+		}
+
+		@media (min-width: $md5) {
+			height: rem(126);
+		}
+
+		@media (min-width: $md4) {
+			height: rem(134);
+		}
+
+		@media (min-width: $md3) {
+			height: rem(184);
+		}
+
+		@media (min-width: $md2) {
+			height: rem(218);
+		}
+
+		@media (min-width: $md1) {
+			height: rem(302);
+		}
+	}
+
+	// news-card__date
+	&__date {
+		margin-top: rem(15);
+		font-family: $font-family;
+		font-weight: 700;
+		font-size: rem($fs-body);
+		line-height: rem($lh-body);
+		color: $color-accent;
+
+		@media (min-width: $md6) {
+			margin-top: rem(16);
+		}
+
+		@media (min-width: $md3) {
+			margin-top: rem(24);
+			font-size: rem($fs-body-1440);
+			line-height: rem($lh-body-1440);
+		}
+
+		@media (min-width: $md2) {
+			margin-top: rem(30);
+			font-size: rem($fs-body-1728);
+			line-height: rem($lh-body-1728);
+		}
+
+		@media (min-width: $md1) {
+			margin-top: rem(20);
+			font-size: rem($fs-body-2560);
+			line-height: rem($lh-body-2560);
+		}
+	}
+
+	// news-card__title
+	&__title {
+		margin-top: rem(6);
+		font-family: $font-family;
+		font-weight: 700;
+		font-size: rem($fs-display);
+		line-height: rem(20);
+		color: $color-accent;
+
+		@media (min-width: $md5) {
+			margin-top: rem(8);
+			line-height: rem(14);
+		}
+
+		@media (min-width: $md3) {
+			margin-top: rem(10);
+			font-size: rem($fs-display-1440);
+			line-height: rem(16);
+		}
+
+		@media (min-width: $md2) {
+			font-size: rem($fs-display-1728);
+			line-height: rem($lh-display-1728);
+		}
+
+		@media (min-width: $md1) {
+			margin-top: rem(14);
+			font-size: rem($fs-display-2560);
+			line-height: rem(34);
+		}
+	}
+}
+
+.vacancy-card {
+	display: flex;
+	flex-direction: column;
+	gap: rem(6);
+	min-width: 0;
+
+	@media (min-width: $md6) {
+		gap: rem(10);
+	}
+
+	@media (min-width: $md3) {
+		gap: rem(14);
+	}
+
+	@media (min-width: $md2) {
+		gap: rem(16);
+	}
+
+	@media (min-width: $md1) {
+		gap: rem(20);
+	}
+
+	// vacancy-card__title
+	&__title {
+		font-family: $font-family;
+		font-weight: 700;
+		font-size: rem($fs-display);
+		line-height: rem($lh-display);
+		color: $color-black;
+		overflow-wrap: anywhere;
+
+		@media (min-width: $md3) {
+			font-size: rem($fs-display-1440);
+			line-height: rem($lh-display-1440);
+		}
+
+		@media (min-width: $md2) {
+			font-size: rem($fs-display-1728);
+			line-height: rem($lh-display-1728);
+		}
+
+		@media (min-width: $md1) {
+			font-size: rem($fs-display-2560);
+			line-height: rem($lh-display-2560);
+		}
+	}
+
+	// vacancy-card__dept
+	&__dept {
+		font-family: $font-family;
+		font-weight: 500;
+		font-size: rem($fs-display-sm);
+		line-height: rem(16);
+		color: $color-white;
+
+		@media (min-width: $md3) {
+			font-size: rem($fs-display-sm-1440);
+			line-height: rem(19);
+		}
+
+		@media (min-width: $md2) {
+			font-size: rem($fs-display-sm-1728);
+			line-height: rem(22);
+		}
+
+		@media (min-width: $md1) {
+			font-size: rem($fs-display-sm-2560);
+			line-height: rem(29);
+		}
+	}
+}

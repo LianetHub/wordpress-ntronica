@@ -1,0 +1,704 @@
+@use "../variables" as *;
+@use "../mixins" as *;
+
+.section-overview {
+	padding-top: rem(0);
+
+	@media (min-width: $md6) {
+		padding-top: rem(18);
+	}
+
+	@media (min-width: $md3) {
+		padding-top: rem(22);
+	}
+
+	// section-overview__lang
+	&__lang {
+		display: none;
+		margin-bottom: rem(10);
+		font-family: $font-family;
+		font-weight: 700;
+		font-size: rem(15);
+		line-height: rem(12);
+		color: $color-black;
+		text-align: right;
+		text-transform: lowercase;
+
+		@media (min-width: $md6) {
+			display: block;
+		}
+
+		@media (min-width: $md3) {
+			margin-bottom: rem(12);
+			font-size: rem(18);
+			line-height: rem(14);
+		}
+
+		@media (min-width: $md2) {
+			font-size: rem(21);
+			line-height: rem(15);
+		}
+
+		@media (min-width: $md1) {
+			margin-bottom: rem(20);
+			font-size: rem(25);
+			line-height: rem(19);
+		}
+	}
+
+	// section-overview__layout
+	&__layout {
+		// uses grid.scss .row
+		--gutter-x: #{$gutter};
+		--gutter-y: rem(16);
+
+		@media (min-width: $md6) {
+			--gutter-y: rem(0);
+			align-items: end;
+		}
+	}
+
+	// section-overview__title
+	&__title {
+		padding-top: rem(26);
+		min-width: 0;
+
+		@media (min-width: $md6) {
+			padding-top: 0;
+			margin-bottom: rem(20);
+		}
+
+		@media (min-width: $md3) {
+			margin-bottom: rem(24);
+		}
+
+		@media (min-width: $md2) {
+			margin-bottom: rem(30);
+		}
+	}
+
+	// section-overview__intro
+	&__intro {
+		margin-top: rem(15);
+		min-width: 0;
+		font-family: $font-family;
+		font-weight: 400;
+		font-size: rem($fs-body);
+		line-height: rem($lh-body);
+		color: $color-black;
+
+		@media (min-width: $md6) {
+			margin-top: 0;
+		}
+
+		@media (min-width: $md3) {
+			font-size: rem($fs-body-1440);
+			line-height: rem($lh-body-1440);
+		}
+
+		@media (min-width: $md2) {
+			font-size: rem($fs-body-1728);
+			line-height: rem($lh-body-1728);
+		}
+
+		@media (min-width: $md1) {
+			font-size: rem($fs-body-2560);
+			line-height: rem($lh-body-2560);
+		}
+	}
+
+	// section-overview__subtitle
+	&__subtitle {
+		margin-top: rem(30);
+		min-width: 0;
+		font-family: $font-family;
+		font-weight: 700;
+		font-style: italic;
+		font-size: rem($fs-display);
+		line-height: rem(14);
+		color: $color-black;
+
+		@media (min-width: $md6) {
+			margin-top: 0;
+			margin-bottom: rem(20);
+			line-height: rem(15);
+		}
+
+		@media (min-width: $md3) {
+			margin-bottom: rem(24);
+			font-size: rem($fs-display-1440);
+			line-height: rem(16);
+		}
+
+		@media (min-width: $md2) {
+			margin-bottom: rem(30);
+			font-size: rem($fs-display-1728);
+			line-height: rem(25);
+		}
+
+		@media (min-width: $md1) {
+			font-size: rem($fs-display-2560);
+			line-height: rem(34);
+		}
+	}
+
+	// section-overview__features
+	&__features {
+		margin-top: rem(16);
+		min-width: 0;
+
+		@media (min-width: $md6) {
+			margin-top: 0;
+		}
+	}
+
+	// section-overview__more
+	&__more {
+		margin-top: rem(30);
+
+		@media (min-width: $md6) {
+			margin-top: rem(24);
+		}
+
+		@media (min-width: $md3) {
+			margin-top: rem(40);
+		}
+
+		@media (min-width: $md2) {
+			margin-top: rem(50);
+		}
+
+		@media (min-width: $md1) {
+			margin-top: rem(70);
+		}
+	}
+}
+
+.section-products {
+	padding-top: rem(50);
+
+	@media (min-width: $md6) {
+		padding-top: rem(70);
+	}
+
+	@media (min-width: $md4) {
+		padding-top: rem(90);
+	}
+
+	@media (min-width: $md3) {
+		padding-top: rem(100);
+	}
+
+	@media (min-width: $md2) {
+		padding-top: rem(120);
+	}
+
+	@media (min-width: $md1) {
+		padding-top: rem(170);
+	}
+
+	// section-products__title
+	&__title {
+		margin-bottom: rem(20);
+
+		@media (min-width: $md3) {
+			margin-bottom: rem(24);
+		}
+
+		@media (min-width: $md2) {
+			margin-bottom: rem(30);
+		}
+
+		@media (min-width: $md1) {
+			margin-bottom: rem(36);
+		}
+	}
+
+	// section-products__lead
+	&__lead {
+		max-width: $col-6;
+		margin-bottom: rem(30);
+
+		@media (min-width: $md6) {
+			max-width: $col-6-768;
+		}
+
+		@media (min-width: $md5) {
+			max-width: $col-6-1024;
+		}
+
+		@media (min-width: $md4) {
+			max-width: $col-6-1200;
+		}
+
+		@media (min-width: $md3) {
+			max-width: $col-6-1440;
+			margin-bottom: rem(40);
+		}
+
+		@media (min-width: $md2) {
+			max-width: $col-6-1728;
+			margin-bottom: rem(70);
+		}
+
+		@media (min-width: $md1) {
+			max-width: $col-6-2560;
+		}
+	}
+
+	// section-products__grid
+	&__grid {
+		// uses grid.scss .row
+		--gutter-x: #{$gutter};
+		--gutter-y: rem(30);
+		margin-bottom: rem(30);
+
+		@media (min-width: $md6) {
+			--gutter-y: rem(0);
+		}
+
+		@media (min-width: $md3) {
+			margin-bottom: rem(40);
+		}
+
+		@media (min-width: $md2) {
+			margin-bottom: rem(50);
+		}
+
+		@media (min-width: $md1) {
+			margin-bottom: rem(70);
+		}
+	}
+
+	// section-products__more
+	&__more {
+		margin-bottom: rem(50);
+
+		@media (min-width: $md6) {
+			margin-bottom: rem(70);
+		}
+
+		@media (min-width: $md4) {
+			margin-bottom: rem(90);
+		}
+
+		@media (min-width: $md3) {
+			margin-bottom: rem(100);
+		}
+
+		@media (min-width: $md2) {
+			margin-bottom: rem(110);
+		}
+
+		@media (min-width: $md1) {
+			margin-bottom: rem(170);
+		}
+	}
+}
+
+.section-vacancies {
+	background-color: $color-muted;
+	padding-top: rem(30);
+	padding-bottom: rem(30);
+
+	@media (min-width: $md3) {
+		padding-top: rem(40);
+		padding-bottom: rem(40);
+	}
+
+	@media (min-width: $md2) {
+		padding-top: rem(50);
+		padding-bottom: rem(50);
+	}
+
+	@media (min-width: $md1) {
+		padding-top: rem(70);
+		padding-bottom: rem(70);
+	}
+
+	// section-vacancies__title
+	&__title {
+		margin-bottom: rem(40);
+		max-width: $col-6;
+		line-height: rem(24);
+
+		@media (min-width: $md6) {
+			max-width: $col-6-768;
+			line-height: rem($lh-section-768);
+		}
+
+		@media (min-width: $md5) {
+			max-width: $col-6-1024;
+		}
+
+		@media (min-width: $md4) {
+			max-width: $col-6-1200;
+		}
+
+		@media (min-width: $md3) {
+			margin-bottom: rem(50);
+			max-width: $col-6-1440;
+		}
+
+		@media (min-width: $md2) {
+			margin-bottom: rem(60);
+			max-width: $col-6-1728;
+		}
+
+		@media (min-width: $md1) {
+			margin-bottom: rem(80);
+			max-width: $col-6-2560;
+		}
+	}
+
+	// section-vacancies__slider
+	&__slider {
+		overflow: hidden;
+	}
+
+	// section-vacancies__grid
+	&__grid {
+		// uses grid.scss .row
+		--gutter-x: #{$gutter};
+		--gutter-y: rem(40);
+		align-items: start;
+
+		@media (min-width: $md6) {
+			--gutter-y: rem(30);
+		}
+
+		@media (min-width: $md3) {
+			--gutter-y: rem(40);
+		}
+
+		@media (min-width: $md2) {
+			--gutter-y: rem(50);
+		}
+
+		@media (min-width: $md1) {
+			--gutter-y: rem(70);
+		}
+	}
+
+	.swiper-slide {
+		height: auto;
+	}
+
+	// section-vacancies__nav
+	&__nav {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		margin-top: rem(16);
+
+		@media (min-width: $md3) {
+			margin-top: rem(20);
+		}
+
+		@media (min-width: $md2) {
+			margin-top: rem(30);
+		}
+
+		@media (min-width: $md1) {
+			margin-top: rem(40);
+		}
+
+		// section-vacancies--hidden
+		&--hidden {
+			display: none;
+		}
+	}
+
+	// section-vacancies__arrow
+	&__arrow {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		width: rem(19);
+		height: rem(19);
+		background: transparent;
+		font-family: $font-family;
+		font-weight: 700;
+		font-size: rem(27);
+		line-height: rem(17);
+		color: $color-black;
+		cursor: pointer;
+		transition: opacity 0.2s ease;
+
+		@media (min-width: $md3) {
+			width: rem(21);
+			height: rem(21);
+			font-size: rem(34);
+			line-height: rem(19);
+		}
+
+		@media (min-width: $md2) {
+			width: rem(24);
+			height: rem(22);
+			font-size: rem(36);
+		}
+
+		@media (min-width: $md1) {
+			width: rem(33);
+			height: rem(28);
+			font-size: rem(47);
+		}
+
+		&.swiper-button-disabled {
+			opacity: 0.35;
+			cursor: default;
+		}
+
+		@media (any-hover: hover) {
+			&:not(.swiper-button-disabled):hover {
+				opacity: 0.65;
+			}
+		}
+	}
+}
+
+.section-news {
+	padding-top: rem(50);
+
+	@media (min-width: $md6) {
+		padding-top: rem(70);
+	}
+
+	@media (min-width: $md4) {
+		padding-top: rem(90);
+	}
+
+	@media (min-width: $md3) {
+		padding-top: rem(100);
+	}
+
+	@media (min-width: $md2) {
+		padding-top: rem(120);
+	}
+
+	@media (min-width: $md1) {
+		padding-top: rem(170);
+	}
+
+	// section-news__title
+	&__title {
+		margin-bottom: rem(20);
+
+		@media (min-width: $md3) {
+			margin-bottom: rem(24);
+		}
+
+		@media (min-width: $md2) {
+			margin-bottom: rem(30);
+		}
+
+		@media (min-width: $md1) {
+			margin-bottom: rem(36);
+		}
+	}
+
+	// section-news__lead
+	&__lead {
+		max-width: $col-6;
+		margin-bottom: rem(20);
+
+		@media (min-width: $md6) {
+			max-width: $col-6-768;
+		}
+
+		@media (min-width: $md5) {
+			max-width: $col-6-1024;
+		}
+
+		@media (min-width: $md4) {
+			max-width: $col-6-1200;
+		}
+
+		@media (min-width: $md3) {
+			max-width: $col-6-1440;
+			margin-bottom: rem(24);
+		}
+
+		@media (min-width: $md2) {
+			max-width: $col-6-1728;
+			margin-bottom: rem(30);
+		}
+
+		@media (min-width: $md1) {
+			max-width: $col-6-2560;
+			margin-bottom: rem(36);
+		}
+	}
+
+	// section-news__grid
+	&__grid {
+		// uses grid.scss .row
+		--gutter-x: #{$gutter};
+		--gutter-y: rem(0);
+		margin-bottom: rem(30);
+
+		@media (min-width: $md3) {
+			margin-bottom: rem(40);
+		}
+
+		@media (min-width: $md2) {
+			margin-bottom: rem(50);
+		}
+
+		@media (min-width: $md1) {
+			margin-bottom: rem(70);
+		}
+	}
+
+	// section-news__item--desktop
+	&__item--desktop {
+		display: none;
+
+		@media (min-width: $md6) {
+			display: block;
+		}
+	}
+
+	// section-news__more
+	&__more {
+		margin-bottom: rem(50);
+
+		@media (min-width: $md6) {
+			margin-bottom: rem(70);
+		}
+
+		@media (min-width: $md4) {
+			margin-bottom: rem(90);
+		}
+
+		@media (min-width: $md3) {
+			margin-bottom: rem(100);
+		}
+
+		@media (min-width: $md2) {
+			margin-bottom: rem(110);
+		}
+
+		@media (min-width: $md1) {
+			margin-bottom: rem(170);
+		}
+	}
+}
+
+.section-info {
+	// section-info__title
+	&__title {
+		margin-bottom: rem(20);
+
+		@media (min-width: $md3) {
+			margin-bottom: rem(24);
+		}
+
+		@media (min-width: $md2) {
+			margin-bottom: rem(30);
+		}
+
+		@media (min-width: $md1) {
+			margin-bottom: rem(36);
+		}
+	}
+
+	// section-info__grid
+	&__grid {
+		// uses grid.scss .row
+		--gutter-x: #{$gutter};
+		--gutter-y: rem(30);
+
+		@media (min-width: $md6) {
+			--gutter-y: rem(0);
+		}
+	}
+
+	// section-info__text
+	&__text,
+	// section-info__contacts
+	&__contacts {
+		min-width: 0;
+	}
+
+	// section-info__text
+	&__text {
+		font-family: $font-family;
+		font-weight: 400;
+		font-size: rem($fs-body);
+		line-height: rem($lh-body);
+		color: $color-accent;
+
+		@media (min-width: $md3) {
+			font-size: rem($fs-body-1440);
+			line-height: rem($lh-body-1440);
+		}
+
+		@media (min-width: $md2) {
+			font-size: rem($fs-body-1728);
+			line-height: rem($lh-body-1728);
+		}
+
+		@media (min-width: $md1) {
+			font-size: rem($fs-body-2560);
+			line-height: rem($lh-body-2560);
+		}
+	}
+}
+
+.section-contact {
+	padding-top: rem(50);
+	padding-bottom: rem(50);
+
+	@media (min-width: $md6) {
+		padding-top: rem(70);
+		padding-bottom: rem(70);
+	}
+
+	@media (min-width: $md4) {
+		padding-top: rem(90);
+	}
+
+	@media (min-width: $md3) {
+		padding-top: rem(100);
+	}
+
+	@media (min-width: $md2) {
+		padding-top: rem(110);
+		padding-bottom: rem(90);
+	}
+
+	@media (min-width: $md1) {
+		padding-top: rem(170);
+		padding-bottom: rem(110);
+	}
+
+	// section-contact__title
+	&__title {
+		margin-bottom: rem(30);
+		max-width: $col-6;
+
+		@media (min-width: $md6) {
+			max-width: $col-6-768;
+		}
+
+		@media (min-width: $md5) {
+			max-width: $col-6-1024;
+		}
+
+		@media (min-width: $md3) {
+			margin-bottom: rem(40);
+			max-width: rem(436);
+		}
+
+		@media (min-width: $md2) {
+			margin-bottom: rem(50);
+			max-width: rem(556);
+		}
+
+		@media (min-width: $md1) {
+			margin-bottom: rem(70);
+			max-width: rem(784);
+		}
+	}
+}

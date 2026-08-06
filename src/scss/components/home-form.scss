@@ -1,0 +1,341 @@
+@use "../variables" as *;
+@use "../mixins" as *;
+
+.home-form {
+	// home-form__row
+	&__row {
+		// uses grid.scss .row
+		--gutter-x: #{$gutter};
+		--gutter-y: rem(24);
+		margin-bottom: rem(0);
+
+		@media (min-width: $md6) {
+			--gutter-y: rem(0);
+			margin-bottom: rem(24);
+		}
+
+		@media (min-width: $md3) {
+			margin-bottom: rem(30);
+		}
+
+		@media (min-width: $md2) {
+			margin-bottom: rem(36);
+		}
+
+		@media (min-width: $md1) {
+			margin-bottom: rem(44);
+		}
+	}
+
+	// home-form__row--message
+	&__row--message {
+		@media (min-width: $md6) {
+			align-items: end;
+		}
+	}
+
+	// home-form__field
+	&__field {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		min-height: rem(55);
+		min-width: 0;
+		height: 100%;
+
+		@media (min-width: $md3) {
+			min-height: rem(65);
+		}
+
+		@media (min-width: $md2) {
+			min-height: rem(81);
+		}
+
+		@media (min-width: $md1) {
+			min-height: rem(101);
+		}
+
+		&:has(.home-form__file) {
+			justify-content: flex-end;
+		}
+	}
+
+	// home-form__label
+	&__label {
+		font-family: $font-family;
+		font-weight: 700;
+		font-size: rem($fs-body);
+		line-height: rem($lh-body);
+		color: $color-black;
+
+		@media (min-width: $md3) {
+			font-size: rem($fs-body-1440);
+			line-height: rem($lh-body-1440);
+		}
+
+		@media (min-width: $md2) {
+			font-size: rem($fs-body-1728);
+			line-height: rem($lh-body-1728);
+		}
+
+		@media (min-width: $md1) {
+			font-size: rem($fs-body-2560);
+			line-height: rem($lh-body-2560);
+		}
+	}
+
+	// home-form__input
+	&__input,
+	// home-form__textarea
+	&__textarea {
+		width: 100%;
+		padding: rem(3) 0;
+		border-bottom: 2px solid $color-black;
+		border-radius: 0;
+		background: transparent;
+		font-family: $font-family;
+		font-size: rem($fs-body);
+		line-height: rem($lh-body);
+		color: $color-black;
+
+		@media (min-width: $md3) {
+			padding: rem(4) 0;
+			font-size: rem($fs-body-1440);
+			line-height: rem($lh-body-1440);
+		}
+
+		@media (min-width: $md2) {
+			padding: rem(6) 0;
+			font-size: rem($fs-body-1728);
+			line-height: rem($lh-body-1728);
+		}
+
+		@media (min-width: $md1) {
+			padding: rem(8) 0;
+			font-size: rem($fs-body-2560);
+			line-height: rem($lh-body-2560);
+		}
+
+		&:focus {
+			border-bottom-color: $color-accent;
+		}
+	}
+
+	// home-form__textarea
+	&__textarea {
+		resize: vertical;
+		min-height: rem(24);
+
+		@media (min-width: $md3) {
+			min-height: rem(28);
+		}
+	}
+
+	// home-form__file
+	&__file {
+		position: relative;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		height: rem(38);
+		margin-top: auto;
+		border: 2px dashed $color-black;
+		font-family: $font-family;
+		font-weight: 400;
+		font-size: rem($fs-body);
+		line-height: rem(11);
+		color: $color-black;
+		text-transform: uppercase;
+		cursor: pointer;
+		transition: opacity 0.2s ease;
+
+		@media (min-width: $md6) {
+			height: rem(48);
+		}
+
+		@media (min-width: $md3) {
+			font-size: rem($fs-body-1440);
+			line-height: rem(13);
+		}
+
+		@media (min-width: $md2) {
+			height: rem(56);
+			font-size: rem($fs-body-1728);
+			line-height: rem(15);
+		}
+
+		@media (min-width: $md1) {
+			height: rem(74);
+			font-size: rem($fs-body-2560);
+			line-height: rem(19);
+		}
+
+		input {
+			position: absolute;
+			inset: 0;
+			opacity: 0;
+			cursor: pointer;
+		}
+
+		@media (any-hover: hover) {
+			&:hover {
+				opacity: 0.7;
+			}
+		}
+	}
+
+	// home-form__actions
+	&__actions {
+		display: flex;
+		flex-direction: column;
+		gap: rem(12);
+		max-width: none;
+		width: 100%;
+
+		@media (min-width: $md6) {
+			max-width: $col-6-768;
+		}
+
+		@media (min-width: $md5) {
+			max-width: $col-6-1024;
+		}
+
+		@media (min-width: $md4) {
+			max-width: $col-3-1200;
+		}
+
+		@media (min-width: $md3) {
+			gap: rem(16);
+			max-width: $col-3-1440;
+		}
+
+		@media (min-width: $md2) {
+			gap: rem(20);
+			max-width: $col-3-1728;
+		}
+
+		@media (min-width: $md1) {
+			gap: rem(24);
+			max-width: $col-3-2560;
+		}
+	}
+
+	// home-form__submit
+	&__submit {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 100%;
+		min-height: rem(48);
+		padding: rem(10) rem(14);
+		border: 2px solid $color-muted;
+		background: $color-white;
+		font-family: $font-family;
+		font-weight: 400;
+		font-size: rem($fs-body);
+		line-height: rem(11);
+		color: $color-muted;
+		text-transform: uppercase;
+		cursor: pointer;
+		transition:
+			border-color 0.2s ease,
+			color 0.2s ease;
+
+		@media (min-width: $md3) {
+			padding: rem(12) rem(16);
+			font-size: rem($fs-body-1440);
+			line-height: rem(13);
+		}
+
+		@media (min-width: $md2) {
+			min-height: rem(56);
+			padding: rem(14) rem(20);
+			font-size: rem($fs-body-1728);
+			line-height: rem(15);
+		}
+
+		@media (min-width: $md1) {
+			min-height: rem(74);
+			padding: rem(16) rem(24);
+			font-size: rem($fs-body-2560);
+			line-height: rem(19);
+		}
+
+		@media (any-hover: hover) {
+			&:hover {
+				border-color: $color-black;
+				color: $color-black;
+			}
+		}
+	}
+
+	// home-form__consent
+	&__consent {
+		display: flex;
+		align-items: flex-start;
+		gap: rem(12);
+		font-family: $font-family;
+		font-weight: 400;
+		font-size: rem(12);
+		line-height: rem(15);
+		color: $color-black;
+
+		@media (min-width: $md3) {
+			gap: rem(14);
+			font-size: rem(15);
+			line-height: rem(18);
+		}
+
+		@media (min-width: $md2) {
+			gap: rem(16);
+			font-size: rem(18);
+			line-height: rem(22);
+		}
+
+		@media (min-width: $md1) {
+			gap: rem(20);
+			font-size: rem(21);
+			line-height: rem(24);
+		}
+	}
+
+	// home-form__checkbox
+	&__checkbox {
+		flex: 0 0 rem(20);
+		width: rem(20);
+		height: rem(20);
+		margin-top: rem(1);
+		border: 2px solid $color-black;
+		appearance: none;
+		background: $color-white;
+		cursor: pointer;
+
+		@media (min-width: $md3) {
+			flex-basis: rem(24);
+			width: rem(24);
+			height: rem(24);
+		}
+
+		@media (min-width: $md2) {
+			flex-basis: rem(28);
+			width: rem(28);
+			height: rem(28);
+			margin-top: rem(2);
+		}
+
+		@media (min-width: $md1) {
+			flex-basis: rem(39);
+			width: rem(39);
+			height: rem(39);
+		}
+
+		&:checked {
+			background-color: $color-black;
+			background-image: linear-gradient(45deg, transparent 40%, $color-white 40%, $color-white 60%, transparent 60%),
+				linear-gradient(-45deg, transparent 40%, $color-white 40%, $color-white 60%, transparent 60%);
+			background-size: 60% 60%;
+			background-position: center;
+			background-repeat: no-repeat;
+		}
+	}
+}

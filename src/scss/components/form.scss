@@ -1,0 +1,979 @@
+@use "../variables" as *;
+@use "../mixins" as *;
+// Универсальная форма (статика + Contact Form 7)
+
+// Figma 234:862 — checked 24×24 accent checkbox
+$cta-checkbox-checked: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none'%3E%3Cpath d='M4.33333 0C3.18406 0 2.08186 0.456546 1.2692 1.2692C0.456546 2.08186 0 3.18406 0 4.33333V19.6667C0 20.8159 0.456546 21.9181 1.2692 22.7308C2.08186 23.5435 3.18406 24 4.33333 24H19.6667C20.8159 24 21.9181 23.5435 22.7308 22.7308C23.5435 21.9181 24 20.8159 24 19.6667V4.33333C24 3.18406 23.5435 2.08186 22.7308 1.2692C21.9181 0.456546 20.8159 0 19.6667 0H4.33333ZM19.04 8.37333L10.0347 17.3693C9.84717 17.5566 9.593 17.6618 9.328 17.6618C9.063 17.6618 8.80883 17.5566 8.62133 17.3693L4.96 13.7067C4.78336 13.5171 4.6872 13.2664 4.69177 13.0073C4.69634 12.7482 4.80129 12.5011 4.9845 12.3178C5.16772 12.1346 5.4149 12.0297 5.67397 12.0251C5.93304 12.0205 6.18377 12.1167 6.37333 12.2933L9.32933 15.248L17.6267 6.95867C17.7196 6.86587 17.83 6.79229 17.9514 6.74213C18.0728 6.69197 18.2029 6.66622 18.3343 6.66635C18.4656 6.66647 18.5957 6.69247 18.717 6.74285C18.8383 6.79324 18.9485 6.86702 19.0413 6.96C19.1341 7.05298 19.2077 7.16332 19.2579 7.28473C19.308 7.40614 19.3338 7.53625 19.3337 7.66761C19.3335 7.79897 19.3075 7.92903 19.2571 8.05034C19.2068 8.17166 19.133 8.28187 19.04 8.37467' fill='%23FD8011'/%3E%3C/svg%3E");
+
+@mixin cta-checkbox {
+	display: flex;
+	width: 100%;
+	align-items: flex-start;
+	gap: rem(15);
+
+	// form__box
+	&__box {
+		flex-shrink: 0;
+		width: rem(24);
+		height: rem(24);
+		margin-top: rem(1);
+
+		&::before {
+			display: block;
+			width: rem(24);
+			height: rem(24);
+			border-radius: rem(4);
+			border: rem(1) solid $color-accent;
+			background-color: transparent;
+			background-image: none;
+			background-size: rem(24) rem(24);
+		}
+	}
+
+	// form__input
+	&__input:checked+.checkbox__box::before,
+	&:has(.checkbox__input:checked) .checkbox__box::before,
+	&:has(input[type="checkbox"]:checked) .checkbox__box::before {
+		border-color: transparent;
+		background-color: transparent;
+		background-image: $cta-checkbox-checked;
+		background-size: rem(24) rem(24);
+	}
+
+	// form__text
+	&__text {
+		min-height: 0;
+		font-size: rem(16);
+		font-weight: 400;
+		line-height: 1.35;
+		letter-spacing: normal;
+		color: $color-black;
+
+		a {
+			color: $color-accent;
+			text-decoration: none;
+		}
+	}
+}
+
+@mixin form-control-light {
+	display: block;
+	width: 100%;
+	min-height: rem(50);
+	padding: rem(15) rem(20);
+	border: 0;
+	border-radius: rem(10);
+	background: $color-white;
+	color: $color-black;
+	font-family: $font-family;
+	font-weight: 400;
+	line-height: 1.2;
+	transition: border-color 0.25s ease, opacity 0.2s ease;
+
+	&::placeholder {
+		color: $color-text-muted;
+	}
+
+	&:focus {
+		box-shadow: inset 0 0 0 1px rgba($color-black, 0.08);
+	}
+
+	&:disabled,
+	&[aria-disabled="true"] {
+		opacity: 0.5;
+		cursor: not-allowed;
+	}
+}
+
+@mixin form-control-on-brand {
+	display: block;
+	width: 100%;
+	min-height: rem(52);
+	padding: rem(16) rem(14);
+	border: rem(0.5) solid #fff;
+	border-radius: rem(10);
+	background: transparent;
+	color: #fff;
+	font-family: $font-family;
+	font-weight: 400;
+	line-height: 1.2;
+	letter-spacing: -0.02em;
+	transition: border-color 0.25s ease, opacity 0.2s ease;
+
+	@media (min-width:$md6) {
+		padding: rem(20);
+		font-size: rem(18);
+		min-height: rem(62);
+
+	}
+
+	&::placeholder {
+		color: rgba(255, 255, 255, 0.9);
+	}
+
+	&:focus {
+		border-color: #fff;
+		border-width: rem(1);
+	}
+
+	&:disabled,
+	&[aria-disabled="true"] {
+		opacity: 0.5;
+		cursor: not-allowed;
+	}
+}
+
+@mixin form-submit-on-brand {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+	min-height: rem(52);
+	padding: rem(16) rem(16);
+	border: 0;
+	border-radius: rem(10);
+	background: $color-white;
+	color: $color-black;
+	font-family: $font-family;
+	font-weight: 500;
+	line-height: 1.2;
+	letter-spacing: -0.02em;
+	text-transform: uppercase;
+	cursor: pointer;
+	transition: background-color 0.2s ease, transform 0.2s ease;
+	font-size: rem(17);
+
+	margin-top: 0.5rem;
+
+	@media (min-width:$md6) {
+		margin-top: 0;
+		min-height: rem(60);
+		font-size: rem(20);
+	}
+
+	@media (any-hover: hover) {
+		&:hover {
+			background: $color-accent;
+			color: $color-white;
+		}
+	}
+
+	&:active {
+		transform: translateY(1px);
+	}
+}
+
+.form {
+	display: flex;
+	flex-direction: column;
+	gap: rem(10);
+
+	// form__row
+	&__row {
+		display: grid;
+		grid-template-columns: 1fr;
+		gap: rem(10);
+
+		@media (min-width: $md6) {
+			grid-template-columns: repeat(2, 1fr);
+		}
+	}
+
+	// form__field
+	&__field {
+		display: block;
+		min-width: 0;
+	}
+
+	// form__control
+	&__control {
+		@include form-control-on-brand;
+
+		&:is(textarea) {
+			min-height: rem(110);
+			resize: none;
+
+			@media (min-width:$md6) {
+				min-height: rem(137);
+
+			}
+		}
+	}
+
+	// form__submit
+	&__submit:not(.wpcf7-submit):not(:has(.wpcf7-form-control-wrap)):not(.btn) {
+		@include form-submit-on-brand;
+	}
+
+}
+
+.form-field {
+	@include form-control-on-brand;
+
+	&:read-only {
+		opacity: 0.72;
+		cursor: default;
+	}
+}
+
+.form-field-wrap {
+	display: flex;
+	flex-direction: column;
+	gap: rem(8);
+}
+
+.form-field__label {
+	font-weight: 400;
+	color: inherit;
+	pointer-events: none;
+}
+
+.form-field--focus .form-field__label {
+	font-weight: 600;
+}
+
+$cf7-error-text: #ff0000;
+$cf7-error-border: #ff0000;
+
+@keyframes cf7-spinner-rotation {
+	0% {
+		transform: translate(-50%, -50%) rotate(0deg);
+	}
+
+	100% {
+		transform: translate(-50%, -50%) rotate(360deg);
+	}
+}
+
+// CF7
+.wpcf7-response-output {
+	display: none !important;
+}
+
+.wpcf7-not-valid-tip {
+	margin-top: 0.25em;
+	text-align: left;
+	color: $cf7-error-text;
+	font-size: rem(12);
+	line-height: 1.3;
+}
+
+.wpcf7-not-valid {
+	border-color: $cf7-error-border !important;
+}
+
+@mixin cf7-submit-inner-reset {
+	display: block;
+	width: 100%;
+	min-height: 0;
+	padding: 0;
+	margin: 0;
+	border: 0;
+	border-radius: 0;
+	background: transparent;
+	box-shadow: none;
+	transform: none;
+}
+
+.wpcf7-form {
+	.wpcf7-form-control-wrap {
+		display: block;
+	}
+
+	.wpcf7-spinner {
+		display: none;
+	}
+
+	// <label class="form__submit">[submit]</label>
+	label.form__submit:not(.btn),
+	.form__submit:has(.wpcf7-form-control-wrap):not(.btn) {
+		@include form-submit-on-brand;
+		position: relative;
+		margin-inline: auto;
+
+		&:has(input:disabled) {
+			pointer-events: none;
+			cursor: not-allowed;
+			opacity: 1;
+			background: $color-accent-muted;
+			box-shadow: none;
+
+			.btn__arrow {
+				opacity: 0.55;
+			}
+		}
+
+		.wpcf7-form-control-wrap:has(.wpcf7-submit) {
+			@include cf7-submit-inner-reset;
+		}
+
+		.wpcf7-submit {
+			@include cf7-submit-inner-reset;
+			color: inherit;
+			font: inherit;
+			font-weight: 500;
+			letter-spacing: inherit;
+			text-transform: uppercase;
+			cursor: pointer;
+		}
+
+		.wpcf7-spinner {
+			display: none;
+		}
+	}
+
+	// <label class="btn … form__submit"><span class="btn__text">[submit]</span><span class="btn__arrow">…</span></label>
+	label.form__submit.btn,
+	.form__submit.btn:has(.wpcf7-form-control-wrap) {
+		position: relative;
+		cursor: pointer;
+
+		&:has(input:disabled) {
+			pointer-events: none;
+			cursor: not-allowed;
+			opacity: 1;
+			background: $color-accent-muted;
+			box-shadow: none;
+
+			.btn__arrow {
+				opacity: 0.55;
+			}
+		}
+
+		.btn__text {
+			display: inline-flex;
+			align-items: center;
+			min-width: 0;
+		}
+
+		.wpcf7-form-control-wrap:has(.wpcf7-submit) {
+			@include cf7-submit-inner-reset;
+			width: auto;
+		}
+
+		.wpcf7-submit {
+			@include cf7-submit-inner-reset;
+			width: auto;
+			color: inherit;
+			font: inherit;
+			font-weight: inherit;
+			letter-spacing: inherit;
+			text-transform: inherit;
+			white-space: inherit;
+			cursor: pointer;
+		}
+
+		.wpcf7-spinner {
+			display: none;
+		}
+	}
+
+	// [submit] без label-обёртки
+	.wpcf7-form-control-wrap:has(.wpcf7-submit):not(label.form__submit .wpcf7-form-control-wrap):not(.form__submit .wpcf7-form-control-wrap) {
+		@include form-submit-on-brand;
+		position: relative;
+
+		.wpcf7-submit {
+			@include cf7-submit-inner-reset;
+			min-height: inherit;
+			padding: rem(16);
+			color: inherit;
+			font: inherit;
+			font-weight: 500;
+			letter-spacing: inherit;
+			text-transform: uppercase;
+			cursor: pointer;
+		}
+	}
+
+	&:has(.wpcf7-submit[disabled]) label.form__submit.btn,
+	&:has(.wpcf7-submit[disabled]) .form__submit.btn:has(.wpcf7-form-control-wrap) {
+		cursor: not-allowed;
+		opacity: 1;
+		background: $color-accent-muted;
+		box-shadow: none;
+
+		.btn__arrow {
+			opacity: 0.55;
+		}
+	}
+
+	&:has(.wpcf7-submit[disabled]) label.form__submit:not(.btn),
+	&:has(.wpcf7-submit[disabled]) .form__submit:has(.wpcf7-form-control-wrap):not(.btn),
+	&:has(.wpcf7-submit[disabled]) .wpcf7-form-control-wrap:has(.wpcf7-submit) {
+		cursor: not-allowed;
+		opacity: 1;
+		background: $color-accent-muted;
+		box-shadow: none;
+	}
+
+	&.submitting {
+
+		label.form__submit,
+		.form__submit:has(.wpcf7-form-control-wrap),
+		.wpcf7-form-control-wrap:has(.wpcf7-submit) {
+			pointer-events: none;
+		}
+
+		label.form__submit .wpcf7-submit,
+		.form__submit:has(.wpcf7-form-control-wrap) .wpcf7-submit,
+		.wpcf7-submit {
+			color: transparent;
+		}
+
+		label.form__submit.btn .btn__arrow,
+		.form__submit.btn .btn__arrow {
+			opacity: 0;
+		}
+
+		label.form__submit::after,
+		.form__submit:has(.wpcf7-form-control-wrap)::after,
+		.wpcf7-form-control-wrap:has(.wpcf7-submit):not(label.form__submit .wpcf7-form-control-wrap):not(.form__submit .wpcf7-form-control-wrap)::after {
+			content: "";
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			width: rem(20);
+			height: rem(20);
+			border: rem(3) solid currentColor;
+			border-bottom-color: transparent;
+			border-radius: 50%;
+			transform: translate(-50%, -50%);
+			transform-origin: center;
+			animation: cf7-spinner-rotation 1s linear infinite;
+			z-index: 3;
+			color: $color-primary;
+		}
+
+		label.form__submit.btn::after,
+		.form__submit.btn::after {
+			color: $color-white;
+		}
+	}
+}
+
+.cta-contacts {
+	.form {
+		gap: rem(8);
+
+		@media (min-width: $md5) {
+			gap: rem(10);
+		}
+	}
+
+	.form__row {
+		grid-template-columns: repeat(2, 1fr);
+		gap: rem(8);
+
+		@media (min-width: $md5) {
+			gap: rem(10);
+		}
+	}
+
+	.form__control,
+	.form-field {
+		min-height: rem(40);
+		padding: rem(12) rem(20);
+		border: rem(1) solid transparent;
+		border-radius: rem(40);
+		background: $color-surface;
+		color: $color-black;
+		font-size: rem(12);
+		line-height: 1.3;
+
+		@media (min-width: $md5) {
+			min-height: rem(50);
+			padding: rem(15) rem(20);
+			font-size: rem(16);
+		}
+
+		&::placeholder {
+			color: $color-text-body;
+		}
+
+		&:focus {
+			box-shadow: inset 0 0 0 1px rgba($color-black, 0.08);
+		}
+
+		&.wpcf7-not-valid,
+		&[aria-invalid="true"] {
+			border-color: $cf7-error-border;
+			box-shadow: none;
+
+			&:focus {
+				border-color: $cf7-error-border;
+				box-shadow: none;
+			}
+		}
+
+		&:is(textarea) {
+			min-height: rem(145);
+			border-radius: rem(20);
+			resize: none;
+		}
+	}
+
+	.form-upload {
+		display: flex;
+		flex-direction: column;
+		gap: rem(12);
+
+		// cta-contacts__dropzone
+		&__dropzone {
+			position: relative;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+			gap: rem(15);
+			min-height: rem(165);
+			padding: rem(20);
+			border: 1px dashed $color-text-body;
+			border-radius: rem(20);
+			background: $color-surface;
+			text-align: center;
+			cursor: pointer;
+			transition:
+				border-color 0.2s ease,
+				background-color 0.2s ease,
+				box-shadow 0.2s ease;
+
+			@media (any-hover: hover) {
+				&:hover {
+					border-color: $color-brand;
+					background: rgba($color-brand, 0.04);
+					box-shadow: inset 0 0 0 1px rgba($color-brand, 0.12);
+
+					.form-upload__icon {
+						opacity: 0.85;
+					}
+				}
+			}
+
+			&:focus-within {
+				border-color: $color-brand;
+				background: rgba($color-brand, 0.04);
+				box-shadow: inset 0 0 0 1px rgba($color-brand, 0.12);
+			}
+
+			&.is-dragover {
+				border-color: $color-brand;
+				background: rgba($color-brand, 0.06);
+				box-shadow: inset 0 0 0 1px rgba($color-brand, 0.16);
+			}
+		}
+
+		&.is-full .form-upload__dropzone {
+			opacity: 0.55;
+			cursor: default;
+
+			@media (any-hover: hover) {
+				&:hover {
+					border-color: $color-text-body;
+					background: $color-surface;
+					box-shadow: none;
+
+					.form-upload__icon {
+						opacity: 1;
+					}
+				}
+			}
+		}
+
+		// cta-contacts__icon
+		&__icon {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			transition: opacity 0.2s ease;
+		}
+
+		// cta-contacts__icon-svg
+		&__icon-svg {
+			display: block;
+			width: rem(49);
+			height: rem(49);
+
+			@media (min-width: $md5) {
+				width: rem(55);
+				height: rem(55);
+			}
+		}
+
+		// cta-contacts__title
+		&__title {
+			margin: 0;
+			font-size: rem(12);
+			line-height: 1.3;
+			color: $color-black;
+
+			@media (min-width: $md5) {
+				font-size: rem(16);
+			}
+		}
+
+		// cta-contacts__hint
+		&__hint {
+			margin: 0;
+			font-size: rem(9);
+			line-height: 1.3;
+			color: $color-text-body;
+
+			@media (min-width: $md5) {
+				font-size: rem(16);
+			}
+		}
+
+		// cta-contacts__dropzone
+		&__dropzone .wpcf7-form-control-wrap {
+			position: absolute;
+			inset: 0;
+			z-index: 1;
+			opacity: 0;
+			cursor: pointer;
+
+			input[type="file"] {
+				width: 100%;
+				height: 100%;
+				cursor: pointer;
+			}
+		}
+
+		&.is-full .form-upload__dropzone .wpcf7-form-control-wrap {
+			pointer-events: none;
+		}
+
+		// cta-contacts__list
+		&__list {
+			display: grid;
+			grid-template-columns: repeat(auto-fill, minmax(rem(72), 1fr));
+			gap: rem(10);
+			width: 100%;
+			padding: rem(6) rem(6) 0 0;
+			position: relative;
+			z-index: 2;
+			overflow: visible;
+
+			&[hidden] {
+				display: none;
+			}
+		}
+
+		// cta-contacts__item
+		&__item {
+			position: relative;
+			display: flex;
+			flex-direction: column;
+			gap: rem(4);
+			min-width: 0;
+		}
+
+		// cta-contacts__thumb
+		&__thumb {
+			position: relative;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			aspect-ratio: 1;
+			border-radius: rem(12);
+			overflow: hidden;
+			background: $color-surface;
+			border: 1px solid rgba($color-black, 0.08);
+		}
+
+		// cta-contacts__thumb-img
+		&__thumb-img {
+			display: block;
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+		}
+
+		// cta-contacts__thumb-placeholder
+		&__thumb-placeholder {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			width: 100%;
+			height: 100%;
+			color: $color-text-body;
+
+			svg {
+				display: block;
+				width: rem(28);
+				height: rem(28);
+			}
+		}
+
+		// cta-contacts__name
+		&__name {
+			overflow: hidden;
+			text-overflow: ellipsis;
+			white-space: nowrap;
+			font-size: rem(12);
+			line-height: 1.3;
+			color: $color-text-body;
+		}
+
+		// cta-contacts__remove
+		&__remove {
+			position: absolute;
+			top: rem(-6);
+			right: rem(-6);
+			z-index: 3;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			width: rem(24);
+			height: rem(24);
+			padding: 0;
+			border: 0;
+			border-radius: 50%;
+			background: $color-white;
+			color: $color-black;
+			cursor: pointer;
+			box-shadow: 0 rem(2) rem(6) rgba($color-black, 0.12);
+
+			@media (any-hover: hover) {
+				&:hover {
+					color: $color-brand;
+				}
+			}
+
+			svg {
+				display: block;
+				width: rem(20);
+				height: rem(20);
+			}
+		}
+
+		// cta-contacts__error
+		&__error {
+			margin: 0;
+			font-size: rem(14);
+			line-height: 1.3;
+			color: #c0392b;
+			text-align: left;
+
+			&[hidden] {
+				display: none;
+			}
+		}
+	}
+
+	.checkbox {
+		@include cta-checkbox;
+
+		@media (max-width: $md5) {
+
+			// cta-contacts__text
+			&__text,
+			.wpcf7-list-item-label:not(:empty) {
+				font-size: rem(10);
+			}
+		}
+	}
+
+	.form__submit:not(.wpcf7-submit):not(:has(.wpcf7-form-control-wrap)):not(.btn),
+	.wpcf7-form-control-wrap:has(.wpcf7-submit):not(label.form__submit .wpcf7-form-control-wrap):not(.form__submit .wpcf7-form-control-wrap) {
+		min-height: rem(40);
+		padding: rem(12) rem(35);
+		border-radius: rem(40);
+		background: $color-accent;
+		color: $color-white;
+		text-transform: none;
+		letter-spacing: normal;
+		font-size: rem(12);
+		font-weight: 500;
+		width: 100%;
+
+		@media (min-width: $md5) {
+			min-height: rem(69);
+			padding: rem(20) rem(35);
+			font-size: rem(24);
+			width: auto;
+		}
+
+		@media (any-hover: hover) {
+			&:hover {
+				background: $color-accent-hover;
+			}
+		}
+	}
+}
+
+.cta-form {
+	padding: 0 0 rem(48);
+
+	@media (min-width: $md5) {
+		padding: 0 0 rem(72);
+	}
+
+	// cta-form__box
+	&__box {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: rem(17);
+		padding: rem(17) rem(16);
+		border-radius: rem(16);
+		background: $color-surface;
+
+		@media (min-width: $md5) {
+			gap: rem(42);
+			padding: rem(42) rem(40);
+			border-radius: rem(40);
+		}
+	}
+
+	// cta-form__title
+	&__title {
+		margin: 0;
+		max-width: rem(690);
+		text-align: center;
+		color: $color-black;
+
+		@media (max-width:$md6) {
+			font-size: rem(20);
+		}
+	}
+
+	// cta-form__body
+	&__body {
+		width: 100%;
+		max-width: rem(690);
+	}
+
+	.form {
+		display: flex;
+		flex-direction: column;
+		gap: rem(10);
+
+		@media (min-width: $md5) {
+			gap: rem(24);
+		}
+	}
+
+	.form__card {
+		display: flex;
+		flex-direction: column;
+		gap: rem(8);
+		padding: rem(16);
+		border-radius: rem(16);
+		background: $color-white;
+
+		@media (min-width: $md5) {
+			gap: rem(20);
+			padding: rem(40);
+			border-radius: rem(40);
+		}
+	}
+
+	.form__row {
+		grid-template-columns: repeat(2, 1fr);
+		gap: rem(8);
+
+		@media (min-width: $md5) {
+			gap: rem(20);
+		}
+	}
+
+	.form__control,
+	.form-field {
+		min-height: rem(36);
+		padding: rem(6) rem(12);
+		border: rem(1) solid transparent;
+		border-radius: rem(16);
+		background: $color-surface;
+		color: $color-black;
+		font-size: rem(10);
+		line-height: 1.3;
+
+		@media (min-width: $md5) {
+			min-height: rem(50);
+			padding: rem(15) rem(20);
+			border-radius: rem(40);
+			font-size: rem(16);
+		}
+
+		&::placeholder {
+			color: $color-text-body;
+		}
+
+		&:focus {
+			box-shadow: inset 0 0 0 1px rgba($color-black, 0.08);
+		}
+
+		&.wpcf7-not-valid,
+		&[aria-invalid="true"] {
+			border-color: $cf7-error-border;
+			box-shadow: none;
+
+			&:focus {
+				border-color: $cf7-error-border;
+				box-shadow: none;
+			}
+		}
+
+		&:is(textarea) {
+			min-height: rem(59);
+			border-radius: rem(8);
+			resize: none;
+
+			@media (min-width: $md5) {
+				min-height: rem(145);
+				border-radius: rem(20);
+			}
+		}
+	}
+
+	.checkbox {
+		@include cta-checkbox;
+
+		@media (max-width: $md5) {
+
+			// cta-form__text
+			&__text,
+			.wpcf7-list-item-label:not(:empty) {
+				font-size: rem(10);
+			}
+		}
+	}
+
+	.form__submit:not(.wpcf7-submit):not(:has(.wpcf7-form-control-wrap)):not(.btn),
+	label.form__submit:not(.btn),
+	.form__submit:has(.wpcf7-form-control-wrap):not(.btn),
+	.wpcf7-form-control-wrap:has(.wpcf7-submit):not(label.form__submit .wpcf7-form-control-wrap):not(.form__submit .wpcf7-form-control-wrap) {
+		min-height: rem(48);
+		padding: rem(10) rem(16);
+		border-radius: rem(52);
+		background: $color-accent;
+		color: $color-white;
+		box-shadow: 0 rem(2.5) rem(1.2) rgba(253, 128, 17, 0.2);
+		text-transform: none;
+		letter-spacing: normal;
+		font-size: rem(14);
+		font-weight: 600;
+		width: 100%;
+
+		@media (min-width: $md5) {
+			min-height: rem(70);
+			padding: rem(15) rem(40);
+			border-radius: rem(40);
+			box-shadow: 0 rem(6) rem(3) rgba(253, 128, 17, 0.2);
+			font-size: rem(24);
+			font-weight: 500;
+		}
+
+		@media (any-hover: hover) {
+			&:hover {
+				background: $color-accent-hover;
+			}
+		}
+	}
+
+	label.form__submit.btn,
+	.form__submit.btn {
+		width: 100%;
+	}
+}

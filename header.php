@@ -16,32 +16,19 @@
 <div class="wrapper">
 	<aside class="site-sidebar" aria-label="<?php esc_attr_e( 'Primary', 'ntronica' ); ?>">
 		<nav class="site-sidebar__nav">
-			<?php
-			if ( has_nav_menu( 'primary' ) ) {
-				wp_nav_menu(
-					array(
-						'theme_location' => 'primary',
-						'container'      => false,
-						'menu_class'     => 'site-sidebar__menu',
-						'fallback_cb'    => false,
-						'depth'          => 1,
-						'link_before'    => '',
-						'link_after'     => '',
-					)
-				);
-			} else {
-				?>
-				<ul class="site-sidebar__menu">
-					<li><a class="site-sidebar__link" href="#"><?php esc_html_e( 'About', 'ntronica' ); ?></a></li>
-					<li><a class="site-sidebar__link" href="#"><?php esc_html_e( 'Technology', 'ntronica' ); ?></a></li>
-					<li><a class="site-sidebar__link" href="#"><?php esc_html_e( 'Products', 'ntronica' ); ?></a></li>
-					<li><a class="site-sidebar__link" href="#"><?php esc_html_e( 'News', 'ntronica' ); ?></a></li>
-					<li><a class="site-sidebar__link" href="#"><?php esc_html_e( 'Careers', 'ntronica' ); ?></a></li>
-					<li><a class="site-sidebar__link" href="#"><?php esc_html_e( 'Contacts', 'ntronica' ); ?></a></li>
-				</ul>
-				<?php
-			}
-			?>
+			<ul class="site-sidebar__menu">
+				<li>
+					<a
+						class="site-sidebar__link<?php echo is_page( 'about' ) ? ' is-active' : ''; ?>"
+						href="<?php echo esc_url( home_url( '/about/' ) ); ?>"
+					><?php esc_html_e( 'About', 'ntronica' ); ?></a>
+				</li>
+				<li><a class="site-sidebar__link" href="#"><?php esc_html_e( 'Technology', 'ntronica' ); ?></a></li>
+				<li><a class="site-sidebar__link" href="#"><?php esc_html_e( 'Products', 'ntronica' ); ?></a></li>
+				<li><a class="site-sidebar__link" href="#"><?php esc_html_e( 'News', 'ntronica' ); ?></a></li>
+				<li><a class="site-sidebar__link" href="#"><?php esc_html_e( 'Careers', 'ntronica' ); ?></a></li>
+				<li><a class="site-sidebar__link" href="#"><?php esc_html_e( 'Contacts', 'ntronica' ); ?></a></li>
+			</ul>
 		</nav>
 		<a class="site-sidebar__logo site-sidebar__logo--mark" href="<?php echo esc_url( home_url( '/' ) ); ?>">
 			<img
@@ -61,4 +48,4 @@
 		</a>
 	</aside>
 	<div class="site-body">
-		<main class="main<?php echo is_front_page() ? ' main--home' : ''; ?>">
+		<main class="main<?php echo is_front_page() ? ' main--home' : ( is_page( 'about' ) ? ' main--about' : '' ); ?>">

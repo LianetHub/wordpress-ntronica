@@ -145,7 +145,7 @@ body {
 	flex: 1 1 auto;
 	background: $color-white;
 
-	&:not(.main--home) {
+	&:not(.main--home):not(.main--about) {
 		padding-top: rem(40);
 	}
 }

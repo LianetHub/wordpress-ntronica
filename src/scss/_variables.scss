@@ -1,8 +1,6 @@
 // Design tokens — ntronica
-// Default: Main 430 → $md6 → $md5 → $md4 → $md3 → $md2 → $md1
-// Breakpoints: always *.98 (min-width)
 
-// Breakpoints (largest → smallest)
+// Breakpoints
 $md1: 2559.98px; // Main 2560
 $md2: 1727.98px; // Main 1728
 $md3: 1439.98px; // Main 1440
@@ -12,7 +10,8 @@ $md6: 767.98px; // Main 768
 $md7: 575.98px; // sm / small
 
 // Fonts
-$font-family: "Nanotronica", system-ui, -apple-system, "Segoe UI", sans-serif;
+$font-family: "Nanotronica_Text", system-ui, -apple-system, "Segoe UI", sans-serif;
+$font-robert: "CoFo_Robert", Georgia, "Times New Roman", serif;
 
 // Colors
 $color-white: #ffffff;

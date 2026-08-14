@@ -12,6 +12,7 @@
 	padding-left: var(--container-pad-left);
 	padding-right: var(--container-pad-right);
 	box-sizing: border-box;
+	margin: 0 auto;
 
 	@media (min-width: $md6) {
 		--container-pad-left: #{rem($content-pad-left-768)};

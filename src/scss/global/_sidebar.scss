@@ -95,12 +95,14 @@
 		display: flex;
 		flex-direction: column;
 		gap: rem(11);
+		align-items: flex-start;
 	}
 
-	// site-sidebar__menu
-	&__menu a,
+	// site-sidebar__menu a,
 	// site-sidebar__link
+	&__menu a,
 	&__link {
+		position: relative;
 		display: block;
 		font-family: $font-family;
 		font-weight: 700;
@@ -108,20 +110,45 @@
 		line-height: rem(24);
 		color: $color-white;
 		white-space: nowrap;
-		transition: opacity 0.2s ease;
-
 		@media (min-width: $md1) {
 			font-size: rem(21);
 		}
 
+		span {
+			transition: opacity $nav-link-hover-motion;
+		}
+
+		&::after {
+			content: attr(data-title);
+			position: absolute;
+			left: 0;
+			top: 0;
+			font-family: $font-reduct;
+			opacity: 0;
+			pointer-events: none;
+			transition: opacity $nav-link-hover-motion;
+		}
+
 		@media (any-hover: hover) {
 			&:hover {
-				opacity: 0.7;
+				span {
+					opacity: 0;
+				}
+
+				&::after {
+					opacity: 1;
+				}
 			}
 		}
 
 		&.is-active {
-			opacity: 0.7;
+			span {
+				opacity: 0;
+			}
+
+			&::after {
+				opacity: 1;
+			}
 		}
 	}
 

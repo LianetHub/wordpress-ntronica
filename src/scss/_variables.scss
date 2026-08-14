@@ -10,7 +10,11 @@ $md6: 767.98px; // Main 768
 $md7: 575.98px; // sm / small
 
 // Fonts
-$font-family: "Nanotronica_Text", system-ui, -apple-system, "Segoe UI", sans-serif;
+$font-sans: system-ui, -apple-system, "Segoe UI", sans-serif;
+$font-text: "Nanotronica_Text", $font-sans;
+$font-title: "Nanotronica_Title", $font-sans;
+$font-reduct: "Nanotronica_Reduct", $font-sans;
+$font-family: $font-text;
 $font-robert: "CoFo_Robert", Georgia, "Times New Roman", serif;
 
 // Colors
@@ -80,4 +84,4 @@ $state-disabled-opacity: 0.3;
 $state-tab-disabled-opacity: 0.5;
 
 // Navigation
-$nav-link-hover-motion: 0.68s cubic-bezier(0.18, 0.88, 0.24, 1);
+$nav-link-hover-motion: 0.1s cubic-bezier(0, 0, 0.58, 1);

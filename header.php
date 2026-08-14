@@ -21,22 +21,25 @@
 					<a
 						class="site-sidebar__link<?php echo is_page( 'about' ) ? ' is-active' : ''; ?>"
 						href="<?php echo esc_url( home_url( '/about/' ) ); ?>"
-					>About</a>
+						data-title="About"
+					><span>About</span></a>
 				</li>
-				<li><a class="site-sidebar__link" href="#">Technology</a></li>
-				<li><a class="site-sidebar__link" href="#">Products</a></li>
-				<li><a class="site-sidebar__link" href="#">News</a></li>
+				<li><a class="site-sidebar__link" href="#" data-title="Technology"><span>Technology</span></a></li>
+				<li><a class="site-sidebar__link" href="#" data-title="Products"><span>Products</span></a></li>
+				<li><a class="site-sidebar__link" href="#" data-title="News"><span>News</span></a></li>
 				<li>
 					<a
 						class="site-sidebar__link<?php echo is_page( 'careers' ) ? ' is-active' : ''; ?>"
 						href="<?php echo esc_url( home_url( '/careers/' ) ); ?>"
-					>Careers</a>
+						data-title="Careers"
+					><span>Careers</span></a>
 				</li>
 				<li>
 					<a
 						class="site-sidebar__link<?php echo is_page( 'contacts' ) ? ' is-active' : ''; ?>"
 						href="<?php echo esc_url( home_url( '/contacts/' ) ); ?>"
-					>Contacts</a>
+						data-title="Contacts"
+					><span>Contacts</span></a>
 				</li>
 			</ul>
 		</nav>

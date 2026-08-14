@@ -152,12 +152,11 @@ export const copyWoff = () => {
 export const fontsStyle = ( done ) => {
 	const fontsFile = `${ app.path.srcFolder }/scss/fonts.scss`;
 
+	// Licensed @font-face (CoFo Robert copyright notices) — never overwrite.
 	if ( fs.existsSync( fontsFile ) ) {
-		const content = fs.readFileSync( fontsFile, 'utf8' );
-		if ( content.includes( '// Inter — локальные' ) ) {
-			done();
-			return;
-		}
+		console.log( 'scss/fonts.scss exists — skip autogenerate' );
+		done();
+		return;
 	}
 
 	if ( ! fs.existsSync( app.path.build.fonts ) ) {
@@ -171,12 +170,7 @@ export const fontsStyle = ( done ) => {
 		return;
 	}
 
-	if ( fs.existsSync( fontsFile ) ) {
-		fs.unlinkSync( fontsFile );
-		console.log( 'Файл scss/fonts.scss актуализирован' );
-	} else {
-		console.log( 'Файл scss/fonts.scss создан' );
-	}
+	console.log( 'Файл scss/fonts.scss создан' );
 
 	let scss = '';
 	let newFileOnly;

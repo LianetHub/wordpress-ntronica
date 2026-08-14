@@ -1,70 +1,102 @@
+// fonts.scss is maintained manually — licensed webfonts, do not autogenerate
+
+/*!
+ * © Copyright (c) 2018 LLC Contrast Foundry (LLC CoFo). All rights reserved.
+ * Manufacturer: LLC Contrast Foundry (LLC CoFo)
+ * CoFo Robert is a trademark of LLC Contrast Foundry (LLC CoFo).
+ * The Contrast Foundry Font Software is protected under domestic and international trademark and copyright law.
+ * https://contrastfoundry.com/licensing
+ */
 @font-face {
-								font-family: 'CoFo_Robert';
-								font-display: swap;
-								src: url("../fonts/CoFo_Robert-Bold.woff2") format("woff2"), url("../fonts/CoFo_Robert-Bold.woff") format("woff");
-								font-weight: 700;
-								font-style: normal;
-							}
+	/*! © Copyright (c) 2018 LLC Contrast Foundry (LLC CoFo). All rights reserved. */
+	font-family: "CoFo_Robert";
+	font-display: swap;
+	src: url("../fonts/CoFoRobert-Regular.woff2") format("woff2"),
+		url("../fonts/CoFoRobert-Regular.woff") format("woff");
+	font-weight: 400;
+	font-style: normal;
+}
+
 @font-face {
-								font-family: 'CoFo_Robert';
-								font-display: swap;
-								src: url("../fonts/CoFo_Robert-Bold_Italic.woff2") format("woff2"), url("../fonts/CoFo_Robert-Bold_Italic.woff") format("woff");
-								font-weight: 400;
-								font-style: italic;
-							}
+	/*! © Copyright (c) 2018 LLC Contrast Foundry (LLC CoFo). All rights reserved. */
+	font-family: "CoFo_Robert";
+	font-display: swap;
+	src: url("../fonts/CoFoRobert-Medium.woff2") format("woff2"),
+		url("../fonts/CoFoRobert-Medium.woff") format("woff");
+	font-weight: 500;
+	font-style: normal;
+}
+
 @font-face {
-								font-family: 'CoFo_Robert';
-								font-display: swap;
-								src: url("../fonts/CoFo_Robert-Medium.woff2") format("woff2"), url("../fonts/CoFo_Robert-Medium.woff") format("woff");
-								font-weight: 500;
-								font-style: normal;
-							}
+	/*! © Copyright (c) 2018 LLC Contrast Foundry (LLC CoFo). All rights reserved. */
+	font-family: "CoFo_Robert";
+	font-display: swap;
+	src: url("../fonts/CoFoRobert-Bold.woff2") format("woff2"),
+		url("../fonts/CoFoRobert-Bold.woff") format("woff");
+	font-weight: 700;
+	font-style: normal;
+}
+
 @font-face {
-								font-family: 'CoFo_Robert';
-								font-display: swap;
-								src: url("../fonts/CoFo_Robert-Regular.woff2") format("woff2"), url("../fonts/CoFo_Robert-Regular.woff") format("woff");
-								font-weight: 400;
-								font-style: normal;
-							}
+	/*! © Copyright (c) 2018 LLC Contrast Foundry (LLC CoFo). All rights reserved. */
+	font-family: "CoFo_Robert";
+	font-display: swap;
+	src: url("../fonts/CoFoRobert-BoldItalic.woff2") format("woff2"),
+		url("../fonts/CoFoRobert-BoldItalic.woff") format("woff");
+	font-weight: 700;
+	font-style: italic;
+}
+
 @font-face {
-								font-family: 'Nanotronica_Reduct';
-								font-display: swap;
-								src: url("../fonts/Nanotronica_Reduct-Bold.woff2") format("woff2"), url("../fonts/Nanotronica_Reduct-Bold.woff") format("woff");
-								font-weight: 700;
-								font-style: normal;
-							}
+	font-family: "Nanotronica_Reduct";
+	font-display: swap;
+	src: url("../fonts/Nanotronica_Reduct-Bold.woff2") format("woff2"),
+		url("../fonts/Nanotronica_Reduct-Bold.woff") format("woff");
+	font-weight: 700;
+	font-style: normal;
+}
+
 @font-face {
-								font-family: 'Nanotronica_Reduct';
-								font-display: swap;
-								src: url("../fonts/Nanotronica_Reduct-Regular.woff2") format("woff2"), url("../fonts/Nanotronica_Reduct-Regular.woff") format("woff");
-								font-weight: 400;
-								font-style: normal;
-							}
+	font-family: "Nanotronica_Reduct";
+	font-display: swap;
+	src: url("../fonts/Nanotronica_Reduct-Regular.woff2") format("woff2"),
+		url("../fonts/Nanotronica_Reduct-Regular.woff") format("woff");
+	font-weight: 400;
+	font-style: normal;
+}
+
 @font-face {
-								font-family: 'Nanotronica_Text';
-								font-display: swap;
-								src: url("../fonts/Nanotronica_Text-Bold.woff2") format("woff2"), url("../fonts/Nanotronica_Text-Bold.woff") format("woff");
-								font-weight: 700;
-								font-style: normal;
-							}
+	font-family: "Nanotronica_Text";
+	font-display: swap;
+	src: url("../fonts/Nanotronica_Text-Bold.woff2") format("woff2"),
+		url("../fonts/Nanotronica_Text-Bold.woff") format("woff");
+	font-weight: 700;
+	font-style: normal;
+}
+
 @font-face {
-								font-family: 'Nanotronica_Text';
-								font-display: swap;
-								src: url("../fonts/Nanotronica_Text-Regular.woff2") format("woff2"), url("../fonts/Nanotronica_Text-Regular.woff") format("woff");
-								font-weight: 400;
-								font-style: normal;
-							}
+	font-family: "Nanotronica_Text";
+	font-display: swap;
+	src: url("../fonts/Nanotronica_Text-Regular.woff2") format("woff2"),
+		url("../fonts/Nanotronica_Text-Regular.woff") format("woff");
+	font-weight: 400;
+	font-style: normal;
+}
+
 @font-face {
-								font-family: 'Nanotronica_Title';
-								font-display: swap;
-								src: url("../fonts/Nanotronica_Title-Bold.woff2") format("woff2"), url("../fonts/Nanotronica_Title-Bold.woff") format("woff");
-								font-weight: 700;
-								font-style: normal;
-							}
+	font-family: "Nanotronica_Title";
+	font-display: swap;
+	src: url("../fonts/Nanotronica_Title-Bold.woff2") format("woff2"),
+		url("../fonts/Nanotronica_Title-Bold.woff") format("woff");
+	font-weight: 700;
+	font-style: normal;
+}
+
 @font-face {
-								font-family: 'Nanotronica_Title';
-								font-display: swap;
-								src: url("../fonts/Nanotronica_Title-Regular.woff2") format("woff2"), url("../fonts/Nanotronica_Title-Regular.woff") format("woff");
-								font-weight: 400;
-								font-style: normal;
-							}
+	font-family: "Nanotronica_Title";
+	font-display: swap;
+	src: url("../fonts/Nanotronica_Title-Regular.woff2") format("woff2"),
+		url("../fonts/Nanotronica_Title-Regular.woff") format("woff");
+	font-weight: 400;
+	font-style: normal;
+}

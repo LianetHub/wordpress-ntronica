@@ -2,6 +2,64 @@
  * Theme frontend entry (ntronica).
  */
 document.addEventListener('DOMContentLoaded', () => {
+	initSidebar();
+	initVacanciesSlider();
+});
+
+const initSidebar = () => {
+	const sidebar = document.querySelector('.site-sidebar');
+
+	if (!sidebar) {
+		return;
+	}
+
+	const logoBtn = sidebar.querySelector('.site-sidebar__logo');
+	const mqWide = window.matchMedia('(min-width: 1199.98px)');
+
+	const isOpen = () =>
+		mqWide.matches ? !sidebar.classList.contains('is-collapsed') : sidebar.classList.contains('is-open');
+
+	const syncAria = () => {
+		if (logoBtn) {
+			logoBtn.setAttribute('aria-expanded', isOpen() ? 'true' : 'false');
+		}
+	};
+
+	const toggle = () => {
+		if (mqWide.matches) {
+			sidebar.classList.toggle('is-collapsed');
+			sidebar.classList.remove('is-open');
+		} else {
+			sidebar.classList.toggle('is-open');
+			sidebar.classList.remove('is-collapsed');
+		}
+
+		syncAria();
+	};
+
+	sidebar.addEventListener('click', (event) => {
+		if (event.target.closest('.site-sidebar__link')) {
+			return;
+		}
+
+		toggle();
+	});
+
+	const onBreakpointChange = () => {
+		sidebar.classList.remove('is-open', 'is-collapsed');
+		syncAria();
+	};
+
+	if (typeof mqWide.addEventListener === 'function') {
+		mqWide.addEventListener('change', onBreakpointChange);
+	} else if (typeof mqWide.addListener === 'function') {
+		mqWide.addListener(onBreakpointChange);
+	}
+
+	syncAria();
+};
+
+const initVacanciesSlider = () => {
 	const vacanciesEl = document.querySelector('.vacancies-slider');
 
 	if (!vacanciesEl || typeof Swiper === 'undefined') {
@@ -102,4 +160,4 @@ document.addEventListener('DOMContentLoaded', () => {
 	} else if (typeof mqDesktop.addListener === 'function') {
 		mqDesktop.addListener(onBreakpointChange);
 	}
-});
+};

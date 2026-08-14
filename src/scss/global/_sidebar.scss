@@ -9,21 +9,24 @@
 	display: flex;
 	flex-direction: column;
 	justify-content: flex-end;
+	overflow: hidden;
 	width: 50px;
 	height: 100vh;
 	padding: rem(13) rem(12);
 	background-color: $color-black;
-	box-sizing: border-box;
 	color: $color-white;
+	cursor: pointer;
+	-webkit-tap-highlight-color: transparent;
+	transition: width 0.35s ease, padding 0.35s ease;
 
 	@media (min-width: $md6) {
-		padding: rem(13) rem(13);
 		width: 52px;
+		padding: rem(13) rem(13);
 	}
 
 	@media (min-width: $md5) {
-		padding: rem(18) rem(18);
 		width: 76px;
+		padding: rem(18) rem(18);
 	}
 
 	@media (min-width: $md4) {
@@ -37,6 +40,33 @@
 		padding: rem(16) rem(20) rem(18);
 	}
 
+	&.is-open {
+		justify-content: space-between;
+		width: 234px;
+		padding: rem(17) rem(20) rem(18);
+
+		@media (min-width: $md1) {
+			width: 274px;
+			padding: rem(16) rem(20) rem(18);
+		}
+	}
+
+	&.is-collapsed {
+		justify-content: flex-end;
+		width: 50px;
+		padding: rem(13) rem(12);
+
+		@media (min-width: $md6) {
+			width: 52px;
+			padding: rem(13) rem(13);
+		}
+
+		@media (min-width: $md5) {
+			width: 76px;
+			padding: rem(18) rem(18);
+		}
+	}
+
 	// site-sidebar__nav
 	&__nav {
 		display: none;
@@ -45,6 +75,14 @@
 		@media (min-width: $md4) {
 			display: block;
 		}
+	}
+
+	&.is-open &__nav {
+		display: block;
+	}
+
+	&.is-collapsed &__nav {
+		display: none;
 	}
 
 	// site-sidebar__menu
@@ -64,6 +102,7 @@
 		font-size: rem(18);
 		line-height: rem(24);
 		color: $color-white;
+		white-space: nowrap;
 		transition: opacity 0.2s ease;
 
 		@media (min-width: $md1) {
@@ -85,37 +124,17 @@
 	&__logo {
 		display: block;
 		flex-shrink: 0;
-		max-width: 100%;
+		width: rem(193);
 		height: auto;
+		padding: 0;
+		text-align: left;
+		color: inherit;
 
-		// site-sidebar--mark
-		&--mark {
-			width: rem(27);
-
-			@media (min-width: $md5) {
-				width: rem(40);
-			}
-
-			@media (min-width: $md4) {
-				display: none;
-			}
+		@media (min-width: $md1) {
+			width: rem(234);
 		}
 
-		// site-sidebar--full
-		&--full {
-			display: none;
-			width: rem(193);
-
-			@media (min-width: $md4) {
-				display: block;
-			}
-
-			@media (min-width: $md1) {
-				width: rem(234);
-			}
-		}
-
-		img {
+		svg {
 			display: block;
 			width: 100%;
 			height: auto;

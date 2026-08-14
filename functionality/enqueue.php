@@ -63,6 +63,39 @@ function ntronica_enqueue_styles() {
 add_action( 'wp_enqueue_scripts', 'ntronica_enqueue_styles' );
 
 /**
+ * Preload first-paint fonts for PSI.
+ *
+ * Only Nanotronica_Text Regular/Bold (body, titles, hero). CoFo and unused
+ * Title/Reduct faces stay CSS-only so they do not compete with LCP.
+ *
+ * @param array $preload_resources Preload link descriptors.
+ * @return array
+ */
+function ntronica_preload_fonts( $preload_resources ) {
+	$fonts_dir = get_template_directory() . '/assets/fonts/';
+	$files     = array(
+		'Nanotronica_Text-Regular.woff2',
+		'Nanotronica_Text-Bold.woff2',
+	);
+
+	foreach ( $files as $file ) {
+		if ( ! file_exists( $fonts_dir . $file ) ) {
+			continue;
+		}
+
+		$preload_resources[] = array(
+			'href'        => FONTS_PATH . '/' . $file,
+			'as'          => 'font',
+			'type'        => 'font/woff2',
+			'crossorigin' => 'anonymous',
+		);
+	}
+
+	return $preload_resources;
+}
+add_filter( 'wp_preload_resources', 'ntronica_preload_fonts' );
+
+/**
  * Enqueue theme scripts (page-template aware).
  */
 function ntronica_enqueue_scripts() {

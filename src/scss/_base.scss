@@ -111,34 +111,35 @@ body {
 }
 
 .wrapper {
+	--sidebar-width: 50px;
 	display: flex;
 	flex-direction: column;
 	min-height: 100%;
 	overflow-x: clip;
+
+	@media (min-width: $md6) {
+		--sidebar-width: 52px;
+	}
+
+	@media (min-width: $md5) {
+		--sidebar-width: 76px;
+	}
+
+	@media (min-width: $md4) {
+		--sidebar-width: 234px;
+	}
+
+	@media (min-width: $md1) {
+		--sidebar-width: 274px;
+	}
 }
 
 .site-body {
-	margin-left: 50px;
+	margin-left: var(--sidebar-width);
 	display: flex;
 	flex-direction: column;
 	min-height: 100vh;
 	min-width: 0;
-
-	@media (min-width: $md6) {
-		margin-left: 52px;
-	}
-
-	@media (min-width: $md5) {
-		margin-left: 76px;
-	}
-
-	@media (min-width: $md4) {
-		margin-left: 234px;
-	}
-
-	@media (min-width: $md1) {
-		margin-left: 274px;
-	}
 }
 
 .main {
@@ -212,54 +213,34 @@ $scrollbarColor: $color-black;
 }
 
 .band-full {
-	margin-left: -50px;
-	width: calc(100% + 50px);
+	margin-left: calc(-1 * var(--sidebar-width));
+	width: calc(100% + var(--sidebar-width));
 	box-sizing: border-box;
-
-	@media (min-width: $md6) {
-		margin-left: -52px;
-		width: calc(100% + 52px);
-	}
-
-	@media (min-width: $md5) {
-		margin-left: -76px;
-		width: calc(100% + 76px);
-	}
-
-	@media (min-width: $md4) {
-		margin-left: -234px;
-		width: calc(100% + 234px);
-	}
-
-	@media (min-width: $md1) {
-		margin-left: -274px;
-		width: calc(100% + 274px);
-	}
 }
 
 .band-full__inner {
-	padding-left: calc(50px + 30px);
+	padding-left: calc(var(--sidebar-width) + 30px);
 	padding-right: 28px;
 	max-width: none;
 	box-sizing: border-box;
 
 	@media (min-width: $md6) {
-		padding-left: calc(52px + 28px);
+		padding-left: calc(var(--sidebar-width) + 28px);
 		padding-right: 28px;
 	}
 
 	@media (min-width: $md5) {
-		padding-left: calc(76px + 138px);
+		padding-left: calc(var(--sidebar-width) + 138px);
 		padding-right: 30px;
 	}
 
 	@media (min-width: $md4) {
-		padding-left: calc(234px + 87px);
+		padding-left: calc(var(--sidebar-width) + 87px);
 		padding-right: 39px;
 	}
 
 	@media (min-width: $md1) {
-		padding-left: calc(274px + 93px);
+		padding-left: calc(var(--sidebar-width) + 93px);
 		padding-right: 279px;
 	}
 }

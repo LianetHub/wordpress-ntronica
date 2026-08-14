@@ -7,7 +7,7 @@
 
 $ntronica_careers_img = IMG_PATH . '/careers/';
 ?>
-<section class="page-hero band-full" aria-label="<?php esc_attr_e( 'Careers', 'ntronica' ); ?>">
+<section class="page-hero band-full" aria-label="Careers">
 	<div class="page-hero__media" aria-hidden="true">
 		<img
 			class="page-hero__img"
@@ -18,20 +18,18 @@ $ntronica_careers_img = IMG_PATH . '/careers/';
 		>
 	</div>
 
-	<div class="band-full__inner">
-		<div class="content-rail__inner page-hero__inner">
-			<div class="page-hero__top">
-				<nav class="page-hero__nav" aria-label="<?php esc_attr_e( 'Careers sections', 'ntronica' ); ?>">
-					<a class="page-hero__nav-link" href="#team"><?php esc_html_e( 'Our team', 'ntronica' ); ?></a>
-					<a class="page-hero__nav-link" href="#careers"><?php esc_html_e( 'Immediate vacancies', 'ntronica' ); ?></a>
-					<a class="page-hero__nav-link" href="#contacts"><?php esc_html_e( 'Contact us', 'ntronica' ); ?></a>
-				</nav>
-				<a class="page-hero__lang" href="#"><?php esc_html_e( 'ru', 'ntronica' ); ?></a>
-			</div>
-
-			<p class="page-hero__tagline page-hero__tagline--dark"><?php esc_html_e( 'We develop innovative equipment to enable the full cycle of microelectronics production and complex r&d activities', 'ntronica' ); ?></p>
-
-			<h1 class="page-hero__title"><?php esc_html_e( 'Careers', 'ntronica' ); ?></h1>
+	<div class="container page-hero__inner">
+		<div class="page-hero__top">
+			<nav class="page-hero__nav" aria-label="Careers sections">
+				<a class="page-hero__nav-link" href="#team">Our team</a>
+				<a class="page-hero__nav-link" href="#careers">Immediate vacancies</a>
+				<a class="page-hero__nav-link" href="#contacts">Contact us</a>
+			</nav>
+			<a class="page-hero__lang" href="#">ru</a>
 		</div>
+
+		<p class="page-hero__tagline page-hero__tagline--dark">We develop innovative equipment to enable the full cycle of microelectronics production and complex r&amp;d activities</p>
+
+		<h1 class="page-hero__title">Careers</h1>
 	</div>
 </section>

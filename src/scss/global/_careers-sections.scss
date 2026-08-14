@@ -44,7 +44,7 @@
 
 	// section-careers-team__grid
 	&__grid {
-		--gutter-x: 24px;
+		--gutter-x: rem(24);
 		--gutter-y: rem(24);
 
 		@media (min-width: $md6) {

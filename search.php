@@ -7,12 +7,9 @@
 
 get_header();
 ?>
-<div class="_container">
+<div class="container">
 	<h1>
-		<?php
-		/* translators: %s: search query */
-		printf( esc_html__( 'Search results: %s', 'ntronica' ), esc_html( get_search_query() ) );
-		?>
+		<?php printf( 'Search results: %s', esc_html( get_search_query() ) ); ?>
 	</h1>
 	<?php if ( have_posts() ) : ?>
 		<ul>
@@ -24,7 +21,7 @@ get_header();
 			<?php endwhile; ?>
 		</ul>
 	<?php else : ?>
-		<p><?php esc_html_e( 'Nothing found.', 'ntronica' ); ?></p>
+		<p>Nothing found.</p>
 	<?php endif; ?>
 </div>
 <?php

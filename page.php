@@ -10,7 +10,7 @@ get_header();
 while ( have_posts() ) :
 	the_post();
 	?>
-	<div class="_container">
+	<div class="container">
 		<h1><?php the_title(); ?></h1>
 		<div class="page__content">
 			<?php the_content(); ?>

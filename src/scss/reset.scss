@@ -180,7 +180,7 @@ input[type="number"] {
 
 [type="search"] {
 	-webkit-appearance: textfield;
-	outline-offset: -2px;
+	outline-offset: rem(-2);
 	&::-webkit-search-decoration {
 		-webkit-appearance: none;
 	}

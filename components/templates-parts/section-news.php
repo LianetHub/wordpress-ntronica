@@ -8,27 +8,27 @@
 $news_items = array(
 	array(
 		'date'  => '25.01.2023',
-		'title' => __( 'Lorem ipsum dolor sit', 'ntronica' ),
+		'title' => 'Lorem ipsum dolor sit',
 	),
 	array(
 		'date'  => '25.01.2023',
-		'title' => __( 'Lorem ipsum dolor sit', 'ntronica' ),
+		'title' => 'Lorem ipsum dolor sit',
 	),
 	array(
 		'date'  => '25.01.2023',
-		'title' => __( 'Lorem ipsum dolor sit', 'ntronica' ),
+		'title' => 'Lorem ipsum dolor sit',
 	),
 	array(
 		'date'  => '25.01.2023',
-		'title' => __( 'Lorem ipsum dolor sit', 'ntronica' ),
+		'title' => 'Lorem ipsum dolor sit',
 	),
 );
 ?>
-<section class="section-news content-rail" id="news">
-	<div class="content-rail__inner">
-		<h2 class="section-title section-news__title"><?php esc_html_e( 'Events & news', 'ntronica' ); ?></h2>
+<section class="section-news" id="news">
+	<div class="container">
+		<h2 class="section-title section-news__title">Events &amp; news</h2>
 		<p class="section-lead section-news__lead">
-			<?php esc_html_e( 'We stay active in the industry. Below, discover where you can meet our team and experience our latest activities. We look forward to connecting with you in person.', 'ntronica' ); ?>
+			We stay active in the industry. Below, discover where you can meet our team and experience our latest activities. We look forward to connecting with you in person.
 		</p>
 
 		<div class="row section-news__grid">
@@ -45,7 +45,7 @@ $news_items = array(
 
 		<div class="section-news__more">
 			<a class="link-more" href="#">
-				<span><?php esc_html_e( 'LEARN MORE', 'ntronica' ); ?></span>
+				<span>LEARN MORE</span>
 				<span class="link-more__arrow" aria-hidden="true">→</span>
 			</a>
 		</div>

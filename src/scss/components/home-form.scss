@@ -5,7 +5,7 @@
 	// home-form__row
 	&__row {
 		// uses grid.scss .row
-		--gutter-x: 24px;
+		--gutter-x: rem(24);
 		--gutter-y: rem(24);
 		margin-bottom: rem(0);
 
@@ -90,7 +90,7 @@
 	&__textarea {
 		width: 100%;
 		padding: rem(3) 0;
-		border-bottom: 2px solid $color-black;
+		border-bottom: rem(2) solid $color-black;
 		border-radius: 0;
 		background: transparent;
 		font-family: $font-family;
@@ -139,7 +139,7 @@
 		justify-content: center;
 		height: rem(38);
 		margin-top: auto;
-		border: 2px dashed $color-black;
+		border: rem(2) dashed $color-black;
 		font-family: $font-family;
 		font-weight: 400;
 		font-size: rem(15);
@@ -193,30 +193,30 @@
 		width: 100%;
 
 		@media (min-width: $md6) {
-			max-width: 318px;
+			max-width: rem(318);
 		}
 
 		@media (min-width: $md5) {
-			max-width: 378px;
+			max-width: rem(378);
 		}
 
 		@media (min-width: $md4) {
-			max-width: 264px;
+			max-width: rem(264);
 		}
 
 		@media (min-width: $md3) {
 			gap: rem(16);
-			max-width: 344px;
+			max-width: rem(344);
 		}
 
 		@media (min-width: $md2) {
 			gap: rem(20);
-			max-width: 440px;
+			max-width: rem(440);
 		}
 
 		@media (min-width: $md1) {
 			gap: rem(24);
-			max-width: 622px;
+			max-width: rem(622);
 		}
 	}
 
@@ -228,7 +228,7 @@
 		width: 100%;
 		min-height: rem(48);
 		padding: rem(10) rem(14);
-		border: 2px solid $color-muted;
+		border: rem(2) solid $color-muted;
 		background: $color-white;
 		font-family: $font-family;
 		font-weight: 400;
@@ -305,7 +305,7 @@
 		width: rem(20);
 		height: rem(20);
 		margin-top: rem(1);
-		border: 2px solid $color-black;
+		border: rem(2) solid $color-black;
 		appearance: none;
 		background: $color-white;
 		cursor: pointer;

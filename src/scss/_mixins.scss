@@ -5,9 +5,9 @@
 @mixin adaptive-font($minSize, $maxSize, $minWidth: 360, $maxWidth: 1440) {
 	$slope: math.div($maxSize - $minSize, $maxWidth - $minWidth);
 	$intersect: $minSize - $slope * $minWidth;
-	font-size: clamp(#{$minSize}px,
-		calc(#{$slope * 100}vw + #{$intersect}px),
-		#{$maxSize}px);
+	font-size: clamp(#{rem($minSize)},
+		calc(#{$slope * 100}vw + #{rem($intersect)}),
+		#{rem($maxSize)});
 }
 
 @function rem($value) {

@@ -7,7 +7,7 @@
 
 get_header();
 ?>
-<div class="_container">
+<div class="container">
 	<h1><?php the_archive_title(); ?></h1>
 	<?php if ( have_posts() ) : ?>
 		<?php
@@ -23,7 +23,7 @@ get_header();
 		the_posts_navigation();
 		?>
 	<?php else : ?>
-		<p><?php esc_html_e( 'Nothing found.', 'ntronica' ); ?></p>
+		<p>Nothing found.</p>
 	<?php endif; ?>
 </div>
 <?php

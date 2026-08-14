@@ -10,60 +10,73 @@
 	flex-direction: column;
 	justify-content: flex-end;
 	overflow: hidden;
-	width: 50px;
+	width: rem($sidebar-width);
 	height: 100vh;
 	padding: rem(13) rem(12);
 	background-color: $color-black;
 	color: $color-white;
 	cursor: pointer;
 	-webkit-tap-highlight-color: transparent;
-	transition: width 0.35s ease, padding 0.35s ease;
+	transition: width 0.35s ease;
 
 	@media (min-width: $md6) {
-		width: 52px;
+		width: rem($sidebar-width-768);
 		padding: rem(13) rem(13);
 	}
 
 	@media (min-width: $md5) {
-		width: 76px;
+		width: rem($sidebar-width-1024);
 		padding: rem(18) rem(18);
 	}
 
 	@media (min-width: $md4) {
 		justify-content: space-between;
-		width: 234px;
+		width: rem($sidebar-width-1200);
 		padding: rem(17) rem(20) rem(18);
 	}
 
 	@media (min-width: $md1) {
-		width: 274px;
+		width: rem($sidebar-width-2560);
 		padding: rem(16) rem(20) rem(18);
 	}
 
 	&.is-open {
 		justify-content: space-between;
-		width: 234px;
-		padding: rem(17) rem(20) rem(18);
+		width: rem($sidebar-width-1200);
+
+		.site-sidebar__nav {
+			display: block;
+		}
 
 		@media (min-width: $md1) {
-			width: 274px;
-			padding: rem(16) rem(20) rem(18);
+			width: rem($sidebar-width-2560);
 		}
 	}
 
 	&.is-collapsed {
 		justify-content: flex-end;
-		width: 50px;
-		padding: rem(13) rem(12);
+		width: rem($sidebar-width);
+
+		.site-sidebar__logo {
+			@media (min-width: $md1) {
+				width: rem(54);
+			}
+		}
+
+		.site-sidebar__nav {
+			display: none;
+		}
 
 		@media (min-width: $md6) {
-			width: 52px;
-			padding: rem(13) rem(13);
+			width: rem($sidebar-width-768);
 		}
 
 		@media (min-width: $md5) {
-			width: 76px;
-			padding: rem(18) rem(18);
+			width: rem($sidebar-width-1024);
+		}
+
+		@media (min-width: $md1) {
+			width: rem(88);
 		}
 	}
 
@@ -77,19 +90,11 @@
 		}
 	}
 
-	&.is-open &__nav {
-		display: block;
-	}
-
-	&.is-collapsed &__nav {
-		display: none;
-	}
-
 	// site-sidebar__menu
 	&__menu {
 		display: flex;
 		flex-direction: column;
-		gap: rem(2);
+		gap: rem(11);
 	}
 
 	// site-sidebar__menu
@@ -124,6 +129,7 @@
 	&__logo {
 		display: block;
 		flex-shrink: 0;
+		overflow: hidden;
 		width: rem(193);
 		height: auto;
 		padding: 0;
@@ -136,8 +142,13 @@
 
 		svg {
 			display: block;
-			width: 100%;
+			width: rem(193);
+			max-width: none;
 			height: auto;
+
+			@media (min-width: $md1) {
+				width: rem(234);
+			}
 		}
 	}
 }

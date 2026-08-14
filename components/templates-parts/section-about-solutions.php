@@ -7,9 +7,9 @@
 
 $ntronica_about_img = IMG_PATH . '/about/';
 ?>
-<section class="section-about-solutions content-rail" id="solutions">
-	<div class="content-rail__inner">
-		<p class="section-about-solutions__lead"><?php esc_html_e( 'We develop and manufacture solutions for the following technological processes.', 'ntronica' ); ?></p>
+<section class="section-about-solutions" id="solutions">
+	<div class="container">
+		<p class="section-about-solutions__lead">We develop and manufacture solutions for the following technological processes.</p>
 
 		<div class="row section-about-solutions__grid">
 			<div class="col-12 col-md-4">
@@ -23,7 +23,7 @@ $ntronica_about_img = IMG_PATH . '/about/';
 							height="412"
 						>
 					</div>
-					<h3 class="section-about-solutions__caption"><?php esc_html_e( 'Thin films equipment', 'ntronica' ); ?></h3>
+					<h3 class="section-about-solutions__caption">Thin films equipment</h3>
 				</article>
 			</div>
 
@@ -38,7 +38,7 @@ $ntronica_about_img = IMG_PATH . '/about/';
 							height="413"
 						>
 					</div>
-					<h3 class="section-about-solutions__caption"><?php esc_html_e( 'Wet process equipment', 'ntronica' ); ?></h3>
+					<h3 class="section-about-solutions__caption">Wet process equipment</h3>
 				</article>
 			</div>
 
@@ -53,7 +53,7 @@ $ntronica_about_img = IMG_PATH . '/about/';
 							height="413"
 						>
 					</div>
-					<h3 class="section-about-solutions__caption"><?php esc_html_e( 'Process control', 'ntronica' ); ?></h3>
+					<h3 class="section-about-solutions__caption">Process control</h3>
 				</article>
 			</div>
 		</div>

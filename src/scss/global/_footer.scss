@@ -20,7 +20,7 @@
 	// site-footer__grid
 	&__grid {
 		// uses grid.scss .row
-		--gutter-x: 24px;
+		--gutter-x: rem(24);
 		--gutter-y: rem(24);
 		align-items: start;
 	}
@@ -273,7 +273,7 @@
 		display: block;
 		margin-bottom: rem(12);
 		color: $color-muted;
-		border-bottom: 1px solid $color-muted;
+		border-bottom: rem(1) solid $color-muted;
 		padding-bottom: rem(5);
 
 		@media (min-width: $md3) {

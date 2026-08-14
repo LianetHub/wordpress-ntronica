@@ -11,7 +11,7 @@
 	gap: rem(5);
 	min-height: rem(48);
 	padding: rem(8) rem(16);
-	border: 1px solid transparent;
+	border: rem(1) solid transparent;
 	border-radius: rem(52);
 	font-weight: 500;
 	font-size: rem(12);
@@ -223,16 +223,15 @@
 			}
 		}
 
-		@media (min-width: $md4) and (any-hover: hover) {
+		@media (any-hover: hover) {
 			&:hover:not(:disabled):not([aria-disabled="true"]) {
 				background: $color-black;
-				transform: translateY(rem(-2));
 			}
 		}
 
-		@media (max-width: 1199.98px) and (any-hover: hover) {
+		@media (min-width: $md4) and (any-hover: hover) {
 			&:hover:not(:disabled):not([aria-disabled="true"]) {
-				background: $color-black;
+				transform: translateY(rem(-2));
 			}
 		}
 
@@ -305,12 +304,6 @@
 			}
 		}
 
-		@media (max-width: 1199.98px) and (any-hover: hover) {
-			&:hover:not(:disabled):not([aria-disabled="true"]) {
-				background-color: $color-surface;
-			}
-		}
-
 		&:active:not(:disabled):not([aria-disabled="true"]) {
 			background-color: $color-surface;
 		}
@@ -318,7 +311,7 @@
 
 	&.btn--white-outline {
 		background: transparent;
-		border: 0.5px solid #fff;
+		border: rem(0.5) solid #fff;
 		color: #fff;
 
 		@media (any-hover: hover) {

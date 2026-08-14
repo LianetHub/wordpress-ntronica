@@ -2,7 +2,7 @@
 @use "../mixins" as *;
 
 .section-overview {
-	padding-top: rem(0);
+	padding-top: 0;
 
 	@media (min-width: $md6) {
 		padding-top: rem(18);
@@ -40,7 +40,7 @@
 		}
 
 		@media (min-width: $md1) {
-			margin-bottom: rem(20);
+			margin-bottom: rem(50);
 			font-size: rem(25);
 			line-height: rem(19);
 		}
@@ -50,30 +50,21 @@
 	&__layout {
 		// uses grid.scss .row
 		--gutter-x: 24px;
-		--gutter-y: rem(16);
+		--gutter-y: #{rem(16)};
 
 		@media (min-width: $md6) {
-			--gutter-y: rem(0);
-			align-items: end;
+			--gutter-y: 0;
+			align-items: start;
 		}
 	}
 
 	// section-overview__title
 	&__title {
-		padding-top: rem(26);
+		padding-top: rem(30);
 		min-width: 0;
 
 		@media (min-width: $md6) {
 			padding-top: 0;
-			margin-bottom: rem(20);
-		}
-
-		@media (min-width: $md3) {
-			margin-bottom: rem(24);
-		}
-
-		@media (min-width: $md2) {
-			margin-bottom: rem(30);
 		}
 	}
 
@@ -88,20 +79,23 @@
 		color: $color-black;
 
 		@media (min-width: $md6) {
-			margin-top: 0;
+			margin-top: rem(16);
 		}
 
 		@media (min-width: $md3) {
+			margin-top: rem(24);
 			font-size: rem(18);
 			line-height: rem(21);
 		}
 
 		@media (min-width: $md2) {
+			margin-top: rem(30);
 			font-size: rem(21);
 			line-height: rem(24);
 		}
 
 		@media (min-width: $md1) {
+			margin-top: rem(36);
 			font-size: rem(26);
 			line-height: rem(32);
 		}
@@ -111,7 +105,7 @@
 	&__subtitle {
 		margin-top: rem(30);
 		min-width: 0;
-		font-family: $font-family;
+		font-family: $font-robert;
 		font-weight: 700;
 		font-style: italic;
 		font-size: rem(18);
@@ -120,20 +114,17 @@
 
 		@media (min-width: $md6) {
 			margin-top: 0;
-			margin-bottom: rem(20);
-			line-height: rem(15);
+			line-height: 1;
 		}
 
 		@media (min-width: $md3) {
-			margin-bottom: rem(24);
 			font-size: rem(24);
 			line-height: rem(16);
 		}
 
 		@media (min-width: $md2) {
-			margin-bottom: rem(30);
 			font-size: rem(28);
-			line-height: rem(25);
+			line-height: rem(19);
 		}
 
 		@media (min-width: $md1) {
@@ -147,8 +138,16 @@
 		margin-top: rem(16);
 		min-width: 0;
 
-		@media (min-width: $md6) {
-			margin-top: 0;
+		@media (min-width: $md3) {
+			margin-top: rem(24);
+		}
+
+		@media (min-width: $md2) {
+			margin-top: rem(30);
+		}
+
+		@media (min-width: $md1) {
+			margin-top: rem(36);
 		}
 	}
 
@@ -216,40 +215,40 @@
 
 	// section-products__lead
 	&__lead {
-		max-width: 322px;
+		max-width: rem(322);
 		margin-bottom: rem(30);
 
 		@media (min-width: $md6) {
-			max-width: 318px;
+			max-width: rem(318);
 		}
 
 		@media (min-width: $md5) {
-			max-width: 378px;
+			max-width: rem(378);
 		}
 
 		@media (min-width: $md4) {
-			max-width: 408px;
+			max-width: rem(408);
 		}
 
 		@media (min-width: $md3) {
-			max-width: 528px;
+			max-width: rem(528);
 			margin-bottom: rem(40);
 		}
 
 		@media (min-width: $md2) {
-			max-width: 672px;
+			max-width: rem(672);
 			margin-bottom: rem(70);
 		}
 
 		@media (min-width: $md1) {
-			max-width: 945px;
+			max-width: rem(945);
 		}
 	}
 
 	// section-products__grid
 	&__grid {
 		// uses grid.scss .row
-		--gutter-x: 24px;
+		--gutter-x: rem(24);
 		--gutter-y: rem(30);
 		margin-bottom: rem(30);
 
@@ -319,35 +318,35 @@
 	// section-vacancies__title
 	&__title {
 		margin-bottom: rem(40);
-		max-width: 322px;
+		max-width: rem(322);
 		line-height: rem(24);
 
 		@media (min-width: $md6) {
-			max-width: 318px;
+			max-width: rem(318);
 			line-height: rem(20);
 		}
 
 		@media (min-width: $md5) {
-			max-width: 378px;
+			max-width: rem(378);
 		}
 
 		@media (min-width: $md4) {
-			max-width: 408px;
+			max-width: rem(408);
 		}
 
 		@media (min-width: $md3) {
 			margin-bottom: rem(50);
-			max-width: 528px;
+			max-width: rem(528);
 		}
 
 		@media (min-width: $md2) {
 			margin-bottom: rem(60);
-			max-width: 672px;
+			max-width: rem(672);
 		}
 
 		@media (min-width: $md1) {
 			margin-bottom: rem(80);
-			max-width: 945px;
+			max-width: rem(945);
 		}
 	}
 
@@ -359,7 +358,7 @@
 	// section-vacancies__grid
 	&__grid {
 		// uses grid.scss .row
-		--gutter-x: 24px;
+		--gutter-x: rem(24);
 		--gutter-y: rem(40);
 		align-items: start;
 
@@ -499,33 +498,33 @@
 
 	// section-news__lead
 	&__lead {
-		max-width: 322px;
+		max-width: rem(322);
 		margin-bottom: rem(20);
 
 		@media (min-width: $md6) {
-			max-width: 318px;
+			max-width: rem(318);
 		}
 
 		@media (min-width: $md5) {
-			max-width: 378px;
+			max-width: rem(378);
 		}
 
 		@media (min-width: $md4) {
-			max-width: 408px;
+			max-width: rem(408);
 		}
 
 		@media (min-width: $md3) {
-			max-width: 528px;
+			max-width: rem(528);
 			margin-bottom: rem(24);
 		}
 
 		@media (min-width: $md2) {
-			max-width: 672px;
+			max-width: rem(672);
 			margin-bottom: rem(30);
 		}
 
 		@media (min-width: $md1) {
-			max-width: 945px;
+			max-width: rem(945);
 			margin-bottom: rem(36);
 		}
 	}
@@ -533,7 +532,7 @@
 	// section-news__grid
 	&__grid {
 		// uses grid.scss .row
-		--gutter-x: 24px;
+		--gutter-x: rem(24);
 		--gutter-y: rem(0);
 		margin-bottom: rem(30);
 
@@ -606,7 +605,7 @@
 	// section-info__grid
 	&__grid {
 		// uses grid.scss .row
-		--gutter-x: 24px;
+		--gutter-x: rem(24);
 		--gutter-y: rem(30);
 
 		@media (min-width: $md6) {
@@ -676,14 +675,14 @@
 	// section-contact__title
 	&__title {
 		margin-bottom: rem(30);
-		max-width: 322px;
+		max-width: rem(322);
 
 		@media (min-width: $md6) {
-			max-width: 318px;
+			max-width: rem(318);
 		}
 
 		@media (min-width: $md5) {
-			max-width: 378px;
+			max-width: rem(378);
 		}
 
 		@media (min-width: $md3) {

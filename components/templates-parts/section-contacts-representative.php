@@ -7,9 +7,9 @@
 
 $ntronica_contacts_img = IMG_PATH . '/contacts/';
 ?>
-<section class="section-contacts-representative content-rail" id="our-representative">
-	<div class="content-rail__inner">
-		<h2 class="section-title section-contacts-representative__title"><?php esc_html_e( 'Our representative', 'ntronica' ); ?></h2>
+<section class="section-contacts-representative" id="our-representative">
+	<div class="container">
+		<h2 class="section-title section-contacts-representative__title">Our representative</h2>
 
 		<div class="section-contacts-representative__map">
 			<img

@@ -9,24 +9,24 @@ $ntronica_img = IMG_PATH . '/home/';
 
 $products = array(
 	array(
-		'title' => __( 'Thin films equipment', 'ntronica' ),
+		'title' => 'Thin films equipment',
 		'img'   => $ntronica_img . 'product-thin-films.jpg',
 	),
 	array(
-		'title' => __( 'Wet process equipment', 'ntronica' ),
+		'title' => 'Wet process equipment',
 		'img'   => $ntronica_img . 'product-wet-process.jpg',
 	),
 	array(
-		'title' => __( 'Process control', 'ntronica' ),
+		'title' => 'Process control',
 		'img'   => $ntronica_img . 'product-process-control.jpg',
 	),
 );
 ?>
-<section class="section-products content-rail" id="products">
-	<div class="content-rail__inner">
-		<h2 class="section-title section-products__title"><?php esc_html_e( 'Products', 'ntronica' ); ?></h2>
+<section class="section-products" id="products">
+	<div class="container">
+		<h2 class="section-title section-products__title">Products</h2>
 		<p class="section-lead section-products__lead">
-			<?php esc_html_e( 'We design and manufacture semiconductor manufacturing tools suitable for both R&D labs and mass production at various scales. Our equipment is available in stand-alone and cluster configurations.', 'ntronica' ); ?>
+			We design and manufacture semiconductor manufacturing tools suitable for both R&amp;D labs and mass production at various scales. Our equipment is available in stand-alone and cluster configurations.
 		</p>
 
 		<div class="row section-products__grid">
@@ -51,7 +51,7 @@ $products = array(
 
 		<div class="section-products__more">
 			<a class="link-more" href="#">
-				<span><?php esc_html_e( 'LEARN MORE', 'ntronica' ); ?></span>
+				<span>LEARN MORE</span>
 				<span class="link-more__arrow" aria-hidden="true">→</span>
 			</a>
 		</div>

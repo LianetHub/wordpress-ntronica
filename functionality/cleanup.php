@@ -35,7 +35,7 @@ add_filter( 'the_generator', '__return_empty_string' );
  * Disable feed endpoints.
  */
 function ntronica_disable_feeds() {
-	wp_die( esc_html__( 'No feed available', 'ntronica' ), '', array( 'response' => 404 ) );
+	wp_die( 'No feed available', '', array( 'response' => 404 ) );
 }
 
 add_action( 'do_feed', 'ntronica_disable_feeds', 1 );

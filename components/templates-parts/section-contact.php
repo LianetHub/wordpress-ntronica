@@ -5,27 +5,27 @@
  * @package ntronica
  */
 ?>
-<section class="section-contact content-rail" id="contacts">
-	<div class="content-rail__inner">
-		<h2 class="section-title section-contact__title"><?php esc_html_e( 'Contact us', 'ntronica' ); ?></h2>
+<section class="section-contact" id="contacts">
+	<div class="container">
+		<h2 class="section-title section-contact__title">Contact us</h2>
 
 		<form class="home-form" action="#" method="post" enctype="multipart/form-data">
 			<div class="row home-form__row home-form__row--primary">
 				<div class="col-12 col-md-6 col-xl-4">
 					<div class="home-form__field">
-						<label class="home-form__label" for="contact-name"><?php esc_html_e( 'Name*', 'ntronica' ); ?></label>
-						<input class="home-form__input" type="text" id="contact-name" name="name" required autocomplete="name" placeholder="<?php esc_attr_e( 'Enter your name', 'ntronica' ); ?>">
+						<label class="home-form__label" for="contact-name">Name*</label>
+						<input class="home-form__input" type="text" id="contact-name" name="name" required autocomplete="name" placeholder="Enter your name">
 					</div>
 				</div>
 				<div class="col-12 col-md-6 col-xl-4">
 					<div class="home-form__field">
-						<label class="home-form__label" for="contact-email"><?php esc_html_e( 'E-mail*', 'ntronica' ); ?></label>
+						<label class="home-form__label" for="contact-email">E-mail*</label>
 						<input class="home-form__input" type="email" id="contact-email" name="email" required autocomplete="email">
 					</div>
 				</div>
 				<div class="col-12 col-md-6 col-xl-4">
 					<div class="home-form__field home-form__field--phone">
-						<label class="home-form__label" for="contact-phone"><?php esc_html_e( 'Phone number', 'ntronica' ); ?></label>
+						<label class="home-form__label" for="contact-phone">Phone number</label>
 						<input class="home-form__input" type="tel" id="contact-phone" name="phone" autocomplete="tel">
 					</div>
 				</div>
@@ -34,14 +34,14 @@
 			<div class="row home-form__row home-form__row--message">
 				<div class="col-12 col-md-6 col-xl-8">
 					<div class="home-form__field">
-						<label class="home-form__label" for="contact-message"><?php esc_html_e( 'Message', 'ntronica' ); ?></label>
+						<label class="home-form__label" for="contact-message">Message</label>
 						<textarea class="home-form__textarea" id="contact-message" name="message" rows="1"></textarea>
 					</div>
 				</div>
 				<div class="col-12 col-md-6 col-xl-4">
 					<div class="home-form__field">
 						<label class="home-form__file" for="contact-file">
-							<span><?php esc_html_e( 'ADD FILE', 'ntronica' ); ?></span>
+							<span>ADD FILE</span>
 							<input type="file" id="contact-file" name="file">
 						</label>
 					</div>
@@ -49,10 +49,10 @@
 			</div>
 
 			<div class="home-form__actions">
-				<button class="home-form__submit" type="submit"><?php esc_html_e( 'SEND REQUEST', 'ntronica' ); ?></button>
+				<button class="home-form__submit" type="submit">SEND REQUEST</button>
 				<label class="home-form__consent">
 					<input class="home-form__checkbox" type="checkbox" name="consent" value="1" required>
-					<span><?php esc_html_e( 'By submitting this form, I agree to the Privacy Policy & Terms of Service', 'ntronica' ); ?></span>
+					<span>By submitting this form, I agree to the Privacy Policy &amp; Terms of Service</span>
 				</label>
 			</div>
 		</form>

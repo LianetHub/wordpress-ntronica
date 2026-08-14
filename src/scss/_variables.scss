@@ -39,6 +39,42 @@ $color-surface-mint: $color-surface;
 $color-surface-tab: $color-white;
 $color-surface-uikit: $color-surface;
 
+// Layout (Main 430) — collapsed sidebar
+$sidebar-width: 50px;
+$content-pad-left: 30px;
+$content-pad-right: 28px;
+$content-width: 322px;
+
+// Layout (Main 768)
+$sidebar-width-768: 52px;
+$content-pad-left-768: 28px;
+$content-pad-right-768: 28px;
+$content-width-768: 660px;
+
+// Layout (Main 1024)
+$sidebar-width-1024: 76px;
+$content-pad-left-1024: 138px;
+$content-pad-right-1024: 30px;
+$content-width-1024: 780px;
+
+// Layout (Main 1200)
+$sidebar-width-1200: 234px;
+$content-pad-left-1200: 87px;
+$content-pad-right-1200: 39px;
+$content-width-1200: 840px;
+
+// Layout (Main 1440)
+$content-width-1440: 1080px;
+
+// Layout (Main 1728)
+$content-width-1728: 1368px;
+
+// Layout (Main 2560)
+$sidebar-width-2560: 274px;
+$content-pad-left-2560: 93px;
+$content-pad-right-2560: 279px;
+$content-width-2560: 1914px;
+
 // States
 $state-disabled-opacity: 0.3;
 $state-tab-disabled-opacity: 0.5;

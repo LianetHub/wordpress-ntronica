@@ -5,14 +5,14 @@
  * @package ntronica
  */
 ?>
-<section class="section-info content-rail" id="about">
-	<div class="content-rail__inner">
-		<h2 class="section-title section-info__title"><?php esc_html_e( 'Company information', 'ntronica' ); ?></h2>
+<section class="section-info" id="about">
+	<div class="container">
+		<h2 class="section-title section-info__title">Company information</h2>
 
 		<div class="row section-info__grid">
 			<div class="col-12 col-md-6">
 				<div class="section-info__text">
-					<p><?php esc_html_e( 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Lorem ipsum dolor sit amet, consectetuer adipiscing sit amet, consectetuer. Lorem ipsum dolor sit amet, consectetuer adipiscing sit amet, consectetuer. Lorem ipsum dolor sit amet, consectetuer.', 'ntronica' ); ?></p>
+					<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Lorem ipsum dolor sit amet, consectetuer adipiscing sit amet, consectetuer. Lorem ipsum dolor sit amet, consectetuer adipiscing sit amet, consectetuer. Lorem ipsum dolor sit amet, consectetuer.</p>
 				</div>
 			</div>
 
@@ -21,13 +21,13 @@
 					<div class="contact-list row gx-3">
 						<div class="col-auto">
 							<div class="contact-list__labels">
-								<p><?php esc_html_e( 'Mail', 'ntronica' ); ?></p>
+								<p>Mail</p>
 								<p>&nbsp;</p>
-								<p><?php esc_html_e( 'Tel', 'ntronica' ); ?></p>
-								<p><?php esc_html_e( 'Add', 'ntronica' ); ?></p>
+								<p>Tel</p>
+								<p>Add</p>
 								<p>&nbsp;</p>
 								<p>&nbsp;</p>
-								<p><?php esc_html_e( 'CIN', 'ntronica' ); ?></p>
+								<p>CIN</p>
 							</div>
 						</div>
 						<div class="col-auto">

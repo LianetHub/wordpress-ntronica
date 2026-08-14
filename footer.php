@@ -7,15 +7,15 @@
 ?>
 		</main>
 		<footer class="site-footer band-full">
-			<div class="band-full__inner">
+			<div class="container">
 				<div class="row site-footer__grid g-4">
 					<div class="col-12 col-xxl-3 site-footer__copy">
 						<div class="row">
 							<div class="col-12 col-md-4 col-xxl-12">
-								<p class="site-footer__year"><?php esc_html_e( 'Copyright (c) 2025-2026', 'ntronica' ); ?></p>
+								<p class="site-footer__year">Copyright (c) 2025-2026</p>
 							</div>
 							<div class="col-12 col-md-8 col-xxl-12">
-								<p class="site-footer__company"><?php esc_html_e( 'Nanotronica India Private Limited', 'ntronica' ); ?></p>
+								<p class="site-footer__company">Nanotronica India Private Limited</p>
 							</div>
 						</div>
 					</div>
@@ -24,12 +24,12 @@
 						<div class="site-footer__block site-footer__block--mail">
 							<div class="site-footer__labels">
 								<p>
-									<span class="site-footer__label-full"><?php esc_html_e( 'Mail', 'ntronica' ); ?></span>
-									<span class="site-footer__label-short"><?php esc_html_e( 'Eml', 'ntronica' ); ?></span>
+									<span class="site-footer__label-full">Mail</span>
+									<span class="site-footer__label-short">Eml</span>
 								</p>
 								<p>&nbsp;</p>
-								<p><?php esc_html_e( 'Tel', 'ntronica' ); ?></p>
-								<p><?php esc_html_e( 'Web', 'ntronica' ); ?></p>
+								<p>Tel</p>
+								<p>Web</p>
 							</div>
 							<div class="site-footer__markers" aria-hidden="true">
 								<span class="site-footer__marker site-footer__marker--mail"></span>
@@ -48,7 +48,7 @@
 					<div class="col-12 col-md-4 col-xxl-3">
 						<div class="site-footer__block site-footer__block--add">
 							<div class="site-footer__labels">
-								<p><?php esc_html_e( 'Add', 'ntronica' ); ?></p>
+								<p>Add</p>
 							</div>
 							<div class="site-footer__markers" aria-hidden="true">
 								<span class="site-footer__marker site-footer__marker--add"></span>
@@ -64,10 +64,10 @@
 
 					<div class="col-12 col-md-4 col-xxl-3">
 						<div class="site-footer__links">
-							<a class="site-footer__search site-footer__link" href="#"><?php esc_html_e( 'Search', 'ntronica' ); ?></a>
+							<a class="site-footer__search site-footer__link" href="#">Search</a>
 							<div class="site-footer__policies">
-								<a class="site-footer__link" href="#"><?php esc_html_e( 'Privacy policy', 'ntronica' ); ?></a>
-								<a class="site-footer__link" href="#"><?php esc_html_e( 'Terms of use', 'ntronica' ); ?></a>
+								<a class="site-footer__link" href="#">Privacy policy</a>
+								<a class="site-footer__link" href="#">Terms of use</a>
 							</div>
 						</div>
 					</div>

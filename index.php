@@ -7,7 +7,7 @@
 
 get_header();
 ?>
-<div class="_container">
+<div class="container">
 	<?php if ( have_posts() ) : ?>
 		<?php
 		while ( have_posts() ) :
@@ -22,7 +22,7 @@ get_header();
 		the_posts_navigation();
 		?>
 	<?php else : ?>
-		<p><?php esc_html_e( 'Nothing found.', 'ntronica' ); ?></p>
+		<p>Nothing found.</p>
 	<?php endif; ?>
 </div>
 <?php

@@ -74,10 +74,10 @@ $checkbox-check-mark: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/20
 	&__input,
 	input[type="checkbox"] {
 		position: absolute;
-		width: 1px;
-		height: 1px;
+		width: rem(1);
+		height: rem(1);
 		padding: 0;
-		margin: -1px;
+		margin: rem(-1);
 		overflow: hidden;
 		clip: rect(0, 0, 0, 0);
 		white-space: nowrap;
@@ -197,8 +197,8 @@ $checkbox-check-mark: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/20
 	&:has(input[type="checkbox"]:focus-visible) .checkbox__box::before,
 	&:has(input[type="checkbox"]:focus-visible) .checkbox__text::before,
 	&:has(input[type="checkbox"]:focus-visible) .wpcf7-list-item-label::before {
-		outline: 2px solid $color-black;
-		outline-offset: 2px;
+		outline: rem(2) solid $color-black;
+		outline-offset: rem(2);
 	}
 
 	&:has(.checkbox__input:disabled),

@@ -9,55 +9,55 @@
 
 $vacancies = array(
 	array(
-		'title' => __( 'Leading specialist of chemical processing equipment', 'ntronica' ),
-		'dept'  => __( 'Human Resources', 'ntronica' ),
+		'title' => 'Leading specialist of chemical processing equipment',
+		'dept'  => 'Human Resources',
 	),
 	array(
-		'title' => __( 'Strategy manager', 'ntronica' ),
-		'dept'  => __( 'Projects, Programs and Change', 'ntronica' ),
+		'title' => 'Strategy manager',
+		'dept'  => 'Projects, Programs and Change',
 	),
 	array(
-		'title' => __( 'Operation specialist', 'ntronica' ),
-		'dept'  => __( 'Human Resources', 'ntronica' ),
+		'title' => 'Operation specialist',
+		'dept'  => 'Human Resources',
 	),
 	array(
-		'title' => __( 'Production engineer', 'ntronica' ),
-		'dept'  => __( 'Manufacturing', 'ntronica' ),
+		'title' => 'Production engineer',
+		'dept'  => 'Manufacturing',
 	),
 	array(
-		'title' => __( 'Senior scientist', 'ntronica' ),
-		'dept'  => __( 'Research and Technology Development', 'ntronica' ),
+		'title' => 'Senior scientist',
+		'dept'  => 'Research and Technology Development',
 	),
 	array(
-		'title' => __( 'Production engineer', 'ntronica' ),
-		'dept'  => __( 'Manufacturing', 'ntronica' ),
+		'title' => 'Production engineer',
+		'dept'  => 'Manufacturing',
 	),
 	array(
-		'title' => __( 'Operation specialist', 'ntronica' ),
-		'dept'  => __( 'Human Resources', 'ntronica' ),
+		'title' => 'Operation specialist',
+		'dept'  => 'Human Resources',
 	),
 	array(
-		'title' => __( 'Strategy manager', 'ntronica' ),
-		'dept'  => __( 'Projects, Programs and Change', 'ntronica' ),
+		'title' => 'Strategy manager',
+		'dept'  => 'Projects, Programs and Change',
 	),
 	array(
-		'title' => __( 'Operation specialist', 'ntronica' ),
-		'dept'  => __( 'Human Resources', 'ntronica' ),
+		'title' => 'Operation specialist',
+		'dept'  => 'Human Resources',
 	),
 	array(
-		'title' => __( 'Production engineer', 'ntronica' ),
-		'dept'  => __( 'Manufacturing', 'ntronica' ),
+		'title' => 'Production engineer',
+		'dept'  => 'Manufacturing',
 	),
 	array(
-		'title' => __( 'Senior scientist', 'ntronica' ),
-		'dept'  => __( 'Research and Technology Development', 'ntronica' ),
+		'title' => 'Senior scientist',
+		'dept'  => 'Research and Technology Development',
 	),
 );
 ?>
 <section class="section-vacancies band-full" id="careers">
-	<div class="band-full__inner">
+	<div class="container">
 		<h2 class="section-title section-title--light section-vacancies__title">
-			<?php esc_html_e( 'Immediate vacancies', 'ntronica' ); ?>
+			Immediate vacancies
 		</h2>
 
 		<div
@@ -67,8 +67,8 @@ $vacancies = array(
 			<div class="swiper-wrapper"></div>
 
 			<div class="section-vacancies__nav section-vacancies__nav--hidden">
-				<button type="button" class="section-vacancies__arrow section-vacancies__arrow--prev" aria-label="<?php esc_attr_e( 'Previous vacancies', 'ntronica' ); ?>">←</button>
-				<button type="button" class="section-vacancies__arrow section-vacancies__arrow--next" aria-label="<?php esc_attr_e( 'Next vacancies', 'ntronica' ); ?>">→</button>
+				<button type="button" class="section-vacancies__arrow section-vacancies__arrow--prev" aria-label="Previous vacancies">←</button>
+				<button type="button" class="section-vacancies__arrow section-vacancies__arrow--next" aria-label="Next vacancies">→</button>
 			</div>
 		</div>
 	</div>

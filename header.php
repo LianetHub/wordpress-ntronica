@@ -26,8 +26,18 @@
 				<li><a class="site-sidebar__link" href="#"><?php esc_html_e( 'Technology', 'ntronica' ); ?></a></li>
 				<li><a class="site-sidebar__link" href="#"><?php esc_html_e( 'Products', 'ntronica' ); ?></a></li>
 				<li><a class="site-sidebar__link" href="#"><?php esc_html_e( 'News', 'ntronica' ); ?></a></li>
-				<li><a class="site-sidebar__link" href="#"><?php esc_html_e( 'Careers', 'ntronica' ); ?></a></li>
-				<li><a class="site-sidebar__link" href="#"><?php esc_html_e( 'Contacts', 'ntronica' ); ?></a></li>
+				<li>
+					<a
+						class="site-sidebar__link<?php echo is_page( 'careers' ) ? ' is-active' : ''; ?>"
+						href="<?php echo esc_url( home_url( '/careers/' ) ); ?>"
+					><?php esc_html_e( 'Careers', 'ntronica' ); ?></a>
+				</li>
+				<li>
+					<a
+						class="site-sidebar__link<?php echo is_page( 'contacts' ) ? ' is-active' : ''; ?>"
+						href="<?php echo esc_url( home_url( '/contacts/' ) ); ?>"
+					><?php esc_html_e( 'Contacts', 'ntronica' ); ?></a>
+				</li>
 			</ul>
 		</nav>
 		<a class="site-sidebar__logo site-sidebar__logo--mark" href="<?php echo esc_url( home_url( '/' ) ); ?>">
@@ -48,4 +58,4 @@
 		</a>
 	</aside>
 	<div class="site-body">
-		<main class="main<?php echo is_front_page() ? ' main--home' : ( is_page( 'about' ) ? ' main--about' : '' ); ?>">
+		<main class="main<?php echo is_front_page() ? ' main--home' : ( is_page( 'about' ) ? ' main--about' : ( is_page( 'careers' ) ? ' main--careers' : ( is_page( 'contacts' ) ? ' main--contacts' : ( is_404() ? ' main--error' : '' ) ) ) ); ?>">

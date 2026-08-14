@@ -14,7 +14,7 @@
 				<div class="col-12 col-md-6 col-xl-4">
 					<div class="home-form__field">
 						<label class="home-form__label" for="contact-name"><?php esc_html_e( 'Name*', 'ntronica' ); ?></label>
-						<input class="home-form__input" type="text" id="contact-name" name="name" required autocomplete="name">
+						<input class="home-form__input" type="text" id="contact-name" name="name" required autocomplete="name" placeholder="<?php esc_attr_e( 'Enter your name', 'ntronica' ); ?>">
 					</div>
 				</div>
 				<div class="col-12 col-md-6 col-xl-4">

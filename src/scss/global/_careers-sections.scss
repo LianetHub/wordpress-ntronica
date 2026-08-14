@@ -1,0 +1,106 @@
+@use "../variables" as *;
+@use "../mixins" as *;
+
+.section-careers-team {
+	padding-top: rem(50);
+	padding-bottom: rem(50);
+
+	@media (min-width: $md6) {
+		padding-top: rem(70);
+		padding-bottom: rem(70);
+	}
+
+	@media (min-width: $md3) {
+		padding-top: rem(80);
+		padding-bottom: rem(90);
+	}
+
+	@media (min-width: $md2) {
+		padding-top: rem(90);
+		padding-bottom: rem(100);
+	}
+
+	@media (min-width: $md1) {
+		padding-top: rem(90);
+		padding-bottom: rem(110);
+	}
+
+	// section-careers-team__title
+	&__title {
+		margin-bottom: rem(30);
+
+		@media (min-width: $md3) {
+			margin-bottom: rem(40);
+		}
+
+		@media (min-width: $md2) {
+			margin-bottom: rem(50);
+		}
+
+		@media (min-width: $md1) {
+			margin-bottom: rem(70);
+		}
+	}
+
+	// section-careers-team__grid
+	&__grid {
+		--gutter-x: 24px;
+		--gutter-y: rem(24);
+
+		@media (min-width: $md6) {
+			--gutter-y: rem(0);
+		}
+	}
+
+	// section-careers-team__text
+	&__text {
+		min-width: 0;
+		color: $color-black;
+
+		// section-careers-team__text--primary
+		&--primary {
+			font-family: $font-family;
+			font-weight: 400;
+			font-size: rem(15);
+			line-height: rem(18);
+
+			@media (min-width: $md3) {
+				font-size: rem(18);
+				line-height: rem(21);
+			}
+
+			@media (min-width: $md2) {
+				font-size: rem(21);
+				line-height: rem(24);
+			}
+
+			@media (min-width: $md1) {
+				font-size: rem(26);
+				line-height: rem(32);
+			}
+		}
+
+		// section-careers-team__text--secondary
+		&--secondary {
+			font-family: $font-robert;
+			font-weight: 400;
+			font-size: rem(16);
+			line-height: rem(18);
+
+			@media (min-width: $md3) {
+				font-size: rem(19);
+				line-height: rem(21);
+			}
+
+			@media (min-width: $md2) {
+				font-size: rem(22);
+				line-height: rem(24);
+			}
+
+			@media (min-width: $md1) {
+				font-size: rem(27);
+				line-height: rem(29);
+			}
+		}
+	}
+}

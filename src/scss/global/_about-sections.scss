@@ -1,7 +1,7 @@
 @use "../variables" as *;
 @use "../mixins" as *;
 
-.section-about-hero {
+.page-hero {
 	position: relative;
 	overflow: hidden;
 	min-height: rem(380);
@@ -31,7 +31,7 @@
 		min-height: rem(1100);
 	}
 
-	// section-about-hero__media
+	// page-hero__media
 	&__media {
 		position: absolute;
 		inset: 0;
@@ -39,7 +39,7 @@
 		pointer-events: none;
 	}
 
-	// section-about-hero__img
+	// page-hero__img
 	&__img {
 		display: block;
 		width: 100%;
@@ -48,7 +48,7 @@
 		object-position: center top;
 	}
 
-	// section-about-hero__inner
+	// page-hero__inner
 	&__inner {
 		position: relative;
 		z-index: 1;
@@ -70,7 +70,7 @@
 		}
 	}
 
-	// section-about-hero__top
+	// page-hero__top
 	&__top {
 		display: none;
 		align-items: flex-start;
@@ -84,7 +84,7 @@
 		}
 	}
 
-	// section-about-hero__nav
+	// page-hero__nav
 	&__nav {
 		display: flex;
 		flex: 1 1 auto;
@@ -92,7 +92,7 @@
 		min-width: 0;
 	}
 
-	// section-about-hero__nav-link
+	// page-hero__nav-link
 	&__nav-link {
 		flex: 1 1 0;
 		min-width: 0;
@@ -129,7 +129,7 @@
 		}
 	}
 
-	// section-about-hero__lang
+	// page-hero__lang
 	&__lang {
 		flex: 0 0 auto;
 		font-family: $font-family;
@@ -156,7 +156,7 @@
 		}
 	}
 
-	// section-about-hero__tagline
+	// page-hero__tagline
 	&__tagline {
 		max-width: rem(322);
 		margin-top: rem(0);
@@ -194,9 +194,14 @@
 			font-size: rem(42);
 			line-height: rem(50);
 		}
+
+		// page-hero__tagline--dark
+		&--dark {
+			color: $color-black;
+		}
 	}
 
-	// section-about-hero__title
+	// page-hero__title
 	&__title {
 		margin-top: auto;
 		padding-top: rem(80);

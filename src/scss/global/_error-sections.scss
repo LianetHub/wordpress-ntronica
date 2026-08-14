@@ -1,0 +1,168 @@
+@use "../variables" as *;
+@use "../mixins" as *;
+
+.section-error {
+	flex: 1 1 auto;
+	display: flex;
+	flex-direction: column;
+	padding-top: rem(20);
+	padding-bottom: rem(40);
+	color: $color-white;
+
+	@media (min-width: $md6) {
+		padding-top: rem(22);
+		padding-bottom: rem(50);
+	}
+
+	@media (min-width: $md1) {
+		padding-top: rem(27);
+		padding-bottom: rem(70);
+	}
+
+	// section-error__top
+	&__top {
+		display: flex;
+		align-items: flex-end;
+		justify-content: space-between;
+		gap: rem(24);
+		margin-bottom: rem(40);
+
+		@media (min-width: $md6) {
+			margin-bottom: rem(48);
+		}
+
+		@media (min-width: $md1) {
+			margin-bottom: rem(87);
+		}
+	}
+
+	// section-error__crumb
+	&__crumb {
+		font-family: $font-robert;
+		font-weight: 500;
+		font-size: rem(15);
+		line-height: rem(13);
+		color: $color-white;
+
+		@media (min-width: $md3) {
+			font-size: rem(18);
+			line-height: rem(14);
+		}
+
+		@media (min-width: $md2) {
+			font-size: rem(21);
+			line-height: rem(15);
+		}
+
+		@media (min-width: $md1) {
+			font-size: rem(26);
+			line-height: rem(19);
+		}
+	}
+
+	// section-error__lang
+	&__lang {
+		display: none;
+		flex: 0 0 auto;
+		font-family: $font-family;
+		font-weight: 700;
+		font-size: rem(15);
+		line-height: rem(13);
+		color: $color-white;
+		text-transform: lowercase;
+		text-align: right;
+
+		@media (min-width: $md6) {
+			display: block;
+		}
+
+		@media (min-width: $md3) {
+			font-size: rem(18);
+			line-height: rem(14);
+		}
+
+		@media (min-width: $md2) {
+			font-size: rem(21);
+			line-height: rem(15);
+		}
+
+		@media (min-width: $md1) {
+			font-size: rem(25);
+			line-height: rem(19);
+		}
+	}
+
+	// section-error__body
+	&__body {
+		--gutter-x: 24px;
+	}
+
+	// section-error__title
+	&__title {
+		margin-bottom: rem(20);
+		font-family: $font-family;
+		font-weight: 700;
+		font-size: rem(28);
+		line-height: rem(22);
+		color: $color-white;
+
+		@media (min-width: $md6) {
+			margin-bottom: rem(24);
+			font-size: rem(32);
+			line-height: rem(24);
+		}
+
+		@media (min-width: $md3) {
+			font-size: rem(36);
+			line-height: rem(26);
+		}
+
+		@media (min-width: $md2) {
+			font-size: rem(40);
+			line-height: rem(28);
+		}
+
+		@media (min-width: $md1) {
+			margin-bottom: rem(36);
+			font-size: rem(46);
+			line-height: rem(31);
+		}
+	}
+
+	// section-error__text
+	&__text {
+		margin-bottom: rem(28);
+		font-family: $font-family;
+		font-weight: 400;
+		font-size: rem(16);
+		line-height: rem(22);
+		color: $color-white;
+
+		@media (min-width: $md6) {
+			margin-bottom: rem(36);
+			font-size: rem(18);
+			line-height: rem(24);
+		}
+
+		@media (min-width: $md3) {
+			font-size: rem(21);
+			line-height: rem(28);
+		}
+
+		@media (min-width: $md2) {
+			font-size: rem(23);
+			line-height: rem(30);
+		}
+
+		@media (min-width: $md1) {
+			margin-bottom: rem(70);
+			font-size: rem(26);
+			line-height: rem(32);
+		}
+	}
+
+	// section-error__link
+	&__link {
+		color: $color-white;
+	}
+}

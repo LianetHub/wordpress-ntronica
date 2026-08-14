@@ -145,8 +145,16 @@ body {
 	flex: 1 1 auto;
 	background: $color-white;
 
-	&:not(.main--home):not(.main--about) {
+	&:not(.main--home):not(.main--about):not(.main--careers):not(.main--contacts):not(.main--error) {
 		padding-top: rem(40);
+	}
+
+	// main--error
+	&--error {
+		display: flex;
+		flex-direction: column;
+		background: $color-footer;
+		color: $color-white;
 	}
 }
 

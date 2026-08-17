@@ -40,8 +40,6 @@
 
 	// products-thin-films__text
 	&__text {
-		min-width: 0;
-
 		p + p {
 			margin-top: rem(16);
 		}
@@ -88,11 +86,6 @@
 		align-items: start;
 	}
 
-	// products-lines__col
-	&__col {
-		min-width: 0;
-	}
-
 	// products-lines__title
 	&__title {
 		margin-bottom: rem(16);
@@ -105,7 +98,6 @@
 	// products-lines__text
 	&__text {
 		margin-bottom: rem(30);
-		min-width: 0;
 
 		@media (min-width: $md6) {
 			margin-bottom: rem(40);

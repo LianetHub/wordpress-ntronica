@@ -98,7 +98,6 @@
 	&__link {
 		display: flex;
 		flex-direction: column;
-		min-width: 0;
 		color: inherit;
 	}
 
@@ -212,7 +211,6 @@
 	display: flex;
 	flex-direction: column;
 	gap: rem(6);
-	min-width: 0;
 
 	@media (min-width: $md6) {
 		gap: rem(10);

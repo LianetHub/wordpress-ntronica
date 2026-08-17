@@ -35,15 +35,9 @@
 		}
 	}
 
-	// about-overview__title
-	&__title {
-		min-width: 0;
-	}
-
 	// about-overview__subtitle
 	&__subtitle {
 		margin-top: rem(24);
-		min-width: 0;
 
 		@media (min-width: $md6) {
 			margin-top: 0;
@@ -53,7 +47,6 @@
 	// about-overview__intro
 	&__intro {
 		margin-top: rem(16);
-		min-width: 0;
 
 		@media (min-width: $md6) {
 			margin-top: rem(20);
@@ -71,13 +64,12 @@
 	// about-overview__features
 	&__features {
 		margin-top: rem(16);
-		min-width: 0;
 
 		@media (min-width: $md6) {
-			margin-top: rem(20);
+			margin-top: rem(16);
 		}
 
-		@media (min-width: $md3) {
+		@media (min-width: $md2) {
 			margin-top: rem(30);
 		}
 
@@ -187,7 +179,6 @@
 
 	// about-stats__accent
 	&__accent {
-		min-width: 0;
 		color: $color-black;
 	}
 
@@ -290,7 +281,6 @@
 
 	// about-solutions__lead
 	&__lead {
-		min-width: 0;
 		font-family: $font-family;
 		font-weight: 400;
 		font-size: rem(16);
@@ -317,11 +307,6 @@
 	&__grid {
 		--gutter-x: #{rem(24)};
 		--gutter-y: #{rem(30)};
-	}
-
-	// about-solutions__item
-	&__item {
-		min-width: 0;
 	}
 
 	// about-solutions__media

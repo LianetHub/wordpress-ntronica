@@ -18,38 +18,23 @@
 			</div>
 
 			<div class="col-12 col-md-6">
-				<div class="info__contacts">
-					<div class="contact-list row gx-3">
-						<div class="col-auto">
-							<div class="contact-list__labels">
-								<p>Mail</p>
-								<p>&nbsp;</p>
-								<p>Tel</p>
-								<p>Add</p>
-								<p>&nbsp;</p>
-								<p>&nbsp;</p>
-								<p>CIN</p>
-							</div>
-						</div>
-						<div class="col-auto">
-							<div class="contact-list__markers" aria-hidden="true">
-								<span class="contact-list__marker contact-list__marker--mail"></span>
-								<span class="contact-list__marker contact-list__marker--tel"></span>
-								<span class="contact-list__marker contact-list__marker--add"></span>
-								<span class="contact-list__marker contact-list__marker--cin"></span>
-							</div>
-						</div>
-						<div class="col">
-							<div class="contact-list__values">
-								<p>contact@ntronica.com</p>
-								<p>info@ntronica.com</p>
-								<p>+91 221-234-5678</p>
-								<p>8 Ulsoor Road, Yellapa Chetty Layout, Sivan Chetty Gardens, Ulsoor (Halasuru), Bengaluru, Bengaluru North, Karnataka, 560042, India</p>
-								<p>U46521KA2025FTC210805</p>
-							</div>
-						</div>
-					</div>
-				</div>
+				<ul class="feature-list">
+					<li data-label="Mail">
+						<a href="mailto:contact@ntronica.com">contact@ntronica.com</a> <br>
+						<a href="mailto:info@ntronica.com">info@ntronica.com</a>
+					</li>
+					<li data-label="Tel">
+						<a href="tel:+912212345678">+91 221-234-5678</a>
+					</li>
+					<li data-label="Add">
+						<address>
+							8 Ulsoor Road, Yellapa Chetty Layout, Sivan Chetty Gardens, Ulsoor (Halasuru), Bengaluru, Bengaluru North, Karnataka, 560042, India
+						</address>
+					</li>
+					<li data-label="CIN">
+						U46521KA2025FTC210805
+					</li>
+				</ul>
 			</div>
 		</div>
 	</div>

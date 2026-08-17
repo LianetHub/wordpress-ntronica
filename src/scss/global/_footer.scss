@@ -52,8 +52,6 @@
 
 	// footer__copy
 	&__copy {
-		min-width: 0;
-
 		.row {
 			--gutter-y: #{rem(4)};
 		}
@@ -110,7 +108,6 @@
 	&__address {
 		--address-text: #{rem(173)};
 		position: relative;
-		min-width: 0;
 		max-width: calc(var(--footer-label) + var(--footer-marker) + var(--footer-gap) + var(--address-text));
 		padding-left: calc(var(--footer-label) + var(--footer-marker) + var(--footer-gap));
 		font-family: $font-family;
@@ -151,7 +148,6 @@
 	}
 
 	.feature-list {
-		min-width: 0;
 		gap: 0;
 		--marker-col: calc(var(--footer-label) + var(--footer-marker));
 		--marker-size: var(--footer-marker);

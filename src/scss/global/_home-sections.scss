@@ -62,7 +62,6 @@
 	// overview__title
 	&__title {
 		padding-top: rem(30);
-		min-width: 0;
 
 		@media (min-width: $md6) {
 			padding-top: 0;
@@ -72,7 +71,6 @@
 	// overview__intro
 	&__intro {
 		margin-top: rem(15);
-		min-width: 0;
 
 		@media (min-width: $md6) {
 			margin-top: rem(16);
@@ -94,7 +92,6 @@
 	// overview__subtitle
 	&__subtitle {
 		margin-top: rem(30);
-		min-width: 0;
 
 		@media (min-width: $md6) {
 			margin-top: 0;
@@ -104,7 +101,6 @@
 	// overview__features
 	&__features {
 		margin-top: rem(16);
-		min-width: 0;
 
 		@media (min-width: $md3) {
 			margin-top: rem(24);
@@ -577,12 +573,6 @@
 		}
 	}
 
-	// info__text
-	&__text,
-	// info__contacts
-	&__contacts {
-		min-width: 0;
-	}
 }
 
 .contact {

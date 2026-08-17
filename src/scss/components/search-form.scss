@@ -5,7 +5,6 @@
 .search-form {
 	display: flex;
 	flex-direction: column;
-	min-width: 0;
 
 	// search-form__label
 	&__label {
@@ -18,7 +17,6 @@
 	// search-form__field
 	&__field {
 		position: relative;
-		min-width: 0;
 	}
 
 	// search-form__input

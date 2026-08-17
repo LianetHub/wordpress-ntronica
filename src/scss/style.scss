@@ -1,4 +1,5 @@
 @use "base";
+@use "typography";
 @use "fonts";
 @use "grid";
 @use "global/sidebar";
@@ -13,7 +14,6 @@
 @use "global/search-sections";
 @use "components/link-more";
 @use "components/search-form";
-@use "components/feature-list";
 @use "components/page-hero";
 @use "components/lang-switcher";
 @use "components/cards";

@@ -41,20 +41,7 @@ get_template_part(
 		'title'   => $ntronica_title,
 		'image'   => $ntronica_image,
 		'tagline' => $ntronica_tagline,
-		'nav'     => array(
-			array(
-				'href'  => '#events',
-				'label' => 'Events & news',
-			),
-			array(
-				'href'  => '#press',
-				'label' => 'Press releases',
-			),
-			array(
-				'href'  => '#media',
-				'label' => 'Media publications',
-			),
-		),
+		'nav'     => ntronica_get_page_section_nav('news'),
 	)
 );
 ?>

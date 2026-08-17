@@ -17,20 +17,7 @@ get_template_part(
 		'title' => 'About',
 		'image' => IMG_PATH . '/about/hero.webp',
 		'tagline' => 'We develop innovative equipment to enable the full cycle of microelectronics production and complex r&d activities',
-		'nav'   => array(
-			array(
-				'href'  => '#overview',
-				'label' => 'Company overview',
-			),
-			array(
-				'href'  => '#goal',
-				'label' => 'Our goal',
-			),
-			array(
-				'href'  => '#about-us',
-				'label' => 'About us',
-			),
-		),
+		'nav'   => ntronica_get_page_section_nav('about'),
 	)
 );
 ?>

@@ -7,7 +7,6 @@
 	overflow: hidden;
 	display: flex;
 	flex-direction: column;
-	aspect-ratio: 430 / 380;
 	max-height: 100dvh;
 	color: $color-white;
 	background: $color-text-muted;
@@ -15,27 +14,24 @@
 	background-position: center;
 	background-repeat: no-repeat;
 
+	@media (max-width:$md6) {
+		aspect-ratio: 430 / 380;
+	}
+
 	@media (min-width: $md6) {
-		aspect-ratio: 768 / 560;
+		min-height: rem(620);
 	}
 
 	@media (min-width: $md5) {
-		aspect-ratio: 1024 / 624;
-	}
-
-	@media (min-width: $md4) {
-		aspect-ratio: 1200 / 700;
+		min-height: rem(624);
 	}
 
 	@media (min-width: $md3) {
-		aspect-ratio: 1440 / 820;
-	}
-
-	@media (min-width: $md2) {
-		aspect-ratio: 1728 / 900;
+		min-height: rem(814);
 	}
 
 	@media (min-width: $md1) {
+		min-height: rem(1100);
 		aspect-ratio: 2560 / 1100;
 	}
 
@@ -52,8 +48,8 @@
 		padding-bottom: rem(50);
 
 		@media (min-width: $md6) {
-			padding-top: rem(22);
-			padding-bottom: rem(70);
+			padding-top: rem(20);
+			padding-bottom: rem(60);
 		}
 
 		@media (min-width: $md1) {
@@ -86,13 +82,11 @@
 	&__nav-list {
 		display: flex;
 		gap: rem(76);
-		min-width: 0;
 	}
 
 	// page-hero__nav-item
 	&__nav-item {
 		flex: 1 1 0;
-		min-width: 0;
 	}
 
 	// page-hero__nav-link
@@ -141,8 +135,8 @@
 
 		@media (min-width: $md6) {
 			align-self: flex-end;
-			max-width: 48%;
-			margin-top: rem(8);
+			max-width: 50%;
+			margin-top: rem(12);
 			font-size: rem(22);
 			line-height: math.div(26, 22);
 		}
@@ -158,8 +152,9 @@
 		}
 
 		@media (min-width: $md2) {
-			font-size: rem(32);
-			line-height: math.div(38, 32);
+			font-size: rem(30);
+			line-height: math.div(38, 30);
+			padding-left: 0.75rem;
 		}
 
 		@media (min-width: $md1) {
@@ -167,6 +162,7 @@
 			max-width: rem(945);
 			font-size: rem(42);
 			line-height: math.div(50, 42);
+			padding-left: 0;
 		}
 	}
 
@@ -204,13 +200,13 @@
 		@media (min-width: $md2) {
 			font-size: rem(220);
 			line-height: math.div(160, 220);
+			margin-left: em(-12, 298);
 		}
 
 		@media (min-width: $md1) {
 			padding-top: rem(160);
 			font-size: rem(298);
 			line-height: math.div(215, 298);
-			margin-left: em(-12, 298);
 		}
 	}
 }

@@ -13,7 +13,7 @@
 	overflow: hidden;
 	width: rem($sidebar-width);
 	height: 100vh;
-	padding: rem(13) rem(12);
+	padding: 0 rem(14) rem(12);
 	background-color: $color-black;
 	color: $color-white;
 	cursor: pointer;
@@ -22,7 +22,7 @@
 
 	@media (min-width: $md6) {
 		width: rem($sidebar-width-768);
-		padding: rem(13) rem(13);
+		padding: rem(12) rem(14);
 	}
 
 	@media (min-width: $md5) {
@@ -43,14 +43,58 @@
 
 	&.is-open {
 		justify-content: space-between;
-		width: rem($sidebar-width-1200);
+		width: 100%;
+		padding-top: rem(8);
 
 		.sidebar__nav {
 			display: block;
 		}
 
+		.sidebar__close {
+			display: flex;
+		}
+
+		.sidebar__lang {
+			display: block;
+		}
+
+		.sidebar__logo {
+			width: rem(133);
+		}
+
+		@media (min-width: $md6) {
+			width: rem($sidebar-width-open-768);
+			padding-top: rem(12);
+
+			.sidebar__lang {
+				display: none;
+			}
+		}
+
+		@media (min-width: $md5) {
+			width: rem($sidebar-width-1200);
+			padding-top: rem(18);
+
+			.sidebar__close {
+				display: none;
+			}
+
+			.sidebar__logo {
+				width: rem(193);
+			}
+		}
+
+		@media (min-width: $md4) {
+			padding-top: rem(17);
+		}
+
 		@media (min-width: $md1) {
 			width: rem($sidebar-width-2560);
+			padding-top: rem(16);
+
+			.sidebar__logo {
+				width: rem(234);
+			}
 		}
 	}
 
@@ -59,8 +103,14 @@
 		width: rem($sidebar-width);
 
 		.sidebar__logo {
+			width: rem(27);
+
+			@media (min-width: $md5) {
+				width: rem(39);
+			}
+
 			@media (min-width: $md1) {
-				width: rem(54);
+				width: rem(52);
 			}
 		}
 
@@ -81,6 +131,48 @@
 		}
 	}
 
+	// sidebar__lang
+	&__lang {
+		display: none;
+		position: absolute;
+		top: rem(8);
+		right: rem(50);
+		z-index: 2;
+
+		.lang-switcher {
+			font-size: rem(21);
+			line-height: math.div(35, 21);
+			color: $color-white;
+			text-align: left;
+		}
+	}
+
+	// sidebar__close
+	&__close {
+		display: none;
+		position: absolute;
+		top: rem(16);
+		right: rem(16);
+		z-index: 2;
+		align-items: center;
+		justify-content: center;
+		width: rem(19);
+		height: rem(19);
+		padding: 0;
+		color: inherit;
+
+		@media (min-width: $md6) {
+			top: rem(14);
+			right: rem(14);
+		}
+
+		.icon {
+			display: block;
+			width: rem(19);
+			height: rem(19);
+		}
+	}
+
 	// sidebar__nav
 	&__nav {
 		display: none;
@@ -96,29 +188,53 @@
 		display: flex;
 		flex-direction: column;
 		align-items: flex-start;
-		gap: rem(2);
+		gap: 0;
 
-		@media (min-width:$md1) {
+		@media (min-width: $md6) {
+			gap: rem(6);
+		}
+
+		@media (min-width: $md5) {
+			gap: rem(2);
+		}
+
+		@media (min-width: $md1) {
 			gap: rem(11);
-
 		}
 	}
 
-	// sidebar__menu a,
+	// sidebar__item
+	&__item {
+		&.is-expanded {
+			.sidebar__submenu {
+				display: flex;
+
+				@media (min-width: $md6) {
+					display: none;
+				}
+			}
+		}
+	}
+
 	// sidebar__link
-	&__menu a,
 	&__link {
 		position: relative;
 		display: block;
 		font-family: $font-family;
 		font-weight: 700;
-		font-size: rem(18);
-		line-height: math.div(24, 18);
+		font-size: rem(21);
+		line-height: math.div(35, 21);
 		color: $color-white;
 		white-space: nowrap;
 
+		@media (min-width: $md6) {
+			font-size: rem(18);
+			line-height: math.div(24, 18);
+		}
+
 		@media (min-width: $md1) {
 			font-size: rem(21);
+			line-height: math.div(24, 21);
 		}
 
 		span {
@@ -159,16 +275,45 @@
 		}
 	}
 
+	// sidebar__submenu
+	&__submenu {
+		display: none;
+		flex-direction: column;
+		align-items: flex-start;
+		padding-top: rem(7);
+		padding-bottom: rem(8);
+		padding-left: rem(31);
+	}
+
+	// sidebar__sublink
+	&__sublink {
+		display: block;
+		font-family: $font-robert;
+		font-weight: 500;
+		font-size: rem(17);
+		line-height: math.div(31, 17);
+		color: $color-white;
+	}
+
 	// sidebar__logo
 	&__logo {
 		display: block;
 		flex-shrink: 0;
 		overflow: hidden;
-		width: rem(193);
+		width: rem(27);
 		height: auto;
 		padding: 0;
 		text-align: left;
 		color: inherit;
+		transition: width 0.35s ease;
+
+		@media (min-width: $md5) {
+			width: rem(39);
+		}
+
+		@media (min-width: $md4) {
+			width: rem(193);
+		}
 
 		@media (min-width: $md1) {
 			width: rem(234);
@@ -176,9 +321,13 @@
 
 		svg {
 			display: block;
-			width: rem(193);
+			width: rem(133);
 			max-width: none;
 			height: auto;
+
+			@media (min-width: $md5) {
+				width: rem(193);
+			}
 
 			@media (min-width: $md1) {
 				width: rem(234);

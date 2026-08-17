@@ -17,20 +17,7 @@ get_template_part(
 		'title' => 'Careers',
 		'image' => IMG_PATH . '/careers/hero.webp',
 		'tagline' => 'We develop innovative equipment to enable the full cycle of microelectronics production and complex r&d activities',
-		'nav'   => array(
-			array(
-				'href'  => '#team',
-				'label' => 'Our team',
-			),
-			array(
-				'href'  => '#careers',
-				'label' => 'Immediate vacancies',
-			),
-			array(
-				'href'  => '#contacts',
-				'label' => 'Contact us',
-			),
-		),
+		'nav'   => ntronica_get_page_section_nav('careers'),
 	)
 );
 ?>

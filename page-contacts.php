@@ -16,20 +16,7 @@ get_template_part(
 	array(
 		'title' => 'Contacts',
 		'image' => IMG_PATH . '/contacts/hero.webp',
-		'nav'   => array(
-			array(
-				'href'  => '#about',
-				'label' => 'Company information',
-			),
-			array(
-				'href'  => '#our-representative',
-				'label' => 'Our representative',
-			),
-			array(
-				'href'  => '#contacts',
-				'label' => 'Contact us',
-			),
-		),
+		'nav'   => ntronica_get_page_section_nav('contacts'),
 	)
 );
 ?>

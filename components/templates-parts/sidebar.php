@@ -6,53 +6,52 @@
  * @package ntronica
  */
 
-$ntronica_sidebar_items = array(
-	array(
-		'slug'  => 'about',
-		'label' => 'About',
-	),
-	array(
-		'slug'  => 'technology',
-		'label' => 'Technology',
-	),
-	array(
-		'slug'  => 'products',
-		'label' => 'Products',
-	),
-	array(
-		'slug'  => 'news',
-		'label' => 'News',
-	),
-	array(
-		'slug'  => 'careers',
-		'label' => 'Careers',
-	),
-	array(
-		'slug'  => 'contacts',
-		'label' => 'Contacts',
-	),
-);
+$ntronica_sidebar_items = ntronica_get_nav_tree();
 ?>
 <aside class="sidebar" aria-label="Primary">
+	<div class="sidebar__lang">
+		<?php get_template_part('components/templates-parts/lang-switcher'); ?>
+	</div>
+	<button class="sidebar__close" type="button">
+		<span class="screen-reader-text">Close menu</span>
+		<?php ntronica_icon('close'); ?>
+	</button>
 	<nav class="sidebar__nav" id="sidebar-nav">
 		<ul class="sidebar__menu">
 			<?php foreach ($ntronica_sidebar_items as $ntronica_item) : ?>
 				<?php
-				$ntronica_link_class = 'sidebar__link';
-				$ntronica_is_news    = 'news' === $ntronica_item['slug'] && (is_home() || is_singular('post'));
-				if ($ntronica_is_news || is_page($ntronica_item['slug'])) {
-					$ntronica_link_class .= ' is-active';
-				}
+				$ntronica_is_current   = ntronica_is_nav_item_current($ntronica_item['slug']);
+				$ntronica_children     = $ntronica_item['children'];
+				$ntronica_has_children = ! empty($ntronica_children);
+				$ntronica_item_class   = 'sidebar__item';
+				$ntronica_link_class   = 'sidebar__link';
 
-				$ntronica_href = 'news' === $ntronica_item['slug']
-					? ntronica_get_news_url()
-					: home_url('/' . $ntronica_item['slug'] . '/');
+				if ($ntronica_is_current) {
+					$ntronica_link_class .= ' is-active';
+					if ($ntronica_has_children) {
+						$ntronica_item_class .= ' is-expanded';
+					}
+				}
 				?>
-				<li>
+				<li class="<?php echo esc_attr($ntronica_item_class); ?>">
 					<a
 						class="<?php echo esc_attr($ntronica_link_class); ?>"
-						href="<?php echo esc_url($ntronica_href); ?>"
+						href="<?php echo esc_url($ntronica_item['url']); ?>"
+						<?php if ($ntronica_has_children) : ?>
+						aria-expanded="<?php echo $ntronica_is_current ? 'true' : 'false'; ?>"
+						<?php endif; ?>
 						data-title="<?php echo esc_attr($ntronica_item['label']); ?>"><span><?php echo esc_html($ntronica_item['label']); ?></span></a>
+					<?php if ($ntronica_has_children) : ?>
+						<ul class="sidebar__submenu">
+							<?php foreach ($ntronica_children as $ntronica_child) : ?>
+								<li>
+									<a
+										class="sidebar__sublink"
+										href="<?php echo esc_url($ntronica_item['url'] . $ntronica_child['href']); ?>"><?php echo esc_html($ntronica_child['label']); ?></a>
+								</li>
+							<?php endforeach; ?>
+						</ul>
+					<?php endif; ?>
 				</li>
 			<?php endforeach; ?>
 		</ul>

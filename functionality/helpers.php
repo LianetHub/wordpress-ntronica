@@ -112,6 +112,175 @@ function ntronica_get_news_url()
 }
 
 /**
+ * Primary nav tree: top-level items and page-section children.
+ *
+ * Children keep hash-only hrefs for page-hero; the sidebar prefixes the page URL.
+ *
+ * @return array<int, array{slug: string, label: string, url: string, children: array<int, array{href: string, label: string}>}>
+ */
+function ntronica_get_nav_tree()
+{
+	static $ntronica_tree = null;
+
+	if (null !== $ntronica_tree) {
+		return $ntronica_tree;
+	}
+
+	$ntronica_tree = array(
+		array(
+			'slug'     => 'about',
+			'label'    => 'About',
+			'url'      => home_url('/about/'),
+			'children' => array(
+				array(
+					'href'  => '#overview',
+					'label' => 'Company overview',
+				),
+				array(
+					'href'  => '#goal',
+					'label' => 'Our goal',
+				),
+				array(
+					'href'  => '#about-us',
+					'label' => 'About us',
+				),
+			),
+		),
+		array(
+			'slug'     => 'technology',
+			'label'    => 'Technology',
+			'url'      => home_url('/technology/'),
+			'children' => array(
+				array(
+					'href'  => '#microchips',
+					'label' => 'All about microchips',
+				),
+				array(
+					'href'  => '#processes',
+					'label' => 'Chip making processes',
+				),
+				array(
+					'href'  => '#lorem-ipsum',
+					'label' => 'Lorem ipsum',
+				),
+			),
+		),
+		array(
+			'slug'     => 'products',
+			'label'    => 'Products',
+			'url'      => home_url('/products/'),
+			'children' => array(
+				array(
+					'href'  => '#thin-films',
+					'label' => 'Thin films equipment',
+				),
+				array(
+					'href'  => '#wet-process',
+					'label' => 'Wet process equipment',
+				),
+				array(
+					'href'  => '#process-control',
+					'label' => 'Process control',
+				),
+			),
+		),
+		array(
+			'slug'     => 'news',
+			'label'    => 'News',
+			'url'      => ntronica_get_news_url(),
+			'children' => array(
+				array(
+					'href'  => '#events',
+					'label' => 'Events & news',
+				),
+				array(
+					'href'  => '#press',
+					'label' => 'Press releases',
+				),
+				array(
+					'href'  => '#media',
+					'label' => 'Mass media publications',
+				),
+			),
+		),
+		array(
+			'slug'     => 'careers',
+			'label'    => 'Careers',
+			'url'      => home_url('/careers/'),
+			'children' => array(
+				array(
+					'href'  => '#team',
+					'label' => 'Our team',
+				),
+				array(
+					'href'  => '#careers',
+					'label' => 'Immediate vacancies',
+				),
+				array(
+					'href'  => '#contacts',
+					'label' => 'Contact us',
+				),
+			),
+		),
+		array(
+			'slug'     => 'contacts',
+			'label'    => 'Contacts',
+			'url'      => home_url('/contacts/'),
+			'children' => array(
+				array(
+					'href'  => '#about',
+					'label' => 'Company information',
+				),
+				array(
+					'href'  => '#our-representative',
+					'label' => 'Our representative',
+				),
+				array(
+					'href'  => '#contacts',
+					'label' => 'Contact us',
+				),
+			),
+		),
+	);
+
+	return $ntronica_tree;
+}
+
+/**
+ * Section nav for a page slug (page-hero).
+ *
+ * @param string $slug Top-level nav slug.
+ * @return array<int, array{href: string, label: string}>
+ */
+function ntronica_get_page_section_nav($slug)
+{
+	$slug = sanitize_title($slug);
+
+	foreach (ntronica_get_nav_tree() as $ntronica_item) {
+		if ($slug === $ntronica_item['slug']) {
+			return $ntronica_item['children'];
+		}
+	}
+
+	return array();
+}
+
+/**
+ * Whether a top-level nav slug is the current view.
+ *
+ * @param string $slug Top-level nav slug.
+ * @return bool
+ */
+function ntronica_is_nav_item_current($slug)
+{
+	if ('news' === $slug) {
+		return is_home() || is_singular('post');
+	}
+
+	return is_page($slug);
+}
+
+/**
  * Print an SVG icon from the theme sprite.
  *
  * @param string $name  Symbol name without the `icon-` prefix.

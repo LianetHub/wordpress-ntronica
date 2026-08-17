@@ -17,16 +17,31 @@ const initSidebar = () => {
 
 	const logoBtn = sidebar.querySelector(".sidebar__logo");
 	const mqWide = window.matchMedia("(min-width: 1199.98px)");
+	const mqLock = window.matchMedia("(min-width: 1023.98px)");
+	const mqAccordion = window.matchMedia("(min-width: 767.98px)");
 
 	const isOpen = () =>
 		mqWide.matches
 			? !sidebar.classList.contains("is-collapsed")
 			: sidebar.classList.contains("is-open");
 
+	const syncLock = () => {
+		document.body.classList.toggle(
+			"lock",
+			sidebar.classList.contains("is-open") && !mqLock.matches,
+		);
+	};
+
 	const syncAria = () => {
 		if (logoBtn) {
 			logoBtn.setAttribute("aria-expanded", isOpen() ? "true" : "false");
 		}
+	};
+
+	const closeOverlay = () => {
+		sidebar.classList.remove("is-open");
+		syncAria();
+		syncLock();
 	};
 
 	const toggle = () => {
@@ -39,10 +54,47 @@ const initSidebar = () => {
 		}
 
 		syncAria();
+		syncLock();
+	};
+
+	const setItemExpanded = (item, expanded) => {
+		item.classList.toggle("is-expanded", expanded);
+		const link = item.querySelector(":scope > .sidebar__link");
+		if (link && link.hasAttribute("aria-expanded")) {
+			link.setAttribute("aria-expanded", expanded ? "true" : "false");
+		}
 	};
 
 	sidebar.addEventListener("click", (event) => {
-		if (event.target.closest(".sidebar__link")) {
+		if (event.target.closest(".sidebar__lang")) {
+			return;
+		}
+
+		if (event.target.closest(".sidebar__sublink")) {
+			if (!mqWide.matches) {
+				closeOverlay();
+			}
+			return;
+		}
+
+		const parentLink = event.target.closest(".sidebar__link");
+		if (parentLink) {
+			const item = parentLink.closest(".sidebar__item");
+			const hasSubmenu = item && item.querySelector(".sidebar__submenu");
+
+			if (hasSubmenu && !mqAccordion.matches) {
+				event.preventDefault();
+				const willExpand = !item.classList.contains("is-expanded");
+
+				sidebar.querySelectorAll(".sidebar__item.is-expanded").forEach((el) => {
+					if (el !== item) {
+						setItemExpanded(el, false);
+					}
+				});
+
+				setItemExpanded(item, willExpand);
+			}
+
 			return;
 		}
 
@@ -52,15 +104,19 @@ const initSidebar = () => {
 	const onBreakpointChange = () => {
 		sidebar.classList.remove("is-open", "is-collapsed");
 		syncAria();
+		syncLock();
 	};
 
 	if (typeof mqWide.addEventListener === "function") {
 		mqWide.addEventListener("change", onBreakpointChange);
+		mqLock.addEventListener("change", syncLock);
 	} else if (typeof mqWide.addListener === "function") {
 		mqWide.addListener(onBreakpointChange);
+		mqLock.addListener(syncLock);
 	}
 
 	syncAria();
+	syncLock();
 };
 
 const initVacanciesSlider = () => {

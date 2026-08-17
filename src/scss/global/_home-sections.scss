@@ -2,7 +2,7 @@
 @use "../variables" as *;
 @use "../mixins" as *;
 
-.section-overview {
+.overview {
 	padding-top: 0;
 
 	@media (min-width: $md6) {
@@ -13,7 +13,7 @@
 		padding-top: rem(22);
 	}
 
-	// section-overview__lang
+	// overview__lang
 	&__lang {
 		display: none;
 		margin-bottom: rem(10);
@@ -47,7 +47,7 @@
 		}
 	}
 
-	// section-overview__layout
+	// overview__layout
 	&__layout {
 		// uses grid.scss .row
 		--gutter-x: 24px;
@@ -59,7 +59,7 @@
 		}
 	}
 
-	// section-overview__title
+	// overview__title
 	&__title {
 		padding-top: rem(30);
 		min-width: 0;
@@ -69,15 +69,10 @@
 		}
 	}
 
-	// section-overview__intro
+	// overview__intro
 	&__intro {
 		margin-top: rem(15);
 		min-width: 0;
-		font-family: $font-family;
-		font-weight: 400;
-		font-size: rem(15);
-		line-height: math.div(18, 15);
-		color: $color-black;
 
 		@media (min-width: $md6) {
 			margin-top: rem(16);
@@ -85,24 +80,18 @@
 
 		@media (min-width: $md3) {
 			margin-top: rem(24);
-			font-size: rem(18);
-			line-height: math.div(21, 18);
 		}
 
 		@media (min-width: $md2) {
 			margin-top: rem(30);
-			font-size: rem(21);
-			line-height: math.div(24, 21);
 		}
 
 		@media (min-width: $md1) {
 			margin-top: rem(36);
-			font-size: rem(26);
-			line-height: math.div(32, 26);
 		}
 	}
 
-	// section-overview__subtitle
+	// overview__subtitle
 	&__subtitle {
 		margin-top: rem(30);
 		min-width: 0;
@@ -134,7 +123,7 @@
 		}
 	}
 
-	// section-overview__features
+	// overview__features
 	&__features {
 		margin-top: rem(16);
 		min-width: 0;
@@ -152,7 +141,7 @@
 		}
 	}
 
-	// section-overview__more
+	// overview__more
 	&__more {
 		margin-top: rem(30);
 
@@ -174,7 +163,7 @@
 	}
 }
 
-.section-products {
+.products {
 	padding-top: rem(50);
 
 	@media (min-width: $md6) {
@@ -197,7 +186,7 @@
 		padding-top: rem(170);
 	}
 
-	// section-products__title
+	// products__title
 	&__title {
 		margin-bottom: rem(20);
 
@@ -214,7 +203,7 @@
 		}
 	}
 
-	// section-products__lead
+	// products__lead
 	&__lead {
 		max-width: rem(322);
 		margin-bottom: rem(30);
@@ -246,7 +235,7 @@
 		}
 	}
 
-	// section-products__grid
+	// products__grid
 	&__grid {
 		// uses grid.scss .row
 		--gutter-x: #{rem(24)};
@@ -270,7 +259,7 @@
 		}
 	}
 
-	// section-products__more
+	// products__more
 	&__more {
 		margin-bottom: rem(50);
 
@@ -296,7 +285,7 @@
 	}
 }
 
-.section-vacancies {
+.vacancies {
 	background-color: $color-muted;
 	padding-top: rem(30);
 	padding-bottom: rem(30);
@@ -316,7 +305,7 @@
 		padding-bottom: rem(70);
 	}
 
-	// section-vacancies__title
+	// vacancies__title
 	&__title {
 		margin-bottom: rem(40);
 		max-width: rem(322);
@@ -351,12 +340,12 @@
 		}
 	}
 
-	// section-vacancies__slider
+	// vacancies__slider
 	&__slider {
 		overflow: hidden;
 	}
 
-	// section-vacancies__grid
+	// vacancies__grid
 	&__grid {
 		// uses grid.scss .row
 		--gutter-x: #{rem(24)};
@@ -384,7 +373,7 @@
 		height: auto;
 	}
 
-	// section-vacancies__nav
+	// vacancies__nav
 	&__nav {
 		display: flex;
 		justify-content: space-between;
@@ -404,7 +393,7 @@
 		}
 	}
 
-	// section-vacancies__arrow
+	// vacancies__arrow
 	&__arrow {
 		display: inline-flex;
 		align-items: center;
@@ -452,7 +441,7 @@
 	}
 }
 
-.section-news {
+.news {
 	padding-top: rem(50);
 
 	@media (min-width: $md6) {
@@ -475,7 +464,7 @@
 		padding-top: rem(170);
 	}
 
-	// section-news__title
+	// news__title
 	&__title {
 		margin-bottom: rem(20);
 
@@ -492,7 +481,7 @@
 		}
 	}
 
-	// section-news__lead
+	// news__lead
 	&__lead {
 		max-width: rem(322);
 		margin-bottom: rem(20);
@@ -525,7 +514,7 @@
 		}
 	}
 
-	// section-news__grid
+	// news__grid
 	&__grid {
 		// uses grid.scss .row
 		--gutter-x: #{rem(24)};
@@ -545,7 +534,7 @@
 		}
 	}
 
-	// section-news__item--desktop
+	// news__item--desktop
 	&__item--desktop {
 		display: none;
 
@@ -554,7 +543,7 @@
 		}
 	}
 
-	// section-news__more
+	// news__more
 	&__more {
 		margin-bottom: rem(50);
 
@@ -580,8 +569,8 @@
 	}
 }
 
-.section-info {
-	// section-info__title
+.info {
+	// info__title
 	&__title {
 		margin-bottom: rem(20);
 
@@ -598,7 +587,7 @@
 		}
 	}
 
-	// section-info__grid
+	// info__grid
 	&__grid {
 		// uses grid.scss .row
 		--gutter-x: #{rem(24)};
@@ -609,39 +598,15 @@
 		}
 	}
 
-	// section-info__text
+	// info__text
 	&__text,
-	// section-info__contacts
+	// info__contacts
 	&__contacts {
 		min-width: 0;
 	}
-
-	// section-info__text
-	&__text {
-		font-family: $font-family;
-		font-weight: 400;
-		font-size: rem(15);
-		line-height: math.div(18, 15);
-		color: $color-black;
-
-		@media (min-width: $md3) {
-			font-size: rem(18);
-			line-height: math.div(21, 18);
-		}
-
-		@media (min-width: $md2) {
-			font-size: rem(21);
-			line-height: math.div(24, 21);
-		}
-
-		@media (min-width: $md1) {
-			font-size: rem(26);
-			line-height: math.div(32, 26);
-		}
-	}
 }
 
-.section-contact {
+.contact {
 	padding-top: rem(50);
 	padding-bottom: rem(50);
 
@@ -668,7 +633,7 @@
 		padding-bottom: rem(110);
 	}
 
-	// section-contact__title
+	// contact__title
 	&__title {
 		margin-bottom: rem(30);
 		max-width: rem(322);

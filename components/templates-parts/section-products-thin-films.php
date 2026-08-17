@@ -31,26 +31,26 @@ $ntronica_thin_films = array(
 	),
 );
 ?>
-<section class="section-products-thin-films" id="thin-films">
+<section class="products-thin-films" id="thin-films">
 	<div class="container">
-		<h2 class="section-title section-products-thin-films__title">Thin films equipment</h2>
+		<h2 class="section-title products-thin-films__title">Thin films equipment</h2>
 
-		<div class="row section-products-thin-films__intro">
+		<div class="row products-thin-films__intro">
 			<div class="col-12 col-md-6">
-				<div class="section-lead section-products-thin-films__text section-products-thin-films__text--primary">
+				<div class="section-lead products-thin-films__text products-thin-films__text--primary">
 					<p>It may require more than one hundred tools to produce a single modern chip. Our goal is to cover at least half of those tools — whether you are performing research &amp; development or running mass production. We are currently present across multiple stages of chip production, such as etching and deposition, epitaxy, thermal operations, and Chemical Mechanical Planarization (CMP).</p>
 				</div>
 			</div>
 
 			<div class="col-12 col-md-6">
-				<div class="section-products-thin-films__text section-products-thin-films__text--secondary">
+				<div class="products-thin-films__text products-thin-films__text--secondary">
 					<p>We supply machines compatible with a range of technologies, such as ICP RIE (Inductively Coupled Plasma Reactive Ion Etching), DRIE (Deep Reactive Ion Etching), and GaN MOCVD (Gallium Nitride Metal-Organic Chemical Vapor Deposition). We offer tools for complex CMP processes across various materials and applications in STI (Shallow Trench Isolation), ILD (Interlayer Dielectric), PMD (Pre-Metal Dielectric), etc.</p>
 					<p>In addition, we are developing metrology and inspection tools, and hope to bring them to the market fast. Learn more about our developments in the Technologies section.</p>
 				</div>
 			</div>
 		</div>
 
-		<div class="row section-products-thin-films__grid">
+		<div class="row products-thin-films__grid">
 			<?php foreach ($ntronica_thin_films as $ntronica_item) : ?>
 				<div class="col-6 col-md-3">
 					<article class="product-card">

@@ -8,15 +8,15 @@
 
 $ntronica_products_img = IMG_PATH . '/products/';
 ?>
-<section class="section-products-lines">
+<section class="products-lines">
 	<div class="container">
-		<div class="row section-products-lines__layout">
-			<div class="col-12 col-md-6 section-products-lines__col" id="wet-process">
-				<h2 class="section-title section-products-lines__title">Wet process equipment</h2>
-				<div class="section-lead section-products-lines__text">
+		<div class="row products-lines__layout">
+			<div class="col-12 col-md-6 products-lines__col" id="wet-process">
+				<h2 class="section-title products-lines__title">Wet process equipment</h2>
+				<div class="section-lead products-lines__text">
 					<p>It may require more than one hundred tools to produce a single modern chip. Our goal is to cover at least half of those tools — whether you are performing research &amp; development or running mass production. We are currently present across multiple stages of chip production, such as etching and deposition, epitaxy, thermal operations, and Chemical Mechanical Planarization (CMP).</p>
 				</div>
-				<div class="row section-products-lines__cards">
+				<div class="row products-lines__cards">
 					<div class="col-6">
 						<article class="product-card">
 							<div class="product-card__media">
@@ -34,12 +34,12 @@ $ntronica_products_img = IMG_PATH . '/products/';
 				</div>
 			</div>
 
-			<div class="col-12 col-md-6 section-products-lines__col" id="process-control">
-				<h2 class="section-title section-products-lines__title">Process control</h2>
-				<div class="section-lead section-products-lines__text">
+			<div class="col-12 col-md-6 products-lines__col" id="process-control">
+				<h2 class="section-title products-lines__title">Process control</h2>
+				<div class="section-lead products-lines__text">
 					<p>It may require more than one hundred tools to produce a single modern chip. Our goal is to cover at least half of those tools — whether you are performing research &amp; development or running mass production. We are currently present across multiple stages of chip production, such as etching and deposition, epitaxy, thermal operations, and Chemical Mechanical Planarization (CMP).</p>
 				</div>
-				<div class="row section-products-lines__cards">
+				<div class="row products-lines__cards">
 					<div class="col-6">
 						<article class="product-card">
 							<div class="product-card__media">

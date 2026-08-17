@@ -12,26 +12,26 @@ global $wp_query;
 $ntronica_found = isset($wp_query->found_posts) ? (int) $wp_query->found_posts : 0;
 ?>
 
-<section class="section-search" aria-label="Search">
+<section class="search" aria-label="Search">
 	<div class="container">
-		<div class="section-search__top">
-			<p class="section-search__crumb">About — Search</p>
-			<a class="section-search__lang" href="#">ru</a>
+		<div class="search__top">
+			<p class="search__crumb">About — Search</p>
+			<a class="search__lang" href="#">ru</a>
 		</div>
 
-		<h1 class="section-search__title">Search</h1>
+		<h1 class="search__title">Search</h1>
 
-		<div class="section-search__form">
+		<div class="search__form">
 			<?php get_search_form(array('ntronica_variant' => 'page')); ?>
 		</div>
 
-		<p class="section-search__count">
+		<p class="search__count">
 			<span>RESULTS: </span>
 			<strong><?php echo esc_html((string) $ntronica_found); ?></strong>
 		</p>
 
 		<?php if (have_posts()) : ?>
-			<div class="row section-search__results">
+			<div class="row search__results">
 				<?php
 				while (have_posts()) :
 					the_post();
@@ -50,7 +50,7 @@ $ntronica_found = isset($wp_query->found_posts) ? (int) $wp_query->found_posts :
 				<?php endwhile; ?>
 			</div>
 		<?php else : ?>
-			<p class="section-search__empty">Nothing found.</p>
+			<p class="search__empty">Nothing found.</p>
 		<?php endif; ?>
 	</div>
 </section>

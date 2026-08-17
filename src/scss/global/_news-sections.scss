@@ -2,7 +2,7 @@
 @use "../variables" as *;
 @use "../mixins" as *;
 
-.section-news-feed {
+.news-feed {
 	padding-top: rem(50);
 
 	@media (min-width: $md6) {
@@ -17,7 +17,7 @@
 		padding-top: rem(90);
 	}
 
-	// section-news-feed--press
+	// news-feed--press
 	&--press {
 		padding-bottom: rem(50);
 
@@ -35,7 +35,7 @@
 		}
 	}
 
-	// section-news-feed__title
+	// news-feed__title
 	&__title {
 		margin-bottom: rem(16);
 
@@ -48,7 +48,7 @@
 		}
 	}
 
-	// section-news-feed__lead
+	// news-feed__lead
 	&__lead {
 		margin-bottom: rem(24);
 
@@ -61,12 +61,12 @@
 		}
 	}
 
-	// section-news-feed__slider
+	// news-feed__slider
 	&__slider {
 		overflow: hidden;
 	}
 
-	// section-news-feed__grid
+	// news-feed__grid
 	&__grid {
 		--gutter-x: #{rem(24)};
 		--gutter-y: #{rem(30)};
@@ -95,7 +95,7 @@
 		}
 	}
 
-	// section-news-feed__nav
+	// news-feed__nav
 	&__nav {
 		margin-top: rem(16);
 
@@ -105,7 +105,7 @@
 	}
 }
 
-.section-media-publications {
+.media-publications {
 	background-color: $color-muted;
 	padding-top: rem(30);
 	padding-bottom: rem(30);
@@ -125,7 +125,7 @@
 		padding-bottom: rem(70);
 	}
 
-	// section-media-publications__title
+	// media-publications__title
 	&__title {
 		margin-bottom: rem(40);
 
@@ -142,7 +142,7 @@
 		}
 	}
 
-	// section-media-publications__grid
+	// media-publications__grid
 	&__grid {
 		--gutter-x: #{rem(24)};
 		--gutter-y: #{rem(40)};

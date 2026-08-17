@@ -56,17 +56,17 @@ $vacancies = array(
 $ntronica_vacancy_pages = array_chunk($vacancies, 6);
 $ntronica_vacancy_has_nav = count($ntronica_vacancy_pages) > 1;
 ?>
-<section class="section-vacancies band-full" id="careers">
+<section class="vacancies band-full" id="careers">
 	<div class="container">
-		<h2 class="section-title section-title--light section-vacancies__title">
+		<h2 class="section-title section-title--light vacancies__title">
 			Immediate vacancies
 		</h2>
 
-		<div class="swiper vacancies-slider section-vacancies__slider">
+		<div class="swiper vacancies-slider vacancies__slider">
 			<div class="swiper-wrapper">
 				<?php foreach ($ntronica_vacancy_pages as $ntronica_page) : ?>
 					<div class="swiper-slide">
-						<div class="row section-vacancies__grid">
+						<div class="row vacancies__grid">
 							<?php foreach ($ntronica_page as $ntronica_item) : ?>
 								<div class="col-12 col-md-4">
 									<article class="vacancy-card">
@@ -81,9 +81,9 @@ $ntronica_vacancy_has_nav = count($ntronica_vacancy_pages) > 1;
 			</div>
 
 			<?php if ($ntronica_vacancy_has_nav) : ?>
-				<div class="section-vacancies__nav">
-					<button type="button" class="section-vacancies__arrow section-vacancies__arrow--prev" aria-label="Previous vacancies">←</button>
-					<button type="button" class="section-vacancies__arrow section-vacancies__arrow--next" aria-label="Next vacancies">→</button>
+				<div class="vacancies__nav">
+					<button type="button" class="vacancies__arrow vacancies__arrow--prev" aria-label="Previous vacancies">←</button>
+					<button type="button" class="vacancies__arrow vacancies__arrow--next" aria-label="Next vacancies">→</button>
 				</div>
 			<?php endif; ?>
 		</div>

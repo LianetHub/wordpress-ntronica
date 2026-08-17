@@ -31,9 +31,9 @@ $ntronica_feed = wp_parse_args(
 	)
 );
 
-$ntronica_class = 'section-news-feed';
+$ntronica_class = 'news-feed';
 if ('' !== $ntronica_feed['modifier']) {
-	$ntronica_class .= ' section-news-feed--' . sanitize_html_class($ntronica_feed['modifier']);
+	$ntronica_class .= ' news-feed--' . sanitize_html_class($ntronica_feed['modifier']);
 }
 
 $ntronica_nav_prefix = $ntronica_feed['nav_prefix'];
@@ -48,21 +48,21 @@ $ntronica_has_nav = count($ntronica_pages) > 1;
 ?>
 <section class="<?php echo esc_attr($ntronica_class); ?>" id="<?php echo esc_attr($ntronica_feed['id']); ?>">
 	<div class="container">
-		<h2 class="section-title section-news-feed__title"><?php echo esc_html($ntronica_feed['title']); ?></h2>
+		<h2 class="section-title news-feed__title"><?php echo esc_html($ntronica_feed['title']); ?></h2>
 		<?php if ('' !== $ntronica_feed['lead']) : ?>
 			<div class="row">
 				<div class="col-12 col-md-6">
-					<p class="section-lead section-news-feed__lead"><?php echo esc_html($ntronica_feed['lead']); ?></p>
+					<p class="section-lead news-feed__lead"><?php echo esc_html($ntronica_feed['lead']); ?></p>
 				</div>
 			</div>
 		<?php endif; ?>
 
 		<?php if ($ntronica_posts) : ?>
-			<div class="swiper js-paged-slider section-news-feed__slider">
+			<div class="swiper js-paged-slider news-feed__slider">
 				<div class="swiper-wrapper">
 					<?php foreach ($ntronica_pages as $ntronica_page) : ?>
 						<div class="swiper-slide">
-							<div class="row section-news-feed__grid">
+							<div class="row news-feed__grid">
 								<?php foreach ($ntronica_page as $ntronica_post) : ?>
 									<div class="col-12 col-md-3">
 										<article class="news-card">
@@ -94,7 +94,7 @@ $ntronica_has_nav = count($ntronica_pages) > 1;
 				</div>
 
 				<?php if ($ntronica_has_nav) : ?>
-					<div class="slider-nav section-news-feed__nav">
+					<div class="slider-nav news-feed__nav">
 						<button type="button" class="slider-nav__prev" aria-label="<?php echo esc_attr(sprintf('Previous %s', $ntronica_nav_prefix)); ?>">←</button>
 						<p class="slider-nav__fraction" aria-live="polite"></p>
 						<button type="button" class="slider-nav__next" aria-label="<?php echo esc_attr(sprintf('Next %s', $ntronica_nav_prefix)); ?>">→</button>

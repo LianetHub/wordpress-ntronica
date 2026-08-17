@@ -2,25 +2,28 @@
 @use "../variables" as *;
 @use "../mixins" as *;
 
-.section-search {
-	flex: 1 1 auto;
-	display: flex;
-	flex-direction: column;
-	padding-top: rem(20);
-	padding-bottom: rem(40);
-	color: $color-white;
+.search {
+	// body.search is a WordPress body class — block styles only on the section
+	&:where(section) {
+		flex: 1 1 auto;
+		display: flex;
+		flex-direction: column;
+		padding-top: rem(20);
+		padding-bottom: rem(40);
+		color: $color-white;
 
-	@media (min-width: $md6) {
-		padding-top: rem(22);
-		padding-bottom: rem(50);
+		@media (min-width: $md6) {
+			padding-top: rem(22);
+			padding-bottom: rem(50);
+		}
+
+		@media (min-width: $md1) {
+			padding-top: rem(27);
+			padding-bottom: rem(70);
+		}
 	}
 
-	@media (min-width: $md1) {
-		padding-top: rem(27);
-		padding-bottom: rem(70);
-	}
-
-	// section-search__top
+	// search__top
 	&__top {
 		display: flex;
 		align-items: flex-end;
@@ -37,7 +40,7 @@
 		}
 	}
 
-	// section-search__crumb
+	// search__crumb
 	&__crumb {
 		font-family: $font-robert;
 		font-weight: 500;
@@ -61,7 +64,7 @@
 		}
 	}
 
-	// section-search__lang
+	// search__lang
 	&__lang {
 		display: none;
 		flex: 0 0 auto;
@@ -93,7 +96,7 @@
 		}
 	}
 
-	// section-search__title
+	// search__title
 	&__title {
 		margin-bottom: rem(40);
 		font-family: $font-family;
@@ -126,7 +129,7 @@
 		}
 	}
 
-	// section-search__form
+	// search__form
 	&__form {
 		margin-bottom: rem(24);
 
@@ -143,7 +146,7 @@
 		}
 	}
 
-	// section-search__count
+	// search__count
 	&__count {
 		margin-bottom: rem(48);
 		font-family: $font-family;
@@ -179,13 +182,13 @@
 		}
 	}
 
-	// section-search__results
+	// search__results
 	&__results {
 		--gutter-x: #{rem(24)};
 		--gutter-y: #{rem(24)};
 	}
 
-	// section-search__empty
+	// search__empty
 	&__empty {
 		font-family: $font-robert;
 		font-weight: 500;

@@ -2,7 +2,7 @@
 @use "../variables" as *;
 @use "../mixins" as *;
 
-.section-products-thin-films {
+.products-thin-films {
 	padding-top: rem(30);
 
 	@media (min-width: $md3) {
@@ -13,7 +13,7 @@
 		padding-top: rem(90);
 	}
 
-	// section-products-thin-films__title
+	// products-thin-films__title
 	&__title {
 		margin-bottom: rem(16);
 
@@ -26,7 +26,7 @@
 		}
 	}
 
-	// section-products-thin-films__intro
+	// products-thin-films__intro
 	&__intro {
 		--gutter-x: #{rem(14)};
 		--gutter-y: #{rem(16)};
@@ -38,7 +38,7 @@
 		}
 	}
 
-	// section-products-thin-films__text
+	// products-thin-films__text
 	&__text {
 		min-width: 0;
 		color: $color-black;
@@ -47,7 +47,7 @@
 			margin-top: rem(16);
 		}
 
-		// section-products-thin-films__text--secondary
+		// products-thin-films__text--secondary
 		&--secondary {
 			font-family: $font-robert;
 			font-weight: 500;
@@ -76,7 +76,7 @@
 		}
 	}
 
-	// section-products-thin-films__grid
+	// products-thin-films__grid
 	&__grid {
 		--gutter-x: #{rem(14)};
 		--gutter-y: #{rem(26)};
@@ -96,7 +96,7 @@
 
 }
 
-.section-products-lines {
+.products-lines {
 	padding-top: rem(70);
 	padding-bottom: rem(70);
 
@@ -110,19 +110,19 @@
 		padding-bottom: rem(110);
 	}
 
-	// section-products-lines__layout
+	// products-lines__layout
 	&__layout {
 		--gutter-x: #{rem(24)};
 		--gutter-y: #{rem(70)};
 		align-items: start;
 	}
 
-	// section-products-lines__col
+	// products-lines__col
 	&__col {
 		min-width: 0;
 	}
 
-	// section-products-lines__title
+	// products-lines__title
 	&__title {
 		margin-bottom: rem(16);
 
@@ -131,7 +131,7 @@
 		}
 	}
 
-	// section-products-lines__text
+	// products-lines__text
 	&__text {
 		margin-bottom: rem(30);
 		min-width: 0;
@@ -145,7 +145,7 @@
 		}
 	}
 
-	// section-products-lines__cards
+	// products-lines__cards
 	&__cards {
 		--gutter-x: #{rem(14)};
 		--gutter-y: #{rem(12)};
@@ -161,8 +161,8 @@
 
 }
 
-.section-products-thin-films,
-.section-products-lines {
+.products-thin-films,
+.products-lines {
 	.product-card__title {
 		font-family: $font-robert;
 		font-weight: 500;

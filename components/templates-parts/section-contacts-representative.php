@@ -8,13 +8,13 @@
 
 $ntronica_contacts_img = IMG_PATH . '/contacts/';
 ?>
-<section class="section-contacts-representative" id="our-representative">
+<section class="contacts-representative" id="our-representative">
 	<div class="container">
-		<h2 class="section-title section-contacts-representative__title">Our representative</h2>
+		<h2 class="section-title contacts-representative__title">Our representative</h2>
 
-		<div class="section-contacts-representative__map">
+		<div class="contacts-representative__map">
 			<img
-				class="section-contacts-representative__img"
+				class="contacts-representative__img"
 				src="<?php echo esc_url($ntronica_contacts_img . 'map.png'); ?>"
 				alt="Map of N-tronica representative location"
 				width="1914"

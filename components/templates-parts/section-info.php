@@ -1,23 +1,24 @@
 <?php
+
 /**
  * Section: Company information
  *
  * @package ntronica
  */
 ?>
-<section class="section-info" id="about">
+<section class="info" id="about">
 	<div class="container">
-		<h2 class="section-title section-info__title">Company information</h2>
+		<h2 class="section-title info__title">Company information</h2>
 
-		<div class="row section-info__grid">
+		<div class="row info__grid">
 			<div class="col-12 col-md-6">
-				<div class="section-info__text">
+				<div class="section-lead info__text">
 					<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Lorem ipsum dolor sit amet, consectetuer adipiscing sit amet, consectetuer. Lorem ipsum dolor sit amet, consectetuer adipiscing sit amet, consectetuer. Lorem ipsum dolor sit amet, consectetuer.</p>
 				</div>
 			</div>
 
 			<div class="col-12 col-md-6">
-				<div class="section-info__contacts">
+				<div class="info__contacts">
 					<div class="contact-list row gx-3">
 						<div class="col-auto">
 							<div class="contact-list__labels">

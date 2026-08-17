@@ -1,13 +1,14 @@
 <?php
+
 /**
  * Section: Contact us (static form)
  *
  * @package ntronica
  */
 ?>
-<section class="section-contact" id="contacts">
+<section class="contact" id="contacts">
 	<div class="container">
-		<h2 class="section-title section-contact__title">Contact us</h2>
+		<h2 class="section-title contact__title">Contact us</h2>
 
 		<form class="home-form" action="#" method="post" enctype="multipart/form-data">
 			<div class="row home-form__row home-form__row--primary">

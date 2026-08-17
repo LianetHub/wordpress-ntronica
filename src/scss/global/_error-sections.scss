@@ -2,7 +2,7 @@
 @use "../variables" as *;
 @use "../mixins" as *;
 
-.section-error {
+.error {
 	flex: 1 1 auto;
 	display: flex;
 	flex-direction: column;
@@ -20,7 +20,7 @@
 		padding-bottom: rem(70);
 	}
 
-	// section-error__top
+	// error__top
 	&__top {
 		display: flex;
 		align-items: flex-end;
@@ -37,7 +37,7 @@
 		}
 	}
 
-	// section-error__crumb
+	// error__crumb
 	&__crumb {
 		font-family: $font-robert;
 		font-weight: 500;
@@ -61,7 +61,7 @@
 		}
 	}
 
-	// section-error__lang
+	// error__lang
 	&__lang {
 		display: none;
 		flex: 0 0 auto;
@@ -93,12 +93,12 @@
 		}
 	}
 
-	// section-error__body
+	// error__body
 	&__body {
 		--gutter-x: #{rem(24)};
 	}
 
-	// section-error__title
+	// error__title
 	&__title {
 		margin-bottom: rem(20);
 		font-family: $font-family;
@@ -130,7 +130,7 @@
 		}
 	}
 
-	// section-error__text
+	// error__text
 	&__text {
 		margin-bottom: rem(28);
 		font-family: $font-family;
@@ -162,7 +162,7 @@
 		}
 	}
 
-	// section-error__link
+	// error__link
 	&__link {
 		color: $color-white;
 	}

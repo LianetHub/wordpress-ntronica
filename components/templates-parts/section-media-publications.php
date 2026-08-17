@@ -9,14 +9,14 @@
 $ntronica_media_query = ntronica_query_news_posts('media', 6);
 $ntronica_media_posts = $ntronica_media_query->posts;
 ?>
-<section class="section-media-publications band-full" id="media">
+<section class="media-publications band-full" id="media">
 	<div class="container">
-		<h2 class="section-title section-title--light section-media-publications__title">
+		<h2 class="section-title section-title--light media-publications__title">
 			Media publications
 		</h2>
 
 		<?php if ($ntronica_media_posts) : ?>
-			<div class="row section-media-publications__grid">
+			<div class="row media-publications__grid">
 				<?php foreach ($ntronica_media_posts as $ntronica_post) : ?>
 					<div class="col-12 col-md-4">
 						<article class="media-card">

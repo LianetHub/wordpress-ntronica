@@ -2,12 +2,12 @@
 @use "../variables" as *;
 @use "../mixins" as *;
 
-.section-about-overview {
+.about-overview {
 	padding-top: rem(30);
 	padding-bottom: rem(40);
 
 	@media (min-width: $md6) {
-		padding-top: rem(40);
+		padding-top: rem(50);
 		padding-bottom: rem(50);
 	}
 
@@ -16,7 +16,7 @@
 		padding-bottom: rem(70);
 	}
 
-	// section-about-overview__layout
+	// about-overview__layout
 	&__layout {
 		--gutter-x: #{rem(24)};
 		--gutter-y: #{rem(16)};
@@ -35,12 +35,12 @@
 		}
 	}
 
-	// section-about-overview__title
+	// about-overview__title
 	&__title {
 		min-width: 0;
 	}
 
-	// section-about-overview__subtitle
+	// about-overview__subtitle
 	&__subtitle {
 		margin-top: rem(24);
 		min-width: 0;
@@ -68,39 +68,25 @@
 		}
 	}
 
-	// section-about-overview__intro
+	// about-overview__intro
 	&__intro {
 		margin-top: rem(16);
 		min-width: 0;
-		font-family: $font-family;
-		font-weight: 400;
-		font-size: rem(15);
-		line-height: math.div(18, 15);
-		color: $color-black;
 
 		@media (min-width: $md6) {
 			margin-top: rem(20);
 		}
 
 		@media (min-width: $md3) {
-			margin-top: rem(24);
-			font-size: rem(18);
-			line-height: math.div(21, 18);
-		}
-
-		@media (min-width: $md2) {
-			font-size: rem(21);
-			line-height: math.div(24, 21);
+			margin-top: rem(30);
 		}
 
 		@media (min-width: $md1) {
 			margin-top: rem(36);
-			font-size: rem(26);
-			line-height: math.div(32, 26);
 		}
 	}
 
-	// section-about-overview__features
+	// about-overview__features
 	&__features {
 		margin-top: rem(16);
 		min-width: 0;
@@ -110,7 +96,7 @@
 		}
 
 		@media (min-width: $md3) {
-			margin-top: rem(24);
+			margin-top: rem(30);
 		}
 
 		@media (min-width: $md1) {
@@ -119,13 +105,13 @@
 	}
 }
 
-.section-about-goal {
+.about-goal {
 	padding-top: rem(20);
 	padding-bottom: rem(50);
 
 	@media (min-width: $md6) {
-		padding-top: rem(30);
-		padding-bottom: rem(70);
+		padding-top: rem(34);
+		padding-bottom: rem(54);
 	}
 
 	@media (min-width: $md1) {
@@ -133,18 +119,18 @@
 		padding-bottom: rem(68);
 	}
 
-	// section-about-goal__layout
+	// about-goal__layout
 	&__layout {
 		--gutter-x: #{rem(24)};
 		--gutter-y: #{rem(24)};
 	}
 
-	// section-about-goal__title
+	// about-goal__title
 	&__title {
 		margin-bottom: rem(16);
 
 		@media (min-width: $md6) {
-			margin-bottom: rem(24);
+			margin-bottom: rem(32);
 		}
 
 		@media (min-width: $md1) {
@@ -152,36 +138,7 @@
 		}
 	}
 
-	// section-about-goal__text
-	&__text {
-		min-width: 0;
-		font-family: $font-family;
-		font-weight: 400;
-		font-size: rem(16);
-		line-height: math.div(20, 16);
-		color: $color-black;
-
-		@media (min-width: $md3) {
-			font-size: rem(20);
-			line-height: math.div(24, 20);
-		}
-
-		@media (min-width: $md2) {
-			font-size: rem(24);
-			line-height: math.div(28, 24);
-		}
-
-		@media (min-width: $md1) {
-			font-size: rem(28);
-			line-height: math.div(34, 28);
-		}
-
-		p+p {
-			margin-top: rem(0);
-		}
-	}
-
-	// section-about-goal__media
+	// about-goal__media
 	&__media {
 		position: relative;
 		overflow: hidden;
@@ -189,7 +146,7 @@
 		background-color: $color-placeholder;
 	}
 
-	// section-about-goal__img
+	// about-goal__img
 	&__img {
 		display: block;
 		width: 100%;
@@ -198,11 +155,11 @@
 	}
 }
 
-.section-about-stats {
+.about-stats {
 	background-color: $color-muted;
 	color: $color-white;
 
-	// section-about-stats__inner
+	// about-stats__inner
 	&__inner {
 		padding-top: rem(30);
 		padding-bottom: rem(40);
@@ -218,7 +175,7 @@
 		}
 	}
 
-	// section-about-stats__title
+	// about-stats__title
 	&__title {
 		margin-bottom: rem(16);
 
@@ -231,7 +188,7 @@
 		}
 	}
 
-	// section-about-stats__intro
+	// about-stats__intro
 	&__intro {
 		--gutter-x: #{rem(24)};
 		--gutter-y: #{rem(20)};
@@ -246,36 +203,7 @@
 		}
 	}
 
-	// section-about-stats__text
-	&__text {
-		min-width: 0;
-		font-family: $font-family;
-		font-weight: 400;
-		font-size: rem(16);
-		line-height: math.div(20, 16);
-		color: $color-white;
-
-		@media (min-width: $md3) {
-			font-size: rem(20);
-			line-height: math.div(24, 20);
-		}
-
-		@media (min-width: $md2) {
-			font-size: rem(24);
-			line-height: math.div(28, 24);
-		}
-
-		@media (min-width: $md1) {
-			font-size: rem(28);
-			line-height: math.div(34, 28);
-		}
-
-		p+p {
-			margin-top: rem(0);
-		}
-	}
-
-	// section-about-stats__accent
+	// about-stats__accent
 	&__accent {
 		min-width: 0;
 		font-family: $font-robert;
@@ -300,13 +228,13 @@
 		}
 	}
 
-	// section-about-stats__grid
+	// about-stats__grid
 	&__grid {
 		--gutter-x: #{rem(24)};
 		--gutter-y: #{rem(24)};
 	}
 
-	// section-about-stats__value
+	// about-stats__value
 	&__value {
 		font-family: $font-family;
 		font-weight: 400;
@@ -340,7 +268,7 @@
 		}
 	}
 
-	// section-about-stats__label
+	// about-stats__label
 	&__label {
 		margin-top: rem(12);
 		font-family: $font-robert;
@@ -369,7 +297,7 @@
 	}
 }
 
-.section-about-solutions {
+.about-solutions {
 	padding-top: rem(40);
 	padding-bottom: rem(50);
 
@@ -383,7 +311,7 @@
 		padding-bottom: rem(110);
 	}
 
-	// section-about-solutions__lead
+	// about-solutions__lead
 	&__lead {
 		max-width: rem(945);
 		margin-bottom: rem(30);
@@ -411,25 +339,25 @@
 		}
 	}
 
-	// section-about-solutions__grid
+	// about-solutions__grid
 	&__grid {
 		--gutter-x: #{rem(24)};
 		--gutter-y: #{rem(30)};
 	}
 
-	// section-about-solutions__item
+	// about-solutions__item
 	&__item {
 		min-width: 0;
 	}
 
-	// section-about-solutions__media
+	// about-solutions__media
 	&__media {
 		overflow: hidden;
 		aspect-ratio: 322 / 214;
 		background-color: $color-placeholder;
 	}
 
-	// section-about-solutions__img
+	// about-solutions__img
 	&__img {
 		display: block;
 		width: 100%;
@@ -437,7 +365,7 @@
 		object-fit: cover;
 	}
 
-	// section-about-solutions__caption
+	// about-solutions__caption
 	&__caption {
 		margin-top: rem(16);
 		font-family: $font-robert;

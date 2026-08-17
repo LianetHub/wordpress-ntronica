@@ -1,7 +1,7 @@
 @use "../variables" as *;
 @use "../mixins" as *;
 
-.section-contacts-representative {
+.contacts-representative {
 	padding-top: rem(50);
 	padding-bottom: rem(0);
 
@@ -21,7 +21,7 @@
 		padding-top: rem(110);
 	}
 
-	// section-contacts-representative__title
+	// contacts-representative__title
 	&__title {
 		margin-bottom: rem(24);
 
@@ -34,7 +34,7 @@
 		}
 	}
 
-	// section-contacts-representative__map
+	// contacts-representative__map
 	&__map {
 		overflow: hidden;
 		width: 100%;
@@ -42,7 +42,7 @@
 		background-color: $color-placeholder;
 	}
 
-	// section-contacts-representative__img
+	// contacts-representative__img
 	&__img {
 		display: block;
 		width: 100%;

@@ -86,11 +86,13 @@ const initSidebar = () => {
 				event.preventDefault();
 				const willExpand = !item.classList.contains("is-expanded");
 
-				sidebar.querySelectorAll(".sidebar__item.is-expanded").forEach((el) => {
-					if (el !== item) {
-						setItemExpanded(el, false);
-					}
-				});
+				sidebar
+					.querySelectorAll(".sidebar__item.is-expanded")
+					.forEach((el) => {
+						if (el !== item) {
+							setItemExpanded(el, false);
+						}
+					});
 
 				setItemExpanded(item, willExpand);
 			}
@@ -137,8 +139,12 @@ const initVacanciesSlider = () => {
 		spaceBetween: 0,
 		speed: 450,
 		navigation: {
-			prevEl: vacanciesEl.querySelector(".section-vacancies__arrow--prev"),
-			nextEl: vacanciesEl.querySelector(".section-vacancies__arrow--next"),
+			prevEl: vacanciesEl.querySelector(
+				".vacancies__arrow--prev",
+			),
+			nextEl: vacanciesEl.querySelector(
+				".vacancies__arrow--next",
+			),
 		},
 	});
 };

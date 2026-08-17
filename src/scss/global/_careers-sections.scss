@@ -1,4 +1,3 @@
-@use "sass:math";
 @use "../variables" as *;
 @use "../mixins" as *;
 
@@ -56,29 +55,5 @@
 	// careers-team__text
 	&__text {
 		min-width: 0;
-		color: $color-black;
-
-		// careers-team__text--secondary
-		&--secondary {
-			font-family: $font-robert;
-			font-weight: 400;
-			font-size: rem(16);
-			line-height: math.div(18, 16);
-
-			@media (min-width: $md3) {
-				font-size: rem(19);
-				line-height: math.div(21, 19);
-			}
-
-			@media (min-width: $md2) {
-				font-size: rem(22);
-				line-height: math.div(24, 22);
-			}
-
-			@media (min-width: $md1) {
-				font-size: rem(27);
-				line-height: math.div(29, 27);
-			}
-		}
 	}
 }

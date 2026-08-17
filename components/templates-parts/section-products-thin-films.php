@@ -37,13 +37,13 @@ $ntronica_thin_films = array(
 
 		<div class="row products-thin-films__intro">
 			<div class="col-12 col-md-6">
-				<div class="text-lead products-thin-films__text products-thin-films__text--primary">
+				<div class="text-lead products-thin-films__text">
 					<p>It may require more than one hundred tools to produce a single modern chip. Our goal is to cover at least half of those tools — whether you are performing research &amp; development or running mass production. We are currently present across multiple stages of chip production, such as etching and deposition, epitaxy, thermal operations, and Chemical Mechanical Planarization (CMP).</p>
 				</div>
 			</div>
 
 			<div class="col-12 col-md-6">
-				<div class="products-thin-films__text products-thin-films__text--secondary">
+				<div class="text-block-alternate products-thin-films__text">
 					<p>We supply machines compatible with a range of technologies, such as ICP RIE (Inductively Coupled Plasma Reactive Ion Etching), DRIE (Deep Reactive Ion Etching), and GaN MOCVD (Gallium Nitride Metal-Organic Chemical Vapor Deposition). We offer tools for complex CMP processes across various materials and applications in STI (Shallow Trench Isolation), ILD (Interlayer Dielectric), PMD (Pre-Metal Dielectric), etc.</p>
 					<p>In addition, we are developing metrology and inspection tools, and hope to bring them to the market fast. Learn more about our developments in the Technologies section.</p>
 				</div>

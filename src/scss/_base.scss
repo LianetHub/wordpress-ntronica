@@ -281,6 +281,28 @@ $scrollbarColor: $color-black;
 	}
 }
 
+.text-block-alternate {
+	font-family: $font-robert;
+	font-weight: 400;
+	font-size: rem(14);
+	line-height: math.div(16, 14);
+
+	@media (min-width: $md3) {
+		font-size: rem(17);
+		line-height: math.div(19, 17);
+	}
+
+	@media (min-width: $md2) {
+		font-size: rem(20);
+		line-height: math.div(23, 20);
+	}
+
+	@media (min-width: $md1) {
+		font-size: rem(27);
+		line-height: math.div(29, 27);
+	}
+}
+
 .text-accent {
 	color: $color-black;
 }

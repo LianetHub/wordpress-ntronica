@@ -288,6 +288,31 @@ body {
   }
 }
 
+.text-block-alternate {
+  font-family: "CoFo_Robert", Georgia, "Times New Roman", serif;
+  font-weight: 400;
+  font-size: 0.875rem;
+  line-height: 1.1428571429;
+}
+@media (min-width: 1439.98px) {
+  .text-block-alternate {
+    font-size: 1.0625rem;
+    line-height: 1.1176470588;
+  }
+}
+@media (min-width: 1727.98px) {
+  .text-block-alternate {
+    font-size: 1.25rem;
+    line-height: 1.15;
+  }
+}
+@media (min-width: 2559.98px) {
+  .text-block-alternate {
+    font-size: 1.6875rem;
+    line-height: 1.0740740741;
+  }
+}
+
 .text-accent {
   color: #000000;
 }
@@ -2847,7 +2872,7 @@ body {
 }
 @media (min-width: 767.98px) {
   .about-stats__intro {
-    margin-bottom: 2.5rem;
+    margin-bottom: 5.25rem;
   }
 }
 @media (min-width: 2559.98px) {
@@ -2857,29 +2882,7 @@ body {
 }
 .about-stats__accent {
   min-width: 0;
-  font-family: "CoFo_Robert", Georgia, "Times New Roman", serif;
-  font-weight: 400;
-  font-size: 0.9375rem;
-  line-height: 1.2;
   color: #000000;
-}
-@media (min-width: 1439.98px) {
-  .about-stats__accent {
-    font-size: 1.125rem;
-    line-height: 1.1666666667;
-  }
-}
-@media (min-width: 1727.98px) {
-  .about-stats__accent {
-    font-size: 1.375rem;
-    line-height: 1.0909090909;
-  }
-}
-@media (min-width: 2559.98px) {
-  .about-stats__accent {
-    font-size: 1.6875rem;
-    line-height: 1.0740740741;
-  }
 }
 .about-stats__grid {
   --gutter-x: 1.5rem;
@@ -2912,8 +2915,8 @@ body {
 }
 @media (min-width: 1727.98px) {
   .about-stats__value {
-    font-size: 6.25rem;
-    line-height: 0.78;
+    font-size: 5.625rem;
+    line-height: 0.7111111111;
   }
 }
 @media (min-width: 2559.98px) {
@@ -2940,8 +2943,8 @@ body {
 @media (min-width: 1439.98px) {
   .about-stats__label {
     margin-top: 1.875rem;
-    font-size: 1.625rem;
-    line-height: 0.8461538462;
+    font-size: 1.75rem;
+    line-height: 0.7142857143;
   }
 }
 @media (min-width: 2559.98px) {
@@ -2958,8 +2961,8 @@ body {
 }
 @media (min-width: 767.98px) {
   .about-solutions {
-    padding-top: 3.125rem;
-    padding-bottom: 3.75rem;
+    padding-top: 5.625rem;
+    padding-bottom: 5.625rem;
   }
 }
 @media (min-width: 2559.98px) {
@@ -2968,9 +2971,22 @@ body {
     padding-bottom: 6.875rem;
   }
 }
-.about-solutions__lead {
-  max-width: 59.0625rem;
+.about-solutions__intro {
+  --gutter-x: 1.5rem;
   margin-bottom: 1.875rem;
+}
+@media (min-width: 767.98px) {
+  .about-solutions__intro {
+    margin-bottom: 4.375rem;
+  }
+}
+@media (min-width: 2559.98px) {
+  .about-solutions__intro {
+    margin-bottom: 4.375rem;
+  }
+}
+.about-solutions__lead {
+  min-width: 0;
   font-family: "Nanotronica_Text", system-ui, -apple-system, "Segoe UI", sans-serif;
   font-weight: 400;
   font-size: 1rem;
@@ -2979,20 +2995,18 @@ body {
 }
 @media (min-width: 767.98px) {
   .about-solutions__lead {
-    margin-bottom: 2.5rem;
     font-size: 1.25rem;
     line-height: 1.2;
   }
 }
 @media (min-width: 1439.98px) {
   .about-solutions__lead {
-    font-size: 1.5rem;
-    line-height: 1.1666666667;
+    font-size: 1.3125rem;
+    line-height: 1.1428571429;
   }
 }
 @media (min-width: 2559.98px) {
   .about-solutions__lead {
-    margin-bottom: 4.375rem;
     font-size: 1.875rem;
     line-height: 1.2;
   }
@@ -3101,31 +3115,6 @@ body {
 }
 .careers-team__text {
   min-width: 0;
-  color: #000000;
-}
-.careers-team__text--secondary {
-  font-family: "CoFo_Robert", Georgia, "Times New Roman", serif;
-  font-weight: 400;
-  font-size: 1rem;
-  line-height: 1.125;
-}
-@media (min-width: 1439.98px) {
-  .careers-team__text--secondary {
-    font-size: 1.1875rem;
-    line-height: 1.1052631579;
-  }
-}
-@media (min-width: 1727.98px) {
-  .careers-team__text--secondary {
-    font-size: 1.375rem;
-    line-height: 1.0909090909;
-  }
-}
-@media (min-width: 2559.98px) {
-  .careers-team__text--secondary {
-    font-size: 1.6875rem;
-    line-height: 1.0740740741;
-  }
 }
 
 .products-thin-films {
@@ -3167,38 +3156,9 @@ body {
 }
 .products-thin-films__text {
   min-width: 0;
-  color: #000000;
 }
 .products-thin-films__text p + p {
   margin-top: 1rem;
-}
-.products-thin-films__text--secondary {
-  font-family: "CoFo_Robert", Georgia, "Times New Roman", serif;
-  font-weight: 500;
-  font-size: 0.875rem;
-  line-height: 1.1428571429;
-}
-@media (min-width: 1439.98px) {
-  .products-thin-films__text--secondary {
-    font-weight: 400;
-    font-size: 1.125rem;
-    line-height: 1.1666666667;
-  }
-  .products-thin-films__text--secondary p + p {
-    margin-top: 0rem;
-  }
-}
-@media (min-width: 1727.98px) {
-  .products-thin-films__text--secondary {
-    font-size: 1.375rem;
-    line-height: 1.0909090909;
-  }
-}
-@media (min-width: 2559.98px) {
-  .products-thin-films__text--secondary {
-    font-size: 1.6875rem;
-    line-height: 1.0740740741;
-  }
 }
 .products-thin-films__grid {
   --gutter-x: 0.875rem;
@@ -4327,12 +4287,11 @@ body {
   --marker-offset: 0.125rem;
   display: flex;
   flex-direction: column;
-  gap: 0.625rem;
+  gap: 0.375rem;
   font-family: "CoFo_Robert", Georgia, "Times New Roman", serif;
   font-weight: 400;
   font-size: 0.875rem;
   line-height: 1.1428571429;
-  color: #000000;
 }
 @media (min-width: 1439.98px) {
   .feature-list {
@@ -4349,7 +4308,7 @@ body {
     --marker-gap: 0.9375rem;
     --marker-col: 4.5625rem;
     font-size: 1.25rem;
-    line-height: 1.1;
+    line-height: 1.15;
   }
 }
 @media (min-width: 2559.98px) {
@@ -4360,6 +4319,7 @@ body {
     --marker-offset: 0.25rem;
     font-size: 1.6875rem;
     line-height: 1.0740740741;
+    gap: 0.625rem;
   }
 }
 .feature-list > li {

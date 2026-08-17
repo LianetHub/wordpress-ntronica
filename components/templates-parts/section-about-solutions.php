@@ -10,7 +10,11 @@ $ntronica_about_img = IMG_PATH . '/about/';
 ?>
 <section class="about-solutions" id="solutions">
 	<div class="container">
-		<p class="about-solutions__lead">We develop and manufacture solutions for the following technological processes.</p>
+		<div class="row about-solutions__intro">
+			<div class="col-6">
+				<h2 class="about-solutions__lead">We develop and manufacture solutions for the following technological processes.</h2>
+			</div>
+		</div>
 
 		<ul class="row about-solutions__grid">
 			<li class="col-12 col-md-4 about-solutions__item">

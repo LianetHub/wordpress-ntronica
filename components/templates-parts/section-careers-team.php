@@ -18,7 +18,7 @@
 			</div>
 
 			<div class="col-12 col-md-6">
-				<div class="careers-team__text careers-team__text--secondary">
+				<div class="text-block-alternate careers-team__text">
 					<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod.</p>
 				</div>
 			</div>

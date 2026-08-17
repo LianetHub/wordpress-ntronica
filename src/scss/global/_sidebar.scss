@@ -2,7 +2,7 @@
 @use "variables" as *;
 @use "mixins" as *;
 
-.site-sidebar {
+.sidebar {
 	position: fixed;
 	left: 0;
 	top: 0;
@@ -45,7 +45,7 @@
 		justify-content: space-between;
 		width: rem($sidebar-width-1200);
 
-		.site-sidebar__nav {
+		.sidebar__nav {
 			display: block;
 		}
 
@@ -58,13 +58,13 @@
 		justify-content: flex-end;
 		width: rem($sidebar-width);
 
-		.site-sidebar__logo {
+		.sidebar__logo {
 			@media (min-width: $md1) {
 				width: rem(54);
 			}
 		}
 
-		.site-sidebar__nav {
+		.sidebar__nav {
 			display: none;
 		}
 
@@ -81,7 +81,7 @@
 		}
 	}
 
-	// site-sidebar__nav
+	// sidebar__nav
 	&__nav {
 		display: none;
 		flex: 0 0 auto;
@@ -91,7 +91,7 @@
 		}
 	}
 
-	// site-sidebar__menu
+	// sidebar__menu
 	&__menu {
 		display: flex;
 		flex-direction: column;
@@ -99,8 +99,8 @@
 		align-items: flex-start;
 	}
 
-	// site-sidebar__menu a,
-	// site-sidebar__link
+	// sidebar__menu a,
+	// sidebar__link
 	&__menu a,
 	&__link {
 		position: relative;
@@ -153,7 +153,7 @@
 		}
 	}
 
-	// site-sidebar__logo
+	// sidebar__logo
 	&__logo {
 		display: block;
 		flex-shrink: 0;

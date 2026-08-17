@@ -1,4 +1,5 @@
 <?php
+
 /**
  * About: About us / stats
  *
@@ -21,23 +22,23 @@
 			</div>
 		</div>
 
-		<div class="row section-about-stats__grid">
-			<div class="col-6 col-md-3">
+		<ul class="row section-about-stats__grid">
+			<li class="col-6 col-md-3">
 				<p class="section-about-stats__value">3k+</p>
 				<p class="section-about-stats__label">Machines made</p>
-			</div>
-			<div class="col-6 col-md-3">
+			</li>
+			<li class="col-6 col-md-3">
 				<p class="section-about-stats__value">600</p>
 				<p class="section-about-stats__label">IP objects</p>
-			</div>
-			<div class="col-6 col-md-3">
+			</li>
+			<li class="col-6 col-md-3">
 				<p class="section-about-stats__value">250+</p>
 				<p class="section-about-stats__label">Professionals</p>
-			</div>
-			<div class="col-6 col-md-3">
+			</li>
+			<li class="col-6 col-md-3">
 				<p class="section-about-stats__value">60+</p>
 				<p class="section-about-stats__label">Years' experience</p>
-			</div>
-		</div>
+			</li>
+		</ul>
 	</div>
 </section>

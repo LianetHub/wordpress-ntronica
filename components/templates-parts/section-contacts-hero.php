@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Contacts: Hero
  *
@@ -11,11 +12,10 @@ $ntronica_contacts_img = IMG_PATH . '/contacts/';
 	<div class="section-contacts-hero__media" aria-hidden="true">
 		<img
 			class="section-contacts-hero__img"
-			src="<?php echo esc_url( $ntronica_contacts_img . 'hero.png' ); ?>"
-			alt=""
+			src="<?php echo esc_url($ntronica_contacts_img . 'hero.png'); ?>"
+			alt="Laboratory technicians working at microscopes in a sterile facility"
 			width="2560"
-			height="1100"
-		>
+			height="1100">
 	</div>
 
 	<div class="container section-contacts-hero__inner">

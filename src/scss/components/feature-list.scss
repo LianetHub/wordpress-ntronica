@@ -3,157 +3,62 @@
 @use "../mixins" as *;
 
 .feature-list {
+	--marker-size: #{rem(11)};
+	--marker-gap: #{rem(11)};
+	--marker-col: #{rem(56)};
+	--marker-offset: #{rem(2)};
 	display: flex;
-	gap: rem(11);
-	align-items: flex-start;
+	flex-direction: column;
+	gap: rem(10);
+	font-family: $font-robert;
+	font-weight: 400;
+	font-size: rem(14);
+	line-height: math.div(16, 14);
+	color: $color-black;
+
 
 	@media (min-width: $md3) {
-		gap: rem(13);
+		--marker-size: #{rem(13)};
+		--marker-gap: #{rem(13)};
+		--marker-col: #{rem(63)};
+		font-size: rem(17);
+		line-height: math.div(19, 17);
 	}
 
 	@media (min-width: $md2) {
-		gap: rem(15);
+		--marker-size: #{rem(15)};
+		--marker-gap: #{rem(15)};
+		--marker-col: #{rem(73)};
+		font-size: rem(20);
+		line-height: math.div(22, 20);
 	}
 
 	@media (min-width: $md1) {
-		gap: rem(19);
+		--marker-size: #{rem(19)};
+		--marker-gap: #{rem(19)};
+		--marker-col: #{rem(94)};
+		--marker-offset: #{rem(4)};
+		font-size: rem(27);
+		line-height: math.div(29, 27);
 	}
 
-	// feature-list__markers
-	&__markers {
+	>li {
 		position: relative;
-		flex: 0 0 rem(56);
-		width: rem(56);
-		align-self: stretch;
-		min-height: rem(121);
+		padding-left: calc(var(--marker-col) + var(--marker-gap));
 
-		@media (min-width: $md3) {
-			flex-basis: rem(63);
-			width: rem(63);
-			min-height: rem(146);
-		}
-
-		@media (min-width: $md2) {
-			flex-basis: rem(73);
-			width: rem(73);
-			min-height: rem(143);
-		}
-
-		@media (min-width: $md1) {
-			flex-basis: rem(94);
-			width: rem(94);
-			min-height: rem(271);
-		}
-	}
-
-	// feature-list__marker
-	&__marker {
-		position: absolute;
-		right: 0;
-		width: rem(11);
-		height: rem(11);
-		background-color: $color-black;
-
-		@media (min-width: $md3) {
-			width: rem(13);
-			height: rem(13);
-		}
-
-		@media (min-width: $md2) {
-			width: rem(15);
-			height: rem(15);
-		}
-
-		@media (min-width: $md1) {
-			width: rem(19);
-			height: rem(19);
-		}
-
-		// feature-list--1
-		&--1 {
-			top: rem(2);
-
-			@media (min-width: $md1) {
-				top: rem(4);
-			}
-		}
-
-		// feature-list--2
-		&--2 {
-			top: rem(56);
-
-			@media (min-width: $md3) {
-				top: rem(67);
-			}
-
-			@media (min-width: $md2) {
-				top: rem(54);
-			}
-
-			@media (min-width: $md1) {
-				top: rem(74);
-			}
-		}
-
-		// feature-list--3
-		&--3 {
-			top: rem(110);
-
-			@media (min-width: $md3) {
-				top: rem(132);
-			}
-
-			@media (min-width: $md2) {
-				top: rem(128);
-			}
-
-			@media (min-width: $md1) {
-				top: rem(173);
-			}
-		}
-	}
-
-	// feature-list__body
-	&__body {
-		flex: 1 1 auto;
-		min-width: 0;
-		font-family: $font-robert;
-		font-weight: 400;
-		font-size: rem(14);
-		line-height: math.div(16, 14);
-		color: $color-black;
-
-		@media (min-width: $md3) {
-			font-size: rem(17);
-			line-height: math.div(19, 17);
-		}
-
-		@media (min-width: $md2) {
-			font-size: rem(20);
-			line-height: math.div(22, 20);
-		}
-
-		@media (min-width: $md1) {
-			font-size: rem(27);
-			line-height: math.div(29, 27);
-		}
-
-		p + p {
-			margin-top: rem(6);
-
-			@media (min-width: $md3) {
-				margin-top: rem(8);
-			}
-
-			@media (min-width: $md1) {
-				margin-top: rem(12);
-			}
+		&::before {
+			content: "";
+			position: absolute;
+			top: var(--marker-offset);
+			left: calc(var(--marker-col) - var(--marker-size));
+			width: var(--marker-size);
+			height: var(--marker-size);
+			background-color: $color-black;
 		}
 	}
 }
 
 .contact-list {
-	// uses grid.scss .row
 	--gutter-x: #{rem(11)};
 	--gutter-y: #{rem(0)};
 	font-family: $font-family;

@@ -1,4 +1,5 @@
 <?php
+
 /**
  * About: Our goal
  *
@@ -22,11 +23,11 @@ $ntronica_about_img = IMG_PATH . '/about/';
 				<div class="section-about-goal__media">
 					<img
 						class="section-about-goal__img"
-						src="<?php echo esc_url( $ntronica_about_img . 'goal.png' ); ?>"
+						src="<?php echo esc_url($ntronica_about_img . 'goal.webp'); ?>"
 						alt="Laboratory equipment"
+						loading="lazy"
 						width="945"
-						height="515"
-					>
+						height="515">
 				</div>
 			</div>
 		</div>

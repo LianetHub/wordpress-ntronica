@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Careers: Hero
  *
@@ -11,11 +12,10 @@ $ntronica_careers_img = IMG_PATH . '/careers/';
 	<div class="page-hero__media" aria-hidden="true">
 		<img
 			class="page-hero__img"
-			src="<?php echo esc_url( $ntronica_careers_img . 'hero.png' ); ?>"
-			alt=""
+			src="<?php echo esc_url($ntronica_careers_img . 'hero.png'); ?>"
+			alt="Engineer in a cleanroom suit operating laboratory equipment"
 			width="2560"
-			height="1100"
-		>
+			height="1100">
 	</div>
 
 	<div class="container page-hero__inner">

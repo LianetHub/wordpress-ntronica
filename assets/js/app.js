@@ -7,13 +7,13 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 const initSidebar = () => {
-	const sidebar = document.querySelector('.site-sidebar');
+	const sidebar = document.querySelector('.sidebar');
 
 	if (!sidebar) {
 		return;
 	}
 
-	const logoBtn = sidebar.querySelector('.site-sidebar__logo');
+	const logoBtn = sidebar.querySelector('.sidebar__logo');
 	const mqWide = window.matchMedia('(min-width: 1199.98px)');
 
 	const isOpen = () =>
@@ -38,7 +38,7 @@ const initSidebar = () => {
 	};
 
 	sidebar.addEventListener('click', (event) => {
-		if (event.target.closest('.site-sidebar__link')) {
+		if (event.target.closest('.sidebar__link')) {
 			return;
 		}
 

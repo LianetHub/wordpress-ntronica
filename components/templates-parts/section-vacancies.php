@@ -1,8 +1,7 @@
 <?php
+
 /**
  * Section: Immediate vacancies (Swiper)
- *
- * Pages: 4 cards (<768) / 6 cards (≥768). Built in JS from data-vacancies.
  *
  * @package ntronica
  */
@@ -53,6 +52,9 @@ $vacancies = array(
 		'dept'  => 'Research and Technology Development',
 	),
 );
+
+$ntronica_vacancy_pages = array_chunk($vacancies, 6);
+$ntronica_vacancy_has_nav = count($ntronica_vacancy_pages) > 1;
 ?>
 <section class="section-vacancies band-full" id="careers">
 	<div class="container">
@@ -60,16 +62,30 @@ $vacancies = array(
 			Immediate vacancies
 		</h2>
 
-		<div
-			class="swiper vacancies-slider section-vacancies__slider"
-			data-vacancies="<?php echo esc_attr( wp_json_encode( $vacancies ) ); ?>"
-		>
-			<div class="swiper-wrapper"></div>
-
-			<div class="section-vacancies__nav section-vacancies__nav--hidden">
-				<button type="button" class="section-vacancies__arrow section-vacancies__arrow--prev" aria-label="Previous vacancies">←</button>
-				<button type="button" class="section-vacancies__arrow section-vacancies__arrow--next" aria-label="Next vacancies">→</button>
+		<div class="swiper vacancies-slider section-vacancies__slider">
+			<div class="swiper-wrapper">
+				<?php foreach ($ntronica_vacancy_pages as $ntronica_page) : ?>
+					<div class="swiper-slide">
+						<div class="row section-vacancies__grid">
+							<?php foreach ($ntronica_page as $ntronica_item) : ?>
+								<div class="col-12 col-md-4">
+									<article class="vacancy-card">
+										<h3 class="vacancy-card__title"><?php echo esc_html($ntronica_item['title']); ?></h3>
+										<p class="vacancy-card__dept"><?php echo esc_html($ntronica_item['dept']); ?></p>
+									</article>
+								</div>
+							<?php endforeach; ?>
+						</div>
+					</div>
+				<?php endforeach; ?>
 			</div>
+
+			<?php if ($ntronica_vacancy_has_nav) : ?>
+				<div class="section-vacancies__nav">
+					<button type="button" class="section-vacancies__arrow section-vacancies__arrow--prev" aria-label="Previous vacancies">←</button>
+					<button type="button" class="section-vacancies__arrow section-vacancies__arrow--next" aria-label="Next vacancies">→</button>
+				</div>
+			<?php endif; ?>
 		</div>
 	</div>
 </section>

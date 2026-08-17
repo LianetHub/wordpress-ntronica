@@ -4,6 +4,7 @@
 document.addEventListener("DOMContentLoaded", () => {
 	initSidebar();
 	initVacanciesSlider();
+	initPagedSliders();
 	initSearchForms();
 });
 
@@ -69,109 +70,64 @@ const initVacanciesSlider = () => {
 		return;
 	}
 
-	const mqDesktop = window.matchMedia("(min-width: 767.98px)");
-	const nav = vacanciesEl.querySelector(".section-vacancies__nav");
-	const wrapper = vacanciesEl.querySelector(".swiper-wrapper");
-	let vacancies = [];
+	const slideCount = vacanciesEl.querySelectorAll(".swiper-slide").length;
 
-	try {
-		vacancies = JSON.parse(
-			vacanciesEl.getAttribute("data-vacancies") || "[]",
-		);
-	} catch (e) {
-		vacancies = [];
-	}
-
-	if (!Array.isArray(vacancies) || !vacancies.length || !wrapper) {
+	if (slideCount < 2) {
 		return;
 	}
 
-	let swiperInstance = null;
+	new Swiper(vacanciesEl, {
+		slidesPerView: 1,
+		spaceBetween: 0,
+		speed: 450,
+		navigation: {
+			prevEl: vacanciesEl.querySelector(".section-vacancies__arrow--prev"),
+			nextEl: vacanciesEl.querySelector(".section-vacancies__arrow--next"),
+		},
+	});
+};
 
-	const chunk = (items, size) => {
-		const pages = [];
-		for (let i = 0; i < items.length; i += size) {
-			pages.push(items.slice(i, i + size));
-		}
-		return pages;
-	};
+const padFraction = (n) => String(n).padStart(2, "0");
 
-	const escapeHtml = (value) =>
-		String(value)
-			.replace(/&/g, "&amp;")
-			.replace(/</g, "&lt;")
-			.replace(/>/g, "&gt;")
-			.replace(/"/g, "&quot;")
-			.replace(/'/g, "&#39;");
+const initPagedSliders = () => {
+	if (typeof Swiper === "undefined") {
+		return;
+	}
 
-	const buildSlides = (perPage) => {
-		const pages = chunk(vacancies, perPage);
-		wrapper.innerHTML = pages
-			.map(
-				(page) => `
-			<div class="swiper-slide">
-				<div class="row section-vacancies__grid">
-					${page
-						.map(
-							(item) => `
-						<div class="col-12 col-md-4">
-							<article class="vacancy-card">
-								<h3 class="vacancy-card__title">${escapeHtml(item.title || "")}</h3>
-								<p class="vacancy-card__dept">${escapeHtml(item.dept || "")}</p>
-							</article>
-						</div>`,
-						)
-						.join("")}
-				</div>
-			</div>`,
-			)
-			.join("");
-		return pages.length;
-	};
+	document.querySelectorAll(".js-paged-slider").forEach((sliderEl) => {
+		const slideCount = sliderEl.querySelectorAll(".swiper-slide").length;
+		const prevEl = sliderEl.querySelector(".slider-nav__prev");
+		const nextEl = sliderEl.querySelector(".slider-nav__next");
+		const fractionEl = sliderEl.querySelector(".slider-nav__fraction");
+		const hasNav = slideCount > 1 && prevEl && nextEl;
 
-	const initVacancies = () => {
-		const perPage = mqDesktop.matches ? 6 : 4;
-		const pageCount = buildSlides(perPage);
-		const hasMultiplePages = pageCount > 1;
-
-		if (nav) {
-			nav.classList.toggle(
-				"section-vacancies__nav--hidden",
-				!hasMultiplePages,
-			);
+		if (!slideCount) {
+			return;
 		}
 
-		if (swiperInstance) {
-			swiperInstance.destroy(true, true);
-			swiperInstance = null;
-		}
-
-		swiperInstance = new Swiper(vacanciesEl, {
+		new Swiper(sliderEl, {
 			slidesPerView: 1,
 			spaceBetween: 0,
 			speed: 450,
-			allowTouchMove: hasMultiplePages,
-			navigation: hasMultiplePages
+			allowTouchMove: slideCount > 1,
+			navigation: hasNav
 				? {
-						prevEl: vacanciesEl.querySelector(
-							".section-vacancies__arrow--prev",
-						),
-						nextEl: vacanciesEl.querySelector(
-							".section-vacancies__arrow--next",
-						),
+						prevEl,
+						nextEl,
+					}
+				: undefined,
+			pagination: fractionEl
+				? {
+						el: fractionEl,
+						type: "fraction",
+						formatFractionCurrent: padFraction,
+						formatFractionTotal: padFraction,
+						renderFraction: (currentClass, totalClass) =>
+							`<span class="${currentClass}"></span>/<span class="${totalClass}"></span>`,
 					}
 				: undefined,
 		});
-	};
-
-	initVacancies();
-
-	const onBreakpointChange = () => initVacancies();
-	if (typeof mqDesktop.addEventListener === "function") {
-		mqDesktop.addEventListener("change", onBreakpointChange);
-	} else if (typeof mqDesktop.addListener === "function") {
-		mqDesktop.addListener(onBreakpointChange);
-	}
+	});
 };
 
 const initSearchForms = () => {

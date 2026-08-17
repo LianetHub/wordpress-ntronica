@@ -1,0 +1,336 @@
+@use "sass:math";
+@use "../variables" as *;
+@use "../mixins" as *;
+
+.section-news-feed {
+	padding-top: rem(50);
+
+	@media (min-width: $md6) {
+		padding-top: rem(70);
+	}
+
+	@media (min-width: $md4) {
+		padding-top: rem(80);
+	}
+
+	@media (min-width: $md3) {
+		padding-top: rem(90);
+	}
+
+	// section-news-feed--press
+	&--press {
+		padding-bottom: rem(50);
+
+		@media (min-width: $md6) {
+			padding-bottom: rem(70);
+		}
+
+		@media (min-width: $md3) {
+			padding-bottom: rem(80);
+		}
+
+		@media (min-width: $md1) {
+			padding-top: rem(110);
+			padding-bottom: rem(100);
+		}
+	}
+
+	// section-news-feed__title
+	&__title {
+		margin-bottom: rem(16);
+
+		@media (min-width: $md3) {
+			margin-bottom: rem(24);
+		}
+
+		@media (min-width: $md1) {
+			margin-bottom: rem(36);
+		}
+	}
+
+	// section-news-feed__lead
+	&__lead {
+		margin-bottom: rem(24);
+
+		@media (min-width: $md6) {
+			margin-bottom: rem(30);
+		}
+
+		@media (min-width: $md1) {
+			margin-bottom: rem(36);
+		}
+	}
+
+	// section-news-feed__slider
+	&__slider {
+		overflow: hidden;
+	}
+
+	// section-news-feed__grid
+	&__grid {
+		--gutter-x: #{rem(24)};
+		--gutter-y: #{rem(30)};
+		align-items: start;
+
+		@media (min-width: $md6) {
+			--gutter-y: #{rem(24)};
+		}
+
+		@media (min-width: $md1) {
+			--gutter-y: #{rem(40)};
+		}
+	}
+
+	.swiper-slide {
+		height: auto;
+	}
+
+	.news-card__title {
+		font-family: $font-robert;
+	}
+
+	.news-card__media {
+		@media (min-width: $md1) {
+			height: rem(328);
+		}
+	}
+
+	// section-news-feed__nav
+	&__nav {
+		margin-top: rem(16);
+
+		@media (min-width: $md3) {
+			margin-top: rem(20);
+		}
+	}
+}
+
+.section-media-publications {
+	background-color: $color-muted;
+	padding-top: rem(30);
+	padding-bottom: rem(30);
+
+	@media (min-width: $md3) {
+		padding-top: rem(40);
+		padding-bottom: rem(40);
+	}
+
+	@media (min-width: $md2) {
+		padding-top: rem(50);
+		padding-bottom: rem(50);
+	}
+
+	@media (min-width: $md1) {
+		padding-top: rem(70);
+		padding-bottom: rem(70);
+	}
+
+	// section-media-publications__title
+	&__title {
+		margin-bottom: rem(40);
+
+		@media (min-width: $md3) {
+			margin-bottom: rem(50);
+		}
+
+		@media (min-width: $md2) {
+			margin-bottom: rem(60);
+		}
+
+		@media (min-width: $md1) {
+			margin-bottom: rem(80);
+		}
+	}
+
+	// section-media-publications__grid
+	&__grid {
+		--gutter-x: #{rem(24)};
+		--gutter-y: #{rem(40)};
+		align-items: start;
+
+		@media (min-width: $md6) {
+			--gutter-y: #{rem(50)};
+		}
+
+		@media (min-width: $md1) {
+			--gutter-y: #{rem(70)};
+		}
+	}
+}
+
+.media-card {
+	display: flex;
+	flex-direction: column;
+	gap: rem(12);
+	min-width: 0;
+
+	@media (min-width: $md6) {
+		gap: rem(16);
+	}
+
+	@media (min-width: $md1) {
+		gap: rem(24);
+	}
+
+	// media-card__date
+	&__date {
+		font-family: $font-family;
+		font-weight: 700;
+		font-size: rem(15);
+		line-height: math.div(18, 15);
+		color: $color-white;
+
+		@media (min-width: $md3) {
+			font-size: rem(18);
+			line-height: math.div(21, 18);
+		}
+
+		@media (min-width: $md2) {
+			font-size: rem(21);
+			line-height: math.div(24, 21);
+		}
+
+		@media (min-width: $md1) {
+			font-size: rem(26);
+			line-height: math.div(32, 26);
+		}
+	}
+
+	// media-card__title
+	&__title {
+		font-family: $font-robert;
+		font-weight: 700;
+		font-size: rem(18);
+		line-height: math.div(20, 18);
+		color: $color-black;
+		overflow-wrap: anywhere;
+
+		@media (min-width: $md3) {
+			font-size: rem(24);
+			line-height: math.div(26, 24);
+		}
+
+		@media (min-width: $md2) {
+			font-size: rem(28);
+			line-height: math.div(30, 28);
+		}
+
+		@media (min-width: $md1) {
+			font-size: rem(36);
+			line-height: math.div(38, 36);
+		}
+	}
+
+	// media-card__excerpt
+	&__excerpt {
+		font-family: $font-robert;
+		font-weight: 500;
+		font-size: rem(14);
+		line-height: math.div(16, 14);
+		color: $color-white;
+
+		@media (min-width: $md3) {
+			font-size: rem(18);
+			line-height: math.div(21, 18);
+		}
+
+		@media (min-width: $md2) {
+			font-size: rem(22);
+			line-height: math.div(24, 22);
+		}
+
+		@media (min-width: $md1) {
+			font-size: rem(27);
+			line-height: math.div(29, 27);
+		}
+	}
+}
+
+.slider-nav {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	width: rem(110);
+
+	@media (min-width: $md3) {
+		width: rem(140);
+	}
+
+	@media (min-width: $md1) {
+		width: rem(172);
+	}
+
+	// slider-nav__prev
+	&__prev,
+	// slider-nav__next
+	&__next {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		width: rem(19);
+		height: rem(19);
+		background: transparent;
+		font-family: $font-title;
+		font-weight: 400;
+		font-size: rem(27);
+		line-height: math.div(17, 27);
+		color: $color-black;
+		cursor: pointer;
+		transition: opacity 0.2s ease;
+
+		@media (min-width: $md3) {
+			width: rem(21);
+			height: rem(21);
+			font-size: rem(34);
+			line-height: math.div(19, 34);
+		}
+
+		@media (min-width: $md2) {
+			width: rem(24);
+			height: rem(22);
+			font-size: rem(36);
+		}
+
+		@media (min-width: $md1) {
+			width: rem(33);
+			height: rem(28);
+			font-size: rem(47);
+			line-height: math.div(17, 47);
+		}
+
+		&.swiper-button-disabled {
+			opacity: 0.35;
+			cursor: default;
+		}
+
+		@media (any-hover: hover) {
+			&:not(.swiper-button-disabled):hover {
+				opacity: 0.65;
+			}
+		}
+	}
+
+	// slider-nav__fraction
+	&__fraction {
+		font-family: $font-family;
+		font-weight: 700;
+		font-size: rem(15);
+		line-height: math.div(18, 15);
+		color: $color-black;
+
+		@media (min-width: $md3) {
+			font-size: rem(18);
+			line-height: math.div(21, 18);
+		}
+
+		@media (min-width: $md2) {
+			font-size: rem(21);
+			line-height: math.div(24, 21);
+		}
+
+		@media (min-width: $md1) {
+			font-size: rem(26);
+			line-height: math.div(17, 26);
+		}
+	}
+}

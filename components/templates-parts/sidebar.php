@@ -5,31 +5,51 @@
  *
  * @package ntronica
  */
+
+$ntronica_sidebar_items = array(
+	array(
+		'slug'  => 'about',
+		'label' => 'About',
+	),
+	array(
+		'slug'  => 'technology',
+		'label' => 'Technology',
+	),
+	array(
+		'slug'  => 'products',
+		'label' => 'Products',
+	),
+	array(
+		'slug'  => 'news',
+		'label' => 'News',
+	),
+	array(
+		'slug'  => 'careers',
+		'label' => 'Careers',
+	),
+	array(
+		'slug'  => 'contacts',
+		'label' => 'Contacts',
+	),
+);
 ?>
 <aside class="sidebar" aria-label="Primary">
 	<nav class="sidebar__nav" id="sidebar-nav">
 		<ul class="sidebar__menu">
-			<li>
-				<a
-					class="sidebar__link<?php echo is_page('about') ? ' is-active' : ''; ?>"
-					href="<?php echo esc_url(home_url('/about/')); ?>"
-					data-title="About"><span>About</span></a>
-			</li>
-			<li><a class="sidebar__link" href="#" data-title="Technology"><span>Technology</span></a></li>
-			<li><a class="sidebar__link" href="#" data-title="Products"><span>Products</span></a></li>
-			<li><a class="sidebar__link" href="#" data-title="News"><span>News</span></a></li>
-			<li>
-				<a
-					class="sidebar__link<?php echo is_page('careers') ? ' is-active' : ''; ?>"
-					href="<?php echo esc_url(home_url('/careers/')); ?>"
-					data-title="Careers"><span>Careers</span></a>
-			</li>
-			<li>
-				<a
-					class="sidebar__link<?php echo is_page('contacts') ? ' is-active' : ''; ?>"
-					href="<?php echo esc_url(home_url('/contacts/')); ?>"
-					data-title="Contacts"><span>Contacts</span></a>
-			</li>
+			<?php foreach ($ntronica_sidebar_items as $ntronica_item) : ?>
+				<?php
+				$ntronica_link_class = 'sidebar__link';
+				if (is_page($ntronica_item['slug'])) {
+					$ntronica_link_class .= ' is-active';
+				}
+				?>
+				<li>
+					<a
+						class="<?php echo esc_attr($ntronica_link_class); ?>"
+						href="<?php echo esc_url(home_url('/' . $ntronica_item['slug'] . '/')); ?>"
+						data-title="<?php echo esc_attr($ntronica_item['label']); ?>"><span><?php echo esc_html($ntronica_item['label']); ?></span></a>
+				</li>
+			<?php endforeach; ?>
 		</ul>
 	</nav>
 	<button

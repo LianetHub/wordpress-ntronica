@@ -44,13 +44,17 @@ $ntronica_nav = is_array($ntronica_hero['nav']) ? $ntronica_hero['nav'] : array(
 	<div class="container page-hero__inner">
 		<div class="page-hero__top">
 			<nav class="page-hero__nav" aria-label="<?php echo esc_attr($ntronica_nav_label); ?>">
-				<?php foreach ($ntronica_nav as $ntronica_nav_item) : ?>
-					<?php
-					$ntronica_nav_href = isset($ntronica_nav_item['href']) ? $ntronica_nav_item['href'] : '';
-					$ntronica_nav_text = isset($ntronica_nav_item['label']) ? $ntronica_nav_item['label'] : '';
-					?>
-					<a class="page-hero__nav-link" href="<?php echo esc_url($ntronica_nav_href); ?>"><?php echo esc_html($ntronica_nav_text); ?></a>
-				<?php endforeach; ?>
+				<ul class="page-hero__nav-list">
+					<?php foreach ($ntronica_nav as $ntronica_nav_item) : ?>
+						<?php
+						$ntronica_nav_href = isset($ntronica_nav_item['href']) ? $ntronica_nav_item['href'] : '';
+						$ntronica_nav_text = isset($ntronica_nav_item['label']) ? $ntronica_nav_item['label'] : '';
+						?>
+						<li class="page-hero__nav-item">
+							<a class="page-hero__nav-link" href="<?php echo esc_url($ntronica_nav_href); ?>"><?php echo esc_html($ntronica_nav_text); ?></a>
+						</li>
+					<?php endforeach; ?>
+				</ul>
 			</nav>
 			<?php get_template_part('components/templates-parts/lang-switcher'); ?>
 		</div>

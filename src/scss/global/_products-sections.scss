@@ -1,0 +1,187 @@
+@use "sass:math";
+@use "../variables" as *;
+@use "../mixins" as *;
+
+.section-products-thin-films {
+	padding-top: rem(30);
+
+	@media (min-width: $md3) {
+		padding-top: rem(50);
+	}
+
+	@media (min-width: $md1) {
+		padding-top: rem(90);
+	}
+
+	// section-products-thin-films__title
+	&__title {
+		margin-bottom: rem(16);
+
+		@media (min-width: $md3) {
+			margin-bottom: rem(24);
+		}
+
+		@media (min-width: $md1) {
+			margin-bottom: rem(36);
+		}
+	}
+
+	// section-products-thin-films__intro
+	&__intro {
+		--gutter-x: #{rem(14)};
+		--gutter-y: #{rem(16)};
+
+		@media (min-width: $md6) {
+			--gutter-x: #{rem(24)};
+			--gutter-y: #{rem(0)};
+			align-items: start;
+		}
+	}
+
+	// section-products-thin-films__text
+	&__text {
+		min-width: 0;
+		color: $color-black;
+
+		p + p {
+			margin-top: rem(16);
+		}
+
+		// section-products-thin-films__text--secondary
+		&--secondary {
+			font-family: $font-robert;
+			font-weight: 500;
+			font-size: rem(14);
+			line-height: math.div(16, 14);
+
+			@media (min-width: $md3) {
+				font-weight: 400;
+				font-size: rem(18);
+				line-height: math.div(21, 18);
+
+				p + p {
+					margin-top: rem(0);
+				}
+			}
+
+			@media (min-width: $md2) {
+				font-size: rem(22);
+				line-height: math.div(24, 22);
+			}
+
+			@media (min-width: $md1) {
+				font-size: rem(27);
+				line-height: math.div(29, 27);
+			}
+		}
+	}
+
+	// section-products-thin-films__grid
+	&__grid {
+		--gutter-x: #{rem(14)};
+		--gutter-y: #{rem(26)};
+		margin-top: rem(30);
+
+		@media (min-width: $md6) {
+			--gutter-x: #{rem(24)};
+			--gutter-y: #{rem(12)};
+			margin-top: rem(40);
+		}
+
+		@media (min-width: $md1) {
+			--gutter-y: #{rem(20)};
+			margin-top: rem(70);
+		}
+	}
+
+}
+
+.section-products-lines {
+	padding-top: rem(70);
+	padding-bottom: rem(70);
+
+	@media (min-width: $md3) {
+		padding-top: rem(100);
+		padding-bottom: rem(90);
+	}
+
+	@media (min-width: $md1) {
+		padding-top: rem(110);
+		padding-bottom: rem(110);
+	}
+
+	// section-products-lines__layout
+	&__layout {
+		--gutter-x: #{rem(24)};
+		--gutter-y: #{rem(70)};
+		align-items: start;
+	}
+
+	// section-products-lines__col
+	&__col {
+		min-width: 0;
+	}
+
+	// section-products-lines__title
+	&__title {
+		margin-bottom: rem(16);
+
+		@media (min-width: $md1) {
+			margin-bottom: rem(36);
+		}
+	}
+
+	// section-products-lines__text
+	&__text {
+		margin-bottom: rem(30);
+		min-width: 0;
+
+		@media (min-width: $md6) {
+			margin-bottom: rem(40);
+		}
+
+		@media (min-width: $md1) {
+			margin-bottom: rem(70);
+		}
+	}
+
+	// section-products-lines__cards
+	&__cards {
+		--gutter-x: #{rem(14)};
+		--gutter-y: #{rem(12)};
+
+		@media (min-width: $md6) {
+			--gutter-x: #{rem(24)};
+		}
+
+		@media (min-width: $md1) {
+			--gutter-y: #{rem(20)};
+		}
+	}
+
+}
+
+.section-products-thin-films,
+.section-products-lines {
+	.product-card__title {
+		font-family: $font-robert;
+		font-weight: 500;
+		font-size: rem(20);
+		line-height: math.div(22, 20);
+
+		@media (min-width: $md6) {
+			font-size: rem(18);
+			line-height: math.div(20, 18);
+		}
+
+		@media (min-width: $md3) {
+			font-size: rem(26);
+			line-height: math.div(26, 26);
+		}
+
+		@media (min-width: $md1) {
+			font-size: rem(36);
+			line-height: math.div(38, 36);
+		}
+	}
+}

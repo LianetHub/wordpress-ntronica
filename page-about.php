@@ -16,6 +16,7 @@ get_template_part(
 	array(
 		'title' => 'About',
 		'image' => IMG_PATH . '/about/hero.webp',
+		'tagline' => 'We develop innovative equipment to enable the full cycle of microelectronics production and complex r&d activities',
 		'nav'   => array(
 			array(
 				'href'  => '#overview',

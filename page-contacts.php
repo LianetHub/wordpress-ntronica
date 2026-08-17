@@ -15,7 +15,7 @@ get_template_part(
 	'page-hero',
 	array(
 		'title' => 'Contacts',
-		'image' => IMG_PATH . '/contacts/hero.png',
+		'image' => IMG_PATH . '/contacts/hero.webp',
 		'nav'   => array(
 			array(
 				'href'  => '#about',

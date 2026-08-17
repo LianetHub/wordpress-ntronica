@@ -15,7 +15,8 @@ get_template_part(
 	'page-hero',
 	array(
 		'title' => 'Careers',
-		'image' => IMG_PATH . '/careers/hero.png',
+		'image' => IMG_PATH . '/careers/hero.webp',
+		'tagline' => 'We develop innovative equipment to enable the full cycle of microelectronics production and complex r&d activities',
 		'nav'   => array(
 			array(
 				'href'  => '#team',

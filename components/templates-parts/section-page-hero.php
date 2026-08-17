@@ -9,11 +9,8 @@
  *     @type string $title         Page title (h1).
  *     @type string $image         Background image URL.
  *     @type string $tagline       Intro text.
- *     @type bool   $tagline_dark  Dark tagline color.
  *     @type string $nav_label     Nav aria-label.
  *     @type array  $nav           Links: array{ href: string, label: string }.
- *     @type string $lang          Language switcher label.
- *     @type string $lang_url      Language switcher URL.
  * }
  */
 
@@ -24,21 +21,13 @@ if (! isset($args) || ! is_array($args)) {
 $ntronica_hero = wp_parse_args(
 	$args,
 	array(
-		'title'        => '',
-		'image'        => '',
-		'tagline'      => 'We develop innovative equipment to enable the full cycle of microelectronics production and complex r&d activities',
-		'tagline_dark' => false,
-		'nav_label'    => '',
-		'nav'          => array(),
-		'lang'         => 'ru',
-		'lang_url'     => '#',
+		'title'     => '',
+		'image'     => '',
+		'tagline'   => '',
+		'nav_label' => '',
+		'nav'       => array(),
 	)
 );
-
-$ntronica_tagline_class = 'page-hero__tagline';
-if (! empty($ntronica_hero['tagline_dark'])) {
-	$ntronica_tagline_class .= ' page-hero__tagline--dark';
-}
 
 $ntronica_nav_label = $ntronica_hero['nav_label'];
 if ('' === $ntronica_nav_label && '' !== $ntronica_hero['title']) {
@@ -63,10 +52,10 @@ $ntronica_nav = is_array($ntronica_hero['nav']) ? $ntronica_hero['nav'] : array(
 					<a class="page-hero__nav-link" href="<?php echo esc_url($ntronica_nav_href); ?>"><?php echo esc_html($ntronica_nav_text); ?></a>
 				<?php endforeach; ?>
 			</nav>
-			<a class="page-hero__lang" href="<?php echo esc_url($ntronica_hero['lang_url']); ?>"><?php echo esc_html($ntronica_hero['lang']); ?></a>
+			<?php get_template_part('components/templates-parts/lang-switcher'); ?>
 		</div>
 
-		<p class="<?php echo esc_attr($ntronica_tagline_class); ?>"><?php echo esc_html($ntronica_hero['tagline']); ?></p>
+		<p class="page-hero__tagline"><?php echo esc_html($ntronica_hero['tagline']); ?></p>
 
 		<h1 class="page-hero__title"><?php echo esc_html($ntronica_hero['title']); ?></h1>
 	</div>

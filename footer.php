@@ -24,9 +24,7 @@
 			<div class="col-12 col-md-4 col-xxl-3">
 				<ul class="feature-list">
 					<li data-label="Mail" data-label-short="Eml">
-						<a href="mailto:contact@ntronica.com">contact@ntronica.com</a>
-					</li>
-					<li>
+						<a href="mailto:contact@ntronica.com">contact@ntronica.com</a> <br>
 						<a href="mailto:business@ntronica.com">business@ntronica.com</a>
 					</li>
 					<li data-label="Tel">
@@ -40,10 +38,7 @@
 
 			<div class="col-12 col-md-4 col-xxl-3">
 				<address class="footer__address" data-label="Add">
-					8 Ulsoor Road, Yellapa<br>
-					Chetty Layout, Ulsoor,<br>
-					Bangaluru, Karnataka,<br>
-					560042, India
+					8 Ulsoor Road, Yellapa Chetty Layout, Ulsoor, Bangaluru, Karnataka, 560042, India
 				</address>
 			</div>
 

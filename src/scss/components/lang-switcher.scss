@@ -1,0 +1,29 @@
+@use "sass:math";
+@use "../variables" as *;
+@use "../mixins" as *;
+
+.lang-switcher {
+	flex: 0 0 auto;
+	font-family: $font-family;
+	font-weight: 700;
+	font-size: rem(15);
+	line-height: math.div(13, 15);
+	color: $color-black;
+	text-transform: lowercase;
+	text-align: right;
+
+	@media (min-width: $md3) {
+		font-size: rem(18);
+		line-height: math.div(14, 18);
+	}
+
+	@media (min-width: $md2) {
+		font-size: rem(21);
+		line-height: math.div(15, 21);
+	}
+
+	@media (min-width: $md1) {
+		font-size: rem(25);
+		line-height: math.div(19, 25);
+	}
+}

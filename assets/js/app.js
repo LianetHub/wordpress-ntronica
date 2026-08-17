@@ -1,44 +1,47 @@
 /**
  * Theme frontend entry (ntronica).
  */
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener("DOMContentLoaded", () => {
 	initSidebar();
 	initVacanciesSlider();
+	initSearchForms();
 });
 
 const initSidebar = () => {
-	const sidebar = document.querySelector('.sidebar');
+	const sidebar = document.querySelector(".sidebar");
 
 	if (!sidebar) {
 		return;
 	}
 
-	const logoBtn = sidebar.querySelector('.sidebar__logo');
-	const mqWide = window.matchMedia('(min-width: 1199.98px)');
+	const logoBtn = sidebar.querySelector(".sidebar__logo");
+	const mqWide = window.matchMedia("(min-width: 1199.98px)");
 
 	const isOpen = () =>
-		mqWide.matches ? !sidebar.classList.contains('is-collapsed') : sidebar.classList.contains('is-open');
+		mqWide.matches
+			? !sidebar.classList.contains("is-collapsed")
+			: sidebar.classList.contains("is-open");
 
 	const syncAria = () => {
 		if (logoBtn) {
-			logoBtn.setAttribute('aria-expanded', isOpen() ? 'true' : 'false');
+			logoBtn.setAttribute("aria-expanded", isOpen() ? "true" : "false");
 		}
 	};
 
 	const toggle = () => {
 		if (mqWide.matches) {
-			sidebar.classList.toggle('is-collapsed');
-			sidebar.classList.remove('is-open');
+			sidebar.classList.toggle("is-collapsed");
+			sidebar.classList.remove("is-open");
 		} else {
-			sidebar.classList.toggle('is-open');
-			sidebar.classList.remove('is-collapsed');
+			sidebar.classList.toggle("is-open");
+			sidebar.classList.remove("is-collapsed");
 		}
 
 		syncAria();
 	};
 
-	sidebar.addEventListener('click', (event) => {
-		if (event.target.closest('.sidebar__link')) {
+	sidebar.addEventListener("click", (event) => {
+		if (event.target.closest(".sidebar__link")) {
 			return;
 		}
 
@@ -46,13 +49,13 @@ const initSidebar = () => {
 	});
 
 	const onBreakpointChange = () => {
-		sidebar.classList.remove('is-open', 'is-collapsed');
+		sidebar.classList.remove("is-open", "is-collapsed");
 		syncAria();
 	};
 
-	if (typeof mqWide.addEventListener === 'function') {
-		mqWide.addEventListener('change', onBreakpointChange);
-	} else if (typeof mqWide.addListener === 'function') {
+	if (typeof mqWide.addEventListener === "function") {
+		mqWide.addEventListener("change", onBreakpointChange);
+	} else if (typeof mqWide.addListener === "function") {
 		mqWide.addListener(onBreakpointChange);
 	}
 
@@ -60,19 +63,21 @@ const initSidebar = () => {
 };
 
 const initVacanciesSlider = () => {
-	const vacanciesEl = document.querySelector('.vacancies-slider');
+	const vacanciesEl = document.querySelector(".vacancies-slider");
 
-	if (!vacanciesEl || typeof Swiper === 'undefined') {
+	if (!vacanciesEl || typeof Swiper === "undefined") {
 		return;
 	}
 
-	const mqDesktop = window.matchMedia('(min-width: 767.98px)');
-	const nav = vacanciesEl.querySelector('.section-vacancies__nav');
-	const wrapper = vacanciesEl.querySelector('.swiper-wrapper');
+	const mqDesktop = window.matchMedia("(min-width: 767.98px)");
+	const nav = vacanciesEl.querySelector(".section-vacancies__nav");
+	const wrapper = vacanciesEl.querySelector(".swiper-wrapper");
 	let vacancies = [];
 
 	try {
-		vacancies = JSON.parse(vacanciesEl.getAttribute('data-vacancies') || '[]');
+		vacancies = JSON.parse(
+			vacanciesEl.getAttribute("data-vacancies") || "[]",
+		);
 	} catch (e) {
 		vacancies = [];
 	}
@@ -93,11 +98,11 @@ const initVacanciesSlider = () => {
 
 	const escapeHtml = (value) =>
 		String(value)
-			.replace(/&/g, '&amp;')
-			.replace(/</g, '&lt;')
-			.replace(/>/g, '&gt;')
-			.replace(/"/g, '&quot;')
-			.replace(/'/g, '&#39;');
+			.replace(/&/g, "&amp;")
+			.replace(/</g, "&lt;")
+			.replace(/>/g, "&gt;")
+			.replace(/"/g, "&quot;")
+			.replace(/'/g, "&#39;");
 
 	const buildSlides = (perPage) => {
 		const pages = chunk(vacancies, perPage);
@@ -111,16 +116,16 @@ const initVacanciesSlider = () => {
 							(item) => `
 						<div class="col-12 col-md-4">
 							<article class="vacancy-card">
-								<h3 class="vacancy-card__title">${escapeHtml(item.title || '')}</h3>
-								<p class="vacancy-card__dept">${escapeHtml(item.dept || '')}</p>
+								<h3 class="vacancy-card__title">${escapeHtml(item.title || "")}</h3>
+								<p class="vacancy-card__dept">${escapeHtml(item.dept || "")}</p>
 							</article>
-						</div>`
+						</div>`,
 						)
-						.join('')}
+						.join("")}
 				</div>
-			</div>`
+			</div>`,
 			)
-			.join('');
+			.join("");
 		return pages.length;
 	};
 
@@ -130,7 +135,10 @@ const initVacanciesSlider = () => {
 		const hasMultiplePages = pageCount > 1;
 
 		if (nav) {
-			nav.classList.toggle('section-vacancies__nav--hidden', !hasMultiplePages);
+			nav.classList.toggle(
+				"section-vacancies__nav--hidden",
+				!hasMultiplePages,
+			);
 		}
 
 		if (swiperInstance) {
@@ -145,8 +153,12 @@ const initVacanciesSlider = () => {
 			allowTouchMove: hasMultiplePages,
 			navigation: hasMultiplePages
 				? {
-						prevEl: vacanciesEl.querySelector('.section-vacancies__arrow--prev'),
-						nextEl: vacanciesEl.querySelector('.section-vacancies__arrow--next'),
+						prevEl: vacanciesEl.querySelector(
+							".section-vacancies__arrow--prev",
+						),
+						nextEl: vacanciesEl.querySelector(
+							".section-vacancies__arrow--next",
+						),
 					}
 				: undefined,
 		});
@@ -155,9 +167,33 @@ const initVacanciesSlider = () => {
 	initVacancies();
 
 	const onBreakpointChange = () => initVacancies();
-	if (typeof mqDesktop.addEventListener === 'function') {
-		mqDesktop.addEventListener('change', onBreakpointChange);
-	} else if (typeof mqDesktop.addListener === 'function') {
+	if (typeof mqDesktop.addEventListener === "function") {
+		mqDesktop.addEventListener("change", onBreakpointChange);
+	} else if (typeof mqDesktop.addListener === "function") {
 		mqDesktop.addListener(onBreakpointChange);
 	}
+};
+
+const initSearchForms = () => {
+	document.querySelectorAll(".search-form").forEach((form) => {
+		const input = form.querySelector(".search-form__input");
+		const clear = form.querySelector(".search-form__clear");
+
+		if (!input || !clear) {
+			return;
+		}
+
+		const syncClear = () => {
+			clear.hidden = input.value.length === 0;
+		};
+
+		input.addEventListener("input", syncClear);
+		clear.addEventListener("click", () => {
+			input.value = "";
+			syncClear();
+			input.focus();
+		});
+
+		syncClear();
+	});
 };

@@ -14,10 +14,9 @@ get_template_part(
 	'components/templates-parts/section',
 	'page-hero',
 	array(
-		'title'        => 'Contacts',
-		'image'        => IMG_PATH . '/contacts/hero.png',
-		'tagline_dark' => true,
-		'nav'          => array(
+		'title' => 'Contacts',
+		'image' => IMG_PATH . '/contacts/hero.png',
+		'nav'   => array(
 			array(
 				'href'  => '#about',
 				'label' => 'Company information',

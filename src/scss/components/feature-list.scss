@@ -56,6 +56,11 @@
 			background-color: currentColor;
 		}
 
+		&:has(br)::before {
+			height: auto;
+			bottom: 0;
+		}
+
 		&[data-label]::after {
 			content: attr(data-label);
 			position: absolute;

@@ -14,10 +14,9 @@ get_template_part(
 	'components/templates-parts/section',
 	'page-hero',
 	array(
-		'title'        => 'Careers',
-		'image'        => IMG_PATH . '/careers/hero.png',
-		'tagline_dark' => true,
-		'nav'          => array(
+		'title' => 'Careers',
+		'image' => IMG_PATH . '/careers/hero.png',
+		'nav'   => array(
 			array(
 				'href'  => '#team',
 				'label' => 'Our team',

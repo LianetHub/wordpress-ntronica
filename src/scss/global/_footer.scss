@@ -32,6 +32,17 @@
 		padding-bottom: rem(43);
 	}
 
+	a {
+		color: inherit;
+		transition: color 0.2s ease;
+
+		@media (any-hover: hover) {
+			&:hover {
+				color: $color-white;
+			}
+		}
+	}
+
 	// footer__grid
 	&__grid {
 		--gutter-x: #{rem(24)};
@@ -97,8 +108,10 @@
 
 	// footer__address
 	&__address {
+		--address-text: #{rem(173)};
 		position: relative;
 		min-width: 0;
+		max-width: calc(var(--footer-label) + var(--footer-marker) + var(--footer-gap) + var(--address-text));
 		padding-left: calc(var(--footer-label) + var(--footer-marker) + var(--footer-gap));
 		font-family: $font-family;
 		font-weight: 400;
@@ -106,11 +119,13 @@
 		line-height: math.div(15, 12);
 
 		@media (min-width: $md3) {
+			--address-text: #{rem(216)};
 			font-size: rem(15);
 			line-height: math.div(18, 15);
 		}
 
 		@media (min-width: $md1) {
+			--address-text: #{rem(259)};
 			font-size: rem(18);
 			line-height: math.div(21, 18);
 		}
@@ -157,17 +172,6 @@
 			font-size: rem(18);
 			line-height: math.div(21, 18);
 		}
-
-		a {
-			color: inherit;
-			transition: opacity 0.2s ease;
-
-			@media (any-hover: hover) {
-				&:hover {
-					opacity: 0.7;
-				}
-			}
-		}
 	}
 
 	// footer__links
@@ -205,7 +209,7 @@
 
 		.search-form__input {
 			min-height: rem(22);
-			padding: rem(8) 0 rem(2);
+			padding: rem(8) rem(22) rem(2) 0;
 			border-bottom: rem(1) solid currentColor;
 			font-family: inherit;
 			font-size: inherit;
@@ -241,13 +245,6 @@
 
 	// footer__link
 	&__link {
-		color: $color-muted;
-		transition: opacity 0.2s ease;
-
-		@media (any-hover: hover) {
-			&:hover {
-				opacity: 0.7;
-			}
-		}
+		color: inherit;
 	}
 }

@@ -1,0 +1,297 @@
+@use "sass:math";
+@use "../variables" as *;
+@use "../mixins" as *;
+
+.section-search {
+	flex: 1 1 auto;
+	display: flex;
+	flex-direction: column;
+	padding-top: rem(20);
+	padding-bottom: rem(40);
+	color: $color-white;
+
+	@media (min-width: $md6) {
+		padding-top: rem(22);
+		padding-bottom: rem(50);
+	}
+
+	@media (min-width: $md1) {
+		padding-top: rem(27);
+		padding-bottom: rem(70);
+	}
+
+	// section-search__top
+	&__top {
+		display: flex;
+		align-items: flex-end;
+		justify-content: space-between;
+		gap: rem(24);
+		margin-bottom: rem(40);
+
+		@media (min-width: $md6) {
+			margin-bottom: rem(48);
+		}
+
+		@media (min-width: $md1) {
+			margin-bottom: rem(87);
+		}
+	}
+
+	// section-search__crumb
+	&__crumb {
+		font-family: $font-robert;
+		font-weight: 500;
+		font-size: rem(15);
+		line-height: math.div(13, 15);
+		color: $color-white;
+
+		@media (min-width: $md3) {
+			font-size: rem(18);
+			line-height: math.div(14, 18);
+		}
+
+		@media (min-width: $md2) {
+			font-size: rem(21);
+			line-height: math.div(15, 21);
+		}
+
+		@media (min-width: $md1) {
+			font-size: rem(26);
+			line-height: math.div(19, 26);
+		}
+	}
+
+	// section-search__lang
+	&__lang {
+		display: none;
+		flex: 0 0 auto;
+		font-family: $font-family;
+		font-weight: 700;
+		font-size: rem(15);
+		line-height: math.div(13, 15);
+		color: $color-white;
+		text-transform: lowercase;
+		text-align: right;
+
+		@media (min-width: $md6) {
+			display: block;
+		}
+
+		@media (min-width: $md3) {
+			font-size: rem(18);
+			line-height: math.div(14, 18);
+		}
+
+		@media (min-width: $md2) {
+			font-size: rem(21);
+			line-height: math.div(15, 21);
+		}
+
+		@media (min-width: $md1) {
+			font-size: rem(25);
+			line-height: math.div(19, 25);
+		}
+	}
+
+	// section-search__title
+	&__title {
+		margin-bottom: rem(40);
+		font-family: $font-family;
+		font-weight: 700;
+		font-size: rem(28);
+		line-height: math.div(22, 28);
+		color: $color-white;
+
+		@media (min-width: $md6) {
+			margin-bottom: rem(50);
+			font-size: rem(32);
+			line-height: math.div(24, 32);
+		}
+
+		@media (min-width: $md3) {
+			font-size: rem(36);
+			line-height: math.div(26, 36);
+		}
+
+		@media (min-width: $md2) {
+			margin-bottom: rem(70);
+			font-size: rem(40);
+			line-height: math.div(28, 40);
+		}
+
+		@media (min-width: $md1) {
+			margin-bottom: rem(90);
+			font-size: rem(46);
+			line-height: math.div(31, 46);
+		}
+	}
+
+	// section-search__form
+	&__form {
+		margin-bottom: rem(24);
+
+		@media (min-width: $md6) {
+			margin-bottom: rem(32);
+		}
+
+		@media (min-width: $md3) {
+			margin-bottom: rem(40);
+		}
+
+		@media (min-width: $md1) {
+			margin-bottom: rem(50);
+		}
+	}
+
+	// section-search__count
+	&__count {
+		margin-bottom: rem(48);
+		font-family: $font-family;
+		font-weight: 400;
+		font-size: rem(15);
+		line-height: math.div(18, 15);
+		color: $color-white;
+
+		@media (min-width: $md6) {
+			margin-bottom: rem(64);
+		}
+
+		@media (min-width: $md3) {
+			font-size: rem(18);
+			line-height: math.div(22, 18);
+			margin-bottom: rem(80);
+		}
+
+		@media (min-width: $md2) {
+			font-size: rem(21);
+			line-height: math.div(26, 21);
+			margin-bottom: rem(96);
+		}
+
+		@media (min-width: $md1) {
+			font-size: rem(26);
+			line-height: math.div(32, 26);
+			margin-bottom: rem(110);
+		}
+
+		strong {
+			font-weight: 700;
+		}
+	}
+
+	// section-search__results
+	&__results {
+		--gutter-x: #{rem(24)};
+		--gutter-y: #{rem(24)};
+	}
+
+	// section-search__empty
+	&__empty {
+		font-family: $font-robert;
+		font-weight: 500;
+		font-size: rem(16);
+		line-height: math.div(20, 16);
+		color: $color-white;
+
+		@media (min-width: $md3) {
+			font-size: rem(21);
+			line-height: math.div(24, 21);
+		}
+
+		@media (min-width: $md1) {
+			font-size: rem(27);
+			line-height: math.div(29, 27);
+		}
+	}
+}
+
+.search-card {
+	display: flex;
+	flex-direction: column;
+	gap: rem(12);
+	padding-bottom: rem(40);
+
+	@media (min-width: $md6) {
+		gap: rem(16);
+		padding-bottom: rem(50);
+	}
+
+	@media (min-width: $md3) {
+		gap: rem(20);
+		padding-bottom: rem(70);
+	}
+
+	@media (min-width: $md1) {
+		gap: rem(24);
+		padding-bottom: rem(90);
+	}
+
+	// search-card__title
+	&__title {
+		font-family: $font-robert;
+		font-weight: 700;
+		font-size: rem(20);
+		line-height: math.div(22, 20);
+		color: $color-muted;
+
+		@media (min-width: $md6) {
+			font-size: rem(24);
+			line-height: math.div(26, 24);
+		}
+
+		@media (min-width: $md3) {
+			font-size: rem(28);
+			line-height: math.div(30, 28);
+		}
+
+		@media (min-width: $md2) {
+			font-size: rem(32);
+			line-height: math.div(34, 32);
+		}
+
+		@media (min-width: $md1) {
+			font-size: rem(36);
+			line-height: math.div(38, 36);
+		}
+
+		a {
+			color: inherit;
+			transition: opacity 0.2s ease;
+
+			@media (any-hover: hover) {
+				&:hover {
+					opacity: 0.7;
+				}
+			}
+		}
+	}
+
+	// search-card__excerpt
+	&__excerpt {
+		font-family: $font-robert;
+		font-weight: 500;
+		font-size: rem(16);
+		line-height: math.div(20, 16);
+		color: $color-white;
+
+		@media (min-width: $md6) {
+			font-size: rem(18);
+			line-height: math.div(22, 18);
+		}
+
+		@media (min-width: $md3) {
+			font-size: rem(21);
+			line-height: math.div(24, 21);
+		}
+
+		@media (min-width: $md2) {
+			font-size: rem(24);
+			line-height: math.div(26, 24);
+		}
+
+		@media (min-width: $md1) {
+			font-size: rem(27);
+			line-height: math.div(29, 27);
+		}
+	}
+}

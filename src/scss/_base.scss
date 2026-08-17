@@ -111,12 +111,14 @@ body {
 	flex: 1 1 auto;
 	background: $color-white;
 
-	&:not(.main--home):not(.main--about):not(.main--careers):not(.main--contacts):not(.main--error) {
+	&:not(.main--home):not(.main--about):not(.main--careers):not(.main--contacts):not(.main--error):not(.main--search) {
 		padding-top: rem(40);
 	}
 
 	// main--error
-	&--error {
+	&--error,
+	// main--search
+	&--search {
 		display: flex;
 		flex-direction: column;
 		background: $color-footer;

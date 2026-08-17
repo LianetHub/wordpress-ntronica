@@ -1,0 +1,74 @@
+@use "sass:math";
+@use "../variables" as *;
+@use "../mixins" as *;
+
+.search-form {
+	display: flex;
+	flex-direction: column;
+	min-width: 0;
+
+	// search-form__label
+	&__label {
+		display: block;
+		font-family: $font-family;
+		font-weight: 700;
+		color: inherit;
+	}
+
+	// search-form__input
+	&__input {
+		width: 100%;
+		min-width: 0;
+		padding: rem(4) 0 rem(8);
+		border-radius: 0;
+		border-bottom: rem(1) solid currentColor;
+		background: transparent;
+		font-family: $font-family;
+		font-weight: 400;
+		color: inherit;
+		caret-color: currentColor;
+
+		&:focus {
+			border-bottom-color: currentColor;
+		}
+
+		&::-webkit-search-decoration,
+		&::-webkit-search-cancel-button {
+			-webkit-appearance: none;
+		}
+	}
+
+	// search-form--page
+	&--page {
+		.search-form__input {
+			min-height: rem(28);
+			padding: rem(8) 0 rem(4);
+			border-bottom-width: rem(1);
+			font-size: rem(16);
+			line-height: math.div(22, 16);
+
+			@media (min-width: $md6) {
+				min-height: rem(32);
+				font-size: rem(18);
+				line-height: math.div(24, 18);
+			}
+
+			@media (min-width: $md3) {
+				min-height: rem(36);
+				font-size: rem(21);
+				line-height: math.div(28, 21);
+			}
+
+			@media (min-width: $md2) {
+				min-height: rem(41);
+				font-size: rem(23);
+				line-height: math.div(30, 23);
+			}
+
+			@media (min-width: $md1) {
+				font-size: rem(26);
+				line-height: math.div(32, 26);
+			}
+		}
+	}
+}

@@ -1,4 +1,5 @@
 <?php
+
 /**
  * About page template
  *
@@ -8,11 +9,34 @@
 get_header();
 ?>
 
-<?php get_template_part( 'components/templates-parts/section', 'about-hero' ); ?>
-<?php get_template_part( 'components/templates-parts/section', 'about-overview' ); ?>
-<?php get_template_part( 'components/templates-parts/section', 'about-goal' ); ?>
-<?php get_template_part( 'components/templates-parts/section', 'about-stats' ); ?>
-<?php get_template_part( 'components/templates-parts/section', 'about-solutions' ); ?>
+<?php
+get_template_part(
+	'components/templates-parts/section',
+	'page-hero',
+	array(
+		'title' => 'About',
+		'image' => IMG_PATH . '/about/hero.webp',
+		'nav'   => array(
+			array(
+				'href'  => '#overview',
+				'label' => 'Company overview',
+			),
+			array(
+				'href'  => '#goal',
+				'label' => 'Our goal',
+			),
+			array(
+				'href'  => '#about-us',
+				'label' => 'About us',
+			),
+		),
+	)
+);
+?>
+<?php get_template_part('components/templates-parts/section', 'about-overview'); ?>
+<?php get_template_part('components/templates-parts/section', 'about-goal'); ?>
+<?php get_template_part('components/templates-parts/section', 'about-stats'); ?>
+<?php get_template_part('components/templates-parts/section', 'about-solutions'); ?>
 
 <?php
 get_footer();

@@ -10,14 +10,14 @@
 	<div class="container">
 		<div class="row about-overview__layout">
 			<div class="col-12 col-md-6">
-				<h2 class="section-title about-overview__title">Company overview</h2>
-				<div class="section-lead about-overview__intro">
+				<h2 class="title about-overview__title">Company overview</h2>
+				<div class="text-lead about-overview__intro">
 					<p>Every day at N-tronica, we create tools that enable the production of&nbsp;the chips powering our world. From large-scale manufacturing to advanced R&amp;D, our work helps accelerate innovation and bring new technologies to life faster. We take pride in contributing to devices that are faster, smarter, and more efficient.</p>
 				</div>
 			</div>
 
 			<div class="col-12 col-md-6">
-				<p class="about-overview__subtitle">Key features:</p>
+				<p class="subtitle about-overview__subtitle">Key features:</p>
 				<div class="about-overview__features">
 					<ul class="feature-list">
 						<li>We design and manufacture etching, deposition, and epitaxy tools— key elements in the semiconductor production process.</li>

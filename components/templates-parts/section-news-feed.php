@@ -48,11 +48,11 @@ $ntronica_has_nav = count($ntronica_pages) > 1;
 ?>
 <section class="<?php echo esc_attr($ntronica_class); ?>" id="<?php echo esc_attr($ntronica_feed['id']); ?>">
 	<div class="container">
-		<h2 class="section-title news-feed__title"><?php echo esc_html($ntronica_feed['title']); ?></h2>
+		<h2 class="title news-feed__title"><?php echo esc_html($ntronica_feed['title']); ?></h2>
 		<?php if ('' !== $ntronica_feed['lead']) : ?>
 			<div class="row">
 				<div class="col-12 col-md-6">
-					<p class="section-lead news-feed__lead"><?php echo esc_html($ntronica_feed['lead']); ?></p>
+					<p class="text-lead news-feed__lead"><?php echo esc_html($ntronica_feed['lead']); ?></p>
 				</div>
 			</div>
 		<?php endif; ?>

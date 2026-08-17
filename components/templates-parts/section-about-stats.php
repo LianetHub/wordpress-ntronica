@@ -8,11 +8,11 @@
 ?>
 <section class="about-stats band-full" id="about-us">
 	<div class="container about-stats__inner">
-		<h2 class="section-title section-title--light about-stats__title">About us</h2>
+		<h2 class="title about-stats__title">About us</h2>
 
 		<div class="row about-stats__intro">
 			<div class="col-12 col-md-6">
-				<div class="text-block text-block--light">
+				<div class="text-block">
 					<p>For more than six decades, we've been growing, building, and learning.</p>
 					<p>We've moved alongside the semiconductor industry as it evolved — constantly discovering new frontiers. And by now, we have something to share.</p>
 				</div>

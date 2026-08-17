@@ -11,7 +11,7 @@ $ntronica_media_posts = $ntronica_media_query->posts;
 ?>
 <section class="media-publications band-full" id="media">
 	<div class="container">
-		<h2 class="section-title section-title--light media-publications__title">
+		<h2 class="title media-publications__title">
 			Media publications
 		</h2>
 

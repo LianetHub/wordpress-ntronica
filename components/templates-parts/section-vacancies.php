@@ -58,7 +58,7 @@ $ntronica_vacancy_has_nav = count($ntronica_vacancy_pages) > 1;
 ?>
 <section class="vacancies band-full" id="careers">
 	<div class="container">
-		<h2 class="section-title section-title--light vacancies__title">
+		<h2 class="title vacancies__title">
 			Immediate vacancies
 		</h2>
 

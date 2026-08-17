@@ -8,11 +8,11 @@
 ?>
 <section class="info" id="about">
 	<div class="container">
-		<h2 class="section-title info__title">Company information</h2>
+		<h2 class="title info__title">Company information</h2>
 
 		<div class="row info__grid">
 			<div class="col-12 col-md-6">
-				<div class="section-lead info__text">
+				<div class="text-lead info__text">
 					<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Lorem ipsum dolor sit amet, consectetuer adipiscing sit amet, consectetuer. Lorem ipsum dolor sit amet, consectetuer adipiscing sit amet, consectetuer. Lorem ipsum dolor sit amet, consectetuer.</p>
 				</div>
 			</div>

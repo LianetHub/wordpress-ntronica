@@ -8,7 +8,7 @@
 ?>
 <section class="contact" id="contacts">
 	<div class="container">
-		<h2 class="section-title contact__title">Contact us</h2>
+		<h2 class="title contact__title">Contact us</h2>
 
 		<form class="home-form" action="#" method="post" enctype="multipart/form-data">
 			<div class="row home-form__row home-form__row--primary">

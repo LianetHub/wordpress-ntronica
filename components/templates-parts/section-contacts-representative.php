@@ -10,7 +10,7 @@ $ntronica_contacts_img = IMG_PATH . '/contacts/';
 ?>
 <section class="contacts-representative" id="our-representative">
 	<div class="container">
-		<h2 class="section-title contacts-representative__title">Our representative</h2>
+		<h2 class="title contacts-representative__title">Our representative</h2>
 
 		<div class="contacts-representative__map">
 			<img

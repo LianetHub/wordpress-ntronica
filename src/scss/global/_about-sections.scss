@@ -44,27 +44,9 @@
 	&__subtitle {
 		margin-top: rem(24);
 		min-width: 0;
-		font-family: $font-robert;
-		font-weight: 700;
-		font-style: italic;
-		font-size: rem(18);
-		line-height: math.div(18, 18);
-		color: $color-black;
 
 		@media (min-width: $md6) {
 			margin-top: 0;
-			font-size: rem(22);
-			line-height: math.div(20, 22);
-		}
-
-		@media (min-width: $md3) {
-			font-size: rem(28);
-			line-height: math.div(25, 28);
-		}
-
-		@media (min-width: $md1) {
-			font-size: rem(36);
-			line-height: math.div(34, 36);
 		}
 	}
 
@@ -180,7 +162,7 @@
 		margin-bottom: rem(16);
 
 		@media (min-width: $md6) {
-			margin-bottom: rem(20);
+			margin-bottom: rem(32);
 		}
 
 		@media (min-width: $md1) {

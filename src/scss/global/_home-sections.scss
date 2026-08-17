@@ -95,31 +95,9 @@
 	&__subtitle {
 		margin-top: rem(30);
 		min-width: 0;
-		font-family: $font-robert;
-		font-weight: 700;
-		font-style: italic;
-		font-size: rem(18);
-		line-height: math.div(14, 18);
-		color: $color-black;
 
 		@media (min-width: $md6) {
 			margin-top: 0;
-			line-height: 1;
-		}
-
-		@media (min-width: $md3) {
-			font-size: rem(24);
-			line-height: math.div(16, 24);
-		}
-
-		@media (min-width: $md2) {
-			font-size: rem(28);
-			line-height: math.div(19, 28);
-		}
-
-		@media (min-width: $md1) {
-			font-size: rem(36);
-			line-height: math.div(34, 36);
 		}
 	}
 
@@ -287,6 +265,7 @@
 
 .vacancies {
 	background-color: $color-muted;
+	color: $color-white;
 	padding-top: rem(30);
 	padding-bottom: rem(30);
 

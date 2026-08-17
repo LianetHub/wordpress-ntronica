@@ -1,3 +1,4 @@
+@use "sass:math";
 @use "../variables" as *;
 @use "../mixins" as *;
 
@@ -20,8 +21,8 @@
 	// site-footer__grid
 	&__grid {
 		// uses grid.scss .row
-		--gutter-x: rem(24);
-		--gutter-y: rem(24);
+		--gutter-x: #{rem(24)};
+		--gutter-y: #{rem(24)};
 		align-items: start;
 	}
 
@@ -35,20 +36,20 @@
 		font-family: $font-family;
 		font-weight: 700;
 		font-size: rem(15);
-		line-height: rem(18);
+		line-height: math.div(18, 15);
 
 		@media (min-width: $md6) {
-			line-height: rem(12);
+			line-height: math.div(12, 15);
 		}
 
 		@media (min-width: $md3) {
 			font-size: rem(18);
-			line-height: rem(21);
+			line-height: math.div(21, 18);
 		}
 
 		@media (min-width: $md1) {
 			font-size: rem(21);
-			line-height: rem(24);
+			line-height: math.div(24, 21);
 		}
 	}
 
@@ -57,22 +58,22 @@
 		font-family: $font-family;
 		font-weight: 700;
 		font-size: rem(15);
-		line-height: rem(18);
+		line-height: math.div(18, 15);
 
 		@media (min-width: $md6) {
-			line-height: rem(12);
+			line-height: math.div(12, 15);
 		}
 
 		@media (min-width: $md3) {
 			margin-top: rem(8);
 			font-size: rem(18);
-			line-height: rem(21);
+			line-height: math.div(21, 18);
 		}
 
 		@media (min-width: $md1) {
 			margin-top: rem(12);
 			font-size: rem(21);
-			line-height: rem(24);
+			line-height: math.div(24, 21);
 		}
 	}
 
@@ -94,16 +95,16 @@
 		font-family: $font-family;
 		font-weight: 700;
 		font-size: rem(12);
-		line-height: rem(15);
+		line-height: math.div(15, 12);
 
 		@media (min-width: $md3) {
 			font-size: rem(15);
-			line-height: rem(18);
+			line-height: math.div(18, 15);
 		}
 
 		@media (min-width: $md1) {
 			font-size: rem(18);
-			line-height: rem(21);
+			line-height: math.div(21, 18);
 		}
 	}
 
@@ -237,16 +238,16 @@
 		font-family: $font-family;
 		font-weight: 400;
 		font-size: rem(12);
-		line-height: rem(15);
+		line-height: math.div(15, 12);
 
 		@media (min-width: $md3) {
 			font-size: rem(15);
-			line-height: rem(18);
+			line-height: math.div(18, 15);
 		}
 
 		@media (min-width: $md1) {
 			font-size: rem(18);
-			line-height: rem(21);
+			line-height: math.div(21, 18);
 		}
 	}
 
@@ -255,16 +256,16 @@
 		font-family: $font-family;
 		font-weight: 700;
 		font-size: rem(12);
-		line-height: rem(15);
+		line-height: math.div(15, 12);
 
 		@media (min-width: $md3) {
 			font-size: rem(15);
-			line-height: rem(18);
+			line-height: math.div(18, 15);
 		}
 
 		@media (min-width: $md1) {
 			font-size: rem(18);
-			line-height: rem(21);
+			line-height: math.div(21, 18);
 		}
 	}
 

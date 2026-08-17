@@ -1,3 +1,4 @@
+@use "sass:math";
 @use "variables" as *;
 @use "mixins" as *;
 
@@ -107,7 +108,7 @@
 		font-family: $font-family;
 		font-weight: 700;
 		font-size: rem(18);
-		line-height: rem(24);
+		line-height: math.div(24, 18);
 		color: $color-white;
 		white-space: nowrap;
 		@media (min-width: $md1) {

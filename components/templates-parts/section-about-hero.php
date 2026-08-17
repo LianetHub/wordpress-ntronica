@@ -7,17 +7,11 @@
 
 $ntronica_about_img = IMG_PATH . '/about/';
 ?>
-<section class="page-hero band-full" aria-label="About">
-	<div class="page-hero__media" aria-hidden="true">
-		<img
-			class="page-hero__img"
-			src="<?php echo esc_url( $ntronica_about_img . 'hero.png' ); ?>"
-			alt=""
-			width="2560"
-			height="1100"
-		>
-	</div>
-
+<section
+	class="page-hero band-full"
+	aria-label="About"
+	style="background-image: url('<?php echo esc_url( $ntronica_about_img . 'hero.png' ); ?>');"
+>
 	<div class="container page-hero__inner">
 		<div class="page-hero__top">
 			<nav class="page-hero__nav" aria-label="About sections">

@@ -11,7 +11,7 @@
 			<div class="col-12 col-md-6">
 				<h2 class="section-title section-about-overview__title">Company overview</h2>
 				<div class="section-about-overview__intro">
-					<p>Every day at N-tronica, we create tools that enable the production of the chips powering our world. From large-scale manufacturing to advanced R&amp;D, our work helps accelerate innovation and bring new technologies to life faster. We take pride in contributing to devices that are faster, smarter, and more efficient.</p>
+					<p>Every day at N-tronica, we create tools that enable the production of&nbsp;the chips powering our world. From large-scale manufacturing to advanced R&amp;D, our work helps accelerate innovation and bring new technologies to life faster. We take pride in contributing to devices that are faster, smarter, and more efficient.</p>
 				</div>
 			</div>
 

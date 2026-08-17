@@ -1,3 +1,4 @@
+@use "sass:math";
 @use "sass:color";
 @use "variables" as *;
 @use "mixins" as *;
@@ -191,27 +192,27 @@ $scrollbarColor: $color-black;
 	font-family: $font-family;
 	font-weight: 700;
 	font-size: rem(20);
-	line-height: rem(14);
+	line-height: math.div(14, 20);
 	color: $color-black;
 
 	@media (min-width: $md6) {
 		font-size: rem(26);
-		line-height: rem(20);
+		line-height: math.div(20, 26);
 	}
 
 	@media (min-width: $md3) {
 		font-size: rem(32);
-		line-height: rem(25);
+		line-height: math.div(25, 32);
 	}
 
 	@media (min-width: $md2) {
 		font-size: rem(36);
-		line-height: rem(24);
+		line-height: math.div(24, 36);
 	}
 
 	@media (min-width: $md1) {
 		font-size: rem(46);
-		line-height: rem(32);
+		line-height: math.div(32, 46);
 	}
 }
 
@@ -219,22 +220,22 @@ $scrollbarColor: $color-black;
 	font-family: $font-family;
 	font-weight: 400;
 	font-size: rem(15);
-	line-height: rem(18);
+	line-height: math.div(18, 15);
 	color: $color-black;
 
 	@media (min-width: $md3) {
 		font-size: rem(18);
-		line-height: rem(21);
+		line-height: math.div(21, 18);
 	}
 
 	@media (min-width: $md2) {
 		font-size: rem(21);
-		line-height: rem(24);
+		line-height: math.div(24, 21);
 	}
 
 	@media (min-width: $md1) {
 		font-size: rem(26);
-		line-height: rem(32);
+		line-height: math.div(32, 26);
 	}
 }
 

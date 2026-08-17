@@ -1,3 +1,4 @@
+@use "sass:math";
 @use "../variables" as *;
 @use "../mixins" as *;
 
@@ -69,22 +70,22 @@
 		font-family: $font-family;
 		font-weight: 500;
 		font-size: rem(18);
-		line-height: rem(20);
+		line-height: math.div(20, 18);
 		color: $color-black;
 
 		@media (min-width: $md3) {
 			font-size: rem(24);
-			line-height: rem(26);
+			line-height: math.div(26, 24);
 		}
 
 		@media (min-width: $md2) {
 			font-size: rem(28);
-			line-height: rem(30);
+			line-height: math.div(30, 28);
 		}
 
 		@media (min-width: $md1) {
 			font-size: rem(36);
-			line-height: rem(38);
+			line-height: math.div(38, 36);
 		}
 	}
 }
@@ -130,7 +131,7 @@
 		font-family: $font-family;
 		font-weight: 700;
 		font-size: rem(15);
-		line-height: rem(18);
+		line-height: math.div(18, 15);
 		color: $color-black;
 
 		@media (min-width: $md6) {
@@ -140,19 +141,19 @@
 		@media (min-width: $md3) {
 			margin-top: rem(24);
 			font-size: rem(18);
-			line-height: rem(21);
+			line-height: math.div(21, 18);
 		}
 
 		@media (min-width: $md2) {
 			margin-top: rem(30);
 			font-size: rem(21);
-			line-height: rem(24);
+			line-height: math.div(24, 21);
 		}
 
 		@media (min-width: $md1) {
 			margin-top: rem(20);
 			font-size: rem(26);
-			line-height: rem(32);
+			line-height: math.div(32, 26);
 		}
 	}
 
@@ -162,29 +163,29 @@
 		font-family: $font-family;
 		font-weight: 700;
 		font-size: rem(18);
-		line-height: rem(20);
+		line-height: math.div(20, 18);
 		color: $color-black;
 
 		@media (min-width: $md5) {
 			margin-top: rem(8);
-			line-height: rem(14);
+			line-height: math.div(14, 18);
 		}
 
 		@media (min-width: $md3) {
 			margin-top: rem(10);
 			font-size: rem(24);
-			line-height: rem(16);
+			line-height: math.div(16, 24);
 		}
 
 		@media (min-width: $md2) {
 			font-size: rem(28);
-			line-height: rem(30);
+			line-height: math.div(30, 28);
 		}
 
 		@media (min-width: $md1) {
 			margin-top: rem(14);
 			font-size: rem(36);
-			line-height: rem(34);
+			line-height: math.div(34, 36);
 		}
 	}
 }
@@ -216,23 +217,23 @@
 		font-family: $font-family;
 		font-weight: 700;
 		font-size: rem(18);
-		line-height: rem(20);
+		line-height: math.div(20, 18);
 		color: $color-black;
 		overflow-wrap: anywhere;
 
 		@media (min-width: $md3) {
 			font-size: rem(24);
-			line-height: rem(26);
+			line-height: math.div(26, 24);
 		}
 
 		@media (min-width: $md2) {
 			font-size: rem(28);
-			line-height: rem(30);
+			line-height: math.div(30, 28);
 		}
 
 		@media (min-width: $md1) {
 			font-size: rem(36);
-			line-height: rem(38);
+			line-height: math.div(38, 36);
 		}
 	}
 
@@ -241,22 +242,22 @@
 		font-family: $font-family;
 		font-weight: 500;
 		font-size: rem(14);
-		line-height: rem(16);
+		line-height: math.div(16, 14);
 		color: $color-white;
 
 		@media (min-width: $md3) {
 			font-size: rem(17);
-			line-height: rem(19);
+			line-height: math.div(19, 17);
 		}
 
 		@media (min-width: $md2) {
 			font-size: rem(20);
-			line-height: rem(22);
+			line-height: math.div(22, 20);
 		}
 
 		@media (min-width: $md1) {
 			font-size: rem(27);
-			line-height: rem(29);
+			line-height: math.div(29, 27);
 		}
 	}
 }

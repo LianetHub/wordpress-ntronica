@@ -1,3 +1,4 @@
+@use "sass:math";
 @use "../variables" as *;
 @use "../mixins" as *;
 
@@ -44,11 +45,11 @@
 
 	// section-careers-team__grid
 	&__grid {
-		--gutter-x: rem(24);
-		--gutter-y: rem(24);
+		--gutter-x: #{rem(24)};
+		--gutter-y: #{rem(24)};
 
 		@media (min-width: $md6) {
-			--gutter-y: rem(0);
+			--gutter-y: #{rem(0)};
 		}
 	}
 
@@ -62,21 +63,21 @@
 			font-family: $font-family;
 			font-weight: 400;
 			font-size: rem(15);
-			line-height: rem(18);
+			line-height: math.div(18, 15);
 
 			@media (min-width: $md3) {
 				font-size: rem(18);
-				line-height: rem(21);
+				line-height: math.div(21, 18);
 			}
 
 			@media (min-width: $md2) {
 				font-size: rem(21);
-				line-height: rem(24);
+				line-height: math.div(24, 21);
 			}
 
 			@media (min-width: $md1) {
 				font-size: rem(26);
-				line-height: rem(32);
+				line-height: math.div(32, 26);
 			}
 		}
 
@@ -85,21 +86,21 @@
 			font-family: $font-robert;
 			font-weight: 400;
 			font-size: rem(16);
-			line-height: rem(18);
+			line-height: math.div(18, 16);
 
 			@media (min-width: $md3) {
 				font-size: rem(19);
-				line-height: rem(21);
+				line-height: math.div(21, 19);
 			}
 
 			@media (min-width: $md2) {
 				font-size: rem(22);
-				line-height: rem(24);
+				line-height: math.div(24, 22);
 			}
 
 			@media (min-width: $md1) {
 				font-size: rem(27);
-				line-height: rem(29);
+				line-height: math.div(29, 27);
 			}
 		}
 	}

@@ -94,10 +94,19 @@
 	display: flex;
 	flex-direction: column;
 
+	// news-card__link
+	&__link {
+		display: flex;
+		flex-direction: column;
+		min-width: 0;
+		color: inherit;
+	}
+
 	// news-card__media
 	&__media {
 		width: 100%;
 		height: rem(206);
+		overflow: hidden;
 		background-color: $color-placeholder;
 
 		@media (min-width: $md6) {
@@ -123,6 +132,15 @@
 		@media (min-width: $md1) {
 			height: rem(302);
 		}
+	}
+
+	// news-card__img
+	&__img {
+		display: block;
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		object-position: center;
 	}
 
 	// news-card__date

@@ -39,14 +39,19 @@ $ntronica_sidebar_items = array(
 			<?php foreach ($ntronica_sidebar_items as $ntronica_item) : ?>
 				<?php
 				$ntronica_link_class = 'sidebar__link';
-				if (is_page($ntronica_item['slug'])) {
+				$ntronica_is_news    = 'news' === $ntronica_item['slug'] && (is_home() || is_singular('post'));
+				if ($ntronica_is_news || is_page($ntronica_item['slug'])) {
 					$ntronica_link_class .= ' is-active';
 				}
+
+				$ntronica_href = 'news' === $ntronica_item['slug']
+					? ntronica_get_news_url()
+					: home_url('/' . $ntronica_item['slug'] . '/');
 				?>
 				<li>
 					<a
 						class="<?php echo esc_attr($ntronica_link_class); ?>"
-						href="<?php echo esc_url(home_url('/' . $ntronica_item['slug'] . '/')); ?>"
+						href="<?php echo esc_url($ntronica_href); ?>"
 						data-title="<?php echo esc_attr($ntronica_item['label']); ?>"><span><?php echo esc_html($ntronica_item['label']); ?></span></a>
 				</li>
 			<?php endforeach; ?>

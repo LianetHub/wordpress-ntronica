@@ -95,8 +95,13 @@
 	&__menu {
 		display: flex;
 		flex-direction: column;
-		gap: rem(11);
 		align-items: flex-start;
+		gap: rem(2);
+
+		@media (min-width:$md1) {
+			gap: rem(11);
+
+		}
 	}
 
 	// sidebar__menu a,
@@ -111,6 +116,7 @@
 		line-height: math.div(24, 18);
 		color: $color-white;
 		white-space: nowrap;
+
 		@media (min-width: $md1) {
 			font-size: rem(21);
 		}

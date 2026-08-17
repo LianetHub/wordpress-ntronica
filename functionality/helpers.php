@@ -60,6 +60,58 @@ function ntronica_svg_sprite()
 add_action('wp_body_open', 'ntronica_svg_sprite', 1);
 
 /**
+ * Query posts for a news category slug.
+ *
+ * @param string $category_slug Category slug.
+ * @param int    $number        Number of posts.
+ * @return WP_Query
+ */
+function ntronica_query_news_posts($category_slug, $number = 8)
+{
+	return new WP_Query(
+		array(
+			'post_type'           => 'post',
+			'posts_per_page'      => (int) $number,
+			'category_name'       => sanitize_title($category_slug),
+			'ignore_sticky_posts' => true,
+			'no_found_rows'       => true,
+		)
+	);
+}
+
+/**
+ * Category description, or a fallback lead.
+ *
+ * @param string $category_slug Category slug.
+ * @param string $fallback      Fallback text.
+ * @return string
+ */
+function ntronica_get_category_lead($category_slug, $fallback = '')
+{
+	$ntronica_term = get_term_by('slug', $category_slug, 'category');
+	if ($ntronica_term && ! is_wp_error($ntronica_term) && '' !== $ntronica_term->description) {
+		return $ntronica_term->description;
+	}
+
+	return $fallback;
+}
+
+/**
+ * Posts page URL, with /news/ fallback.
+ *
+ * @return string
+ */
+function ntronica_get_news_url()
+{
+	$ntronica_blog_id = (int) get_option('page_for_posts');
+	if ($ntronica_blog_id) {
+		return get_permalink($ntronica_blog_id);
+	}
+
+	return home_url('/news/');
+}
+
+/**
  * Print an SVG icon from the theme sprite.
  *
  * @param string $name  Symbol name without the `icon-` prefix.

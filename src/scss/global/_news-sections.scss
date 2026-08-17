@@ -172,6 +172,15 @@
 		gap: rem(24);
 	}
 
+	// media-card__link
+	&__link {
+		display: flex;
+		flex-direction: column;
+		gap: inherit;
+		min-width: 0;
+		color: inherit;
+	}
+
 	// media-card__date
 	&__date {
 		font-family: $font-family;

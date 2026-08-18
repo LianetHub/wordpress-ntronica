@@ -14,11 +14,6 @@ $ntronica_found = isset($wp_query->found_posts) ? (int) $wp_query->found_posts :
 
 <section class="search" aria-label="Search">
 	<div class="container">
-		<div class="search__top">
-			<p class="search__crumb">About — Search</p>
-			<a class="search__lang" href="#">ru</a>
-		</div>
-
 		<h1 class="search__title">Search</h1>
 
 		<div class="search__form">

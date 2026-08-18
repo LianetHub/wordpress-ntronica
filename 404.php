@@ -11,11 +11,6 @@ get_header();
 
 <section class="error" aria-label="Error 404">
 	<div class="container">
-		<div class="error__top">
-			<p class="error__crumb">About — Error 404</p>
-			<a class="error__lang" href="#">ru</a>
-		</div>
-
 		<div class="row error__body">
 			<div class="col-12 col-md-6">
 				<h1 class="error__title">Error 404</h1>

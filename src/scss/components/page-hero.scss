@@ -13,9 +13,13 @@
 	background-size: cover;
 	background-position: center;
 	background-repeat: no-repeat;
+	padding-top: rem(20);
+	padding-bottom: rem(50);
 
 	@media (max-width:$md6) {
 		aspect-ratio: 430 / 380;
+		padding-top: rem(20);
+		padding-bottom: rem(60);
 	}
 
 	@media (min-width: $md6) {
@@ -33,7 +37,13 @@
 	@media (min-width: $md1) {
 		min-height: rem(1100);
 		aspect-ratio: 2560 / 1100;
+		padding-top: rem(118);
+		padding-bottom: rem(90);
 	}
+
+
+
+
 
 	// page-hero__inner
 	&__inner {
@@ -44,84 +54,7 @@
 		flex: 1 1 auto;
 		width: 100%;
 		min-height: 0;
-		padding-top: rem(20);
-		padding-bottom: rem(50);
 
-		@media (min-width: $md6) {
-			padding-top: rem(20);
-			padding-bottom: rem(60);
-		}
-
-		@media (min-width: $md1) {
-			padding-top: rem(28);
-			padding-bottom: rem(90);
-		}
-	}
-
-	// page-hero__top
-	&__top {
-		display: none;
-		align-items: flex-start;
-		justify-content: space-between;
-		gap: rem(24);
-		margin-bottom: rem(16);
-
-		@media (min-width: $md6) {
-			display: flex;
-			margin-bottom: rem(20);
-		}
-	}
-
-	// page-hero__nav
-	&__nav {
-		flex: 1 1 auto;
-		min-width: 0;
-	}
-
-	// page-hero__nav-list
-	&__nav-list {
-		display: flex;
-		gap: rem(76);
-	}
-
-	// page-hero__nav-item
-	&__nav-item {
-		flex: 1 1 0;
-	}
-
-	// page-hero__nav-link
-	&__nav-link {
-		font-family: $font-robert;
-		font-weight: 500;
-		font-size: rem(15);
-		line-height: math.div(13, 15);
-		color: $color-black;
-		transition: color 100ms ease-in-out;
-
-		@media (min-width: $md3) {
-			font-size: rem(18);
-			line-height: math.div(14, 18);
-		}
-
-		@media (min-width: $md2) {
-			font-size: rem(21);
-			line-height: math.div(15, 21);
-		}
-
-		@media (min-width: $md1) {
-			font-size: rem(25);
-			line-height: math.div(19, 25);
-		}
-
-		&.is-active {
-			color: #58595B;
-		}
-
-		@media (any-hover: hover) {
-			&:hover {
-				color: #58595B;
-			}
-		}
 	}
 
 	// page-hero__tagline
@@ -136,7 +69,6 @@
 		@media (min-width: $md6) {
 			align-self: flex-end;
 			max-width: 50%;
-
 			font-size: rem(22);
 			line-height: math.div(26, 22);
 		}
@@ -147,21 +79,17 @@
 		}
 
 		@media (min-width: $md3) {
-			margin-top: rem(20);
 			font-size: rem(24);
 			line-height: math.div(30, 24);
 			padding-left: 0.75rem;
 		}
 
 		@media (min-width: $md2) {
-			margin-top: rem(12);
 			font-size: rem(30);
 			line-height: math.div(38, 30);
-
 		}
 
 		@media (min-width: $md1) {
-			margin-top: rem(50);
 			max-width: rem(945);
 			font-size: rem(42);
 			line-height: math.div(50, 42);

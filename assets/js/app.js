@@ -6,6 +6,7 @@ document.addEventListener("DOMContentLoaded", () => {
 	initVacanciesSlider();
 	initPagedSliders();
 	initSearchForms();
+	initStickyNavbar();
 });
 
 const initSidebar = () => {
@@ -139,12 +140,8 @@ const initVacanciesSlider = () => {
 		spaceBetween: 0,
 		speed: 450,
 		navigation: {
-			prevEl: vacanciesEl.querySelector(
-				".vacancies__arrow--prev",
-			),
-			nextEl: vacanciesEl.querySelector(
-				".vacancies__arrow--next",
-			),
+			prevEl: vacanciesEl.querySelector(".vacancies__arrow--prev"),
+			nextEl: vacanciesEl.querySelector(".vacancies__arrow--next"),
 		},
 	});
 };
@@ -214,4 +211,24 @@ const initSearchForms = () => {
 
 		syncClear();
 	});
+};
+
+const initStickyNavbar = () => {
+	const navbars = Array.from(document.querySelectorAll(".sticky-navbar"));
+
+	if (!navbars.length) {
+		return;
+	}
+
+	const setScrolledState = (navbar) => {
+		navbar.classList.toggle("is-scrolled", window.scrollY > 0);
+	};
+
+	const onScroll = () => {
+		navbars.forEach((navbar) => setScrolledState(navbar));
+	};
+
+	navbars.forEach((navbar) => setScrolledState(navbar));
+
+	window.addEventListener("scroll", onScroll, { passive: true });
 };

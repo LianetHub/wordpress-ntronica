@@ -58,6 +58,10 @@
 		}
 
 		@media (min-width: $md3) {
+			margin-top: rem(24);
+		}
+
+		@media (min-width: $md2) {
 			margin-top: rem(30);
 		}
 
@@ -72,6 +76,10 @@
 
 		@media (min-width: $md6) {
 			margin-top: rem(16);
+		}
+
+		@media (min-width: $md3) {
+			margin-top: rem(12);
 		}
 
 		@media (min-width: $md2) {
@@ -89,7 +97,7 @@
 	padding-bottom: rem(50);
 
 	@media (min-width: $md6) {
-		padding-top: rem(34);
+		padding-top: rem(30);
 		padding-bottom: rem(40);
 	}
 
@@ -160,7 +168,7 @@
 
 	@media (min-width: $md6) {
 		padding-top: rem(42);
-		padding-bottom: rem(50);
+		padding-bottom: rem(28);
 	}
 
 	@media (min-width: $md2) {
@@ -200,6 +208,10 @@
 			margin-bottom: rem(64);
 		}
 
+		@media (min-width: $md3) {
+			margin-bottom: rem(43);
+		}
+
 		@media (min-width: $md2) {
 			margin-bottom: rem(64);
 		}
@@ -234,11 +246,11 @@
 		}
 
 		@media (min-width: $md5) {
-			font-size: rem(72);
+			font-size: rem(70);
 		}
 
 		@media (min-width: $md3) {
-			font-size: rem(70);
+			font-size: rem(80);
 		}
 
 		@media (min-width: $md2) {
@@ -252,9 +264,7 @@
 
 	// about-stats__label
 	&__label {
-
 		font-style: normal;
-
 
 		@media (min-width: $md1) {
 			margin-top: rem(12);
@@ -267,6 +277,16 @@
 	padding-bottom: rem(50);
 
 	@media (min-width: $md6) {
+		padding-top: rem(60);
+		padding-bottom: rem(90);
+	}
+
+	@media (min-width: $md3) {
+		padding-top: rem(70);
+		padding-bottom: rem(90);
+	}
+
+	@media (min-width: $md2) {
 		padding-top: rem(90);
 		padding-bottom: rem(90);
 	}
@@ -282,6 +302,14 @@
 		margin-bottom: rem(30);
 
 		@media (min-width: $md6) {
+			margin-bottom: rem(70);
+		}
+
+		@media (min-width: $md3) {
+			margin-bottom: rem(40);
+		}
+
+		@media (min-width: $md2) {
 			margin-bottom: rem(70);
 		}
 
@@ -304,6 +332,11 @@
 		}
 
 		@media (min-width: $md3) {
+			font-size: rem(18);
+			line-height: math.div(21, 18);
+		}
+
+		@media (min-width: $md2) {
 			font-size: rem(21);
 			line-height: math.div(24, 21);
 		}
@@ -351,6 +384,13 @@
 		}
 
 		@media (min-width: $md3) {
+			margin-top: rem(16);
+			font-size: rem(24);
+			line-height: math.div(26, 24);
+		}
+
+		@media (min-width: $md2) {
+			margin-top: rem(14);
 			font-size: rem(28);
 			line-height: math.div(30, 28);
 		}

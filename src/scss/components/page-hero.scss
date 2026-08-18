@@ -19,7 +19,7 @@
 	@media (max-width:$md6) {
 		aspect-ratio: 430 / 380;
 		padding-top: rem(20);
-		padding-bottom: rem(60);
+		padding-bottom: rem(70);
 	}
 
 	@media (min-width: $md6) {
@@ -31,6 +31,8 @@
 	}
 
 	@media (min-width: $md3) {
+		padding-top: rem(80);
+		padding-bottom: rem(60);
 		min-height: rem(814);
 	}
 
@@ -42,9 +44,6 @@
 	}
 
 
-
-
-
 	// page-hero__inner
 	&__inner {
 		position: relative;
@@ -54,7 +53,6 @@
 		flex: 1 1 auto;
 		width: 100%;
 		min-height: 0;
-
 	}
 
 	// page-hero__tagline

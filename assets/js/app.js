@@ -214,21 +214,26 @@ const initSearchForms = () => {
 };
 
 const initStickyNavbar = () => {
-	const navbars = Array.from(document.querySelectorAll(".sticky-navbar"));
+	const navbar = document.querySelector(".sticky-navbar");
 
-	if (!navbars.length) {
+	if (!navbar) {
 		return;
 	}
 
-	const setScrolledState = (navbar) => {
+	const syncScrollOffset = () => {
+		document.documentElement.style.setProperty(
+			"--sticky-navbar-offset",
+			`${navbar.offsetHeight}px`,
+		);
+	};
+
+	const setScrolledState = () => {
 		navbar.classList.toggle("is-scrolled", window.scrollY > 0);
 	};
 
-	const onScroll = () => {
-		navbars.forEach((navbar) => setScrolledState(navbar));
-	};
+	setScrolledState();
+	syncScrollOffset();
 
-	navbars.forEach((navbar) => setScrolledState(navbar));
-
-	window.addEventListener("scroll", onScroll, { passive: true });
+	window.addEventListener("scroll", setScrolledState, { passive: true });
+	window.addEventListener("resize", syncScrollOffset);
 };

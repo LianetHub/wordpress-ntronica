@@ -4,8 +4,11 @@
 
 .footer {
 	--footer-label: #{rem(33)};
+	--footer-label-gap: #{rem(5)};
 	--footer-marker: #{rem(9)};
-	--footer-gap: #{rem(5)};
+	--footer-text-gap: #{rem(5)};
+	--footer-marker-track: calc(var(--footer-label) + var(--footer-label-gap) + var(--footer-marker));
+	--footer-content-offset: calc(var(--footer-marker-track) + var(--footer-text-gap));
 	--footer-marker-offset: #{rem(3)};
 	background-color: $color-footer;
 	color: $color-muted;
@@ -14,19 +17,25 @@
 
 	@media (min-width: $md5) {
 		padding-top: rem(34);
-		padding-bottom: rem(34);
+		padding-bottom: rem(28);
 	}
 
 	@media (min-width: $md3) {
-		--footer-label: #{rem(43)};
-		--footer-marker: #{rem(11)};
-		--footer-gap: #{rem(7)};
+		--footer-label: #{rem(31)};
+		--footer-label-gap: #{rem(5)};
+		--footer-marker: #{rem(9)};
+		--footer-text-gap: #{rem(7)};
+	}
+
+	@media (min-width:$md2) {
+		padding-bottom: rem(34);
 	}
 
 	@media (min-width: $md1) {
 		--footer-label: #{rem(54)};
+		--footer-label-gap: #{rem(13)};
 		--footer-marker: #{rem(13)};
-		--footer-gap: #{rem(13)};
+		--footer-text-gap: #{rem(13)};
 		--footer-marker-offset: #{rem(4)};
 		padding-top: rem(43);
 		padding-bottom: rem(43);
@@ -54,6 +63,10 @@
 	&__copy {
 		.row {
 			--gutter-y: #{rem(4)};
+
+			@media (min-width: $md3) {
+				--gutter-y: #{rem(7)};
+			}
 		}
 	}
 
@@ -69,8 +82,7 @@
 		}
 
 		@media (min-width: $md3) {
-			font-size: rem(18);
-			line-height: math.div(21, 18);
+			line-height: math.div(18, 15);
 		}
 
 		@media (min-width: $md1) {
@@ -92,9 +104,11 @@
 		}
 
 		@media (min-width: $md3) {
-			margin-top: rem(8);
-			font-size: rem(18);
-			line-height: math.div(21, 18);
+			line-height: math.div(18, 15);
+		}
+
+		@media (min-width:$md2) {
+			margin-top: rem(7);
 		}
 
 		@media (min-width: $md1) {
@@ -108,17 +122,19 @@
 	&__address {
 		--address-text: #{rem(173)};
 		position: relative;
-		max-width: calc(var(--footer-label) + var(--footer-marker) + var(--footer-gap) + var(--address-text));
-		padding-left: calc(var(--footer-label) + var(--footer-marker) + var(--footer-gap));
+		max-width: calc(var(--footer-content-offset) + var(--address-text));
+		padding-left: var(--footer-content-offset);
 		font-family: $font-family;
 		font-weight: 400;
 		font-size: rem(12);
 		line-height: math.div(15, 12);
 
 		@media (min-width: $md3) {
-			--address-text: #{rem(216)};
-			font-size: rem(15);
-			line-height: math.div(18, 15);
+			--address-text: #{rem(150)};
+		}
+
+		@media (min-width: $md2) {
+			--address-text: #{rem(187)};
 		}
 
 		@media (min-width: $md1) {
@@ -132,7 +148,7 @@
 			position: absolute;
 			top: var(--footer-marker-offset);
 			bottom: 0;
-			left: var(--footer-label);
+			left: calc(var(--footer-label) + var(--footer-label-gap));
 			width: var(--footer-marker);
 			background-color: currentColor;
 		}
@@ -149,20 +165,15 @@
 
 	.feature-list {
 		gap: 0;
-		--marker-col: calc(var(--footer-label) + var(--footer-marker));
+		--marker-col: var(--footer-marker-track);
 		--marker-size: var(--footer-marker);
-		--marker-gap: var(--footer-gap);
+		--marker-gap: var(--footer-text-gap);
 		--marker-offset: var(--footer-marker-offset);
 		font-family: $font-family;
 		font-weight: 400;
 		font-size: rem(12);
 		line-height: math.div(15, 12);
 		color: inherit;
-
-		@media (min-width: $md3) {
-			font-size: rem(15);
-			line-height: math.div(18, 15);
-		}
 
 		@media (min-width: $md1) {
 			font-size: rem(18);
@@ -176,11 +187,6 @@
 		font-weight: 700;
 		font-size: rem(12);
 		line-height: math.div(15, 12);
-
-		@media (min-width: $md3) {
-			font-size: rem(15);
-			line-height: math.div(18, 15);
-		}
 
 		@media (min-width: $md1) {
 			font-size: rem(18);
@@ -212,10 +218,6 @@
 			font-weight: 400;
 			line-height: inherit;
 			color: inherit;
-
-			@media (min-width: $md3) {
-				min-height: rem(28);
-			}
 
 			@media (min-width: $md1) {
 				min-height: rem(35);

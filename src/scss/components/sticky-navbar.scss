@@ -2,6 +2,16 @@
 @use "../variables" as *;
 @use "../mixins" as *;
 
+:root {
+	--sticky-navbar-offset: 0;
+}
+
+.main {
+	section[id],
+	.products-lines__col[id] {
+		scroll-margin-top: var(--sticky-navbar-offset);
+	}
+}
 
 .sticky-navbar {
 	position: fixed;

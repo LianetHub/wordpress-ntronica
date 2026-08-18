@@ -12,7 +12,7 @@
 
 		<div class="row info__grid">
 			<div class="col-12 col-md-6">
-				<div class="text-lead info__text">
+				<div class="text-block info__text">
 					<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Lorem ipsum dolor sit amet, consectetuer adipiscing sit amet, consectetuer. Lorem ipsum dolor sit amet, consectetuer adipiscing sit amet, consectetuer. Lorem ipsum dolor sit amet, consectetuer.</p>
 				</div>
 			</div>

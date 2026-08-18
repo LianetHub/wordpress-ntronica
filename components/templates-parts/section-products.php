@@ -26,7 +26,7 @@ $products = array(
 <section class="products" id="products">
 	<div class="container">
 		<h2 class="title products__title">Products</h2>
-		<p class="text-lead products__lead">
+		<p class="text-block products__lead">
 			We design and manufacture semiconductor manufacturing tools suitable for both R&amp;D labs and mass production at various scales. Our equipment is available in stand-alone and cluster configurations.
 		</p>
 

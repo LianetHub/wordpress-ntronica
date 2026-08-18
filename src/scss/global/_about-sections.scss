@@ -8,7 +8,12 @@
 
 	@media (min-width: $md6) {
 		padding-top: rem(50);
-		padding-bottom: rem(50);
+		padding-bottom: rem(40);
+	}
+
+	@media (min-width: $md2) {
+		padding-top: rem(54);
+		padding-bottom: rem(48);
 	}
 
 	@media (min-width: $md1) {
@@ -85,11 +90,15 @@
 
 	@media (min-width: $md6) {
 		padding-top: rem(34);
-		padding-bottom: rem(54);
+		padding-bottom: rem(40);
+	}
+
+	@media (min-width: $md2) {
+		padding-top: rem(40);
+		padding-bottom: rem(50);
 	}
 
 	@media (min-width: $md1) {
-		padding-top: rem(40);
 		padding-bottom: rem(68);
 	}
 
@@ -104,11 +113,25 @@
 		margin-bottom: rem(16);
 
 		@media (min-width: $md6) {
+			margin-bottom: rem(22);
+		}
+
+		@media (min-width: $md2) {
 			margin-bottom: rem(32);
 		}
 
 		@media (min-width: $md1) {
 			margin-bottom: rem(36);
+		}
+	}
+
+	// about-goal__text
+	&__text {
+		@media (min-width: $md1) {
+			color: $color-black;
+			font-family: $font-text;
+			font-size: rem(28);
+			line-height: math.div(34, 28);
 		}
 	}
 
@@ -132,21 +155,22 @@
 .about-stats {
 	background-color: $color-muted;
 	color: $color-white;
+	padding-top: rem(30);
+	padding-bottom: rem(40);
 
-	// about-stats__inner
-	&__inner {
-		padding-top: rem(30);
-		padding-bottom: rem(40);
+	@media (min-width: $md6) {
+		padding-top: rem(42);
+		padding-bottom: rem(50);
+	}
 
-		@media (min-width: $md6) {
-			padding-top: rem(50);
-			padding-bottom: rem(50);
-		}
+	@media (min-width: $md2) {
+		padding-top: rem(50);
+		padding-bottom: rem(44);
+	}
 
-		@media (min-width: $md1) {
-			padding-top: rem(80);
-			padding-bottom: rem(80);
-		}
+	@media (min-width: $md1) {
+		padding-top: rem(80);
+		padding-bottom: rem(72);
 	}
 
 	// about-stats__title
@@ -154,11 +178,15 @@
 		margin-bottom: rem(16);
 
 		@media (min-width: $md6) {
+			margin-bottom: rem(24);
+		}
+
+		@media (min-width: $md2) {
 			margin-bottom: rem(32);
 		}
 
 		@media (min-width: $md1) {
-			margin-bottom: rem(36);
+			margin-bottom: rem(40);
 		}
 	}
 
@@ -169,17 +197,24 @@
 		margin-bottom: rem(30);
 
 		@media (min-width: $md6) {
-			margin-bottom: rem(84);
+			margin-bottom: rem(64);
+		}
+
+		@media (min-width: $md2) {
+			margin-bottom: rem(64);
 		}
 
 		@media (min-width: $md1) {
-			margin-bottom: rem(90);
+			margin-bottom: rem(54);
 		}
 	}
 
-	// about-stats__accent
-	&__accent {
-		color: $color-black;
+	// about-stats__text
+	&__text {
+		@media (min-width: $md1) {
+			font-size: rem(28);
+			line-height: math.div(34, 28);
+		}
 	}
 
 	// about-stats__grid
@@ -193,60 +228,36 @@
 		font-family: $font-family;
 		font-weight: 400;
 		font-size: rem(48);
-		line-height: math.div(40, 48);
-		color: $color-white;
 
 		@media (min-width: $md6) {
 			font-size: rem(64);
-			line-height: math.div(52, 64);
 		}
 
 		@media (min-width: $md5) {
 			font-size: rem(72);
-			line-height: math.div(58, 72);
 		}
 
 		@media (min-width: $md3) {
-			font-size: rem(88);
-			line-height: math.div(70, 88);
+			font-size: rem(70);
 		}
 
 		@media (min-width: $md2) {
 			font-size: rem(90);
-			line-height: math.div(64, 90);
 		}
 
 		@media (min-width: $md1) {
 			font-size: rem(120);
-			line-height: math.div(83, 120);
 		}
 	}
 
 	// about-stats__label
 	&__label {
-		margin-top: rem(12);
-		font-family: $font-robert;
-		font-weight: 500;
-		font-size: rem(16);
-		line-height: math.div(18, 16);
-		color: $color-white;
 
-		@media (min-width: $md6) {
-			margin-top: rem(20);
-			font-size: rem(20);
-			line-height: math.div(18, 20);
-		}
+		font-style: normal;
 
-		@media (min-width: $md3) {
-			margin-top: rem(30);
-			font-size: rem(28);
-			line-height: math.div(20, 28);
-		}
 
 		@media (min-width: $md1) {
-			margin-top: rem(50);
-			font-size: rem(36);
-			line-height: math.div(25, 36);
+			margin-top: rem(12);
 		}
 	}
 }

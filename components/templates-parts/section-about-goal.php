@@ -13,7 +13,7 @@ $ntronica_about_img = IMG_PATH . '/about/';
 		<div class="row about-goal__layout">
 			<div class="col-12 col-md-6">
 				<h2 class="title about-goal__title">Our goal</h2>
-				<div class="text-block">
+				<div class="text-block about-goal__text">
 					<p>We're here to help our customers solve their toughest technological challenges, whether in a lab or a fab.</p>
 					<p>It's a thrilling journey, and to unlock its full potential, we actively seek partnerships that lift everyone.</p>
 				</div>

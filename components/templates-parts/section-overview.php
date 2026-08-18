@@ -13,7 +13,7 @@
 		<div class="row overview__layout">
 			<div class="col-12 col-md-6">
 				<h1 class="title overview__title">Company overview</h1>
-				<div class="text-lead overview__intro">
+				<div class="text-block overview__intro">
 					<p>Every day at N-tronica, we create tools that enable the production of the chips powering our world. From large-scale manufacturing to advanced R&amp;D, our work helps accelerate innovation and bring new technologies to life faster. We take pride in contributing to devices that are faster, smarter, and more efficient.</p>
 				</div>
 			</div>

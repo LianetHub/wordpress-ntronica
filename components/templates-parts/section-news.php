@@ -13,7 +13,7 @@ $ntronica_news_url = ntronica_get_news_url();
 <section class="news" id="news">
 	<div class="container">
 		<h2 class="title news__title">Events &amp; news</h2>
-		<p class="text-lead news__lead">
+		<p class="text-block news__lead">
 			<?php echo esc_html(ntronica_get_category_lead('events', 'We stay active in the industry. Below, discover where you can meet our team and experience our latest activities. We look forward to connecting with you in person.')); ?>
 		</p>
 

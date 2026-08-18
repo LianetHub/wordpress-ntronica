@@ -13,7 +13,7 @@ $ntronica_products_img = IMG_PATH . '/products/';
 		<div class="row products-lines__layout">
 			<div class="col-12 col-md-6 products-lines__col" id="wet-process">
 				<h2 class="title products-lines__title">Wet process equipment</h2>
-				<div class="text-lead products-lines__text">
+				<div class="text-block products-lines__text">
 					<p>It may require more than one hundred tools to produce a single modern chip. Our goal is to cover at least half of those tools — whether you are performing research &amp; development or running mass production. We are currently present across multiple stages of chip production, such as etching and deposition, epitaxy, thermal operations, and Chemical Mechanical Planarization (CMP).</p>
 				</div>
 				<div class="row products-lines__cards">
@@ -36,7 +36,7 @@ $ntronica_products_img = IMG_PATH . '/products/';
 
 			<div class="col-12 col-md-6 products-lines__col" id="process-control">
 				<h2 class="title products-lines__title">Process control</h2>
-				<div class="text-lead products-lines__text">
+				<div class="text-block products-lines__text">
 					<p>It may require more than one hundred tools to produce a single modern chip. Our goal is to cover at least half of those tools — whether you are performing research &amp; development or running mass production. We are currently present across multiple stages of chip production, such as etching and deposition, epitaxy, thermal operations, and Chemical Mechanical Planarization (CMP).</p>
 				</div>
 				<div class="row products-lines__cards">

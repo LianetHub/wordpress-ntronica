@@ -37,7 +37,7 @@ $ntronica_thin_films = array(
 
 		<div class="row products-thin-films__intro">
 			<div class="col-12 col-md-6">
-				<div class="text-lead products-thin-films__text">
+				<div class="text-block products-thin-films__text">
 					<p>It may require more than one hundred tools to produce a single modern chip. Our goal is to cover at least half of those tools — whether you are performing research &amp; development or running mass production. We are currently present across multiple stages of chip production, such as etching and deposition, epitaxy, thermal operations, and Chemical Mechanical Planarization (CMP).</p>
 				</div>
 			</div>

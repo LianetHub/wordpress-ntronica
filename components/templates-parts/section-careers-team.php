@@ -12,7 +12,7 @@
 
 		<div class="row careers-team__grid">
 			<div class="col-12 col-md-6">
-				<div class="text-lead careers-team__text">
+				<div class="text-block careers-team__text">
 					<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Lorem ipsum dolor sit amet, consectetuer adipiscing sit amet, consectetuer. Lorem ipsum dolor sit amet, consectetuer adipiscing sit.</p>
 				</div>
 			</div>

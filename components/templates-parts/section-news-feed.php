@@ -52,7 +52,7 @@ $ntronica_has_nav = count($ntronica_pages) > 1;
 		<?php if ('' !== $ntronica_feed['lead']) : ?>
 			<div class="row">
 				<div class="col-12 col-md-6">
-					<p class="text-lead news-feed__lead"><?php echo esc_html($ntronica_feed['lead']); ?></p>
+					<p class="text-block news-feed__lead"><?php echo esc_html($ntronica_feed['lead']); ?></p>
 				</div>
 			</div>
 		<?php endif; ?>

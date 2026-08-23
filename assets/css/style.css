@@ -233,7 +233,7 @@ body {
 @media (min-width: 1727.98px) {
   .subtitle {
     font-size: 1.75rem;
-    line-height: 0.8928571429;
+    line-height: 1.1428571429;
   }
 }
 @media (min-width: 2559.98px) {
@@ -338,8 +338,8 @@ body {
     --marker-gap: 0.9375rem;
     --marker-col: 4.5625rem;
     font-size: 1.25rem;
-    line-height: 1.15;
-    gap: 0.25rem;
+    line-height: 1.1;
+    gap: 0.5rem;
   }
 }
 @media (min-width: 2559.98px) {
@@ -350,7 +350,6 @@ body {
     --marker-offset: 0.25rem;
     font-size: 1.6875rem;
     line-height: 1.0740740741;
-    gap: 0.625rem;
   }
 }
 .feature-list a {
@@ -2829,8 +2828,8 @@ body {
 }
 @media (min-width: 1727.98px) {
   .about-overview {
-    padding-top: 3.375rem;
-    padding-bottom: 3rem;
+    padding-top: 3.125rem;
+    padding-bottom: 3.25rem;
   }
 }
 @media (min-width: 2559.98px) {
@@ -2882,7 +2881,7 @@ body {
 }
 @media (min-width: 1727.98px) {
   .about-overview__intro {
-    margin-top: 1.875rem;
+    margin-top: 2rem;
   }
 }
 @media (min-width: 2559.98px) {
@@ -2905,7 +2904,7 @@ body {
 }
 @media (min-width: 1727.98px) {
   .about-overview__features {
-    margin-top: 1.875rem;
+    margin-top: 1.375rem;
   }
 }
 @media (min-width: 2559.98px) {
@@ -3101,7 +3100,7 @@ body {
 }
 @media (min-width: 1727.98px) {
   .about-stats__intro {
-    margin-bottom: 4rem;
+    margin-bottom: 3.75rem;
   }
 }
 @media (min-width: 2559.98px) {
@@ -3236,7 +3235,7 @@ body {
 }
 @media (min-width: 1727.98px) {
   .about-solutions__intro {
-    margin-bottom: 4.375rem;
+    margin-bottom: 4.25rem;
   }
 }
 @media (min-width: 2559.98px) {
@@ -4438,6 +4437,11 @@ body {
     padding-top: 5rem;
     padding-bottom: 3.75rem;
     min-height: 50.875rem;
+  }
+}
+@media (min-width: 1727.98px) {
+  .page-hero {
+    padding-top: 4.75rem;
   }
 }
 @media (min-width: 2559.98px) {

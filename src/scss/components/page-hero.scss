@@ -42,6 +42,11 @@
 		min-height: rem(814);
 	}
 
+	@media (min-width:$md2) {
+		padding-top: rem(76);
+
+	}
+
 	@media (min-width: $md1) {
 		min-height: rem(1100);
 		aspect-ratio: 2560 / 1100;

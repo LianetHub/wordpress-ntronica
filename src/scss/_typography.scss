@@ -47,7 +47,7 @@
 
 	@media (min-width: $md2) {
 		font-size: rem(28);
-		line-height: math.div(25, 28);
+		line-height: math.div(32, 28);
 	}
 
 	@media (min-width: $md1) {
@@ -141,8 +141,8 @@
 		--marker-gap: #{rem(15)};
 		--marker-col: #{rem(73)};
 		font-size: rem(20);
-		line-height: math.div(23, 20);
-		gap: rem(4);
+		line-height: math.div(22, 20);
+		gap: rem(8);
 	}
 
 	@media (min-width: $md1) {
@@ -152,7 +152,6 @@
 		--marker-offset: #{rem(4)};
 		font-size: rem(27);
 		line-height: math.div(29, 27);
-		gap: rem(10);
 	}
 
 	a {

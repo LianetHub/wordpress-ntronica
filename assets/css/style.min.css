@@ -216,12 +216,12 @@ body {
   font-family: "CoFo_Robert", Georgia, "Times New Roman", serif;
   font-weight: 700;
   font-style: italic;
-  font-size: 1.125rem;
+  font-size: 1rem;
   line-height: 1;
 }
 @media (min-width: 767.98px) {
   .subtitle {
-    font-size: 1.375rem;
+    font-size: 1.125rem;
   }
 }
 @media (min-width: 1439.98px) {
@@ -298,17 +298,24 @@ body {
 }
 
 .feature-list {
-  --marker-size: 0.625rem;
+  --marker-size: 0.5rem;
   --marker-gap: 0.6875rem;
-  --marker-col: 3rem;
+  --marker-col: 2.75rem;
   --marker-offset: 0.1875rem;
+  gap: 0.3125rem;
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
   font-family: "CoFo_Robert", Georgia, "Times New Roman", serif;
   font-weight: 400;
   font-size: 0.875rem;
   line-height: 1.1428571429;
+}
+@media (min-width: 1023.98px) {
+  .feature-list {
+    gap: 0.5rem;
+    --marker-col: 3.375rem;
+    --marker-size: 0.625rem;
+  }
 }
 @media (min-width: 1439.98px) {
   .feature-list {
@@ -1857,7 +1864,7 @@ body {
   --footer-marker-offset: 0.1875rem;
   background-color: #58595b;
   color: #acadaf;
-  padding-top: 1.625rem;
+  padding-top: 1.875rem;
   padding-bottom: 1.625rem;
 }
 @media (min-width: 1023.98px) {
@@ -1905,7 +1912,12 @@ body {
   align-items: start;
 }
 .footer__copy .row {
-  --gutter-y: 0.25rem;
+  --gutter-y: 0.125rem;
+}
+@media (min-width: 767.98px) {
+  .footer__copy .row {
+    --gutter-y: 0.25rem;
+  }
 }
 @media (min-width: 1439.98px) {
   .footer__copy .row {
@@ -1963,8 +1975,28 @@ body {
     line-height: 1.1428571429;
   }
 }
+@media (max-width: 1727.98px) {
+  .footer__company--desktop-text {
+    display: none;
+  }
+}
+@media (min-width: 1727.98px) {
+  .footer__company--tablet-text {
+    display: none;
+  }
+}
+@media (max-width: 767.98px) {
+  .footer__company--tablet-text {
+    display: none;
+  }
+}
+@media (min-width: 767.98px) {
+  .footer__company--mobile-text {
+    display: none;
+  }
+}
 .footer__address {
-  --address-text: 10.8125rem;
+  --address-text: 15rem;
   position: relative;
   max-width: calc(var(--footer-content-offset) + var(--address-text));
   padding-left: var(--footer-content-offset);
@@ -1972,6 +2004,11 @@ body {
   font-weight: 400;
   font-size: 0.75rem;
   line-height: 1.25;
+}
+@media (min-width: 1199.98px) {
+  .footer__address {
+    --address-text: 10rem;
+  }
 }
 @media (min-width: 1439.98px) {
   .footer__address {
@@ -2756,12 +2793,18 @@ body {
 
 .about-overview {
   padding-top: 1.875rem;
-  padding-bottom: 2.5rem;
+  padding-bottom: 0.875rem;
 }
 @media (min-width: 767.98px) {
   .about-overview {
-    padding-top: 3.125rem;
-    padding-bottom: 2.5rem;
+    padding-top: 1.875rem;
+    padding-bottom: 1.5rem;
+  }
+}
+@media (min-width: 1199.98px) {
+  .about-overview {
+    padding-top: 1.875rem;
+    padding-bottom: 2.25rem;
   }
 }
 @media (min-width: 1727.98px) {
@@ -2797,7 +2840,7 @@ body {
   }
 }
 .about-overview__subtitle {
-  margin-top: 1.5rem;
+  margin-top: 0.875rem;
 }
 @media (min-width: 767.98px) {
   .about-overview__subtitle {
@@ -2809,7 +2852,7 @@ body {
 }
 @media (min-width: 767.98px) {
   .about-overview__intro {
-    margin-top: 1.25rem;
+    margin-top: 1rem;
   }
 }
 @media (min-width: 1439.98px) {
@@ -2852,13 +2895,19 @@ body {
 }
 
 .about-goal {
-  padding-top: 1.25rem;
-  padding-bottom: 3.125rem;
+  padding-top: 0.875rem;
+  padding-bottom: 1.875rem;
 }
 @media (min-width: 767.98px) {
   .about-goal {
+    padding-top: 1.125rem;
+    padding-bottom: 1.875rem;
+  }
+}
+@media (min-width: 1023.98px) {
+  .about-goal {
     padding-top: 1.875rem;
-    padding-bottom: 2.5rem;
+    padding-bottom: 1.875rem;
   }
 }
 @media (min-width: 1727.98px) {
@@ -2874,14 +2923,19 @@ body {
 }
 .about-goal__layout {
   --gutter-x: 1.5rem;
-  --gutter-y: 1.5rem;
+  --gutter-y: 0.875rem;
+}
+@media (min-width: 767.98px) {
+  .about-goal__layout {
+    --gutter-y: 1.5rem;
+  }
 }
 .about-goal__title {
   margin-bottom: 1rem;
 }
 @media (min-width: 767.98px) {
   .about-goal__title {
-    margin-bottom: 1.375rem;
+    margin-bottom: 1rem;
   }
 }
 @media (min-width: 1727.98px) {
@@ -2905,8 +2959,19 @@ body {
 .about-goal__media {
   position: relative;
   overflow: hidden;
-  aspect-ratio: 692/377;
   background-color: #d9d9d9;
+  aspect-ratio: 322/219;
+}
+@media (min-width: 1023.98px) {
+  .about-goal__media {
+    aspect-ratio: 692/377;
+    margin-top: 1.25rem;
+  }
+}
+@media (min-width: 1199.98px) {
+  .about-goal__media {
+    margin-top: 0;
+  }
 }
 .about-goal__img {
   display: block;
@@ -2923,8 +2988,20 @@ body {
 }
 @media (min-width: 767.98px) {
   .about-stats {
+    padding-top: 2.25rem;
+    padding-bottom: 1.625rem;
+  }
+}
+@media (min-width: 1023.98px) {
+  .about-stats {
+    padding-top: 2.25rem;
+    padding-bottom: 1.5rem;
+  }
+}
+@media (min-width: 1199.98px) {
+  .about-stats {
     padding-top: 2.625rem;
-    padding-bottom: 1.75rem;
+    padding-bottom: 1.5rem;
   }
 }
 @media (min-width: 1727.98px) {
@@ -2944,6 +3021,11 @@ body {
 }
 @media (min-width: 767.98px) {
   .about-stats__title {
+    margin-bottom: 1rem;
+  }
+}
+@media (min-width: 1199.98px) {
+  .about-stats__title {
     margin-bottom: 1.5rem;
   }
 }
@@ -2959,17 +3041,22 @@ body {
 }
 .about-stats__intro {
   --gutter-x: 1.5rem;
-  --gutter-y: 1.25rem;
-  margin-bottom: 1.875rem;
+  --gutter-y: 1.875rem;
+  margin-bottom: 1.6875rem;
 }
 @media (min-width: 767.98px) {
   .about-stats__intro {
-    margin-bottom: 4rem;
+    margin-bottom: 2.625rem;
   }
 }
-@media (min-width: 1439.98px) {
+@media (min-width: 1023.98px) {
   .about-stats__intro {
-    margin-bottom: 2.6875rem;
+    margin-bottom: 2rem;
+  }
+}
+@media (min-width: 1199.98px) {
+  .about-stats__intro {
+    margin-bottom: 1.5rem;
   }
 }
 @media (min-width: 1727.98px) {
@@ -2989,17 +3076,23 @@ body {
   }
 }
 .about-stats__grid {
-  --gutter-x: 1.5rem;
-  --gutter-y: 1.5rem;
+  --gutter-y: 1rem;
+  --gutter-x: 1rem;
+}
+@media (min-width: 1023.98px) {
+  .about-stats__grid {
+    --gutter-x: 1.5rem;
+    --gutter-y: 1.5rem;
+  }
 }
 .about-stats__value {
   font-family: "Nanotronica_Text", system-ui, -apple-system, "Segoe UI", sans-serif;
   font-weight: 400;
-  font-size: 3rem;
+  font-size: 3.375rem;
 }
 @media (min-width: 767.98px) {
   .about-stats__value {
-    font-size: 4rem;
+    font-size: 3.875rem;
   }
 }
 @media (min-width: 1023.98px) {
@@ -3024,6 +3117,22 @@ body {
 }
 .about-stats__label {
   font-style: normal;
+  margin-top: 1rem;
+}
+@media (min-width: 1023.98px) {
+  .about-stats__label {
+    margin-top: 0.675rem;
+  }
+}
+@media (min-width: 1199.98px) {
+  .about-stats__label {
+    margin-top: 0.75rem;
+  }
+}
+@media (min-width: 1727.98px) {
+  .about-stats__label {
+    margin-top: 0;
+  }
 }
 @media (min-width: 2559.98px) {
   .about-stats__label {
@@ -3032,13 +3141,25 @@ body {
 }
 
 .about-solutions {
-  padding-top: 2.5rem;
-  padding-bottom: 3.125rem;
+  padding-top: 1.875rem;
+  padding-bottom: 3.25rem;
 }
 @media (min-width: 767.98px) {
   .about-solutions {
-    padding-top: 3.75rem;
-    padding-bottom: 5.625rem;
+    padding-top: 3.125rem;
+    padding-bottom: 4.375rem;
+  }
+}
+@media (min-width: 1023.98px) {
+  .about-solutions {
+    padding-top: 2.5rem;
+    padding-bottom: 4.375rem;
+  }
+}
+@media (min-width: 1199.98px) {
+  .about-solutions {
+    padding-top: 3.125rem;
+    padding-bottom: 4.375rem;
   }
 }
 @media (min-width: 1439.98px) {
@@ -3061,11 +3182,11 @@ body {
 }
 .about-solutions__intro {
   --gutter-x: 1.5rem;
-  margin-bottom: 1.875rem;
+  margin-bottom: 1.75rem;
 }
 @media (min-width: 767.98px) {
   .about-solutions__intro {
-    margin-bottom: 4.375rem;
+    margin-bottom: 2.5rem;
   }
 }
 @media (min-width: 1439.98px) {
@@ -3086,13 +3207,13 @@ body {
 .about-solutions__lead {
   font-family: "Nanotronica_Text", system-ui, -apple-system, "Segoe UI", sans-serif;
   font-weight: 400;
-  font-size: 1rem;
-  line-height: 1.25;
+  font-size: 0.9375rem;
+  line-height: 1.2;
   color: #000000;
 }
 @media (min-width: 767.98px) {
   .about-solutions__lead {
-    font-size: 1.25rem;
+    font-size: 0.9375rem;
     line-height: 1.2;
   }
 }
@@ -3130,7 +3251,7 @@ body {
   object-fit: cover;
 }
 .about-solutions__caption {
-  margin-top: 1rem;
+  margin-top: 0.75rem;
   font-family: "CoFo_Robert", Georgia, "Times New Roman", serif;
   font-weight: 500;
   font-size: 1.25rem;
@@ -3139,8 +3260,15 @@ body {
 }
 @media (min-width: 767.98px) {
   .about-solutions__caption {
-    margin-top: 1.25rem;
-    font-size: 1.375rem;
+    margin-top: 1rem;
+    font-size: 1.25rem;
+    line-height: 1.0909090909;
+  }
+}
+@media (min-width: 1023.98px) {
+  .about-solutions__caption {
+    margin-top: 0.875rem;
+    font-size: 1.125rem;
     line-height: 1.0909090909;
   }
 }
@@ -3163,6 +3291,11 @@ body {
     margin-top: 1.25rem;
     font-size: 2.25rem;
     line-height: 1.0555555556;
+  }
+}
+@media (max-width: 1023.98px) and (min-width: 767.98px) {
+  .about-solutions__caption--large-text {
+    display: none;
   }
 }
 
@@ -4234,23 +4367,30 @@ body {
   background-position: center;
   background-repeat: no-repeat;
   padding-top: 1.25rem;
-  padding-bottom: 3.125rem;
 }
 @media (max-width: 767.98px) {
   .page-hero {
     aspect-ratio: 430/380;
     padding-top: 1.25rem;
-    padding-bottom: 4.375rem;
+    padding-bottom: 1rem;
   }
 }
 @media (min-width: 767.98px) {
   .page-hero {
+    padding-top: 5.5rem;
+    padding-bottom: 1.5rem;
     min-height: 38.75rem;
   }
 }
 @media (min-width: 1023.98px) {
   .page-hero {
+    padding-bottom: 2rem;
     min-height: 39rem;
+  }
+}
+@media (min-width: 1199.98px) {
+  .page-hero {
+    padding-bottom: 2.25rem;
   }
 }
 @media (min-width: 1439.98px) {
@@ -4281,29 +4421,29 @@ body {
   max-width: 20.125rem;
   font-family: "Nanotronica_Text", system-ui, -apple-system, "Segoe UI", sans-serif;
   font-weight: 700;
-  font-size: 1.125rem;
-  line-height: 1.2222222222;
+  font-size: 0.875rem;
+  line-height: 1.3571428571;
   color: #ffffff;
 }
 @media (min-width: 767.98px) {
   .page-hero__tagline {
     align-self: flex-end;
     max-width: 50%;
-    font-size: 1.375rem;
-    line-height: 1.1818181818;
+    font-size: 0.875rem;
+    line-height: 1.3571428571;
+    padding-left: 0.75rem;
   }
 }
 @media (min-width: 1023.98px) {
   .page-hero__tagline {
-    font-size: 1.5rem;
-    line-height: 1.1666666667;
+    font-size: 1.0625rem;
+    line-height: 1.2352941176;
   }
 }
 @media (min-width: 1439.98px) {
   .page-hero__tagline {
     font-size: 1.5rem;
     line-height: 1.25;
-    padding-left: 0.75rem;
   }
 }
 @media (min-width: 1727.98px) {
@@ -4325,26 +4465,21 @@ body {
   padding-top: 5rem;
   font-family: "Nanotronica_Text", system-ui, -apple-system, "Segoe UI", sans-serif;
   font-weight: 400;
-  font-size: 4.5rem;
-  line-height: 0.8472222222;
+  font-size: 3.25rem;
+  line-height: 1;
   color: #ffffff;
+  margin-left: -0.0402684564em;
 }
 @media (min-width: 767.98px) {
   .page-hero__title {
     padding-top: 7.5rem;
-    font-size: 7.5rem;
-    line-height: 0.8333333333;
-  }
-}
-@media (min-width: 1023.98px) {
-  .page-hero__title {
-    font-size: 8.75rem;
+    font-size: 6.875rem;
     line-height: 0.7857142857;
   }
 }
 @media (min-width: 1199.98px) {
   .page-hero__title {
-    font-size: 10rem;
+    font-size: 8.75rem;
     line-height: 0.75;
   }
 }
@@ -4352,7 +4487,6 @@ body {
   .page-hero__title {
     font-size: 11.25rem;
     line-height: 0.7222222222;
-    margin-left: -0.0402684564em;
   }
 }
 @media (min-width: 1727.98px) {
@@ -4407,13 +4541,17 @@ body {
 @media (min-width: 767.98px) {
   .sticky-navbar[data-variant=nav] {
     display: block;
-    padding-top: 1.25rem;
-    padding-bottom: 1.25rem;
+    padding-block: 0.9375rem;
+  }
+}
+@media (min-width: 1199.98px) {
+  .sticky-navbar[data-variant=nav] {
+    padding-block: 1.25rem;
   }
 }
 @media (min-width: 2559.98px) {
   .sticky-navbar[data-variant=nav] {
-    padding-top: 1.75rem;
+    padding-block: 1.75rem;
   }
 }
 .sticky-navbar[data-variant=nav] .sticky-navbar__inner {

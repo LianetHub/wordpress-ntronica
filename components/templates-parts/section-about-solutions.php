@@ -11,7 +11,7 @@ $ntronica_about_img = IMG_PATH . '/about/';
 <section class="about-solutions" id="solutions">
 	<div class="container">
 		<div class="row about-solutions__intro">
-			<div class="col-6">
+			<div class="col-sm-6">
 				<h2 class="about-solutions__lead">We develop and manufacture solutions for the following technological processes.</h2>
 			</div>
 		</div>
@@ -40,7 +40,7 @@ $ntronica_about_img = IMG_PATH . '/about/';
 						height="413"
 						loading="lazy">
 				</div>
-				<h3 class="about-solutions__caption">Wet process equipment</h3>
+				<h3 class="about-solutions__caption">Wet process <span class="about-solutions__caption--large-text">equipment</span></h3>
 			</li>
 
 			<li class="col-12 col-md-4 about-solutions__item">

@@ -16,7 +16,11 @@
 						<p class="footer__year">Copyright (c) 2025-2026</p>
 					</div>
 					<div class="col-12 col-md-8 col-xxl-12">
-						<p class="footer__company">Nanotronica India Private Limited Company</p>
+						<p class="footer__company">Nanotronica India
+							<span class="footer__company--desktop-text">Private Limited Company</span>
+							<span class="footer__company--tablet-text">Pvt Ltd</span>
+							<span class="footer__company--mobile-text">Private Limited</span>
+						</p>
 					</div>
 				</div>
 			</div>
@@ -38,7 +42,7 @@
 
 			<div class="col-12 col-md-4 col-xxl-3">
 				<address class="footer__address" data-label="Add">
-					8 Ulsoor Road, Yellapa Chetty Layout, Ulsoor, Bangaluru, Karnataka, 560042, India
+					8 Ulsoor Road, Yellapa Chetty Layout, Ulsoor, Bangaluru, Karnataka, 560042,&nbsp;India
 				</address>
 			</div>
 

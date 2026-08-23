@@ -4,11 +4,16 @@
 
 .about-overview {
 	padding-top: rem(30);
-	padding-bottom: rem(40);
+	padding-bottom: rem(14);
 
 	@media (min-width: $md6) {
-		padding-top: rem(50);
-		padding-bottom: rem(40);
+		padding-top: rem(30);
+		padding-bottom: rem(24);
+	}
+
+	@media (min-width: $md4) {
+		padding-top: rem(30);
+		padding-bottom: rem(36);
 	}
 
 	@media (min-width: $md2) {
@@ -42,7 +47,7 @@
 
 	// about-overview__subtitle
 	&__subtitle {
-		margin-top: rem(24);
+		margin-top: rem(14);
 
 		@media (min-width: $md6) {
 			margin-top: 0;
@@ -54,7 +59,7 @@
 		margin-top: rem(16);
 
 		@media (min-width: $md6) {
-			margin-top: rem(20);
+			margin-top: rem(16);
 		}
 
 		@media (min-width: $md3) {
@@ -93,12 +98,17 @@
 }
 
 .about-goal {
-	padding-top: rem(20);
-	padding-bottom: rem(50);
+	padding-top: rem(14);
+	padding-bottom: rem(30);
 
 	@media (min-width: $md6) {
+		padding-top: rem(18);
+		padding-bottom: rem(30);
+	}
+
+	@media (min-width: $md5) {
 		padding-top: rem(30);
-		padding-bottom: rem(40);
+		padding-bottom: rem(30);
 	}
 
 	@media (min-width: $md2) {
@@ -113,7 +123,12 @@
 	// about-goal__layout
 	&__layout {
 		--gutter-x: #{rem(24)};
-		--gutter-y: #{rem(24)};
+		--gutter-y: #{rem(14)};
+
+		@media (min-width:$md6) {
+			--gutter-y: #{rem(24)};
+
+		}
 	}
 
 	// about-goal__title
@@ -121,7 +136,7 @@
 		margin-bottom: rem(16);
 
 		@media (min-width: $md6) {
-			margin-bottom: rem(22);
+			margin-bottom: rem(16);
 		}
 
 		@media (min-width: $md2) {
@@ -147,8 +162,17 @@
 	&__media {
 		position: relative;
 		overflow: hidden;
-		aspect-ratio: 692 / 377;
 		background-color: $color-placeholder;
+		aspect-ratio: 322 / 219;
+
+		@media (min-width:$md5) {
+			aspect-ratio: 692 / 377;
+			margin-top: 1.25rem;
+		}
+
+		@media (min-width:$md4) {
+			margin-top: 0;
+		}
 	}
 
 	// about-goal__img
@@ -167,8 +191,18 @@
 	padding-bottom: rem(40);
 
 	@media (min-width: $md6) {
+		padding-top: rem(36);
+		padding-bottom: rem(26);
+	}
+
+	@media (min-width: $md5) {
+		padding-top: rem(36);
+		padding-bottom: rem(24);
+	}
+
+	@media (min-width: $md4) {
 		padding-top: rem(42);
-		padding-bottom: rem(28);
+		padding-bottom: rem(24);
 	}
 
 	@media (min-width: $md2) {
@@ -186,6 +220,10 @@
 		margin-bottom: rem(16);
 
 		@media (min-width: $md6) {
+			margin-bottom: rem(16);
+		}
+
+		@media (min-width: $md4) {
 			margin-bottom: rem(24);
 		}
 
@@ -201,15 +239,19 @@
 	// about-stats__intro
 	&__intro {
 		--gutter-x: #{rem(24)};
-		--gutter-y: #{rem(20)};
-		margin-bottom: rem(30);
+		--gutter-y: #{rem(30)};
+		margin-bottom: rem(27);
 
 		@media (min-width: $md6) {
-			margin-bottom: rem(64);
+			margin-bottom: rem(42);
 		}
 
-		@media (min-width: $md3) {
-			margin-bottom: rem(43);
+		@media (min-width: $md5) {
+			margin-bottom: rem(32);
+		}
+
+		@media (min-width: $md4) {
+			margin-bottom: rem(24);
 		}
 
 		@media (min-width: $md2) {
@@ -231,18 +273,23 @@
 
 	// about-stats__grid
 	&__grid {
-		--gutter-x: #{rem(24)};
-		--gutter-y: #{rem(24)};
+		--gutter-y: #{rem(16)};
+		--gutter-x: #{rem(16)};
+
+		@media (min-width:$md5) {
+			--gutter-x: #{rem(24)};
+			--gutter-y: #{rem(24)};
+		}
 	}
 
 	// about-stats__value
 	&__value {
 		font-family: $font-family;
 		font-weight: 400;
-		font-size: rem(48);
+		font-size: rem(54);
 
 		@media (min-width: $md6) {
-			font-size: rem(64);
+			font-size: rem(62);
 		}
 
 		@media (min-width: $md5) {
@@ -265,6 +312,19 @@
 	// about-stats__label
 	&__label {
 		font-style: normal;
+		margin-top: 1rem;
+
+		@media (min-width:$md5) {
+			margin-top: 0.675rem;
+		}
+
+		@media (min-width:$md4) {
+			margin-top: 0.75rem;
+		}
+
+		@media (min-width:$md2) {
+			margin-top: 0;
+		}
 
 		@media (min-width: $md1) {
 			margin-top: rem(12);
@@ -273,12 +333,22 @@
 }
 
 .about-solutions {
-	padding-top: rem(40);
-	padding-bottom: rem(50);
+	padding-top: rem(30);
+	padding-bottom: rem(52);
 
 	@media (min-width: $md6) {
-		padding-top: rem(60);
-		padding-bottom: rem(90);
+		padding-top: rem(50);
+		padding-bottom: rem(70);
+	}
+
+	@media (min-width: $md5) {
+		padding-top: rem(40);
+		padding-bottom: rem(70);
+	}
+
+	@media (min-width: $md4) {
+		padding-top: rem(50);
+		padding-bottom: rem(70);
 	}
 
 	@media (min-width: $md3) {
@@ -299,10 +369,10 @@
 	// about-solutions__intro
 	&__intro {
 		--gutter-x: #{rem(24)};
-		margin-bottom: rem(30);
+		margin-bottom: rem(28);
 
 		@media (min-width: $md6) {
-			margin-bottom: rem(70);
+			margin-bottom: rem(40);
 		}
 
 		@media (min-width: $md3) {
@@ -322,12 +392,12 @@
 	&__lead {
 		font-family: $font-family;
 		font-weight: 400;
-		font-size: rem(16);
-		line-height: math.div(20, 16);
+		font-size: rem(15);
+		line-height: math.div(18, 15);
 		color: $color-black;
 
 		@media (min-width: $md6) {
-			font-size: rem(20);
+			font-size: rem(15);
 			line-height: math.div(24, 20);
 		}
 
@@ -370,7 +440,7 @@
 
 	// about-solutions__caption
 	&__caption {
-		margin-top: rem(16);
+		margin-top: rem(12);
 		font-family: $font-robert;
 		font-weight: 500;
 		font-size: rem(20);
@@ -378,8 +448,14 @@
 		color: $color-black;
 
 		@media (min-width: $md6) {
-			margin-top: rem(20);
-			font-size: rem(22);
+			margin-top: rem(16);
+			font-size: rem(20);
+			line-height: math.div(24, 22);
+		}
+
+		@media (min-width: $md5) {
+			margin-top: rem(14);
+			font-size: rem(18);
 			line-height: math.div(24, 22);
 		}
 
@@ -399,6 +475,15 @@
 			margin-top: rem(20);
 			font-size: rem(36);
 			line-height: math.div(38, 36);
+		}
+	}
+
+	// .about-solutions__caption--large-text
+	&__caption--large-text {
+		@media (max-width:$md5) {
+			@media (min-width:$md6) {
+				display: none;
+			}
 		}
 	}
 }

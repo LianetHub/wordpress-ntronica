@@ -12,7 +12,7 @@
 	--footer-marker-offset: #{rem(3)};
 	background-color: $color-footer;
 	color: $color-muted;
-	padding-top: rem(26);
+	padding-top: rem(30);
 	padding-bottom: rem(26);
 
 	@media (min-width: $md5) {
@@ -62,7 +62,11 @@
 	// footer__copy
 	&__copy {
 		.row {
-			--gutter-y: #{rem(4)};
+			--gutter-y: #{rem(2)};
+
+			@media (min-width:$md6) {
+				--gutter-y: #{rem(4)};
+			}
 
 			@media (min-width: $md3) {
 				--gutter-y: #{rem(7)};
@@ -118,9 +122,34 @@
 		}
 	}
 
+	// .footer__company--desktop-text
+	&__company--desktop-text {
+		@media (max-width:$md2) {
+			display: none;
+		}
+	}
+
+	// .footer__company--tablet-text
+	&__company--tablet-text {
+		@media (min-width:$md2) {
+			display: none;
+		}
+
+		@media (max-width:$md6) {
+			display: none;
+		}
+	}
+
+	// .footer__company--mobile-text
+	&__company--mobile-text {
+		@media (min-width:$md6) {
+			display: none;
+		}
+	}
+
 	// footer__address
 	&__address {
-		--address-text: #{rem(173)};
+		--address-text: #{rem(240)};
 		position: relative;
 		max-width: calc(var(--footer-content-offset) + var(--address-text));
 		padding-left: var(--footer-content-offset);
@@ -128,6 +157,10 @@
 		font-weight: 400;
 		font-size: rem(12);
 		line-height: math.div(15, 12);
+
+		@media (min-width: $md4) {
+			--address-text: #{rem(160)};
+		}
 
 		@media (min-width: $md3) {
 			--address-text: #{rem(150)};

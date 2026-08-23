@@ -33,11 +33,11 @@
 	font-family: $font-robert;
 	font-weight: 700;
 	font-style: italic;
-	font-size: rem(18);
+	font-size: rem(16);
 	line-height: math.div(18, 18);
 
 	@media (min-width: $md6) {
-		font-size: rem(22);
+		font-size: rem(18);
 	}
 
 	@media (min-width:$md3) {
@@ -105,17 +105,23 @@
 }
 
 .feature-list {
-	--marker-size: #{rem(10)};
+	--marker-size: #{rem(8)};
 	--marker-gap: #{rem(11)};
-	--marker-col: #{rem(48)};
+	--marker-col: #{rem(44)};
 	--marker-offset: #{rem(3)};
+	gap: rem(5);
 	display: flex;
 	flex-direction: column;
-	gap: rem(8);
 	font-family: $font-robert;
 	font-weight: 400;
 	font-size: rem(14);
 	line-height: math.div(16, 14);
+
+	@media (min-width:$md5) {
+		gap: rem(8);
+		--marker-col: #{rem(54)};
+		--marker-size: #{rem(10)};
+	}
 
 	@media (min-width: $md3) {
 		--marker-size: #{rem(12)};

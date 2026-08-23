@@ -3,7 +3,7 @@
 @use "../mixins" as *;
 
 .footer {
-	--footer-label: #{rem(33)};
+	--footer-label: #{rem(31)};
 	--footer-label-gap: #{rem(5)};
 	--footer-marker: #{rem(9)};
 	--footer-text-gap: #{rem(5)};
@@ -12,33 +12,33 @@
 	--footer-marker-offset: #{rem(3)};
 	background-color: $color-footer;
 	color: $color-muted;
-	padding-top: rem(30);
-	padding-bottom: rem(26);
+	padding-top: rem(26);
+	padding-bottom: rem(20);
 
 	@media (min-width: $md5) {
 		padding-top: rem(34);
 		padding-bottom: rem(28);
 	}
 
-	@media (min-width: $md3) {
-		--footer-label: #{rem(31)};
+	@media (min-width: $md2) {
+		--footer-label: #{rem(40)};
 		--footer-label-gap: #{rem(5)};
 		--footer-marker: #{rem(9)};
 		--footer-text-gap: #{rem(7)};
 	}
 
 	@media (min-width:$md2) {
-		padding-bottom: rem(34);
+		padding-bottom: rem(24);
 	}
 
 	@media (min-width: $md1) {
-		--footer-label: #{rem(54)};
+		--footer-label: #{rem(42)};
 		--footer-label-gap: #{rem(13)};
 		--footer-marker: #{rem(13)};
 		--footer-text-gap: #{rem(13)};
 		--footer-marker-offset: #{rem(4)};
 		padding-top: rem(43);
-		padding-bottom: rem(43);
+		padding-bottom: rem(32);
 	}
 
 	a {
@@ -85,7 +85,8 @@
 			line-height: math.div(12, 15);
 		}
 
-		@media (min-width: $md3) {
+		@media (min-width: $md2) {
+			font-size: rem(18);
 			line-height: math.div(18, 15);
 		}
 
@@ -108,15 +109,17 @@
 		}
 
 		@media (min-width: $md3) {
+			margin-top: rem(4);
 			line-height: math.div(18, 15);
 		}
 
 		@media (min-width:$md2) {
-			margin-top: rem(7);
+			font-size: rem(18);
+			margin-top: rem(6);
 		}
 
 		@media (min-width: $md1) {
-			margin-top: rem(12);
+			margin-top: rem(8);
 			font-size: rem(21);
 			line-height: math.div(24, 21);
 		}
@@ -124,14 +127,14 @@
 
 	// .footer__company--desktop-text
 	&__company--desktop-text {
-		@media (max-width:$md2) {
+		@media (max-width:$md3) {
 			display: none;
 		}
 	}
 
 	// .footer__company--tablet-text
 	&__company--tablet-text {
-		@media (min-width:$md2) {
+		@media (min-width:$md3) {
 			display: none;
 		}
 
@@ -158,15 +161,12 @@
 		font-size: rem(12);
 		line-height: math.div(15, 12);
 
-		@media (min-width: $md4) {
+		@media (min-width:$md5) {
 			--address-text: #{rem(160)};
 		}
 
-		@media (min-width: $md3) {
-			--address-text: #{rem(150)};
-		}
-
 		@media (min-width: $md2) {
+			font-size: rem(15);
 			--address-text: #{rem(187)};
 		}
 
@@ -208,6 +208,10 @@
 		line-height: math.div(15, 12);
 		color: inherit;
 
+		@media (min-width:$md2) {
+			font-size: rem(15);
+		}
+
 		@media (min-width: $md1) {
 			font-size: rem(18);
 			line-height: math.div(21, 18);
@@ -220,6 +224,10 @@
 		font-weight: 700;
 		font-size: rem(12);
 		line-height: math.div(15, 12);
+
+		@media (min-width:$md2) {
+			font-size: rem(15);
+		}
 
 		@media (min-width: $md1) {
 			font-size: rem(18);
@@ -243,7 +251,7 @@
 		}
 
 		.search-form__input {
-			min-height: rem(22);
+			min-height: rem(26);
 			padding: rem(8) rem(22) rem(2) 0;
 			border-bottom: rem(1) solid currentColor;
 			font-family: inherit;

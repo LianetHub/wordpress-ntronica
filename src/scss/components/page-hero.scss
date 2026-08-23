@@ -83,6 +83,11 @@
 			line-height: math.div(21, 17);
 		}
 
+		@media (min-width:$md4) {
+			font-size: rem(18);
+			line-height: math.div(24, 18);
+		}
+
 		@media (min-width: $md3) {
 			font-size: rem(24);
 			line-height: math.div(30, 24);

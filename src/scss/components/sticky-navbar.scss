@@ -55,6 +55,10 @@
 			padding-block: rem(15);
 		}
 
+		@media (min-width:$md5) {
+			padding-block: rem(18);
+		}
+
 		@media (min-width: $md4) {
 			padding-block: rem(20);
 		}

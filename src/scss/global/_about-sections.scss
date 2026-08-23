@@ -16,6 +16,11 @@
 		padding-bottom: rem(36);
 	}
 
+	@media (min-width: $md3) {
+		padding-top: rem(52);
+		padding-bottom: rem(40);
+	}
+
 	@media (min-width: $md2) {
 		padding-top: rem(54);
 		padding-bottom: rem(48);
@@ -111,6 +116,10 @@
 		padding-bottom: rem(30);
 	}
 
+	@media (min-width: $md3) {
+		padding-bottom: rem(40);
+	}
+
 	@media (min-width: $md2) {
 		padding-top: rem(40);
 		padding-bottom: rem(50);
@@ -139,6 +148,10 @@
 			margin-bottom: rem(16);
 		}
 
+		@media (min-width: $md3) {
+			margin-bottom: rem(24);
+		}
+
 		@media (min-width: $md2) {
 			margin-bottom: rem(32);
 		}
@@ -165,12 +178,12 @@
 		background-color: $color-placeholder;
 		aspect-ratio: 322 / 219;
 
-		@media (min-width:$md5) {
+		@media (min-width:$md6) {
 			aspect-ratio: 692 / 377;
 			margin-top: 1.25rem;
 		}
 
-		@media (min-width:$md4) {
+		@media (min-width:$md5) {
 			margin-top: 0;
 		}
 	}
@@ -203,6 +216,10 @@
 	@media (min-width: $md4) {
 		padding-top: rem(42);
 		padding-bottom: rem(24);
+	}
+
+	@media (min-width:$md3) {
+		padding-bottom: rem(28);
 	}
 
 	@media (min-width: $md2) {
@@ -247,11 +264,15 @@
 		}
 
 		@media (min-width: $md5) {
-			margin-bottom: rem(32);
+			margin-bottom: rem(36);
 		}
 
 		@media (min-width: $md4) {
 			margin-bottom: rem(24);
+		}
+
+		@media (min-width: $md3) {
+			margin-bottom: rem(44);
 		}
 
 		@media (min-width: $md2) {
@@ -276,7 +297,7 @@
 		--gutter-y: #{rem(16)};
 		--gutter-x: #{rem(16)};
 
-		@media (min-width:$md5) {
+		@media (min-width:$md6) {
 			--gutter-x: #{rem(24)};
 			--gutter-y: #{rem(24)};
 		}
@@ -314,15 +335,15 @@
 		font-style: normal;
 		margin-top: 1rem;
 
-		@media (min-width:$md5) {
-			margin-top: 0.675rem;
+		@media (min-width:$md6) {
+			margin-top: 0.5rem;
 		}
 
 		@media (min-width:$md4) {
 			margin-top: 0.75rem;
 		}
 
-		@media (min-width:$md2) {
+		@media (min-width:$md3) {
 			margin-top: 0;
 		}
 

@@ -117,10 +117,14 @@
 	font-size: rem(14);
 	line-height: math.div(16, 14);
 
-	@media (min-width:$md5) {
+	@media (min-width:$md6) {
 		gap: rem(8);
 		--marker-col: #{rem(54)};
 		--marker-size: #{rem(10)};
+	}
+
+	@media (min-width:$md4) {
+		--marker-col: #{rem(48)};
 	}
 
 	@media (min-width: $md3) {

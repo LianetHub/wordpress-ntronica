@@ -10,7 +10,7 @@ export class FormController {
 			clearBtn: '.form__clear',
 			phoneInput: 'input[type="tel"]',
 			fileInput: 'input[type="file"]',
-			fileContainer: '.form__file',
+			fileWrap: '.form__file-wrap',
 			fileList: '.form__file-list',
 			fileRemove: '.form__file-remove'
 		};
@@ -31,9 +31,9 @@ export class FormController {
 		phoneInputs.forEach(input => {
 			IMask(input, {
 				mask: codeArray,
+				lazy: true,
 				dispatch: (appended, dynamicMasked) => {
 					const number = (dynamicMasked.value + appended).replace(/\D/g, '');
-
 					return dynamicMasked.compiledMasks.find(m => number.indexOf(m.startsWith) === 0);
 				}
 			});
@@ -73,16 +73,16 @@ export class FormController {
 	initFileInputs() {
 		const fileInputs = this.form.querySelectorAll(this.selectors.fileInput);
 		fileInputs.forEach(input => {
-			const container = input.closest(this.selectors.fileContainer);
-			if (!container) return;
+			const wrap = input.closest(this.selectors.fileWrap);
+			if (!wrap) return;
 
 			input.setAttribute('multiple', 'multiple');
 
-			let listContainer = container.querySelector(this.selectors.fileList);
+			let listContainer = wrap.querySelector(this.selectors.fileList);
 			if (!listContainer) {
 				listContainer = document.createElement('div');
 				listContainer.className = 'form__file-list';
-				container.appendChild(listContainer);
+				wrap.appendChild(listContainer);
 			}
 
 			input.addEventListener('change', (e) => {
@@ -114,28 +114,26 @@ export class FormController {
 
 	renderFiles(files, listContainer, input) {
 		listContainer.innerHTML = '';
+		const wrap = input.closest(this.selectors.fileWrap);
+		const removeLabel = wrap?.dataset.removeLabel || this.form.dataset.removeLabel || '';
+
 		files.forEach((file, index) => {
-			const isImage = file.type.startsWith('image/');
 			const item = document.createElement('div');
 			item.className = 'form__file-item';
 
-			let previewHtml = '';
-			if (isImage) {
-				const url = URL.createObjectURL(file);
-				previewHtml = `<span class="form__file-image"><img src="${url}" alt="" class="cover-image"></span>`;
-			}
-
 			item.innerHTML = `
-                ${previewHtml}
-                <span class="form__file-name">${file.name}</span>
-                <button type="button" class="form__file-remove icon-cross" data-index="${index}" aria-label="Удалить"></button>
+                <span class="form__file-name text-block">${file.name}</span>
+                <button type="button" class="form__file-remove" data-index="${index}" aria-label="${removeLabel}">
+                    <svg class="form__clear-icon" width="21" height="21" aria-hidden="true">
+                        <use href="#icon-clear"></use>
+                    </svg>
+                </button>
             `;
 			listContainer.appendChild(item);
 		});
 
-		const container = input.closest(this.selectors.fileContainer);
-		if (container) {
-			container.classList.toggle('uploaded', files.length > 0);
+		if (wrap) {
+			wrap.classList.toggle('uploaded', files.length > 0);
 		}
 	}
 
@@ -154,7 +152,7 @@ export class FormController {
 	onSuccess() {
 		this.form.reset();
 		this.form.querySelectorAll(this.selectors.fileList).forEach(el => el.innerHTML = '');
-		this.form.querySelectorAll(this.selectors.fileContainer).forEach(el => el.classList.remove('uploaded'));
+		this.form.querySelectorAll(this.selectors.fileWrap).forEach(el => el.classList.remove('uploaded'));
 		this.form.querySelectorAll(this.selectors.control).forEach(input => this.toggleClearBtn(input));
 
 		if (typeof Fancybox !== 'undefined') {

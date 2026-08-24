@@ -4281,13 +4281,15 @@ body {
 .form__row {
   --gutter-x: 1.5rem;
   --gutter-y: 1.5rem;
-  margin-bottom: 0rem;
 }
 @media (min-width: 767.98px) {
   .form__row {
     --gutter-y: 2.75rem;
     margin-bottom: 1.5rem;
   }
+}
+.form__row {
+  margin-bottom: 0rem;
 }
 @media (min-width: 1439.98px) {
   .form__row {
@@ -4309,7 +4311,6 @@ body {
   flex-direction: column;
   justify-content: space-between;
   min-height: 3.4375rem;
-  height: 100%;
 }
 @media (min-width: 1439.98px) {
   .form__field {
@@ -4325,9 +4326,6 @@ body {
   .form__field {
     min-height: 6.3125rem;
   }
-}
-.form__field:has(.form__file) {
-  justify-content: flex-end;
 }
 .form__field .wpcf7-not-valid-tip {
   font-size: 1.25rem;
@@ -4411,14 +4409,18 @@ body {
 .form__clear[hidden] {
   display: none;
 }
+.form__file-wrap {
+  display: flex;
+  flex-direction: column;
+}
 .form__file {
+  margin-top: 1.625rem;
+  margin-bottom: 0.3125rem;
   position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
   height: 2.375rem;
-  margin-top: auto;
-  margin-bottom: 0.3125rem;
   border: 0.125rem dashed #000000;
   font-family: "Nanotronica_Text", system-ui, -apple-system, "Segoe UI", sans-serif;
   font-weight: 400;
@@ -4466,44 +4468,60 @@ body {
     color: #ffffff;
   }
 }
+.form__file-list {
+  margin-top: 2.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.4375rem;
+}
+.form__file-list:empty {
+  margin-top: 0;
+}
+.form__file-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.form__file-remove {
+  width: 1.3125rem;
+  height: 1.3125rem;
+  flex-shrink: 0;
+}
 .form__actions {
   display: flex;
   flex-direction: column;
   gap: 0.75rem;
-  max-width: none;
   width: 100%;
 }
 @media (min-width: 767.98px) {
   .form__actions {
-    max-width: 19.875rem;
+    margin-top: 1.5rem;
   }
 }
-@media (min-width: 1023.98px) {
+@media (min-width: 1439.98px) {
   .form__actions {
-    max-width: 23.625rem;
+    margin-top: 1.875rem;
   }
 }
-@media (min-width: 1199.98px) {
+@media (min-width: 1727.98px) {
   .form__actions {
-    max-width: 16.5rem;
+    margin-top: 2.25rem;
   }
 }
 @media (min-width: 1439.98px) {
   .form__actions {
     gap: 1rem;
-    max-width: 21.5rem;
   }
 }
 @media (min-width: 1727.98px) {
   .form__actions {
     gap: 1.25rem;
-    max-width: 27.5rem;
   }
 }
 @media (min-width: 2559.98px) {
   .form__actions {
+    margin-top: 2.5rem;
     gap: 2.75rem;
-    max-width: 38.875rem;
   }
 }
 .form__submit {

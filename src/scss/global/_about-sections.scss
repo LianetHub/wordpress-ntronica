@@ -307,7 +307,11 @@
 	&__value {
 		font-family: $font-family;
 		font-weight: 400;
-		font-size: rem(54);
+		font-size: rem(42);
+
+		@media (min-width:$md8) {
+			font-size: rem(54);
+		}
 
 		@media (min-width: $md6) {
 			font-size: rem(62);
@@ -333,7 +337,10 @@
 	// about-stats__label
 	&__label {
 		font-style: normal;
-		margin-top: 1rem;
+
+		@media (min-width:$md8) {
+			margin-top: 1rem;
+		}
 
 		@media (min-width:$md6) {
 			margin-top: 0.5rem;

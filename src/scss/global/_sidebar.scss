@@ -136,7 +136,7 @@
 		display: none;
 		position: absolute;
 		top: rem(8);
-		right: rem(50);
+		right: rem(53);
 		z-index: 2;
 
 		.lang-switcher {
@@ -159,7 +159,7 @@
 		width: rem(19);
 		height: rem(19);
 		padding: 0;
-		color: inherit;
+		color: #fff;
 
 		@media (min-width: $md6) {
 			top: rem(14);

@@ -216,8 +216,8 @@ body {
   font-family: "CoFo_Robert", Georgia, "Times New Roman", serif;
   font-weight: 700;
   font-style: italic;
-  font-size: 1rem;
   line-height: 1;
+  font-size: 1rem;
 }
 @media (min-width: 767.98px) {
   .subtitle {
@@ -1679,7 +1679,7 @@ body {
   display: none;
   position: absolute;
   top: 0.5rem;
-  right: 3.125rem;
+  right: 3.3125rem;
   z-index: 2;
 }
 .sidebar__lang .lang-switcher {
@@ -1699,7 +1699,7 @@ body {
   width: 1.1875rem;
   height: 1.1875rem;
   padding: 0;
-  color: inherit;
+  color: #fff;
 }
 @media (min-width: 767.98px) {
   .sidebar__close {
@@ -3127,7 +3127,12 @@ body {
 .about-stats__value {
   font-family: "Nanotronica_Text", system-ui, -apple-system, "Segoe UI", sans-serif;
   font-weight: 400;
-  font-size: 3.375rem;
+  font-size: 2.625rem;
+}
+@media (min-width: 375.98px) {
+  .about-stats__value {
+    font-size: 3.375rem;
+  }
 }
 @media (min-width: 767.98px) {
   .about-stats__value {
@@ -3156,7 +3161,11 @@ body {
 }
 .about-stats__label {
   font-style: normal;
-  margin-top: 1rem;
+}
+@media (min-width: 375.98px) {
+  .about-stats__label {
+    margin-top: 1rem;
+  }
 }
 @media (min-width: 767.98px) {
   .about-stats__label {

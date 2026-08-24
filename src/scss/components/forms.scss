@@ -2,12 +2,10 @@
 @use "variables" as *;
 @use "mixins" as *;
 
-
 .form {
     &__row {
         --gutter-x: #{rem(24)};
         --gutter-y: #{rem(24)};
-
 
         @media (min-width: $md6) {
             --gutter-y: #{rem(44)};
@@ -28,7 +26,6 @@
             margin-bottom: rem(40);
         }
     }
-
 
     &__field {
         display: flex;
@@ -139,11 +136,9 @@
     }
 
     &__file-wrap {
-
         display: flex;
         flex-direction: column;
     }
-
 
     &__file {
         margin-top: rem(26);
@@ -164,7 +159,7 @@
         transition:
             background-color 0.1s ease-in-out,
             border-color 0.1s ease-in-out,
-            color 0.1 ease-in-out;
+            color 0.1s ease-in-out;
 
         @media (min-width: $md6) {
             height: rem(48);
@@ -201,7 +196,6 @@
             }
         }
     }
-
 
     &__file-list {
         margin-top: rem(44);
@@ -274,13 +268,12 @@
         font-weight: 400;
         font-size: rem(15);
         line-height: math.div(11, 15);
-
         text-transform: uppercase;
         cursor: pointer;
         transition:
             background-color 0.1s ease-in-out,
             border-color 0.1s ease-in-out,
-            color 0.1 ease-in-out;
+            color 0.1s ease-in-out;
 
         & input {
             background: transparent;
@@ -337,7 +330,6 @@
         line-height: math.div(15, 12);
         color: $color-black;
 
-
         a {
             text-decoration: underline;
 
@@ -383,8 +375,7 @@
         transition:
             background-color 0.1s ease-in-out,
             border-color 0.1s ease-in-out,
-            color 0.1 ease-in-out;
-
+            color 0.1s ease-in-out;
 
         @media (min-width: $md3) {
             flex-basis: rem(24);
@@ -407,6 +398,68 @@
 
         &:checked {
             background-color: $color-black;
+        }
+    }
+
+    .page-template-page-contacts & {
+        .wpcf7-not-valid-tip {
+            color: $color-white;
+        }
+
+        &__control {
+            border-bottom-color: $color-white;
+            color: $color-white;
+
+            &:focus {
+                border-bottom-color: $color-white;
+            }
+        }
+
+        &__clear {
+            color: $color-white;
+        }
+
+        &__file {
+            border-color: $color-white;
+            color: $color-white;
+
+            @media (any-hover: hover) {
+                &:hover {
+                    background: $color-white;
+                    color: $color-black;
+                }
+            }
+        }
+
+        &__submit {
+            border-color: $color-white;
+            color: $color-white;
+            background: $color-black;
+
+            &:has(input:disabled) {
+                color: rgba($color-white, 0.5);
+                border-color: rgba($color-white, 0.5);
+            }
+
+            @media (any-hover: hover) {
+                &:hover {
+                    background: $color-white;
+                    color: $color-black;
+                }
+            }
+        }
+
+        &__consent {
+            color: $color-white;
+        }
+
+        &__checkbox {
+            border-color: $color-white;
+            background: $color-black;
+
+            &:checked {
+                background-color: $color-white;
+            }
         }
     }
 }

@@ -133,7 +133,11 @@ body {
 	font-weight: 400;
 	min-width: 320px;
 
-	// background: #58595B;
+	&.page-template-page-contacts {
+		background: #58595B;
+		color: #fff;
+
+	}
 }
 
 .lock {
@@ -175,7 +179,6 @@ body {
 
 .main {
 	flex: 1 1 auto;
-	background: $color-white;
 
 	// main--error
 	&--error,

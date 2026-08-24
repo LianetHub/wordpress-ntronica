@@ -1,7 +1,7 @@
 <?php
 
 /**
- * About: Company overview
+ * Home: Company overview
  *
  * @package ntronica
  */
@@ -13,6 +13,11 @@
 				<h2 class="title overview__title">Company overview</h2>
 				<div class="text-block overview__intro">
 					<p>Every day at N-tronica, we create tools that enable the production of&nbsp;the chips powering our world. From large-scale manufacturing to advanced R&amp;D, our work helps accelerate innovation and bring new technologies to life faster. We take pride in contributing to devices that are faster, smarter, and more efficient.</p>
+				</div>
+				<div class="overview__more">
+					<a class="link-more" href="<?php echo esc_url(home_url('/about/')); ?>">
+						LEARN MORE
+					</a>
 				</div>
 			</div>
 

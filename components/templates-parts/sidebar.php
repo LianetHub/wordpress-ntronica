@@ -8,7 +8,7 @@
 
 $ntronica_sidebar_items = ntronica_get_nav_tree();
 ?>
-<aside class="sidebar" aria-label="Primary">
+<aside class="sidebar is-collapsed" aria-label="Primary">
 	<div class="sidebar__lang">
 		<?php get_template_part('components/templates-parts/lang-switcher'); ?>
 	</div>

@@ -2,7 +2,7 @@
 @use "../variables" as *;
 @use "../mixins" as *;
 
-.about-overview {
+.overview {
 	padding-top: rem(30);
 	padding-bottom: rem(14);
 
@@ -31,7 +31,7 @@
 		padding-bottom: rem(70);
 	}
 
-	// about-overview__layout
+	// overview__layout
 	&__layout {
 		--gutter-x: #{rem(24)};
 		--gutter-y: #{rem(16)};
@@ -50,7 +50,7 @@
 		}
 	}
 
-	// about-overview__subtitle
+	// overview__subtitle
 	&__subtitle {
 		margin-top: rem(14);
 
@@ -59,7 +59,7 @@
 		}
 	}
 
-	// about-overview__intro
+	// overview__intro
 	&__intro {
 		margin-top: rem(16);
 
@@ -80,7 +80,7 @@
 		}
 	}
 
-	// about-overview__features
+	// overview__features
 	&__features {
 		margin-top: rem(16);
 
@@ -336,7 +336,7 @@
 
 	// about-stats__label
 	&__label {
-		
+
 
 		@media (min-width:$md8) {
 			margin-top: 1rem;

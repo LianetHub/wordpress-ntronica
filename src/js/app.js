@@ -1,80 +1,83 @@
 /**
  * Theme frontend entry (ntronica).
  */
-document.addEventListener("DOMContentLoaded", () => {
-	initSidebar();
-	initVacanciesSlider();
-	initPagedSliders();
-	initSearchForms();
-	initStickyNavbar();
-});
 
-const initSidebar = () => {
-	const sidebar = document.querySelector(".sidebar");
+import { FormController } from "./modules/formController.js";
 
-	if (!sidebar) {
-		return;
+
+class Sidebar {
+	constructor(el) {
+		this.sidebar = el;
+		this.logoBtn = el.querySelector(".sidebar__logo");
+		this.mqWide = window.matchMedia("(min-width: 1023.98px)");
+		this.mqAccordion = window.matchMedia("(min-width: 767.98px)");
+
+		this.mqWide.addEventListener("change", () => this.onBreakpointChange());
+		this.sidebar.addEventListener("click", (e) => this.onClick(e));
+
+		if (this.mqWide.matches && !this.sidebar.classList.contains("is-open")) {
+			this.sidebar.classList.add("is-collapsed");
+		}
+
+		this.syncAria();
+		this.syncLock();
 	}
 
-	const logoBtn = sidebar.querySelector(".sidebar__logo");
-	const mqWide = window.matchMedia("(min-width: 1023.98px)");
-	const mqAccordion = window.matchMedia("(min-width: 767.98px)");
+	isOpen() {
+		return this.mqWide.matches
+			? !this.sidebar.classList.contains("is-collapsed")
+			: this.sidebar.classList.contains("is-open");
+	}
 
-	const isOpen = () =>
-		mqWide.matches
-			? !sidebar.classList.contains("is-collapsed")
-			: sidebar.classList.contains("is-open");
-
-	const syncLock = () => {
+	syncLock() {
 		document.body.classList.toggle(
 			"lock",
-			sidebar.classList.contains("is-open") && !mqWide.matches,
+			this.sidebar.classList.contains("is-open") && !this.mqWide.matches
 		);
-	};
+	}
 
-	const syncAria = () => {
-		if (logoBtn) {
-			logoBtn.setAttribute("aria-expanded", isOpen() ? "true" : "false");
+	syncAria() {
+		if (this.logoBtn) {
+			this.logoBtn.setAttribute("aria-expanded", this.isOpen() ? "true" : "false");
 		}
-	};
+	}
 
-	const closeOverlay = () => {
-		sidebar.classList.remove("is-open");
-		syncAria();
-		syncLock();
-	};
+	closeOverlay() {
+		this.sidebar.classList.remove("is-open");
+		this.syncAria();
+		this.syncLock();
+	}
 
-	const toggle = () => {
-		if (mqWide.matches) {
-			sidebar.classList.toggle("is-collapsed");
-			sidebar.classList.remove("is-open");
+	toggle() {
+		if (this.mqWide.matches) {
+			this.sidebar.classList.toggle("is-collapsed");
+			this.sidebar.classList.remove("is-open");
 		} else {
-			sidebar.classList.toggle("is-open");
-			sidebar.classList.remove("is-collapsed");
+			this.sidebar.classList.toggle("is-open");
+			this.sidebar.classList.remove("is-collapsed");
 		}
+		this.syncAria();
+		this.syncLock();
+	}
 
-		syncAria();
-		syncLock();
-	};
-
-	const setItemExpanded = (item, expanded) => {
+	setItemExpanded(item, expanded) {
 		item.classList.toggle("is-expanded", expanded);
 		const link = item.querySelector(":scope > .sidebar__link");
 		if (link && link.hasAttribute("aria-expanded")) {
 			link.setAttribute("aria-expanded", expanded ? "true" : "false");
 		}
-	};
+	}
 
-	sidebar.addEventListener("click", (event) => {
+	onClick(event) {
 		if (event.target.closest(".sidebar__close")) {
-			if (mqWide.matches) {
-				sidebar.classList.add("is-collapsed");
-				sidebar.classList.remove("is-open");
+			if (this.mqWide.matches) {
+				this.sidebar.classList.add("is-collapsed");
+				this.sidebar.classList.remove("is-open");
 			} else {
-				closeOverlay();
+				this.closeOverlay();
 			}
-			syncAria();
-			syncLock();
+			this.syncAria();
+			this.syncLock();
 			return;
 		}
 
@@ -83,8 +86,8 @@ const initSidebar = () => {
 		}
 
 		if (event.target.closest(".sidebar__sublink")) {
-			if (!mqWide.matches) {
-				closeOverlay();
+			if (!this.mqWide.matches) {
+				this.closeOverlay();
 			}
 			return;
 		}
@@ -94,110 +97,82 @@ const initSidebar = () => {
 			const item = parentLink.closest(".sidebar__item");
 			const hasSubmenu = item && item.querySelector(".sidebar__submenu");
 
-			if (hasSubmenu && !mqAccordion.matches) {
+			if (hasSubmenu && !this.mqAccordion.matches) {
 				event.preventDefault();
 				const willExpand = !item.classList.contains("is-expanded");
 
-				sidebar
+				this.sidebar
 					.querySelectorAll(".sidebar__item.is-expanded")
 					.forEach((el) => {
 						if (el !== item) {
-							setItemExpanded(el, false);
+							this.setItemExpanded(el, false);
 						}
 					});
 
-				setItemExpanded(item, willExpand);
+				this.setItemExpanded(item, willExpand);
 			}
-
 			return;
 		}
 
-		if (isOpen()) {
-			if (mqWide.matches) {
-				toggle();
+		if (this.isOpen()) {
+			if (this.mqWide.matches) {
+				this.toggle();
 			}
 		} else {
-			toggle();
+			this.toggle();
 		}
-	});
+	}
 
-	const onBreakpointChange = () => {
-		sidebar.classList.remove("is-open");
-		if (mqWide.matches) {
-			sidebar.classList.add("is-collapsed");
+	onBreakpointChange() {
+		this.sidebar.classList.remove("is-open");
+		if (this.mqWide.matches) {
+			this.sidebar.classList.add("is-collapsed");
 		} else {
-			sidebar.classList.remove("is-collapsed");
+			this.sidebar.classList.remove("is-collapsed");
 		}
-		syncAria();
-		syncLock();
-	};
-
-	mqWide.addEventListener("change", onBreakpointChange);
-
-	if (mqWide.matches && !sidebar.classList.contains("is-open")) {
-		sidebar.classList.add("is-collapsed");
+		this.syncAria();
+		this.syncLock();
 	}
+}
 
-	syncAria();
-	syncLock();
-};
+class VacanciesSlider {
+	constructor(el) {
+		if (typeof Swiper === "undefined") return;
 
-const initVacanciesSlider = () => {
-	const vacanciesEl = document.querySelector(".vacancies-slider");
+		const slideCount = el.querySelectorAll(".swiper-slide").length;
+		if (slideCount <= 1) return;
 
-	if (!vacanciesEl || typeof Swiper === "undefined") {
-		return;
+		new Swiper(el, {
+			slidesPerView: 1,
+			spaceBetween: 0,
+			speed: 450,
+			navigation: {
+				prevEl: el.querySelector(".vacancies__arrow--prev"),
+				nextEl: el.querySelector(".vacancies__arrow--next"),
+			},
+		});
 	}
+}
 
-	const slideCount = vacanciesEl.querySelectorAll(".swiper-slide").length;
+class PagedSlider {
+	constructor(el) {
+		if (typeof Swiper === "undefined") return;
 
-	console.log('init slider');
+		const slideCount = el.querySelectorAll(".swiper-slide").length;
+		if (!slideCount) return;
 
-
-	if (slideCount <= 1) {
-		return;
-	}
-
-	new Swiper(vacanciesEl, {
-		slidesPerView: 1,
-		spaceBetween: 0,
-		speed: 450,
-		navigation: {
-			prevEl: vacanciesEl.querySelector(".vacancies__arrow--prev"),
-			nextEl: vacanciesEl.querySelector(".vacancies__arrow--next"),
-		},
-	});
-};
-
-const padFraction = (n) => String(n).padStart(2, "0");
-
-const initPagedSliders = () => {
-	if (typeof Swiper === "undefined") {
-		return;
-	}
-
-	document.querySelectorAll(".js-paged-slider").forEach((sliderEl) => {
-		const slideCount = sliderEl.querySelectorAll(".swiper-slide").length;
-		const prevEl = sliderEl.querySelector(".slider-nav__prev");
-		const nextEl = sliderEl.querySelector(".slider-nav__next");
-		const fractionEl = sliderEl.querySelector(".slider-nav__fraction");
+		const prevEl = el.querySelector(".slider-nav__prev");
+		const nextEl = el.querySelector(".slider-nav__next");
+		const fractionEl = el.querySelector(".slider-nav__fraction");
 		const hasNav = slideCount > 1 && prevEl && nextEl;
+		const padFraction = (n) => String(n).padStart(2, "0");
 
-		if (!slideCount) {
-			return;
-		}
-
-		new Swiper(sliderEl, {
+		new Swiper(el, {
 			slidesPerView: 1,
 			spaceBetween: 0,
 			speed: 450,
 			allowTouchMove: slideCount > 1,
-			navigation: hasNav
-				? {
-					prevEl,
-					nextEl,
-				}
-				: undefined,
+			navigation: hasNav ? { prevEl, nextEl } : undefined,
 			pagination: fractionEl
 				? {
 					el: fractionEl,
@@ -209,54 +184,45 @@ const initPagedSliders = () => {
 				}
 				: undefined,
 		});
-	});
-};
+	}
+}
 
-const initSearchForms = () => {
-	document.querySelectorAll(".search-form").forEach((form) => {
-		const input = form.querySelector(".search-form__input");
-		const clear = form.querySelector(".search-form__clear");
+class StickyNavbar {
+	constructor(el) {
+		this.navbar = el;
+		this.setScrolledState = this.setScrolledState.bind(this);
+		this.syncScrollOffset = this.syncScrollOffset.bind(this);
 
-		if (!input || !clear) {
-			return;
-		}
+		this.setScrolledState();
+		this.syncScrollOffset();
 
-		const syncClear = () => {
-			clear.hidden = input.value.length === 0;
-		};
-
-		input.addEventListener("input", syncClear);
-		clear.addEventListener("click", () => {
-			input.value = "";
-			syncClear();
-			input.focus();
-		});
-
-		syncClear();
-	});
-};
-
-const initStickyNavbar = () => {
-	const navbar = document.querySelector(".sticky-navbar");
-
-	if (!navbar) {
-		return;
+		window.addEventListener("scroll", this.setScrolledState, { passive: true });
+		window.addEventListener("resize", this.syncScrollOffset);
 	}
 
-	const syncScrollOffset = () => {
+	syncScrollOffset() {
 		document.documentElement.style.setProperty(
 			"--sticky-navbar-offset",
-			`${navbar.offsetHeight}px`,
+			`${this.navbar.offsetHeight}px`
 		);
-	};
+	}
 
-	const setScrolledState = () => {
-		navbar.classList.toggle("is-scrolled", window.scrollY > 0);
-	};
+	setScrolledState() {
+		this.navbar.classList.toggle("is-scrolled", window.scrollY > 0);
+	}
+}
 
-	setScrolledState();
-	syncScrollOffset();
-
-	window.addEventListener("scroll", setScrolledState, { passive: true });
-	window.addEventListener("resize", syncScrollOffset);
+const components = {
+	".sidebar": Sidebar,
+	".vacancies-slider": VacanciesSlider,
+	".js-paged-slider": PagedSlider,
+	".sticky-navbar": StickyNavbar,
+	".wpcf7 form": FormController,
 };
+
+document.addEventListener("DOMContentLoaded", () => {
+	for (const [selector, Component] of Object.entries(components)) {
+		document.querySelectorAll(selector).forEach((el) => new Component(el));
+	}
+});
+

@@ -39,8 +39,10 @@ $ntronica_has_value = '' !== $ntronica_query;
 			name="s"
 			value="<?php echo esc_attr($ntronica_query); ?>"
 			autocomplete="off">
-		<button type="button" class="search-form__clear" <?php echo $ntronica_has_value ? '' : ' hidden'; ?>>
-			<span class="screen-reader-text">Clear</span>
+		<button type="button"
+			class="search-form__clear"
+			aria-label="Clear"
+			<?php echo $ntronica_has_value ? '' : ' hidden'; ?>>
 			<?php ntronica_icon('clear', 'search-form__clear-icon'); ?>
 		</button>
 	</div>

@@ -22,40 +22,50 @@ function ntronica_asset_ver($absolute_path)
  */
 function ntronica_enqueue_styles()
 {
-	$page_template = get_page_template_slug();
+    $page_template = get_page_template_slug();
 
-	$reset_file = STYLES_DIR . '/reset.min.css';
-	if (file_exists($reset_file)) {
-		wp_enqueue_style(
-			'ntronica-reset',
-			STYLES_PATH . '/reset.min.css',
-			array(),
-			ntronica_asset_ver($reset_file)
-		);
-	}
+    $reset_file = STYLES_DIR . '/reset.min.css';
+    if (file_exists($reset_file)) {
+        wp_enqueue_style(
+            'ntronica-reset',
+            STYLES_PATH . '/reset.min.css',
+            array(),
+            ntronica_asset_ver($reset_file)
+        );
+    }
 
-	$style_deps = file_exists($reset_file) ? array('ntronica-reset') : array();
+    $style_deps = file_exists($reset_file) ? array('ntronica-reset') : array();
 
-	$swiper_css = STYLES_DIR . '/libs/swiper-bundle.min.css';
-	if (file_exists($swiper_css)) {
-		wp_enqueue_style(
-			'swiper',
-			STYLES_PATH . '/libs/swiper-bundle.min.css',
-			array(),
-			ntronica_asset_ver($swiper_css)
-		);
-		$style_deps[] = 'swiper';
-	}
+    $swiper_css = STYLES_DIR . '/libs/swiper-bundle.min.css';
+    if (file_exists($swiper_css)) {
+        wp_enqueue_style(
+            'swiper',
+            STYLES_PATH . '/libs/swiper-bundle.min.css',
+            array(),
+            ntronica_asset_ver($swiper_css)
+        );
+        $style_deps[] = 'swiper';
+    }
 
-	$main_css = STYLES_DIR . '/style.min.css';
-	if (file_exists($main_css)) {
-		wp_enqueue_style(
-			'ntronica-style',
-			STYLES_PATH . '/style.min.css',
-			$style_deps,
-			ntronica_asset_ver($main_css)
-		);
-	}
+    $iti_css = STYLES_DIR . '/libs/intlTelInput.css';
+    if (file_exists($iti_css)) {
+        wp_enqueue_style(
+            'intlTelInput',
+            STYLES_PATH . '/libs/intlTelInput.css',
+            array(),
+            ntronica_asset_ver($iti_css)
+        );
+    }
+
+    $main_css = STYLES_DIR . '/style.min.css';
+    if (file_exists($main_css)) {
+        wp_enqueue_style(
+            'ntronica-style',
+            STYLES_PATH . '/style.min.css',
+            $style_deps,
+            ntronica_asset_ver($main_css)
+        );
+    }
 }
 add_action('wp_enqueue_scripts', 'ntronica_enqueue_styles');
 
@@ -98,39 +108,40 @@ add_filter('wp_preload_resources', 'ntronica_preload_fonts');
  */
 function ntronica_enqueue_scripts()
 {
-	$page_template = get_page_template_slug();
-	$app_deps      = array('jquery');
+    $page_template = get_page_template_slug();
+    $app_deps      = array('jquery');
 
-	wp_enqueue_script('jquery');
+    wp_enqueue_script('jquery');
 
-	$swiper_js = JS_DIR . '/libs/swiper-bundle.min.js';
-	if (file_exists($swiper_js)) {
-		wp_enqueue_script(
-			'swiper',
-			JS_PATH . '/libs/swiper-bundle.min.js',
-			array(),
-			ntronica_asset_ver($swiper_js),
-			array(
-				'in_footer' => true,
-				'strategy'  => 'defer',
-			)
-		);
-		$app_deps[] = 'swiper';
-	}
-	
-	$app_js = JS_DIR . '/app.min.js';
-	if (file_exists($app_js)) {
-		wp_enqueue_script(
-			'ntronica-app',
-			JS_PATH . '/app.min.js',
-			$app_deps,
-			ntronica_asset_ver($app_js),
-			array(
-				'in_footer' => true,
-				'strategy'  => 'defer',
-			)
-		);
-	}
+    $swiper_js = JS_DIR . '/libs/swiper-bundle.min.js';
+    if (file_exists($swiper_js)) {
+        wp_enqueue_script(
+            'swiper',
+            JS_PATH . '/libs/swiper-bundle.min.js',
+            array(),
+            ntronica_asset_ver($swiper_js),
+            array(
+                'in_footer' => true,
+                'strategy'  => 'defer',
+            )
+        );
+        $app_deps[] = 'swiper';
+    }
+
+    $app_js = JS_DIR . '/app.min.js';
+    if (file_exists($app_js)) {
+        wp_enqueue_script(
+            'ntronica-app',
+            JS_PATH . '/app.min.js',
+            $app_deps,
+            ntronica_asset_ver($app_js),
+            array(
+                'in_footer' => true,
+                'strategy'  => 'defer',
+            )
+        );
+
+    }
 }
 add_action('wp_enqueue_scripts', 'ntronica_enqueue_scripts');
 
@@ -151,7 +162,6 @@ function ntronica_make_styles_async($tag, $handle, $src)
 	$async_styles = array(
 		'swiper',
 		'fancybox',
-		'intlTelInput',
 		'calendly',
 	);
 

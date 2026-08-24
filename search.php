@@ -38,14 +38,14 @@ $ntronica_found = isset($wp_query->found_posts) ? (int) $wp_query->found_posts :
 								<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
 							</h2>
 							<?php if ($ntronica_excerpt) : ?>
-								<p class="search-card__excerpt"><?php echo esc_html($ntronica_excerpt); ?></p>
+								<p class="search-card__excerpt text-lead"><?php echo esc_html($ntronica_excerpt); ?></p>
 							<?php endif; ?>
 						</article>
 					</div>
 				<?php endwhile; ?>
 			</div>
 		<?php else : ?>
-			<p class="search__empty">Nothing found.</p>
+			<p class="search__empty text-lead">Nothing found.</p>
 		<?php endif; ?>
 	</div>
 </section>

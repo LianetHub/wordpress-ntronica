@@ -322,7 +322,6 @@
 
 	// vacancies__grid
 	&__grid {
-		// uses grid.scss .row
 		--gutter-x: #{rem(24)};
 		--gutter-y: #{rem(40)};
 		align-items: start;
@@ -545,6 +544,7 @@
 }
 
 .info {
+
 	// info__title
 	&__title {
 		margin-bottom: rem(20);

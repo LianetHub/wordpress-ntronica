@@ -32,7 +32,6 @@
 .subtitle {
 	font-family: $font-robert;
 	font-weight: 700;
-	font-style: italic;
 	line-height: math.div(18, 18);
 	font-size: rem(16);
 
@@ -75,6 +74,33 @@
 	@media (min-width: $md1) {
 		font-size: rem(26);
 		line-height: math.div(32, 26);
+	}
+}
+
+.text-lead {
+	font-family: $font-robert;
+	font-weight: 500;
+	font-size: rem(16);
+	line-height: math.div(20, 16);
+
+	@media (min-width: $md6) {
+		font-size: rem(18);
+		line-height: math.div(22, 18);
+	}
+
+	@media (min-width: $md3) {
+		font-size: rem(21);
+		line-height: math.div(24, 21);
+	}
+
+	@media (min-width: $md2) {
+		font-size: rem(24);
+		line-height: math.div(26, 24);
+	}
+
+	@media (min-width: $md1) {
+		font-size: rem(27);
+		line-height: math.div(29, 27);
 	}
 }
 

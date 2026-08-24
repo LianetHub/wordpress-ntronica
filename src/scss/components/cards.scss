@@ -230,50 +230,11 @@
 
 	// vacancy-card__title
 	&__title {
-		font-family: $font-family;
-		font-weight: 700;
-		font-size: rem(18);
-		line-height: math.div(20, 18);
-		color: $color-black;
-		overflow-wrap: anywhere;
-
-		@media (min-width: $md3) {
-			font-size: rem(24);
-			line-height: math.div(26, 24);
-		}
-
-		@media (min-width: $md2) {
-			font-size: rem(28);
-			line-height: math.div(30, 28);
-		}
-
-		@media (min-width: $md1) {
-			font-size: rem(36);
-			line-height: math.div(38, 36);
-		}
+		color: #000;
 	}
 
 	// vacancy-card__dept
 	&__dept {
-		font-family: $font-family;
-		font-weight: 500;
-		font-size: rem(14);
-		line-height: math.div(16, 14);
 		color: $color-white;
-
-		@media (min-width: $md3) {
-			font-size: rem(17);
-			line-height: math.div(19, 17);
-		}
-
-		@media (min-width: $md2) {
-			font-size: rem(20);
-			line-height: math.div(22, 20);
-		}
-
-		@media (min-width: $md1) {
-			font-size: rem(27);
-			line-height: math.div(29, 27);
-		}
 	}
 }

@@ -151,7 +151,10 @@ const initVacanciesSlider = () => {
 
 	const slideCount = vacanciesEl.querySelectorAll(".swiper-slide").length;
 
-	if (slideCount < 2) {
+	console.log('init slider');
+
+
+	if (slideCount <= 1) {
 		return;
 	}
 

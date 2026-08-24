@@ -3,6 +3,7 @@
 @use "../mixins" as *;
 
 .search {
+
 	// body.search is a WordPress body class — block styles only on the section
 	&:where(section) {
 		flex: 1 1 auto;
@@ -117,21 +118,7 @@
 
 	// search__empty
 	&__empty {
-		font-family: $font-robert;
-		font-weight: 500;
-		font-size: rem(16);
-		line-height: math.div(20, 16);
 		color: $color-white;
-
-		@media (min-width: $md3) {
-			font-size: rem(21);
-			line-height: math.div(24, 21);
-		}
-
-		@media (min-width: $md1) {
-			font-size: rem(27);
-			line-height: math.div(29, 27);
-		}
 	}
 }
 
@@ -198,30 +185,6 @@
 
 	// search-card__excerpt
 	&__excerpt {
-		font-family: $font-robert;
-		font-weight: 500;
-		font-size: rem(16);
-		line-height: math.div(20, 16);
 		color: $color-white;
-
-		@media (min-width: $md6) {
-			font-size: rem(18);
-			line-height: math.div(22, 18);
-		}
-
-		@media (min-width: $md3) {
-			font-size: rem(21);
-			line-height: math.div(24, 21);
-		}
-
-		@media (min-width: $md2) {
-			font-size: rem(24);
-			line-height: math.div(26, 24);
-		}
-
-		@media (min-width: $md1) {
-			font-size: rem(27);
-			line-height: math.div(29, 27);
-		}
 	}
 }

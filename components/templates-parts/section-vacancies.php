@@ -8,7 +8,7 @@
 
 $vacancies = array(
 	array(
-		'title' => 'Leading specialist of chemical processing equipment',
+		'title' => 'Operation specialist',
 		'dept'  => 'Human Resources',
 	),
 	array(
@@ -32,7 +32,7 @@ $vacancies = array(
 		'dept'  => 'Manufacturing',
 	),
 	array(
-		'title' => 'Operation specialist',
+		'title' => 'Leading specialist of chemical processing equipment',
 		'dept'  => 'Human Resources',
 	),
 	array(
@@ -62,17 +62,17 @@ $ntronica_vacancy_has_nav = count($ntronica_vacancy_pages) > 1;
 			Immediate vacancies
 		</h2>
 
-		<div class="swiper vacancies-slider vacancies__slider">
+		<div class="swiper vacancies-slider">
 			<div class="swiper-wrapper">
 				<?php foreach ($ntronica_vacancy_pages as $ntronica_page) : ?>
 					<div class="swiper-slide">
 						<div class="row vacancies__grid">
 							<?php foreach ($ntronica_page as $ntronica_item) : ?>
-								<div class="col-12 col-md-4">
-									<article class="vacancy-card">
-										<h3 class="vacancy-card__title"><?php echo esc_html($ntronica_item['title']); ?></h3>
-										<p class="vacancy-card__dept"><?php echo esc_html($ntronica_item['dept']); ?></p>
-									</article>
+								<div class="col-12 col-sm-6 col-md-4">
+									<a href="" class="vacancy-card">
+										<span class="vacancy-card__title subtitle"><?php echo esc_html($ntronica_item['title']); ?></span>
+										<span class="vacancy-card__dept text-lead"><?php echo esc_html($ntronica_item['dept']); ?></span>
+									</a>
 								</div>
 							<?php endforeach; ?>
 						</div>
@@ -82,8 +82,14 @@ $ntronica_vacancy_has_nav = count($ntronica_vacancy_pages) > 1;
 
 			<?php if ($ntronica_vacancy_has_nav) : ?>
 				<div class="vacancies__nav">
-					<button type="button" class="vacancies__arrow vacancies__arrow--prev" aria-label="Previous vacancies">←</button>
-					<button type="button" class="vacancies__arrow vacancies__arrow--next" aria-label="Next vacancies">→</button>
+					<button
+						type="button"
+						class="vacancies__arrow vacancies__arrow--prev"
+						aria-label="Previous vacancies">←</button>
+					<button
+						type="button"
+						class="vacancies__arrow vacancies__arrow--next"
+						aria-label="Next vacancies">→</button>
 				</div>
 			<?php endif; ?>
 		</div>

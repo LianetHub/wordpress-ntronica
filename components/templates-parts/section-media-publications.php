@@ -23,7 +23,7 @@ $ntronica_media_posts = $ntronica_media_query->posts;
 							<a class="media-card__link" href="<?php echo esc_url(get_permalink($ntronica_post)); ?>">
 								<p class="media-card__date"><?php echo esc_html(get_the_date('d.m.Y', $ntronica_post)); ?></p>
 								<h3 class="media-card__title"><?php echo esc_html(get_the_title($ntronica_post)); ?></h3>
-								<p class="media-card__excerpt"><?php echo esc_html(get_the_excerpt($ntronica_post)); ?></p>
+								<p class="media-card__excerpt text-lead"><?php echo esc_html(get_the_excerpt($ntronica_post)); ?></p>
 							</a>
 						</article>
 					</div>

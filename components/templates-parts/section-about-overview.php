@@ -17,7 +17,7 @@
 			</div>
 
 			<div class="col-12 col-md-6">
-				<p class="subtitle about-overview__subtitle">Key features:</p>
+				<p class="subtitle fs-italic about-overview__subtitle">Key features:</p>
 				<ul class="about-overview__features feature-list">
 					<li>We design and manufacture etching, deposition, and epitaxy tools— key elements in the semiconductor production process.</li>
 					<li>At the same time, we are growing into chemical mechanical planarization, metrology, and analytics to offer a broader and more&nbsp;integrated set of solutions.</li>

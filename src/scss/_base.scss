@@ -2,13 +2,70 @@
 @use "variables" as *;
 @use "mixins" as *;
 
+// .container {
+// 	--container-pad-left: #{rem($content-pad-left)};
+// 	--container-pad-right: #{rem($content-pad-right)};
+// 	--container-max: #{rem($content-width + $content-pad-left + $content-pad-right)};
+
+// 	width: 100%;
+// 	max-width: var(--container-max);
+// 	padding-left: var(--container-pad-left);
+// 	padding-right: var(--container-pad-right);
+// 	box-sizing: border-box;
+// 	margin: 0 auto;
+
+// 	@media (min-width: $md6) {
+// 		--container-pad-left: #{rem($content-pad-left-768)};
+// 		--container-pad-right: #{rem($content-pad-right-768)};
+// 		--container-max: #{rem($content-width-768 + $content-pad-left-768 + $content-pad-right-768)};
+// 	}
+
+// 	@media (min-width: $md5) {
+// 		--container-pad-left: #{rem($content-pad-left-1024)};
+// 		--container-pad-right: #{rem($content-pad-right-1024)};
+// 		--container-max: #{rem($content-width-1024 + $content-pad-left-1024 + $content-pad-right-1024)};
+// 	}
+
+// 	@media (min-width: $md4) {
+// 		--container-pad-left: #{rem($content-pad-left-1200)};
+// 		--container-pad-right: #{rem($content-pad-right-1200)};
+// 		--container-max: #{rem($content-width-1200 + $content-pad-left-1200 + $content-pad-right-1200)};
+// 	}
+
+// 	@media (min-width: $md3) {
+// 		--container-max: #{rem($content-width-1440 + $content-pad-left-1200 + $content-pad-right-1200)};
+// 	}
+
+// 	@media (min-width: $md2) {
+// 		--container-max: #{rem($content-width-1728 + $content-pad-left-1200 + $content-pad-right-1200)};
+// 	}
+
+// 	@media (min-width: $md1) {
+// 		--container-pad-left: #{rem($content-pad-left-2560)};
+// 		--container-pad-right: #{rem($content-pad-right-2560)};
+// 		--container-max: #{rem($content-width-2560 + $content-pad-left-2560 + $content-pad-right-2560)};
+// 	}
+
+// 	// container--large
+// 	&--large {
+// 		@media (min-width: $md3) {
+// 			--container-max: #{rem(1380)};
+// 		}
+// 	}
+
+// 	// container--medium
+// 	&--medium {
+// 		@media (min-width: $md3) {
+// 			--container-max: #{rem(1300)};
+// 		}
+// 	}
+// }
+
 .container {
 	--container-pad-left: #{rem($content-pad-left)};
 	--container-pad-right: #{rem($content-pad-right)};
-	--container-max: #{rem($content-width + $content-pad-left + $content-pad-right)};
 
 	width: 100%;
-	max-width: var(--container-max);
 	padding-left: var(--container-pad-left);
 	padding-right: var(--container-pad-right);
 	box-sizing: border-box;
@@ -18,45 +75,51 @@
 		--container-pad-left: #{rem($content-pad-left-768)};
 		--container-pad-right: #{rem($content-pad-right-768)};
 		--container-max: #{rem($content-width-768 + $content-pad-left-768 + $content-pad-right-768)};
+		max-width: var(--container-max);
 	}
 
 	@media (min-width: $md5) {
 		--container-pad-left: #{rem($content-pad-left-1024)};
 		--container-pad-right: #{rem($content-pad-right-1024)};
 		--container-max: #{rem($content-width-1024 + $content-pad-left-1024 + $content-pad-right-1024)};
+		max-width: var(--container-max);
 	}
 
 	@media (min-width: $md4) {
 		--container-pad-left: #{rem($content-pad-left-1200)};
 		--container-pad-right: #{rem($content-pad-right-1200)};
 		--container-max: #{rem($content-width-1200 + $content-pad-left-1200 + $content-pad-right-1200)};
+		max-width: var(--container-max);
 	}
 
 	@media (min-width: $md3) {
 		--container-max: #{rem($content-width-1440 + $content-pad-left-1200 + $content-pad-right-1200)};
+		max-width: var(--container-max);
 	}
 
 	@media (min-width: $md2) {
 		--container-max: #{rem($content-width-1728 + $content-pad-left-1200 + $content-pad-right-1200)};
+		max-width: var(--container-max);
 	}
 
 	@media (min-width: $md1) {
 		--container-pad-left: #{rem($content-pad-left-2560)};
 		--container-pad-right: #{rem($content-pad-right-2560)};
 		--container-max: #{rem($content-width-2560 + $content-pad-left-2560 + $content-pad-right-2560)};
+		max-width: var(--container-max);
 	}
 
-	// container--large
 	&--large {
 		@media (min-width: $md3) {
 			--container-max: #{rem(1380)};
+			max-width: var(--container-max);
 		}
 	}
 
-	// container--medium
 	&--medium {
 		@media (min-width: $md3) {
 			--container-max: #{rem(1300)};
+			max-width: var(--container-max);
 		}
 	}
 }
@@ -140,6 +203,10 @@ body {
 
 .text-nowrap {
 	white-space: nowrap;
+}
+
+.fs-italic {
+	font-style: italic;
 }
 
 $scrollbarColor: $color-black;

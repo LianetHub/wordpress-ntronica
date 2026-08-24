@@ -1571,14 +1571,13 @@ body {
 }
 @media (min-width: 1023.98px) {
   .sidebar {
-    width: 4.75rem;
+    justify-content: space-between;
+    width: 14.625rem;
     padding: 1.125rem 1.125rem;
   }
 }
 @media (min-width: 1199.98px) {
   .sidebar {
-    justify-content: space-between;
-    width: 14.625rem;
     padding: 1.0625rem 1.25rem 1.125rem;
   }
 }
@@ -1716,7 +1715,7 @@ body {
   display: none;
   flex: 0 0 auto;
 }
-@media (min-width: 1199.98px) {
+@media (min-width: 1023.98px) {
   .sidebar__nav {
     display: block;
   }
@@ -1814,6 +1813,7 @@ body {
   font-size: 1.0625rem;
   line-height: 1.8235294118;
   color: #ffffff;
+  white-space: nowrap;
 }
 .sidebar__logo {
   display: block;
@@ -1827,11 +1827,6 @@ body {
   transition: width 0.35s ease;
 }
 @media (min-width: 1023.98px) {
-  .sidebar__logo {
-    width: 2.4375rem;
-  }
-}
-@media (min-width: 1199.98px) {
   .sidebar__logo {
     width: 12.0625rem;
   }

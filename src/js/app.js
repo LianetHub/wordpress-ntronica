@@ -17,8 +17,7 @@ const initSidebar = () => {
 	}
 
 	const logoBtn = sidebar.querySelector(".sidebar__logo");
-	const mqWide = window.matchMedia("(min-width: 1199.98px)");
-	const mqLock = window.matchMedia("(min-width: 1023.98px)");
+	const mqWide = window.matchMedia("(min-width: 1023.98px)");
 	const mqAccordion = window.matchMedia("(min-width: 767.98px)");
 
 	const isOpen = () =>
@@ -29,7 +28,7 @@ const initSidebar = () => {
 	const syncLock = () => {
 		document.body.classList.toggle(
 			"lock",
-			sidebar.classList.contains("is-open") && !mqLock.matches,
+			sidebar.classList.contains("is-open") && !mqWide.matches,
 		);
 	};
 
@@ -67,6 +66,18 @@ const initSidebar = () => {
 	};
 
 	sidebar.addEventListener("click", (event) => {
+		if (event.target.closest(".sidebar__close")) {
+			if (mqWide.matches) {
+				sidebar.classList.add("is-collapsed");
+				sidebar.classList.remove("is-open");
+			} else {
+				closeOverlay();
+			}
+			syncAria();
+			syncLock();
+			return;
+		}
+
 		if (event.target.closest(".sidebar__lang")) {
 			return;
 		}
@@ -101,21 +112,30 @@ const initSidebar = () => {
 			return;
 		}
 
-		toggle();
+		if (isOpen()) {
+			if (mqWide.matches) {
+				toggle();
+			}
+		} else {
+			toggle();
+		}
 	});
 
 	const onBreakpointChange = () => {
-		sidebar.classList.remove("is-open", "is-collapsed");
+		sidebar.classList.remove("is-open");
+		if (mqWide.matches) {
+			sidebar.classList.add("is-collapsed");
+		} else {
+			sidebar.classList.remove("is-collapsed");
+		}
 		syncAria();
 		syncLock();
 	};
 
-	if (typeof mqWide.addEventListener === "function") {
-		mqWide.addEventListener("change", onBreakpointChange);
-		mqLock.addEventListener("change", syncLock);
-	} else if (typeof mqWide.addListener === "function") {
-		mqWide.addListener(onBreakpointChange);
-		mqLock.addListener(syncLock);
+	mqWide.addEventListener("change", onBreakpointChange);
+
+	if (mqWide.matches && !sidebar.classList.contains("is-open")) {
+		sidebar.classList.add("is-collapsed");
 	}
 
 	syncAria();
@@ -171,19 +191,19 @@ const initPagedSliders = () => {
 			allowTouchMove: slideCount > 1,
 			navigation: hasNav
 				? {
-						prevEl,
-						nextEl,
-					}
+					prevEl,
+					nextEl,
+				}
 				: undefined,
 			pagination: fractionEl
 				? {
-						el: fractionEl,
-						type: "fraction",
-						formatFractionCurrent: padFraction,
-						formatFractionTotal: padFraction,
-						renderFraction: (currentClass, totalClass) =>
-							`<span class="${currentClass}"></span>/<span class="${totalClass}"></span>`,
-					}
+					el: fractionEl,
+					type: "fraction",
+					formatFractionCurrent: padFraction,
+					formatFractionTotal: padFraction,
+					renderFraction: (currentClass, totalClass) =>
+						`<span class="${currentClass}"></span>/<span class="${totalClass}"></span>`,
+				}
 				: undefined,
 		});
 	});

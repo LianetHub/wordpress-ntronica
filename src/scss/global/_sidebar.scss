@@ -26,13 +26,12 @@
 	}
 
 	@media (min-width: $md5) {
-		width: rem($sidebar-width-1024);
+		justify-content: space-between;
+		width: rem($sidebar-width-1200);
 		padding: rem(18) rem(18);
 	}
 
 	@media (min-width: $md4) {
-		justify-content: space-between;
-		width: rem($sidebar-width-1200);
 		padding: rem(17) rem(20) rem(18);
 	}
 
@@ -178,7 +177,7 @@
 		display: none;
 		flex: 0 0 auto;
 
-		@media (min-width: $md4) {
+		@media (min-width: $md5) {
 			display: block;
 		}
 	}
@@ -293,6 +292,7 @@
 		font-size: rem(17);
 		line-height: math.div(31, 17);
 		color: $color-white;
+		white-space: nowrap;
 	}
 
 	// sidebar__logo
@@ -308,10 +308,6 @@
 		transition: width 0.35s ease;
 
 		@media (min-width: $md5) {
-			width: rem(39);
-		}
-
-		@media (min-width: $md4) {
 			width: rem(193);
 		}
 

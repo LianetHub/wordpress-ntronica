@@ -2746,6 +2746,40 @@ body {
   }
 }
 
+.info {
+  padding-top: 1.875rem;
+  padding-bottom: 0.875rem;
+}
+@media (min-width: 767.98px) {
+  .info {
+    padding-top: 1.875rem;
+    padding-bottom: 1.5rem;
+  }
+}
+@media (min-width: 1199.98px) {
+  .info {
+    padding-top: 1.875rem;
+    padding-bottom: 2.25rem;
+  }
+}
+@media (min-width: 1439.98px) {
+  .info {
+    padding-top: 3.25rem;
+    padding-bottom: 2.5rem;
+  }
+}
+@media (min-width: 1727.98px) {
+  .info {
+    padding-top: 3.125rem;
+    padding-bottom: 3.25rem;
+  }
+}
+@media (min-width: 2559.98px) {
+  .info {
+    padding-top: 5.9375rem;
+    padding-bottom: 4.375rem;
+  }
+}
 .info__title {
   margin-bottom: 1.25rem;
 }
@@ -2772,6 +2806,9 @@ body {
   .info__grid {
     --gutter-y: 0rem;
   }
+}
+.info__list {
+  font-family: "Nanotronica_Text", system-ui, -apple-system, "Segoe UI", sans-serif;
 }
 
 .contact {

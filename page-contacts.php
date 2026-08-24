@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Contacts page template
+ * Template Name: Contacts page
  *
  * @package ntronica
  */

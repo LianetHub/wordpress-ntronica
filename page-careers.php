@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Careers page template
+ * Template Name: Careers page
  *
  * @package ntronica
  */

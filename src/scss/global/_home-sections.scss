@@ -544,6 +544,33 @@
 }
 
 .info {
+	padding-top: rem(30);
+	padding-bottom: rem(14);
+
+	@media (min-width: $md6) {
+		padding-top: rem(30);
+		padding-bottom: rem(24);
+	}
+
+	@media (min-width: $md4) {
+		padding-top: rem(30);
+		padding-bottom: rem(36);
+	}
+
+	@media (min-width: $md3) {
+		padding-top: rem(52);
+		padding-bottom: rem(40);
+	}
+
+	@media (min-width: $md2) {
+		padding-top: rem(50);
+		padding-bottom: rem(52);
+	}
+
+	@media (min-width: $md1) {
+		padding-top: rem(95);
+		padding-bottom: rem(70);
+	}
 
 	// info__title
 	&__title {
@@ -564,13 +591,17 @@
 
 	// info__grid
 	&__grid {
-		// uses grid.scss .row
 		--gutter-x: #{rem(24)};
 		--gutter-y: #{rem(30)};
 
 		@media (min-width: $md6) {
 			--gutter-y: #{rem(0)};
 		}
+	}
+
+	// info__list
+	&__list {
+		font-family: $font-family;
 	}
 
 }

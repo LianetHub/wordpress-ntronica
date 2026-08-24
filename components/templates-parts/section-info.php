@@ -18,7 +18,7 @@
 			</div>
 
 			<div class="col-12 col-md-6">
-				<ul class="feature-list">
+				<ul class="info__list feature-list">
 					<li data-label="Mail">
 						<a href="mailto:contact@ntronica.com">contact@ntronica.com</a> <br>
 						<a href="mailto:info@ntronica.com">info@ntronica.com</a>

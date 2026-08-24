@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Products page template
+ * Template Name: Products page
  *
  * @package ntronica
  */

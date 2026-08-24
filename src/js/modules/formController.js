@@ -124,7 +124,7 @@ export class FormController {
 			item.innerHTML = `
                 <span class="form__file-name text-block">${file.name}</span>
                 <button type="button" class="form__file-remove" data-index="${index}" aria-label="${removeLabel}">
-                    <svg class="form__clear-icon" width="21" height="21" aria-hidden="true">
+                    <svg class="form__clear-icon" aria-hidden="true">
                         <use href="#icon-clear"></use>
                     </svg>
                 </button>

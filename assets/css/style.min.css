@@ -154,6 +154,74 @@ body.page-template-page-contacts {
   font-style: italic;
 }
 
+.swiper-button-prev,
+.swiper-button-next {
+  position: static !important;
+  margin: 0 !important;
+  transform: none !important;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.1875rem;
+  height: 1.1875rem;
+  background: transparent;
+  font-family: "Nanotronica_Title", system-ui, -apple-system, "Segoe UI", sans-serif;
+  font-weight: 700;
+  font-size: 1.6875rem;
+  line-height: 0.6296296296;
+  color: #000000;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+}
+@media (min-width: 1439.98px) {
+  .swiper-button-prev,
+  .swiper-button-next {
+    width: 1.3125rem;
+    height: 1.3125rem;
+    font-size: 2.125rem;
+    line-height: 0.5588235294;
+  }
+}
+@media (min-width: 1727.98px) {
+  .swiper-button-prev,
+  .swiper-button-next {
+    width: 1.5rem;
+    height: 1.375rem;
+    font-size: 2.25rem;
+  }
+}
+@media (min-width: 2559.98px) {
+  .swiper-button-prev,
+  .swiper-button-next {
+    width: 2.0625rem;
+    height: 1.75rem;
+    font-size: 2.9375rem;
+  }
+}
+.swiper-button-prev svg,
+.swiper-button-next svg {
+  display: none;
+}
+.swiper-button-prev.swiper-button-disabled,
+.swiper-button-next.swiper-button-disabled {
+  opacity: 0.35;
+  cursor: default;
+}
+@media (any-hover: hover) {
+  .swiper-button-prev:not(.swiper-button-disabled):hover,
+  .swiper-button-next:not(.swiper-button-disabled):hover {
+    font-family: "Nanotronica_Reduct", system-ui, -apple-system, "Segoe UI", sans-serif;
+  }
+}
+
+.swiper-button-prev::after {
+  content: "←";
+}
+
+.swiper-button-next::after {
+  content: "→";
+}
+
 ::-webkit-scrollbar {
   width: 0.5rem;
 }
@@ -283,25 +351,19 @@ body.page-template-page-contacts {
 .text-lead {
   font-family: "CoFo_Robert", Georgia, "Times New Roman", serif;
   font-weight: 500;
-  font-size: 1rem;
-  line-height: 1.25;
-}
-@media (min-width: 767.98px) {
-  .text-lead {
-    font-size: 1.125rem;
-    line-height: 1.2222222222;
-  }
+  font-size: 0.875rem;
+  line-height: 1.1428571429;
 }
 @media (min-width: 1439.98px) {
   .text-lead {
-    font-size: 1.3125rem;
-    line-height: 1.1428571429;
+    font-size: 1.125rem;
+    line-height: 1.0555555556;
   }
 }
 @media (min-width: 1727.98px) {
   .text-lead {
-    font-size: 1.5rem;
-    line-height: 1.0833333333;
+    font-size: 1.25rem;
+    line-height: 1.1;
   }
 }
 @media (min-width: 2559.98px) {
@@ -2473,41 +2535,20 @@ body.page-template-page-contacts {
 }
 .vacancies__title {
   margin-bottom: 2.5rem;
-  max-width: 20.125rem;
-  line-height: 1.2;
-}
-@media (min-width: 767.98px) {
-  .vacancies__title {
-    max-width: 19.875rem;
-    line-height: 0.7692307692;
-  }
-}
-@media (min-width: 1023.98px) {
-  .vacancies__title {
-    max-width: 23.625rem;
-  }
-}
-@media (min-width: 1199.98px) {
-  .vacancies__title {
-    max-width: 25.5rem;
-  }
 }
 @media (min-width: 1439.98px) {
   .vacancies__title {
     margin-bottom: 3.125rem;
-    max-width: 33rem;
   }
 }
 @media (min-width: 1727.98px) {
   .vacancies__title {
     margin-bottom: 3.75rem;
-    max-width: 42rem;
   }
 }
 @media (min-width: 2559.98px) {
   .vacancies__title {
     margin-bottom: 5rem;
-    max-width: 59.0625rem;
   }
 }
 .vacancies__slider {
@@ -2554,58 +2595,12 @@ body.page-template-page-contacts {
 }
 @media (min-width: 1727.98px) {
   .vacancies__nav {
-    margin-top: 1.875rem;
+    margin-top: 0.875rem;
   }
 }
 @media (min-width: 2559.98px) {
   .vacancies__nav {
     margin-top: 2rem;
-  }
-}
-.vacancies__arrow {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 1.1875rem;
-  height: 1.1875rem;
-  background: transparent;
-  font-family: "Nanotronica_Title", system-ui, -apple-system, "Segoe UI", sans-serif;
-  font-weight: 700;
-  font-size: 1.6875rem;
-  line-height: 0.6296296296;
-  color: #000000;
-  cursor: pointer;
-  transition: opacity 0.2s ease;
-}
-@media (min-width: 1439.98px) {
-  .vacancies__arrow {
-    width: 1.3125rem;
-    height: 1.3125rem;
-    font-size: 2.125rem;
-    line-height: 0.5588235294;
-  }
-}
-@media (min-width: 1727.98px) {
-  .vacancies__arrow {
-    width: 1.5rem;
-    height: 1.375rem;
-    font-size: 2.25rem;
-  }
-}
-@media (min-width: 2559.98px) {
-  .vacancies__arrow {
-    width: 2.0625rem;
-    height: 1.75rem;
-    font-size: 2.9375rem;
-  }
-}
-.vacancies__arrow.swiper-button-disabled {
-  opacity: 0.35;
-  cursor: default;
-}
-@media (any-hover: hover) {
-  .vacancies__arrow:not(.swiper-button-disabled):hover {
-    font-family: "Nanotronica_Reduct", system-ui, -apple-system, "Segoe UI", sans-serif;
   }
 }
 
@@ -2836,14 +2831,14 @@ body.page-template-page-contacts {
 }
 @media (min-width: 1727.98px) {
   .contact {
-    padding-top: 6.875rem;
-    padding-bottom: 5.625rem;
+    padding-top: 5.625rem;
+    padding-bottom: 3.125rem;
   }
 }
 @media (min-width: 2559.98px) {
   .contact {
     padding-top: 7.125rem;
-    padding-bottom: 6.875rem;
+    padding-bottom: 4.25rem;
   }
 }
 .contact__title {
@@ -3437,8 +3432,8 @@ body.page-template-page-contacts {
 }
 @media (min-width: 1727.98px) {
   .careers-team {
-    padding-top: 5.625rem;
-    padding-bottom: 6.25rem;
+    padding-top: 3.125rem;
+    padding-bottom: 5.5rem;
   }
 }
 @media (min-width: 2559.98px) {
@@ -3457,7 +3452,7 @@ body.page-template-page-contacts {
 }
 @media (min-width: 1727.98px) {
   .careers-team__title {
-    margin-bottom: 3.125rem;
+    margin-bottom: 2rem;
   }
 }
 @media (min-width: 2559.98px) {
@@ -4291,7 +4286,7 @@ body.page-template-page-contacts {
 }
 @media (min-width: 767.98px) {
   .form__row {
-    --gutter-y: 2.75rem;
+    --gutter-y: 2.25rem;
     margin-bottom: 1.5rem;
   }
 }
@@ -4310,6 +4305,7 @@ body.page-template-page-contacts {
 }
 @media (min-width: 2559.98px) {
   .form__row {
+    --gutter-y: 2.75rem;
     margin-bottom: 2.5rem;
   }
 }
@@ -4335,11 +4331,31 @@ body.page-template-page-contacts {
   }
 }
 .form__field .wpcf7-not-valid-tip {
-  font-size: 1.25rem;
-  line-height: 1.15;
   position: absolute;
-  padding-top: 0.4375rem;
   color: #000000;
+  padding-top: 0.1875rem;
+  font-size: 0.75rem;
+  line-height: 1.1666666667;
+}
+@media (min-width: 1439.98px) {
+  .form__field .wpcf7-not-valid-tip {
+    padding-top: 0.3125rem;
+    font-size: 0.875rem;
+    line-height: 1.1428571429;
+  }
+}
+@media (min-width: 1727.98px) {
+  .form__field .wpcf7-not-valid-tip {
+    line-height: 1.125;
+    font-size: 1rem;
+  }
+}
+@media (min-width: 2559.98px) {
+  .form__field .wpcf7-not-valid-tip {
+    padding-top: 0.4375rem;
+    font-size: 1.25rem;
+    line-height: 1.15;
+  }
 }
 .form__label {
   font-weight: 700;
@@ -4390,8 +4406,13 @@ body.page-template-page-contacts {
 }
 .form__control:is(textarea) {
   resize: none;
-  height: 4.375rem;
   width: 100%;
+  height: 3.625rem;
+}
+@media (min-width: 2559.98px) {
+  .form__control:is(textarea) {
+    height: 4.375rem;
+  }
 }
 .form__clear {
   position: absolute;
@@ -4451,13 +4472,15 @@ body.page-template-page-contacts {
 }
 @media (min-width: 1727.98px) {
   .form__file {
-    height: 3.5rem;
+    margin-top: 1.375rem;
+    height: 3.75rem;
     font-size: 1.3125rem;
     line-height: 0.7142857143;
   }
 }
 @media (min-width: 2559.98px) {
   .form__file {
+    margin-top: 1.625rem;
     height: 4.625rem;
     font-size: 1.625rem;
     line-height: 0.7307692308;
@@ -4490,9 +4513,31 @@ body.page-template-page-contacts {
   align-items: center;
 }
 .form__file-remove {
-  width: 1.3125rem;
-  height: 1.3125rem;
   flex-shrink: 0;
+  width: 0.8125rem;
+  height: 0.8125rem;
+}
+.form__file-remove svg {
+  width: 100%;
+  height: 100%;
+}
+@media (min-width: 1439.98px) {
+  .form__file-remove {
+    width: 0.875rem;
+    height: 0.875rem;
+  }
+}
+@media (min-width: 1727.98px) {
+  .form__file-remove {
+    width: 1.1875rem;
+    height: 1.1875rem;
+  }
+}
+@media (min-width: 2559.98px) {
+  .form__file-remove {
+    width: 1.3125rem;
+    height: 1.3125rem;
+  }
 }
 .form__actions {
   display: flex;
@@ -4512,7 +4557,7 @@ body.page-template-page-contacts {
 }
 @media (min-width: 1727.98px) {
   .form__actions {
-    margin-top: 2.25rem;
+    margin-top: 2rem;
   }
 }
 @media (min-width: 1439.98px) {
@@ -4522,7 +4567,7 @@ body.page-template-page-contacts {
 }
 @media (min-width: 1727.98px) {
   .form__actions {
-    gap: 1.25rem;
+    gap: 2.25rem;
   }
 }
 @media (min-width: 2559.98px) {
@@ -4572,7 +4617,7 @@ body.page-template-page-contacts {
 }
 @media (min-width: 1727.98px) {
   .form__submit {
-    min-height: 3.5rem;
+    min-height: 3.75rem;
     padding: 0.875rem 1.25rem;
     font-size: 1.3125rem;
     line-height: 0.7142857143;
@@ -4622,7 +4667,7 @@ body.page-template-page-contacts {
 }
 @media (min-width: 1727.98px) {
   .form__consent {
-    gap: 1rem;
+    gap: 1.125rem;
     font-size: 1.125rem;
     line-height: 1.2222222222;
   }
@@ -4654,9 +4699,9 @@ body.page-template-page-contacts {
 }
 @media (min-width: 1727.98px) {
   .form__checkbox {
-    flex-basis: 1.75rem;
-    width: 1.75rem;
-    height: 1.75rem;
+    flex-basis: 2.125rem;
+    width: 2.125rem;
+    height: 2.25rem;
     margin-top: 0.125rem;
   }
 }

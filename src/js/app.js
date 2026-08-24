@@ -135,20 +135,16 @@ class Sidebar {
 	}
 }
 
-class VacanciesSlider {
+class Sliders {
 	constructor(el) {
-		if (typeof Swiper === "undefined") return;
-
-		const slideCount = el.querySelectorAll(".swiper-slide").length;
-		if (slideCount <= 1) return;
-
 		new Swiper(el, {
 			slidesPerView: 1,
 			spaceBetween: 0,
 			speed: 450,
+			watchOverflow: true,
 			navigation: {
-				prevEl: el.querySelector(".vacancies__arrow--prev"),
-				nextEl: el.querySelector(".vacancies__arrow--next"),
+				prevEl: ".vacancies__arrow--prev",
+				nextEl: ".vacancies__arrow--next",
 			},
 		});
 	}
@@ -214,7 +210,7 @@ class StickyNavbar {
 
 const components = {
 	".sidebar": Sidebar,
-	".vacancies-slider": VacanciesSlider,
+	".vacancies-slider": Sliders,
 	".js-paged-slider": PagedSlider,
 	".sticky-navbar": StickyNavbar,
 	".wpcf7 form": FormController,

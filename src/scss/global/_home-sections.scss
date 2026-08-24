@@ -283,35 +283,17 @@
 	// vacancies__title
 	&__title {
 		margin-bottom: rem(40);
-		max-width: rem(322);
-		line-height: math.div(24, 20);
-
-		@media (min-width: $md6) {
-			max-width: rem(318);
-			line-height: math.div(20, 26);
-		}
-
-		@media (min-width: $md5) {
-			max-width: rem(378);
-		}
-
-		@media (min-width: $md4) {
-			max-width: rem(408);
-		}
 
 		@media (min-width: $md3) {
 			margin-bottom: rem(50);
-			max-width: rem(528);
 		}
 
 		@media (min-width: $md2) {
 			margin-bottom: rem(60);
-			max-width: rem(672);
 		}
 
 		@media (min-width: $md1) {
 			margin-bottom: rem(80);
-			max-width: rem(945);
 		}
 	}
 
@@ -359,58 +341,11 @@
 		}
 
 		@media (min-width: $md2) {
-			margin-top: rem(30);
+			margin-top: rem(14);
 		}
 
 		@media (min-width: $md1) {
 			margin-top: rem(32);
-		}
-	}
-
-	// vacancies__arrow
-	&__arrow {
-		display: inline-flex;
-		align-items: center;
-		justify-content: center;
-		width: rem(19);
-		height: rem(19);
-		background: transparent;
-		font-family: $font-title;
-		font-weight: 700;
-		font-size: rem(27);
-		line-height: math.div(17, 27);
-		color: $color-black;
-		cursor: pointer;
-		transition: opacity 0.2s ease;
-
-		@media (min-width: $md3) {
-			width: rem(21);
-			height: rem(21);
-			font-size: rem(34);
-			line-height: math.div(19, 34);
-		}
-
-		@media (min-width: $md2) {
-			width: rem(24);
-			height: rem(22);
-			font-size: rem(36);
-		}
-
-		@media (min-width: $md1) {
-			width: rem(33);
-			height: rem(28);
-			font-size: rem(47);
-		}
-
-		&.swiper-button-disabled {
-			opacity: 0.35;
-			cursor: default;
-		}
-
-		@media (any-hover: hover) {
-			&:not(.swiper-button-disabled):hover {
-				font-family: $font-reduct;
-			}
 		}
 	}
 }
@@ -624,13 +559,13 @@
 	}
 
 	@media (min-width: $md2) {
-		padding-top: rem(110);
-		padding-bottom: rem(90);
+		padding-top: rem(90);
+		padding-bottom: rem(50);
 	}
 
 	@media (min-width: $md1) {
 		padding-top: rem(114);
-		padding-bottom: rem(110);
+		padding-bottom: rem(68);
 	}
 
 	// contact__title

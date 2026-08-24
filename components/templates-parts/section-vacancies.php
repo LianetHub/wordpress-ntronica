@@ -84,12 +84,12 @@ $ntronica_vacancy_has_nav = count($ntronica_vacancy_pages) > 1;
 				<div class="vacancies__nav">
 					<button
 						type="button"
-						class="vacancies__arrow vacancies__arrow--prev"
-						aria-label="Previous vacancies">←</button>
+						class="swiper-button-prev vacancies__arrow--prev"
+						aria-label="Previous vacancies"></button>
 					<button
 						type="button"
-						class="vacancies__arrow vacancies__arrow--next"
-						aria-label="Next vacancies">→</button>
+						class="swiper-button-next vacancies__arrow--next"
+						aria-label="Next vacancies"></button>
 				</div>
 			<?php endif; ?>
 		</div>

@@ -1,4 +1,5 @@
 @use "sass:color";
+@use "sass:math";
 @use "variables" as *;
 @use "mixins" as *;
 
@@ -213,6 +214,72 @@ body {
 
 .fs-italic {
 	font-style: italic;
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+	position: static !important;
+	margin: 0 !important;
+	transform: none !important;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: rem(19);
+	height: rem(19);
+	background: transparent;
+	font-family: $font-title;
+	font-weight: 700;
+	font-size: rem(27);
+	line-height: math.div(17, 27);
+	color: $color-black;
+	cursor: pointer;
+	transition: opacity 0.2s ease;
+
+	@media (min-width: $md3) {
+		width: rem(21);
+		height: rem(21);
+		font-size: rem(34);
+		line-height: math.div(19, 34);
+	}
+
+	@media (min-width: $md2) {
+		width: rem(24);
+		height: rem(22);
+		font-size: rem(36);
+	}
+
+	@media (min-width: $md1) {
+		width: rem(33);
+		height: rem(28);
+		font-size: rem(47);
+	}
+
+	& svg {
+		display: none;
+	}
+
+	&.swiper-button-disabled {
+		opacity: 0.35;
+		cursor: default;
+	}
+
+	@media (any-hover: hover) {
+		&:not(.swiper-button-disabled):hover {
+			font-family: $font-reduct;
+		}
+	}
+}
+
+.swiper-button-prev {
+	&::after {
+		content: '←';
+	}
+}
+
+.swiper-button-next {
+	&::after {
+		content: '→';
+	}
 }
 
 $scrollbarColor: $color-black;

@@ -26,6 +26,11 @@
             --gutter-y: #{rem(44)};
             margin-bottom: rem(40);
         }
+
+        >[class*="col"]:has(.form__file-wrap) {
+            display: flex;
+            flex-direction: column;
+        }
     }
 
     &__field {
@@ -72,6 +77,17 @@
                 line-height: math.div(23, 20);
 
             }
+        }
+    }
+
+    // form__field--file
+    &__field--file {
+        width: 100%;
+        margin-top: auto;
+        justify-content: flex-end;
+
+        .form__file {
+            margin-top: 0;
         }
     }
 
@@ -127,6 +143,7 @@
             resize: none;
             width: 100%;
             height: rem(58);
+            padding-right: 2rem;
 
             @media (min-width:$md1) {
                 height: rem(70);
@@ -156,6 +173,11 @@
             }
         }
 
+        &:focus-visible {
+            outline: rem(2) solid $color-black;
+            outline-offset: rem(2);
+        }
+
         &[hidden] {
             display: none;
         }
@@ -166,9 +188,15 @@
         flex-direction: column;
     }
 
+    // form__attachments
+    &__attachments {
+        .form__file-list {
+            margin-top: 0;
+        }
+    }
+
     &__file {
-        margin-top: rem(26);
-        margin-bottom: rem(5);
+
         position: relative;
         display: flex;
         align-items: center;
@@ -197,14 +225,12 @@
         }
 
         @media (min-width: $md2) {
-            margin-top: rem(22);
             height: rem(60);
             font-size: rem(21);
             line-height: math.div(15, 21);
         }
 
         @media (min-width: $md1) {
-            margin-top: rem(26);
             height: rem(74);
             font-size: rem(26);
             line-height: math.div(19, 26);
@@ -455,6 +481,108 @@
         }
     }
 
+    // form__success
+    &__success {
+        display: none;
+        flex-direction: column;
+        gap: rem(12);
+        align-items: flex-start;
+        color: inherit;
+        outline: none;
+
+        @media (min-width: $md3) {
+            gap: rem(16);
+        }
+
+        @media (min-width: $md2) {
+            gap: rem(36);
+        }
+
+        @media (min-width: $md1) {
+            gap: rem(44);
+        }
+
+        &[hidden] {
+            display: none;
+        }
+    }
+
+    // form__success-text
+    &__success-text {
+        color: inherit;
+    }
+
+    // form__again
+    &__again {}
+
+    &.is-sending,
+    &.is-sent {
+
+        .form__label,
+        .form__control,
+        .form__clear,
+        .form__file-name {
+            color: $color-muted;
+        }
+
+        .form__control {
+            border-bottom-color: $color-muted;
+            pointer-events: none;
+        }
+
+        .form__clear,
+        .form__file-remove {
+            pointer-events: none;
+            cursor: default;
+            color: $color-muted;
+        }
+
+        .form__file {
+            border-color: $color-muted;
+            color: $color-muted;
+            pointer-events: none;
+            cursor: default;
+
+            @media (any-hover: hover) {
+                &:hover {
+                    background: transparent;
+                    color: $color-muted;
+                }
+            }
+        }
+
+        .form__file-list {
+            pointer-events: none;
+            color: $color-muted;
+        }
+    }
+
+    &.is-sending {
+        pointer-events: none;
+
+        .form__submit {
+            color: $color-muted;
+            border-color: $color-muted;
+            cursor: default;
+        }
+    }
+
+    &.is-sent {
+
+        .form__submit,
+        .form__consent {
+            display: none;
+        }
+
+        .form__success {
+            display: flex;
+        }
+
+        .form__file-list {
+            display: none;
+        }
+    }
+
     .page-template-page-contacts & {
         .wpcf7-not-valid-tip {
             color: $color-white;
@@ -471,6 +599,10 @@
 
         &__clear {
             color: $color-white;
+
+            &:focus-visible {
+                outline-color: $color-white;
+            }
         }
 
         &__file {
@@ -503,6 +635,11 @@
             }
         }
 
+        &.is-sending .form__submit {
+            color: rgba($color-white, 0.5);
+            border-color: rgba($color-white, 0.5);
+        }
+
         &__consent {
             color: $color-white;
         }
@@ -516,4 +653,8 @@
             }
         }
     }
+}
+
+.wpcf7-form .wpcf7-response-output {
+    display: none;
 }

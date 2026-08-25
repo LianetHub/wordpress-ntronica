@@ -180,7 +180,7 @@
 			content: "";
 			position: absolute;
 			top: var(--footer-marker-offset);
-			bottom: 0;
+			bottom: rem(4);
 			left: calc(var(--footer-label) + var(--footer-label-gap));
 			width: var(--footer-marker);
 			background-color: currentColor;

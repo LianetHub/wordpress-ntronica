@@ -475,7 +475,11 @@ body.page-template-page-contacts {
 }
 .feature-list > li:has(br)::before {
   height: auto;
-  bottom: 0;
+  bottom: 0.25rem;
+}
+.feature-list > li:has(address)::before {
+  height: auto;
+  bottom: 0.5rem;
 }
 .feature-list > li[data-label]::after {
   content: attr(data-label);
@@ -2134,7 +2138,7 @@ body.page-template-page-contacts {
   content: "";
   position: absolute;
   top: var(--footer-marker-offset);
-  bottom: 0;
+  bottom: 0.25rem;
   left: calc(var(--footer-label) + var(--footer-label-gap));
   width: var(--footer-marker);
   background-color: currentColor;
@@ -2795,13 +2799,13 @@ body.page-template-page-contacts {
 @media (min-width: 1727.98px) {
   .info {
     padding-top: 3.125rem;
-    padding-bottom: 3.25rem;
+    padding-bottom: 2.8125rem;
   }
 }
 @media (min-width: 2559.98px) {
   .info {
-    padding-top: 5.9375rem;
-    padding-bottom: 4.375rem;
+    padding-top: 5.75rem;
+    padding-bottom: 3.4375rem;
   }
 }
 .info__title {
@@ -2833,6 +2837,22 @@ body.page-template-page-contacts {
 }
 .info__list {
   font-family: "Nanotronica_Text", system-ui, -apple-system, "Segoe UI", sans-serif;
+  gap: 0rem;
+}
+.info__list > li:has(br)::before {
+  bottom: 0.5rem;
+}
+@media (min-width: 1727.98px) {
+  .info__list {
+    font-size: 1.3125rem;
+    line-height: 1.1428571429;
+  }
+}
+@media (min-width: 2559.98px) {
+  .info__list {
+    font-size: 1.625rem;
+    line-height: 1.2307692308;
+  }
 }
 
 .contact {
@@ -3661,12 +3681,12 @@ body.page-template-page-contacts {
 }
 @media (min-width: 1727.98px) {
   .contacts-representative {
-    padding-top: 6.25rem;
+    padding-top: 2.8125rem;
   }
 }
 @media (min-width: 2559.98px) {
   .contacts-representative {
-    padding-top: 6.875rem;
+    padding-top: 3.125rem;
   }
 }
 .contacts-representative__title {
@@ -3688,12 +3708,12 @@ body.page-template-page-contacts {
   aspect-ratio: 1914/650;
   background-color: #d9d9d9;
 }
-.contacts-representative__img {
+.contacts-representative__iframe {
   display: block;
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  object-position: center bottom;
+  border: 0;
+  filter: grayscale(1);
 }
 
 .news-feed {
@@ -5701,8 +5721,14 @@ body.page-template-page-contacts {
     gap: 1.5rem;
   }
 }
+@media (any-hover: hover) {
+  .vacancy-card:hover .vacancy-card__title {
+    color: #ffffff;
+  }
+}
 .vacancy-card__title {
-  color: #000;
+  color: #000000;
+  transition: color 0.1s ease-in-out;
 }
 @media (max-width: 767.98px) {
   .vacancy-card__title {

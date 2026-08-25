@@ -28,7 +28,7 @@
 					</li>
 					<li data-label="Add">
 						<address>
-							8 Ulsoor Road, Yellapa Chetty Layout, Sivan Chetty Gardens, Ulsoor (Halasuru), Bengaluru, Bengaluru North, Karnataka, 560042, India
+							8 Ulsoor Road, Yellapa Chetty Layout, Sivan Chetty&nbsp;Gardens, Ulsoor (Halasuru), Bengaluru, Bengaluru North, Karnataka, 560042, India
 						</address>
 					</li>
 					<li data-label="CIN">

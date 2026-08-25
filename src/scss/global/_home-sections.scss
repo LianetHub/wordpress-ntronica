@@ -519,12 +519,12 @@
 
 	@media (min-width: $md2) {
 		padding-top: rem(50);
-		padding-bottom: rem(52);
+		padding-bottom: rem(45);
 	}
 
 	@media (min-width: $md1) {
-		padding-top: rem(95);
-		padding-bottom: rem(70);
+		padding-top: rem(92);
+		padding-bottom: rem(55);
 	}
 
 	// info__title
@@ -557,6 +557,24 @@
 	// info__list
 	&__list {
 		font-family: $font-family;
+		gap: rem(0);
+
+		>li {
+			&:has(br)::before {
+				bottom: rem(8);
+			}
+		}
+
+		@media (min-width:$md2) {
+			font-size: rem(21);
+			line-height: math.div(24, 21);
+		}
+
+		@media (min-width:$md1) {
+			font-size: rem(26);
+			line-height: math.div(32, 26);
+
+		}
 	}
 
 }

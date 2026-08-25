@@ -228,9 +228,18 @@
 		gap: rem(24);
 	}
 
+	@media (any-hover: hover) {
+		&:hover {
+			.vacancy-card__title {
+				color: $color-white;
+			}
+		}
+	}
+
 	// vacancy-card__title
 	&__title {
-		color: #000;
+		color: $color-black;
+		transition: color 0.1s ease-in-out;
 
 		@media (max-width:$md6) {
 			font-size: rem(18);

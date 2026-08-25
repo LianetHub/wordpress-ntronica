@@ -195,7 +195,12 @@
 
 		&:has(br)::before {
 			height: auto;
-			bottom: 0;
+			bottom: rem(4);
+		}
+
+		&:has(address)::before {
+			height: auto;
+			bottom: rem(8);
 		}
 
 		&[data-label]::after {

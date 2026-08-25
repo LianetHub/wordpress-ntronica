@@ -6,19 +6,20 @@
     &__row {
         --gutter-x: #{rem(24)};
         --gutter-y: #{rem(24)};
+        margin-bottom: rem(0);
 
         @media (min-width: $md6) {
-            --gutter-y: #{rem(36)};
+            --gutter-y: #{rem(24)};
             margin-bottom: rem(24);
         }
 
-        margin-bottom: rem(0);
-
         @media (min-width: $md3) {
+            --gutter-y: #{rem(28)};
             margin-bottom: rem(30);
         }
 
         @media (min-width: $md2) {
+            --gutter-y: #{rem(36)};
             margin-bottom: rem(36);
         }
 
@@ -27,7 +28,8 @@
             margin-bottom: rem(40);
         }
 
-        >[class*="col"]:has(.form__file-wrap) {
+        >[class*="col"]:has(.form__file-wrap),
+        >[class*="col"]:has(textarea) {
             display: flex;
             flex-direction: column;
         }
@@ -37,7 +39,8 @@
         display: flex;
         flex-direction: column;
         justify-content: space-between;
-        height: 100%;
+        flex: 1;
+        width: 100%;
         min-height: rem(55);
 
         @media (min-width: $md3) {
@@ -54,6 +57,8 @@
 
         .wpcf7-not-valid-tip {
             position: absolute;
+            top: 100%;
+            left: 0;
             color: $color-black;
             padding-top: rem(3);
             font-size: rem(12);
@@ -77,6 +82,13 @@
                 font-size: rem(20);
                 line-height: math.div(23, 20);
 
+            }
+        }
+
+        &:has(textarea) {
+            .form__control-wrap {
+                flex: 1;
+                align-items: stretch;
             }
         }
     }
@@ -103,7 +115,9 @@
         width: 100%;
 
         .wpcf7-form-control-wrap {
+            display: flex;
             width: 100%;
+            height: 100%;
         }
     }
 
@@ -143,12 +157,19 @@
         &:is(textarea) {
             resize: none;
             width: 100%;
-            height: rem(58);
             padding-right: 2rem;
+            height: rem(38);
 
-            @media (min-width:$md1) {
+            @media (min-width: $md3) {
+                height: rem(46);
+            }
+
+            @media (min-width: $md2) {
+                height: rem(60);
+            }
+
+            @media (min-width: $md1) {
                 height: rem(70);
-
             }
         }
     }
@@ -217,10 +238,15 @@
             color 0.1s ease-in-out;
 
         @media (min-width: $md6) {
-            height: rem(48);
+            height: rem(50);
+        }
+
+        @media (min-width:$md4) {
+            height: rem(40);
         }
 
         @media (min-width: $md3) {
+            height: rem(50);
             font-size: rem(18);
             line-height: math.div(13, 18);
         }
@@ -321,8 +347,12 @@
         //     margin-top: rem(32);
         // }
 
+        @media (min-width: $md4) {
+            gap: rem(24);
+        }
+
         @media (min-width: $md3) {
-            gap: rem(16);
+            gap: rem(32);
         }
 
         @media (min-width: $md2) {
@@ -330,7 +360,6 @@
         }
 
         @media (min-width: $md1) {
-            margin-top: rem(-4);
             gap: rem(44);
         }
     }
@@ -340,8 +369,8 @@
         align-items: center;
         justify-content: center;
         width: 100%;
-        min-height: rem(48);
-        padding: rem(10) rem(14);
+        min-height: rem(38);
+        padding: rem(8) rem(14);
         border: rem(2) solid $color-black;
         color: $color-black;
         background: $color-white;
@@ -373,8 +402,10 @@
             display: none;
         }
 
+
         @media (min-width: $md3) {
-            padding: rem(12) rem(16);
+            min-height: rem(48);
+            padding: rem(14) rem(16);
             font-size: rem(18);
             line-height: math.div(13, 18);
         }
@@ -425,6 +456,12 @@
             margin-left: 0;
         }
 
+        .form__consent--tablet-text {
+            @media (max-width:$md3) {
+                display: none;
+            }
+        }
+
         @media (min-width: $md3) {
             gap: rem(14);
             font-size: rem(15);
@@ -458,10 +495,16 @@
             border-color 0.1s ease-in-out,
             color 0.1s ease-in-out;
 
+        @media (min-width: $md4) {
+            flex-basis: rem(25);
+            width: rem(25);
+            height: rem(25);
+        }
+
         @media (min-width: $md3) {
-            flex-basis: rem(24);
-            width: rem(24);
-            height: rem(24);
+            flex-basis: rem(29);
+            width: rem(29);
+            height: rem(29);
         }
 
         @media (min-width: $md2) {
@@ -646,7 +689,7 @@
         &__submit {
             border-color: $color-white;
             color: $color-white;
-            background: $color-black;
+            background: transparent;
 
             &:has(input:disabled) {
                 color: rgba($color-white, 0.5);
@@ -672,7 +715,7 @@
 
         &__checkbox {
             border-color: $color-white;
-            background: $color-black;
+            background: transparent;
 
             &:checked {
                 background-color: $color-white;

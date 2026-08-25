@@ -356,8 +356,8 @@ body.page-template-page-contacts {
 }
 @media (min-width: 1439.98px) {
   .text-lead {
-    font-size: 1.125rem;
-    line-height: 1.0555555556;
+    font-size: 1.0625rem;
+    line-height: 1.1176470588;
   }
 }
 @media (min-width: 1727.98px) {
@@ -2536,9 +2536,14 @@ body.page-template-page-contacts {
 .vacancies__title {
   margin-bottom: 2.5rem;
 }
+@media (min-width: 1199.98px) {
+  .vacancies__title {
+    margin-bottom: 2.625rem;
+  }
+}
 @media (min-width: 1439.98px) {
   .vacancies__title {
-    margin-bottom: 3.125rem;
+    margin-bottom: 2.75rem;
   }
 }
 @media (min-width: 1727.98px) {
@@ -2561,12 +2566,12 @@ body.page-template-page-contacts {
 }
 @media (min-width: 767.98px) {
   .vacancies__grid {
-    --gutter-y: 1.875rem;
+    --gutter-y: 2rem;
   }
 }
 @media (min-width: 1439.98px) {
   .vacancies__grid {
-    --gutter-y: 2.5rem;
+    --gutter-y: 2.125rem;
   }
 }
 @media (min-width: 1727.98px) {
@@ -2586,11 +2591,16 @@ body.page-template-page-contacts {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-top: 1rem;
+  margin-top: 2rem;
+}
+@media (min-width: 1199.98px) {
+  .vacancies__nav {
+    margin-top: 0.75rem;
+  }
 }
 @media (min-width: 1439.98px) {
   .vacancies__nav {
-    margin-top: 1.25rem;
+    margin-top: 0.25rem;
   }
 }
 @media (min-width: 1727.98px) {
@@ -2815,18 +2825,19 @@ body.page-template-page-contacts {
 }
 @media (min-width: 767.98px) {
   .contact {
-    padding-top: 4.375rem;
+    padding-top: 3.125rem;
     padding-bottom: 4.375rem;
   }
 }
 @media (min-width: 1199.98px) {
   .contact {
-    padding-top: 5.625rem;
+    padding-bottom: 2.75rem;
   }
 }
 @media (min-width: 1439.98px) {
   .contact {
-    padding-top: 6.25rem;
+    padding-top: 4.375rem;
+    padding-bottom: 3.625rem;
   }
 }
 @media (min-width: 1727.98px) {
@@ -3420,19 +3431,23 @@ body.page-template-page-contacts {
 }
 @media (min-width: 767.98px) {
   .careers-team {
-    padding-top: 4.375rem;
-    padding-bottom: 4.375rem;
+    padding-top: 2rem;
+    padding-bottom: 2.375rem;
+  }
+}
+@media (min-width: 1199.98px) {
+  .careers-team {
+    padding-bottom: 2.75rem;
   }
 }
 @media (min-width: 1439.98px) {
   .careers-team {
-    padding-top: 5rem;
-    padding-bottom: 5.625rem;
+    padding-top: 3.125rem;
+    padding-bottom: 4rem;
   }
 }
 @media (min-width: 1727.98px) {
   .careers-team {
-    padding-top: 3.125rem;
     padding-bottom: 5.5rem;
   }
 }
@@ -3443,11 +3458,16 @@ body.page-template-page-contacts {
   }
 }
 .careers-team__title {
-  margin-bottom: 1.875rem;
+  margin-bottom: 0.9375rem;
+}
+@media (min-width: 1199.98px) {
+  .careers-team__title {
+    margin-bottom: 1.25rem;
+  }
 }
 @media (min-width: 1439.98px) {
   .careers-team__title {
-    margin-bottom: 2.5rem;
+    margin-bottom: 1.5rem;
   }
 }
 @media (min-width: 1727.98px) {
@@ -4303,23 +4323,23 @@ body.page-template-page-contacts {
 .form__row {
   --gutter-x: 1.5rem;
   --gutter-y: 1.5rem;
+  margin-bottom: 0rem;
 }
 @media (min-width: 767.98px) {
   .form__row {
-    --gutter-y: 2.25rem;
+    --gutter-y: 1.5rem;
     margin-bottom: 1.5rem;
   }
 }
-.form__row {
-  margin-bottom: 0rem;
-}
 @media (min-width: 1439.98px) {
   .form__row {
+    --gutter-y: 1.75rem;
     margin-bottom: 1.875rem;
   }
 }
 @media (min-width: 1727.98px) {
   .form__row {
+    --gutter-y: 2.25rem;
     margin-bottom: 2.25rem;
   }
 }
@@ -4329,7 +4349,8 @@ body.page-template-page-contacts {
     margin-bottom: 2.5rem;
   }
 }
-.form__row > [class*=col]:has(.form__file-wrap) {
+.form__row > [class*=col]:has(.form__file-wrap),
+.form__row > [class*=col]:has(textarea) {
   display: flex;
   flex-direction: column;
 }
@@ -4337,7 +4358,8 @@ body.page-template-page-contacts {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  height: 100%;
+  flex: 1;
+  width: 100%;
   min-height: 3.4375rem;
 }
 @media (min-width: 1439.98px) {
@@ -4357,6 +4379,8 @@ body.page-template-page-contacts {
 }
 .form__field .wpcf7-not-valid-tip {
   position: absolute;
+  top: 100%;
+  left: 0;
   color: #000000;
   padding-top: 0.1875rem;
   font-size: 0.75rem;
@@ -4382,6 +4406,10 @@ body.page-template-page-contacts {
     line-height: 1.15;
   }
 }
+.form__field:has(textarea) .form__control-wrap {
+  flex: 1;
+  align-items: stretch;
+}
 .form__field--file {
   width: 100%;
   justify-content: flex-end;
@@ -4399,7 +4427,9 @@ body.page-template-page-contacts {
   width: 100%;
 }
 .form__control-wrap .wpcf7-form-control-wrap {
+  display: flex;
   width: 100%;
+  height: 100%;
 }
 .form__control {
   width: 100%;
@@ -4439,8 +4469,18 @@ body.page-template-page-contacts {
 .form__control:is(textarea) {
   resize: none;
   width: 100%;
-  height: 3.625rem;
   padding-right: 2rem;
+  height: 2.375rem;
+}
+@media (min-width: 1439.98px) {
+  .form__control:is(textarea) {
+    height: 2.875rem;
+  }
+}
+@media (min-width: 1727.98px) {
+  .form__control:is(textarea) {
+    height: 3.75rem;
+  }
 }
 @media (min-width: 2559.98px) {
   .form__control:is(textarea) {
@@ -4499,11 +4539,17 @@ body.page-template-page-contacts {
 }
 @media (min-width: 767.98px) {
   .form__file {
-    height: 3rem;
+    height: 3.125rem;
+  }
+}
+@media (min-width: 1199.98px) {
+  .form__file {
+    height: 2.5rem;
   }
 }
 @media (min-width: 1439.98px) {
   .form__file {
+    height: 3.125rem;
     font-size: 1.125rem;
     line-height: 0.7222222222;
   }
@@ -4587,9 +4633,14 @@ body.page-template-page-contacts {
   gap: 0.75rem;
   width: 100%;
 }
+@media (min-width: 1199.98px) {
+  .form__actions {
+    gap: 1.5rem;
+  }
+}
 @media (min-width: 1439.98px) {
   .form__actions {
-    gap: 1rem;
+    gap: 2rem;
   }
 }
 @media (min-width: 1727.98px) {
@@ -4599,7 +4650,6 @@ body.page-template-page-contacts {
 }
 @media (min-width: 2559.98px) {
   .form__actions {
-    margin-top: -0.25rem;
     gap: 2.75rem;
   }
 }
@@ -4608,8 +4658,8 @@ body.page-template-page-contacts {
   align-items: center;
   justify-content: center;
   width: 100%;
-  min-height: 3rem;
-  padding: 0.625rem 0.875rem;
+  min-height: 2.375rem;
+  padding: 0.5rem 0.875rem;
   border: 0.125rem solid #000000;
   color: #000000;
   background: #ffffff;
@@ -4637,7 +4687,8 @@ body.page-template-page-contacts {
 }
 @media (min-width: 1439.98px) {
   .form__submit {
-    padding: 0.75rem 1rem;
+    min-height: 3rem;
+    padding: 0.875rem 1rem;
     font-size: 1.125rem;
     line-height: 0.7222222222;
   }
@@ -4685,6 +4736,11 @@ body.page-template-page-contacts {
 .form__consent .wpcf7-list-item {
   margin-left: 0;
 }
+@media (max-width: 1439.98px) {
+  .form__consent .form__consent--tablet-text {
+    display: none;
+  }
+}
 @media (min-width: 1439.98px) {
   .form__consent {
     gap: 0.875rem;
@@ -4717,11 +4773,18 @@ body.page-template-page-contacts {
   cursor: pointer;
   transition: background-color 0.1s ease-in-out, border-color 0.1s ease-in-out, color 0.1s ease-in-out;
 }
+@media (min-width: 1199.98px) {
+  .form__checkbox {
+    flex-basis: 1.5625rem;
+    width: 1.5625rem;
+    height: 1.5625rem;
+  }
+}
 @media (min-width: 1439.98px) {
   .form__checkbox {
-    flex-basis: 1.5rem;
-    width: 1.5rem;
-    height: 1.5rem;
+    flex-basis: 1.8125rem;
+    width: 1.8125rem;
+    height: 1.8125rem;
   }
 }
 @media (min-width: 1727.98px) {
@@ -4874,7 +4937,7 @@ body.page-template-page-contacts {
 .page-template-page-contacts .form__submit {
   border-color: #ffffff;
   color: #ffffff;
-  background: #000000;
+  background: transparent;
 }
 .page-template-page-contacts .form__submit:has(input:disabled) {
   color: rgba(255, 255, 255, 0.5);
@@ -4895,7 +4958,7 @@ body.page-template-page-contacts {
 }
 .page-template-page-contacts .form__checkbox {
   border-color: #ffffff;
-  background: #000000;
+  background: transparent;
 }
 .page-template-page-contacts .form__checkbox:checked {
   background-color: #ffffff;
@@ -5596,7 +5659,7 @@ body.page-template-page-contacts {
 }
 @media (min-width: 1439.98px) {
   .vacancy-card {
-    gap: 0.875rem;
+    gap: 0.625rem;
   }
 }
 @media (min-width: 1727.98px) {

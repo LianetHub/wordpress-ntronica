@@ -6,17 +6,20 @@
 	padding-bottom: rem(50);
 
 	@media (min-width: $md6) {
-		padding-top: rem(70);
-		padding-bottom: rem(70);
+		padding-top: rem(32);
+		padding-bottom: rem(38);
+	}
+
+	@media (min-width: $md4) {
+		padding-bottom: rem(44);
 	}
 
 	@media (min-width: $md3) {
-		padding-top: rem(80);
-		padding-bottom: rem(90);
+		padding-top: rem(50);
+		padding-bottom: rem(64);
 	}
 
 	@media (min-width: $md2) {
-		padding-top: rem(50);
 		padding-bottom: rem(88);
 	}
 
@@ -27,10 +30,14 @@
 
 	// careers-team__title
 	&__title {
-		margin-bottom: rem(30);
+		margin-bottom: rem(15);
+
+		@media (min-width: $md4) {
+			margin-bottom: rem(20);
+		}
 
 		@media (min-width: $md3) {
-			margin-bottom: rem(40);
+			margin-bottom: rem(24);
 		}
 
 		@media (min-width: $md2) {

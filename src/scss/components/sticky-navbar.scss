@@ -4,6 +4,19 @@
 
 :root {
 	--sticky-navbar-offset: 0;
+
+	// Breadcrumbs navbar: fallback until JS measures exact height
+	&:has(.sticky-navbar[data-variant="breadcrumbs"]) {
+		--sticky-navbar-offset: #{rem(73)};
+
+		@media (min-width: $md6) {
+			--sticky-navbar-offset: #{rem(83)};
+		}
+
+		@media (min-width: $md1) {
+			--sticky-navbar-offset: #{rem(133)};
+		}
+	}
 }
 
 .main {

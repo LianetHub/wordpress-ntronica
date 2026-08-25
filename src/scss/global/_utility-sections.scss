@@ -1,0 +1,156 @@
+@use "sass:math";
+@use "../variables" as *;
+@use "../mixins" as *;
+
+.utility {
+	flex: 1 1 auto;
+	display: flex;
+	flex-direction: column;
+	padding-bottom: rem(40);
+	color: $color-white;
+
+	@media (min-width: $md6) {
+		padding-bottom: rem(50);
+	}
+
+	@media (min-width: $md1) {
+		padding-bottom: rem(70);
+	}
+
+	// utility__title
+	&__title {
+		margin-bottom: rem(40);
+		font-family: $font-family;
+		font-weight: 700;
+		font-size: rem(28);
+		line-height: math.div(22, 28);
+		color: $color-white;
+
+		@media (min-width: $md6) {
+			margin-bottom: rem(50);
+			font-size: rem(32);
+			line-height: math.div(24, 32);
+		}
+
+		@media (min-width: $md3) {
+			font-size: rem(36);
+			line-height: math.div(26, 36);
+		}
+
+		@media (min-width: $md2) {
+			margin-bottom: rem(70);
+			font-size: rem(40);
+			line-height: math.div(28, 40);
+		}
+
+		@media (min-width: $md1) {
+			margin-bottom: rem(90);
+			font-size: rem(46);
+			line-height: math.div(31, 46);
+		}
+	}
+
+	// utility__text — spacing only; typography via .text-block
+	&__text {
+		margin-bottom: rem(28);
+
+		@media (min-width: $md6) {
+			margin-bottom: rem(36);
+		}
+
+		@media (min-width: $md1) {
+			margin-bottom: rem(70);
+		}
+	}
+
+	// utility__link
+	&__link {
+		color: $color-white;
+	}
+
+	// utility__form
+	&__form {
+		margin-bottom: rem(24);
+
+		@media (min-width: $md6) {
+			margin-bottom: rem(32);
+		}
+
+		@media (min-width: $md3) {
+			margin-bottom: rem(40);
+		}
+
+		@media (min-width: $md1) {
+			margin-bottom: rem(50);
+		}
+	}
+
+	// utility__count
+	&__count {
+		margin-bottom: rem(48);
+		font-family: $font-family;
+		font-weight: 400;
+		font-size: rem(15);
+		line-height: math.div(18, 15);
+		color: $color-white;
+
+		@media (min-width: $md6) {
+			margin-bottom: rem(64);
+		}
+
+		@media (min-width: $md3) {
+			font-size: rem(18);
+			line-height: math.div(22, 18);
+			margin-bottom: rem(80);
+		}
+
+		@media (min-width: $md2) {
+			font-size: rem(21);
+			line-height: math.div(26, 21);
+			margin-bottom: rem(96);
+		}
+
+		@media (min-width: $md1) {
+			font-size: rem(26);
+			line-height: math.div(32, 26);
+			margin-bottom: rem(110);
+		}
+
+		strong {
+			font-weight: 700;
+		}
+	}
+
+	// utility__results
+	&__results {
+		--gutter-x: #{rem(24)};
+		--gutter-y: #{rem(24)};
+	}
+
+	// utility__empty
+	&__empty {
+		color: $color-white;
+	}
+
+	// utility__content — policy prose
+	&__content {
+		color: $color-white;
+
+		>*+* {
+			margin-top: rem(16);
+
+			@media (min-width: $md6) {
+				margin-top: rem(20);
+			}
+
+			@media (min-width: $md1) {
+				margin-top: rem(24);
+			}
+		}
+
+		a {
+			color: inherit;
+			text-decoration: underline;
+		}
+	}
+}

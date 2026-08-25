@@ -74,7 +74,7 @@
 						'nav'       => ntronica_get_page_section_nav('news'),
 					)
 				);
-			} elseif (is_404() || is_search()) {
+			} elseif (ntronica_is_utility_page()) {
 				get_template_part(
 					'components/templates-parts/sticky-navbar',
 					null,
@@ -84,5 +84,18 @@
 					)
 				);
 			}
+
+			$ntronica_main_mod = '';
+			if (is_front_page()) {
+				$ntronica_main_mod = ' main--home';
+			} elseif (is_page('about')) {
+				$ntronica_main_mod = ' main--about';
+			} elseif (is_page('careers')) {
+				$ntronica_main_mod = ' main--careers';
+			} elseif (is_page('contacts')) {
+				$ntronica_main_mod = ' main--contacts';
+			} elseif (ntronica_is_utility_page()) {
+				$ntronica_main_mod = ' main--utility';
+			}
 			?>
-			<main class="main<?php echo is_front_page() ? ' main--home' : (is_page('about') ? ' main--about' : (is_page('careers') ? ' main--careers' : (is_page('contacts') ? ' main--contacts' : (is_404() ? ' main--error' : (is_search() ? ' main--search' : ''))))); ?>">
+			<main class="main<?php echo esc_attr($ntronica_main_mod); ?>">

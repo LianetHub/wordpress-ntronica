@@ -52,8 +52,8 @@
 						<?php get_search_form(array('ntronica_variant' => 'footer')); ?>
 					</div>
 					<div class="footer__policies">
-						<a class="footer__link" href="#">Privacy policy</a>
-						<a class="footer__link" href="#">Terms of use</a>
+						<a class="footer__link" href="<?php echo esc_url(home_url('/privacy-policy/')); ?>">Privacy policy</a>
+						<a class="footer__link" href="<?php echo esc_url(home_url('/terms-of-use/')); ?>">Terms of use</a>
 					</div>
 				</div>
 			</div>

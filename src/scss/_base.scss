@@ -134,10 +134,12 @@ body {
 	font-weight: 400;
 	min-width: 320px;
 
-	&.page-template-page-contacts {
-		background: #58595B;
-		color: #fff;
-
+	&.page-template-page-contacts,
+	&.error404,
+	&.search,
+	&.page-template-page-policy {
+		background: $color-footer;
+		color: $color-white;
 	}
 }
 
@@ -181,12 +183,11 @@ body {
 .main {
 	flex: 1 1 auto;
 
-	// main--error
-	&--error,
-	// main--search
-	&--search {
+	// main--utility (404 / search / policy)
+	&--utility {
 		display: flex;
 		flex-direction: column;
+		padding-top: var(--sticky-navbar-offset);
 		background: $color-footer;
 		color: $color-white;
 	}

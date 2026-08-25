@@ -74,9 +74,9 @@ body {
   font-weight: 400;
   min-width: 320px;
 }
-body.page-template-page-contacts {
-  background: #58595B;
-  color: #fff;
+body.page-template-page-contacts, body.error404, body.search, body.page-template-page-policy {
+  background: #58595b;
+  color: #ffffff;
 }
 
 .lock {
@@ -122,9 +122,10 @@ body.page-template-page-contacts {
 .main {
   flex: 1 1 auto;
 }
-.main--error, .main--search {
+.main--utility {
   display: flex;
   flex-direction: column;
+  padding-top: var(--sticky-navbar-offset);
   background: #58595b;
   color: #ffffff;
 }
@@ -4040,122 +4041,24 @@ body.page-template-page-contacts {
   }
 }
 
-.error {
+.utility {
   flex: 1 1 auto;
   display: flex;
   flex-direction: column;
-  padding-top: 1.25rem;
   padding-bottom: 2.5rem;
   color: #ffffff;
 }
 @media (min-width: 767.98px) {
-  .error {
-    padding-top: 1.375rem;
+  .utility {
     padding-bottom: 3.125rem;
   }
 }
 @media (min-width: 2559.98px) {
-  .error {
-    padding-top: 1.6875rem;
+  .utility {
     padding-bottom: 4.375rem;
   }
 }
-.error__body {
-  --gutter-x: 1.5rem;
-}
-.error__title {
-  margin-bottom: 1.25rem;
-  font-family: "Nanotronica_Text", system-ui, -apple-system, "Segoe UI", sans-serif;
-  font-weight: 700;
-  font-size: 1.75rem;
-  line-height: 0.7857142857;
-  color: #ffffff;
-}
-@media (min-width: 767.98px) {
-  .error__title {
-    margin-bottom: 1.5rem;
-    font-size: 2rem;
-    line-height: 0.75;
-  }
-}
-@media (min-width: 1439.98px) {
-  .error__title {
-    font-size: 2.25rem;
-    line-height: 0.7222222222;
-  }
-}
-@media (min-width: 1727.98px) {
-  .error__title {
-    font-size: 2.5rem;
-    line-height: 0.7;
-  }
-}
-@media (min-width: 2559.98px) {
-  .error__title {
-    margin-bottom: 2.25rem;
-    font-size: 2.875rem;
-    line-height: 0.6739130435;
-  }
-}
-.error__text {
-  margin-bottom: 1.75rem;
-  font-family: "Nanotronica_Text", system-ui, -apple-system, "Segoe UI", sans-serif;
-  font-weight: 400;
-  font-size: 1rem;
-  line-height: 1.375;
-  color: #ffffff;
-}
-@media (min-width: 767.98px) {
-  .error__text {
-    margin-bottom: 2.25rem;
-    font-size: 1.125rem;
-    line-height: 1.3333333333;
-  }
-}
-@media (min-width: 1439.98px) {
-  .error__text {
-    font-size: 1.3125rem;
-    line-height: 1.3333333333;
-  }
-}
-@media (min-width: 1727.98px) {
-  .error__text {
-    font-size: 1.4375rem;
-    line-height: 1.3043478261;
-  }
-}
-@media (min-width: 2559.98px) {
-  .error__text {
-    margin-bottom: 4.375rem;
-    font-size: 1.625rem;
-    line-height: 1.2307692308;
-  }
-}
-.error__link {
-  color: #ffffff;
-}
-
-.search:where(section) {
-  flex: 1 1 auto;
-  display: flex;
-  flex-direction: column;
-  padding-top: 1.25rem;
-  padding-bottom: 2.5rem;
-  color: #ffffff;
-}
-@media (min-width: 767.98px) {
-  .search:where(section) {
-    padding-top: 1.375rem;
-    padding-bottom: 3.125rem;
-  }
-}
-@media (min-width: 2559.98px) {
-  .search:where(section) {
-    padding-top: 1.6875rem;
-    padding-bottom: 4.375rem;
-  }
-}
-.search__title {
+.utility__title {
   margin-bottom: 2.5rem;
   font-family: "Nanotronica_Text", system-ui, -apple-system, "Segoe UI", sans-serif;
   font-weight: 700;
@@ -4164,51 +4067,67 @@ body.page-template-page-contacts {
   color: #ffffff;
 }
 @media (min-width: 767.98px) {
-  .search__title {
+  .utility__title {
     margin-bottom: 3.125rem;
     font-size: 2rem;
     line-height: 0.75;
   }
 }
 @media (min-width: 1439.98px) {
-  .search__title {
+  .utility__title {
     font-size: 2.25rem;
     line-height: 0.7222222222;
   }
 }
 @media (min-width: 1727.98px) {
-  .search__title {
+  .utility__title {
     margin-bottom: 4.375rem;
     font-size: 2.5rem;
     line-height: 0.7;
   }
 }
 @media (min-width: 2559.98px) {
-  .search__title {
+  .utility__title {
     margin-bottom: 5.625rem;
     font-size: 2.875rem;
     line-height: 0.6739130435;
   }
 }
-.search__form {
+.utility__text {
+  margin-bottom: 1.75rem;
+}
+@media (min-width: 767.98px) {
+  .utility__text {
+    margin-bottom: 2.25rem;
+  }
+}
+@media (min-width: 2559.98px) {
+  .utility__text {
+    margin-bottom: 4.375rem;
+  }
+}
+.utility__link {
+  color: #ffffff;
+}
+.utility__form {
   margin-bottom: 1.5rem;
 }
 @media (min-width: 767.98px) {
-  .search__form {
+  .utility__form {
     margin-bottom: 2rem;
   }
 }
 @media (min-width: 1439.98px) {
-  .search__form {
+  .utility__form {
     margin-bottom: 2.5rem;
   }
 }
 @media (min-width: 2559.98px) {
-  .search__form {
+  .utility__form {
     margin-bottom: 3.125rem;
   }
 }
-.search__count {
+.utility__count {
   margin-bottom: 3rem;
   font-family: "Nanotronica_Text", system-ui, -apple-system, "Segoe UI", sans-serif;
   font-weight: 400;
@@ -4217,40 +4136,60 @@ body.page-template-page-contacts {
   color: #ffffff;
 }
 @media (min-width: 767.98px) {
-  .search__count {
+  .utility__count {
     margin-bottom: 4rem;
   }
 }
 @media (min-width: 1439.98px) {
-  .search__count {
+  .utility__count {
     font-size: 1.125rem;
     line-height: 1.2222222222;
     margin-bottom: 5rem;
   }
 }
 @media (min-width: 1727.98px) {
-  .search__count {
+  .utility__count {
     font-size: 1.3125rem;
     line-height: 1.2380952381;
     margin-bottom: 6rem;
   }
 }
 @media (min-width: 2559.98px) {
-  .search__count {
+  .utility__count {
     font-size: 1.625rem;
     line-height: 1.2307692308;
     margin-bottom: 6.875rem;
   }
 }
-.search__count strong {
+.utility__count strong {
   font-weight: 700;
 }
-.search__results {
+.utility__results {
   --gutter-x: 1.5rem;
   --gutter-y: 1.5rem;
 }
-.search__empty {
+.utility__empty {
   color: #ffffff;
+}
+.utility__content {
+  color: #ffffff;
+}
+.utility__content > * + * {
+  margin-top: 1rem;
+}
+@media (min-width: 767.98px) {
+  .utility__content > * + * {
+    margin-top: 1.25rem;
+  }
+}
+@media (min-width: 2559.98px) {
+  .utility__content > * + * {
+    margin-top: 1.5rem;
+  }
+}
+.utility__content a {
+  color: inherit;
+  text-decoration: underline;
 }
 
 .search-card {
@@ -5268,6 +5207,19 @@ body.page-template-page-contacts {
 
 :root {
   --sticky-navbar-offset: 0;
+}
+:root:has(.sticky-navbar[data-variant=breadcrumbs]) {
+  --sticky-navbar-offset: 4.5625rem;
+}
+@media (min-width: 767.98px) {
+  :root:has(.sticky-navbar[data-variant=breadcrumbs]) {
+    --sticky-navbar-offset: 5.1875rem;
+  }
+}
+@media (min-width: 2559.98px) {
+  :root:has(.sticky-navbar[data-variant=breadcrumbs]) {
+    --sticky-navbar-offset: 8.3125rem;
+  }
 }
 
 .main section[id],

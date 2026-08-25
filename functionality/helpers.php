@@ -281,6 +281,16 @@ function ntronica_is_nav_item_current($slug)
 }
 
 /**
+ * Shared dark shell: 404, search, policy (breadcrumbs sticky navbar).
+ *
+ * @return bool
+ */
+function ntronica_is_utility_page()
+{
+	return is_404() || is_search() || is_page_template('page-policy.php');
+}
+
+/**
  * Print an SVG icon from the theme sprite.
  *
  * @param string $name  Symbol name without the `icon-` prefix.

@@ -226,10 +226,16 @@
     }
 
     &__file-list {
-        margin-top: rem(44);
         display: flex;
         flex-direction: column;
-        gap: rem(23);
+        margin-top: rem(36);
+        gap: rem(20);
+
+        @media (min-width:$md1) {
+            gap: rem(23);
+            margin-top: rem(44);
+
+        }
 
         &:empty {
             margin-top: 0;

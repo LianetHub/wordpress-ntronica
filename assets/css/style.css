@@ -4499,10 +4499,16 @@ body.page-template-page-contacts {
   }
 }
 .form__file-list {
-  margin-top: 2.75rem;
   display: flex;
   flex-direction: column;
-  gap: 1.4375rem;
+  margin-top: 2.25rem;
+  gap: 1.25rem;
+}
+@media (min-width: 2559.98px) {
+  .form__file-list {
+    gap: 1.4375rem;
+    margin-top: 2.75rem;
+  }
 }
 .form__file-list:empty {
   margin-top: 0;

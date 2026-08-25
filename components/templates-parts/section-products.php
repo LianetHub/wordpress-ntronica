@@ -50,9 +50,8 @@ $products = array(
 		</div>
 
 		<div class="products__more">
-			<a class="link-more" href="#">
+			<a class="link-more" href="#" data-title="LEARN MORE">
 				<span>LEARN MORE</span>
-				<span class="link-more__arrow" aria-hidden="true">→</span>
 			</a>
 		</div>
 	</div>

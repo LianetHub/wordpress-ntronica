@@ -4271,12 +4271,32 @@ body.page-template-page-contacts {
   color: #ffffff;
 }
 
+.link-more {
+  position: relative;
+  display: inline-block;
+}
+.link-more > span {
+  transition: opacity 0.1s cubic-bezier(0, 0, 0.58, 1);
+}
+.link-more::before {
+  content: attr(data-title);
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-family: "Nanotronica_Reduct", system-ui, -apple-system, "Segoe UI", sans-serif;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.1s cubic-bezier(0, 0, 0.58, 1);
+}
 .link-more::after {
-  content: "→";
+  content: " →";
 }
 @media (any-hover: hover) {
-  .link-more:hover {
-    font-family: "Nanotronica_Reduct", system-ui, -apple-system, "Segoe UI", sans-serif;
+  .link-more:hover > span {
+    opacity: 0;
+  }
+  .link-more:hover::before {
+    opacity: 1;
   }
 }
 
@@ -4317,6 +4337,7 @@ body.page-template-page-contacts {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  height: 100%;
   min-height: 3.4375rem;
 }
 @media (min-width: 1439.98px) {
@@ -4363,7 +4384,6 @@ body.page-template-page-contacts {
 }
 .form__field--file {
   width: 100%;
-  margin-top: auto;
   justify-content: flex-end;
 }
 .form__field--file .form__file {
@@ -4567,21 +4587,6 @@ body.page-template-page-contacts {
   gap: 0.75rem;
   width: 100%;
 }
-@media (min-width: 767.98px) {
-  .form__actions {
-    margin-top: 1.5rem;
-  }
-}
-@media (min-width: 1439.98px) {
-  .form__actions {
-    margin-top: 1.875rem;
-  }
-}
-@media (min-width: 1727.98px) {
-  .form__actions {
-    margin-top: 2rem;
-  }
-}
 @media (min-width: 1439.98px) {
   .form__actions {
     gap: 1rem;
@@ -4594,7 +4599,7 @@ body.page-template-page-contacts {
 }
 @media (min-width: 2559.98px) {
   .form__actions {
-    margin-top: 2.5rem;
+    margin-top: -0.25rem;
     gap: 2.75rem;
   }
 }
@@ -4769,15 +4774,24 @@ body.page-template-page-contacts {
 .form.is-sending .form__label,
 .form.is-sending .form__control,
 .form.is-sending .form__clear,
-.form.is-sending .form__file-name, .form.is-sent .form__label,
+.form.is-sending .form__file-name,
+.form.is-sending .form__consent, .form.is-sent .form__label,
 .form.is-sent .form__control,
 .form.is-sent .form__clear,
-.form.is-sent .form__file-name {
+.form.is-sent .form__file-name,
+.form.is-sent .form__consent {
   color: #acadaf;
 }
 .form.is-sending .form__control, .form.is-sent .form__control {
   border-bottom-color: #acadaf;
   pointer-events: none;
+  -webkit-text-fill-color: #acadaf;
+}
+.form.is-sending .form__control:-webkit-autofill, .form.is-sending .form__control:-webkit-autofill:hover, .form.is-sending .form__control:-webkit-autofill:focus, .form.is-sending .form__control:-webkit-autofill:active, .form.is-sent .form__control:-webkit-autofill, .form.is-sent .form__control:-webkit-autofill:hover, .form.is-sent .form__control:-webkit-autofill:focus, .form.is-sent .form__control:-webkit-autofill:active {
+  -webkit-text-fill-color: #acadaf;
+  caret-color: #acadaf;
+  transition: background-color 99999s ease-out;
+  box-shadow: 0 0 0 1000px transparent inset;
 }
 .form.is-sending .form__clear,
 .form.is-sending .form__file-remove, .form.is-sent .form__clear,
@@ -4801,6 +4815,17 @@ body.page-template-page-contacts {
 .form.is-sending .form__file-list, .form.is-sent .form__file-list {
   pointer-events: none;
   color: #acadaf;
+}
+.form.is-sending .form__consent a, .form.is-sent .form__consent a {
+  color: inherit;
+}
+.form.is-sending .form__consent .form__checkbox, .form.is-sent .form__consent .form__checkbox {
+  border-color: #acadaf;
+  pointer-events: none;
+  cursor: default;
+}
+.form.is-sending .form__consent .form__checkbox:checked, .form.is-sent .form__consent .form__checkbox:checked {
+  background-color: #acadaf;
 }
 .form.is-sending {
   pointer-events: none;

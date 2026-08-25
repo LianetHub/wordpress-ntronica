@@ -48,9 +48,8 @@ $ntronica_news_url = ntronica_get_news_url();
 		<?php endif; ?>
 
 		<div class="news__more">
-			<a class="link-more" href="<?php echo esc_url($ntronica_news_url); ?>">
+			<a class="link-more" href="<?php echo esc_url($ntronica_news_url); ?>" data-title="LEARN MORE">
 				<span>LEARN MORE</span>
-				<span class="link-more__arrow" aria-hidden="true">→</span>
 			</a>
 		</div>
 	</div>

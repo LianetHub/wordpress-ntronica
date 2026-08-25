@@ -5,16 +5,37 @@
 
 .link-more {
 	@extend .text-block;
+	position: relative;
+	display: inline-block;
 
-
-	&::after {
-		content: '→';
+	> span {
+		transition: opacity $nav-link-hover-motion;
 	}
 
+	&::before {
+		content: attr(data-title);
+		position: absolute;
+		left: 0;
+		top: 0;
+		font-family: $font-reduct;
+		opacity: 0;
+		pointer-events: none;
+		transition: opacity $nav-link-hover-motion;
+	}
+
+	&::after {
+		content: ' →';
+	}
 
 	@media (any-hover: hover) {
 		&:hover {
-			font-family: $font-reduct;
+			> span {
+				opacity: 0;
+			}
+
+			&::before {
+				opacity: 1;
+			}
 		}
 	}
 }

@@ -17,9 +17,8 @@ get_header();
 				<p class="error__text">
 					Sorry, we can’t find the page you are looking for. It may have been moved, deleted or the address may be incorrect
 				</p>
-				<a class="link-more error__link" href="<?php echo esc_url(home_url('/')); ?>">
+				<a class="link-more error__link" href="<?php echo esc_url(home_url('/')); ?>" data-title="BACK TO HOMEPAGE">
 					<span>BACK TO HOMEPAGE</span>
-					<span class="link-more__arrow" aria-hidden="true">→</span>
 				</a>
 			</div>
 		</div>

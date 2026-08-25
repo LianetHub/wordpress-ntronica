@@ -10,7 +10,7 @@ const components = {
 	".sidebar": SiteMenu,
 	".vacancies-slider": Slider,
 	".js-paged-slider": Slider,
-	".wpcf7form": FormController,
+	".wpcf7 form": FormController,
 };
 
 document.addEventListener("DOMContentLoaded", () => {

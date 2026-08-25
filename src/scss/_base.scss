@@ -242,10 +242,10 @@ body {
 		line-height: math.div(19, 34);
 	}
 
-	@media (min-width: $md2) {
+	@media (min-width: $md3) {
 		width: rem(24);
 		height: rem(22);
-		font-size: rem(36);
+		font-size: rem(38);
 	}
 
 	@media (min-width: $md1) {

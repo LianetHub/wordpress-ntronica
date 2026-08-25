@@ -1,6 +1,6 @@
 /**
  * Swiper wrappers for theme sliders.
- * Supports vacancies nav arrows and paged fraction nav.
+ * Supports vacancies grid + nav arrows and paged fraction nav.
  */
 export class Slider {
 	constructor(el) {
@@ -16,37 +16,68 @@ export class Slider {
 			el.querySelector(".slider-nav__next") ||
 			el.querySelector(".vacancies__arrow--next");
 		const fractionEl = el.querySelector(".slider-nav__fraction");
-		const hasNav = slideCount > 1 && prevEl && nextEl;
 		const padFraction = (n) => String(n).padStart(2, "0");
-		const isVacancies = !fractionEl;
 
-		const options = {
-			slidesPerView: 1,
-			spaceBetween: 0,
-			speed: 450,
-			allowTouchMove: slideCount > 1,
-		};
-
-		if (isVacancies) {
-			options.watchOverflow = true;
-			options.autoHeight = true;
+		if (el.classList.contains("vacancies-slider")) {
+			new Swiper(el, {
+				watchOverflow: true,
+				slidesPerView: 1,
+				slidesPerGroup: 1,
+				spaceBetween: 40,
+				speed: 450,
+				watchOverflow: true,
+				allowTouchMove: true,
+				grid: {
+					rows: 4,
+					fill: "row",
+				},
+				breakpoints: {
+					567.98: {
+						slidesPerView: 2,
+						slidesPerGroup: 2,
+						spaceBetween: 24,
+						grid: {
+							rows: 2,
+							fill: "row",
+						},
+					},
+					767.98: {
+						slidesPerView: 3,
+						slidesPerGroup: 3,
+						spaceBetween: 24,
+						grid: {
+							rows: 2,
+							fill: "row",
+						},
+					},
+				},
+				navigation: {
+					prevEl,
+					nextEl,
+				},
+			});
+			return;
 		}
 
-		if (hasNav) {
-			options.navigation = { prevEl, nextEl };
+		if (el.classList.contains("js-paged-slider")) {
+			new Swiper(el, {
+				slidesPerView: 1,
+				speed: 450,
+				watchOverflow: true,
+				allowTouchMove: true,
+				navigation: {
+					prevEl,
+					nextEl,
+				},
+				pagination: {
+					el: fractionEl,
+					type: "fraction",
+					formatFractionCurrent: padFraction,
+					formatFractionTotal: padFraction,
+					renderFraction: (currentClass, totalClass) =>
+						`<span class="${currentClass}"></span>/<span class="${totalClass}"></span>`,
+				},
+			});
 		}
-
-		if (fractionEl) {
-			options.pagination = {
-				el: fractionEl,
-				type: "fraction",
-				formatFractionCurrent: padFraction,
-				formatFractionTotal: padFraction,
-				renderFraction: (currentClass, totalClass) =>
-					`<span class="${currentClass}"></span>/<span class="${totalClass}"></span>`,
-			};
-		}
-
-		new Swiper(el, options);
 	}
 }

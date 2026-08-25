@@ -262,8 +262,13 @@
 .vacancies {
 	background-color: $color-muted;
 	color: $color-white;
-	padding-top: rem(30);
 	padding-bottom: rem(30);
+	padding-top: rem(36);
+
+	@media (min-width:$md6) {
+		padding-top: rem(30);
+
+	}
 
 	@media (min-width: $md3) {
 		padding-top: rem(40);
@@ -277,15 +282,15 @@
 
 	@media (min-width: $md1) {
 		padding-top: rem(70);
-		padding-bottom: rem(70);
+		padding-bottom: rem(74);
 	}
 
 	// vacancies__title
 	&__title {
-		margin-bottom: rem(40);
+		margin-bottom: rem(44);
 
-		@media (min-width: $md4) {
-			margin-bottom: rem(42);
+		@media (min-width:$md6) {
+			margin-bottom: rem(40);
 		}
 
 		@media (min-width: $md3) {
@@ -297,40 +302,39 @@
 		}
 
 		@media (min-width: $md1) {
-			margin-bottom: rem(80);
+			margin-bottom: rem(84);
 		}
 	}
 
-	// vacancies__slider
-	&__slider {
+	.vacancies-slider {
 		overflow: hidden;
-	}
-
-	// vacancies__grid
-	&__grid {
-		--gutter-x: #{rem(24)};
-		--gutter-y: #{rem(40)};
-		align-items: start;
-
-		@media (min-width: $md6) {
-			--gutter-y: #{rem(32)};
-		}
-
-		@media (min-width: $md3) {
-			--gutter-y: #{rem(34)};
-		}
-
-		@media (min-width: $md2) {
-			--gutter-y: #{rem(50)};
-		}
-
-		@media (min-width: $md1) {
-			--gutter-y: #{rem(70)};
-		}
 	}
 
 	.swiper-slide {
 		height: auto;
+		box-sizing: border-box;
+
+		@media (min-width:$md6) {
+			min-height: rem(52);
+		}
+
+		@media (min-width:$md4) {
+			min-height: rem(55);
+		}
+
+		@media (min-width:$md3) {
+			min-height: rem(76);
+		}
+
+		@media (min-width:$md2) {
+			min-height: rem(94);
+
+		}
+
+		@media (min-width:$md1) {
+			min-height: rem(133);
+
+		}
 	}
 
 	// vacancies__nav
@@ -338,22 +342,30 @@
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
-		margin-top: rem(32);
+		margin-top: rem(40);
+
+		@media (min-width:$md6) {
+			margin-top: rem(30);
+		}
+
+		@media (min-width:$md5) {
+			margin-top: rem(28);
+		}
 
 		@media (min-width: $md4) {
-			margin-top: rem(12);
+			margin-top: rem(20);
 		}
 
 		@media (min-width: $md3) {
-			margin-top: rem(4);
+			margin-top: rem(24);
 		}
 
 		@media (min-width: $md2) {
-			margin-top: rem(14);
+			margin-top: rem(24);
 		}
 
 		@media (min-width: $md1) {
-			margin-top: rem(32);
+			margin-top: rem(20);
 		}
 	}
 }
@@ -551,14 +563,10 @@
 
 .contact {
 	padding-top: rem(50);
-	padding-bottom: rem(50);
+	padding-bottom: rem(48);
 
 	@media (min-width: $md6) {
 		padding-top: rem(50);
-		padding-bottom: rem(70);
-	}
-
-	@media (min-width: $md4) {
 		padding-bottom: rem(44);
 	}
 

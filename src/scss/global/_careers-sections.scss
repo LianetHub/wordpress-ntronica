@@ -2,11 +2,10 @@
 @use "../mixins" as *;
 
 .careers-team {
-	padding-top: rem(50);
-	padding-bottom: rem(50);
+	padding-top: rem(32);
+	padding-bottom: rem(28);
 
 	@media (min-width: $md6) {
-		padding-top: rem(32);
 		padding-bottom: rem(38);
 	}
 
@@ -52,7 +51,7 @@
 	// careers-team__grid
 	&__grid {
 		--gutter-x: #{rem(24)};
-		--gutter-y: #{rem(24)};
+		--gutter-y: #{rem(12)};
 
 		@media (min-width: $md6) {
 			--gutter-y: #{rem(0)};

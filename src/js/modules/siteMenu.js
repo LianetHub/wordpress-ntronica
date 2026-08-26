@@ -29,15 +29,17 @@ export class SiteMenu {
 
 		this.isBreadcrumbs =
 			this.navbar.getAttribute("data-variant") === "breadcrumbs";
-		this.syncScrollOffset = this.syncScrollOffset.bind(this);
-		this.syncScrollOffset();
-		window.addEventListener("resize", this.syncScrollOffset);
 
-		// Utility pages: absolute header — no sticky / is-scrolled
+		// Utility pages: absolute header — CSS-only offset, no sticky / measure
 		if (this.isBreadcrumbs) return;
 
+		this.syncScrollOffset = this.syncScrollOffset.bind(this);
 		this.setScrolledState = this.setScrolledState.bind(this);
+
+		this.syncScrollOffset();
 		this.setScrolledState();
+
+		window.addEventListener("resize", this.syncScrollOffset);
 		window.addEventListener("scroll", this.setScrolledState, {
 			passive: true,
 		});

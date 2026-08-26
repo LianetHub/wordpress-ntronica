@@ -5227,12 +5227,24 @@ body.page-template-page-contacts, body.error404, body.search, body.page-template
 :root {
   --sticky-navbar-offset: 0;
 }
-:root:has(.sticky-navbar[data-variant=breadcrumbs]) {
-  --sticky-navbar-offset: 4.5625rem;
-}
 @media (min-width: 767.98px) {
   :root:has(.sticky-navbar[data-variant=breadcrumbs]) {
-    --sticky-navbar-offset: 5.1875rem;
+    --sticky-navbar-offset: 3.5625rem;
+  }
+}
+@media (min-width: 1023.98px) {
+  :root:has(.sticky-navbar[data-variant=breadcrumbs]) {
+    --sticky-navbar-offset: 5.125rem;
+  }
+}
+@media (min-width: 1439.98px) {
+  :root:has(.sticky-navbar[data-variant=breadcrumbs]) {
+    --sticky-navbar-offset: 5.625rem;
+  }
+}
+@media (min-width: 1727.98px) {
+  :root:has(.sticky-navbar[data-variant=breadcrumbs]) {
+    --sticky-navbar-offset: 6.1875rem;
   }
 }
 @media (min-width: 2559.98px) {

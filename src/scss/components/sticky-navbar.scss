@@ -5,15 +5,26 @@
 :root {
 	--sticky-navbar-offset: 0;
 
+	// Utility breadcrumbs header height (pt + line-height + pb) — CSS only, no JS
 	&:has(.sticky-navbar[data-variant="breadcrumbs"]) {
-		--sticky-navbar-offset: #{rem(73)};
-
 		@media (min-width: $md6) {
-			--sticky-navbar-offset: #{rem(83)};
+			--sticky-navbar-offset: #{rem(57)}; // 14 + 13 + 30
+		}
+
+		@media (min-width: $md5) {
+			--sticky-navbar-offset: #{rem(82)}; // 18 + 14 + 50
+		}
+
+		@media (min-width: $md3) {
+			--sticky-navbar-offset: #{rem(90)}; // 18 + 14 + 58
+		}
+
+		@media (min-width: $md2) {
+			--sticky-navbar-offset: #{rem(99)}; // 18 + 15 + 66
 		}
 
 		@media (min-width: $md1) {
-			--sticky-navbar-offset: #{rem(130)};
+			--sticky-navbar-offset: #{rem(130)}; // 24 + 19 + 87
 		}
 	}
 }

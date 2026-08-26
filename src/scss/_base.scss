@@ -188,9 +188,14 @@ body {
 	&--utility {
 		display: flex;
 		flex-direction: column;
-		padding-top: var(--sticky-navbar-offset);
 		background: $color-footer;
 		color: $color-white;
+		padding-top: rem(28);
+
+		@media (min-width:$md6) {
+			padding-top: var(--sticky-navbar-offset);
+
+		}
 	}
 }
 

@@ -126,9 +126,14 @@ body.page-template-page-contacts, body.error404, body.search, body.page-template
 .main--utility {
   display: flex;
   flex-direction: column;
-  padding-top: var(--sticky-navbar-offset);
   background: #58595b;
   color: #ffffff;
+  padding-top: 1.75rem;
+}
+@media (min-width: 767.98px) {
+  .main--utility {
+    padding-top: var(--sticky-navbar-offset);
+  }
 }
 
 .admin-bar .sidebar {
@@ -298,25 +303,25 @@ body.page-template-page-contacts, body.error404, body.search, body.page-template
 .title-md {
   font-family: "Nanotronica_Text", system-ui, -apple-system, "Segoe UI", sans-serif;
   font-weight: 700;
-  font-size: 1.75rem;
-  line-height: 0.7857142857;
+  font-size: 1.25rem;
+  line-height: 1.2;
 }
 @media (min-width: 767.98px) {
   .title-md {
-    font-size: 2rem;
-    line-height: 0.75;
+    font-size: 1.625rem;
+    line-height: 0.8666666667;
   }
 }
 @media (min-width: 1439.98px) {
   .title-md {
-    font-size: 2.25rem;
-    line-height: 0.7222222222;
+    font-size: 2rem;
+    line-height: 1.4545454545;
   }
 }
 @media (min-width: 1727.98px) {
   .title-md {
-    font-size: 2.5rem;
-    line-height: 0.7;
+    font-size: 2.25rem;
+    line-height: 0.7222222222;
   }
 }
 @media (min-width: 2559.98px) {
@@ -4091,16 +4096,11 @@ body.page-template-page-contacts, body.error404, body.search, body.page-template
   }
 }
 .utility__title {
-  margin-bottom: 2.5rem;
-}
-@media (min-width: 767.98px) {
-  .utility__title {
-    margin-bottom: 3.125rem;
-  }
+  margin-bottom: 0.75rem;
 }
 @media (min-width: 1727.98px) {
   .utility__title {
-    margin-bottom: 4.375rem;
+    margin-bottom: 2rem;
   }
 }
 @media (min-width: 2559.98px) {
@@ -4109,11 +4109,16 @@ body.page-template-page-contacts, body.error404, body.search, body.page-template
   }
 }
 .utility__text {
-  margin-bottom: 1.75rem;
+  margin-bottom: 1.5rem;
 }
-@media (min-width: 767.98px) {
+@media (min-width: 1439.98px) {
   .utility__text {
     margin-bottom: 2.25rem;
+  }
+}
+@media (min-width: 1727.98px) {
+  .utility__text {
+    margin-bottom: 2.75rem;
   }
 }
 @media (min-width: 2559.98px) {
@@ -5251,6 +5256,12 @@ body.page-template-page-contacts, body.error404, body.search, body.page-template
   padding-left: var(--sidebar-width);
   width: 100%;
   transition: background-color 200ms ease-in-out, color 200ms ease-in-out;
+  display: none;
+}
+@media (min-width: 767.98px) {
+  .sticky-navbar {
+    display: block;
+  }
 }
 .sticky-navbar.is-scrolled {
   background-color: #ffffff;
@@ -5261,7 +5272,6 @@ body.page-template-page-contacts, body.error404, body.search, body.page-template
 }
 @media (min-width: 767.98px) {
   .sticky-navbar[data-variant=nav] {
-    display: block;
     padding-block: 0.9375rem;
   }
 }
@@ -5293,14 +5303,29 @@ body.page-template-page-contacts, body.error404, body.search, body.page-template
   left: 0;
   width: 100%;
   padding-left: 0;
-  display: block;
-  padding-top: 1.25rem;
-  padding-bottom: 2.5rem;
 }
 @media (min-width: 767.98px) {
   .sticky-navbar[data-variant=breadcrumbs] {
-    padding-top: 1.375rem;
-    padding-bottom: 3rem;
+    padding-top: 0.875rem;
+    padding-bottom: 1.875rem;
+  }
+}
+@media (min-width: 1023.98px) {
+  .sticky-navbar[data-variant=breadcrumbs] {
+    padding-top: 1.125rem;
+    padding-bottom: 3.125rem;
+  }
+}
+@media (min-width: 1439.98px) {
+  .sticky-navbar[data-variant=breadcrumbs] {
+    padding-top: 1.125rem;
+    padding-bottom: 3.625rem;
+  }
+}
+@media (min-width: 1727.98px) {
+  .sticky-navbar[data-variant=breadcrumbs] {
+    padding-top: 1.125rem;
+    padding-bottom: 4.125rem;
   }
 }
 @media (min-width: 2559.98px) {
@@ -5310,7 +5335,7 @@ body.page-template-page-contacts, body.error404, body.search, body.page-template
   }
 }
 .sticky-navbar[data-variant=breadcrumbs] .sticky-navbar__inner {
-  align-items: flex-end;
+  align-items: center;
 }
 .sticky-navbar[data-variant=breadcrumbs] .lang-switcher {
   color: #ffffff;
@@ -5382,7 +5407,7 @@ body.page-template-page-contacts, body.error404, body.search, body.page-template
   line-height: 0.8666666667;
   color: #ffffff;
 }
-@media (min-width: 1439.98px) {
+@media (min-width: 1023.98px) {
   .sticky-navbar__breadcrumbs {
     font-size: 1.125rem;
     line-height: 0.7777777778;

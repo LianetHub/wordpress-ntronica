@@ -19,14 +19,11 @@
 
 	// utility__title 
 	&__title {
-		margin-bottom: rem(40);
+		margin-bottom: rem(12);
 
-		@media (min-width: $md6) {
-			margin-bottom: rem(50);
-		}
 
 		@media (min-width: $md2) {
-			margin-bottom: rem(70);
+			margin-bottom: rem(32);
 		}
 
 		@media (min-width: $md1) {
@@ -36,10 +33,15 @@
 
 	// utility__text
 	&__text {
-		margin-bottom: rem(28);
+		margin-bottom: rem(24);
 
-		@media (min-width: $md6) {
+
+		@media (min-width: $md3) {
 			margin-bottom: rem(36);
+		}
+
+		@media (min-width: $md2) {
+			margin-bottom: rem(44);
 		}
 
 		@media (min-width: $md1) {

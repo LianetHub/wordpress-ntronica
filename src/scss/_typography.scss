@@ -32,22 +32,22 @@
 .title-md {
 	font-family: $font-family;
 	font-weight: 700;
-	font-size: rem(28);
-	line-height: math.div(22, 28);
+	font-size: rem(20);
+	line-height: math.div(24, 20);
 
 	@media (min-width: $md6) {
-		font-size: rem(32);
-		line-height: math.div(24, 32);
+		font-size: rem(26);
+		line-height: math.div(26, 30);
 	}
 
 	@media (min-width: $md3) {
-		font-size: rem(36);
-		line-height: math.div(26, 36);
+		font-size: rem(32);
+		line-height: math.div(32, 22);
 	}
 
 	@media (min-width: $md2) {
-		font-size: rem(40);
-		line-height: math.div(28, 40);
+		font-size: rem(36);
+		line-height: math.div(26, 36);
 	}
 
 	@media (min-width: $md1) {

@@ -8,8 +8,14 @@
 
 get_header();
 
-global $wp_query;
-$ntronica_found = isset($wp_query->found_posts) ? (int) $wp_query->found_posts : 0;
+// mock results 
+$ntronica_mock_excerpt = 'Quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat nostrud exerci tation';
+$ntronica_mock_results = array_fill(0, 6, array(
+	'title'   => 'Lorem ipsum dolor',
+	'excerpt' => $ntronica_mock_excerpt,
+	'url'     => '#',
+));
+$ntronica_found = count($ntronica_mock_results);
 ?>
 
 <section class="utility" aria-label="Search">
@@ -25,24 +31,16 @@ $ntronica_found = isset($wp_query->found_posts) ? (int) $wp_query->found_posts :
 			<strong><?php echo esc_html((string) $ntronica_found); ?></strong>
 		</p>
 
-		<?php if (have_posts()) : ?>
+		<?php if ($ntronica_mock_results) : ?>
 			<div class="row utility__results">
-				<?php
-				while (have_posts()) :
-					the_post();
-					$ntronica_excerpt = wp_trim_words(get_the_excerpt(), 28, '…');
-				?>
+				<?php foreach ($ntronica_mock_results as $ntronica_result) : ?>
 					<div class="col-12 col-md-6 col-xl-4">
-						<article class="search-card">
-							<h2 class="search-card__title">
-								<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
-							</h2>
-							<?php if ($ntronica_excerpt) : ?>
-								<p class="search-card__excerpt text-lead"><?php echo esc_html($ntronica_excerpt); ?></p>
-							<?php endif; ?>
-						</article>
+						<a class="search-card" href="<?php echo esc_url($ntronica_result['url']); ?>">
+							<span class="search-card__title subtitle"><?php echo esc_html($ntronica_result['title']); ?></span>
+							<span class="search-card__excerpt text-lead"><?php echo esc_html($ntronica_result['excerpt']); ?></span>
+						</a>
 					</div>
-				<?php endwhile; ?>
+				<?php endforeach; ?>
 			</div>
 		<?php else : ?>
 			<p class="utility__empty text-lead">Nothing found.</p>

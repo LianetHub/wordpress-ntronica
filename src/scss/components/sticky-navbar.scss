@@ -5,7 +5,7 @@
 :root {
 	--sticky-navbar-offset: 0;
 
-	// Utility breadcrumbs header height (pt + line-height + pb) — CSS only, no JS
+
 	&:has(.sticky-navbar[data-variant="breadcrumbs"]) {
 		@media (min-width: $md6) {
 			--sticky-navbar-offset: #{rem(57)}; // 14 + 13 + 30
@@ -244,7 +244,7 @@
 
 			@media (any-hover: hover) {
 				&:hover {
-					color: $color-black;
+					color: $color-text-muted;
 				}
 			}
 		}

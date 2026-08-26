@@ -6,61 +6,32 @@
 	display: flex;
 	flex-direction: column;
 	gap: rem(12);
-	padding-bottom: rem(40);
+	color: inherit;
 
 	@media (min-width: $md6) {
 		gap: rem(16);
-		padding-bottom: rem(50);
 	}
 
 	@media (min-width: $md3) {
 		gap: rem(20);
-		padding-bottom: rem(70);
 	}
 
 	@media (min-width: $md1) {
 		gap: rem(24);
-		padding-bottom: rem(90);
+	}
+
+	@media (any-hover: hover) {
+		&:hover {
+			.search-card__title {
+				color: $color-white;
+			}
+		}
 	}
 
 	// search-card__title
 	&__title {
-		font-family: $font-robert;
-		font-weight: 700;
-		font-size: rem(20);
-		line-height: math.div(22, 20);
+		transition: color 0.1s ease-in-out;
 		color: $color-muted;
-
-		@media (min-width: $md6) {
-			font-size: rem(24);
-			line-height: math.div(26, 24);
-		}
-
-		@media (min-width: $md3) {
-			font-size: rem(28);
-			line-height: math.div(30, 28);
-		}
-
-		@media (min-width: $md2) {
-			font-size: rem(32);
-			line-height: math.div(34, 32);
-		}
-
-		@media (min-width: $md1) {
-			font-size: rem(36);
-			line-height: math.div(38, 36);
-		}
-
-		a {
-			color: inherit;
-			transition: opacity 0.2s ease;
-
-			@media (any-hover: hover) {
-				&:hover {
-					opacity: 0.7;
-				}
-			}
-		}
 	}
 
 	// search-card__excerpt

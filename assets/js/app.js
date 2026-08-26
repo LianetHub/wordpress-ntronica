@@ -3,6 +3,7 @@
  */
 
 import { FormController } from "./modules/formController.js";
+import { SearchForm } from "./modules/searchForm.js";
 import { SiteMenu } from "./modules/siteMenu.js";
 import { Slider } from "./modules/sliders.js";
 
@@ -10,7 +11,8 @@ const components = {
 	".sidebar": SiteMenu,
 	".vacancies-slider": Slider,
 	".js-paged-slider": Slider,
-	".wpcf7 form": FormController,
+	".search-form": SearchForm,
+	".wpcf7form": FormController,
 };
 
 document.addEventListener("DOMContentLoaded", () => {

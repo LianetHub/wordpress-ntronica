@@ -8,23 +8,23 @@
 
 	&:has(.sticky-navbar[data-variant="breadcrumbs"]) {
 		@media (min-width: $md6) {
-			--sticky-navbar-offset: #{rem(57)}; // 14 + 13 + 30
+			--sticky-navbar-offset: #{rem(57)};
 		}
 
 		@media (min-width: $md5) {
-			--sticky-navbar-offset: #{rem(82)}; // 18 + 14 + 50
+			--sticky-navbar-offset: #{rem(82)};
 		}
 
 		@media (min-width: $md3) {
-			--sticky-navbar-offset: #{rem(90)}; // 18 + 14 + 58
+			--sticky-navbar-offset: #{rem(90)};
 		}
 
 		@media (min-width: $md2) {
-			--sticky-navbar-offset: #{rem(99)}; // 18 + 15 + 66
+			--sticky-navbar-offset: #{rem(105)};
 		}
 
 		@media (min-width: $md1) {
-			--sticky-navbar-offset: #{rem(130)}; // 24 + 19 + 87
+			--sticky-navbar-offset: #{rem(118)};
 		}
 	}
 }

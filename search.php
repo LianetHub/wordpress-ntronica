@@ -26,7 +26,7 @@ $ntronica_found = count($ntronica_mock_results);
 			<?php get_search_form(array('ntronica_variant' => 'page')); ?>
 		</div>
 
-		<p class="utility__count">
+		<p class="text-block utility__count">
 			<span>RESULTS: </span>
 			<strong><?php echo esc_html((string) $ntronica_found); ?></strong>
 		</p>

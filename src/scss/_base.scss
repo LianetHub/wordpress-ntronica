@@ -196,10 +196,6 @@ body {
 			padding-top: var(--sticky-navbar-offset);
 		}
 
-		@media (min-width: $md1) {
-			// title-md lh 1.2 vs former tight 31/46 — less empty space above glyphs
-			padding-top: calc(var(--sticky-navbar-offset) - #{rem(12)});
-		}
 	}
 }
 

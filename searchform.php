@@ -39,6 +39,11 @@ $ntronica_has_value = '' !== $ntronica_query;
 			name="s"
 			value="<?php echo esc_attr($ntronica_query); ?>"
 			autocomplete="off">
+		<?php if ($ntronica_is_page) : ?>
+			<button type="submit" class="search-form__submit" aria-label="Search" hidden>
+				<span class="search-form__submit-icon" aria-hidden="true">→</span>
+			</button>
+		<?php endif; ?>
 		<button type="button"
 			class="search-form__clear"
 			aria-label="Clear"
@@ -46,5 +51,7 @@ $ntronica_has_value = '' !== $ntronica_query;
 			<?php ntronica_icon('clear', 'search-form__clear-icon'); ?>
 		</button>
 	</div>
-	<button type="submit" class="search-form__submit screen-reader-text">Search</button>
+	<?php if (! $ntronica_is_page) : ?>
+		<button type="submit" class="search-form__submit screen-reader-text">Search</button>
+	<?php endif; ?>
 </form>

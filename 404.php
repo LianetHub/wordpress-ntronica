@@ -13,7 +13,7 @@ get_header();
 	<div class="container">
 		<div class="row">
 			<div class="col-12 col-md-6">
-				<h1 class="utility__title">Error 404</h1>
+				<h1 class="title-md utility__title">Error 404</h1>
 				<p class="text-block utility__text">
 					Sorry, we can’t find the page you are looking for. It may have been moved, deleted or the address may be incorrect
 				</p>

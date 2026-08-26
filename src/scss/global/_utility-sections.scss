@@ -17,40 +17,24 @@
 		padding-bottom: rem(70);
 	}
 
-	// utility__title
+	// utility__title 
 	&__title {
 		margin-bottom: rem(40);
-		font-family: $font-family;
-		font-weight: 700;
-		font-size: rem(28);
-		line-height: math.div(22, 28);
-		color: $color-white;
 
 		@media (min-width: $md6) {
 			margin-bottom: rem(50);
-			font-size: rem(32);
-			line-height: math.div(24, 32);
-		}
-
-		@media (min-width: $md3) {
-			font-size: rem(36);
-			line-height: math.div(26, 36);
 		}
 
 		@media (min-width: $md2) {
 			margin-bottom: rem(70);
-			font-size: rem(40);
-			line-height: math.div(28, 40);
 		}
 
 		@media (min-width: $md1) {
-			margin-bottom: rem(90);
-			font-size: rem(46);
-			line-height: math.div(31, 46);
+			margin-bottom: rem(36);
 		}
 	}
 
-	// utility__text — spacing only; typography via .text-block
+	// utility__text
 	&__text {
 		margin-bottom: rem(28);
 
@@ -59,14 +43,12 @@
 		}
 
 		@media (min-width: $md1) {
-			margin-bottom: rem(70);
+			margin-bottom: rem(64);
 		}
 	}
 
 	// utility__link
-	&__link {
-		color: $color-white;
-	}
+	&__link {}
 
 	// utility__form
 	&__form {

@@ -172,6 +172,7 @@ body {
 }
 
 .site-body {
+	position: relative;
 	margin-left: var(--sidebar-width);
 	display: flex;
 	flex-direction: column;
@@ -183,7 +184,7 @@ body {
 .main {
 	flex: 1 1 auto;
 
-	// main--utility (404 / search / policy)
+	// main--utility 
 	&--utility {
 		display: flex;
 		flex-direction: column;

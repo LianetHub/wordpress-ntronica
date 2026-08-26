@@ -15,7 +15,7 @@ while (have_posts()) :
 ?>
 	<section class="utility" aria-label="<?php echo esc_attr(get_the_title()); ?>">
 		<div class="container">
-			<h1 class="utility__title"><?php the_title(); ?></h1>
+			<h1 class="title-md utility__title"><?php the_title(); ?></h1>
 			<div class="text-block utility__content">
 				<?php the_content(); ?>
 			</div>

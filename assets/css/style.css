@@ -112,6 +112,7 @@ body.page-template-page-contacts, body.error404, body.search, body.page-template
 }
 
 .site-body {
+  position: relative;
   margin-left: var(--sidebar-width);
   display: flex;
   flex-direction: column;
@@ -291,6 +292,37 @@ body.page-template-page-contacts, body.error404, body.search, body.page-template
   .title {
     font-size: 2.875rem;
     line-height: 0.6956521739;
+  }
+}
+
+.title-md {
+  font-family: "Nanotronica_Text", system-ui, -apple-system, "Segoe UI", sans-serif;
+  font-weight: 700;
+  font-size: 1.75rem;
+  line-height: 0.7857142857;
+}
+@media (min-width: 767.98px) {
+  .title-md {
+    font-size: 2rem;
+    line-height: 0.75;
+  }
+}
+@media (min-width: 1439.98px) {
+  .title-md {
+    font-size: 2.25rem;
+    line-height: 0.7222222222;
+  }
+}
+@media (min-width: 1727.98px) {
+  .title-md {
+    font-size: 2.5rem;
+    line-height: 0.7;
+  }
+}
+@media (min-width: 2559.98px) {
+  .title-md {
+    font-size: 2.875rem;
+    line-height: 0.6739130435;
   }
 }
 
@@ -4060,37 +4092,20 @@ body.page-template-page-contacts, body.error404, body.search, body.page-template
 }
 .utility__title {
   margin-bottom: 2.5rem;
-  font-family: "Nanotronica_Text", system-ui, -apple-system, "Segoe UI", sans-serif;
-  font-weight: 700;
-  font-size: 1.75rem;
-  line-height: 0.7857142857;
-  color: #ffffff;
 }
 @media (min-width: 767.98px) {
   .utility__title {
     margin-bottom: 3.125rem;
-    font-size: 2rem;
-    line-height: 0.75;
-  }
-}
-@media (min-width: 1439.98px) {
-  .utility__title {
-    font-size: 2.25rem;
-    line-height: 0.7222222222;
   }
 }
 @media (min-width: 1727.98px) {
   .utility__title {
     margin-bottom: 4.375rem;
-    font-size: 2.5rem;
-    line-height: 0.7;
   }
 }
 @media (min-width: 2559.98px) {
   .utility__title {
-    margin-bottom: 5.625rem;
-    font-size: 2.875rem;
-    line-height: 0.6739130435;
+    margin-bottom: 2.25rem;
   }
 }
 .utility__text {
@@ -4103,11 +4118,8 @@ body.page-template-page-contacts, body.error404, body.search, body.page-template
 }
 @media (min-width: 2559.98px) {
   .utility__text {
-    margin-bottom: 4.375rem;
+    margin-bottom: 4rem;
   }
-}
-.utility__link {
-  color: #ffffff;
 }
 .utility__form {
   margin-bottom: 1.5rem;
@@ -4279,6 +4291,8 @@ body.page-template-page-contacts, body.error404, body.search, body.page-template
 }
 .link-more::after {
   content: " →";
+  font-family: "Nanotronica_Title", system-ui, -apple-system, "Segoe UI", sans-serif;
+  margin-left: 0.25em;
 }
 @media (any-hover: hover) {
   .link-more:hover > span {
@@ -5218,7 +5232,7 @@ body.page-template-page-contacts, body.error404, body.search, body.page-template
 }
 @media (min-width: 2559.98px) {
   :root:has(.sticky-navbar[data-variant=breadcrumbs]) {
-    --sticky-navbar-offset: 8.3125rem;
+    --sticky-navbar-offset: 8.125rem;
   }
 }
 
@@ -5240,15 +5254,6 @@ body.page-template-page-contacts, body.error404, body.search, body.page-template
 }
 .sticky-navbar.is-scrolled {
   background-color: #ffffff;
-}
-.sticky-navbar__inner {
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-  gap: 1.5rem;
-}
-.sticky-navbar__lang {
-  flex: 0 0 auto;
 }
 .sticky-navbar[data-variant=nav] {
   display: none;
@@ -5281,6 +5286,46 @@ body.page-template-page-contacts, body.error404, body.search, body.page-template
 .sticky-navbar[data-variant=nav] .sticky-navbar__nav {
   flex: 1 1 auto;
   min-width: 0;
+}
+.sticky-navbar[data-variant=breadcrumbs] {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding-left: 0;
+  display: block;
+  padding-top: 1.25rem;
+  padding-bottom: 2.5rem;
+}
+@media (min-width: 767.98px) {
+  .sticky-navbar[data-variant=breadcrumbs] {
+    padding-top: 1.375rem;
+    padding-bottom: 3rem;
+  }
+}
+@media (min-width: 2559.98px) {
+  .sticky-navbar[data-variant=breadcrumbs] {
+    padding-top: 1.5rem;
+    padding-bottom: 5.4375rem;
+  }
+}
+.sticky-navbar[data-variant=breadcrumbs] .sticky-navbar__inner {
+  align-items: flex-end;
+}
+.sticky-navbar[data-variant=breadcrumbs] .lang-switcher {
+  color: #ffffff;
+}
+.sticky-navbar[data-variant=breadcrumbs].is-scrolled {
+  background-color: transparent;
+}
+.sticky-navbar__inner {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1.5rem;
+}
+.sticky-navbar__lang {
+  flex: 0 0 auto;
 }
 .sticky-navbar__nav-list {
   display: flex;
@@ -5328,29 +5373,6 @@ body.page-template-page-contacts, body.error404, body.search, body.page-template
     color: #58595B;
   }
 }
-.sticky-navbar[data-variant=breadcrumbs] {
-  display: block;
-  padding-top: 1.25rem;
-  padding-bottom: 2.5rem;
-}
-@media (min-width: 767.98px) {
-  .sticky-navbar[data-variant=breadcrumbs] {
-    padding-top: 1.375rem;
-    padding-bottom: 3rem;
-  }
-}
-@media (min-width: 2559.98px) {
-  .sticky-navbar[data-variant=breadcrumbs] {
-    padding-top: 1.6875rem;
-    padding-bottom: 5.4375rem;
-  }
-}
-.sticky-navbar[data-variant=breadcrumbs] .sticky-navbar__inner {
-  align-items: flex-end;
-}
-.sticky-navbar[data-variant=breadcrumbs] .lang-switcher {
-  color: #ffffff;
-}
 .sticky-navbar__breadcrumbs {
   flex: 1 1 auto;
   min-width: 0;
@@ -5378,21 +5400,25 @@ body.page-template-page-contacts, body.error404, body.search, body.page-template
     line-height: 0.7307692308;
   }
 }
+.sticky-navbar__breadcrumbs .breadcrumbs__list {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+}
+.sticky-navbar__breadcrumbs .breadcrumbs__sep {
+  white-space: pre;
+}
 .sticky-navbar__breadcrumbs .breadcrumbs__link {
   color: inherit;
-  text-decoration: none;
+  transition: color 100ms ease-in-out;
+}
+@media (any-hover: hover) {
+  .sticky-navbar__breadcrumbs .breadcrumbs__link:hover {
+    color: #000000;
+  }
 }
 .sticky-navbar__breadcrumbs .breadcrumbs__current {
   color: inherit;
-}
-.sticky-navbar.is-scrolled[data-variant=breadcrumbs] .sticky-navbar__breadcrumbs {
-  color: #000000;
-}
-.sticky-navbar.is-scrolled[data-variant=breadcrumbs] .sticky-navbar__breadcrumbs .breadcrumbs__link {
-  color: #000000;
-}
-.sticky-navbar.is-scrolled[data-variant=breadcrumbs] .lang-switcher {
-  color: #000000;
 }
 .sticky-navbar.is-scrolled[data-variant=nav] .sticky-navbar__nav-link {
   color: #000000;

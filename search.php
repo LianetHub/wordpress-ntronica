@@ -14,7 +14,7 @@ $ntronica_found = isset($wp_query->found_posts) ? (int) $wp_query->found_posts :
 
 <section class="utility" aria-label="Search">
 	<div class="container">
-		<h1 class="utility__title">Search</h1>
+		<h1 class="title-md utility__title">Search</h1>
 
 		<div class="utility__form">
 			<?php get_search_form(array('ntronica_variant' => 'page')); ?>

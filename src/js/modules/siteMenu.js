@@ -27,16 +27,20 @@ export class SiteMenu {
 	initNavbar() {
 		if (!this.navbar) return;
 
-		this.setScrolledState = this.setScrolledState.bind(this);
+		this.isBreadcrumbs =
+			this.navbar.getAttribute("data-variant") === "breadcrumbs";
 		this.syncScrollOffset = this.syncScrollOffset.bind(this);
-
-		this.setScrolledState();
 		this.syncScrollOffset();
+		window.addEventListener("resize", this.syncScrollOffset);
 
+		// Utility pages: absolute header — no sticky / is-scrolled
+		if (this.isBreadcrumbs) return;
+
+		this.setScrolledState = this.setScrolledState.bind(this);
+		this.setScrolledState();
 		window.addEventListener("scroll", this.setScrolledState, {
 			passive: true,
 		});
-		window.addEventListener("resize", this.syncScrollOffset);
 	}
 
 	syncScrollOffset() {

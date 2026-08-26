@@ -5,7 +5,6 @@
 :root {
 	--sticky-navbar-offset: 0;
 
-	// Breadcrumbs navbar: fallback until JS measures exact height
 	&:has(.sticky-navbar[data-variant="breadcrumbs"]) {
 		--sticky-navbar-offset: #{rem(73)};
 
@@ -14,7 +13,7 @@
 		}
 
 		@media (min-width: $md1) {
-			--sticky-navbar-offset: #{rem(133)};
+			--sticky-navbar-offset: #{rem(130)};
 		}
 	}
 }
@@ -43,18 +42,6 @@
 		background-color: $color-white;
 	}
 
-	// .sticky-navbar__inner
-	&__inner {
-		display: flex;
-		align-items: flex-start;
-		justify-content: space-between;
-		gap: rem(24);
-	}
-
-	// .sticky-navbar__lang
-	&__lang {
-		flex: 0 0 auto;
-	}
 
 	// nav variant
 	&[data-variant="nav"] {
@@ -87,6 +74,54 @@
 			min-width: 0;
 		}
 	}
+
+	// breadcrumbs variant (utility pages: absolute, not sticky)
+	&[data-variant="breadcrumbs"] {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		padding-left: 0;
+		display: block;
+		padding-top: rem(20);
+		padding-bottom: rem(40);
+
+		@media (min-width: $md6) {
+			padding-top: rem(22);
+			padding-bottom: rem(48);
+		}
+
+		@media (min-width: $md1) {
+			padding-top: rem(24);
+			padding-bottom: rem(87);
+		}
+
+		.sticky-navbar__inner {
+			align-items: flex-end;
+		}
+
+		.lang-switcher {
+			color: $color-white;
+		}
+
+		&.is-scrolled {
+			background-color: transparent;
+		}
+	}
+
+	// .sticky-navbar__inner
+	&__inner {
+		display: flex;
+		align-items: flex-start;
+		justify-content: space-between;
+		gap: rem(24);
+	}
+
+	// .sticky-navbar__lang
+	&__lang {
+		flex: 0 0 auto;
+	}
+
 
 	// .sticky-navbar__nav-list
 	&__nav-list {
@@ -138,30 +173,7 @@
 		}
 	}
 
-	// breadcrumbs variant
-	&[data-variant="breadcrumbs"] {
-		display: block;
-		padding-top: rem(20);
-		padding-bottom: rem(40);
 
-		@media (min-width: $md6) {
-			padding-top: rem(22);
-			padding-bottom: rem(48);
-		}
-
-		@media (min-width: $md1) {
-			padding-top: rem(27);
-			padding-bottom: rem(87);
-		}
-
-		.sticky-navbar__inner {
-			align-items: flex-end;
-		}
-
-		.lang-switcher {
-			color: $color-white;
-		}
-	}
 
 	// .sticky-navbar__breadcrumbs
 	&__breadcrumbs {
@@ -188,27 +200,29 @@
 			line-height: math.div(19, 26);
 		}
 
+		.breadcrumbs__list {
+			display: flex;
+			flex-wrap: wrap;
+			align-items: baseline;
+		}
+
+		.breadcrumbs__sep {
+			white-space: pre;
+		}
+
 		.breadcrumbs__link {
 			color: inherit;
-			text-decoration: none;
+			transition: color 100ms ease-in-out;
+
+			@media (any-hover: hover) {
+				&:hover {
+					color: $color-black;
+				}
+			}
 		}
 
 		.breadcrumbs__current {
 			color: inherit;
-		}
-	}
-
-	&.is-scrolled[data-variant="breadcrumbs"] {
-		.sticky-navbar__breadcrumbs {
-			color: $color-black;
-		}
-
-		.sticky-navbar__breadcrumbs .breadcrumbs__link {
-			color: $color-black;
-		}
-
-		.lang-switcher {
-			color: $color-black;
 		}
 	}
 

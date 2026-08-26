@@ -29,6 +29,33 @@
 	}
 }
 
+.title-md {
+	font-family: $font-family;
+	font-weight: 700;
+	font-size: rem(28);
+	line-height: math.div(22, 28);
+
+	@media (min-width: $md6) {
+		font-size: rem(32);
+		line-height: math.div(24, 32);
+	}
+
+	@media (min-width: $md3) {
+		font-size: rem(36);
+		line-height: math.div(26, 36);
+	}
+
+	@media (min-width: $md2) {
+		font-size: rem(40);
+		line-height: math.div(28, 40);
+	}
+
+	@media (min-width: $md1) {
+		font-size: rem(46);
+		line-height: math.div(31, 46);
+	}
+}
+
 .subtitle {
 	font-family: $font-robert;
 	font-weight: 700;

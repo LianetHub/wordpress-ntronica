@@ -29,6 +29,10 @@
 		justify-content: space-between;
 		width: rem($sidebar-width-1200);
 		padding: rem(18) rem(18);
+
+		@media (hover: hover) and (pointer: fine) {
+			cursor: default;
+		}
 	}
 
 	@media (min-width: $md4) {
@@ -263,15 +267,15 @@
 			}
 		}
 
-		&.is-active {
-			span {
-				opacity: 0;
-			}
+		// &.is-active {
+		// 	span {
+		// 		opacity: 0;
+		// 	}
 
-			&::after {
-				opacity: 1;
-			}
-		}
+		// 	&::after {
+		// 		opacity: 1;
+		// 	}
+		// }
 	}
 
 	// sidebar__submenu

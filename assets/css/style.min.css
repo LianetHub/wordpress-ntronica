@@ -1723,6 +1723,11 @@ body.page-template-page-contacts, body.error404, body.search, body.page-template
     padding: 1.125rem 1.125rem;
   }
 }
+@media (min-width: 1023.98px) and (hover: hover) and (pointer: fine) {
+  .sidebar {
+    cursor: default;
+  }
+}
 @media (min-width: 1199.98px) {
   .sidebar {
     padding: 1.0625rem 1.25rem 1.125rem;
@@ -1938,12 +1943,6 @@ body.page-template-page-contacts, body.error404, body.search, body.page-template
   .sidebar__link:hover::after {
     opacity: 1;
   }
-}
-.sidebar__link.is-active span {
-  opacity: 0;
-}
-.sidebar__link.is-active::after {
-  opacity: 1;
 }
 .sidebar__submenu {
   display: none;
@@ -5399,7 +5398,6 @@ body.page-template-page-contacts, body.error404, body.search, body.page-template
   background-color: #ffffff;
 }
 .sticky-navbar[data-variant=nav] {
-  display: none;
   padding-top: 0rem;
 }
 @media (min-width: 767.98px) {

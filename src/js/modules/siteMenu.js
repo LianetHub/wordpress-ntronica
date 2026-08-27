@@ -8,9 +8,19 @@ export class SiteMenu {
 		this.navbar = document.querySelector(".sticky-navbar");
 		this.mqWide = window.matchMedia("(min-width: 1023.98px)");
 		this.mqAccordion = window.matchMedia("(min-width: 767.98px)");
+		this.mqHover = window.matchMedia("(hover: hover) and (pointer: fine)");
+
+		this.onPointerEnter = this.onPointerEnter.bind(this);
+		this.onPointerLeave = this.onPointerLeave.bind(this);
+		this.onFocusIn = this.onFocusIn.bind(this);
+		this.onFocusOut = this.onFocusOut.bind(this);
 
 		this.mqWide.addEventListener("change", () => this.onBreakpointChange());
 		this.sidebar.addEventListener("click", (e) => this.onClick(e));
+		this.sidebar.addEventListener("pointerenter", this.onPointerEnter);
+		this.sidebar.addEventListener("pointerleave", this.onPointerLeave);
+		this.sidebar.addEventListener("focusin", this.onFocusIn);
+		this.sidebar.addEventListener("focusout", this.onFocusOut);
 
 		if (
 			this.mqWide.matches &&
@@ -22,6 +32,47 @@ export class SiteMenu {
 		this.syncAria();
 		this.syncLock();
 		this.initNavbar();
+	}
+
+	usesHoverExpand() {
+		return this.mqWide.matches && this.mqHover.matches;
+	}
+
+	expandWide() {
+		this.sidebar.classList.remove("is-collapsed");
+		this.sidebar.classList.remove("is-open");
+		this.syncAria();
+	}
+
+	collapseWide() {
+		this.sidebar.classList.add("is-collapsed");
+		this.sidebar.classList.remove("is-open");
+		this.syncAria();
+	}
+
+	onPointerEnter(event) {
+		if (!this.usesHoverExpand()) return;
+		if (event.pointerType === "touch") return;
+		this.expandWide();
+	}
+
+	onPointerLeave(event) {
+		if (!this.usesHoverExpand()) return;
+		if (event.pointerType === "touch") return;
+		if (this.sidebar.contains(document.activeElement)) return;
+		this.collapseWide();
+	}
+
+	onFocusIn() {
+		if (!this.usesHoverExpand()) return;
+		this.expandWide();
+	}
+
+	onFocusOut(event) {
+		if (!this.usesHoverExpand()) return;
+		if (this.sidebar.contains(event.relatedTarget)) return;
+		if (this.sidebar.matches(":hover")) return;
+		this.collapseWide();
 	}
 
 	initNavbar() {
@@ -149,6 +200,10 @@ export class SiteMenu {
 
 				this.setItemExpanded(item, willExpand);
 			}
+			return;
+		}
+
+		if (this.usesHoverExpand()) {
 			return;
 		}
 

@@ -93,23 +93,49 @@
 .news-card {
 	display: flex;
 	flex-direction: column;
+	min-height: rem(162);
+
+	@media (min-width: $md6) {
+		min-height: rem(155);
+	}
+
+	@media (min-width: $md5) {
+		min-height: rem(177);
+	}
+
+	@media (min-width: $md4) {
+		min-height: rem(188);
+	}
+
+	@media (min-width: $md3) {
+		min-height: rem(237);
+	}
+
+	@media (min-width: $md2) {
+		min-height: rem(309);
+	}
+
+	@media (min-width: $md1) {
+		min-height: rem(445);
+	}
 
 	// news-card__link
 	&__link {
 		display: flex;
 		flex-direction: column;
+		flex: 1 1 auto;
 		color: inherit;
 	}
 
 	// news-card__media
 	&__media {
 		width: 100%;
-		height: rem(206);
+		height: rem(113);
 		overflow: hidden;
 		background-color: $color-placeholder;
 
 		@media (min-width: $md6) {
-			height: rem(106);
+			height: rem(104);
 		}
 
 		@media (min-width: $md5) {
@@ -117,19 +143,19 @@
 		}
 
 		@media (min-width: $md4) {
-			height: rem(134);
+			height: rem(137);
 		}
 
 		@media (min-width: $md3) {
-			height: rem(184);
+			height: rem(180);
 		}
 
 		@media (min-width: $md2) {
-			height: rem(218);
+			height: rem(230);
 		}
 
 		@media (min-width: $md1) {
-			height: rem(302);
+			height: rem(328);
 		}
 	}
 
@@ -144,25 +170,20 @@
 
 	// news-card__date
 	&__date {
-		margin-top: rem(15);
+		margin-top: rem(10);
 		font-family: $font-family;
 		font-weight: 700;
 		font-size: rem(15);
 		line-height: math.div(18, 15);
 		color: $color-black;
 
-		@media (min-width: $md6) {
-			margin-top: rem(16);
-		}
-
 		@media (min-width: $md3) {
-			margin-top: rem(24);
 			font-size: rem(18);
 			line-height: math.div(21, 18);
 		}
 
 		@media (min-width: $md2) {
-			margin-top: rem(30);
+			margin-top: rem(15);
 			font-size: rem(21);
 			line-height: math.div(24, 21);
 		}
@@ -176,15 +197,16 @@
 
 	// news-card__title
 	&__title {
-		margin-top: rem(6);
+		margin-top: rem(3);
 		font-family: $font-family;
 		font-weight: 700;
-		font-size: rem(18);
-		line-height: math.div(20, 18);
+		font-size: rem(16);
+		line-height: math.div(18, 16);
 		color: $color-black;
 
 		@media (min-width: $md5) {
 			margin-top: rem(8);
+			font-size: rem(18);
 			line-height: math.div(14, 18);
 		}
 

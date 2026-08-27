@@ -4,10 +4,24 @@
  * Section: Media publications
  *
  * @package ntronica
+ *
+ * @var array $args {
+ *     @type array $items Cards: array{ date: string, title: string, excerpt: string, url?: string }.
+ * }
  */
 
-$ntronica_media_query = ntronica_query_news_posts('media', 6);
-$ntronica_media_posts = $ntronica_media_query->posts;
+if (! isset($args) || ! is_array($args)) {
+	$args = array();
+}
+
+$ntronica_media = wp_parse_args(
+	$args,
+	array(
+		'items' => array(),
+	)
+);
+
+$ntronica_items = is_array($ntronica_media['items']) ? $ntronica_media['items'] : array();
 ?>
 <section class="media-publications band-full" id="media">
 	<div class="container">
@@ -15,22 +29,37 @@ $ntronica_media_posts = $ntronica_media_query->posts;
 			Media publications
 		</h2>
 
-		<?php if ($ntronica_media_posts) : ?>
-			<div class="row media-publications__grid">
-				<?php foreach ($ntronica_media_posts as $ntronica_post) : ?>
-					<div class="col-12 col-md-4">
-						<article class="media-card">
-							<a class="media-card__link" href="<?php echo esc_url(get_permalink($ntronica_post)); ?>">
-								<p class="media-card__date"><?php echo esc_html(get_the_date('d.m.Y', $ntronica_post)); ?></p>
-								<h3 class="media-card__title"><?php echo esc_html(get_the_title($ntronica_post)); ?></h3>
-								<p class="media-card__excerpt text-lead"><?php echo esc_html(get_the_excerpt($ntronica_post)); ?></p>
-							</a>
-						</article>
-					</div>
-				<?php endforeach; ?>
+		<?php if ($ntronica_items) : ?>
+			<div class="swiper media-publications-slider">
+				<div class="swiper-wrapper">
+					<?php foreach ($ntronica_items as $ntronica_item) : ?>
+						<?php
+						$ntronica_url = isset($ntronica_item['url']) ? $ntronica_item['url'] : '#';
+						?>
+						<div class="swiper-slide">
+							<article class="media-card">
+								<a class="media-card__link" href="<?php echo esc_url($ntronica_url); ?>">
+									<p class="media-card__date"><?php echo esc_html($ntronica_item['date']); ?></p>
+									<h3 class="media-card__title"><?php echo esc_html($ntronica_item['title']); ?></h3>
+									<p class="media-card__excerpt text-lead"><?php echo esc_html($ntronica_item['excerpt']); ?></p>
+								</a>
+							</article>
+						</div>
+					<?php endforeach; ?>
+				</div>
+
+				<div class="slider-nav media-publications__nav">
+					<button
+						type="button"
+						class="swiper-button-prev"
+						aria-label="Previous media publications"></button>
+					<p class="text-block slider-nav__fraction" aria-live="polite"></p>
+					<button
+						type="button"
+						class="swiper-button-next"
+						aria-label="Next media publications"></button>
+				</div>
 			</div>
 		<?php endif; ?>
 	</div>
 </section>
-<?php
-wp_reset_postdata();

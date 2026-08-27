@@ -16,6 +16,7 @@ get_template_part(
 	array(
 		'title' => 'Contacts',
 		'image' => IMG_PATH . '/contacts/hero.webp',
+		'tagline' => 'We develop innovative equipment to enable the full cycle of microelectronics production and complex r&d activities',
 		'nav'   => ntronica_get_page_section_nav('contacts'),
 	)
 );

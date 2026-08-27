@@ -12,7 +12,8 @@ const components = {
 	".sidebar": SiteMenu,
 	".page-hero": PageHero,
 	".vacancies-slider": Slider,
-	".js-paged-slider": Slider,
+	".news-feed-slider": Slider,
+	".media-publications-slider": Slider,
 	".search-form": SearchForm,
 	".wpcf7form": FormController,
 };

@@ -3,7 +3,7 @@
 @use "../mixins" as *;
 
 .news-feed {
-	padding-top: rem(50);
+	padding-top: rem(30);
 
 	@media (min-width: $md6) {
 		padding-top: rem(70);
@@ -19,6 +19,7 @@
 
 	// news-feed--press
 	&--press {
+		padding-top: rem(50);
 		padding-bottom: rem(50);
 
 		@media (min-width: $md6) {
@@ -61,46 +62,25 @@
 		}
 	}
 
-	// news-feed__slider
-	&__slider {
+	.news-feed-slider {
 		overflow: hidden;
-	}
-
-	// news-feed__grid
-	&__grid {
-		--gutter-x: #{rem(24)};
-		--gutter-y: #{rem(30)};
-		align-items: start;
-
-		@media (min-width: $md6) {
-			--gutter-y: #{rem(24)};
-		}
-
-		@media (min-width: $md1) {
-			--gutter-y: #{rem(40)};
-		}
 	}
 
 	.swiper-slide {
 		height: auto;
+		box-sizing: border-box;
 	}
 
 	.news-card__title {
 		font-family: $font-robert;
 	}
 
-	.news-card__media {
-		@media (min-width: $md1) {
-			height: rem(328);
-		}
-	}
-
 	// news-feed__nav
 	&__nav {
-		margin-top: rem(16);
+		margin-top: rem(10);
 
 		@media (min-width: $md3) {
-			margin-top: rem(20);
+			margin-top: rem(36);
 		}
 	}
 }
@@ -143,18 +123,25 @@
 		}
 	}
 
-	// media-publications__grid
-	&__grid {
-		--gutter-x: #{rem(24)};
-		--gutter-y: #{rem(40)};
-		align-items: start;
+	.media-publications-slider {
+		overflow: hidden;
+	}
 
-		@media (min-width: $md6) {
-			--gutter-y: #{rem(50)};
+	.swiper-slide {
+		height: auto;
+		box-sizing: border-box;
+	}
+
+	// media-publications__nav
+	&__nav {
+		margin-top: rem(10);
+
+		@media (min-width: $md3) {
+			margin-top: rem(20);
 		}
 
 		@media (min-width: $md1) {
-			--gutter-y: #{rem(70)};
+			margin-top: rem(20);
 		}
 	}
 }
@@ -162,20 +149,36 @@
 .media-card {
 	display: flex;
 	flex-direction: column;
-	gap: rem(12);
+	gap: rem(8);
+	min-height: rem(130);
 
 	@media (min-width: $md6) {
 		gap: rem(16);
+		min-height: rem(152);
+	}
+
+	@media (min-width: $md4) {
+		min-height: rem(136);
+	}
+
+	@media (min-width: $md3) {
+		min-height: rem(172);
+	}
+
+	@media (min-width: $md2) {
+		min-height: rem(202);
 	}
 
 	@media (min-width: $md1) {
 		gap: rem(24);
+		min-height: rem(254);
 	}
 
 	// media-card__link
 	&__link {
 		display: flex;
 		flex-direction: column;
+		flex: 1 1 auto;
 		gap: inherit;
 		color: inherit;
 	}
@@ -208,8 +211,8 @@
 	&__title {
 		font-family: $font-robert;
 		font-weight: 700;
-		font-size: rem(18);
-		line-height: math.div(20, 18);
+		font-size: rem(16);
+		line-height: math.div(18, 16);
 		color: $color-black;
 		overflow-wrap: anywhere;
 
@@ -237,9 +240,8 @@
 
 .slider-nav {
 	display: flex;
-	align-items: center;
 	justify-content: space-between;
-	width: rem(110);
+	width: rem(100);
 
 	@media (min-width: $md3) {
 		width: rem(140);
@@ -249,77 +251,10 @@
 		width: rem(172);
 	}
 
-	// slider-nav__prev
-	&__prev,
-	// slider-nav__next
-	&__next {
-		display: inline-flex;
-		align-items: center;
-		justify-content: center;
-		width: rem(19);
-		height: rem(19);
-		background: transparent;
-		font-family: $font-title;
-		font-weight: 400;
-		font-size: rem(27);
-		line-height: math.div(17, 27);
-		color: $color-black;
-		cursor: pointer;
-		transition: opacity 0.2s ease;
-
-		@media (min-width: $md3) {
-			width: rem(21);
-			height: rem(21);
-			font-size: rem(34);
-			line-height: math.div(19, 34);
-		}
-
-		@media (min-width: $md2) {
-			width: rem(24);
-			height: rem(22);
-			font-size: rem(36);
-		}
-
-		@media (min-width: $md1) {
-			width: rem(33);
-			height: rem(28);
-			font-size: rem(47);
-			line-height: math.div(17, 47);
-		}
-
-		&.swiper-button-disabled {
-			opacity: 0.35;
-			cursor: default;
-		}
-
-		@media (any-hover: hover) {
-			&:not(.swiper-button-disabled):hover {
-				opacity: 0.65;
-			}
-		}
-	}
-
 	// slider-nav__fraction
 	&__fraction {
-		font-family: $font-family;
 		font-weight: 700;
-		font-size: rem(15);
-		line-height: math.div(18, 15);
 		color: $color-black;
-
-		@media (min-width: $md3) {
-			font-size: rem(18);
-			line-height: math.div(21, 18);
-		}
-
-		@media (min-width: $md2) {
-			font-size: rem(21);
-			line-height: math.div(24, 21);
-		}
-
-		@media (min-width: $md1) {
-			font-size: rem(26);
-			line-height: math.div(17, 26);
-		}
+		text-align: center;
 	}
 }

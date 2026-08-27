@@ -500,21 +500,20 @@
 
 .info {
 	padding-top: rem(30);
-	padding-bottom: rem(14);
+	padding-bottom: rem(25);
 
 	@media (min-width: $md6) {
 		padding-top: rem(30);
-		padding-bottom: rem(24);
 	}
 
 	@media (min-width: $md4) {
 		padding-top: rem(30);
-		padding-bottom: rem(36);
+
 	}
 
 	@media (min-width: $md3) {
 		padding-top: rem(52);
-		padding-bottom: rem(40);
+		padding-bottom: rem(35);
 	}
 
 	@media (min-width: $md2) {
@@ -530,6 +529,10 @@
 	// info__title
 	&__title {
 		margin-bottom: rem(20);
+
+		@media (min-width: $md4) {
+			margin-bottom: rem(16);
+		}
 
 		@media (min-width: $md3) {
 			margin-bottom: rem(24);
@@ -547,7 +550,7 @@
 	// info__grid
 	&__grid {
 		--gutter-x: #{rem(24)};
-		--gutter-y: #{rem(30)};
+		--gutter-y: #{rem(26)};
 
 		@media (min-width: $md6) {
 			--gutter-y: #{rem(0)};
@@ -561,19 +564,45 @@
 
 		>li {
 			&:has(br)::before {
-				bottom: rem(8);
+				bottom: rem(4);
+
+				@media (min-width:$md3) {
+					bottom: rem(8);
+				}
 			}
 		}
 
+		--marker-size: #{rem(11)};
+		--marker-gap: #{rem(12)};
+		--marker-col: #{rem(56)};
+
+		font-size: rem(15);
+		line-height: math.div(18, 15);
+
+		@media (min-width:$md3) {
+			--marker-size: #{rem(13)};
+			--marker-gap: #{rem(14)};
+			--marker-col: #{rem(72)};
+			gap: rem(0);
+			font-size: rem(18);
+			line-height: math.div(21, 18);
+		}
+
 		@media (min-width:$md2) {
+			--marker-size: #{rem(16)};
+			--marker-gap: #{rem(16)};
+			--marker-col: #{rem(77)};
 			font-size: rem(21);
 			line-height: math.div(24, 21);
 		}
 
 		@media (min-width:$md1) {
+			--marker-size: #{rem(18)};
+			--marker-gap: #{rem(18)};
+			--marker-col: #{rem(91)};
+			--marker-offset: #{rem(4)};
 			font-size: rem(26);
 			line-height: math.div(32, 26);
-
 		}
 	}
 

@@ -26,11 +26,29 @@ if ($ntronica_blog_id && has_post_thumbnail($ntronica_blog_id)) {
 	}
 }
 
-$ntronica_events_lead = ntronica_get_category_lead(
-	'events',
-	'We stay active in the industry. Below, discover where you can meet our team and experience our latest activities. We look forward to connecting with you in person.'
+// Temporary mock content — real WP posts wiring comes later.
+$ntronica_news_lead = 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Lorem ipsum dolor sit amet, consectetuer adipiscing sit amet, consectetuer. Lorem ipsum dolor sit amet, consectetuer adipiscing sit.';
+
+$ntronica_news_items = array_fill(
+	0,
+	24,
+	array(
+		'date'  => '25.01.2023',
+		'title' => 'Lorem ipsum dolor',
+		'url'   => '#',
+	)
 );
-$ntronica_press_lead = ntronica_get_category_lead('press', $ntronica_events_lead);
+
+$ntronica_media_items = array_fill(
+	0,
+	18,
+	array(
+		'date'    => '25.01.2023',
+		'title'   => 'Lorem ipsum dolor consectetuer',
+		'excerpt' => 'Quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat nostrud exerci tation',
+		'url'     => '#',
+	)
+);
 ?>
 
 <?php
@@ -50,10 +68,10 @@ get_template_part(
 	'components/templates-parts/section',
 	'news-feed',
 	array(
-		'id'       => 'events',
-		'title'    => 'Events & news',
-		'lead'     => $ntronica_events_lead,
-		'category' => 'events',
+		'id'    => 'events',
+		'title' => 'Events & news',
+		'lead'  => $ntronica_news_lead,
+		'items' => $ntronica_news_items,
 	)
 );
 ?>
@@ -64,13 +82,21 @@ get_template_part(
 	array(
 		'id'       => 'press',
 		'title'    => 'Press releases',
-		'lead'     => $ntronica_press_lead,
+		'lead'     => $ntronica_news_lead,
 		'modifier' => 'press',
-		'category' => 'press',
+		'items'    => $ntronica_news_items,
 	)
 );
 ?>
-<?php get_template_part('components/templates-parts/section', 'media-publications'); ?>
+<?php
+get_template_part(
+	'components/templates-parts/section',
+	'media-publications',
+	array(
+		'items' => $ntronica_media_items,
+	)
+);
+?>
 
 <?php
 get_footer();

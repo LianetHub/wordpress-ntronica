@@ -136,7 +136,7 @@
 			left: 0;
 			bottom: 0;
 			font-family: $font-reduct;
-			clip-path: inset(0 calc(100% - var(--hero-wipe)) 0 0);
+			clip-path: inset(0 calc(100% - var(--hero-wipe) - min(#{rem(4)}, var(--hero-wipe))) 0 0);
 			pointer-events: none;
 		}
 

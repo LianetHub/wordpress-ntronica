@@ -18,8 +18,8 @@ export class PageHero {
 
 		ScrollTrigger.create({
 			trigger: el,
-			start: "30% top",
-			end: "55% top",
+			start: "20% top",
+			end: "50% top",
 			scrub: true,
 			// markers: true,
 			onUpdate: (self) => {

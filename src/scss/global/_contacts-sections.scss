@@ -2,15 +2,12 @@
 @use "../mixins" as *;
 
 .contacts-representative {
-	padding-top: rem(50);
-	padding-bottom: rem(0);
 
-	@media (min-width: $md6) {
-		padding-top: rem(70);
-	}
+	padding-bottom: rem(0);
+	padding-top: rem(25);
 
 	@media (min-width: $md3) {
-		padding-top: rem(90);
+		padding-top: rem(35);
 	}
 
 	@media (min-width: $md2) {
@@ -23,9 +20,14 @@
 
 	// contacts-representative__title
 	&__title {
-		margin-bottom: rem(24);
+		margin-bottom: rem(16);
 
-		@media (min-width: $md6) {
+
+		@media (min-width: $md3) {
+			margin-bottom: rem(20);
+		}
+
+		@media (min-width: $md2) {
 			margin-bottom: rem(30);
 		}
 
@@ -38,8 +40,17 @@
 	&__map {
 		overflow: hidden;
 		width: 100%;
-		aspect-ratio: 1914 / 650;
 		background-color: $color-placeholder;
+		aspect-ratio: 322 / 203;
+
+		@media (min-width:$md5) {
+			aspect-ratio: 660.00/224.14;
+		}
+
+		@media (min-width:$md4) {
+			aspect-ratio: 1914 / 650;
+
+		}
 	}
 
 	// contacts-representative__iframe

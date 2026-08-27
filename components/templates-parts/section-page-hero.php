@@ -39,6 +39,6 @@ $ntronica_hero = wp_parse_args(
 
 		<p class="page-hero__tagline"><?php echo esc_html($ntronica_hero['tagline']); ?></p>
 
-		<h1 class="page-hero__title"><?php echo esc_html($ntronica_hero['title']); ?></h1>
+		<h1 class="page-hero__title" data-title="<?php echo esc_attr($ntronica_hero['title']); ?>"><span><?php echo esc_html($ntronica_hero['title']); ?></span></h1>
 	</div>
 </section>

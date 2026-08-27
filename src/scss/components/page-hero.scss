@@ -113,6 +113,8 @@
 
 	// page-hero__title
 	&__title {
+		--hero-wipe: 0%;
+		position: relative;
 		margin-top: auto;
 		padding-top: rem(80);
 		font-family: $font-family;
@@ -121,6 +123,22 @@
 		line-height: math.div(52, 52);
 		color: $color-white;
 		margin-left: em(-12, 298);
+		width: fit-content;
+
+		> span {
+			display: block;
+			clip-path: inset(0 0 0 var(--hero-wipe));
+		}
+
+		&::before {
+			content: attr(data-title);
+			position: absolute;
+			left: 0;
+			bottom: 0;
+			font-family: $font-reduct;
+			clip-path: inset(0 calc(100% - var(--hero-wipe)) 0 0);
+			pointer-events: none;
+		}
 
 		@media (min-width: $md6) {
 			padding-top: rem(120);

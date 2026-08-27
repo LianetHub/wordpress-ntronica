@@ -3,12 +3,14 @@
  */
 
 import { FormController } from "./modules/formController.js";
+import { PageHero } from "./modules/pageHero.js";
 import { SearchForm } from "./modules/searchForm.js";
 import { SiteMenu } from "./modules/siteMenu.js";
 import { Slider } from "./modules/sliders.js";
 
 const components = {
 	".sidebar": SiteMenu,
+	".page-hero": PageHero,
 	".vacancies-slider": Slider,
 	".js-paged-slider": Slider,
 	".search-form": SearchForm,

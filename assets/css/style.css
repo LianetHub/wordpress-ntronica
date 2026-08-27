@@ -5302,6 +5302,8 @@ body.page-template-page-contacts, body.error404, body.search, body.page-template
   }
 }
 .page-hero__title {
+  --hero-wipe: 0%;
+  position: relative;
   margin-top: auto;
   padding-top: 5rem;
   font-family: "Nanotronica_Text", system-ui, -apple-system, "Segoe UI", sans-serif;
@@ -5310,6 +5312,20 @@ body.page-template-page-contacts, body.error404, body.search, body.page-template
   line-height: 1;
   color: #ffffff;
   margin-left: -0.0402684564em;
+  width: fit-content;
+}
+.page-hero__title > span {
+  display: block;
+  clip-path: inset(0 0 0 var(--hero-wipe));
+}
+.page-hero__title::before {
+  content: attr(data-title);
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  font-family: "Nanotronica_Reduct", system-ui, -apple-system, "Segoe UI", sans-serif;
+  clip-path: inset(0 calc(100% - var(--hero-wipe)) 0 0);
+  pointer-events: none;
 }
 @media (min-width: 767.98px) {
   .page-hero__title {

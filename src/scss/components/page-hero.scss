@@ -18,27 +18,27 @@
 	@media (max-width:$md6) {
 		aspect-ratio: 430 / 380;
 		padding-top: rem(20);
-		padding-bottom: rem(16);
+		padding-bottom: rem(8);
 	}
 
 	@media (min-width: $md6) {
 		padding-top: rem(88);
-		padding-bottom: rem(24);
+		padding-bottom: rem(16);
 		min-height: rem(620);
 	}
 
 	@media (min-width: $md5) {
-		padding-bottom: rem(32);
+		padding-bottom: rem(26);
 		min-height: rem(624);
 	}
 
 	@media (min-width:$md4) {
-		padding-bottom: rem(36);
+		padding-bottom: rem(28);
 	}
 
 	@media (min-width: $md3) {
 		padding-top: rem(80);
-		padding-bottom: rem(60);
+		padding-bottom: rem(52);
 		min-height: rem(814);
 	}
 
@@ -51,7 +51,7 @@
 		min-height: rem(1100);
 		aspect-ratio: 2560 / 1100;
 		padding-top: rem(118);
-		padding-bottom: rem(90);
+		padding-bottom: rem(82);
 	}
 
 
@@ -124,8 +124,9 @@
 		color: $color-white;
 		margin-left: em(-12, 298);
 		width: fit-content;
+		padding-bottom: 0.5rem;
 
-		> span {
+		>span {
 			display: block;
 			clip-path: inset(0 0 0 var(--hero-wipe));
 		}
@@ -138,6 +139,7 @@
 			font-family: $font-reduct;
 			clip-path: inset(0 calc(100% - var(--hero-wipe) - min(#{rem(4)}, var(--hero-wipe))) 0 0);
 			pointer-events: none;
+			padding-bottom: 0.5rem;
 		}
 
 		@media (min-width: $md6) {

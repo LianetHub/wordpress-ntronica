@@ -36,15 +36,13 @@ $ntronica_items = is_array($ntronica_media['items']) ? $ntronica_media['items'] 
 						<?php
 						$ntronica_url = isset($ntronica_item['url']) ? $ntronica_item['url'] : '#';
 						?>
-						<div class="swiper-slide">
-							<article class="media-card">
-								<a class="media-card__link" href="<?php echo esc_url($ntronica_url); ?>">
-									<p class="media-card__date"><?php echo esc_html($ntronica_item['date']); ?></p>
-									<h3 class="media-card__title"><?php echo esc_html($ntronica_item['title']); ?></h3>
-									<p class="media-card__excerpt text-lead"><?php echo esc_html($ntronica_item['excerpt']); ?></p>
-								</a>
-							</article>
-						</div>
+						<article class="media-card swiper-slide">
+							<a class="media-card__link" href="<?php echo esc_url($ntronica_url); ?>">
+								<p class="media-card__date"><?php echo esc_html($ntronica_item['date']); ?></p>
+								<h3 class="media-card__title"><?php echo esc_html($ntronica_item['title']); ?></h3>
+								<p class="media-card__excerpt text-lead"><?php echo esc_html($ntronica_item['excerpt']); ?></p>
+							</a>
+						</article>
 					<?php endforeach; ?>
 				</div>
 

@@ -200,6 +200,7 @@
 		--marker-offset: #{rem(4)};
 		font-size: rem(27);
 		line-height: math.div(29, 27);
+		gap: rem(12);
 	}
 
 	a {
@@ -222,12 +223,22 @@
 
 		&:has(br)::before {
 			height: auto;
-			bottom: rem(4);
+			bottom: rem(2);
+
+			@media (min-width:$md5) {
+				bottom: rem(4);
+
+			}
 		}
 
 		&:has(address)::before {
 			height: auto;
-			bottom: rem(8);
+			bottom: rem(4);
+
+			@media (min-width:$md5) {
+				bottom: rem(8);
+
+			}
 		}
 
 		&[data-label]::after {

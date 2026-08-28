@@ -6,7 +6,7 @@
 	--footer-label: #{rem(31)};
 	--footer-label-gap: #{rem(5)};
 	--footer-marker: #{rem(9)};
-	--footer-text-gap: #{rem(5)};
+	--footer-text-gap: #{rem(6)};
 	--footer-marker-track: calc(var(--footer-label) + var(--footer-label-gap) + var(--footer-marker));
 	--footer-content-offset: calc(var(--footer-marker-track) + var(--footer-text-gap));
 	--footer-marker-offset: #{rem(3)};
@@ -180,10 +180,15 @@
 			content: "";
 			position: absolute;
 			top: var(--footer-marker-offset);
-			bottom: rem(4);
 			left: calc(var(--footer-label) + var(--footer-label-gap));
 			width: var(--footer-marker);
 			background-color: currentColor;
+			bottom: rem(2);
+
+			@media (min-width:$md4) {
+				bottom: rem(4);
+
+			}
 		}
 
 		&[data-label]::after {

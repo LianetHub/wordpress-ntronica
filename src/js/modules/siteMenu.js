@@ -8,12 +8,20 @@ export class SiteMenu {
 		this.navbar = document.querySelector(".sticky-navbar");
 		this.mqWide = window.matchMedia("(min-width: 1023.98px)");
 		this.mqAccordion = window.matchMedia("(min-width: 767.98px)");
+		this.mqSwipe = window.matchMedia("(max-width: 767.98px)");
 		this.mqHover = window.matchMedia("(hover: hover) and (pointer: fine)");
 
 		this.onPointerEnter = this.onPointerEnter.bind(this);
 		this.onPointerLeave = this.onPointerLeave.bind(this);
 		this.onFocusIn = this.onFocusIn.bind(this);
 		this.onFocusOut = this.onFocusOut.bind(this);
+		this.onSwipePointerDown = this.onSwipePointerDown.bind(this);
+		this.onSwipePointerMove = this.onSwipePointerMove.bind(this);
+		this.onSwipePointerUp = this.onSwipePointerUp.bind(this);
+
+		this.swipe = null;
+		this.suppressClick = false;
+		this.isClosingSwipe = false;
 
 		this.mqWide.addEventListener("change", () => this.onBreakpointChange());
 		this.sidebar.addEventListener("click", (e) => this.onClick(e));
@@ -32,6 +40,208 @@ export class SiteMenu {
 		this.syncAria();
 		this.syncLock();
 		this.initNavbar();
+		this.initSwipeClose();
+	}
+
+	canSwipeClose() {
+		return (
+			this.mqSwipe.matches && this.sidebar.classList.contains("is-open")
+		);
+	}
+
+	initSwipeClose() {
+		this.sidebar.addEventListener("pointerdown", this.onSwipePointerDown);
+		this.sidebar.addEventListener("pointermove", this.onSwipePointerMove);
+		this.sidebar.addEventListener("pointerup", this.onSwipePointerUp);
+		this.sidebar.addEventListener("pointercancel", this.onSwipePointerUp);
+	}
+
+	clearSwipeStyles() {
+		this.sidebar.classList.remove("is-swiping", "is-closing-swipe");
+		this.sidebar.style.width = "";
+		this.sidebar.style.transition = "";
+		this.sidebar.style.removeProperty("--sidebar-close-progress");
+	}
+
+	getCollapsedWidth() {
+		const probe = document.createElement("div");
+		probe.style.cssText =
+			"position:absolute;visibility:hidden;pointer-events:none;width:var(--sidebar-width);";
+		document.body.appendChild(probe);
+		const width = probe.getBoundingClientRect().width;
+		probe.remove();
+		return width;
+	}
+
+	getSwipeProgress(widthPx, openWidth, closedWidth) {
+		const range = openWidth - closedWidth;
+		if (range <= 0) return 0;
+		return Math.min(1, Math.max(0, (openWidth - widthPx) / range));
+	}
+
+	updateSwipeVisuals(widthPx, openWidth, closedWidth) {
+		this.sidebar.style.width = `${widthPx}px`;
+		this.sidebar.style.setProperty(
+			"--sidebar-close-progress",
+			this.getSwipeProgress(widthPx, openWidth, closedWidth).toFixed(4),
+		);
+	}
+
+	suppressClickBriefly(ms = 400) {
+		this.suppressClick = true;
+		window.clearTimeout(this.suppressClickTimer);
+		this.suppressClickTimer = window.setTimeout(() => {
+			this.suppressClick = false;
+		}, ms);
+	}
+
+	finishSwipeClose() {
+		if (!this.isClosingSwipe) return;
+
+		this.suppressClickBriefly();
+		this.sidebar.style.transition = "none";
+
+		if (this.logoBtn) {
+			this.logoBtn.style.transition = "none";
+		}
+
+		this.sidebar.classList.remove(
+			"is-open",
+			"is-swiping",
+			"is-closing-swipe",
+		);
+		this.sidebar.classList.add("is-collapsed");
+		this.sidebar.style.width = "";
+		this.sidebar.style.removeProperty("--sidebar-close-progress");
+
+		this.syncAria();
+		this.syncLock();
+		this.swipe = null;
+		this.isClosingSwipe = false;
+
+		requestAnimationFrame(() => {
+			this.sidebar.style.transition = "";
+			if (this.logoBtn) {
+				this.logoBtn.style.transition = "";
+			}
+		});
+	}
+
+	resetSwipeWidth(openWidth, closedWidth) {
+		this.sidebar.classList.remove("is-swiping");
+		this.sidebar.classList.add("is-closing-swipe");
+		this.sidebar.style.transition = "width 0.2s ease";
+
+		requestAnimationFrame(() => {
+			this.updateSwipeVisuals(openWidth, openWidth, closedWidth);
+		});
+
+		const onTransitionEnd = (event) => {
+			if (event.propertyName !== "width") return;
+			this.sidebar.removeEventListener("transitionend", onTransitionEnd);
+			this.clearSwipeStyles();
+		};
+
+		this.sidebar.addEventListener("transitionend", onTransitionEnd);
+	}
+
+	completeSwipeClose(closedWidth, openWidth) {
+		if (this.isClosingSwipe) return;
+
+		this.isClosingSwipe = true;
+		this.sidebar.classList.remove("is-swiping");
+		this.sidebar.classList.add("is-closing-swipe");
+		this.sidebar.style.transition = "width 0.25s ease";
+
+		requestAnimationFrame(() => {
+			this.updateSwipeVisuals(closedWidth, openWidth, closedWidth);
+		});
+
+		const onTransitionEnd = (event) => {
+			if (event.propertyName !== "width") return;
+			this.sidebar.removeEventListener("transitionend", onTransitionEnd);
+			window.clearTimeout(fallbackTimer);
+			this.finishSwipeClose();
+		};
+
+		const fallbackTimer = window.setTimeout(() => {
+			this.sidebar.removeEventListener("transitionend", onTransitionEnd);
+			this.finishSwipeClose();
+		}, 350);
+
+		this.sidebar.addEventListener("transitionend", onTransitionEnd);
+	}
+
+	onSwipePointerDown(event) {
+		if (!this.canSwipeClose() || this.isClosingSwipe) return;
+		if (event.pointerType === "mouse") return;
+
+		this.swipe = {
+			pointerId: event.pointerId,
+			startX: event.clientX,
+			startY: event.clientY,
+			dragging: false,
+		};
+	}
+
+	onSwipePointerMove(event) {
+		if (!this.swipe || event.pointerId !== this.swipe.pointerId) return;
+
+		const deltaX = event.clientX - this.swipe.startX;
+		const deltaY = event.clientY - this.swipe.startY;
+
+		if (!this.swipe.dragging) {
+			if (Math.abs(deltaX) < 10 && Math.abs(deltaY) < 10) return;
+
+			if (Math.abs(deltaY) > Math.abs(deltaX) || deltaX > 0) {
+				this.swipe = null;
+				return;
+			}
+
+			this.swipe.dragging = true;
+			this.swipe.openWidth = this.sidebar.offsetWidth;
+			this.swipe.closedWidth = this.getCollapsedWidth();
+			this.sidebar.classList.add("is-swiping");
+			this.sidebar.setPointerCapture(event.pointerId);
+		}
+
+		event.preventDefault();
+		const nextWidth = Math.max(
+			this.swipe.closedWidth,
+			this.swipe.openWidth + deltaX,
+		);
+		this.updateSwipeVisuals(
+			nextWidth,
+			this.swipe.openWidth,
+			this.swipe.closedWidth,
+		);
+	}
+
+	onSwipePointerUp(event) {
+		if (!this.swipe || event.pointerId !== this.swipe.pointerId) return;
+
+		if (this.sidebar.hasPointerCapture(event.pointerId)) {
+			this.sidebar.releasePointerCapture(event.pointerId);
+		}
+
+		if (!this.swipe.dragging) {
+			this.swipe = null;
+			return;
+		}
+
+		const deltaX = event.clientX - this.swipe.startX;
+		const threshold = Math.min(80, this.swipe.openWidth * 0.25);
+		const openWidth = this.swipe.openWidth;
+		const closedWidth = this.swipe.closedWidth;
+
+		this.swipe = null;
+		this.suppressClickBriefly();
+
+		if (deltaX <= -threshold) {
+			this.completeSwipeClose(closedWidth, openWidth);
+		} else {
+			this.resetSwipeWidth(openWidth, closedWidth);
+		}
 	}
 
 	usesHoverExpand() {
@@ -132,6 +342,9 @@ export class SiteMenu {
 	}
 
 	closeOverlay() {
+		this.isClosingSwipe = false;
+		this.swipe = null;
+		this.clearSwipeStyles();
 		this.sidebar.classList.remove("is-open");
 		this.syncAria();
 		this.syncLock();
@@ -158,6 +371,11 @@ export class SiteMenu {
 	}
 
 	onClick(event) {
+		if (this.suppressClick || this.isClosingSwipe) {
+			event.preventDefault();
+			return;
+		}
+
 		if (event.target.closest(".sidebar__close")) {
 			if (this.mqWide.matches) {
 				this.sidebar.classList.add("is-collapsed");
@@ -217,6 +435,9 @@ export class SiteMenu {
 	}
 
 	onBreakpointChange() {
+		this.isClosingSwipe = false;
+		this.swipe = null;
+		this.clearSwipeStyles();
 		this.sidebar.classList.remove("is-open");
 		if (this.mqWide.matches) {
 			this.sidebar.classList.add("is-collapsed");

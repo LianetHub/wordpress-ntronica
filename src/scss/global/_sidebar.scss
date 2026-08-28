@@ -12,7 +12,10 @@
 	justify-content: flex-end;
 	overflow: hidden;
 	width: rem($sidebar-width);
-	height: 100vh;
+	min-width: rem($sidebar-width);
+	height: 100svh;
+	max-width: 100vw;
+
 	padding: 0 rem(14) rem(12);
 	background-color: $color-black;
 	color: $color-white;
@@ -48,6 +51,7 @@
 		justify-content: space-between;
 		width: 100%;
 		padding-top: rem(8);
+		touch-action: pan-y;
 
 		.sidebar__nav {
 			display: block;
@@ -77,6 +81,7 @@
 		@media (min-width: $md5) {
 			width: rem($sidebar-width-1200);
 			padding-top: rem(18);
+			touch-action: auto;
 
 			.sidebar__close {
 				display: none;
@@ -98,6 +103,54 @@
 			.sidebar__logo {
 				width: rem(234);
 			}
+		}
+	}
+
+	&.is-swiping,
+	&.is-closing-swipe {
+		min-width: var(--sidebar-width);
+		cursor: default;
+
+		.sidebar__nav {
+			opacity: calc(
+				1 - min(1, max(0, (var(--sidebar-close-progress, 0) - 0.749) * 10000))
+			);
+			pointer-events: none;
+		}
+
+		.sidebar__close,
+		.sidebar__lang {
+			opacity: calc(1 - min(1, var(--sidebar-close-progress, 0) * 2));
+			pointer-events: none;
+		}
+
+		&.is-open .sidebar__logo {
+			width: calc(
+				#{rem(133)} - min(1, max(0, (var(--sidebar-close-progress, 0) - 0.749) * 10000)) *
+					(#{rem(133)} - #{rem(27)})
+			);
+			transition: none;
+		}
+	}
+
+	&.is-swiping {
+		transition: none;
+
+		.sidebar__nav,
+		.sidebar__close,
+		.sidebar__lang {
+			transition: none;
+		}
+	}
+
+	&.is-closing-swipe {
+		.sidebar__close,
+		.sidebar__lang {
+			transition: opacity 0.25s ease;
+		}
+
+		.sidebar__nav {
+			transition: none;
 		}
 	}
 

@@ -14,6 +14,8 @@ define( 'JS_PATH', get_stylesheet_directory_uri() . '/assets/js' );
 define( 'STYLES_PATH', get_stylesheet_directory_uri() . '/assets/css' );
 define( 'FONTS_PATH', get_stylesheet_directory_uri() . '/assets/fonts' );
 define( 'IMG_PATH', get_stylesheet_directory_uri() . '/assets/img' );
+define( 'FAV_PATH', get_stylesheet_directory_uri() . '/assets' );
+define( 'FAV_DIR', get_template_directory() . '/assets' );
 define( 'JS_DIR', get_template_directory() . '/assets/js' );
 define( 'STYLES_DIR', get_template_directory() . '/assets/css' );
 

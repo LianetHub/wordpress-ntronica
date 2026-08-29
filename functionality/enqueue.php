@@ -14,7 +14,7 @@
  */
 function ntronica_asset_ver($absolute_path)
 {
-	return file_exists($absolute_path) ? filemtime($absolute_path) : '1.0.0';
+    return file_exists($absolute_path) ? filemtime($absolute_path) : '1.0.0';
 }
 
 /**
@@ -70,6 +70,30 @@ function ntronica_enqueue_styles()
 add_action('wp_enqueue_scripts', 'ntronica_enqueue_styles');
 
 /**
+ * Favicon and web app manifest links.
+ */
+function ntronica_favicon()
+{
+    if (! file_exists(FAV_DIR . '/favicon.ico')) {
+        return;
+    }
+
+    $ver = ntronica_asset_ver(FAV_DIR . '/favicon.ico');
+    $uri = static function ($file) use ($ver) {
+        return esc_url(add_query_arg('ver', $ver, FAV_PATH . '/' . $file));
+    };
+?>
+    <link rel="icon" type="image/png" href="<?php echo $uri('favicon-96x96.png'); ?>" sizes="96x96">
+    <link rel="icon" type="image/svg+xml" href="<?php echo $uri('favicon.svg'); ?>">
+    <link rel="shortcut icon" href="<?php echo $uri('favicon.ico'); ?>">
+    <link rel="apple-touch-icon" sizes="180x180" href="<?php echo $uri('apple-touch-icon.png'); ?>">
+    <meta name="apple-mobile-web-app-title" content="N-Tronica">
+    <link rel="manifest" href="<?php echo $uri('site.webmanifest'); ?>">
+<?php
+}
+add_action('wp_head', 'ntronica_favicon', 1);
+
+/**
  * Preload first-paint fonts for PSI.
  *
  * Only Nanotronica_Text Regular/Bold (body, titles, hero). CoFo and unused
@@ -80,26 +104,26 @@ add_action('wp_enqueue_scripts', 'ntronica_enqueue_styles');
  */
 function ntronica_preload_fonts($preload_resources)
 {
-	$fonts_dir = get_template_directory() . '/assets/fonts/';
-	$files     = array(
-		'Nanotronica_Text-Regular.woff2',
-		'Nanotronica_Text-Bold.woff2',
-	);
+    $fonts_dir = get_template_directory() . '/assets/fonts/';
+    $files     = array(
+        'Nanotronica_Text-Regular.woff2',
+        'Nanotronica_Text-Bold.woff2',
+    );
 
-	foreach ($files as $file) {
-		if (! file_exists($fonts_dir . $file)) {
-			continue;
-		}
+    foreach ($files as $file) {
+        if (! file_exists($fonts_dir . $file)) {
+            continue;
+        }
 
-		$preload_resources[] = array(
-			'href'        => FONTS_PATH . '/' . $file,
-			'as'          => 'font',
-			'type'        => 'font/woff2',
-			'crossorigin' => 'anonymous',
-		);
-	}
+        $preload_resources[] = array(
+            'href'        => FONTS_PATH . '/' . $file,
+            'as'          => 'font',
+            'type'        => 'font/woff2',
+            'crossorigin' => 'anonymous',
+        );
+    }
 
-	return $preload_resources;
+    return $preload_resources;
 }
 add_filter('wp_preload_resources', 'ntronica_preload_fonts');
 
@@ -140,7 +164,6 @@ function ntronica_enqueue_scripts()
                 'strategy'  => 'defer',
             )
         );
-
     }
 }
 add_action('wp_enqueue_scripts', 'ntronica_enqueue_scripts');
@@ -155,23 +178,23 @@ add_action('wp_enqueue_scripts', 'ntronica_enqueue_scripts');
  */
 function ntronica_make_styles_async($tag, $handle, $src)
 {
-	if (is_admin() || is_user_logged_in()) {
-		return $tag;
-	}
+    if (is_admin() || is_user_logged_in()) {
+        return $tag;
+    }
 
-	$async_styles = array(
-		'swiper',
-		'fancybox',
-		'calendly',
-	);
+    $async_styles = array(
+        'swiper',
+        'fancybox',
+        'calendly',
+    );
 
-	if (in_array($handle, $async_styles, true)) {
-		$async_tag  = '<link rel="preload" id="' . esc_attr($handle) . '-css-preload" href="' . esc_url($src) . '" as="style" onload="this.onload=null;this.rel=\'stylesheet\'">' . "\n";
-		$async_tag .= '<noscript>' . $tag . '</noscript>';
-		return $async_tag;
-	}
+    if (in_array($handle, $async_styles, true)) {
+        $async_tag  = '<link rel="preload" id="' . esc_attr($handle) . '-css-preload" href="' . esc_url($src) . '" as="style" onload="this.onload=null;this.rel=\'stylesheet\'">' . "\n";
+        $async_tag .= '<noscript>' . $tag . '</noscript>';
+        return $async_tag;
+    }
 
-	return $tag;
+    return $tag;
 }
 add_filter('style_loader_tag', 'ntronica_make_styles_async', 10, 3);
 
@@ -183,14 +206,14 @@ add_filter('style_loader_tag', 'ntronica_make_styles_async', 10, 3);
  */
 function ntronica_defer_js($tag)
 {
-	if (is_user_logged_in()) {
-		return $tag;
-	}
+    if (is_user_logged_in()) {
+        return $tag;
+    }
 
-	if (false !== strpos($tag, 'recaptcha/api.js') || false !== strpos($tag, 'recaptcha/index.js')) {
-		return str_replace(' src', ' defer src', $tag);
-	}
+    if (false !== strpos($tag, 'recaptcha/api.js') || false !== strpos($tag, 'recaptcha/index.js')) {
+        return str_replace(' src', ' defer src', $tag);
+    }
 
-	return $tag;
+    return $tag;
 }
 add_filter('script_loader_tag', 'ntronica_defer_js', 11);

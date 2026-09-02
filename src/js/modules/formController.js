@@ -18,6 +18,7 @@ export class FormController {
 			fileWrap: ".form__file-wrap",
 			fileList: ".form__file-list",
 			fileRemove: ".form__file-remove",
+			fileLabel: ".form__file-label",
 			attachments: ".form__attachments",
 		};
 		this.phoneMasks = new Map();
@@ -184,7 +185,17 @@ export class FormController {
 
 		if (wrap) {
 			wrap.classList.toggle("uploaded", files.length > 0);
+			this.updateFileButtonLabel(wrap, files.length > 0);
 		}
+	}
+
+	updateFileButtonLabel(wrap, hasFiles) {
+		const label = wrap.querySelector(this.selectors.fileLabel);
+		if (!label) return;
+
+		const addLabel = wrap.dataset.addLabel || "ADD FILE";
+		const replaceLabel = wrap.dataset.replaceLabel || "REPLACE FILE";
+		label.textContent = hasFiles ? replaceLabel : addLabel;
 	}
 
 	initCf7Events() {
@@ -304,6 +315,7 @@ export class FormController {
 		});
 		this.form.querySelectorAll(this.selectors.fileWrap).forEach((el) => {
 			el.classList.remove("uploaded");
+			this.updateFileButtonLabel(el, false);
 		});
 	}
 

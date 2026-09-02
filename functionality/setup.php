@@ -87,3 +87,27 @@ function ntronica_allow_svg_uploads($mimes)
 	return $mimes;
 }
 add_filter('upload_mimes', 'ntronica_allow_svg_uploads');
+
+/**
+ * Keep SVG type when WordPress finfo check clears it.
+ *
+ * @param array  $data     Checked file data.
+ * @param string $file     Temporary file path.
+ * @param string $filename Original filename.
+ * @param array  $mimes    Allowed mime types.
+ * @return array
+ */
+function ntronica_fix_svg_filetype($data, $file, $filename, $mimes)
+{
+	unset($file, $mimes);
+
+	if (! preg_match('/\.svg$/i', $filename)) {
+		return $data;
+	}
+
+	$data['ext']  = 'svg';
+	$data['type'] = 'image/svg+xml';
+
+	return $data;
+}
+add_filter('wp_check_filetype_and_ext', 'ntronica_fix_svg_filetype', 10, 4);

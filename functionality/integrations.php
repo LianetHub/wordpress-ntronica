@@ -9,6 +9,18 @@
 // Contact Form 7 — disable auto <p>/<br>.
 add_filter('wpcf7_autop_or_not', '__return_false');
 
+// TODO: удалить после смены ключа WPML на production (плашка «development site»).
+add_action(
+	'wp_enqueue_scripts',
+	function () {
+		wp_add_inline_style(
+			'ntronica-style',
+			'.otgs-development-site-front-end{display:none!important}'
+		);
+	},
+	20
+);
+
 /**
  * Custom Rank Math breadcrumbs markup: "Parent — Current".
  *

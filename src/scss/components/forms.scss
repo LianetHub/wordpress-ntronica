@@ -70,6 +70,22 @@
             .form__file {
                 margin-top: 0;
             }
+
+            &:has(.wpcf7-not-valid-tip) {
+                padding-bottom: rem(36);
+
+                @media (min-width: $md3) {
+                    padding-bottom: rem(42);
+                }
+
+                @media (min-width: $md2) {
+                    padding-bottom: rem(48);
+                }
+
+                @media (min-width: $md1) {
+                    padding-bottom: rem(56);
+                }
+            }
         }
 
 
@@ -178,6 +194,12 @@
             width: 100%;
             padding-right: 2rem;
             height: rem(38);
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+
+            &::-webkit-scrollbar {
+                display: none;
+            }
 
             @media (min-width: $md3) {
                 height: rem(46);
@@ -286,11 +308,22 @@
             line-height: math.div(19, 26);
         }
 
+        .wpcf7-form-control-wrap {
+            position: absolute;
+            inset: 0;
+        }
+
         input {
             position: absolute;
             inset: 0;
             opacity: 0;
             cursor: pointer;
+        }
+
+        .wpcf7-not-valid-tip {
+            left: 0;
+            width: 100%;
+            white-space: normal;
         }
 
         @media (any-hover: hover) {
@@ -318,13 +351,19 @@
         }
     }
 
+    // form__file-item
     &__file-item {
         display: flex;
         justify-content: space-between;
-        align-items: center;
+        align-items: flex-start;
+        gap: rem(12);
     }
 
-    &__file-name {}
+    // form__file-name
+    &__file-name {
+        min-width: 0;
+        overflow-wrap: anywhere;
+    }
 
     &__file-remove {
         flex-shrink: 0;

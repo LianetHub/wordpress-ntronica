@@ -546,6 +546,7 @@
 		--gutter-x: #{rem(24)};
 		--gutter-y: #{rem(26)};
 
+
 		@media (min-width: $md6) {
 			--gutter-y: #{rem(0)};
 		}
@@ -558,9 +559,17 @@
 
 		>li {
 			&:has(br)::before {
+				bottom: rem(5);
+
+				@media (min-width:$md1) {
+					bottom: rem(8);
+				}
+			}
+
+			&:has(address)::before {
 				bottom: rem(4);
 
-				@media (min-width:$md3) {
+				@media (min-width:$md1) {
 					bottom: rem(8);
 				}
 			}
@@ -576,7 +585,7 @@
 		@media (min-width:$md3) {
 			--marker-size: #{rem(13)};
 			--marker-gap: #{rem(14)};
-			--marker-col: #{rem(72)};
+			--marker-col: #{rem(63)};
 			gap: rem(0);
 			font-size: rem(18);
 			line-height: math.div(21, 18);
@@ -585,7 +594,7 @@
 		@media (min-width:$md2) {
 			--marker-size: #{rem(16)};
 			--marker-gap: #{rem(16)};
-			--marker-col: #{rem(77)};
+			--marker-col: #{rem(74)};
 			font-size: rem(21);
 			line-height: math.div(24, 21);
 		}
@@ -593,7 +602,7 @@
 		@media (min-width:$md1) {
 			--marker-size: #{rem(18)};
 			--marker-gap: #{rem(18)};
-			--marker-col: #{rem(91)};
+			--marker-col: #{rem(94)};
 			--marker-offset: #{rem(4)};
 			font-size: rem(26);
 			line-height: math.div(32, 26);

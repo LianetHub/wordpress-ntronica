@@ -18,14 +18,14 @@ export class PageHero {
 
 		ScrollTrigger.create({
 			trigger: el,
-			start: "20% top",
-			end: "50% top",
+			start: "0% top",
+			end: "40% top",
 			scrub: true,
 			// markers: true,
 			onUpdate: (self) => {
 				this.title.style.setProperty(
 					"--hero-wipe",
-					`${self.progress * 100}%`
+					`${self.progress * 100}%`,
 				);
 			},
 		});

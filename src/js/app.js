@@ -15,7 +15,7 @@ const components = {
 	".news-feed-slider": Slider,
 	".media-publications-slider": Slider,
 	".search-form": SearchForm,
-	".wpcf7form": FormController,
+	".wpcf7 form": FormController,
 };
 
 document.addEventListener("DOMContentLoaded", () => {

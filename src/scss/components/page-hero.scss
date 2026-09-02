@@ -124,10 +124,11 @@
 		color: $color-white;
 		margin-left: em(-12, 298);
 		width: fit-content;
-		padding-bottom: 0.5rem;
+
 
 		>span {
 			display: block;
+			padding-bottom: 0.5rem;
 			clip-path: inset(0 0 0 var(--hero-wipe));
 		}
 

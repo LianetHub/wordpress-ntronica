@@ -37,7 +37,7 @@ $ntronica_hero = wp_parse_args(
 	<?php endif; ?>>
 	<div class="container page-hero__inner">
 
-		<p class="page-hero__tagline"><?php echo esc_html($ntronica_hero['tagline']); ?></p>
+		<p class="page-hero__tagline" data-title="<?php echo esc_attr($ntronica_hero['tagline']); ?>"><span><?php echo esc_html($ntronica_hero['tagline']); ?></span></p>
 
 		<h1 class="page-hero__title" data-title="<?php echo esc_attr($ntronica_hero['title']); ?>"><span><?php echo esc_html($ntronica_hero['title']); ?></span></h1>
 	</div>

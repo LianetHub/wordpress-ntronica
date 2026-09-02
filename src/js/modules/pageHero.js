@@ -1,5 +1,5 @@
 /**
- * Page hero title: scroll-scrubbed reduct clip wipe.
+ * Page hero title/tagline: scroll-scrubbed reduct clip wipe.
  */
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -9,21 +9,28 @@ gsap.registerPlugin(ScrollTrigger);
 export class PageHero {
 	constructor(el) {
 		this.section = el;
-		this.title = el.querySelector(".page-hero__title[data-title]");
 
-		if (!this.title) return;
 		if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
 			return;
 		}
 
+		this.bindWipe(el.querySelector(".page-hero__title[data-title]"), "40%");
+		this.bindWipe(
+			el.querySelector(".page-hero__tagline[data-title]"),
+			"2%",
+		);
+	}
+
+	bindWipe(target, end) {
+		if (!target) return;
+
 		ScrollTrigger.create({
-			trigger: el,
+			trigger: this.section,
 			start: "0% top",
-			end: "40% top",
+			end: `${end} top`,
 			scrub: true,
-			// markers: true,
 			onUpdate: (self) => {
-				this.title.style.setProperty(
+				target.style.setProperty(
 					"--hero-wipe",
 					`${self.progress * 100}%`,
 				);

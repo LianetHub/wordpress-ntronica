@@ -2935,26 +2935,13 @@ body.page-template-page-contacts, body.error404, body.search, body.page-template
 }
 .info__list {
   font-family: "Nanotronica_Text", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-ascent: 1.125em;
+  --font-descent: 0.2em;
+  --marker-outset: 0.125rem;
+  --marker-top: calc((1lh - var(--font-ascent) - var(--font-descent)) / 2 + var(--font-ascent) - 1cap - var(--marker-outset));
+  --marker-bottom: calc((1lh - var(--font-ascent) - var(--font-descent)) / 2 + var(--font-descent) - var(--marker-outset));
   gap: 0rem;
-}
-.info__list > li:has(br)::before {
-  bottom: 0.3125rem;
-}
-@media (min-width: 2559.98px) {
-  .info__list > li:has(br)::before {
-    bottom: 0.5rem;
-  }
-}
-.info__list > li:has(address)::before {
-  bottom: 0.25rem;
-}
-@media (min-width: 2559.98px) {
-  .info__list > li:has(address)::before {
-    bottom: 0.5rem;
-  }
-}
-.info__list {
-  --marker-size: 0.6875rem;
+  --marker-size: 0.75rem;
   --marker-gap: 0.75rem;
   --marker-col: 3.5rem;
   font-size: 0.9375rem;
@@ -2972,6 +2959,7 @@ body.page-template-page-contacts, body.error404, body.search, body.page-template
 }
 @media (min-width: 1727.98px) {
   .info__list {
+    --font-ascent: 0.912em;
     --marker-size: 1rem;
     --marker-gap: 1rem;
     --marker-col: 4.625rem;
@@ -2981,13 +2969,25 @@ body.page-template-page-contacts, body.error404, body.search, body.page-template
 }
 @media (min-width: 2559.98px) {
   .info__list {
-    --marker-size: 1.125rem;
-    --marker-gap: 1.125rem;
+    --marker-size: 1.1875rem;
+    --marker-gap: 1.1875rem;
     --marker-col: 5.875rem;
-    --marker-offset: 0.25rem;
     font-size: 1.625rem;
     line-height: 1.2307692308;
   }
+}
+.info__list > li::before {
+  top: var(--marker-top);
+  height: calc(0.75cap + 2 * var(--marker-outset));
+}
+@media (min-width: 1727.98px) {
+  .info__list > li::before {
+    height: calc(0.8125cap + 2 * var(--marker-outset));
+  }
+}
+.info__list > li:has(br)::before, .info__list > li:has(address)::before {
+  height: auto;
+  bottom: var(--marker-bottom);
 }
 
 .contact {
@@ -4481,7 +4481,7 @@ body.page-template-page-contacts, body.error404, body.search, body.page-template
 }
 .form__control {
   width: 100%;
-  padding: 0.1875rem 0;
+  padding-block: 0.1875rem;
   border-bottom: 0.125rem solid #000000;
   border-radius: 0;
   background: transparent;
@@ -4489,24 +4489,26 @@ body.page-template-page-contacts, body.error404, body.search, body.page-template
   font-size: 0.9375rem;
   line-height: 1.2;
   color: #000000;
+  text-overflow: ellipsis;
+  padding-right: 1.5rem;
 }
 @media (min-width: 1439.98px) {
   .form__control {
-    padding: 0.25rem 0;
+    padding-block: 0.25rem;
     font-size: 1.125rem;
     line-height: 1.1666666667;
   }
 }
 @media (min-width: 1727.98px) {
   .form__control {
-    padding: 0.375rem 0;
+    padding-block: 0.375rem;
     font-size: 1.3125rem;
     line-height: 1.1428571429;
   }
 }
 @media (min-width: 2559.98px) {
   .form__control {
-    padding: 0.5rem 0;
+    padding-block: 0.5rem;
     font-size: 1.625rem;
     line-height: 1.2307692308;
   }
@@ -4543,17 +4545,33 @@ body.page-template-page-contacts, body.error404, body.search, body.page-template
 .form__clear {
   position: absolute;
   right: 0;
-  top: 50%;
-  transform: translateY(-50%);
   background: transparent;
   border: none;
   cursor: pointer;
-  padding: 0.25rem;
   display: flex;
   align-items: center;
   justify-content: center;
   color: #000000;
   transition: opacity 0.2s ease;
+  top: 0.1875rem;
+}
+@media (min-width: 1439.98px) {
+  .form__clear {
+    padding: 0.125rem;
+    top: 0.125rem;
+  }
+}
+@media (min-width: 1727.98px) {
+  .form__clear {
+    padding: 0.1875rem;
+    top: 0.1875rem;
+  }
+}
+@media (min-width: 2559.98px) {
+  .form__clear {
+    padding: 0.25rem;
+    top: 0.25rem;
+  }
 }
 @media (any-hover: hover) {
   .form__clear:hover {
@@ -4566,6 +4584,23 @@ body.page-template-page-contacts, body.error404, body.search, body.page-template
 }
 .form__clear[hidden] {
   display: none;
+}
+.form__clear-icon {
+  display: block;
+  width: 0.8125rem;
+  height: 0.8125rem;
+}
+@media (min-width: 1439.98px) {
+  .form__clear-icon {
+    width: 0.875rem;
+    height: 0.875rem;
+  }
+}
+@media (min-width: 1727.98px) {
+  .form__clear-icon {
+    width: 1rem;
+    height: 1rem;
+  }
 }
 .form__file-wrap {
   display: flex;

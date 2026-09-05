@@ -555,30 +555,15 @@
 	// info__list
 	&__list {
 		font-family: $font-family;
+		--font-ascent: 1.125em;
+		--font-descent: 0.2em;
+		--marker-outset: #{rem(2)};
+		--marker-top: calc((1lh - var(--font-ascent) - var(--font-descent)) / 2 + var(--font-ascent) - 1cap - var(--marker-outset));
+		--marker-bottom: calc((1lh - var(--font-ascent) - var(--font-descent)) / 2 + var(--font-descent) - var(--marker-outset));
 		gap: rem(0);
-
-		>li {
-			&:has(br)::before {
-				bottom: rem(5);
-
-				@media (min-width:$md1) {
-					bottom: rem(8);
-				}
-			}
-
-			&:has(address)::before {
-				bottom: rem(4);
-
-				@media (min-width:$md1) {
-					bottom: rem(8);
-				}
-			}
-		}
-
-		--marker-size: #{rem(11)};
+		--marker-size: #{rem(12)};
 		--marker-gap: #{rem(12)};
 		--marker-col: #{rem(56)};
-
 		font-size: rem(15);
 		line-height: math.div(18, 15);
 
@@ -592,6 +577,7 @@
 		}
 
 		@media (min-width:$md2) {
+			--font-ascent: 0.912em;
 			--marker-size: #{rem(16)};
 			--marker-gap: #{rem(16)};
 			--marker-col: #{rem(74)};
@@ -600,12 +586,29 @@
 		}
 
 		@media (min-width:$md1) {
-			--marker-size: #{rem(18)};
-			--marker-gap: #{rem(18)};
+			--marker-size: #{rem(19)};
+			--marker-gap: #{rem(19)};
 			--marker-col: #{rem(94)};
-			--marker-offset: #{rem(4)};
 			font-size: rem(26);
 			line-height: math.div(32, 26);
+		}
+
+		>li {
+			&::before {
+				top: var(--marker-top);
+				height: calc(0.75cap + 2 * var(--marker-outset));
+
+				@media (min-width:$md2) {
+					height: calc(0.8125cap + 2 * var(--marker-outset));
+
+				}
+			}
+
+			&:has(br)::before,
+			&:has(address)::before {
+				height: auto;
+				bottom: var(--marker-bottom);
+			}
 		}
 	}
 

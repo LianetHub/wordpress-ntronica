@@ -3657,6 +3657,11 @@ body.page-template-page-contacts, body.error404, body.search, body.page-template
     --gutter-y: 0rem;
   }
 }
+.careers-team__text {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
 
 .products-thin-films {
   padding-top: 1.875rem;
@@ -4519,9 +4524,10 @@ body.page-template-page-contacts, body.error404, body.search, body.page-template
 }
 .form__control:is(textarea) {
   resize: none;
+  overflow: hidden;
   width: 100%;
   padding-right: 1.375rem;
-  height: 2.625rem;
+  min-height: 2.625rem;
   scrollbar-width: none;
   -ms-overflow-style: none;
 }
@@ -4530,18 +4536,18 @@ body.page-template-page-contacts, body.error404, body.search, body.page-template
 }
 @media (min-width: 1439.98px) {
   .form__control:is(textarea) {
-    height: 3.25rem;
+    min-height: 3.25rem;
   }
 }
 @media (min-width: 1727.98px) {
   .form__control:is(textarea) {
     padding-right: 2.3125rem;
-    height: 3.875rem;
+    min-height: 3.875rem;
   }
 }
 @media (min-width: 2559.98px) {
   .form__control:is(textarea) {
-    height: 4.375rem;
+    min-height: 4.375rem;
   }
 }
 .form__clear {

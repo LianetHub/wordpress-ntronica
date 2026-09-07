@@ -57,4 +57,11 @@
 			--gutter-y: #{rem(0)};
 		}
 	}
+
+	// careers-team__text
+	&__text {
+		display: flex;
+		flex-direction: column;
+		gap: 0.5rem;
+	}
 }

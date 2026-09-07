@@ -13,13 +13,14 @@
 		<div class="row careers-team__grid">
 			<div class="col-12 col-md-6">
 				<div class="text-block careers-team__text">
-					<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Lorem ipsum dolor sit amet, consectetuer adipiscing sit amet, consectetuer. Lorem ipsum dolor sit amet, consectetuer adipiscing sit.</p>
+					<p>Our team brings together exceptional developers, engineers, technologists, and constructors — all inspired by the technological challenges we tackle. There is also a great deal of analytical and creative work in what we do, so we've gathered designers, marketers, and analysts who are genuinely excited by the chip making process.</p>
 				</div>
 			</div>
 
 			<div class="col-12 col-md-6">
 				<div class="text-block-alternate careers-team__text">
-					<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod.</p>
+					<p>We welcome people from all backgrounds. What matters most is sharing our passion for progress and our aspirations for the future of the industry. And we believe the best ideas emerge when curious minds come together — so we support continuous learning, encourage bold thinking, and grow as one team.</p>
+					<p>Ready to make an impact? Check out our open roles and join the team.</p>
 				</div>
 			</div>
 		</div>

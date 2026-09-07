@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Section: Immediate vacancies (Swiper grid)
+ * Section: Immediate vacancies
  *
  * @package ntronica
  */

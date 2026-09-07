@@ -20,10 +20,12 @@ export class FormController {
 			fileRemove: ".form__file-remove",
 			fileLabel: ".form__file-label",
 			attachments: ".form__attachments",
+			textarea: "textarea.form__control",
 		};
 		this.phoneMasks = new Map();
 		this.pendingSent = false;
 		this.snapshot = [];
+		this.textareas = [];
 		this.init();
 	}
 
@@ -31,6 +33,7 @@ export class FormController {
 		this.initSubmitLabels();
 		this.initPhoneMask();
 		this.initClearableInputs();
+		this.initAutoResizeTextareas();
 		this.initFileInputs();
 		this.initCf7Events();
 		this.initAgainButton();
@@ -107,6 +110,36 @@ export class FormController {
 		if (clearBtn) {
 			clearBtn.hidden = input.value.trim() === "";
 		}
+	}
+
+	initAutoResizeTextareas() {
+		this.textareas = Array.from(
+			this.form.querySelectorAll(this.selectors.textarea),
+		);
+		if (!this.textareas.length) return;
+
+		this.resizeTextareas = this.resizeTextareas.bind(this);
+
+		this.textareas.forEach((textarea) => {
+			textarea.rows = 2;
+			textarea.addEventListener("input", () =>
+				this.resizeTextarea(textarea),
+			);
+		});
+
+		window.addEventListener("resize", this.resizeTextareas);
+		this.resizeTextareas();
+	}
+
+	resizeTextarea(textarea) {
+		// Collapse first: `height: auto` follows the `rows` attribute (CF7 default is 10).
+		textarea.style.height = "0";
+		const borderHeight = textarea.offsetHeight - textarea.clientHeight;
+		textarea.style.height = `${textarea.scrollHeight + borderHeight}px`;
+	}
+
+	resizeTextareas() {
+		this.textareas.forEach((textarea) => this.resizeTextarea(textarea));
 	}
 
 	initFileInputs() {
@@ -300,6 +333,8 @@ export class FormController {
 
 			input.disabled = wasDisabled;
 		});
+
+		this.resizeTextareas();
 	}
 
 	setDisabled(disabled) {
@@ -379,6 +414,7 @@ export class FormController {
 		this.phoneMasks.forEach((mask) => {
 			mask.value = "";
 		});
+		this.resizeTextareas();
 
 		this.form.classList.remove("sent", "invalid", "failed", "submitting");
 		this.form.classList.add("init");

@@ -4520,8 +4520,8 @@ body.page-template-page-contacts, body.error404, body.search, body.page-template
 .form__control:is(textarea) {
   resize: none;
   width: 100%;
-  padding-right: 2rem;
-  height: 2.375rem;
+  padding-right: 1.375rem;
+  height: 2.625rem;
   scrollbar-width: none;
   -ms-overflow-style: none;
 }
@@ -4530,12 +4530,13 @@ body.page-template-page-contacts, body.error404, body.search, body.page-template
 }
 @media (min-width: 1439.98px) {
   .form__control:is(textarea) {
-    height: 2.875rem;
+    height: 3.25rem;
   }
 }
 @media (min-width: 1727.98px) {
   .form__control:is(textarea) {
-    height: 3.75rem;
+    padding-right: 2.3125rem;
+    height: 3.875rem;
   }
 }
 @media (min-width: 2559.98px) {

@@ -403,8 +403,10 @@ export class SiteMenu {
 		if (parentLink) {
 			const item = parentLink.closest(".sidebar__item");
 			const hasSubmenu = item && item.querySelector(".sidebar__submenu");
+			const isCurrent = parentLink.classList.contains("is-active");
 
-			if (hasSubmenu && !this.mqAccordion.matches) {
+			// Mobile: accordion only for the current page; other items navigate.
+			if (hasSubmenu && !this.mqAccordion.matches && isCurrent) {
 				event.preventDefault();
 				const willExpand = !item.classList.contains("is-expanded");
 

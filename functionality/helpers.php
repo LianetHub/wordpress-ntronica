@@ -214,7 +214,7 @@ function ntronica_get_nav_tree()
 				),
 				array(
 					'href'  => '#careers',
-					'label' => 'Immediate vacancies',
+					'label' => 'Open positions',
 				),
 				array(
 					'href'  => '#contacts',

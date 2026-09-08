@@ -57,7 +57,7 @@ $vacancies = array(
 <section class="vacancies band-full" id="careers">
 	<div class="container">
 		<h2 class="title vacancies__title">
-			Immediate vacancies
+			Open positions
 		</h2>
 
 		<div class="swiper vacancies-slider">

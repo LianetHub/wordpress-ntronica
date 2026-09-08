@@ -8,18 +8,18 @@
 
 $ntronica_img = IMG_PATH . '/home/';
 
-$products = array(
+$ntronica_products = array(
 	array(
 		'title' => 'Thin films equipment',
-		'img'   => $ntronica_img . 'product-thin-films.jpg',
+		'image' => $ntronica_img . 'product-thin-films.jpg',
 	),
 	array(
 		'title' => 'Wet process equipment',
-		'img'   => $ntronica_img . 'product-wet-process.jpg',
+		'image' => $ntronica_img . 'product-wet-process.jpg',
 	),
 	array(
 		'title' => 'Process control',
-		'img'   => $ntronica_img . 'product-process-control.jpg',
+		'image' => $ntronica_img . 'product-process-control.jpg',
 	),
 );
 ?>
@@ -31,20 +31,20 @@ $products = array(
 		</p>
 
 		<div class="row products__grid">
-			<?php foreach ($products as $product) : ?>
+			<?php foreach ($ntronica_products as $ntronica_item) : ?>
 				<div class="col-12 col-md-4">
-					<article class="product-card">
-						<div class="product-card__media">
-							<img
-								class="product-card__img"
-								src="<?php echo esc_url($product['img']); ?>"
-								alt="<?php echo esc_attr($product['title']); ?>"
-								width="622"
-								height="414"
-								loading="lazy">
-						</div>
-						<h3 class="product-card__title"><?php echo esc_html($product['title']); ?></h3>
-					</article>
+					<?php
+					get_template_part(
+						'components/templates-parts/card',
+						'product',
+						array(
+							'title' => $ntronica_item['title'],
+							'image' => $ntronica_item['image'],
+							'width' => 622,
+							'height' => 414,
+						)
+					);
+					?>
 				</div>
 			<?php endforeach; ?>
 		</div>

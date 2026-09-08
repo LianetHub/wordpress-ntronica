@@ -53,18 +53,19 @@ $ntronica_thin_films = array(
 		<div class="row products-thin-films__grid">
 			<?php foreach ($ntronica_thin_films as $ntronica_item) : ?>
 				<div class="col-6 col-md-3">
-					<article class="product-card">
-						<div class="product-card__media">
-							<img
-								class="product-card__img"
-								src="<?php echo esc_url($ntronica_products_img . $ntronica_item['file']); ?>"
-								alt="<?php echo esc_attr($ntronica_item['alt']); ?>"
-								width="461"
-								height="307"
-								loading="lazy">
-						</div>
-						<h3 class="product-card__title"><?php echo esc_html($ntronica_item['title']); ?></h3>
-					</article>
+					<?php
+					get_template_part(
+						'components/templates-parts/card',
+						'product',
+						array(
+							'title'     => $ntronica_item['title'],
+							'image'     => $ntronica_products_img . $ntronica_item['file'],
+							'image_alt' => $ntronica_item['alt'],
+							'width'     => 461,
+							'height'    => 307,
+						)
+					);
+					?>
 				</div>
 			<?php endforeach; ?>
 		</div>

@@ -7,6 +7,24 @@
  */
 
 $ntronica_about_img = IMG_PATH . '/about/';
+
+$ntronica_solutions = array(
+	array(
+		'title' => 'Thin films equipment',
+		'image' => $ntronica_about_img . 'thin-films.webp',
+		'alt'   => 'Thin films equipment',
+	),
+	array(
+		'title' => 'Wet process equipment',
+		'image' => $ntronica_about_img . 'wet-process.webp',
+		'alt'   => 'Wet process equipment',
+	),
+	array(
+		'title' => 'Process control',
+		'image' => $ntronica_about_img . 'process-control.webp',
+		'alt'   => 'Process control',
+	),
+);
 ?>
 <section class="about-solutions" id="solutions">
 	<div class="container">
@@ -17,44 +35,21 @@ $ntronica_about_img = IMG_PATH . '/about/';
 		</div>
 
 		<ul class="row about-solutions__grid">
-			<li class="col-12 col-md-4 about-solutions__item">
-				<div class="about-solutions__media">
-					<img
-						class="about-solutions__img"
-						src="<?php echo esc_url($ntronica_about_img . 'thin-films.webp'); ?>"
-						alt="Thin films equipment"
-						width="622"
-						height="412"
-						loading="lazy">
-				</div>
-				<h3 class="about-solutions__caption">Thin films equipment</h3>
-			</li>
-
-			<li class="col-12 col-md-4 about-solutions__item">
-				<div class="about-solutions__media">
-					<img
-						class="about-solutions__img"
-						src="<?php echo esc_url($ntronica_about_img . 'wet-process.webp'); ?>"
-						alt="Wet process equipment"
-						width="622"
-						height="413"
-						loading="lazy">
-				</div>
-				<h3 class="about-solutions__caption">Wet process equipment</h3>
-			</li>
-
-			<li class="col-12 col-md-4 about-solutions__item">
-				<div class="about-solutions__media">
-					<img
-						class="about-solutions__img"
-						src="<?php echo esc_url($ntronica_about_img . 'process-control.webp'); ?>"
-						alt="Process control"
-						width="622"
-						height="413"
-						loading="lazy">
-				</div>
-				<h3 class="about-solutions__caption">Process control</h3>
-			</li>
+			<?php foreach ($ntronica_solutions as $ntronica_item) : ?>
+				<li class="col-12 col-md-4">
+					<?php
+					get_template_part(
+						'components/templates-parts/card',
+						'product',
+						array(
+							'title'     => $ntronica_item['title'],
+							'image'     => $ntronica_item['image'],
+							'image_alt' => $ntronica_item['alt'],
+						)
+					);
+					?>
+				</li>
+			<?php endforeach; ?>
 		</ul>
 	</div>
 </section>

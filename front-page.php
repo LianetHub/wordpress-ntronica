@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Front page template — static Main 2560 layout
+ * Front page template 
  *
  * @package ntronica
  */
@@ -22,6 +22,8 @@ $ntronica_news_items = array_fill(
 
 <?php get_template_part('components/templates-parts/section', 'home-overview'); ?>
 <?php get_template_part('components/templates-parts/section', 'products'); ?>
+<!-- Progress Slider
+ new block -->
 <?php
 get_template_part(
 	'components/templates-parts/section',

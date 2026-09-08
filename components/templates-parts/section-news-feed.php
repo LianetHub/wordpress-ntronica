@@ -59,15 +59,18 @@ $ntronica_items = is_array($ntronica_feed['items']) ? $ntronica_feed['items'] : 
 				<div class="swiper-wrapper">
 					<?php foreach ($ntronica_items as $ntronica_item) : ?>
 						<?php
-						$ntronica_url = isset($ntronica_item['url']) ? $ntronica_item['url'] : '#';
+						get_template_part(
+							'components/templates-parts/card',
+							'news',
+							array(
+								'date'  => isset($ntronica_item['date']) ? $ntronica_item['date'] : '',
+								'title' => isset($ntronica_item['title']) ? $ntronica_item['title'] : '',
+								'url'   => isset($ntronica_item['url']) ? $ntronica_item['url'] : '#',
+								'image' => isset($ntronica_item['image']) ? $ntronica_item['image'] : '',
+								'class' => 'swiper-slide',
+							)
+						);
 						?>
-						<article class="news-card swiper-slide">
-							<a class="news-card__link" href="<?php echo esc_url($ntronica_url); ?>">
-								<div class="news-card__media" aria-hidden="true"></div>
-								<p class="news-card__date"><?php echo esc_html($ntronica_item['date']); ?></p>
-								<h3 class="news-card__title"><?php echo esc_html($ntronica_item['title']); ?></h3>
-							</a>
-						</article>
 					<?php endforeach; ?>
 				</div>
 

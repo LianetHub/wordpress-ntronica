@@ -96,8 +96,9 @@ add_action('wp_head', 'ntronica_favicon', 1);
 /**
  * Preload first-paint fonts for PSI.
  *
- * Only Nanotronica_Text Regular/Bold (body, titles, hero). CoFo and unused
- * Title/Reduct faces stay CSS-only so they do not compete with LCP.
+ * Nanotronica_Text Regular/Bold (body, titles, hero) and
+ * Nanotronica_Reduct Regular/Bold (hero wipe / hover animation).
+ * CoFo and unused Title faces stay CSS-only so they do not compete with LCP.
  *
  * @param array $preload_resources Preload link descriptors.
  * @return array
@@ -108,6 +109,8 @@ function ntronica_preload_fonts($preload_resources)
     $files     = array(
         'Nanotronica_Text-Regular.woff2',
         'Nanotronica_Text-Bold.woff2',
+        'Nanotronica_Reduct-Regular.woff2',
+        'Nanotronica_Reduct-Bold.woff2',
     );
 
     foreach ($files as $file) {

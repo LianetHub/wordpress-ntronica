@@ -1,13 +1,27 @@
 <?php
 
 /**
- * Section: Events & news
+ * Section: Events & news (home, row/col — no slider)
  *
  * @package ntronica
+ *
+ * @var array $args {
+ *     @type array $items Cards: array{ date: string, title: string, url?: string, image?: string }.
+ * }
  */
 
-$ntronica_home_news = ntronica_query_news_posts('events', 4);
-$ntronica_home_posts = $ntronica_home_news->posts;
+if (! isset($args) || ! is_array($args)) {
+	$args = array();
+}
+
+$ntronica_news = wp_parse_args(
+	$args,
+	array(
+		'items' => array(),
+	)
+);
+
+$ntronica_items = is_array($ntronica_news['items']) ? $ntronica_news['items'] : array();
 $ntronica_news_url = ntronica_get_news_url();
 ?>
 <section class="news" id="news">
@@ -17,31 +31,22 @@ $ntronica_news_url = ntronica_get_news_url();
 			<?php echo esc_html(ntronica_get_category_lead('events', 'We stay active in the industry. Below, discover where you can meet our team and experience our latest activities. We look forward to connecting with you in person.')); ?>
 		</p>
 
-		<?php if ($ntronica_home_posts) : ?>
+		<?php if ($ntronica_items) : ?>
 			<div class="row news__grid">
-				<?php foreach ($ntronica_home_posts as $ntronica_index => $ntronica_post) : ?>
+				<?php foreach ($ntronica_items as $ntronica_index => $ntronica_item) : ?>
 					<div class="col-12 col-md-3<?php echo 0 === $ntronica_index ? '' : ' news__item--desktop'; ?>">
-						<article class="news-card">
-							<a class="news-card__link" href="<?php echo esc_url(get_permalink($ntronica_post)); ?>">
-								<div class="news-card__media" <?php echo has_post_thumbnail($ntronica_post) ? '' : ' aria-hidden="true"'; ?>>
-									<?php
-									if (has_post_thumbnail($ntronica_post)) {
-										echo get_the_post_thumbnail(
-											$ntronica_post,
-											'medium_large',
-											array(
-												'class'   => 'news-card__img',
-												'alt'     => get_the_title($ntronica_post),
-												'loading' => 'lazy',
-											)
-										);
-									}
-									?>
-								</div>
-								<p class="news-card__date"><?php echo esc_html(get_the_date('d.m.Y', $ntronica_post)); ?></p>
-								<h3 class="news-card__title"><?php echo esc_html(get_the_title($ntronica_post)); ?></h3>
-							</a>
-						</article>
+						<?php
+						get_template_part(
+							'components/templates-parts/card',
+							'news',
+							array(
+								'date'  => isset($ntronica_item['date']) ? $ntronica_item['date'] : '',
+								'title' => isset($ntronica_item['title']) ? $ntronica_item['title'] : '',
+								'url'   => isset($ntronica_item['url']) ? $ntronica_item['url'] : '#',
+								'image' => isset($ntronica_item['image']) ? $ntronica_item['image'] : '',
+							)
+						);
+						?>
 					</div>
 				<?php endforeach; ?>
 			</div>
@@ -54,5 +59,3 @@ $ntronica_news_url = ntronica_get_news_url();
 		</div>
 	</div>
 </section>
-<?php
-wp_reset_postdata();

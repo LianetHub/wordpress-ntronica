@@ -232,14 +232,15 @@
 .vacancy-card {
 	display: flex;
 	flex-direction: column;
-	gap: rem(6);
+	gap: rem(8);
+	color: inherit;
 
 	@media (min-width: $md6) {
 		gap: rem(10);
 	}
 
 	@media (min-width: $md3) {
-		gap: rem(10);
+		gap: rem(14);
 	}
 
 	@media (min-width: $md2) {
@@ -258,19 +259,21 @@
 		}
 	}
 
+	// vacancy-card__date
+	&__date {
+		font-weight: 700;
+		line-height: 1.54;
+	}
+
 	// vacancy-card__title
 	&__title {
 		color: $color-black;
+		line-height: 1.25;
 		transition: color 0.1s ease-in-out;
-
-		@media (max-width:$md6) {
-			font-size: rem(18);
-			line-height: math.div(20, 18);
-		}
 	}
 
-	// vacancy-card__dept
-	&__dept {
-		color: $color-white;
+	// vacancy-card__excerpt
+	&__excerpt {
+		color: inherit;
 	}
 }

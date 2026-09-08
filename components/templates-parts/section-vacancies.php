@@ -1,55 +1,26 @@
 <?php
 
 /**
- * Section: Immediate vacancies
+ * Section: Open positions
  *
  * @package ntronica
  */
 
 $vacancies = array(
 	array(
-		'title' => 'Operation specialist',
-		'dept'  => 'Human Resources',
+		'date'    => '25.01.2023',
+		'title'   => 'Lorem ipsum dolor consectetuer',
+		'excerpt' => 'Quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat nostrud exerci tation',
 	),
 	array(
-		'title' => 'Strategy manager',
-		'dept'  => 'Projects, Programs and Change',
+		'date'    => '25.01.2023',
+		'title'   => 'Lorem ipsum dolor consectetuer',
+		'excerpt' => 'Quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat nostrud exerci tation',
 	),
 	array(
-		'title' => 'Operation specialist',
-		'dept'  => 'Human Resources',
-	),
-	array(
-		'title' => 'Production engineer',
-		'dept'  => 'Manufacturing',
-	),
-	array(
-		'title' => 'Senior scientist',
-		'dept'  => 'Research and Technology Development',
-	),
-	array(
-		'title' => 'Production engineer',
-		'dept'  => 'Manufacturing',
-	),
-	array(
-		'title' => 'Production engineer',
-		'dept'  => 'Human Resources',
-	),
-	array(
-		'title' => 'Strategy manager',
-		'dept'  => 'Projects, Programs and Change',
-	),
-	array(
-		'title' => 'Operation specialist',
-		'dept'  => 'Human Resources',
-	),
-	array(
-		'title' => 'Production engineer',
-		'dept'  => 'Manufacturing',
-	),
-	array(
-		'title' => 'Senior scientist',
-		'dept'  => 'Research and Technology Development',
+		'date'    => '25.01.2023',
+		'title'   => 'Lorem ipsum dolor consectetuer',
+		'excerpt' => 'Quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat nostrud exerci tation',
 	),
 );
 
@@ -60,28 +31,16 @@ $vacancies = array(
 			Open positions
 		</h2>
 
-		<div class="swiper vacancies-slider">
-			<div class="swiper-wrapper">
-				<?php foreach ($vacancies as $ntronica_item) : ?>
-					<div class="swiper-slide">
-						<a href="" class="vacancy-card">
-							<span class="vacancy-card__title subtitle"><?php echo esc_html($ntronica_item['title']); ?></span>
-							<span class="vacancy-card__dept text-lead"><?php echo esc_html($ntronica_item['dept']); ?></span>
-						</a>
-					</div>
-				<?php endforeach; ?>
-			</div>
-
-			<div class="vacancies__nav">
-				<button
-					type="button"
-					class="swiper-button-prev vacancies__arrow--prev"
-					aria-label="Previous vacancies"></button>
-				<button
-					type="button"
-					class="swiper-button-next vacancies__arrow--next"
-					aria-label="Next vacancies"></button>
-			</div>
+		<div class="row vacancies__grid">
+			<?php foreach ($vacancies as $ntronica_item) : ?>
+				<div class="col-12 col-md-4">
+					<a href="#" class="vacancy-card">
+						<span class="text-block vacancy-card__date"><?php echo esc_html($ntronica_item['date']); ?></span>
+						<span class="subtitle vacancy-card__title"><?php echo esc_html($ntronica_item['title']); ?></span>
+						<span class="text-lead vacancy-card__excerpt"><?php echo esc_html($ntronica_item['excerpt']); ?></span>
+					</a>
+				</div>
+			<?php endforeach; ?>
 		</div>
 	</div>
 </section>

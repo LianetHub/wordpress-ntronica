@@ -40,7 +40,7 @@ $ntronica_about_img = IMG_PATH . '/about/';
 						height="413"
 						loading="lazy">
 				</div>
-				<h3 class="about-solutions__caption">Wet process <span class="about-solutions__caption--large-text">equipment</span></h3>
+				<h3 class="about-solutions__caption">Wet process equipment</h3>
 			</li>
 
 			<li class="col-12 col-md-4 about-solutions__item">

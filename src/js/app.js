@@ -11,7 +11,6 @@ import { Slider } from "./modules/sliders.js";
 const components = {
 	".sidebar": SiteMenu,
 	".page-hero": PageHero,
-	".vacancies-slider": Slider,
 	".news-feed-slider": Slider,
 	".media-publications-slider": Slider,
 	".search-form": SearchForm,

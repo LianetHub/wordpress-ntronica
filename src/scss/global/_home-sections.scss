@@ -256,17 +256,17 @@
 .vacancies {
 	background-color: $color-muted;
 	color: $color-white;
-	padding-bottom: rem(30);
-	padding-top: rem(36);
+	padding-top: rem(40);
+	padding-bottom: rem(40);
 
-	@media (min-width:$md6) {
-		padding-top: rem(30);
-
+	@media (min-width:$md4) {
+		padding-top: rem(40);
+		padding-bottom: rem(40);
 	}
 
 	@media (min-width: $md3) {
-		padding-top: rem(40);
-		padding-bottom: rem(40);
+		padding-top: rem(50);
+		padding-bottom: rem(50);
 	}
 
 	@media (min-width: $md2) {
@@ -275,15 +275,15 @@
 	}
 
 	@media (min-width: $md1) {
-		padding-top: rem(83);
-		padding-bottom: rem(74);
+		padding-top: rem(80);
+		padding-bottom: rem(78);
 	}
 
 	// vacancies__title
 	&__title {
 		margin-bottom: rem(44);
 
-		@media (min-width:$md6) {
+		@media (min-width: $md6) {
 			margin-bottom: rem(40);
 		}
 
@@ -296,70 +296,22 @@
 		}
 
 		@media (min-width: $md1) {
-			margin-bottom: rem(84);
+			margin-bottom: rem(80);
 		}
 	}
 
-	.vacancies-slider {
-		overflow: hidden;
-	}
+	// vacancies__grid
+	&__grid {
+		--gutter-x: #{rem(24)};
+		--gutter-y: #{rem(30)};
 
-	.swiper-slide {
-		height: auto;
-		box-sizing: border-box;
-
-		@media (min-width:$md6) {
-			min-height: rem(52);
-		}
-
-		@media (min-width:$md4) {
-			min-height: rem(55);
-		}
-
-		@media (min-width:$md3) {
-			min-height: rem(76);
-		}
-
-		@media (min-width:$md2) {
-			min-height: rem(94);
-
-		}
-
-		@media (min-width:$md1) {
-			min-height: rem(133);
-
-		}
-	}
-
-	// vacancies__nav
-	&__nav {
-		display: flex;
-		justify-content: space-between;
-		align-items: center;
-		margin-top: rem(40);
-
-		@media (min-width:$md6) {
-			margin-top: rem(30);
-		}
-
-		@media (min-width:$md5) {
-			margin-top: rem(28);
-		}
-
-		@media (min-width: $md4) {
-			margin-top: rem(20);
-		}
-
-		@media (min-width: $md3) {
-			margin-top: rem(24);
-		}
-
-		@media (min-width: $md2) {
-			margin-top: rem(24);
+		@media (min-width: $md6) {
+			--gutter-y: #{rem(40)};
 		}
 
 		@media (min-width: $md1) {
-			margin-top: rem(20);
+			--gutter-y: #{rem(48)};
+			--gutter-x: #{rem(80)};
 		}
 	}
 }

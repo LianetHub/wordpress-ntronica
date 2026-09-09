@@ -54,6 +54,7 @@
 					<div class="footer__policies">
 						<a class="footer__link" href="<?php echo esc_url(home_url('/privacy-policy/')); ?>">Privacy policy</a>
 						<a class="footer__link" href="<?php echo esc_url(home_url('/terms-of-use/')); ?>">Terms of use</a>
+						<a class="footer__link" href="#cookie-notice" data-cookie-settings>Cookie settings</a>
 					</div>
 				</div>
 			</div>
@@ -62,6 +63,7 @@
 </footer>
 </div><!-- .site-body -->
 </div><!-- .wrapper -->
+<?php get_template_part('components/templates-parts/cookie-notice'); ?>
 <?php wp_footer(); ?>
 </body>
 

@@ -274,6 +274,7 @@
 	// footer__policies
 	&__policies {
 		display: flex;
+		flex-wrap: wrap;
 		justify-content: space-between;
 		gap: rem(12);
 		margin-top: rem(5);

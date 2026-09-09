@@ -2,6 +2,7 @@
  * Theme frontend entry (ntronica).
  */
 
+import { CookieNotice } from "./modules/cookieNotice.js";
 import { FormController } from "./modules/formController.js";
 import { PageHero } from "./modules/pageHero.js";
 import { SearchForm } from "./modules/searchForm.js";
@@ -16,6 +17,7 @@ const components = {
 	".media-publications-slider": Slider,
 	".search-form": SearchForm,
 	".wpcf7 form": FormController,
+	".cookie-notice": CookieNotice,
 };
 
 document.addEventListener("DOMContentLoaded", () => {

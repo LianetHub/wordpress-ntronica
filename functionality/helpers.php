@@ -156,12 +156,16 @@ function ntronica_get_nav_tree()
 					'label' => 'All about microchips',
 				),
 				array(
+					'href'  => '#lorem-ipsum',
+					'label' => 'Lorem ipsum',
+				),
+				array(
 					'href'  => '#processes',
 					'label' => 'Chip making processes',
 				),
 				array(
-					'href'  => '#lorem-ipsum',
-					'label' => 'Lorem ipsum',
+					'href'  => '#media',
+					'label' => 'Media publications',
 				),
 			),
 		),

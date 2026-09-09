@@ -3860,6 +3860,90 @@ body.page-template-page-contacts, body.error404, body.search, body.page-template
   }
 }
 
+.tech-microchips {
+  padding-top: 1.875rem;
+  padding-bottom: 2.5rem;
+}
+@media (min-width: 767.98px) {
+  .tech-microchips {
+    padding-bottom: 3.5rem;
+  }
+}
+@media (min-width: 1439.98px) {
+  .tech-microchips {
+    padding-top: 3.125rem;
+    padding-bottom: 5rem;
+  }
+}
+@media (min-width: 2559.98px) {
+  .tech-microchips {
+    padding-top: 5.625rem;
+    padding-bottom: 6.875rem;
+  }
+}
+.tech-microchips__title {
+  margin-bottom: 1rem;
+}
+@media (min-width: 1439.98px) {
+  .tech-microchips__title {
+    margin-bottom: 1.5rem;
+  }
+}
+@media (min-width: 2559.98px) {
+  .tech-microchips__title {
+    margin-bottom: 2.25rem;
+  }
+}
+.tech-microchips__intro {
+  --gutter-x: 0.875rem;
+  --gutter-y: 1rem;
+}
+@media (min-width: 767.98px) {
+  .tech-microchips__intro {
+    --gutter-x: 1.5rem;
+    --gutter-y: 1.5rem;
+    align-items: start;
+  }
+}
+@media (min-width: 2559.98px) {
+  .tech-microchips__intro {
+    --gutter-y: 2.125rem;
+  }
+}
+.tech-microchips__cards {
+  --gutter-x: 0.875rem;
+  --gutter-y: 1.75rem;
+  margin-top: 1.875rem;
+}
+@media (min-width: 767.98px) {
+  .tech-microchips__cards {
+    --gutter-x: 1.5rem;
+    --gutter-y: 2.25rem;
+    margin-top: 2.5rem;
+  }
+}
+@media (min-width: 2559.98px) {
+  .tech-microchips__cards {
+    --gutter-y: 3.125rem;
+    margin-top: 3.75rem;
+  }
+}
+.tech-microchips__card {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+@media (min-width: 1439.98px) {
+  .tech-microchips__card {
+    gap: 1.5rem;
+  }
+}
+@media (min-width: 2559.98px) {
+  .tech-microchips__card {
+    gap: 2.25rem;
+  }
+}
+
 .contacts-representative {
   padding-bottom: 0rem;
   padding-top: 1.5625rem;

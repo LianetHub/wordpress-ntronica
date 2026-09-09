@@ -1,0 +1,83 @@
+@use "../variables" as *;
+@use "../mixins" as *;
+
+.tech-microchips {
+	padding-top: rem(30);
+	padding-bottom: rem(40);
+
+	@media (min-width: $md6) {
+		padding-bottom: rem(56);
+	}
+
+	@media (min-width: $md3) {
+		padding-top: rem(50);
+		padding-bottom: rem(80);
+	}
+
+	@media (min-width: $md1) {
+		padding-top: rem(90);
+		padding-bottom: rem(110);
+	}
+
+	// tech-microchips__title
+	&__title {
+		margin-bottom: rem(16);
+
+		@media (min-width: $md3) {
+			margin-bottom: rem(24);
+		}
+
+		@media (min-width: $md1) {
+			margin-bottom: rem(36);
+		}
+	}
+
+	// tech-microchips__intro
+	&__intro {
+		--gutter-x: #{rem(14)};
+		--gutter-y: #{rem(16)};
+
+		@media (min-width: $md6) {
+			--gutter-x: #{rem(24)};
+			--gutter-y: #{rem(24)};
+			align-items: start;
+		}
+
+		@media (min-width: $md1) {
+			--gutter-y: #{rem(34)};
+		}
+	}
+
+	// tech-microchips__cards
+	&__cards {
+		--gutter-x: #{rem(14)};
+		--gutter-y: #{rem(28)};
+		margin-top: rem(30);
+
+		@media (min-width: $md6) {
+			--gutter-x: #{rem(24)};
+			--gutter-y: #{rem(36)};
+			margin-top: rem(40);
+		}
+
+		@media (min-width: $md1) {
+			--gutter-y: #{rem(50)};
+			margin-top: rem(60);
+		}
+	}
+
+	// tech-microchips__card
+	&__card {
+		display: flex;
+		flex-direction: column;
+		gap: rem(16);
+
+		@media (min-width: $md3) {
+			gap: rem(24);
+		}
+
+		@media (min-width: $md1) {
+			gap: rem(36);
+		}
+	}
+}

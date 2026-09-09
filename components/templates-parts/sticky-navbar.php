@@ -27,7 +27,7 @@ $show_breadcrumbs = isset($args['show_breadcrumbs']) ? (bool) $args['show_breadc
 <header class="sticky-navbar" data-variant="<?php echo esc_attr($variant); ?>">
 	<div class="container">
 		<div class="sticky-navbar__inner">
-			<?php if ('nav' === $variant) : ?>
+			<?php if ('nav' === $variant && $nav) : ?>
 				<nav class="sticky-navbar__nav" aria-label="<?php echo esc_attr($nav_label); ?>">
 					<ul class="sticky-navbar__nav-list">
 						<?php foreach ($nav as $nav_item) : ?>
@@ -43,7 +43,7 @@ $show_breadcrumbs = isset($args['show_breadcrumbs']) ? (bool) $args['show_breadc
 						<?php endforeach; ?>
 					</ul>
 				</nav>
-			<?php else : ?>
+			<?php elseif ('nav' !== $variant) : ?>
 				<div class="sticky-navbar__breadcrumbs">
 					<?php
 					if ($show_breadcrumbs && function_exists('rank_math_the_breadcrumbs')) {

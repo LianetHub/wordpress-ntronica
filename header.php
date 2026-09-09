@@ -21,7 +21,16 @@
 		<?php get_template_part('components/templates-parts/sidebar'); ?>
 		<div class="site-body">
 			<?php
-			if (is_page('about')) {
+			if (is_front_page()) {
+				get_template_part(
+					'components/templates-parts/sticky-navbar',
+					null,
+					array(
+						'variant' => 'nav',
+						'nav'     => array(),
+					)
+				);
+			} elseif (is_page('about')) {
 				get_template_part(
 					'components/templates-parts/sticky-navbar',
 					null,

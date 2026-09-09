@@ -6,9 +6,9 @@
  * @package ntronica
  *
  * @var array $args {
- *     @type string $title         Page title (h1).
+ *     @type string $title         Page title (h1). Empty on the homepage — tagline is the h1.
  *     @type string $image         Background image URL.
- *     @type string $tagline       Intro text.
+ *     @type string $tagline       Intro text (h1 when title is empty).
  *     @type string $nav_label     Nav aria-label.
  *     @type array  $nav           Links: array{ href: string, label: string }.
  * }
@@ -29,16 +29,29 @@ $ntronica_hero = wp_parse_args(
 	)
 );
 
+$ntronica_has_title  = '' !== $ntronica_hero['title'];
+$ntronica_hero_class = 'page-hero band-full';
+
+if (! $ntronica_has_title) {
+	$ntronica_hero_class .= ' page-hero--home';
+}
+
 ?>
 <section
-	class="page-hero band-full"
+	class="<?php echo esc_attr($ntronica_hero_class); ?>"
 	<?php if ('' !== $ntronica_hero['image']) : ?>
 	style="background-image: url('<?php echo esc_url($ntronica_hero['image']); ?>');"
 	<?php endif; ?>>
 	<div class="container page-hero__inner">
-
-		<p class="page-hero__tagline" data-title="<?php echo esc_attr($ntronica_hero['tagline']); ?>"><span><?php echo esc_html($ntronica_hero['tagline']); ?></span></p>
-
-		<h1 class="page-hero__title" data-title="<?php echo esc_attr($ntronica_hero['title']); ?>"><span><?php echo esc_html($ntronica_hero['title']); ?></span></h1>
+		<?php if ($ntronica_has_title) : ?>
+			<p class="page-hero__tagline" data-title="<?php echo esc_attr($ntronica_hero['tagline']); ?>"><span><?php echo esc_html($ntronica_hero['tagline']); ?></span></p>
+			<h1 class="page-hero__title" data-title="<?php echo esc_attr($ntronica_hero['title']); ?>"><span><?php echo esc_html($ntronica_hero['title']); ?></span></h1>
+		<?php else : ?>
+			<div class="row">
+				<div class="col-12 col-md-6 offset-md-6 col-xxl-4 offset-xxl-8">
+					<h1 class="page-hero__tagline" data-title="<?php echo esc_attr($ntronica_hero['tagline']); ?>"><span><?php echo esc_html($ntronica_hero['tagline']); ?></span></h1>
+				</div>
+			</div>
+		<?php endif; ?>
 	</div>
 </section>

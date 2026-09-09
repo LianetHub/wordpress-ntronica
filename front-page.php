@@ -20,10 +20,20 @@ $ntronica_news_items = array_fill(
 );
 ?>
 
+<?php
+get_template_part(
+	'components/templates-parts/section',
+	'page-hero',
+	array(
+		'title'   => '',
+		'tagline' => 'Technological language of the future',
+		'image'   => IMG_PATH . '/home/hero.webp',
+	)
+);
+?>
 <?php get_template_part('components/templates-parts/section', 'home-overview'); ?>
 <?php get_template_part('components/templates-parts/section', 'products'); ?>
-<!-- Progress Slider
- new block -->
+<?php get_template_part('components/templates-parts/section', 'progress-slider'); ?>
 <?php
 get_template_part(
 	'components/templates-parts/section',

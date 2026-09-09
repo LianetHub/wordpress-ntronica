@@ -57,6 +57,21 @@ export class Slider {
 			return;
 		}
 
+		if (el.classList.contains("progress-slider__slider") || el.classList.contains("progress-slider")) {
+			new Swiper(el, {
+				watchOverflow: true,
+				slidesPerView: 1,
+				spaceBetween: 0,
+				speed: 550,
+				allowTouchMove: true,
+				navigation: {
+					prevEl,
+					nextEl,
+				},
+			});
+			return;
+		}
+
 		if (el.classList.contains("media-publications-slider")) {
 			new Swiper(el, {
 				watchOverflow: true,

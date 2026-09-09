@@ -112,6 +112,135 @@ function ntronica_get_news_url()
 }
 
 /**
+ * Permalink of a published post for mock news cards.
+ *
+ * @return string
+ */
+function ntronica_get_news_article_url()
+{
+	$ntronica_posts = get_posts(
+		array(
+			'numberposts'      => 1,
+			'post_status'      => 'publish',
+			'post_type'        => 'post',
+			'orderby'          => 'date',
+			'order'            => 'DESC',
+			'no_found_rows'    => true,
+			'suppress_filters' => false,
+		)
+	);
+
+	if ($ntronica_posts) {
+		return get_permalink($ntronica_posts[0]);
+	}
+
+	return ntronica_get_news_url();
+}
+
+/**
+ * Hardcoded mock article used by the news article template.
+ *
+ * @return array{
+ *     title: string,
+ *     date: string,
+ *     datetime: string,
+ *     lead: string,
+ *     paragraphs: array<int, string>,
+ *     gallery: array<int, array{src: string, alt: string}>
+ * }
+ */
+function ntronica_get_mock_news_article()
+{
+	$ntronica_image = IMG_PATH . '/news/article.webp';
+	$ntronica_alt   = 'Technicians in cleanroom suits in a semiconductor facility';
+
+	return array(
+		'title'      => 'Lorem ipsum dolor sit',
+		'date'       => '25.01.2023',
+		'datetime'   => '2023-01-25',
+		'lead'       => 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.',
+		'paragraphs' => array(
+			'It may require more than one hundred tools to produce a single modern chip. Our goal is to cover at least half of those tools — whether you are performing research & development or running mass production. We are currently present across multiple stages of chip production, such as etching and deposition, epitaxy, thermal operations, and Chemical Mechanical Planarization (CMP).',
+			'It may require more than one hundred tools to produce a single modern chip. Our goal is to cover at least half of those tools — whether you are performing research & development or running mass production.',
+		),
+		'gallery'    => array(
+			array(
+				'src' => $ntronica_image,
+				'alt' => $ntronica_alt,
+			),
+			array(
+				'src' => $ntronica_image,
+				'alt' => $ntronica_alt,
+			),
+			array(
+				'src' => $ntronica_image,
+				'alt' => $ntronica_alt,
+			),
+		),
+	);
+}
+
+/**
+ * Breadcrumb crumbs for the mock news article: News — Title.
+ *
+ * @return array<int, array{label: string, url: string}>
+ */
+function ntronica_get_news_article_crumbs()
+{
+	$ntronica_article = ntronica_get_mock_news_article();
+
+	return array(
+		array(
+			'label' => 'News',
+			'url'   => ntronica_get_news_url(),
+		),
+		array(
+			'label' => $ntronica_article['title'],
+			'url'   => '',
+		),
+	);
+}
+
+/**
+ * Print "Parent — Current" breadcrumbs list.
+ *
+ * @param array<int, array{label: string, url?: string}> $crumbs Crumb items.
+ */
+function ntronica_render_breadcrumbs($crumbs)
+{
+	if (! is_array($crumbs) || ! $crumbs) {
+		return;
+	}
+
+	$last = count($crumbs) - 1;
+
+	echo '<ol class="breadcrumbs__list">';
+
+	foreach ($crumbs as $key => $crumb) {
+		$label   = isset($crumb['label']) ? (string) $crumb['label'] : '';
+		$url     = isset($crumb['url']) ? (string) $crumb['url'] : '';
+		$is_last = (int) $key === $last;
+		$class   = $is_last ? 'breadcrumbs__item breadcrumbs__item--last' : 'breadcrumbs__item';
+
+		echo '<li class="' . esc_attr($class) . '">';
+
+		if (! $is_last && $url) {
+			echo '<a href="' . esc_url($url) . '" class="breadcrumbs__link">' . esc_html($label) . '</a>';
+		} else {
+			echo '<span class="breadcrumbs__current">' . esc_html($label) . '</span>';
+		}
+
+		echo '</li>';
+
+		if (! $is_last) {
+			echo '<li class="breadcrumbs__sep" aria-hidden="true"> — </li>';
+		}
+	}
+
+	echo '</ol>';
+}
+
+/**
  * Primary nav tree: top-level items and page-section children.
  *
  * Children keep hash-only hrefs for page-hero; the sidebar prefixes the page URL.

@@ -4267,6 +4267,180 @@ body.page-template-page-contacts, body.error404, body.search, body.page-template
   text-align: center;
 }
 
+.news-article__hero {
+  background-color: #acadaf;
+  color: #ffffff;
+  padding-top: 1rem;
+  padding-bottom: 1.875rem;
+}
+@media (min-width: 767.98px) {
+  .news-article__hero {
+    padding-top: 4.125rem;
+  }
+}
+@media (min-width: 1023.98px) {
+  .news-article__hero {
+    padding-top: 4.375rem;
+  }
+}
+@media (min-width: 1439.98px) {
+  .news-article__hero {
+    padding-top: 6.5rem;
+  }
+}
+@media (min-width: 2559.98px) {
+  .news-article__hero {
+    padding-top: 8.25rem;
+    padding-bottom: 4.375rem;
+  }
+}
+.news-article__crumbs {
+  margin-bottom: 1rem;
+  font-family: "CoFo_Robert", Georgia, "Times New Roman", serif;
+  font-weight: 500;
+  font-size: 0.9375rem;
+  line-height: 1.0666666667;
+  color: #000000;
+}
+@media (min-width: 767.98px) {
+  .news-article__crumbs {
+    display: none;
+  }
+}
+.news-article__crumbs .breadcrumbs__list {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+}
+.news-article__crumbs .breadcrumbs__sep {
+  white-space: pre;
+}
+.news-article__crumbs .breadcrumbs__link {
+  color: inherit;
+  transition: color 100ms ease-in-out;
+}
+@media (any-hover: hover) {
+  .news-article__crumbs .breadcrumbs__link:hover {
+    color: #58595b;
+  }
+}
+.news-article__title {
+  color: #000000;
+}
+.news-article__date {
+  display: block;
+  font-weight: 700;
+  margin-top: 1.875rem;
+}
+@media (min-width: 1439.98px) {
+  .news-article__date {
+    margin-top: 2.5rem;
+  }
+}
+@media (min-width: 2559.98px) {
+  .news-article__date {
+    margin-top: 4.375rem;
+  }
+}
+.news-article__lead {
+  margin-top: 1.875rem;
+}
+@media (min-width: 2559.98px) {
+  .news-article__lead {
+    margin-top: 4.375rem;
+  }
+}
+.news-article__body {
+  padding-top: 1.875rem;
+  padding-bottom: 3.125rem;
+}
+@media (min-width: 767.98px) {
+  .news-article__body {
+    padding-bottom: 4.375rem;
+  }
+}
+@media (min-width: 1439.98px) {
+  .news-article__body {
+    padding-top: 3.125rem;
+  }
+}
+@media (min-width: 2559.98px) {
+  .news-article__body {
+    padding-bottom: 2.4375rem;
+  }
+}
+.news-article__layout {
+  --gutter-y: 1.875rem;
+}
+@media (min-width: 767.98px) {
+  .news-article__layout {
+    --gutter-y: 0;
+    align-items: stretch;
+  }
+}
+.news-article__main {
+  display: contents;
+}
+@media (min-width: 767.98px) {
+  .news-article__main {
+    display: flex;
+    flex-direction: column;
+  }
+}
+.news-article__copy {
+  order: 1;
+}
+.news-article__media {
+  order: 2;
+}
+.news-article__share-col {
+  order: 3;
+}
+@media (min-width: 767.98px) {
+  .news-article__share-col {
+    margin-top: auto;
+    padding-top: 1.5625rem;
+  }
+}
+.news-article__content p + p {
+  margin-top: 1em;
+}
+.news-article .news-article-slider {
+  overflow: hidden;
+}
+.news-article .swiper-slide {
+  height: auto;
+  box-sizing: border-box;
+}
+.news-article__figure {
+  aspect-ratio: 466/287;
+  overflow: hidden;
+  background-color: #d9d9d9;
+}
+.news-article__img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+.news-article__nav {
+  margin-top: 0.9375rem;
+}
+@media (min-width: 767.98px) {
+  .news-article__nav {
+    margin-left: auto;
+  }
+}
+@media (min-width: 2559.98px) {
+  .news-article__nav {
+    margin-top: 1.5625rem;
+  }
+}
+.news-article__share {
+  text-align: left;
+}
+
 .utility {
   flex: 1 1 auto;
   display: flex;
@@ -5863,6 +6037,17 @@ body.page-template-page-contacts, body.error404, body.search, body.page-template
 }
 .sticky-navbar[data-variant=breadcrumbs].is-scrolled {
   background-color: transparent;
+}
+.sticky-navbar[data-variant=breadcrumbs][data-theme=light] .sticky-navbar__breadcrumbs {
+  color: #000000;
+}
+@media (any-hover: hover) {
+  .sticky-navbar[data-variant=breadcrumbs][data-theme=light] .sticky-navbar__breadcrumbs .breadcrumbs__link:hover {
+    color: #58595b;
+  }
+}
+.sticky-navbar[data-variant=breadcrumbs][data-theme=light] .lang-switcher {
+  color: #000000;
 }
 .sticky-navbar__inner {
   display: flex;

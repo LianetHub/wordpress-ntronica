@@ -15,7 +15,7 @@ $ntronica_news_items = array_fill(
 	array(
 		'date'  => '25.01.2023',
 		'title' => 'Lorem ipsum dolor',
-		'url'   => '#',
+		'url'   => ntronica_get_news_article_url(),
 	)
 );
 ?>

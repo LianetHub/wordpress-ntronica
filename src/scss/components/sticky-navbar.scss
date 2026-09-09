@@ -136,6 +136,24 @@
 		&.is-scrolled {
 			background-color: transparent;
 		}
+
+		&[data-theme="light"] {
+			.sticky-navbar__breadcrumbs {
+				color: $color-black;
+
+				.breadcrumbs__link {
+					@media (any-hover: hover) {
+						&:hover {
+							color: $color-text-secondary;
+						}
+					}
+				}
+			}
+
+			.lang-switcher {
+				color: $color-black;
+			}
+		}
 	}
 
 	// .sticky-navbar__inner

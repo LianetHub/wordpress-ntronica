@@ -1,22 +1,13 @@
 <?php
+
 /**
- * Single post template
+ * Single post — mock news article layout.
  *
  * @package ntronica
  */
 
 get_header();
 
-while ( have_posts() ) :
-	the_post();
-	?>
-	<div class="container">
-		<article <?php post_class(); ?>>
-			<h1><?php the_title(); ?></h1>
-			<?php the_content(); ?>
-		</article>
-	</div>
-	<?php
-endwhile;
+get_template_part('components/templates-parts/section', 'news-article');
 
 get_footer();

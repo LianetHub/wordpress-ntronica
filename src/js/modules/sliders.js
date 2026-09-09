@@ -72,6 +72,22 @@ export class Slider {
 			return;
 		}
 
+		if (el.classList.contains("news-article-slider")) {
+			new Swiper(el, {
+				watchOverflow: true,
+				slidesPerView: 1,
+				spaceBetween: 0,
+				speed: 450,
+				allowTouchMove: true,
+				navigation: {
+					prevEl,
+					nextEl,
+				},
+				pagination: fractionPagination,
+			});
+			return;
+		}
+
 		if (el.classList.contains("media-publications-slider")) {
 			new Swiper(el, {
 				watchOverflow: true,

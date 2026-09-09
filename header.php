@@ -83,6 +83,16 @@
 						'nav'       => ntronica_get_page_section_nav('news'),
 					)
 				);
+			} elseif (is_singular('post')) {
+				get_template_part(
+					'components/templates-parts/sticky-navbar',
+					null,
+					array(
+						'variant' => 'breadcrumbs',
+						'theme'   => 'light',
+						'crumbs'  => ntronica_get_news_article_crumbs(),
+					)
+				);
 			} elseif (ntronica_is_utility_page()) {
 				get_template_part(
 					'components/templates-parts/sticky-navbar',

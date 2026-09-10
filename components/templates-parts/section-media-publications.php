@@ -23,7 +23,7 @@ $ntronica_media = wp_parse_args(
 
 $ntronica_items = is_array($ntronica_media['items']) ? $ntronica_media['items'] : array();
 ?>
-<section class="media-publications band-full" id="media">
+<section class="media-publications" id="media">
 	<div class="container">
 		<h2 class="title media-publications__title">
 			Media publications

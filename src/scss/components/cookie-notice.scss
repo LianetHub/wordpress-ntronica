@@ -68,11 +68,6 @@
 	// cookie-notice__inner
 	&__inner {
 		position: relative;
-		padding-left: calc(var(--sidebar-width) + var(--container-pad-left));
-
-		@media (min-width: $md6) {
-			max-width: calc(var(--sidebar-width) + var(--container-max));
-		}
 	}
 
 	// cookie-notice__panel

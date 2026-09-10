@@ -13,7 +13,7 @@
 	overflow: hidden;
 	width: rem($sidebar-width);
 	min-width: rem($sidebar-width);
-	height: 100svh;
+	height: 100dvh;
 	max-width: 100vw;
 
 	padding: 0 rem(14) rem(12);
@@ -112,9 +112,7 @@
 		cursor: default;
 
 		.sidebar__nav {
-			opacity: calc(
-				1 - min(1, max(0, (var(--sidebar-close-progress, 0) - 0.749) * 10000))
-			);
+			opacity: calc(1 - min(1, max(0, (var(--sidebar-close-progress, 0) - 0.749) * 10000)));
 			pointer-events: none;
 		}
 
@@ -125,10 +123,7 @@
 		}
 
 		&.is-open .sidebar__logo {
-			width: calc(
-				#{rem(133)} - min(1, max(0, (var(--sidebar-close-progress, 0) - 0.749) * 10000)) *
-					(#{rem(133)} - #{rem(27)})
-			);
+			width: calc(#{rem(133)} - min(1, max(0, (var(--sidebar-close-progress, 0) - 0.749) * 10000)) * (#{rem(133)} - #{rem(27)}));
 			transition: none;
 		}
 	}
@@ -144,6 +139,7 @@
 	}
 
 	&.is-closing-swipe {
+
 		.sidebar__close,
 		.sidebar__lang {
 			transition: opacity 0.25s ease;

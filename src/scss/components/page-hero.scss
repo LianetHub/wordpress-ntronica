@@ -14,6 +14,7 @@
 	background-position: center;
 	background-repeat: no-repeat;
 	padding-top: rem(20);
+	width: 100%;
 
 	@media (max-width:$md6) {
 		aspect-ratio: 430 / 380;

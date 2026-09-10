@@ -12,7 +12,7 @@
 	// Nanotronica Text: OS/2 sTypoAscender/sTypoDescender (1000 UPM)
 	--font-ascent: 0.912em;
 	--font-descent: 0.192em;
-	--marker-top: calc((1lh - var(--font-ascent) - var(--font-descent)) / 2 + var(--font-ascent) - 1ex);
+	--marker-top: calc((1lh - var(--font-ascent) - var(--font-descent)) / 2 + var(--font-ascent) - 1cap);
 	--marker-bottom: calc((1lh - var(--font-ascent) - var(--font-descent)) / 2 + var(--font-descent));
 	background-color: $color-footer;
 	color: $color-muted;
@@ -222,7 +222,7 @@
 		>li {
 			&::before {
 				top: var(--marker-top);
-				height: 1ex;
+				height: 1cap;
 			}
 
 			&:has(br)::before {

@@ -7,7 +7,7 @@
  */
 ?>
 </main>
-<footer class="footer band-full">
+<footer class="footer">
 	<div class="container">
 		<div class="row footer__grid g-4">
 			<div class="col-12 col-xxl-3 footer__copy">
@@ -54,7 +54,7 @@
 					<div class="footer__policies">
 						<a class="footer__link" href="<?php echo esc_url(home_url('/privacy-policy/')); ?>">Privacy policy</a>
 						<a class="footer__link" href="<?php echo esc_url(home_url('/terms-of-use/')); ?>">Terms of use</a>
-						<a class="footer__link" href="#cookie-notice" data-cookie-settings>Cookie settings</a>
+						<!-- <a class="footer__link" href="#cookie-notice" data-cookie-settings>Cookie settings</a> -->
 					</div>
 				</div>
 			</div>

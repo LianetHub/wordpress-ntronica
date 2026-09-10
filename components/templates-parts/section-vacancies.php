@@ -25,7 +25,7 @@ $vacancies = array(
 );
 
 ?>
-<section class="vacancies band-full" id="careers">
+<section class="vacancies" id="careers">
 	<div class="container">
 		<h2 class="title vacancies__title">
 			Open positions

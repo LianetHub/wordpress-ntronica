@@ -2,40 +2,40 @@
 @use "../variables" as *;
 @use "../mixins" as *;
 
-:root {
-	--sticky-navbar-offset: 0;
+// :root {
+// 	--sticky-navbar-offset: 0;
 
 
-	&:has(.sticky-navbar[data-variant="breadcrumbs"]) {
-		@media (min-width: $md6) {
-			--sticky-navbar-offset: #{rem(57)};
-		}
+// 	&:has(.sticky-navbar[data-variant="breadcrumbs"]) {
+// 		@media (min-width: $md6) {
+// 			--sticky-navbar-offset: #{rem(57)};
+// 		}
 
-		@media (min-width: $md5) {
-			--sticky-navbar-offset: #{rem(82)};
-		}
+// 		@media (min-width: $md5) {
+// 			--sticky-navbar-offset: #{rem(82)};
+// 		}
 
-		@media (min-width: $md3) {
-			--sticky-navbar-offset: #{rem(90)};
-		}
+// 		@media (min-width: $md3) {
+// 			--sticky-navbar-offset: #{rem(90)};
+// 		}
 
-		@media (min-width: $md2) {
-			--sticky-navbar-offset: #{rem(105)};
-		}
+// 		@media (min-width: $md2) {
+// 			--sticky-navbar-offset: #{rem(105)};
+// 		}
 
-		@media (min-width: $md1) {
-			--sticky-navbar-offset: #{rem(118)};
-		}
-	}
-}
+// 		@media (min-width: $md1) {
+// 			--sticky-navbar-offset: #{rem(118)};
+// 		}
+// 	}
+// }
 
-.main {
+// .main {
 
-	section[id],
-	.products-lines__col[id] {
-		scroll-margin-top: var(--sticky-navbar-offset);
-	}
-}
+// 	section[id],
+// 	.products-lines__col[id] {
+// 		scroll-margin-top: var(--sticky-navbar-offset);
+// 	}
+// }
 
 
 .sticky-navbar {
@@ -45,7 +45,7 @@
 	z-index: 10;
 	box-sizing: border-box;
 	background-color: transparent;
-	padding-left: var(--sidebar-width);
+	// padding-left: var(--sidebar-width);
 	width: 100%;
 	transition: background-color 200ms ease-in-out, color 200ms ease-in-out;
 	display: none;

@@ -30,7 +30,7 @@ $ntronica_hero = wp_parse_args(
 );
 
 $ntronica_has_title  = '' !== $ntronica_hero['title'];
-$ntronica_hero_class = 'page-hero band-full';
+$ntronica_hero_class = 'page-hero';
 
 if (! $ntronica_has_title) {
 	$ntronica_hero_class .= ' page-hero--home';

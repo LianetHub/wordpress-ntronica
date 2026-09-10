@@ -6,7 +6,7 @@
  * @package ntronica
  */
 ?>
-<section class="about-stats band-full" id="about-us">
+<section class="about-stats" id="about-us">
 	<div class="container">
 		<h2 class="title about-stats__title">About us</h2>
 

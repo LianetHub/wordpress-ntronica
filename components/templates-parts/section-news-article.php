@@ -32,7 +32,7 @@ $ntronica_gallery = isset($ntronica_article['gallery']) && is_array($ntronica_ar
 	: array();
 ?>
 <article class="news-article">
-	<header class="news-article__hero band-full">
+	<header class="news-article__hero">
 		<div class="container">
 			<?php if ($ntronica_crumbs) : ?>
 				<nav class="news-article__crumbs" aria-label="<?php echo esc_attr('Breadcrumb'); ?>">

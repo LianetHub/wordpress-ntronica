@@ -60,7 +60,7 @@ $ntronica_processes = array(
 	),
 );
 ?>
-<section class="progress-slider band-full" id="processes">
+<section class="progress-slider" id="processes">
 	<div class="container">
 		<h2 class="title-md progress-slider__header">Technological processes</h2>
 

@@ -507,11 +507,11 @@
 	// info__list
 	&__list {
 		font-family: $font-family;
-		--font-ascent: 1.125em;
-		--font-descent: 0.2em;
-		--marker-outset: #{rem(2)};
-		--marker-top: calc((1lh - var(--font-ascent) - var(--font-descent)) / 2 + var(--font-ascent) - 1cap - var(--marker-outset));
-		--marker-bottom: calc((1lh - var(--font-ascent) - var(--font-descent)) / 2 + var(--font-descent) - var(--marker-outset));
+		// Nanotronica Text: OS/2 sTypoAscender/sTypoDescender (1000 UPM)
+		--font-ascent: 0.912em;
+		--font-descent: 0.192em;
+		--marker-top: calc((1lh - var(--font-ascent) - var(--font-descent)) / 2 + var(--font-ascent) - 1ex);
+		--marker-bottom: calc((1lh - var(--font-ascent) - var(--font-descent)) / 2 + var(--font-descent));
 		gap: rem(0);
 		--marker-size: #{rem(12)};
 		--marker-gap: #{rem(12)};
@@ -529,7 +529,6 @@
 		}
 
 		@media (min-width:$md2) {
-			--font-ascent: 0.912em;
 			--marker-size: #{rem(16)};
 			--marker-gap: #{rem(16)};
 			--marker-col: #{rem(74)};
@@ -548,12 +547,7 @@
 		>li {
 			&::before {
 				top: var(--marker-top);
-				height: calc(0.75cap + 2 * var(--marker-outset));
-
-				@media (min-width:$md2) {
-					height: calc(0.8125cap + 2 * var(--marker-outset));
-
-				}
+				height: 1ex;
 			}
 
 			&:has(br)::before,

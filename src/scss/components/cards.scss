@@ -7,6 +7,17 @@
 	flex-direction: column;
 	color: inherit;
 
+	@media (any-hover: hover) {
+		&:hover {
+			.product-card__media {
+				&::before {
+					opacity: 1;
+					visibility: visible;
+				}
+			}
+		}
+	}
+
 	// product-card__media
 	&__media {
 		position: relative;
@@ -14,6 +25,19 @@
 		aspect-ratio: 322 / 214;
 		overflow: hidden;
 		background-color: $color-placeholder;
+
+		&::before {
+			content: '';
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			opacity: 0;
+			visibility: hidden;
+			background: rgba($color: #EFEFEF, $alpha: .60);
+			transition: opacity 0.1s ease-in-out, visibility 0.1s ease-in-out;
+		}
 
 		@media (min-width: $md6) {
 			aspect-ratio: 204 / 136;

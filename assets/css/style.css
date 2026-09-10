@@ -2067,7 +2067,10 @@ body.page-template-page-contacts, body.error404, body.search, body.page-template
   --footer-text-gap: 0.375rem;
   --footer-marker-track: calc(var(--footer-label) + var(--footer-label-gap) + var(--footer-marker));
   --footer-content-offset: calc(var(--footer-marker-track) + var(--footer-text-gap));
-  --footer-marker-offset: 0.1875rem;
+  --font-ascent: 0.912em;
+  --font-descent: 0.192em;
+  --marker-top: calc((1lh - var(--font-ascent) - var(--font-descent)) / 2 + var(--font-ascent) - 1ex);
+  --marker-bottom: calc((1lh - var(--font-ascent) - var(--font-descent)) / 2 + var(--font-descent));
   background-color: #58595b;
   color: #acadaf;
   padding-top: 1.625rem;
@@ -2098,7 +2101,6 @@ body.page-template-page-contacts, body.error404, body.search, body.page-template
     --footer-label-gap: 0.8125rem;
     --footer-marker: 0.8125rem;
     --footer-text-gap: 0.8125rem;
-    --footer-marker-offset: 0.25rem;
     padding-top: 2.6875rem;
     padding-bottom: 2rem;
   }
@@ -2235,16 +2237,11 @@ body.page-template-page-contacts, body.error404, body.search, body.page-template
 .footer__address::before {
   content: "";
   position: absolute;
-  top: var(--footer-marker-offset);
+  top: var(--marker-top);
   left: calc(var(--footer-label) + var(--footer-label-gap));
   width: var(--footer-marker);
   background-color: currentColor;
-  bottom: 0.125rem;
-}
-@media (min-width: 1199.98px) {
-  .footer__address::before {
-    bottom: 0.25rem;
-  }
+  bottom: var(--marker-bottom);
 }
 .footer__address[data-label]::after {
   content: attr(data-label);
@@ -2259,7 +2256,6 @@ body.page-template-page-contacts, body.error404, body.search, body.page-template
   --marker-col: var(--footer-marker-track);
   --marker-size: var(--footer-marker);
   --marker-gap: var(--footer-text-gap);
-  --marker-offset: var(--footer-marker-offset);
   font-family: "Nanotronica_Text", system-ui, -apple-system, "Segoe UI", sans-serif;
   font-weight: 400;
   font-size: 0.75rem;
@@ -2276,6 +2272,14 @@ body.page-template-page-contacts, body.error404, body.search, body.page-template
     font-size: 1.125rem;
     line-height: 1.1666666667;
   }
+}
+.footer .feature-list > li::before {
+  top: var(--marker-top);
+  height: 1ex;
+}
+.footer .feature-list > li:has(br)::before {
+  height: auto;
+  bottom: var(--marker-bottom);
 }
 .footer__links {
   font-family: "Nanotronica_Text", system-ui, -apple-system, "Segoe UI", sans-serif;
@@ -2884,11 +2888,10 @@ body.page-template-page-contacts, body.error404, body.search, body.page-template
 }
 .info__list {
   font-family: "Nanotronica_Text", system-ui, -apple-system, "Segoe UI", sans-serif;
-  --font-ascent: 1.125em;
-  --font-descent: 0.2em;
-  --marker-outset: 0.125rem;
-  --marker-top: calc((1lh - var(--font-ascent) - var(--font-descent)) / 2 + var(--font-ascent) - 1cap - var(--marker-outset));
-  --marker-bottom: calc((1lh - var(--font-ascent) - var(--font-descent)) / 2 + var(--font-descent) - var(--marker-outset));
+  --font-ascent: 0.912em;
+  --font-descent: 0.192em;
+  --marker-top: calc((1lh - var(--font-ascent) - var(--font-descent)) / 2 + var(--font-ascent) - 1ex);
+  --marker-bottom: calc((1lh - var(--font-ascent) - var(--font-descent)) / 2 + var(--font-descent));
   gap: 0rem;
   --marker-size: 0.75rem;
   --marker-gap: 0.75rem;
@@ -2908,7 +2911,6 @@ body.page-template-page-contacts, body.error404, body.search, body.page-template
 }
 @media (min-width: 1727.98px) {
   .info__list {
-    --font-ascent: 0.912em;
     --marker-size: 1rem;
     --marker-gap: 1rem;
     --marker-col: 4.625rem;
@@ -2927,12 +2929,7 @@ body.page-template-page-contacts, body.error404, body.search, body.page-template
 }
 .info__list > li::before {
   top: var(--marker-top);
-  height: calc(0.75cap + 2 * var(--marker-outset));
-}
-@media (min-width: 1727.98px) {
-  .info__list > li::before {
-    height: calc(0.8125cap + 2 * var(--marker-outset));
-  }
+  height: 1ex;
 }
 .info__list > li:has(br)::before, .info__list > li:has(address)::before {
   height: auto;
@@ -6192,12 +6189,30 @@ body.page-template-page-contacts, body.error404, body.search, body.page-template
   flex-direction: column;
   color: inherit;
 }
+@media (any-hover: hover) {
+  .product-card:hover .product-card__media::before {
+    opacity: 1;
+    visibility: visible;
+  }
+}
 .product-card__media {
   position: relative;
   width: 100%;
   aspect-ratio: 322/214;
   overflow: hidden;
   background-color: #d9d9d9;
+}
+.product-card__media::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  visibility: hidden;
+  background: rgba(239, 239, 239, 0.6);
+  transition: opacity 0.1s ease-in-out, visibility 0.1s ease-in-out;
 }
 @media (min-width: 767.98px) {
   .product-card__media {

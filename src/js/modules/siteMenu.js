@@ -295,15 +295,10 @@ export class SiteMenu {
 		if (this.isBreadcrumbs) return;
 
 		this.syncScrollOffset = this.syncScrollOffset.bind(this);
-		this.setScrolledState = this.setScrolledState.bind(this);
 
 		this.syncScrollOffset();
-		this.setScrolledState();
 
 		window.addEventListener("resize", this.syncScrollOffset);
-		window.addEventListener("scroll", this.setScrolledState, {
-			passive: true,
-		});
 	}
 
 	syncScrollOffset() {
@@ -312,11 +307,6 @@ export class SiteMenu {
 			"--sticky-navbar-offset",
 			`${this.navbar.offsetHeight}px`,
 		);
-	}
-
-	setScrolledState() {
-		if (!this.navbar) return;
-		this.navbar.classList.toggle("is-scrolled", window.scrollY > 0);
 	}
 
 	isOpen() {

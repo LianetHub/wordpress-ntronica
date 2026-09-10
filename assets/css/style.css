@@ -5943,7 +5943,7 @@ body.page-template-page-contacts, body.error404, body.search, body.page-template
 }
 
 .sticky-navbar {
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
   z-index: 10;
@@ -5958,9 +5958,6 @@ body.page-template-page-contacts, body.error404, body.search, body.page-template
   .sticky-navbar {
     display: block;
   }
-}
-.sticky-navbar.is-scrolled {
-  background-color: #ffffff;
 }
 .sticky-navbar[data-variant=nav] {
   padding-top: 0rem;

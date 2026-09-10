@@ -31,7 +31,7 @@ export class Slider {
 				slidesPerView: 2,
 				slidesPerGroup: 6,
 				spaceBetween: 24,
-				speed: 450,
+				speed: 50,
 				allowTouchMove: true,
 				grid: {
 					rows: 3,
@@ -57,7 +57,10 @@ export class Slider {
 			return;
 		}
 
-		if (el.classList.contains("progress-slider__slider") || el.classList.contains("progress-slider")) {
+		if (
+			el.classList.contains("progress-slider__slider") ||
+			el.classList.contains("progress-slider")
+		) {
 			new Swiper(el, {
 				watchOverflow: true,
 				slidesPerView: 1,
@@ -77,7 +80,7 @@ export class Slider {
 				watchOverflow: true,
 				slidesPerView: 1,
 				spaceBetween: 0,
-				speed: 450,
+				speed: 50,
 				allowTouchMove: true,
 				navigation: {
 					prevEl,
@@ -94,7 +97,7 @@ export class Slider {
 				slidesPerView: 1,
 				slidesPerGroup: 3,
 				spaceBetween: 30,
-				speed: 450,
+				speed: 50,
 				allowTouchMove: true,
 				grid: {
 					rows: 3,

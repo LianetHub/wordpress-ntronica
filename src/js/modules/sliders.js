@@ -31,7 +31,7 @@ export class Slider {
 				slidesPerView: 2,
 				slidesPerGroup: 6,
 				spaceBetween: 24,
-				speed: 50,
+				speed: 0,
 				allowTouchMove: true,
 				grid: {
 					rows: 3,
@@ -80,7 +80,7 @@ export class Slider {
 				watchOverflow: true,
 				slidesPerView: 1,
 				spaceBetween: 0,
-				speed: 50,
+				speed: 0,
 				allowTouchMove: true,
 				navigation: {
 					prevEl,

@@ -15,10 +15,7 @@ export class PageHero {
 		}
 
 		this.bindWipe(el.querySelector(".page-hero__title[data-title]"), "40%");
-		this.bindWipe(
-			el.querySelector(".page-hero__tagline[data-title]"),
-			"2%",
-		);
+		this.bindSnapWipe(el.querySelector(".page-hero__tagline[data-title]"));
 	}
 
 	bindWipe(target, end) {
@@ -33,6 +30,22 @@ export class PageHero {
 				target.style.setProperty(
 					"--hero-wipe",
 					`${self.progress * 100}%`,
+				);
+			},
+		});
+	}
+
+	bindSnapWipe(target) {
+		if (!target) return;
+
+		ScrollTrigger.create({
+			trigger: this.section,
+			start: "0% top",
+			end: "1px top",
+			onUpdate: (self) => {
+				target.style.setProperty(
+					"--hero-wipe",
+					self.scroll() > self.start ? "100%" : "0%",
 				);
 			},
 		});

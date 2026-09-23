@@ -47,15 +47,9 @@ $ntronica_items = is_array($ntronica_media['items']) ? $ntronica_media['items'] 
 				</div>
 
 				<div class="slider-nav media-publications__nav">
-					<button
-						type="button"
-						class="swiper-button-prev"
-						aria-label="Previous media publications"></button>
+					<?php ntronica_slider_nav_button('prev', 'Previous media publications'); ?>
 					<p class="text-block slider-nav__fraction" aria-live="polite"></p>
-					<button
-						type="button"
-						class="swiper-button-next"
-						aria-label="Next media publications"></button>
+					<?php ntronica_slider_nav_button('next', 'Next media publications'); ?>
 				</div>
 			</div>
 		<?php endif; ?>

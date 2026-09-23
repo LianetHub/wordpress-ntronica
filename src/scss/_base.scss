@@ -1,5 +1,4 @@
 @use "sass:color";
-@use "sass:math";
 @use "variables" as *;
 @use "mixins" as *;
 
@@ -262,37 +261,44 @@ body {
 	display: inline-flex;
 	align-items: center;
 	justify-content: center;
-	width: rem(19);
-	height: rem(19);
+
 	background: transparent;
-	font-family: $font-title;
-	font-weight: 700;
-	font-size: rem(27);
-	line-height: math.div(17, 27);
 	color: $color-black;
 	cursor: pointer;
-	transition: opacity 0.2s ease;
 
-	@media (min-width: $md3) {
-		width: rem(21);
-		height: rem(21);
-		font-size: rem(34);
-		line-height: math.div(19, 34);
+
+
+	&::after {
+		content: none;
+		display: none;
 	}
 
-	@media (min-width: $md3) {
-		width: rem(24);
-		height: rem(22);
-		font-size: rem(38);
+	.icon {
+		display: block;
+		flex-shrink: 0;
+		width: rem(18);
+		height: rem(14.182);
+
+		@media (min-width: $md3) {
+			width: rem(23);
+			height: rem(15);
+		}
+
+		@media (min-width: $md2) {
+			width: rem(25);
+			height: rem(17);
+		}
+
+		@media (min-width: $md1) {
+			width: rem(31);
+			height: rem(20);
+		}
+
+
 	}
 
-	@media (min-width: $md1) {
-		width: rem(33);
-		height: rem(28);
-		font-size: rem(47);
-	}
-
-	& svg {
+	.icon--arrow-prev-hover,
+	.icon--arrow-next-hover {
 		display: none;
 	}
 
@@ -303,20 +309,17 @@ body {
 
 	@media (any-hover: hover) {
 		&:not(.swiper-button-disabled):hover {
-			font-family: $font-reduct;
+
+			.icon--arrow-prev,
+			.icon--arrow-next {
+				display: none;
+			}
+
+			.icon--arrow-prev-hover,
+			.icon--arrow-next-hover {
+				display: block;
+			}
 		}
-	}
-}
-
-.swiper-button-prev {
-	&::after {
-		content: '←';
-	}
-}
-
-.swiper-button-next {
-	&::after {
-		content: '→';
 	}
 }
 

@@ -1,53 +1,23 @@
 /**
- * Page hero title/tagline: scroll-scrubbed reduct clip wipe.
+ * Page hero title/tagline: instant reduct wipe on any scroll.
  */
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-
-gsap.registerPlugin(ScrollTrigger);
-
 export class PageHero {
 	constructor(el) {
-		this.section = el;
+		this.targets = [
+			el.querySelector(".page-hero__title[data-title]"),
+			el.querySelector(".page-hero__tagline[data-title]"),
+		].filter(Boolean);
 
-		if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-			return;
-		}
+		if (!this.targets.length) return;
 
-		this.bindWipe(el.querySelector(".page-hero__title[data-title]"), "40%");
-		this.bindSnapWipe(el.querySelector(".page-hero__tagline[data-title]"));
-	}
+		this.update = () => {
+			const wipe = window.scrollY > 0 ? "100%" : "0%";
+			this.targets.forEach((t) =>
+				t.style.setProperty("--hero-wipe", wipe),
+			);
+		};
 
-	bindWipe(target, end) {
-		if (!target) return;
-
-		ScrollTrigger.create({
-			trigger: this.section,
-			start: "0% top",
-			end: `${end} top`,
-			scrub: true,
-			onUpdate: (self) => {
-				target.style.setProperty(
-					"--hero-wipe",
-					`${self.progress * 100}%`,
-				);
-			},
-		});
-	}
-
-	bindSnapWipe(target) {
-		if (!target) return;
-
-		ScrollTrigger.create({
-			trigger: this.section,
-			start: "0% top",
-			end: "1px top",
-			onUpdate: (self) => {
-				target.style.setProperty(
-					"--hero-wipe",
-					self.scroll() > self.start ? "100%" : "0%",
-				);
-			},
-		});
+		this.update();
+		window.addEventListener("scroll", this.update, { passive: true });
 	}
 }

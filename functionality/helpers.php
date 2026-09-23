@@ -426,21 +426,44 @@ function ntronica_is_utility_page()
 /**
  * Print an SVG icon from the theme sprite.
  *
- * @param string $name  Symbol name without the `icon-` prefix.
- * @param string $class Extra class names on the <svg>.
+ * @param string $name     Symbol name without the `icon-` prefix.
+ * @param string $class    Extra class names on the <svg>.
+ * @param string $view_box Optional viewBox so the icon can scale via CSS.
  */
-function ntronica_icon($name, $class = '')
+function ntronica_icon($name, $class = '', $view_box = '')
 {
 	$name = sanitize_html_class($name);
 	if ('' === $name) {
 		return;
 	}
 
-	$classes = trim('icon icon--' . $name . ' ' . $class);
+	$classes       = trim('icon icon--' . $name . ' ' . $class);
+	$view_box_attr = '' !== $view_box ? ' viewBox="' . esc_attr($view_box) . '"' : '';
 
 	printf(
-		'<svg class="%1$s" aria-hidden="true" focusable="false"><use href="#icon-%2$s"></use></svg>',
+		'<svg class="%1$s" aria-hidden="true" focusable="false"%3$s><use href="#icon-%2$s"></use></svg>',
 		esc_attr($classes),
-		esc_attr($name)
+		esc_attr($name),
+		$view_box_attr
 	);
+}
+
+/**
+ * Print a Swiper prev/next button with sprite arrows (default + hover).
+ *
+ * @param string $direction  `prev` or `next`.
+ * @param string $aria_label Accessible label.
+ */
+function ntronica_slider_nav_button($direction, $aria_label)
+{
+	$direction = 'prev' === $direction ? 'prev' : 'next';
+?>
+	<button
+		type="button"
+		class="swiper-button-<?php echo esc_attr($direction); ?>"
+		aria-label="<?php echo esc_attr($aria_label); ?>">
+		<?php ntronica_icon('arrow-' . $direction, '', '0 0 29 19'); ?>
+		<?php ntronica_icon('arrow-' . $direction . '-hover', '', '0 0 29 19'); ?>
+	</button>
+<?php
 }

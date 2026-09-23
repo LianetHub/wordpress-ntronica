@@ -90,15 +90,9 @@ $ntronica_processes = array(
 							</div>
 
 							<div class="progress-slider__footer">
-								<button
-									type="button"
-									class="swiper-button-prev"
-									aria-label="Previous process"></button>
+								<?php ntronica_slider_nav_button('prev', 'Previous process'); ?>
 								<span class="progress-slider__index"><?php echo esc_html($ntronica_item['index']); ?></span>
-								<button
-									type="button"
-									class="swiper-button-next"
-									aria-label="Next process"></button>
+								<?php ntronica_slider_nav_button('next', 'Next process'); ?>
 							</div>
 						</div>
 					</div>

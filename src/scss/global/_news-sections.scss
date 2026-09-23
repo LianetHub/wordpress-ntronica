@@ -240,6 +240,7 @@
 
 .slider-nav {
 	display: flex;
+	align-items: center;
 	justify-content: space-between;
 	width: rem(100);
 
@@ -260,6 +261,7 @@
 }
 
 .news-article {
+
 	// news-article__hero
 	&__hero {
 		background-color: $color-muted;

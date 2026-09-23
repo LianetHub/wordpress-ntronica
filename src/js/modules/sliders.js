@@ -97,7 +97,7 @@ export class Slider {
 				slidesPerView: 1,
 				slidesPerGroup: 3,
 				spaceBetween: 30,
-				speed: 50,
+				speed: 0,
 				allowTouchMove: true,
 				grid: {
 					rows: 3,

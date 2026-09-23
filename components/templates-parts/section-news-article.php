@@ -107,15 +107,9 @@ $ntronica_gallery = isset($ntronica_article['gallery']) && is_array($ntronica_ar
 							</div>
 
 							<div class="slider-nav news-article__nav">
-								<button
-									type="button"
-									class="swiper-button-prev"
-									aria-label="<?php echo esc_attr('Previous image'); ?>"></button>
+								<?php ntronica_slider_nav_button('prev', 'Previous image'); ?>
 								<p class="text-block slider-nav__fraction" aria-live="polite"></p>
-								<button
-									type="button"
-									class="swiper-button-next"
-									aria-label="<?php echo esc_attr('Next image'); ?>"></button>
+								<?php ntronica_slider_nav_button('next', 'Next image'); ?>
 							</div>
 						</div>
 					</div>

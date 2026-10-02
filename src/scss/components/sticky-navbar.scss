@@ -2,40 +2,29 @@
 @use "../variables" as *;
 @use "../mixins" as *;
 
-// :root {
-// 	--sticky-navbar-offset: 0;
+:root {
 
 
-// 	&:has(.sticky-navbar[data-variant="breadcrumbs"]) {
-// 		@media (min-width: $md6) {
-// 			--sticky-navbar-offset: #{rem(57)};
-// 		}
+	&:has(.sticky-navbar[data-variant="breadcrumbs"]) {
+		--sticky-navbar-offset: #{rem(64)};
 
-// 		@media (min-width: $md5) {
-// 			--sticky-navbar-offset: #{rem(82)};
-// 		}
+		@media (min-width: $md5) {
+			--sticky-navbar-offset: #{rem(88)};
+		}
 
-// 		@media (min-width: $md3) {
-// 			--sticky-navbar-offset: #{rem(90)};
-// 		}
+		@media (min-width: $md3) {
+			--sticky-navbar-offset: #{rem(98)};
+		}
 
-// 		@media (min-width: $md2) {
-// 			--sticky-navbar-offset: #{rem(105)};
-// 		}
+		@media (min-width: $md2) {
+			--sticky-navbar-offset: #{rem(105)};
+		}
 
-// 		@media (min-width: $md1) {
-// 			--sticky-navbar-offset: #{rem(118)};
-// 		}
-// 	}
-// }
-
-// .main {
-
-// 	section[id],
-// 	.products-lines__col[id] {
-// 		scroll-margin-top: var(--sticky-navbar-offset);
-// 	}
-// }
+		@media (min-width: $md1) {
+			--sticky-navbar-offset: #{rem(118)};
+		}
+	}
+}
 
 
 .sticky-navbar {
@@ -45,22 +34,16 @@
 	z-index: 10;
 	box-sizing: border-box;
 	background-color: transparent;
-	// padding-left: var(--sidebar-width);
 	width: 100%;
 	transition: background-color 200ms ease-in-out, color 200ms ease-in-out;
-	display: none;
-
-	@media (min-width: $md6) {
-		display: block;
-	}
-
 
 	// nav variant
 	&[data-variant="nav"] {
 		padding-top: rem(0);
+		display: none;
 
 		@media (min-width: $md6) {
-
+			display: block;
 			padding-block: rem(15);
 		}
 
@@ -93,12 +76,18 @@
 		left: 0;
 		width: 100%;
 		padding-left: 0;
+		display: block;
 
+		padding-top: rem(14);
+		padding-bottom: rem(30);
 
-		@media (min-width: $md6) {
+		@media (max-width:$md6) {
+			padding-top: rem(21);
 
-			padding-top: rem(14);
-			padding-bottom: rem(30);
+			.sticky-navbar__lang {
+				display: none;
+			}
+
 		}
 
 		@media (min-width: $md5) {

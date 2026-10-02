@@ -108,12 +108,7 @@ body.page-template-page-contacts, body.error404, body.search, body.page-template
   flex-direction: column;
   background: #58595b;
   color: #ffffff;
-  padding-top: 1.75rem;
-}
-@media (min-width: 767.98px) {
-  .main--utility {
-    padding-top: var(--sticky-navbar-offset);
-  }
+  padding-top: var(--sticky-navbar-offset);
 }
 
 .admin-bar .sidebar {
@@ -5881,6 +5876,30 @@ body.page-template-page-contacts, body.error404, body.search, body.page-template
   }
 }
 
+:root:has(.sticky-navbar[data-variant=breadcrumbs]) {
+  --sticky-navbar-offset: 4rem;
+}
+@media (min-width: 1023.98px) {
+  :root:has(.sticky-navbar[data-variant=breadcrumbs]) {
+    --sticky-navbar-offset: 5.5rem;
+  }
+}
+@media (min-width: 1439.98px) {
+  :root:has(.sticky-navbar[data-variant=breadcrumbs]) {
+    --sticky-navbar-offset: 6.125rem;
+  }
+}
+@media (min-width: 1727.98px) {
+  :root:has(.sticky-navbar[data-variant=breadcrumbs]) {
+    --sticky-navbar-offset: 6.5625rem;
+  }
+}
+@media (min-width: 2559.98px) {
+  :root:has(.sticky-navbar[data-variant=breadcrumbs]) {
+    --sticky-navbar-offset: 7.375rem;
+  }
+}
+
 .sticky-navbar {
   position: absolute;
   top: 0;
@@ -5890,18 +5909,14 @@ body.page-template-page-contacts, body.error404, body.search, body.page-template
   background-color: transparent;
   width: 100%;
   transition: background-color 200ms ease-in-out, color 200ms ease-in-out;
-  display: none;
-}
-@media (min-width: 767.98px) {
-  .sticky-navbar {
-    display: block;
-  }
 }
 .sticky-navbar[data-variant=nav] {
   padding-top: 0rem;
+  display: none;
 }
 @media (min-width: 767.98px) {
   .sticky-navbar[data-variant=nav] {
+    display: block;
     padding-block: 0.9375rem;
   }
 }
@@ -5933,11 +5948,16 @@ body.page-template-page-contacts, body.error404, body.search, body.page-template
   left: 0;
   width: 100%;
   padding-left: 0;
+  display: block;
+  padding-top: 0.875rem;
+  padding-bottom: 1.875rem;
 }
-@media (min-width: 767.98px) {
+@media (max-width: 767.98px) {
   .sticky-navbar[data-variant=breadcrumbs] {
-    padding-top: 0.875rem;
-    padding-bottom: 1.875rem;
+    padding-top: 1.3125rem;
+  }
+  .sticky-navbar[data-variant=breadcrumbs] .sticky-navbar__lang {
+    display: none;
   }
 }
 @media (min-width: 1023.98px) {

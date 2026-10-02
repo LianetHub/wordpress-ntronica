@@ -196,6 +196,7 @@ body.page-template-page-contacts, body.error404, body.search, body.page-template
 .swiper-button-next.swiper-button-disabled {
   pointer-events: none;
   cursor: default;
+  opacity: 1;
 }
 @media (any-hover: hover) {
   .swiper-button-prev:not(.swiper-button-disabled):hover .icon--arrow-prev,

@@ -11,15 +11,15 @@ $ntronica_img = IMG_PATH . '/home/';
 $ntronica_products = array(
 	array(
 		'title' => 'Thin films equipment',
-		'image' => $ntronica_img . 'product-thin-films.jpg',
+		'image' => $ntronica_img . 'product-thin-films.webp',
 	),
 	array(
 		'title' => 'Wet process equipment',
-		'image' => $ntronica_img . 'product-wet-process.jpg',
+		'image' => $ntronica_img . 'product-wet-process.webp',
 	),
 	array(
 		'title' => 'Process control',
-		'image' => $ntronica_img . 'product-process-control.jpg',
+		'image' => $ntronica_img . 'product-process-control.webp',
 	),
 );
 ?>

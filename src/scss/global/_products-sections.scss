@@ -5,7 +5,15 @@
 .products-thin-films {
 	padding-top: rem(30);
 
-	@media (min-width: $md3) {
+	@media (min-width:$md5) {
+		padding-top: rem(36);
+	}
+
+	@media (min-width:$md3) {
+		padding-top: rem(40);
+	}
+
+	@media (min-width: $md2) {
 		padding-top: rem(50);
 	}
 
@@ -21,6 +29,10 @@
 			margin-bottom: rem(24);
 		}
 
+		@media (min-width: $md2) {
+			margin-bottom: rem(32);
+		}
+
 		@media (min-width: $md1) {
 			margin-bottom: rem(36);
 		}
@@ -31,16 +43,38 @@
 		--gutter-x: #{rem(14)};
 		--gutter-y: #{rem(16)};
 
-		@media (min-width: $md6) {
+		margin-bottom: rem(28);
+
+		@media (min-width:$md6) {
+			margin-bottom: rem(32);
+		}
+
+		@media (min-width: $md5) {
 			--gutter-x: #{rem(24)};
 			--gutter-y: #{rem(0)};
 			align-items: start;
+		}
+
+		@media (min-width:$md3) {
+			margin-bottom: rem(40);
+		}
+
+		@media (min-width:$md2) {
+			margin-bottom: rem(44);
+		}
+
+		@media (min-width:$md1) {
+			margin-bottom: rem(64);
 		}
 	}
 
 	// products-thin-films__text
 	&__text {
-		p + p {
+		&.text-block-alternate {
+			line-height: 1.25;
+		}
+
+		p+p {
 			margin-top: rem(16);
 		}
 	}
@@ -49,17 +83,20 @@
 	&__grid {
 		--gutter-x: #{rem(14)};
 		--gutter-y: #{rem(26)};
-		margin-top: rem(30);
+
 
 		@media (min-width: $md6) {
 			--gutter-x: #{rem(24)};
 			--gutter-y: #{rem(12)};
-			margin-top: rem(40);
+
 		}
+
+
+
 
 		@media (min-width: $md1) {
 			--gutter-y: #{rem(20)};
-			margin-top: rem(70);
+
 		}
 	}
 
@@ -70,8 +107,14 @@
 	padding-bottom: rem(70);
 
 	@media (min-width: $md3) {
+		padding-top: rem(80);
+		padding-bottom: rem(80);
+	}
+
+	@media (min-width:$md2) {
 		padding-top: rem(100);
 		padding-bottom: rem(90);
+
 	}
 
 	@media (min-width: $md1) {
@@ -90,6 +133,18 @@
 	&__title {
 		margin-bottom: rem(16);
 
+		@media (min-width:$md4) {
+			margin-bottom: rem(16);
+		}
+
+		@media (min-width:$md3) {
+			margin-bottom: rem(24);
+		}
+
+		@media (min-width:$md2) {
+			margin-bottom: rem(32);
+		}
+
 		@media (min-width: $md1) {
 			margin-bottom: rem(36);
 		}
@@ -100,11 +155,15 @@
 		margin-bottom: rem(30);
 
 		@media (min-width: $md6) {
+			margin-bottom: rem(32);
+		}
+
+		@media (min-width: $md3) {
 			margin-bottom: rem(40);
 		}
 
 		@media (min-width: $md1) {
-			margin-bottom: rem(70);
+			margin-bottom: rem(94);
 		}
 	}
 

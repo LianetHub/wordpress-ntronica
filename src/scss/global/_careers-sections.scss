@@ -88,48 +88,48 @@
 	&__hero {
 		background-color: $color-muted;
 		color: $color-white;
-		padding-top: rem(16);
-		padding-bottom: rem(28);
+		padding-top: rem(84);
+		padding-bottom: rem(30);
 
 		@media (min-width: $md6) {
 			padding-top: rem(66);
-			padding-bottom: rem(36);
 		}
 
 		@media (min-width: $md5) {
-			padding-top: rem(70);
+			padding-top: rem(84);
+			padding-bottom: rem(50);
 		}
 
 		@media (min-width: $md3) {
 			padding-top: rem(104);
-			padding-bottom: rem(48);
+			padding-bottom: rem(64);
 		}
 
 		@media (min-width: $md2) {
-			padding-bottom: rem(56);
+			padding-top: rem(105);
+			padding-bottom: rem(70);
 		}
 
 		@media (min-width: $md1) {
 			padding-top: rem(132);
-			padding-bottom: rem(70);
 		}
 	}
 
 	// vacancy__title
 	&__title {
 		color: $color-black;
-		margin-bottom: rem(24);
+		margin-bottom: rem(30);
 
 		@media (min-width: $md6) {
-			margin-bottom: rem(32);
+			margin-bottom: rem(50);
 		}
 
 		@media (min-width: $md3) {
-			margin-bottom: rem(48);
+			margin-bottom: rem(64);
 		}
 
 		@media (min-width: $md2) {
-			margin-bottom: rem(64);
+			margin-bottom: rem(70);
 		}
 
 		@media (min-width: $md1) {
@@ -139,7 +139,7 @@
 
 	// vacancy__facts
 	&__facts {
-		--gutter-y: #{rem(16)};
+		--gutter-y: #{rem(15)};
 
 		@media (min-width: $md6) {
 			--gutter-y: #{rem(0)};
@@ -153,31 +153,31 @@
 
 	// vacancy__value
 	&__value {
-		margin-top: rem(8);
+		margin-top: rem(6);
 
-		@media (min-width: $md3) {
-			margin-top: rem(12);
+		@media (min-width: $md6) {
+			margin-top: rem(10);
 		}
 
-		@media (min-width: $md1) {
+		@media (min-width: $md2) {
 			margin-top: rem(15);
 		}
 	}
 
 	// vacancy__body
 	&__body {
-		padding-top: rem(32);
+		padding-top: rem(30);
 
-		@media (min-width: $md6) {
-			padding-top: rem(40);
+		@media (min-width: $md5) {
+			padding-top: rem(36);
 		}
 
 		@media (min-width: $md3) {
-			padding-top: rem(50);
+			padding-top: rem(40);
 		}
 
 		@media (min-width: $md2) {
-			padding-top: rem(60);
+			padding-top: rem(50);
 		}
 
 		@media (min-width: $md1) {
@@ -187,7 +187,7 @@
 
 	// vacancy__lists
 	&__lists {
-		--gutter-y: #{rem(32)};
+		--gutter-y: #{rem(15)};
 
 		@media (min-width: $md6) {
 			--gutter-y: #{rem(0)};
@@ -196,18 +196,35 @@
 
 	// vacancy__subtitle
 	&__subtitle {
-		margin-bottom: rem(16);
-
-		@media (min-width: $md3) {
-			margin-bottom: rem(24);
-		}
-
-		@media (min-width: $md2) {
-			margin-bottom: rem(30);
-		}
+		margin-bottom: rem(15);
 
 		@media (min-width: $md1) {
 			margin-bottom: rem(36);
 		}
+	}
+}
+
+.vacancy+.contact {
+	padding-top: rem(50);
+	padding-bottom: rem(50);
+
+	@media (min-width: $md5) {
+		padding-top: rem(70);
+		padding-bottom: rem(70);
+	}
+
+	@media (min-width: $md3) {
+		padding-top: rem(80);
+		padding-bottom: rem(80);
+	}
+
+	@media (min-width: $md2) {
+		padding-top: rem(96);
+		padding-bottom: rem(90);
+	}
+
+	@media (min-width: $md1) {
+		padding-top: rem(114);
+		padding-bottom: rem(68);
 	}
 }

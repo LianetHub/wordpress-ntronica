@@ -3710,6 +3710,138 @@ body.page-template-page-contacts, body.error404, body.search, body.page-template
   }
 }
 
+.vacancy__hero {
+  background-color: #acadaf;
+  color: #ffffff;
+  padding-top: 1rem;
+  padding-bottom: 1.75rem;
+}
+@media (min-width: 767.98px) {
+  .vacancy__hero {
+    padding-top: 4.125rem;
+    padding-bottom: 2.25rem;
+  }
+}
+@media (min-width: 1023.98px) {
+  .vacancy__hero {
+    padding-top: 4.375rem;
+  }
+}
+@media (min-width: 1439.98px) {
+  .vacancy__hero {
+    padding-top: 6.5rem;
+    padding-bottom: 3rem;
+  }
+}
+@media (min-width: 1727.98px) {
+  .vacancy__hero {
+    padding-bottom: 3.5rem;
+  }
+}
+@media (min-width: 2559.98px) {
+  .vacancy__hero {
+    padding-top: 8.25rem;
+    padding-bottom: 4.375rem;
+  }
+}
+.vacancy__title {
+  color: #000000;
+  margin-bottom: 1.5rem;
+}
+@media (min-width: 767.98px) {
+  .vacancy__title {
+    margin-bottom: 2rem;
+  }
+}
+@media (min-width: 1439.98px) {
+  .vacancy__title {
+    margin-bottom: 3rem;
+  }
+}
+@media (min-width: 1727.98px) {
+  .vacancy__title {
+    margin-bottom: 4rem;
+  }
+}
+@media (min-width: 2559.98px) {
+  .vacancy__title {
+    margin-bottom: 5.625rem;
+  }
+}
+.vacancy__facts {
+  --gutter-y: 1rem;
+}
+@media (min-width: 767.98px) {
+  .vacancy__facts {
+    --gutter-y: 0rem;
+  }
+}
+.vacancy__label {
+  font-weight: 700;
+}
+.vacancy__value {
+  margin-top: 0.5rem;
+}
+@media (min-width: 1439.98px) {
+  .vacancy__value {
+    margin-top: 0.75rem;
+  }
+}
+@media (min-width: 2559.98px) {
+  .vacancy__value {
+    margin-top: 0.9375rem;
+  }
+}
+.vacancy__body {
+  padding-top: 2rem;
+}
+@media (min-width: 767.98px) {
+  .vacancy__body {
+    padding-top: 2.5rem;
+  }
+}
+@media (min-width: 1439.98px) {
+  .vacancy__body {
+    padding-top: 3.125rem;
+  }
+}
+@media (min-width: 1727.98px) {
+  .vacancy__body {
+    padding-top: 3.75rem;
+  }
+}
+@media (min-width: 2559.98px) {
+  .vacancy__body {
+    padding-top: 4.375rem;
+  }
+}
+.vacancy__lists {
+  --gutter-y: 2rem;
+}
+@media (min-width: 767.98px) {
+  .vacancy__lists {
+    --gutter-y: 0rem;
+  }
+}
+.vacancy__subtitle {
+  margin-bottom: 1rem;
+}
+@media (min-width: 1439.98px) {
+  .vacancy__subtitle {
+    margin-bottom: 1.5rem;
+  }
+}
+@media (min-width: 1727.98px) {
+  .vacancy__subtitle {
+    margin-bottom: 1.875rem;
+  }
+}
+@media (min-width: 2559.98px) {
+  .vacancy__subtitle {
+    margin-bottom: 2.25rem;
+  }
+}
+
 .products-thin-films {
   padding-top: 1.875rem;
 }

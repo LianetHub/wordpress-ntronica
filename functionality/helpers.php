@@ -202,6 +202,28 @@ function ntronica_get_news_article_crumbs()
 }
 
 /**
+ * Breadcrumb crumbs for a vacancy: Careers — Title.
+ *
+ * @param int|null $post_id Post ID.
+ * @return array<int, array{label: string, url: string}>
+ */
+function ntronica_get_vacancy_crumbs($post_id = null)
+{
+	$post_id = $post_id ? (int) $post_id : get_the_ID();
+
+	return array(
+		array(
+			'label' => 'Careers',
+			'url'   => home_url('/careers/'),
+		),
+		array(
+			'label' => get_the_title($post_id),
+			'url'   => '',
+		),
+	);
+}
+
+/**
  * Print "Parent — Current" breadcrumbs list.
  *
  * @param array<int, array{label: string, url?: string}> $crumbs Crumb items.

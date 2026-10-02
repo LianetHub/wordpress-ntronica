@@ -81,3 +81,133 @@
 		}
 	}
 }
+
+.vacancy {
+
+	// vacancy__hero
+	&__hero {
+		background-color: $color-muted;
+		color: $color-white;
+		padding-top: rem(16);
+		padding-bottom: rem(28);
+
+		@media (min-width: $md6) {
+			padding-top: rem(66);
+			padding-bottom: rem(36);
+		}
+
+		@media (min-width: $md5) {
+			padding-top: rem(70);
+		}
+
+		@media (min-width: $md3) {
+			padding-top: rem(104);
+			padding-bottom: rem(48);
+		}
+
+		@media (min-width: $md2) {
+			padding-bottom: rem(56);
+		}
+
+		@media (min-width: $md1) {
+			padding-top: rem(132);
+			padding-bottom: rem(70);
+		}
+	}
+
+	// vacancy__title
+	&__title {
+		color: $color-black;
+		margin-bottom: rem(24);
+
+		@media (min-width: $md6) {
+			margin-bottom: rem(32);
+		}
+
+		@media (min-width: $md3) {
+			margin-bottom: rem(48);
+		}
+
+		@media (min-width: $md2) {
+			margin-bottom: rem(64);
+		}
+
+		@media (min-width: $md1) {
+			margin-bottom: rem(90);
+		}
+	}
+
+	// vacancy__facts
+	&__facts {
+		--gutter-y: #{rem(16)};
+
+		@media (min-width: $md6) {
+			--gutter-y: #{rem(0)};
+		}
+	}
+
+	// vacancy__label
+	&__label {
+		font-weight: 700;
+	}
+
+	// vacancy__value
+	&__value {
+		margin-top: rem(8);
+
+		@media (min-width: $md3) {
+			margin-top: rem(12);
+		}
+
+		@media (min-width: $md1) {
+			margin-top: rem(15);
+		}
+	}
+
+	// vacancy__body
+	&__body {
+		padding-top: rem(32);
+
+		@media (min-width: $md6) {
+			padding-top: rem(40);
+		}
+
+		@media (min-width: $md3) {
+			padding-top: rem(50);
+		}
+
+		@media (min-width: $md2) {
+			padding-top: rem(60);
+		}
+
+		@media (min-width: $md1) {
+			padding-top: rem(70);
+		}
+	}
+
+	// vacancy__lists
+	&__lists {
+		--gutter-y: #{rem(32)};
+
+		@media (min-width: $md6) {
+			--gutter-y: #{rem(0)};
+		}
+	}
+
+	// vacancy__subtitle
+	&__subtitle {
+		margin-bottom: rem(16);
+
+		@media (min-width: $md3) {
+			margin-bottom: rem(24);
+		}
+
+		@media (min-width: $md2) {
+			margin-bottom: rem(30);
+		}
+
+		@media (min-width: $md1) {
+			margin-bottom: rem(36);
+		}
+	}
+}

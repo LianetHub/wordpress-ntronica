@@ -93,6 +93,16 @@
 						'crumbs'  => ntronica_get_news_article_crumbs(),
 					)
 				);
+			} elseif (is_singular('vacancy')) {
+				get_template_part(
+					'components/templates-parts/sticky-navbar',
+					null,
+					array(
+						'variant' => 'breadcrumbs',
+						'theme'   => 'light',
+						'crumbs'  => ntronica_get_vacancy_crumbs(),
+					)
+				);
 			} elseif (ntronica_is_utility_page()) {
 				get_template_part(
 					'components/templates-parts/sticky-navbar',

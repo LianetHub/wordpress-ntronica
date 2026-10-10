@@ -2,6 +2,10 @@
 @use "../variables" as *;
 @use "../mixins" as *;
 
+// Distance from the bottom of the logo viewBox (234×34) to the top of "n" (y = 9.06909).
+$logo-n-from-bottom: 24.93091;
+$logo-viewbox-width: 234;
+
 .cookie-notice {
 	--sidebar-width: #{rem($sidebar-width)};
 	position: fixed;
@@ -10,20 +14,21 @@
 	bottom: 0;
 	left: 0;
 	max-height: 100svh;
-	overflow: auto;
+	overflow-x: hidden;
+	overflow-y: auto;
 	background-color: $color-muted;
 	color: $color-white;
 	padding-top: rem(20);
-	padding-bottom: rem(25);
+	padding-bottom: rem(12 + math.div(133 * $logo-n-from-bottom, $logo-viewbox-width));
 
 	@media (min-width: $md6) {
 		--sidebar-width: #{rem($sidebar-width-768)};
 		padding-top: rem(26);
-		padding-bottom: rem(26);
 	}
 
 	@media (min-width: $md5) {
 		--sidebar-width: #{rem($sidebar-width-1024)};
+		padding-bottom: rem(18 + math.div(193 * $logo-n-from-bottom, $logo-viewbox-width));
 	}
 
 	@media (min-width: $md4) {
@@ -32,13 +37,12 @@
 
 	@media (min-width: $md3) {
 		padding-top: rem(38);
-		padding-bottom: rem(38);
 	}
 
 	@media (min-width: $md1) {
 		--sidebar-width: #{rem($sidebar-width-2560)};
 		padding-top: rem(43);
-		padding-bottom: rem(43);
+		padding-bottom: rem(18 + $logo-n-from-bottom);
 	}
 
 	&[hidden] {
@@ -89,13 +93,7 @@
 
 		@media (min-width: $md4) {
 			--gutter-y: #{rem(24)};
-		}
-	}
-
-	// cookie-notice__intro
-	&__intro {
-		@media (min-width: $md4) {
-			align-self: center;
+			align-items: flex-end;
 		}
 	}
 
@@ -113,7 +111,7 @@
 	&__close {
 		position: absolute;
 		top: 0;
-		right: 0;
+		right: rem(28);
 		z-index: 1;
 		display: flex;
 		align-items: center;
@@ -128,6 +126,14 @@
 			height: rem(12);
 		}
 
+		@media (min-width: $md5) {
+			right: rem(30);
+		}
+
+		@media (min-width: $md4) {
+			right: rem(39);
+		}
+
 		@media (min-width: $md3) {
 			width: rem(16);
 			height: rem(16);
@@ -139,6 +145,7 @@
 		}
 
 		@media (min-width: $md1) {
+			right: rem(279);
 			width: rem(28);
 			height: rem(28);
 		}
@@ -177,6 +184,7 @@
 		}
 
 		@media (min-width: $md1) {
+			padding-right: rem(28);
 			padding-bottom: rem(35);
 		}
 	}

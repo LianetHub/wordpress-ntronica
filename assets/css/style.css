@@ -7260,22 +7260,23 @@ body.page-template-page-contacts, body.error404, body.search, body.page-template
   bottom: 0;
   left: 0;
   max-height: 100svh;
-  overflow: auto;
+  overflow-x: hidden;
+  overflow-y: auto;
   background-color: #acadaf;
   color: #ffffff;
   padding-top: 1.25rem;
-  padding-bottom: 1.5625rem;
+  padding-bottom: 1.6356332879rem;
 }
 @media (min-width: 767.98px) {
   .cookie-notice {
     --sidebar-width: 3.25rem;
     padding-top: 1.625rem;
-    padding-bottom: 1.625rem;
   }
 }
 @media (min-width: 1023.98px) {
   .cookie-notice {
     --sidebar-width: 4.75rem;
+    padding-bottom: 2.410167102rem;
   }
 }
 @media (min-width: 1199.98px) {
@@ -7286,14 +7287,13 @@ body.page-template-page-contacts, body.error404, body.search, body.page-template
 @media (min-width: 1439.98px) {
   .cookie-notice {
     padding-top: 2.375rem;
-    padding-bottom: 2.375rem;
   }
 }
 @media (min-width: 2559.98px) {
   .cookie-notice {
     --sidebar-width: 17.125rem;
     padding-top: 2.6875rem;
-    padding-bottom: 2.6875rem;
+    padding-bottom: 2.683181875rem;
   }
 }
 .cookie-notice[hidden] {
@@ -7340,11 +7340,7 @@ body.page-template-page-contacts, body.error404, body.search, body.page-template
 @media (min-width: 1199.98px) {
   .cookie-notice__default {
     --gutter-y: 1.5rem;
-  }
-}
-@media (min-width: 1199.98px) {
-  .cookie-notice__intro {
-    align-self: center;
+    align-items: flex-end;
   }
 }
 .cookie-notice__text {
@@ -7357,7 +7353,7 @@ body.page-template-page-contacts, body.error404, body.search, body.page-template
 .cookie-notice__close {
   position: absolute;
   top: 0;
-  right: 0;
+  right: 1.75rem;
   z-index: 1;
   display: flex;
   align-items: center;
@@ -7371,6 +7367,16 @@ body.page-template-page-contacts, body.error404, body.search, body.page-template
   .cookie-notice__close {
     width: 0.75rem;
     height: 0.75rem;
+  }
+}
+@media (min-width: 1023.98px) {
+  .cookie-notice__close {
+    right: 1.875rem;
+  }
+}
+@media (min-width: 1199.98px) {
+  .cookie-notice__close {
+    right: 2.4375rem;
   }
 }
 @media (min-width: 1439.98px) {
@@ -7387,6 +7393,7 @@ body.page-template-page-contacts, body.error404, body.search, body.page-template
 }
 @media (min-width: 2559.98px) {
   .cookie-notice__close {
+    right: 17.4375rem;
     width: 1.75rem;
     height: 1.75rem;
   }
@@ -7423,6 +7430,7 @@ body.page-template-page-contacts, body.error404, body.search, body.page-template
 }
 @media (min-width: 2559.98px) {
   .cookie-notice__manage-head {
+    padding-right: 1.75rem;
     padding-bottom: 2.1875rem;
   }
 }

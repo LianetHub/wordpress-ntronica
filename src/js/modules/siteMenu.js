@@ -24,6 +24,8 @@ export class SiteMenu {
 		this.isClosingSwipe = false;
 
 		this.mqWide.addEventListener("change", () => this.onBreakpointChange());
+		this.mqHover.addEventListener("change", () => this.onHoverChange());
+		this.mqSwipe.addEventListener("change", () => this.syncLock());
 		this.sidebar.addEventListener("click", (e) => this.onClick(e));
 		this.sidebar.addEventListener("pointerenter", this.onPointerEnter);
 		this.sidebar.addEventListener("pointerleave", this.onPointerLeave);
@@ -245,44 +247,69 @@ export class SiteMenu {
 	}
 
 	usesHoverExpand() {
-		return this.mqWide.matches && this.mqHover.matches;
+		return this.mqHover.matches;
 	}
 
 	expandWide() {
 		this.sidebar.classList.remove("is-collapsed");
 		this.sidebar.classList.remove("is-open");
 		this.syncAria();
+		this.syncLock();
 	}
 
 	collapseWide() {
 		this.sidebar.classList.add("is-collapsed");
 		this.sidebar.classList.remove("is-open");
 		this.syncAria();
+		this.syncLock();
+	}
+
+	expand() {
+		if (this.mqWide.matches) {
+			this.expandWide();
+			return;
+		}
+
+		this.sidebar.classList.add("is-open");
+		this.sidebar.classList.remove("is-collapsed");
+		this.syncAria();
+		this.syncLock();
+	}
+
+	collapse() {
+		if (this.mqWide.matches) {
+			this.collapseWide();
+			return;
+		}
+
+		this.sidebar.classList.remove("is-open");
+		this.syncAria();
+		this.syncLock();
 	}
 
 	onPointerEnter(event) {
 		if (!this.usesHoverExpand()) return;
 		if (event.pointerType === "touch") return;
-		this.expandWide();
+		this.expand();
 	}
 
 	onPointerLeave(event) {
 		if (!this.usesHoverExpand()) return;
 		if (event.pointerType === "touch") return;
 		if (this.sidebar.contains(document.activeElement)) return;
-		this.collapseWide();
+		this.collapse();
 	}
 
 	onFocusIn() {
 		if (!this.usesHoverExpand()) return;
-		this.expandWide();
+		this.expand();
 	}
 
 	onFocusOut(event) {
 		if (!this.usesHoverExpand()) return;
 		if (this.sidebar.contains(event.relatedTarget)) return;
 		if (this.sidebar.matches(":hover")) return;
-		this.collapseWide();
+		this.collapse();
 	}
 
 	initNavbar() {
@@ -316,9 +343,12 @@ export class SiteMenu {
 	}
 
 	syncLock() {
+		const fullBleed =
+			this.sidebar.classList.contains("is-open") && this.mqSwipe.matches;
+
 		document.body.classList.toggle(
 			"lock",
-			this.sidebar.classList.contains("is-open") && !this.mqWide.matches,
+			fullBleed && !this.mqHover.matches,
 		);
 	}
 
@@ -426,10 +456,24 @@ export class SiteMenu {
 		}
 	}
 
+	onHoverChange() {
+		if (!this.mqWide.matches) {
+			this.sidebar.classList.remove("is-open");
+		}
+		this.syncAria();
+		this.syncLock();
+	}
+
 	onBreakpointChange() {
 		this.isClosingSwipe = false;
 		this.swipe = null;
 		this.clearSwipeStyles();
+		this.sidebar.style.transition = "none";
+
+		if (this.logoBtn) {
+			this.logoBtn.style.transition = "none";
+		}
+
 		this.sidebar.classList.remove("is-open");
 		if (this.mqWide.matches) {
 			this.sidebar.classList.add("is-collapsed");
@@ -438,5 +482,13 @@ export class SiteMenu {
 		}
 		this.syncAria();
 		this.syncLock();
+		void this.sidebar.offsetWidth;
+
+		requestAnimationFrame(() => {
+			this.sidebar.style.transition = "";
+			if (this.logoBtn) {
+				this.logoBtn.style.transition = "";
+			}
+		});
 	}
 }

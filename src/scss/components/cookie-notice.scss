@@ -22,7 +22,6 @@ $logo-viewbox-width: 234;
 	padding-bottom: rem(12 + math.div(133 * $logo-n-from-bottom, $logo-viewbox-width));
 
 	@media (min-width: $md6) {
-		--sidebar-width: #{rem($sidebar-width-768)};
 		padding-top: rem(26);
 	}
 

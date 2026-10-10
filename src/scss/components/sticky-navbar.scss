@@ -27,8 +27,18 @@
 }
 
 
+:root:has(.sticky-navbar[data-variant="nav"]) {
+	.main {
+
+		section[id],
+		.products-lines__col[id] {
+			scroll-margin-top: var(--sticky-navbar-offset);
+		}
+	}
+}
+
 .sticky-navbar {
-	position: absolute;
+	position: fixed;
 	top: 0;
 	left: 0;
 	z-index: 10;

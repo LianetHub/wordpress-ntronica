@@ -6703,8 +6703,13 @@ body.page-template-page-contacts, body.error404, body.search, body.page-template
   }
 }
 
+:root:has(.sticky-navbar[data-variant=nav]) .main section[id],
+:root:has(.sticky-navbar[data-variant=nav]) .main .products-lines__col[id] {
+  scroll-margin-top: var(--sticky-navbar-offset);
+}
+
 .sticky-navbar {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   z-index: 10;

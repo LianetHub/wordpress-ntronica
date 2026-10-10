@@ -75,7 +75,10 @@ export class Slider {
 			return;
 		}
 
-		if (el.classList.contains("news-article-slider")) {
+		if (
+			el.classList.contains("news-article-slider") ||
+			el.classList.contains("product-gallery")
+		) {
 			new Swiper(el, {
 				watchOverflow: true,
 				slidesPerView: 1,
@@ -87,6 +90,31 @@ export class Slider {
 					nextEl,
 				},
 				pagination: fractionPagination,
+			});
+			return;
+		}
+
+		if (el.classList.contains("product-specs__slider")) {
+			new Swiper(el, {
+				watchOverflow: true,
+				slidesPerView: 1,
+				spaceBetween: 14,
+				speed: 0,
+				allowTouchMove: true,
+				breakpoints: {
+					767.98: {
+						slidesPerView: 2,
+						spaceBetween: 24,
+					},
+					1439.98: {
+						slidesPerView: 3,
+						spaceBetween: 24,
+					},
+				},
+				navigation: {
+					prevEl,
+					nextEl,
+				},
 			});
 			return;
 		}

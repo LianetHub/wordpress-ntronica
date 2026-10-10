@@ -181,3 +181,577 @@
 		}
 	}
 }
+
+.product {
+	--rule-width: #{rem(1)};
+
+	padding-top: rem(72);
+
+	@media (min-width: $md5) {
+		padding-top: rem(80);
+	}
+
+	@media (min-width: $md3) {
+		--rule-width: #{rem(1.5)};
+
+		padding-top: rem(88);
+	}
+
+	@media (min-width: $md2) {
+		--rule-width: #{rem(2)};
+
+		padding-top: rem(98);
+	}
+
+	@media (min-width: $md1) {
+		--rule-width: #{rem(2.5)};
+
+		padding-top: rem(110);
+	}
+
+	// product__hero
+	&__hero {
+		--gutter-y: #{rem(16)};
+
+		@media (min-width: $md6) {
+			--gutter-y: #{rem(0)};
+
+			align-items: start;
+		}
+	}
+
+	// product__title
+	// The macket's 69/96 leading is cap-height tight, so it only holds while the
+	// name stays on one line; narrower columns wrap it and need room per line.
+	&__title {
+		font-family: $font-title;
+		font-weight: 700;
+		font-size: rem(36);
+		line-height: math.div(34, 36);
+
+		@media (min-width: $md6) {
+			font-size: rem(42);
+			line-height: math.div(40, 42);
+		}
+
+		@media (min-width: $md5) {
+			font-size: rem(54);
+			line-height: math.div(50, 54);
+		}
+
+		@media (min-width: $md3) {
+			font-size: rem(64);
+			line-height: math.div(58, 64);
+		}
+
+		@media (min-width: $md2) {
+			font-size: rem(72);
+			line-height: math.div(62, 72);
+		}
+
+		@media (min-width: $md1) {
+			font-size: rem(96);
+			line-height: math.div(69, 96);
+		}
+	}
+
+	// product__tagline
+	&__tagline {
+		--bar-width: #{rem(8)};
+		--bar-gap: #{rem(11)};
+
+		position: relative;
+		padding-left: calc(var(--bar-width) + var(--bar-gap));
+		color: $color-muted;
+
+		&::before {
+			content: "";
+			position: absolute;
+			top: 0.14em;
+			bottom: 0;
+			left: 0;
+			width: var(--bar-width);
+			background-color: currentColor;
+		}
+
+		@media (min-width: $md6) {
+			--bar-width: #{rem(10)};
+		}
+
+		@media (min-width: $md3) {
+			--bar-width: #{rem(12)};
+			--bar-gap: #{rem(13)};
+		}
+
+		@media (min-width: $md2) {
+			--bar-width: #{rem(15)};
+			--bar-gap: #{rem(15)};
+		}
+
+		@media (min-width: $md1) {
+			--bar-width: #{rem(19)};
+			--bar-gap: #{rem(20)};
+		}
+	}
+
+	// product__overview
+	&__overview {
+		--gutter-y: #{rem(24)};
+
+		padding-top: rem(24);
+
+		@media (min-width: $md6) {
+			--gutter-y: #{rem(0)};
+
+			padding-top: rem(32);
+		}
+
+		@media (min-width: $md3) {
+			padding-top: rem(40);
+		}
+
+		@media (min-width: $md1) {
+			padding-top: rem(70);
+		}
+	}
+
+	// product__summary
+	&__summary {
+		@media (min-width: $md6) {
+			display: flex;
+			flex-direction: column;
+		}
+	}
+
+	// product__summary-footer
+	&__summary-footer {
+		--gutter-y: #{rem(0)};
+
+		margin-top: rem(24);
+
+		@media (min-width: $md6) {
+			margin-top: auto;
+		}
+	}
+
+	// product__specs
+	&__specs {
+		margin-bottom: rem(24);
+
+		@media (min-width: $md5) {
+			margin-bottom: rem(40);
+		}
+
+		@media (min-width: $md3) {
+			margin-bottom: rem(60);
+		}
+
+		@media (min-width: $md2) {
+			margin-bottom: rem(100);
+		}
+
+		@media (min-width: $md1) {
+			margin-bottom: rem(160);
+		}
+	}
+
+	// product__spec
+	&__spec {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: rem(14);
+		padding: rem(8) 0;
+
+		&:not(:last-child) {
+			border-bottom: var(--rule-width) solid $color-black;
+		}
+
+		@media (min-width: $md3) {
+			gap: rem(24);
+			padding: rem(11) 0;
+		}
+
+		@media (min-width: $md1) {
+			padding: rem(15) 0;
+		}
+	}
+
+	// product__spec-label
+	&__spec-label {
+		font-weight: 700;
+	}
+
+	// product__features
+	&__features {
+		padding-top: rem(28);
+
+		@media (min-width: $md5) {
+			padding-top: rem(36);
+		}
+
+		@media (min-width: $md3) {
+			padding-top: rem(44);
+		}
+
+		@media (min-width: $md2) {
+			padding-top: rem(60);
+		}
+
+		@media (min-width: $md1) {
+			padding-top: rem(90);
+		}
+	}
+
+	// product__features-grid
+	&__features-grid {
+		--gutter-y: #{rem(16)};
+
+		@media (min-width: $md6) {
+			--gutter-y: #{rem(0)};
+
+			align-items: start;
+		}
+	}
+
+	// product__subtitle
+	&__subtitle {
+		margin-bottom: rem(15);
+
+		@media (min-width: $md3) {
+			margin-bottom: rem(20);
+		}
+
+		@media (min-width: $md2) {
+			margin-bottom: rem(28);
+		}
+
+		@media (min-width: $md1) {
+			margin-bottom: rem(36);
+		}
+	}
+
+	// product__process
+	&__process {
+		--gutter-y: #{rem(24)};
+
+		padding-top: rem(36);
+
+		@media (min-width: $md6) {
+			align-items: start;
+		}
+
+		@media (min-width: $md5) {
+			padding-top: rem(44);
+		}
+
+		@media (min-width: $md3) {
+			padding-top: rem(56);
+		}
+
+		@media (min-width: $md2) {
+			padding-top: rem(80);
+		}
+
+		@media (min-width: $md1) {
+			padding-top: rem(130);
+		}
+	}
+
+	// product__process-title
+	&__process-title {
+		margin-bottom: rem(15);
+
+		@media (min-width: $md3) {
+			margin-bottom: rem(20);
+		}
+
+		@media (min-width: $md2) {
+			margin-bottom: rem(28);
+		}
+
+		@media (min-width: $md1) {
+			margin-bottom: rem(36);
+		}
+	}
+
+	// product__micrographs
+	&__micrographs {
+		--gutter-x: #{rem(14)};
+		--gutter-y: #{rem(14)};
+
+		padding-top: rem(30);
+		padding-bottom: rem(36);
+
+		@media (min-width: $md6) {
+			--gutter-x: #{rem(24)};
+
+			padding-top: rem(36);
+		}
+
+		@media (min-width: $md5) {
+			padding-top: rem(44);
+			padding-bottom: rem(44);
+		}
+
+		@media (min-width: $md3) {
+			--gutter-y: #{rem(24)};
+
+			padding-top: rem(56);
+			padding-bottom: rem(56);
+		}
+
+		@media (min-width: $md2) {
+			padding-top: rem(80);
+			padding-bottom: rem(90);
+		}
+
+		@media (min-width: $md1) {
+			padding-top: rem(110);
+			padding-bottom: rem(130);
+		}
+	}
+
+	// product__micrograph
+	&__micrograph {
+		display: block;
+		width: 100%;
+		aspect-ratio: 324 / 215;
+		object-fit: cover;
+	}
+}
+
+.product-gallery {
+
+	// product-gallery__img
+	&__img {
+		display: block;
+		width: 100%;
+		aspect-ratio: 1;
+		object-fit: cover;
+	}
+
+	// product-gallery__footer
+	&__footer {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: rem(16);
+		padding-top: rem(10);
+
+		@media (min-width: $md3) {
+			padding-top: rem(14);
+		}
+
+		@media (min-width: $md1) {
+			gap: rem(24);
+			padding-top: rem(18);
+		}
+	}
+}
+
+// The "Parameter" column sits outside the Swiper, so rows only line up while
+// every cell in a row resolves to the same height. Row heights are therefore
+// fixed per breakpoint and budget two lines of copy; where a product column is
+// narrow enough for a value to wrap, every row gets the two-line height so the
+// static labels keep tracking the slides.
+.product-specs {
+	--rule-width: #{rem(1)};
+	--spec-row-height: #{rem(52)};
+	--spec-row-height-tall: #{rem(52)};
+	--spec-row-pad: #{rem(8)};
+
+	padding-top: rem(36);
+	padding-bottom: rem(36);
+	background-color: $color-muted;
+	color: $color-white;
+
+	@media (min-width: $md5) {
+		--spec-row-height: #{rem(56)};
+		--spec-row-height-tall: #{rem(56)};
+		--spec-row-pad: #{rem(10)};
+
+		padding-top: rem(44);
+		padding-bottom: rem(44);
+	}
+
+	@media (min-width: $md3) {
+		--rule-width: #{rem(1.5)};
+		--spec-row-height: #{rem(70)};
+		--spec-row-height-tall: #{rem(70)};
+		--spec-row-pad: #{rem(14)};
+
+		padding-top: rem(56);
+		padding-bottom: rem(56);
+	}
+
+	@media (min-width: $md2) {
+		--rule-width: #{rem(2)};
+		--spec-row-height: #{rem(58)};
+		--spec-row-height-tall: #{rem(82)};
+		--spec-row-pad: #{rem(17)};
+
+		padding-top: rem(70);
+		padding-bottom: rem(70);
+	}
+
+	@media (min-width: $md1) {
+		--rule-width: #{rem(2.5)};
+		--spec-row-height: #{rem(72)};
+		--spec-row-height-tall: #{rem(104)};
+		--spec-row-pad: #{rem(20)};
+
+		padding-top: rem(90);
+		padding-bottom: rem(90);
+	}
+
+	// product-specs__title
+	&__title {
+		color: $color-black;
+		margin-bottom: rem(24);
+
+		@media (min-width: $md3) {
+			margin-bottom: rem(32);
+		}
+
+		@media (min-width: $md2) {
+			margin-bottom: rem(44);
+		}
+
+		@media (min-width: $md1) {
+			margin-bottom: rem(60);
+		}
+	}
+
+	// product-specs__layout
+	&__layout {
+		--gutter-x: #{rem(14)};
+		--gutter-y: #{rem(0)};
+
+		@media (min-width: $md6) {
+			--gutter-x: #{rem(24)};
+		}
+	}
+
+	// product-specs__col-title
+	&__col-title {
+		display: flex;
+		align-items: center;
+		min-height: rem(28);
+		font-family: $font-robert;
+		font-weight: 500;
+		font-size: rem(15);
+		line-height: math.div(18, 15);
+		color: $color-black;
+
+		@media (min-width: $md3) {
+			min-height: rem(34);
+			font-size: rem(20);
+			line-height: math.div(24, 20);
+		}
+
+		@media (min-width: $md2) {
+			min-height: rem(40);
+			font-size: rem(26);
+			line-height: math.div(30, 26);
+		}
+
+		@media (min-width: $md1) {
+			min-height: rem(45);
+			font-size: rem(36);
+			line-height: math.div(42, 36);
+		}
+	}
+
+	// product-specs__labels
+	&__labels {
+
+		// the rule starts at the content edge, so it only bleeds to the right
+		.product-specs__cell::after {
+			left: 0;
+		}
+	}
+
+	// product-specs__cell
+	&__cell {
+		position: relative;
+		min-height: var(--spec-row-height);
+		padding-top: var(--spec-row-pad);
+		padding-bottom: var(--spec-row-pad);
+
+		// bleeds into the gutters so the rules read as one line across the table
+		&::after {
+			content: "";
+			position: absolute;
+			right: calc(-0.5 * var(--gutter-x));
+			bottom: 0;
+			left: calc(-0.5 * var(--gutter-x));
+			height: var(--rule-width);
+			background-color: $color-black;
+		}
+
+		&:last-child::after {
+			content: none;
+		}
+
+		// product-specs__cell--tall
+		&--tall {
+			min-height: var(--spec-row-height-tall);
+		}
+	}
+
+	// product-specs__label
+	&__label {
+		font-weight: 700;
+	}
+
+	// product-specs__value
+	&__value {
+
+		// the machine this page is about reads as the active column
+		&--current {
+			color: $color-black;
+		}
+	}
+
+	// product-specs__column
+	&__column {
+		height: auto;
+	}
+
+	// product-specs__nav
+	&__nav {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		padding-top: rem(12);
+
+		@media (min-width: $md1) {
+			padding-top: rem(20);
+		}
+	}
+}
+
+.product-specs+.contact {
+	padding-top: rem(50);
+	padding-bottom: rem(50);
+
+	@media (min-width: $md5) {
+		padding-top: rem(70);
+		padding-bottom: rem(70);
+	}
+
+	@media (min-width: $md3) {
+		padding-top: rem(80);
+		padding-bottom: rem(80);
+	}
+
+	@media (min-width: $md2) {
+		padding-top: rem(96);
+		padding-bottom: rem(90);
+	}
+
+	@media (min-width: $md1) {
+		padding-top: rem(114);
+		padding-bottom: rem(68);
+	}
+}

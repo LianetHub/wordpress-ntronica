@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Default page template
  *
@@ -7,16 +8,16 @@
 
 get_header();
 
-while ( have_posts() ) :
+while (have_posts()) :
 	the_post();
-	?>
+?>
 	<div class="container">
 		<h1><?php the_title(); ?></h1>
 		<div class="page__content">
 			<?php the_content(); ?>
 		</div>
 	</div>
-	<?php
+<?php
 endwhile;
 
 get_footer();

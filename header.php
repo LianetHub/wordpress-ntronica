@@ -103,6 +103,16 @@
 						'crumbs'  => ntronica_get_vacancy_crumbs(),
 					)
 				);
+			} elseif (is_singular('product')) {
+				get_template_part(
+					'components/templates-parts/sticky-navbar',
+					null,
+					array(
+						'variant' => 'breadcrumbs',
+						'theme'   => 'light',
+						'crumbs'  => ntronica_get_product_crumbs(),
+					)
+				);
 			} elseif (ntronica_is_utility_page()) {
 				get_template_part(
 					'components/templates-parts/sticky-navbar',

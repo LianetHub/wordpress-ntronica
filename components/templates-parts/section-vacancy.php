@@ -59,14 +59,14 @@ $ntronica_lists = array(
 		<div class="container">
 			<h1 class="title vacancy__title"><?php the_title(); ?></h1>
 
-			<div class="row vacancy__facts">
+			<ul class="row vacancy__facts">
 				<?php foreach ($ntronica_facts as $ntronica_fact) : ?>
-					<div class="col-12 col-md-4">
+					<li class="col-12 col-md-4">
 						<p class="text-block vacancy__label"><?php echo esc_html($ntronica_fact['label']); ?></p>
 						<p class="text-block vacancy__value"><?php echo esc_html($ntronica_fact['value']); ?></p>
-					</div>
+					</li>
 				<?php endforeach; ?>
-			</div>
+			</ul>
 		</div>
 	</div>
 

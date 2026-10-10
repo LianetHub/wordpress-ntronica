@@ -1,0 +1,49 @@
+@use "sass:math";
+@use "../variables" as *;
+@use "../mixins" as *;
+
+.btn-box {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+	min-height: rem(38);
+	padding: rem(8) rem(16);
+	border: rem(1) solid $color-black;
+	font-family: $font-family;
+	font-weight: 400;
+	font-size: rem(15);
+	line-height: math.div(18, 15);
+	color: $color-black;
+	text-align: center;
+	cursor: pointer;
+	transition: background-color $nav-link-hover-motion, color $nav-link-hover-motion;
+
+	@media (min-width: $md3) {
+		min-height: rem(46);
+		border-width: rem(1.5);
+		font-size: rem(18);
+		line-height: math.div(21, 18);
+	}
+
+	@media (min-width: $md2) {
+		min-height: rem(58);
+		border-width: rem(2);
+		font-size: rem(21);
+		line-height: math.div(24, 21);
+	}
+
+	@media (min-width: $md1) {
+		min-height: rem(74);
+		border-width: rem(2.5);
+		font-size: rem(26);
+		line-height: math.div(32, 26);
+	}
+
+	@media (any-hover: hover) {
+		&:hover {
+			background-color: $color-black;
+			color: $color-white;
+		}
+	}
+}

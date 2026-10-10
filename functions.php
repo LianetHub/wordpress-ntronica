@@ -25,6 +25,7 @@ require_once FUNC_PATH . 'cleanup.php';
 require_once FUNC_PATH . 'enqueue.php';
 require_once FUNC_PATH . 'helpers.php';
 require_once FUNC_PATH . 'vacancy.php';
+require_once FUNC_PATH . 'product.php';
 require_once FUNC_PATH . 'integrations.php';
 require_once FUNC_PATH . 'consent.php';
 require_once FUNC_PATH . 'analytics.php';

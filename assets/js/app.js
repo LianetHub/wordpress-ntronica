@@ -17,6 +17,8 @@ const components = {
 	".news-feed-slider": Slider,
 	".news-article-slider": Slider,
 	".media-publications-slider": Slider,
+	".product-gallery": Slider,
+	".product-specs__slider": Slider,
 	".news-article__share": ShareArticle,
 	".search-form": SearchForm,
 	".wpcf7 form": FormController,

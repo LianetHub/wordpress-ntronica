@@ -88,31 +88,22 @@
 	&__hero {
 		background-color: $color-muted;
 		color: $color-white;
-		padding-top: rem(84);
+		padding-top: var(--sticky-navbar-offset);
 		padding-bottom: rem(30);
 
-		@media (min-width: $md6) {
-			padding-top: rem(66);
-		}
-
 		@media (min-width: $md5) {
-			padding-top: rem(84);
 			padding-bottom: rem(50);
 		}
 
 		@media (min-width: $md3) {
-			padding-top: rem(104);
 			padding-bottom: rem(64);
 		}
 
 		@media (min-width: $md2) {
-			padding-top: rem(105);
-			padding-bottom: rem(70);
+			padding-bottom: rem(74);
 		}
 
-		@media (min-width: $md1) {
-			padding-top: rem(132);
-		}
+
 	}
 
 	// vacancy__title
@@ -125,25 +116,22 @@
 		}
 
 		@media (min-width: $md3) {
-			margin-bottom: rem(64);
-		}
-
-		@media (min-width: $md2) {
 			margin-bottom: rem(70);
 		}
 
+		@media (min-width: $md2) {
+			margin-bottom: rem(80);
+		}
+
 		@media (min-width: $md1) {
-			margin-bottom: rem(90);
+			margin-bottom: rem(100);
 		}
 	}
 
 	// vacancy__facts
 	&__facts {
-		--gutter-y: #{rem(15)};
+		--gutter-y: #{rem(32)};
 
-		@media (min-width: $md6) {
-			--gutter-y: #{rem(0)};
-		}
 	}
 
 	// vacancy__label
@@ -160,7 +148,7 @@
 		}
 
 		@media (min-width: $md2) {
-			margin-top: rem(15);
+			margin-top: rem(12);
 		}
 	}
 

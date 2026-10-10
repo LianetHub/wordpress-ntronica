@@ -39,6 +39,8 @@
 		&::-webkit-search-decoration,
 		&::-webkit-search-cancel-button {
 			-webkit-appearance: none;
+			appearance: none;
+			display: none;
 		}
 	}
 
@@ -52,6 +54,10 @@
 		align-items: center;
 		justify-content: center;
 		width: rem(14);
+		padding: 0;
+		-webkit-appearance: none;
+		appearance: none;
+		line-height: 0;
 		color: inherit;
 		transition: opacity 0.2s ease;
 

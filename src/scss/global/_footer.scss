@@ -9,11 +9,6 @@
 	--footer-text-gap: #{rem(6)};
 	--footer-marker-track: calc(var(--footer-label) + var(--footer-label-gap) + var(--footer-marker));
 	--footer-content-offset: calc(var(--footer-marker-track) + var(--footer-text-gap));
-	// Nanotronica Text: OS/2 sTypoAscender/sTypoDescender (1000 UPM)
-	--font-ascent: 0.912em;
-	--font-descent: 0.192em;
-	--marker-top: calc((1lh - var(--font-ascent) - var(--font-descent)) / 2 + var(--font-ascent) - 1cap);
-	--marker-bottom: calc((1lh - var(--font-ascent) - var(--font-descent)) / 2 + var(--font-descent));
 	background-color: $color-footer;
 	color: $color-muted;
 	padding-top: rem(26);
@@ -155,6 +150,12 @@
 
 	// footer__address
 	&__address {
+
+		--font-ascent: 0.912em;
+		--font-descent: 0.192em;
+		--font-cap: 0.704em;
+		--marker-top: calc((1lh - var(--font-ascent) - var(--font-descent)) / 2 + var(--font-ascent) - var(--font-cap));
+		--marker-bottom: calc((1lh - var(--font-ascent) - var(--font-descent)) / 2 + var(--font-descent));
 		--address-text: #{rem(240)};
 		position: relative;
 		max-width: calc(var(--footer-content-offset) + var(--address-text));
@@ -200,6 +201,12 @@
 	}
 
 	.feature-list {
+
+		--font-ascent: 0.912em;
+		--font-descent: 0.192em;
+		--font-cap: 0.704em;
+		--marker-top: calc((1lh - var(--font-ascent) - var(--font-descent)) / 2 + var(--font-ascent) - var(--font-cap));
+		--marker-bottom: calc((1lh - var(--font-ascent) - var(--font-descent)) / 2 + var(--font-descent));
 		gap: 0;
 		--marker-col: var(--footer-marker-track);
 		--marker-size: var(--footer-marker);
@@ -222,7 +229,7 @@
 		>li {
 			&::before {
 				top: var(--marker-top);
-				height: 1cap;
+				height: var(--font-cap);
 			}
 
 			&:has(br)::before {

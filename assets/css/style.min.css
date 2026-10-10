@@ -2036,10 +2036,6 @@ body.page-template-page-contacts, body.error404, body.search, body.page-template
   --footer-text-gap: 0.375rem;
   --footer-marker-track: calc(var(--footer-label) + var(--footer-label-gap) + var(--footer-marker));
   --footer-content-offset: calc(var(--footer-marker-track) + var(--footer-text-gap));
-  --font-ascent: 0.912em;
-  --font-descent: 0.192em;
-  --marker-top: calc((1lh - var(--font-ascent) - var(--font-descent)) / 2 + var(--font-ascent) - 1cap);
-  --marker-bottom: calc((1lh - var(--font-ascent) - var(--font-descent)) / 2 + var(--font-descent));
   background-color: #58595b;
   color: #acadaf;
   padding-top: 1.625rem;
@@ -2176,6 +2172,11 @@ body.page-template-page-contacts, body.error404, body.search, body.page-template
   }
 }
 .footer__address {
+  --font-ascent: 0.912em;
+  --font-descent: 0.192em;
+  --font-cap: 0.704em;
+  --marker-top: calc((1lh - var(--font-ascent) - var(--font-descent)) / 2 + var(--font-ascent) - var(--font-cap));
+  --marker-bottom: calc((1lh - var(--font-ascent) - var(--font-descent)) / 2 + var(--font-descent));
   --address-text: 15rem;
   position: relative;
   max-width: calc(var(--footer-content-offset) + var(--address-text));
@@ -2221,6 +2222,11 @@ body.page-template-page-contacts, body.error404, body.search, body.page-template
   white-space: nowrap;
 }
 .footer .feature-list {
+  --font-ascent: 0.912em;
+  --font-descent: 0.192em;
+  --font-cap: 0.704em;
+  --marker-top: calc((1lh - var(--font-ascent) - var(--font-descent)) / 2 + var(--font-ascent) - var(--font-cap));
+  --marker-bottom: calc((1lh - var(--font-ascent) - var(--font-descent)) / 2 + var(--font-descent));
   gap: 0;
   --marker-col: var(--footer-marker-track);
   --marker-size: var(--footer-marker);
@@ -2244,7 +2250,7 @@ body.page-template-page-contacts, body.error404, body.search, body.page-template
 }
 .footer .feature-list > li::before {
   top: var(--marker-top);
-  height: 1cap;
+  height: var(--font-cap);
 }
 .footer .feature-list > li:has(br)::before {
   height: auto;
@@ -2859,7 +2865,8 @@ body.page-template-page-contacts, body.error404, body.search, body.page-template
   font-family: "Nanotronica_Text", system-ui, -apple-system, "Segoe UI", sans-serif;
   --font-ascent: 0.912em;
   --font-descent: 0.192em;
-  --marker-top: calc((1lh - var(--font-ascent) - var(--font-descent)) / 2 + var(--font-ascent) - 1cap);
+  --font-cap: 0.704em;
+  --marker-top: calc((1lh - var(--font-ascent) - var(--font-descent)) / 2 + var(--font-ascent) - var(--font-cap));
   --marker-bottom: calc((1lh - var(--font-ascent) - var(--font-descent)) / 2 + var(--font-descent));
   gap: 0rem;
   --marker-size: 0.75rem;
@@ -2898,7 +2905,7 @@ body.page-template-page-contacts, body.error404, body.search, body.page-template
 }
 .info__list > li::before {
   top: var(--marker-top);
-  height: 1cap;
+  height: var(--font-cap);
 }
 .info__list > li:has(br)::before, .info__list > li:has(address)::before {
   height: auto;
@@ -6179,6 +6186,8 @@ body.page-template-page-contacts, body.error404, body.search, body.page-template
 }
 .search-form__input::-webkit-search-decoration, .search-form__input::-webkit-search-cancel-button {
   -webkit-appearance: none;
+  appearance: none;
+  display: none;
 }
 .search-form__clear {
   position: absolute;
@@ -6189,6 +6198,10 @@ body.page-template-page-contacts, body.error404, body.search, body.page-template
   align-items: center;
   justify-content: center;
   width: 0.875rem;
+  padding: 0;
+  -webkit-appearance: none;
+  appearance: none;
+  line-height: 0;
   color: inherit;
   transition: opacity 0.2s ease;
 }

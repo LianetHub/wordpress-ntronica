@@ -109,57 +109,6 @@
 		}
 	}
 
-	// cookie-notice__btn
-	&__btn {
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		width: 100%;
-		min-height: rem(38);
-		padding: 0 rem(12);
-		border: rem(1.5) solid $color-white;
-		background-color: transparent;
-		color: $color-white;
-		font-family: $font-text;
-		font-weight: 400;
-		font-size: rem(15);
-		line-height: math.div(18, 15);
-		text-align: center;
-		text-transform: uppercase;
-		cursor: pointer;
-		transition: background-color 0.2s ease;
-
-		@media (min-width: $md3) {
-			min-height: rem(50);
-			border-width: rem(2);
-			font-size: rem(18);
-			line-height: math.div(19, 18);
-		}
-
-		@media (min-width: $md2) {
-			min-height: rem(60);
-			font-size: rem(21);
-			line-height: math.div(19, 21);
-		}
-
-		@media (min-width: $md1) {
-			min-height: rem(74);
-			font-size: rem(26);
-			line-height: math.div(19, 26);
-		}
-
-		@media (any-hover: hover) {
-			&:hover {
-				background-color: rgba($color-white, 0.08);
-			}
-		}
-
-		&:focus-visible {
-			outline: rem(2) solid $color-white;
-			outline-offset: rem(3);
-		}
-	}
-
 	// cookie-notice__close
 	&__close {
 		position: absolute;

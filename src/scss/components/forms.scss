@@ -1,6 +1,7 @@
 @use "sass:math";
 @use "variables" as *;
 @use "mixins" as *;
+@use "btn" as *;
 
 .form {
     &__row {
@@ -106,7 +107,7 @@
             position: absolute;
             top: 100%;
             left: 0;
-            color: $color-black;
+            color: $color-muted;
             padding-top: rem(3);
             font-size: rem(12);
             line-height: math.div(14, 12);
@@ -458,26 +459,6 @@
     }
 
     &__submit {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 100%;
-        min-height: rem(38);
-        padding: rem(8) rem(14);
-        border: rem(2) solid $color-black;
-        color: $color-black;
-        background: $color-white;
-        font-family: $font-family;
-        font-weight: 400;
-        font-size: rem(15);
-        line-height: math.div(11, 15);
-        text-transform: uppercase;
-        cursor: pointer;
-        transition:
-            background-color 0.1s ease-in-out,
-            border-color 0.1s ease-in-out,
-            color 0.1s ease-in-out;
-
         & input {
             background: transparent;
             color: inherit;
@@ -493,35 +474,6 @@
 
         .wpcf7-spinner {
             display: none;
-        }
-
-
-        @media (min-width: $md3) {
-            min-height: rem(48);
-            padding: rem(14) rem(16);
-            font-size: rem(18);
-            line-height: math.div(13, 18);
-        }
-
-        @media (min-width: $md2) {
-            min-height: rem(60);
-            padding: rem(14) rem(20);
-            font-size: rem(21);
-            line-height: math.div(15, 21);
-        }
-
-        @media (min-width: $md1) {
-            min-height: rem(74);
-            padding: rem(16) rem(24);
-            font-size: rem(26);
-            line-height: math.div(19, 26);
-        }
-
-        @media (any-hover: hover) {
-            &:hover {
-                background: $color-black;
-                color: $color-white;
-            }
         }
     }
 
@@ -784,26 +736,19 @@
         }
 
         &__submit {
-            border-color: $color-white;
-            color: $color-white;
-            background: transparent;
+            @extend %btn-white;
 
             &:has(input:disabled) {
                 color: rgba($color-white, 0.5);
                 border-color: rgba($color-white, 0.5);
             }
-
-            @media (any-hover: hover) {
-                &:hover {
-                    background: $color-white;
-                    color: $color-black;
-                }
-            }
         }
 
-        &.is-sending .form__submit {
-            color: rgba($color-white, 0.5);
-            border-color: rgba($color-white, 0.5);
+        &.is-sending {
+            .form__submit {
+                color: rgba($color-white, 0.5);
+                border-color: rgba($color-white, 0.5);
+            }
         }
 
         &__consent {

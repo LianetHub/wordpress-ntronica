@@ -58,12 +58,12 @@ $ntronica_categories = array(
 					</p>
 				</div>
 				<div class="col-12 col-md-6 col-xl-4">
-					<button class="cookie-notice__btn" type="button" data-cookie-manage aria-expanded="false" aria-controls="cookie-notice-manage">
+					<button class="btn btn--white" type="button" data-cookie-manage aria-expanded="false" aria-controls="cookie-notice-manage">
 						Manage cookies
 					</button>
 				</div>
 				<div class="col-12 col-md-6 col-xl-4">
-					<button class="cookie-notice__btn" type="button" data-cookie-accept>
+					<button class="btn btn--white" type="button" data-cookie-accept>
 						Accept all
 					</button>
 				</div>
@@ -106,7 +106,7 @@ $ntronica_categories = array(
 					</div>
 				<?php endforeach; ?>
 				<div class="col-12 col-md-6 col-xxl-4 offset-xxl-4 cookie-notice__confirm">
-					<button class="cookie-notice__btn" type="button" data-cookie-confirm>
+					<button class="btn btn--white" type="button" data-cookie-confirm>
 						Confirm
 					</button>
 				</div>

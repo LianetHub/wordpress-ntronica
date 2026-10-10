@@ -38,6 +38,7 @@ export class FormController {
 		this.initCf7Events();
 		this.initAgainButton();
 		this.initSubmitGate();
+		this.initSubmitValidation();
 	}
 
 	initSubmitLabels() {
@@ -134,6 +135,61 @@ export class FormController {
 		const acceptanceOk = Array.from(acceptances).every((el) => el.checked);
 
 		this.submitBtn.disabled = !(requiredOk && acceptanceOk);
+	}
+
+	initSubmitValidation() {
+		this.form.addEventListener(
+			"focusout",
+			(event) => this.blockLiveValidation(event),
+			true,
+		);
+		this.form.addEventListener(
+			"change",
+			(event) => this.blockLiveValidation(event),
+			true,
+		);
+		this.form.addEventListener("input", (event) => {
+			if (!this.isFormatField(event.target)) return;
+			this.clearValidationTips();
+		});
+	}
+
+	isFormatField(target) {
+		const field =
+			target instanceof Element
+				? target.closest("input, textarea")
+				: null;
+		if (!field || !this.form.contains(field)) return false;
+		if (field instanceof HTMLTextAreaElement) return true;
+		if (!(field instanceof HTMLInputElement)) return false;
+		return ["text", "email", "tel", "url", "number"].includes(field.type);
+	}
+
+	blockLiveValidation(event) {
+		if (!this.isFormatField(event.target)) return;
+		event.stopPropagation();
+	}
+
+	clearValidationTips() {
+		const root = this.form.closest(".wpcf7") || this.form;
+		root.querySelectorAll(".wpcf7-not-valid-tip").forEach((tip) => {
+			tip.remove();
+		});
+		root.querySelectorAll(".screen-reader-response ul li").forEach(
+			(item) => {
+				item.remove();
+			},
+		);
+		this.form.querySelectorAll(".wpcf7-form-control").forEach((el) => {
+			el.classList.remove("wpcf7-not-valid");
+			if ("true" === el.getAttribute("aria-invalid")) {
+				el.setAttribute("aria-invalid", "false");
+			}
+			el.removeAttribute("aria-describedby");
+			if (typeof el.setCustomValidity === "function") {
+				el.setCustomValidity("");
+			}
+		});
 	}
 
 	initClearableInputs() {
@@ -292,15 +348,7 @@ export class FormController {
 	}
 
 	initCf7Events() {
-		// Immediate lock — before CF7 ajax; fields stay enabled so FormData is complete.
-		this.form.addEventListener(
-			"submit",
-			() => {
-				this.startSending();
-			},
-			true,
-		);
-
+		// After CF7 accepts the values. A failed check must not lock the form.
 		this.form.addEventListener("wpcf7beforesubmit", () => {
 			this.startSending();
 		});

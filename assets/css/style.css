@@ -5318,6 +5318,67 @@ body.page-template-page-contacts, body.error404, body.search, body.page-template
   color: #ffffff;
 }
 
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 2.375rem;
+  padding: 0.5rem 0.875rem;
+  border: 0.125rem solid #000000;
+  color: #000000;
+  background: #ffffff;
+  font-family: "Nanotronica_Text", system-ui, -apple-system, "Segoe UI", sans-serif;
+  font-weight: 400;
+  font-size: 0.9375rem;
+  line-height: 0.7333333333;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background-color 0.1s ease-in-out, border-color 0.1s ease-in-out, color 0.1s ease-in-out;
+}
+@media (min-width: 1439.98px) {
+  .btn {
+    min-height: 3rem;
+    padding: 0.875rem 1rem;
+    font-size: 1.125rem;
+    line-height: 0.7222222222;
+  }
+}
+@media (min-width: 1727.98px) {
+  .btn {
+    min-height: 3.75rem;
+    padding: 0.875rem 1.25rem;
+    font-size: 1.3125rem;
+    line-height: 0.7142857143;
+  }
+}
+@media (min-width: 2559.98px) {
+  .btn {
+    min-height: 4.625rem;
+    padding: 1rem 1.5rem;
+    font-size: 1.625rem;
+    line-height: 0.7307692308;
+  }
+}
+@media (any-hover: hover) {
+  .btn:hover {
+    background: #000000;
+    color: #ffffff;
+  }
+}
+
+.page-template-page-contacts .form__submit, .btn--white {
+  border-color: #ffffff;
+  color: #ffffff;
+  background: transparent;
+}
+@media (any-hover: hover) {
+  .page-template-page-contacts .form__submit:hover, .btn--white:hover {
+    background: #ffffff;
+    color: #000000;
+  }
+}
+
 .btn-box {
   display: flex;
   align-items: center;
@@ -5502,7 +5563,7 @@ body.page-template-page-contacts, body.error404, body.search, body.page-template
   position: absolute;
   top: 100%;
   left: 0;
-  color: #000000;
+  color: #acadaf;
   padding-top: 0.1875rem;
   font-size: 0.75rem;
   line-height: 1.1666666667;
@@ -5827,24 +5888,6 @@ body.page-template-page-contacts, body.error404, body.search, body.page-template
     gap: 2.75rem;
   }
 }
-.form__submit {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  min-height: 2.375rem;
-  padding: 0.5rem 0.875rem;
-  border: 0.125rem solid #000000;
-  color: #000000;
-  background: #ffffff;
-  font-family: "Nanotronica_Text", system-ui, -apple-system, "Segoe UI", sans-serif;
-  font-weight: 400;
-  font-size: 0.9375rem;
-  line-height: 0.7333333333;
-  text-transform: uppercase;
-  cursor: pointer;
-  transition: background-color 0.1s ease-in-out, border-color 0.1s ease-in-out, color 0.1s ease-in-out;
-}
 .form__submit input {
   background: transparent;
   color: inherit;
@@ -5858,36 +5901,6 @@ body.page-template-page-contacts, body.error404, body.search, body.page-template
 }
 .form__submit .wpcf7-spinner {
   display: none;
-}
-@media (min-width: 1439.98px) {
-  .form__submit {
-    min-height: 3rem;
-    padding: 0.875rem 1rem;
-    font-size: 1.125rem;
-    line-height: 0.7222222222;
-  }
-}
-@media (min-width: 1727.98px) {
-  .form__submit {
-    min-height: 3.75rem;
-    padding: 0.875rem 1.25rem;
-    font-size: 1.3125rem;
-    line-height: 0.7142857143;
-  }
-}
-@media (min-width: 2559.98px) {
-  .form__submit {
-    min-height: 4.625rem;
-    padding: 1rem 1.5rem;
-    font-size: 1.625rem;
-    line-height: 0.7307692308;
-  }
-}
-@media (any-hover: hover) {
-  .form__submit:hover {
-    background: #000000;
-    color: #ffffff;
-  }
 }
 .form__consent {
   display: flex;
@@ -6108,20 +6121,9 @@ body.page-template-page-contacts, body.error404, body.search, body.page-template
     color: #000000;
   }
 }
-.page-template-page-contacts .form__submit {
-  border-color: #ffffff;
-  color: #ffffff;
-  background: transparent;
-}
 .page-template-page-contacts .form__submit:has(input:disabled) {
   color: rgba(255, 255, 255, 0.5);
   border-color: rgba(255, 255, 255, 0.5);
-}
-@media (any-hover: hover) {
-  .page-template-page-contacts .form__submit:hover {
-    background: #ffffff;
-    color: #000000;
-  }
 }
 .page-template-page-contacts .form.is-sending .form__submit {
   color: rgba(255, 255, 255, 0.5);
@@ -7328,56 +7330,6 @@ body.page-template-page-contacts, body.error404, body.search, body.page-template
 .cookie-notice__text strong {
   display: block;
   font-weight: 700;
-}
-.cookie-notice__btn {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  min-height: 2.375rem;
-  padding: 0 0.75rem;
-  border: 0.09375rem solid #ffffff;
-  background-color: transparent;
-  color: #ffffff;
-  font-family: "Nanotronica_Text", system-ui, -apple-system, "Segoe UI", sans-serif;
-  font-weight: 400;
-  font-size: 0.9375rem;
-  line-height: 1.2;
-  text-align: center;
-  text-transform: uppercase;
-  cursor: pointer;
-  transition: background-color 0.2s ease;
-}
-@media (min-width: 1439.98px) {
-  .cookie-notice__btn {
-    min-height: 3.125rem;
-    border-width: 0.125rem;
-    font-size: 1.125rem;
-    line-height: 1.0555555556;
-  }
-}
-@media (min-width: 1727.98px) {
-  .cookie-notice__btn {
-    min-height: 3.75rem;
-    font-size: 1.3125rem;
-    line-height: 0.9047619048;
-  }
-}
-@media (min-width: 2559.98px) {
-  .cookie-notice__btn {
-    min-height: 4.625rem;
-    font-size: 1.625rem;
-    line-height: 0.7307692308;
-  }
-}
-@media (any-hover: hover) {
-  .cookie-notice__btn:hover {
-    background-color: rgba(255, 255, 255, 0.08);
-  }
-}
-.cookie-notice__btn:focus-visible {
-  outline: 0.125rem solid #ffffff;
-  outline-offset: 0.1875rem;
 }
 .cookie-notice__close {
   position: absolute;

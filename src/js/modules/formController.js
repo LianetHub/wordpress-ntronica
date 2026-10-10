@@ -1,6 +1,13 @@
 import IMask from "imask";
 import { codeArray } from "./codes.js";
 
+// Same copy as ntronica_cf7_contact_messages() in functionality/integrations.php.
+const fieldMessages = {
+	"your-name": "Enter your name",
+	email: "Enter a valid e-mail",
+	phone: "Enter a valid phone number",
+};
+
 export class FormController {
 	constructor(el) {
 		this.form = el;
@@ -24,8 +31,10 @@ export class FormController {
 		};
 		this.phoneMasks = new Map();
 		this.pendingSent = false;
+		this.allowSend = false;
 		this.snapshot = [];
 		this.textareas = [];
+		this.form.__ntronicaForm = this;
 		this.init();
 	}
 
@@ -241,10 +250,10 @@ export class FormController {
 			textarea.addEventListener("input", () =>
 				this.resizeTextarea(textarea),
 			);
+			this.resizeTextarea(textarea);
 		});
 
 		window.addEventListener("resize", this.resizeTextareas);
-		this.resizeTextareas();
 	}
 
 	resizeTextarea(textarea) {
@@ -348,8 +357,19 @@ export class FormController {
 	}
 
 	initCf7Events() {
-		// After CF7 accepts the values. A failed check must not lock the form.
+		// Window capture runs before any listener CF7 put on the form,
+		// including one registered earlier in the capture phase.
+		window.addEventListener(
+			"submit",
+			(event) => {
+				if (event.target !== this.form) return;
+				this.onSubmit(event);
+			},
+			true,
+		);
+
 		this.form.addEventListener("wpcf7beforesubmit", () => {
+			if (!this.allowSend || this.hasValidationErrors()) return;
 			this.startSending();
 		});
 
@@ -368,6 +388,145 @@ export class FormController {
 		this.form.addEventListener("wpcf7spam", () => {
 			this.onError();
 		});
+	}
+
+	onSubmit(event) {
+		this.allowSend = false;
+		this.guardCf7Submit();
+
+		if (
+			this.root?.classList.contains("is-sending") ||
+			this.root?.classList.contains("is-sent")
+		) {
+			event.preventDefault();
+			event.stopImmediatePropagation();
+			return;
+		}
+
+		if (!this.canSubmit()) {
+			event.preventDefault();
+			event.stopImmediatePropagation();
+			return;
+		}
+
+		this.allowSend = true;
+	}
+
+	canSubmit() {
+		this.syncSubmitState();
+		if (!this.validateLocally() || this.submitBtn?.disabled) return false;
+		if (this.validateWithSchema() && this.hasValidationErrors())
+			return false;
+		return true;
+	}
+
+	guardCf7Submit() {
+		if (
+			typeof wpcf7 === "undefined" ||
+			typeof wpcf7.submit !== "function"
+		) {
+			return;
+		}
+		if (wpcf7.submit.__ntronica) return;
+
+		const original = wpcf7.submit.bind(wpcf7);
+		const guarded = (form, options) => {
+			if (form?.__ntronicaForm && !form.__ntronicaForm.allowSend) return;
+			return original(form, options);
+		};
+		guarded.__ntronica = true;
+		wpcf7.submit = guarded;
+	}
+
+	validateWithSchema() {
+		if (
+			typeof wpcf7 === "undefined" ||
+			typeof wpcf7.validate !== "function"
+		) {
+			return false;
+		}
+		if (typeof swv === "undefined") return false;
+		if (!this.form.wpcf7?.schema) return false;
+
+		try {
+			wpcf7.validate(this.form);
+		} catch {
+			return false;
+		}
+
+		return true;
+	}
+
+	validateLocally() {
+		this.clearValidationTips();
+		let valid = true;
+
+		this.form
+			.querySelectorAll(
+				".wpcf7-validates-as-required, [aria-required='true']",
+			)
+			.forEach((field) => {
+				if (this.isControlFilled(field)) return;
+				valid = false;
+				const message = fieldMessages[field.name];
+				if (message) this.showFieldError(field, message);
+			});
+
+		this.form
+			.querySelectorAll(
+				'input[type="email"], input.wpcf7-validates-as-email',
+			)
+			.forEach((field) => {
+				if (!this.isControlFilled(field) || this.isEmail(field.value))
+					return;
+				valid = false;
+				this.showFieldError(
+					field,
+					fieldMessages[field.name] || fieldMessages.email,
+				);
+			});
+
+		this.phoneMasks.forEach((mask, field) => {
+			const shown = String(mask.value ?? "").trim();
+			if (!shown || mask.masked?.isComplete) return;
+			valid = false;
+			this.showFieldError(field, fieldMessages.phone);
+		});
+
+		const acceptances = this.form.querySelectorAll(
+			"input.wpcf7-acceptance:not(.optional), .wpcf7-acceptance:not(.optional) input[type='checkbox']",
+		);
+		if (!Array.from(acceptances).every((field) => field.checked)) {
+			valid = false;
+		}
+
+		return valid;
+	}
+
+	isEmail(value) {
+		return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(String(value ?? "").trim());
+	}
+
+	hasValidationErrors() {
+		const root = this.form.closest(".wpcf7") || this.form;
+		return Boolean(
+			root.querySelector(".wpcf7-not-valid, .wpcf7-not-valid-tip"),
+		);
+	}
+
+	showFieldError(field, message) {
+		const wrap =
+			field.closest(".wpcf7-form-control-wrap") || field.parentElement;
+		if (!wrap) return;
+
+		field.classList.add("wpcf7-not-valid");
+		field.setAttribute("aria-invalid", "true");
+
+		const tip = document.createElement("span");
+		tip.className = "wpcf7-not-valid-tip";
+		tip.setAttribute("aria-hidden", "true");
+		tip.textContent = message;
+		wrap.appendChild(tip);
 	}
 
 	initAgainButton() {

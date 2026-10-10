@@ -197,9 +197,11 @@
         &:is(textarea) {
             resize: none;
             overflow: hidden;
+            align-self: flex-start;
             width: 100%;
             padding-right: rem(22);
 
+            height: rem(42);
             min-height: rem(42);
             scrollbar-width: none;
             -ms-overflow-style: none;
@@ -209,15 +211,18 @@
             }
 
             @media (min-width: $md3) {
+                height: rem(52);
                 min-height: rem(52);
             }
 
             @media (min-width: $md2) {
                 padding-right: rem(37);
+                height: rem(62);
                 min-height: rem(62);
             }
 
             @media (min-width: $md1) {
+                height: rem(70);
                 min-height: rem(70);
             }
         }

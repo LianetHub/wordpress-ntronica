@@ -10,7 +10,8 @@
     "zip": "gulp deployZIP --build",
     "deploy:ftp": "gulp ftpDeployAll",
     "test": "vitest run",
-    "test:watch": "vitest"
+    "test:watch": "vitest",
+    "test:php": "php vendor/bin/phpunit"
   },
   "author": "Liana",
   "license": "ISC",

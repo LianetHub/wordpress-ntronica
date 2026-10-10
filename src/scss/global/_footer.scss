@@ -2,6 +2,11 @@
 @use "../variables" as *;
 @use "../mixins" as *;
 
+// Same logo geometry as cookie-notice.scss (viewBox 234×34).
+$logo-n-from-bottom: 24.93091;
+$logo-square-from-bottom: 18.8889;
+$logo-viewbox-width: 234;
+
 .footer {
 	--footer-label: #{rem(31)};
 	--footer-label-gap: #{rem(5)};
@@ -12,11 +17,11 @@
 	background-color: $color-footer;
 	color: $color-muted;
 	padding-top: rem(26);
-	padding-bottom: rem(20);
+	padding-bottom: rem(12 + math.div(133 * $logo-n-from-bottom, $logo-viewbox-width));
 
 	@media (min-width: $md5) {
 		padding-top: rem(34);
-		padding-bottom: rem(28);
+		padding-bottom: rem(18 + math.div(193 * $logo-square-from-bottom, $logo-viewbox-width));
 	}
 
 	@media (min-width: $md2) {
@@ -26,17 +31,13 @@
 		--footer-text-gap: #{rem(7)};
 	}
 
-	@media (min-width:$md2) {
-		padding-bottom: rem(24);
-	}
-
 	@media (min-width: $md1) {
 		--footer-label: #{rem(42)};
 		--footer-label-gap: #{rem(13)};
 		--footer-marker: #{rem(13)};
 		--footer-text-gap: #{rem(13)};
 		padding-top: rem(43);
-		padding-bottom: rem(32);
+		padding-bottom: rem(18 + $logo-n-from-bottom);
 	}
 
 	a {

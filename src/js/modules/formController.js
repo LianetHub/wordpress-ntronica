@@ -1,7 +1,6 @@
 import IMask from "imask";
 import { codeArray } from "./codes.js";
 
-// Same copy as ntronica_cf7_contact_messages() in functionality/integrations.php.
 const fieldMessages = {
 	"your-name": "Enter your name",
 	email: "Enter a valid e-mail",
@@ -92,7 +91,7 @@ export class FormController {
 
 		this.syncSubmitState = this.syncSubmitState.bind(this);
 		this.form.addEventListener("input", this.syncSubmitState);
-		// CF7 toggles submit from the acceptance checkbox; re-apply after it.
+
 		this.form.addEventListener("change", () => {
 			this.syncSubmitState();
 			queueMicrotask(this.syncSubmitState);
@@ -246,21 +245,47 @@ export class FormController {
 		this.resizeTextareas = this.resizeTextareas.bind(this);
 
 		this.textareas.forEach((textarea) => {
-			textarea.rows = 2;
 			textarea.addEventListener("input", () =>
 				this.resizeTextarea(textarea),
 			);
-			this.resizeTextarea(textarea);
 		});
 
 		window.addEventListener("resize", this.resizeTextareas);
 	}
 
+	textareaFloor(textarea) {
+		const field = textarea.closest(".form__field");
+		if (!field) return 0;
+
+		const fieldMin = parseFloat(getComputedStyle(field).minHeight) || 0;
+		const label = field.querySelector(".form__label");
+		const labelHeight = label ? label.offsetHeight : 0;
+		const styles = getComputedStyle(field);
+		const gap = parseFloat(styles.rowGap) || parseFloat(styles.gap) || 0;
+
+		return Math.max(0, fieldMin - labelHeight - gap);
+	}
+
 	resizeTextarea(textarea) {
-		// Collapse first: `height: auto` follows the `rows` attribute (CF7 default is 10).
+		if (!textarea.value) {
+			textarea.style.minHeight = "";
+			textarea.style.height = "";
+			return;
+		}
+
+		const floor = this.textareaFloor(textarea);
+		textarea.style.minHeight = "0";
 		textarea.style.height = "0";
 		const borderHeight = textarea.offsetHeight - textarea.clientHeight;
-		textarea.style.height = `${textarea.scrollHeight + borderHeight}px`;
+		const contentHeight = textarea.scrollHeight + borderHeight;
+		textarea.style.minHeight = "";
+
+		if (contentHeight <= floor) {
+			textarea.style.height = "";
+			return;
+		}
+
+		textarea.style.height = `${contentHeight}px`;
 	}
 
 	resizeTextareas() {

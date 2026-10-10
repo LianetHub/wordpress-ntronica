@@ -2039,12 +2039,12 @@ body.page-template-page-contacts, body.error404, body.search, body.page-template
   background-color: #58595b;
   color: #acadaf;
   padding-top: 1.625rem;
-  padding-bottom: 1.25rem;
+  padding-bottom: 1.6356332879rem;
 }
 @media (min-width: 1023.98px) {
   .footer {
     padding-top: 2.125rem;
-    padding-bottom: 1.75rem;
+    padding-bottom: 2.0987066506rem;
   }
 }
 @media (min-width: 1664.98px) {
@@ -2055,11 +2055,6 @@ body.page-template-page-contacts, body.error404, body.search, body.page-template
     --footer-text-gap: 0.4375rem;
   }
 }
-@media (min-width: 1664.98px) {
-  .footer {
-    padding-bottom: 1.5rem;
-  }
-}
 @media (min-width: 2559.98px) {
   .footer {
     --footer-label: 2.625rem;
@@ -2067,7 +2062,7 @@ body.page-template-page-contacts, body.error404, body.search, body.page-template
     --footer-marker: 0.8125rem;
     --footer-text-gap: 0.8125rem;
     padding-top: 2.6875rem;
-    padding-bottom: 2rem;
+    padding-bottom: 2.683181875rem;
   }
 }
 .footer a {
@@ -5595,6 +5590,29 @@ body.page-template-page-contacts, body.error404, body.search, body.page-template
     line-height: 1.15;
   }
 }
+.form__field:has(textarea) {
+  min-height: 3.4375rem;
+}
+@media (min-width: 1199.98px) {
+  .form__field:has(textarea) {
+    min-height: 4.0625rem;
+  }
+}
+@media (min-width: 1439.98px) {
+  .form__field:has(textarea) {
+    min-height: 3.75rem;
+  }
+}
+@media (min-width: 1664.98px) {
+  .form__field:has(textarea) {
+    min-height: 5.0625rem;
+  }
+}
+@media (min-width: 2559.98px) {
+  .form__field:has(textarea) {
+    min-height: 6.3125rem;
+  }
+}
 .form__field:has(textarea) .form__control-wrap {
   flex: 1;
   align-items: stretch;
@@ -5653,34 +5671,19 @@ body.page-template-page-contacts, body.error404, body.search, body.page-template
 .form__control:is(textarea) {
   resize: none;
   overflow: hidden;
-  align-self: flex-start;
+  align-self: stretch;
   width: 100%;
+  height: 100%;
   padding-right: 1.375rem;
-  height: 2.625rem;
-  min-height: 2.625rem;
   scrollbar-width: none;
   -ms-overflow-style: none;
 }
 .form__control:is(textarea)::-webkit-scrollbar {
   display: none;
 }
-@media (min-width: 1439.98px) {
-  .form__control:is(textarea) {
-    height: 3.25rem;
-    min-height: 3.25rem;
-  }
-}
 @media (min-width: 1664.98px) {
   .form__control:is(textarea) {
     padding-right: 2.3125rem;
-    height: 3.875rem;
-    min-height: 3.875rem;
-  }
-}
-@media (min-width: 2559.98px) {
-  .form__control:is(textarea) {
-    height: 4.375rem;
-    min-height: 4.375rem;
   }
 }
 .form__clear {

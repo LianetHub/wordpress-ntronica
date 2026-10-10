@@ -29,7 +29,7 @@ $ntronica_solutions = array(
 <section class="about-solutions" id="solutions">
 	<div class="container">
 		<div class="row about-solutions__intro">
-			<div class="col-sm-6">
+			<div class="col-md-6">
 				<h2 class="about-solutions__lead">We develop and manufacture solutions for the following technological processes.</h2>
 			</div>
 		</div>

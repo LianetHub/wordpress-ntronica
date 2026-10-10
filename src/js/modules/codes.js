@@ -30,19 +30,19 @@ export const codeArray = [
         country: "Afghanistan"
     },
     {
-        mask: "+1(268)000-0000",
+        mask: "+1 (268) 000-0000",
         startsWith: "1268",
         lazy: false,
         country: "Antigua & Barbuda"
     },
     {
-        mask: "+1(264)000-0000",
+        mask: "+1 (264) 000-0000",
         startsWith: "1264",
         lazy: false,
         country: "Anguilla"
     },
     {
-        mask: "+355(000)000-000",
+        mask: "+355 (000) 000-000",
         startsWith: "355",
         lazy: false,
         country: "Albania"
@@ -72,7 +72,7 @@ export const codeArray = [
         country: "Netherlands Antilles"
     },
     {
-        mask: "+244(000)000-000",
+        mask: "+244 (000) 000-000",
         startsWith: "244",
         lazy: false,
         country: "Angola"
@@ -84,19 +84,19 @@ export const codeArray = [
         country: "Australian bases in Antarctica"
     },
     {
-        mask: "+54(000)000-0000",
+        mask: "+54 (000) 000-0000",
         startsWith: "54",
         lazy: false,
         country: "Argentina"
     },
     {
-        mask: "+1(684)000-0000",
+        mask: "+1 (684) 000-0000",
         startsWith: "1684",
         lazy: false,
         country: "American Samoa"
     },
     {
-        mask: "+43(000)000-0000",
+        mask: "+43 (000) 000-0000",
         startsWith: "43",
         lazy: false,
         country: "Austria"
@@ -126,7 +126,7 @@ export const codeArray = [
         country: "Bosnia and Herzegovina"
     },
     {
-        mask: "+1(246)000-0000",
+        mask: "+1 (246) 000-0000",
         startsWith: "1246",
         lazy: false,
         country: "Barbados"
@@ -138,7 +138,7 @@ export const codeArray = [
         country: "Bangladesh"
     },
     {
-        mask: "+32(000)000-000",
+        mask: "+32 (000) 000-000",
         startsWith: "32",
         lazy: false,
         country: "Belgium"
@@ -150,7 +150,7 @@ export const codeArray = [
         country: "Burkina Faso"
     },
     {
-        mask: "+359(000)000-000",
+        mask: "+359 (000) 000-000",
         startsWith: "359",
         lazy: false,
         country: "Bulgaria"
@@ -174,7 +174,7 @@ export const codeArray = [
         country: "Benin"
     },
     {
-        mask: "+1(441)000-0000",
+        mask: "+1 (441) 000-0000",
         startsWith: "1441",
         lazy: false,
         country: "Bermuda"
@@ -192,25 +192,25 @@ export const codeArray = [
         country: "Bolivia"
     },
     {
-        mask: "+55(00)0000-0000",
+        mask: "+55 (00) 0000-0000",
         startsWith: "55",
         lazy: false,
         country: "Brazil"
     },
     {
-        mask: "+55(00){7}000-0000",
+        mask: "+55 (00) {7}000-0000",
         startsWith: "55",
         lazy: false,
         country: "Brazil"
     },
     {
-        mask: "+55(00)90000-0000",
+        mask: "+55 (00) 90000-0000",
         startsWith: "55",
         lazy: false,
         country: "Brazil"
     },
     {
-        mask: "+1(242)000-0000",
+        mask: "+1 (242) 000-0000",
         startsWith: "1242",
         lazy: false,
         country: "Bahamas"
@@ -234,7 +234,7 @@ export const codeArray = [
         country: "Botswana"
     },
     {
-        mask: "+375(00)000-00-00",
+        mask: "+375 (00) 000-00-00",
         startsWith: "375",
         lazy: false,
         country: "Belarus"
@@ -246,7 +246,7 @@ export const codeArray = [
         country: "Belize"
     },
     {
-        mask: "+243(000)000-000",
+        mask: "+243 (000) 000-000",
         startsWith: "243",
         lazy: false,
         country: "Dem. Rep. Congo"
@@ -294,13 +294,13 @@ export const codeArray = [
         country: "Cameroon"
     },
     {
-        mask: "+86(000)0000-0000",
+        mask: "+86 (000) 0000-0000",
         startsWith: "86",
         lazy: false,
         country: "China (PRC)"
     },
     {
-        mask: "+57(000)000-0000",
+        mask: "+57 (000) 000-0000",
         startsWith: "57",
         lazy: false,
         country: "Colombia"
@@ -318,7 +318,7 @@ export const codeArray = [
         country: "Cuba"
     },
     {
-        mask: "+238(000)00-00",
+        mask: "+238 (000) 00-00",
         startsWith: "238",
         lazy: false,
         country: "Cape Verde"
@@ -336,13 +336,13 @@ export const codeArray = [
         country: "Cyprus"
     },
     {
-        mask: "+420(000)000-000",
+        mask: "+420 (000) 000-000",
         startsWith: "420",
         lazy: false,
         country: "Czech Republic"
     },
     {
-        mask: "+49(0000)000-0000",
+        mask: "+49 (0000) 000-0000",
         startsWith: "49",
         lazy: false,
         country: "Germany"
@@ -360,13 +360,13 @@ export const codeArray = [
         country: "Denmark"
     },
     {
-        mask: "+1(767)000-0000",
+        mask: "+1 (767) 000-0000",
         startsWith: "1767",
         lazy: false,
         country: "Dominica"
     },
     {
-        mask: "+1(809)000-0000",
+        mask: "+1 (809) 000-0000",
         startsWith: "1809",
         lazy: false,
         country: "Dominican Republic"
@@ -390,7 +390,7 @@ export const codeArray = [
         country: "Estonia "
     },
     {
-        mask: "+20(000)000-0000",
+        mask: "+20 (000) 000-0000",
         startsWith: "20",
         lazy: false,
         country: "Egypt"
@@ -402,7 +402,7 @@ export const codeArray = [
         country: "Eritrea"
     },
     {
-        mask: "+34(000)000-000",
+        mask: "+34 (000) 000-000",
         startsWith: "34",
         lazy: false,
         country: "Spain"
@@ -414,7 +414,7 @@ export const codeArray = [
         country: "Ethiopia"
     },
     {
-        mask: "+358(000)000-00-00",
+        mask: "+358 (000) 000-00-00",
         startsWith: "358",
         lazy: false,
         country: "Finland"
@@ -450,7 +450,7 @@ export const codeArray = [
         country: "Mayotte"
     },
     {
-        mask: "+33(000)000-000",
+        mask: "+33 (000) 000-000",
         startsWith: "33",
         lazy: false,
         country: "France"
@@ -462,7 +462,7 @@ export const codeArray = [
         country: "St Pierre & Miquelon"
     },
     {
-        mask: "+590(000)000-000",
+        mask: "+590 (000) 000-000",
         startsWith: "590",
         lazy: false,
         country: "Guadeloupe"
@@ -474,13 +474,13 @@ export const codeArray = [
         country: "Gabon"
     },
     {
-        mask: "+1(473)000-0000",
+        mask: "+1 (473) 000-0000",
         startsWith: "1473",
         lazy: false,
         country: "Grenada"
     },
     {
-        mask: "+995(000)000-000",
+        mask: "+995 (000) 000-000",
         startsWith: "995",
         lazy: false,
         country: "Rep. of Georgia"
@@ -492,7 +492,7 @@ export const codeArray = [
         country: "Guiana (French)"
     },
     {
-        mask: "+233(000)000-000",
+        mask: "+233 (000) 000-000",
         startsWith: "233",
         lazy: false,
         country: "Ghana"
@@ -510,7 +510,7 @@ export const codeArray = [
         country: "Greenland"
     },
     {
-        mask: "+220(000)00-00",
+        mask: "+220 (000) 00-00",
         startsWith: "220",
         lazy: false,
         country: "Gambia"
@@ -528,7 +528,7 @@ export const codeArray = [
         country: "Equatorial Guinea"
     },
     {
-        mask: "+30(000)000-0000",
+        mask: "+30 (000) 000-0000",
         startsWith: "30",
         lazy: false,
         country: "Greece"
@@ -540,7 +540,7 @@ export const codeArray = [
         country: "Guatemala"
     },
     {
-        mask: "+1(671)000-0000",
+        mask: "+1 (671) 000-0000",
         startsWith: "1671",
         lazy: false,
         country: "Guam"
@@ -582,13 +582,13 @@ export const codeArray = [
         country: "Haiti"
     },
     {
-        mask: "+36(000)000-000",
+        mask: "+36 (000) 000-000",
         startsWith: "36",
         lazy: false,
         country: "Hungary"
     },
     {
-        mask: "+62(800)000-0000",
+        mask: "+62 (800) 000-0000",
         startsWith: "628",
         lazy: false,
         country: "Indonesia "
@@ -612,19 +612,19 @@ export const codeArray = [
         country: "Indonesia"
     },
     {
-        mask: "+62(800)000-000",
+        mask: "+62 (800) 000-000",
         startsWith: "628",
         lazy: false,
         country: "Indonesia "
     },
     {
-        mask: "+62(800)000-00-000",
+        mask: "+62 (800) 000-00-000",
         startsWith: "628",
         lazy: false,
         country: "Indonesia "
     },
     {
-        mask: "+353(000)000-000",
+        mask: "+353 (000) 000-000",
         startsWith: "353",
         lazy: false,
         country: "Ireland"
@@ -636,7 +636,7 @@ export const codeArray = [
         country: "Israel "
     },
     {
-        mask: "+91(0000)000-000",
+        mask: "+91 (0000) 000-000",
         startsWith: "91",
         lazy: false,
         country: "India"
@@ -648,13 +648,13 @@ export const codeArray = [
         country: "Diego Garcia"
     },
     {
-        mask: "+964(000)000-0000",
+        mask: "+964 (000) 000-0000",
         startsWith: "964",
         lazy: false,
         country: "Iraq"
     },
     {
-        mask: "+98(000)000-0000",
+        mask: "+98 (000) 000-0000",
         startsWith: "98",
         lazy: false,
         country: "Iran"
@@ -666,13 +666,13 @@ export const codeArray = [
         country: "Iceland"
     },
     {
-        mask: "+39(000)0000-000",
+        mask: "+39 (000) 0000-000",
         startsWith: "39",
         lazy: false,
         country: "Italy"
     },
     {
-        mask: "+1(876)000-0000",
+        mask: "+1 (876) 000-0000",
         startsWith: "1876",
         lazy: false,
         country: "Jamaica"
@@ -690,7 +690,7 @@ export const codeArray = [
         country: "Japan "
     },
     {
-        mask: "+81(000)000-000",
+        mask: "+81 (000) 000-000",
         startsWith: "81",
         lazy: false,
         country: "Japan"
@@ -702,7 +702,7 @@ export const codeArray = [
         country: "Kenya"
     },
     {
-        mask: "+996(000)000-000",
+        mask: "+996 (000) 000-000",
         startsWith: "996",
         lazy: false,
         country: "Kyrgyzstan"
@@ -726,7 +726,7 @@ export const codeArray = [
         country: "Comoros"
     },
     {
-        mask: "+1(869)000-0000",
+        mask: "+1 (869) 000-0000",
         startsWith: "1869",
         lazy: false,
         country: "Saint Kitts & Nevis"
@@ -756,25 +756,25 @@ export const codeArray = [
         country: "Kuwait"
     },
     {
-        mask: "+1(345)000-0000",
+        mask: "+1 (345) 000-0000",
         startsWith: "1345",
         lazy: false,
         country: "Cayman Islands"
     },
     {
-        mask: "+7(600)000-00-00",
+        mask: "+7 (600) 000-00-00",
         startsWith: "76",
         lazy: false,
         country: "Kazakhstan"
     },
     {
-        mask: "+7(700)000-00-00",
+        mask: "+7 (700) 000-00-00",
         startsWith: "77",
         lazy: false,
         country: "Kazakhstan"
     },
     {
-        mask: "+856(2000)000-000",
+        mask: "+856 (2000) 000-000",
         startsWith: "85620",
         lazy: false,
         country: "Laos "
@@ -798,13 +798,13 @@ export const codeArray = [
         country: "Lebanon"
     },
     {
-        mask: "+1(758)000-0000",
+        mask: "+1 (758) 000-0000",
         startsWith: "1758",
         lazy: false,
         country: "Saint Lucia"
     },
     {
-        mask: "+423(000)000-0000",
+        mask: "+423 (000) 000-0000",
         startsWith: "423",
         lazy: false,
         country: "Liechtenstein"
@@ -828,13 +828,13 @@ export const codeArray = [
         country: "Lesotho"
     },
     {
-        mask: "+370(000)00-000",
+        mask: "+370 (000) 00-000",
         startsWith: "370",
         lazy: false,
         country: "Lithuania"
     },
     {
-        mask: "+352(000)000-000",
+        mask: "+352 (000) 000-000",
         startsWith: "352",
         lazy: false,
         country: "Luxembourg"
@@ -858,7 +858,7 @@ export const codeArray = [
         country: "Morocco"
     },
     {
-        mask: "+377(000)000-000",
+        mask: "+377 (000) 000-000",
         startsWith: "377",
         lazy: false,
         country: "Monaco"
@@ -918,13 +918,13 @@ export const codeArray = [
         country: "Macau"
     },
     {
-        mask: "+1(670)000-0000",
+        mask: "+1 (670) 000-0000",
         startsWith: "1670",
         lazy: false,
         country: "Northern Mariana Islands"
     },
     {
-        mask: "+596(000)00-00-00",
+        mask: "+596 (000) 00-00-00",
         startsWith: "596",
         lazy: false,
         country: "Martinique"
@@ -936,7 +936,7 @@ export const codeArray = [
         country: "Mauritania"
     },
     {
-        mask: "+1(664)000-0000",
+        mask: "+1 (664) 000-0000",
         startsWith: "1664",
         lazy: false,
         country: "Montserrat"
@@ -966,7 +966,7 @@ export const codeArray = [
         country: "Malawi"
     },
     {
-        mask: "+52(000)000-0000",
+        mask: "+52 (000) 000-0000",
         startsWith: "52",
         lazy: false,
         country: "Mexico"
@@ -1008,7 +1008,7 @@ export const codeArray = [
         country: "Norfolk Island"
     },
     {
-        mask: "+234(000)000-0000",
+        mask: "+234 (000) 000-0000",
         startsWith: "234",
         lazy: false,
         country: "Nigeria"
@@ -1026,7 +1026,7 @@ export const codeArray = [
         country: "Netherlands"
     },
     {
-        mask: "+47(000)00-000",
+        mask: "+47 (000) 00-000",
         startsWith: "47",
         lazy: false,
         country: "Norway"
@@ -1050,7 +1050,7 @@ export const codeArray = [
         country: "Niue"
     },
     {
-        mask: "+64(000)000-000",
+        mask: "+64 (000) 000-000",
         startsWith: "64",
         lazy: false,
         country: "New Zealand"
@@ -1074,7 +1074,7 @@ export const codeArray = [
         country: "Panama"
     },
     {
-        mask: "+51(000)000-000",
+        mask: "+51 (000) 000-000",
         startsWith: "51",
         lazy: false,
         country: "Peru"
@@ -1086,25 +1086,25 @@ export const codeArray = [
         country: "French Polynesia"
     },
     {
-        mask: "+675(000)00-000",
+        mask: "+675 (000) 00-000",
         startsWith: "675",
         lazy: false,
         country: "Papua New Guinea"
     },
     {
-        mask: "+63(000)000-0000",
+        mask: "+63 (000) 000-0000",
         startsWith: "63",
         lazy: false,
         country: "Philippines"
     },
     {
-        mask: "+92(000)000-0000",
+        mask: "+92 (000) 000-0000",
         startsWith: "92",
         lazy: false,
         country: "Pakistan"
     },
     {
-        mask: "+48(000)000-000",
+        mask: "+48 (000) 000-000",
         startsWith: "48",
         lazy: false,
         country: "Poland"
@@ -1128,7 +1128,7 @@ export const codeArray = [
         country: "Palau"
     },
     {
-        mask: "+595(000)000-000",
+        mask: "+595 (000) 000-000",
         startsWith: "595",
         lazy: false,
         country: "Paraguay"
@@ -1158,13 +1158,13 @@ export const codeArray = [
         country: "Serbia"
     },
     {
-        mask: "+7(000)000-00-00",
+        mask: "+7 (000) 000-00-00",
         startsWith: "7",
         lazy: false,
         country: "Russia"
     },
     {
-        mask: "+250(000)000-000",
+        mask: "+250 (000) 000-000",
         startsWith: "250",
         lazy: false,
         country: "Rwanda"
@@ -1224,7 +1224,7 @@ export const codeArray = [
         country: "Slovenia"
     },
     {
-        mask: "+421(000)000-000",
+        mask: "+421 (000) 000-000",
         startsWith: "421",
         lazy: false,
         country: "Slovakia"
@@ -1278,7 +1278,7 @@ export const codeArray = [
         country: "El Salvador"
     },
     {
-        mask: "+1(721)000-0000",
+        mask: "+1 (721) 000-0000",
         startsWith: "1721",
         lazy: false,
         country: "Sint Maarten"
@@ -1296,7 +1296,7 @@ export const codeArray = [
         country: "Swaziland"
     },
     {
-        mask: "+1(649)000-0000",
+        mask: "+1 (649) 000-0000",
         startsWith: "1649",
         lazy: false,
         country: "Turks & Caicos"
@@ -1362,13 +1362,13 @@ export const codeArray = [
         country: "Tonga"
     },
     {
-        mask: "+90(000)000-0000",
+        mask: "+90 (000) 000-0000",
         startsWith: "90",
         lazy: false,
         country: "Turkey"
     },
     {
-        mask: "+1(868)000-0000",
+        mask: "+1 (868) 000-0000",
         startsWith: "1868",
         lazy: false,
         country: "Trinidad & Tobago"
@@ -1398,13 +1398,13 @@ export const codeArray = [
         country: "Tanzania"
     },
     {
-        mask: "+380(00)000-00-00",
+        mask: "+380 (00) 000-00-00",
         startsWith: "380",
         lazy: false,
         country: "Ukraine"
     },
     {
-        mask: "+256(000)000-000",
+        mask: "+256 (000) 000-000",
         startsWith: "256",
         lazy: false,
         country: "Uganda"
@@ -1434,25 +1434,25 @@ export const codeArray = [
         country: "Vatican City"
     },
     {
-        mask: "+1(784)000-0000",
+        mask: "+1 (784) 000-0000",
         startsWith: "1784",
         lazy: false,
         country: "Saint Vincent & the Grenadines"
     },
     {
-        mask: "+58(000)000-0000",
+        mask: "+58 (000) 000-0000",
         startsWith: "58",
         lazy: false,
         country: "Venezuela"
     },
     {
-        mask: "+1(284)000-0000",
+        mask: "+1 (284) 000-0000",
         startsWith: "1284",
         lazy: false,
         country: "British Virgin Islands"
     },
     {
-        mask: "+1(340)000-0000",
+        mask: "+1 (340) 000-0000",
         startsWith: "1340",
         lazy: false,
         country: "US Virgin Islands"
@@ -1506,7 +1506,7 @@ export const codeArray = [
         country: "Zimbabwe"
     },
     {
-        mask: "+1(000)000-0000",
+        mask: "+1 (000) 000-0000",
         startsWith: "1",
         lazy: false,
         country: "USA and Canada"

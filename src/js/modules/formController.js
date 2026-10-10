@@ -37,6 +37,7 @@ export class FormController {
 		this.initFileInputs();
 		this.initCf7Events();
 		this.initAgainButton();
+		this.initSubmitGate();
 	}
 
 	initSubmitLabels() {
@@ -74,6 +75,65 @@ export class FormController {
 			});
 			this.phoneMasks.set(input, mask);
 		});
+	}
+
+	initSubmitGate() {
+		if (!this.submitBtn) return;
+
+		this.syncSubmitState = this.syncSubmitState.bind(this);
+		this.form.addEventListener("input", this.syncSubmitState);
+		// CF7 toggles submit from the acceptance checkbox; re-apply after it.
+		this.form.addEventListener("change", () => {
+			this.syncSubmitState();
+			queueMicrotask(this.syncSubmitState);
+		});
+		this.phoneMasks.forEach((mask) => {
+			mask.on?.("accept", this.syncSubmitState);
+		});
+		this.syncSubmitState();
+	}
+
+	isControlFilled(el) {
+		if (el.type === "checkbox" || el.type === "radio") {
+			if (el.type === "radio" && el.name) {
+				const group = this.form.querySelectorAll(
+					`input[type="radio"][name="${CSS.escape(el.name)}"]`,
+				);
+				return Array.from(group).some((item) => item.checked);
+			}
+			return el.checked;
+		}
+
+		if (el.type === "file") {
+			return el.files?.length > 0;
+		}
+
+		const mask = this.phoneMasks.get(el);
+		const value = mask ? mask.unmaskedValue : el.value;
+		return String(value ?? "").trim() !== "";
+	}
+
+	syncSubmitState() {
+		if (!this.submitBtn) return;
+		if (
+			this.root?.classList.contains("is-sending") ||
+			this.root?.classList.contains("is-sent")
+		) {
+			return;
+		}
+
+		const required = this.form.querySelectorAll(
+			".wpcf7-validates-as-required, [aria-required='true']",
+		);
+		const requiredOk = Array.from(required).every((el) =>
+			this.isControlFilled(el),
+		);
+		const acceptances = this.form.querySelectorAll(
+			"input.wpcf7-acceptance:not(.optional), .wpcf7-acceptance:not(.optional) input[type='checkbox']",
+		);
+		const acceptanceOk = Array.from(acceptances).every((el) => el.checked);
+
+		this.submitBtn.disabled = !(requiredOk && acceptanceOk);
 	}
 
 	initClearableInputs() {
@@ -427,6 +487,7 @@ export class FormController {
 
 		const first = this.form.querySelector(this.selectors.control);
 		first?.focus();
+		this.syncSubmitState();
 	}
 
 	onError() {

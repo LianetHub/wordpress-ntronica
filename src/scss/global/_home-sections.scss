@@ -548,7 +548,7 @@
 		>li {
 			&::before {
 				top: var(--marker-top);
-				height: var(--font-cap);
+				height: var(--marker-size);
 			}
 
 			&:has(br)::before,

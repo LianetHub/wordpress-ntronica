@@ -1998,12 +1998,12 @@ body.page-template-page-contacts, body.error404, body.search, body.page-template
   background-color: #58595b;
   color: #acadaf;
   padding-top: 1.625rem;
-  padding-bottom: 1.6356332879rem;
+  padding-bottom: 1.625rem;
 }
 @media (min-width: 1023.98px) {
   .footer {
     padding-top: 2.125rem;
-    padding-bottom: 2.0987066506rem;
+    padding-bottom: 2.75rem;
   }
 }
 @media (min-width: 1664.98px) {
@@ -2021,7 +2021,6 @@ body.page-template-page-contacts, body.error404, body.search, body.page-template
     --footer-marker: 0.8125rem;
     --footer-text-gap: 0.8125rem;
     padding-top: 2.6875rem;
-    padding-bottom: 2.683181875rem;
   }
 }
 .footer a {
@@ -2095,12 +2094,11 @@ body.page-template-page-contacts, body.error404, body.search, body.page-template
 @media (min-width: 1664.98px) {
   .footer__company {
     font-size: 1.125rem;
-    margin-top: 0.375rem;
   }
 }
 @media (min-width: 2559.98px) {
   .footer__company {
-    margin-top: 0.5rem;
+    margin-top: 0.375rem;
     font-size: 1.3125rem;
     line-height: 1.1428571429;
   }
@@ -2204,7 +2202,7 @@ body.page-template-page-contacts, body.error404, body.search, body.page-template
 }
 .footer .feature-list > li::before {
   top: var(--marker-top);
-  height: var(--font-cap);
+  height: var(--marker-size);
 }
 .footer .feature-list > li:has(br)::before {
   height: auto;
@@ -2258,7 +2256,7 @@ body.page-template-page-contacts, body.error404, body.search, body.page-template
   flex-wrap: wrap;
   justify-content: space-between;
   gap: 0.75rem;
-  margin-top: 0.3125rem;
+  margin-top: 0.25rem;
 }
 @media (min-width: 1439.98px) {
   .footer__policies {
@@ -2859,7 +2857,7 @@ body.page-template-page-contacts, body.error404, body.search, body.page-template
 }
 .info__list > li::before {
   top: var(--marker-top);
-  height: var(--font-cap);
+  height: var(--marker-size);
 }
 .info__list > li:has(br)::before, .info__list > li:has(address)::before {
   height: auto;
@@ -6075,7 +6073,7 @@ body.page-template-page-contacts, body.error404, body.search, body.page-template
   display: none;
 }
 .page-template-page-contacts .form .wpcf7-not-valid-tip {
-  color: #ffffff;
+  color: #acadaf;
 }
 .page-template-page-contacts .form__control {
   border-bottom-color: #ffffff;

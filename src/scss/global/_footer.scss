@@ -2,11 +2,6 @@
 @use "../variables" as *;
 @use "../mixins" as *;
 
-// Same logo geometry as cookie-notice.scss (viewBox 234×34).
-$logo-n-from-bottom: 24.93091;
-$logo-square-from-bottom: 18.8889;
-$logo-viewbox-width: 234;
-
 .footer {
 	--footer-label: #{rem(31)};
 	--footer-label-gap: #{rem(5)};
@@ -17,11 +12,11 @@ $logo-viewbox-width: 234;
 	background-color: $color-footer;
 	color: $color-muted;
 	padding-top: rem(26);
-	padding-bottom: rem(12 + math.div(133 * $logo-n-from-bottom, $logo-viewbox-width));
+	padding-bottom: rem(26);
 
 	@media (min-width: $md5) {
 		padding-top: rem(34);
-		padding-bottom: rem(18 + math.div(193 * $logo-square-from-bottom, $logo-viewbox-width));
+		padding-bottom: rem(44);
 	}
 
 	@media (min-width: $md2) {
@@ -37,7 +32,6 @@ $logo-viewbox-width: 234;
 		--footer-marker: #{rem(13)};
 		--footer-text-gap: #{rem(13)};
 		padding-top: rem(43);
-		padding-bottom: rem(18 + $logo-n-from-bottom);
 	}
 
 	a {
@@ -114,11 +108,10 @@ $logo-viewbox-width: 234;
 
 		@media (min-width:$md2) {
 			font-size: rem(18);
-			margin-top: rem(6);
 		}
 
 		@media (min-width: $md1) {
-			margin-top: rem(8);
+			margin-top: rem(6);
 			font-size: rem(21);
 			line-height: math.div(24, 21);
 		}
@@ -230,7 +223,7 @@ $logo-viewbox-width: 234;
 		>li {
 			&::before {
 				top: var(--marker-top);
-				height: var(--font-cap);
+				height: var(--marker-size);
 			}
 
 			&:has(br)::before {
@@ -294,7 +287,7 @@ $logo-viewbox-width: 234;
 		flex-wrap: wrap;
 		justify-content: space-between;
 		gap: rem(12);
-		margin-top: rem(5);
+		margin-top: rem(4);
 
 		@media (min-width: $md3) {
 			margin-top: rem(6);

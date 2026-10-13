@@ -1848,8 +1848,8 @@ body.page-template-page-contacts, body.error404, body.search, body.page-template
 }
 .sidebar__close .icon {
   display: block;
-  width: 1.1875rem;
-  height: 1.1875rem;
+  width: 100%;
+  height: 100%;
 }
 .sidebar__nav {
   display: none;
@@ -5575,6 +5575,11 @@ body.page-template-page-contacts, body.error404, body.search, body.page-template
 .form__field:has(textarea) .form__control-wrap {
   flex: 1;
   align-items: stretch;
+  min-height: 0;
+}
+.form__field:has(textarea) .wpcf7-form-control-wrap,
+.form__field:has(textarea) .form__control:is(textarea) {
+  min-height: 0;
 }
 .form__label {
   font-weight: 700;

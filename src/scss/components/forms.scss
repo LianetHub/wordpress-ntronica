@@ -156,6 +156,13 @@
             .form__control-wrap {
                 flex: 1;
                 align-items: stretch;
+                // rows/font metrics must not push the field past min-height
+                min-height: 0;
+            }
+
+            .wpcf7-form-control-wrap,
+            .form__control:is(textarea) {
+                min-height: 0;
             }
         }
     }

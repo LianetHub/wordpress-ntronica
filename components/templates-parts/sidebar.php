@@ -14,7 +14,7 @@ $ntronica_sidebar_items = ntronica_get_nav_tree();
 	</div>
 	<button class="sidebar__close" type="button">
 		<span class="screen-reader-text">Close menu</span>
-		<?php ntronica_icon('close'); ?>
+		<?php ntronica_icon('close', '', '0 0 19 19'); ?>
 	</button>
 	<nav class="sidebar__nav" id="sidebar-nav">
 		<ul class="sidebar__menu">

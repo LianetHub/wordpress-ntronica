@@ -4,15 +4,8 @@
 		<path d="M0.707107 0.707107L12.7071 12.7071M0.707107 12.7071L12.7071 0.707107"
 			stroke="currentColor" stroke-width="2" />
 	</symbol>
-	<symbol id="icon-close" width="19" height="19" viewBox="0 0 19 19" fill="none">
-		<g clip-path="url(#clip0_2108_11503)">
-			<path d="M1 1L18 18M1 18L18 1" stroke="currentColor" stroke-width="2.5" />
-		</g>
-		<defs>
-			<clipPath id="clip0_2108_11503">
-				<rect width="19" height="19" fill="currentColor" />
-			</clipPath>
-		</defs>
+	<symbol id="icon-close" viewBox="0 0 19 19" fill="none">
+		<path d="M2.5 2.5L16.5 16.5M2.5 16.5L16.5 2.5" stroke="currentColor" stroke-width="2.5" stroke-linecap="square" />
 	</symbol>
 	<symbol id="icon-arrow-next" viewBox="0 0 29 19" fill="none">
 		<path d="M15.8852 18.7526L22.9352 11.4676H-0.000835918V7.28462H22.9352L15.8852 -0.000375986H21.4312L26.1312 4.84062C27.7762 6.48562 28.5282 7.94262 28.5282 9.39962C28.5282 10.8096 27.7762 12.2196 26.1312 13.9116L21.4312 18.7526H15.8852Z" fill="currentColor"/>

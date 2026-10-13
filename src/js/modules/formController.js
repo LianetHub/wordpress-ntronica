@@ -245,6 +245,8 @@ export class FormController {
 		this.resizeTextareas = this.resizeTextareas.bind(this);
 
 		this.textareas.forEach((textarea) => {
+			// One row: CF7 `40x2` otherwise keeps an intrinsic 2-line height (~126px at 2560).
+			textarea.rows = 1;
 			textarea.addEventListener("input", () =>
 				this.resizeTextarea(textarea),
 			);

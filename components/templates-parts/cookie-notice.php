@@ -73,7 +73,7 @@ $ntronica_categories = array(
 		<div class="cookie-notice__panel cookie-notice__panel--manage" id="cookie-notice-manage" hidden>
 			<button class="cookie-notice__close" type="button" data-cookie-close>
 				<span class="screen-reader-text">Close cookie settings</span>
-				<?php ntronica_icon('close'); ?>
+				<?php ntronica_icon('close', '', '0 0 19 19'); ?>
 			</button>
 
 			<div class="row cookie-notice__manage-head">

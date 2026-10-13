@@ -15,6 +15,8 @@ export class SiteMenu {
 		this.onPointerLeave = this.onPointerLeave.bind(this);
 		this.onFocusIn = this.onFocusIn.bind(this);
 		this.onFocusOut = this.onFocusOut.bind(this);
+		this.onDocumentClick = this.onDocumentClick.bind(this);
+		this.onKeyDown = this.onKeyDown.bind(this);
 		this.onSwipePointerDown = this.onSwipePointerDown.bind(this);
 		this.onSwipePointerMove = this.onSwipePointerMove.bind(this);
 		this.onSwipePointerUp = this.onSwipePointerUp.bind(this);
@@ -31,6 +33,8 @@ export class SiteMenu {
 		this.sidebar.addEventListener("pointerleave", this.onPointerLeave);
 		this.sidebar.addEventListener("focusin", this.onFocusIn);
 		this.sidebar.addEventListener("focusout", this.onFocusOut);
+		document.addEventListener("click", this.onDocumentClick);
+		document.addEventListener("keydown", this.onKeyDown);
 
 		if (
 			this.mqWide.matches &&
@@ -340,6 +344,26 @@ export class SiteMenu {
 		return this.mqWide.matches
 			? !this.sidebar.classList.contains("is-collapsed")
 			: this.sidebar.classList.contains("is-open");
+	}
+
+	/** Overlay menu below desktop (≥768 leaves empty space to the right). */
+	isOverlayOpen() {
+		return (
+			!this.mqWide.matches && this.sidebar.classList.contains("is-open")
+		);
+	}
+
+	onDocumentClick(event) {
+		if (!this.isOverlayOpen()) return;
+		if (this.sidebar.contains(event.target)) return;
+		this.closeOverlay();
+	}
+
+	onKeyDown(event) {
+		if (event.key !== "Escape") return;
+		if (!this.isOverlayOpen()) return;
+		event.preventDefault();
+		this.closeOverlay();
 	}
 
 	syncLock() {

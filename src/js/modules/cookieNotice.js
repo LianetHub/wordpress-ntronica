@@ -1,6 +1,8 @@
 /**
- * Cookie consent banner: default / manage panels, consent cookie, reload for PHP metrics.
+ * Cookie consent banner: default / manage panels, consent cookie.
  */
+
+import { applyAnalyticsConsent } from "./analyticsConsent.js";
 
 const MAX_AGE = 60 * 60 * 24 * 183;
 
@@ -101,7 +103,25 @@ export class CookieNotice {
 
 	save(data) {
 		this.writeConsent(data);
-		location.reload();
+		this.dismiss();
+		applyAnalyticsConsent(data);
+		document.dispatchEvent(
+			new CustomEvent("ntronica:cookie-consent", { detail: data }),
+		);
+	}
+
+	dismiss() {
+		document.removeEventListener("keydown", this.onKeydown);
+		document.body.classList.remove("lock");
+		this.root.classList.remove("is-manage");
+		this.root.hidden = true;
+		this.root.setAttribute("aria-modal", "false");
+		this.root.setAttribute("aria-label", "Cookie notice");
+		this.root.removeAttribute("aria-labelledby");
+		this.manageBtn?.setAttribute("aria-expanded", "false");
+		if (this.managePanel) this.managePanel.hidden = true;
+		if (this.defaultPanel) this.defaultPanel.hidden = false;
+		this.syncDock();
 	}
 
 	acceptAll() {

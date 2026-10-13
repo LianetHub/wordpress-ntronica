@@ -167,6 +167,17 @@ function ntronica_enqueue_scripts()
                 'strategy'  => 'defer',
             )
         );
+
+        wp_localize_script(
+            'ntronica-app',
+            'ntronicaAnalytics',
+            array(
+                'gtm'               => ntronica_analytics_id('NTRONICA_GTM_ID'),
+                'ga'                => ntronica_analytics_id('NTRONICA_GA_ID'),
+                'ym'                => ntronica_analytics_id('NTRONICA_YM_ID'),
+                'performanceLoaded' => ntronica_cookie_allowed('performance'),
+            )
+        );
     }
 }
 add_action('wp_enqueue_scripts', 'ntronica_enqueue_scripts');

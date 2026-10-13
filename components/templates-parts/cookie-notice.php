@@ -34,7 +34,7 @@ $ntronica_categories = array(
 	array(
 		'key'      => 'necessary',
 		'title'    => 'Necessary Cookies',
-		'desc'     => 'These cookies are necessary for the website to function and cannot be switched off. They are set in response to your actions, like preferences or logging in. You can block or alert them in your browser, but parts of the site may not work. They do not store personal data.',
+		'desc'     => 'These cookies are necessary for the website to function and cannot be switched off. They are set in response to your actions, like preferences or logging in. You can block or alert them in your browser, but parts of the site may not&nbsp;work.&nbsp;They&nbsp;do not store personal data.',
 		'locked'   => true,
 		'checked'  => true,
 	),
@@ -73,11 +73,18 @@ $ntronica_categories = array(
 		<div class="cookie-notice__panel cookie-notice__panel--manage" id="cookie-notice-manage" hidden>
 			<button class="cookie-notice__close" type="button" data-cookie-close>
 				<span class="screen-reader-text">Close cookie settings</span>
-				<?php ntronica_icon('close', '', '0 0 19 19'); ?>
+				<svg class="icon icon--close" aria-hidden="true" focusable="false" viewBox="0 0 19 19" fill="none">
+					<path
+						d="M2.5 2.5L16.5 16.5M2.5 16.5L16.5 2.5"
+						stroke="currentColor"
+						stroke-width="2.5"
+						stroke-linecap="square"
+						vector-effect="non-scaling-stroke" />
+				</svg>
 			</button>
 
 			<div class="row cookie-notice__manage-head">
-				<div class="col-12 col-xxl-4">
+				<div class="col-12 col-lg-6 col-xxl-4">
 					<h2 class="cookie-notice__title" id="cookie-notice-title">Manage cookie preferences</h2>
 					<p class="text-block-alternate cookie-notice__lead">
 						Configure cookie settings and confirm to save your settings. You can change consent at any time on our cookie consent page

@@ -3654,7 +3654,7 @@ body.page-template-page-contacts, body.error404, body.search, body.page-template
 }
 @media (min-width: 1439.98px) {
   .careers-team__text {
-    line-height: 1.2352941176;
+    line-height: 1.2058823529;
   }
 }
 @media (min-width: 1664.98px) {
@@ -6168,15 +6168,9 @@ body.page-template-page-contacts, body.error404, body.search, body.page-template
   appearance: none;
   line-height: 0;
   color: inherit;
-  transition: opacity 0.2s ease;
 }
 .search-form__clear[hidden] {
   display: none;
-}
-@media (any-hover: hover) {
-  .search-form__clear:hover {
-    opacity: 0.7;
-  }
 }
 .search-form__clear-icon {
   display: block;
@@ -7230,17 +7224,12 @@ body.page-template-page-contacts, body.error404, body.search, body.page-template
   background-color: #acadaf;
   color: #ffffff;
   padding-top: 1.25rem;
-  padding-bottom: 1.6356332879rem;
-}
-@media (min-width: 767.98px) {
-  .cookie-notice {
-    padding-top: 1.625rem;
-  }
+  padding-top: 1.625rem;
 }
 @media (min-width: 1023.98px) {
   .cookie-notice {
     --sidebar-width: 4.75rem;
-    padding-bottom: 2.410167102rem;
+    padding-bottom: 2.5rem;
   }
 }
 @media (min-width: 1199.98px) {
@@ -7257,21 +7246,14 @@ body.page-template-page-contacts, body.error404, body.search, body.page-template
   .cookie-notice {
     --sidebar-width: 17.125rem;
     padding-top: 2.6875rem;
-    padding-bottom: 2.683181875rem;
   }
 }
 .cookie-notice[hidden] {
   display: none;
 }
 .cookie-notice.is-manage {
-  top: 0;
   padding-top: 1.625rem;
   padding-bottom: 1.625rem;
-}
-@media (min-width: 767.98px) {
-  .cookie-notice.is-manage {
-    top: auto;
-  }
 }
 @media (min-width: 1439.98px) {
   .cookie-notice.is-manage {
@@ -7316,7 +7298,7 @@ body.page-template-page-contacts, body.error404, body.search, body.page-template
 }
 .cookie-notice__close {
   position: absolute;
-  top: 0;
+  top: 1.45rem;
   right: 1.75rem;
   z-index: 1;
   display: flex;
@@ -7335,6 +7317,7 @@ body.page-template-page-contacts, body.error404, body.search, body.page-template
 }
 @media (min-width: 1023.98px) {
   .cookie-notice__close {
+    top: 1.75rem;
     right: 1.875rem;
   }
 }
@@ -7345,18 +7328,21 @@ body.page-template-page-contacts, body.error404, body.search, body.page-template
 }
 @media (min-width: 1439.98px) {
   .cookie-notice__close {
+    top: 1rem;
     width: 1rem;
     height: 1rem;
   }
 }
 @media (min-width: 1664.98px) {
   .cookie-notice__close {
+    top: 0;
     width: 1.1875rem;
     height: 1.1875rem;
   }
 }
 @media (min-width: 2559.98px) {
   .cookie-notice__close {
+    top: 1rem;
     right: 17.4375rem;
     width: 1.75rem;
     height: 1.75rem;
@@ -7389,13 +7375,18 @@ body.page-template-page-contacts, body.error404, body.search, body.page-template
 }
 @media (min-width: 1439.98px) {
   .cookie-notice__manage-head {
-    padding-bottom: 1.5rem;
+    padding-bottom: 3.375rem;
+  }
+}
+@media (min-width: 1664.98px) {
+  .cookie-notice__manage-head {
+    padding-bottom: 3.375rem;
   }
 }
 @media (min-width: 2559.98px) {
   .cookie-notice__manage-head {
     padding-right: 1.75rem;
-    padding-bottom: 2.1875rem;
+    padding-bottom: 4.5rem;
   }
 }
 .cookie-notice__title {
@@ -7407,13 +7398,13 @@ body.page-template-page-contacts, body.error404, body.search, body.page-template
 }
 @media (min-width: 1439.98px) {
   .cookie-notice__title {
-    font-size: 1.25rem;
+    font-size: 1.5rem;
     line-height: 1;
   }
 }
 @media (min-width: 1664.98px) {
   .cookie-notice__title {
-    font-size: 1.5rem;
+    font-size: 1.75rem;
     line-height: 1;
   }
 }
@@ -7433,14 +7424,21 @@ body.page-template-page-contacts, body.error404, body.search, body.page-template
     margin-top: 1.0625rem;
   }
 }
+@media (min-width: 1023.98px) {
+  .cookie-notice__lead {
+    max-width: 23.75rem;
+  }
+}
 @media (min-width: 1439.98px) {
   .cookie-notice__lead {
-    margin-top: 1.25rem;
+    margin-top: 1.0625rem;
+    max-width: none;
   }
 }
 @media (min-width: 2559.98px) {
   .cookie-notice__lead {
     margin-top: 2.1875rem;
+    max-width: 33.125rem;
   }
 }
 .cookie-notice__categories {
@@ -7453,9 +7451,24 @@ body.page-template-page-contacts, body.error404, body.search, body.page-template
     --gutter-y: 1.875rem;
   }
 }
+@media (min-width: 1023.98px) {
+  .cookie-notice__categories {
+    --gutter-y: 2.375rem;
+  }
+}
+@media (min-width: 1439.98px) {
+  .cookie-notice__categories {
+    --gutter-y: 2.25rem;
+  }
+}
+@media (min-width: 1664.98px) {
+  .cookie-notice__categories {
+    --gutter-y: 2.25rem;
+  }
+}
 @media (min-width: 2559.98px) {
   .cookie-notice__categories {
-    --gutter-y: 1.5rem;
+    --gutter-y: 2.1rem;
   }
 }
 .cookie-notice__confirm {
@@ -7477,6 +7490,11 @@ body.page-template-page-contacts, body.error404, body.search, body.page-template
   align-items: start;
   cursor: pointer;
   color: #ffffff;
+}
+@media (min-width: 1023.98px) {
+  .cookie-notice__check {
+    --check-size: 1.5625rem;
+  }
 }
 @media (min-width: 1439.98px) {
   .cookie-notice__check {
@@ -7524,6 +7542,8 @@ body.page-template-page-contacts, body.error404, body.search, body.page-template
 }
 @media (min-width: 1439.98px) {
   .cookie-notice__box {
+    position: relative;
+    top: -0.3125rem;
     border-width: 0.125rem;
   }
 }
@@ -7542,9 +7562,19 @@ body.page-template-page-contacts, body.error404, body.search, body.page-template
   gap: 0.3125rem;
   min-width: 0;
 }
+@media (min-width: 1023.98px) {
+  .cookie-notice__check-body {
+    gap: 0.5rem;
+  }
+}
 @media (min-width: 1439.98px) {
   .cookie-notice__check-body {
     gap: 0.875rem;
+  }
+}
+@media (min-width: 2559.98px) {
+  .cookie-notice__check-body {
+    gap: 1.375rem;
   }
 }
 .cookie-notice__check-title {
@@ -7557,13 +7587,13 @@ body.page-template-page-contacts, body.error404, body.search, body.page-template
 }
 @media (min-width: 1439.98px) {
   .cookie-notice__check-title {
-    font-size: 1.3125rem;
+    font-size: 1.125rem;
     line-height: 1;
   }
 }
 @media (min-width: 1664.98px) {
   .cookie-notice__check-title {
-    font-size: 1.5rem;
+    font-size: 1.3125rem;
   }
 }
 @media (min-width: 2559.98px) {
@@ -7582,14 +7612,19 @@ body.page-template-page-contacts, body.error404, body.search, body.page-template
 }
 @media (min-width: 1439.98px) {
   .cookie-notice__check-desc {
-    font-size: 1.0625rem;
+    font-size: 0.875rem;
     line-height: 1.1176470588;
   }
 }
 @media (min-width: 1664.98px) {
   .cookie-notice__check-desc {
-    font-size: 1.25rem;
+    font-size: 1rem;
     line-height: 1.15;
+  }
+}
+@media (min-width: 2559.98px) {
+  .cookie-notice__check-desc {
+    font-size: 1.25rem;
   }
 }
 

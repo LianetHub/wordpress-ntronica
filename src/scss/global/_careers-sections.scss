@@ -63,12 +63,10 @@
 	&__text {
 		display: flex;
 		flex-direction: column;
-		gap: 0.125rem;
-
 		line-height: math.div(18, 14);
 
 		@media (min-width:$md3) {
-			line-height: math.div(20.5, 17);
+			line-height: math.div(21, 17);
 		}
 
 		@media (min-width:$md2) {
@@ -76,8 +74,7 @@
 		}
 
 		@media (min-width:$md1) {
-			gap: 0.5rem;
-			line-height: math.div(29, 27);
+			line-height: math.div(32, 27);
 		}
 	}
 }

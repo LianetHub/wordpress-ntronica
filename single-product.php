@@ -16,6 +16,5 @@ if (have_posts()) {
 }
 
 get_template_part('components/templates-parts/section', 'product-specs');
-get_template_part('components/templates-parts/section', 'contact');
 
 get_footer();

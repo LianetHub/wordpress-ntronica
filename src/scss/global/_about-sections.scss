@@ -97,6 +97,8 @@
 		}
 
 		@media (min-width: $md1) {
+			gap: rem(20);
+			line-height: 1.1;
 			margin-top: rem(32);
 		}
 	}
@@ -179,7 +181,7 @@
 		aspect-ratio: 322 / 219;
 
 		@media (min-width:$md6) {
-			aspect-ratio: 692 / 377;
+			aspect-ratio: 945 / 585;
 			margin-top: 1.25rem;
 		}
 

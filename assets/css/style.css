@@ -3204,6 +3204,8 @@ body.page-template-page-contacts, body.error404, body.search, body.page-template
 }
 @media (min-width: 2559.98px) {
   .overview__features {
+    gap: 1.25rem;
+    line-height: 1.1;
     margin-top: 2rem;
   }
 }
@@ -3288,7 +3290,7 @@ body.page-template-page-contacts, body.error404, body.search, body.page-template
 }
 @media (min-width: 767.98px) {
   .about-goal__media {
-    aspect-ratio: 692/377;
+    aspect-ratio: 945/585;
     margin-top: 1.25rem;
   }
 }
@@ -3649,12 +3651,11 @@ body.page-template-page-contacts, body.error404, body.search, body.page-template
 .careers-team__text {
   display: flex;
   flex-direction: column;
-  gap: 0.125rem;
   line-height: 1.2857142857;
 }
 @media (min-width: 1439.98px) {
   .careers-team__text {
-    line-height: 1.2058823529;
+    line-height: 1.2352941176;
   }
 }
 @media (min-width: 1664.98px) {
@@ -3664,8 +3665,7 @@ body.page-template-page-contacts, body.error404, body.search, body.page-template
 }
 @media (min-width: 2559.98px) {
   .careers-team__text {
-    gap: 0.5rem;
-    line-height: 1.0740740741;
+    line-height: 1.1851851852;
   }
 }
 
@@ -4004,7 +4004,7 @@ body.page-template-page-contacts, body.error404, body.search, body.page-template
 @media (min-width: 2559.98px) {
   .product {
     --rule-width: 0.15625rem;
-    padding-top: 6.875rem;
+    padding-top: 9.625rem;
   }
 }
 .product__hero {
@@ -4146,7 +4146,7 @@ body.page-template-page-contacts, body.error404, body.search, body.page-template
 }
 @media (min-width: 2559.98px) {
   .product__specs {
-    margin-bottom: 10rem;
+    margin-bottom: 9rem;
   }
 }
 .product__spec {
@@ -4226,6 +4226,9 @@ body.page-template-page-contacts, body.error404, body.search, body.page-template
   --gutter-y: 1.5rem;
   padding-top: 2.25rem;
 }
+.product__process .feature-list {
+  --marker-col: rem(74);
+}
 @media (min-width: 767.98px) {
   .product__process {
     align-items: start;
@@ -4248,7 +4251,7 @@ body.page-template-page-contacts, body.error404, body.search, body.page-template
 }
 @media (min-width: 2559.98px) {
   .product__process {
-    padding-top: 8.125rem;
+    padding-top: 8.25rem;
   }
 }
 .product__process-title {
@@ -4312,6 +4315,9 @@ body.page-template-page-contacts, body.error404, body.search, body.page-template
   aspect-ratio: 324/215;
   object-fit: cover;
 }
+.product__media {
+  padding-bottom: 1rem;
+}
 
 .product-gallery__img {
   display: block;
@@ -4334,7 +4340,7 @@ body.page-template-page-contacts, body.error404, body.search, body.page-template
 @media (min-width: 2559.98px) {
   .product-gallery__footer {
     gap: 1.5rem;
-    padding-top: 1.125rem;
+    padding-top: 0.625rem;
   }
 }
 

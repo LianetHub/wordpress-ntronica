@@ -25,7 +25,7 @@ $ntronica_card = wp_parse_args(
 	$args,
 	array(
 		'title'     => '',
-		'url'       => '#',
+		'url'       => home_url('/products/plasma-200-01/'),
 		'image'     => '',
 		'image_alt' => '',
 		'width'     => 622,

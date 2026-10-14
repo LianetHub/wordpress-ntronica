@@ -185,6 +185,7 @@
 .product {
 	--rule-width: #{rem(1)};
 
+
 	padding-top: rem(72);
 
 	@media (min-width: $md5) {
@@ -206,7 +207,7 @@
 	@media (min-width: $md1) {
 		--rule-width: #{rem(2.5)};
 
-		padding-top: rem(110);
+		padding-top: rem(154);
 	}
 
 	// product__hero
@@ -351,7 +352,7 @@
 		}
 
 		@media (min-width: $md1) {
-			margin-bottom: rem(160);
+			margin-bottom: rem(144);
 		}
 	}
 
@@ -436,6 +437,10 @@
 
 		padding-top: rem(36);
 
+		.feature-list {
+			--marker-col: rem(74);
+		}
+
 		@media (min-width: $md6) {
 			align-items: start;
 		}
@@ -453,7 +458,7 @@
 		}
 
 		@media (min-width: $md1) {
-			padding-top: rem(130);
+			padding-top: rem(132);
 		}
 	}
 
@@ -518,6 +523,10 @@
 		aspect-ratio: 324 / 215;
 		object-fit: cover;
 	}
+
+	&__media {
+		padding-bottom: 1rem;
+	}
 }
 
 .product-gallery {
@@ -544,7 +553,7 @@
 
 		@media (min-width: $md1) {
 			gap: rem(24);
-			padding-top: rem(18);
+			padding-top: rem(10);
 		}
 	}
 }

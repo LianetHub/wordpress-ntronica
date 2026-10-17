@@ -95,7 +95,6 @@ $logo-viewbox-width: 234;
 
 		@media (min-width: $md4) {
 			--gutter-y: #{rem(24)};
-			align-items: flex-end;
 		}
 	}
 
@@ -160,6 +159,19 @@ $logo-viewbox-width: 234;
 			display: block;
 			width: 100%;
 			height: 100%;
+
+			path {
+				stroke-width: rem(2.5);
+
+				@media (min-width:$md3) {
+					stroke-width: rem(3.5);
+				}
+
+				@media (min-width:$md1) {
+					stroke-width: rem(4.5);
+
+				}
+			}
 		}
 
 		@media (any-hover: hover) {
@@ -288,7 +300,7 @@ $logo-viewbox-width: 234;
 	// cookie-notice__check
 	&__check {
 		--check-size: #{rem(21)};
-		--check-track: #{rem(56)};
+		--check-track: #{rem(66)};
 		position: relative;
 		display: grid;
 		grid-template-columns: var(--check-track) minmax(0, 1fr);
@@ -297,9 +309,6 @@ $logo-viewbox-width: 234;
 		cursor: pointer;
 		color: $color-white;
 
-		@media (min-width: $md5) {
-			--check-size: #{rem(25)};
-		}
 
 		@media (min-width: $md3) {
 			--check-size: #{rem(29)};

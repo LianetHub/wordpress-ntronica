@@ -7399,7 +7399,6 @@ body.page-template-page-contacts, body.error404, body.search, body.page-template
 @media (min-width: 1199.98px) {
   .cookie-notice__default {
     --gutter-y: 1.5rem;
-    align-items: flex-end;
   }
 }
 .cookie-notice__text {
@@ -7465,6 +7464,19 @@ body.page-template-page-contacts, body.error404, body.search, body.page-template
   display: block;
   width: 100%;
   height: 100%;
+}
+.cookie-notice__close .icon path {
+  stroke-width: 0.15625rem;
+}
+@media (min-width: 1439.98px) {
+  .cookie-notice__close .icon path {
+    stroke-width: 0.21875rem;
+  }
+}
+@media (min-width: 2559.98px) {
+  .cookie-notice__close .icon path {
+    stroke-width: 0.28125rem;
+  }
 }
 @media (any-hover: hover) {
   .cookie-notice__close:hover {
@@ -7595,7 +7607,7 @@ body.page-template-page-contacts, body.error404, body.search, body.page-template
 }
 .cookie-notice__check {
   --check-size: 1.3125rem;
-  --check-track: 3.5rem;
+  --check-track: 4.125rem;
   position: relative;
   display: grid;
   grid-template-columns: var(--check-track) minmax(0, 1fr);
@@ -7603,11 +7615,6 @@ body.page-template-page-contacts, body.error404, body.search, body.page-template
   align-items: start;
   cursor: pointer;
   color: #ffffff;
-}
-@media (min-width: 1023.98px) {
-  .cookie-notice__check {
-    --check-size: 1.5625rem;
-  }
 }
 @media (min-width: 1439.98px) {
   .cookie-notice__check {

@@ -76,18 +76,15 @@ $ntronica_categories = array(
 				<svg class="icon icon--close" aria-hidden="true" focusable="false" viewBox="0 0 19 19" fill="none">
 					<path
 						d="M2.5 2.5L16.5 16.5M2.5 16.5L16.5 2.5"
-						stroke="currentColor"
-						stroke-width="2.5"
-						stroke-linecap="square"
-						vector-effect="non-scaling-stroke" />
+						stroke="currentColor" />
 				</svg>
 			</button>
 
 			<div class="row cookie-notice__manage-head">
-				<div class="col-12 col-lg-6 col-xxl-4">
+				<div class="col-12 col-md-8 col-lg-6 col-xxl-4">
 					<h2 class="cookie-notice__title" id="cookie-notice-title">Manage cookie preferences</h2>
 					<p class="text-block-alternate cookie-notice__lead">
-						Configure cookie settings and confirm to save your settings. You can change consent at any time on our cookie consent page
+						Configure cookie settings and confirm to save your settings. You&nbsp;can change consent at any time on our cookie consent page
 					</p>
 				</div>
 			</div>

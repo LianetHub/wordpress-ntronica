@@ -2,8 +2,8 @@
 @use "../variables" as *;
 @use "../mixins" as *;
 
-// Distance from the bottom of the logo viewBox (234×34) to the top of "n" (y = 9.06909).
-$logo-n-from-bottom: 24.93091;
+// Distance from the bottom of the logo viewBox (234×34) to the top of "n" (y = 9).
+$logo-n-from-bottom: 24;
 $logo-viewbox-width: 234;
 
 .cookie-notice {
@@ -19,7 +19,7 @@ $logo-viewbox-width: 234;
 	background-color: $color-muted;
 	color: $color-white;
 	padding-top: rem(20);
-	padding-top: rem(26);
+	padding-bottom: rem(26);
 
 	@media (min-width: $md5) {
 		--sidebar-width: #{rem($sidebar-width-1024)};
@@ -37,7 +37,16 @@ $logo-viewbox-width: 234;
 	@media (min-width: $md1) {
 		--sidebar-width: #{rem($sidebar-width-2560)};
 		padding-top: rem(43);
+	}
 
+	body:has(.sidebar--language-ru) & {
+		@media (min-width: $md4) {
+			--sidebar-width: #{rem($sidebar-width-1200-ru)};
+		}
+
+		@media (min-width: $md1) {
+			--sidebar-width: #{rem($sidebar-width-2560-ru)};
+		}
 	}
 
 	&[hidden] {

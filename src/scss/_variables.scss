@@ -64,6 +64,7 @@ $content-width-1024: 780px;
 
 // Layout (Main 1200)
 $sidebar-width-1200: 234px;
+$sidebar-width-1200-ru: 293px; // 234 + 59 (RU logo viewBox wider)
 $content-pad-left-1200: 87px;
 $content-pad-right-1200: 39px;
 $content-width-1200: 840px;
@@ -76,6 +77,7 @@ $content-width-1665: 1368px;
 
 // Layout (Main 2560)
 $sidebar-width-2560: 274px;
+$sidebar-width-2560-ru: 333px; // 274 + 59
 $content-pad-left-2560: 93px;
 $content-pad-right-2560: 279px;
 $content-width-2560: 1914px;

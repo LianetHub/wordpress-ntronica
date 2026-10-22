@@ -25,13 +25,17 @@ $ntronica_card = wp_parse_args(
 	$args,
 	array(
 		'title'     => '',
-		'url'       => home_url('/products/plasma-200-01/'),
+		'url'       => '',
 		'image'     => '',
 		'image_alt' => '',
 		'width'     => 622,
 		'height'    => 412,
 	)
 );
+
+if ('' === $ntronica_card['url']) {
+	return;
+}
 
 $ntronica_image_alt = $ntronica_card['image_alt'];
 if ('' === $ntronica_image_alt) {

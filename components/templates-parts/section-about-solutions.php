@@ -11,16 +11,19 @@ $ntronica_about_img = IMG_PATH . '/about/';
 $ntronica_solutions = array(
 	array(
 		'title' => 'Thin films equipment',
+		'url' => home_url('/products/#thin-films'),
 		'image' => $ntronica_about_img . 'thin-films.webp',
 		'alt'   => 'Thin films equipment',
 	),
 	array(
 		'title' => 'Wet process equipment',
+		'url' => home_url('/products/#wet-process'),
 		'image' => $ntronica_about_img . 'wet-process.webp',
 		'alt'   => 'Wet process equipment',
 	),
 	array(
 		'title' => 'Process control',
+		'url' => home_url('/products/#process-control'),
 		'image' => $ntronica_about_img . 'process-control.webp',
 		'alt'   => 'Process control',
 	),
@@ -43,6 +46,7 @@ $ntronica_solutions = array(
 						'product',
 						array(
 							'title'     => $ntronica_item['title'],
+							'url' => $ntronica_item['url'],
 							'image'     => $ntronica_item['image'],
 							'image_alt' => $ntronica_item['alt'],
 						)

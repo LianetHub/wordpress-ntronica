@@ -11,14 +11,17 @@ $ntronica_img = IMG_PATH . '/home/';
 $ntronica_products = array(
 	array(
 		'title' => 'Thin films equipment',
+		'url' => home_url('/products/#thin-films'),
 		'image' => $ntronica_img . 'product-thin-films.webp',
 	),
 	array(
 		'title' => 'Wet process equipment',
+		'url' => home_url('/products/#wet-process'),
 		'image' => $ntronica_img . 'product-wet-process.webp',
 	),
 	array(
 		'title' => 'Process control',
+		'url' => home_url('/products/#process-control'),
 		'image' => $ntronica_img . 'product-process-control.webp',
 	),
 );
@@ -39,6 +42,7 @@ $ntronica_products = array(
 						'product',
 						array(
 							'title' => $ntronica_item['title'],
+							'url' => $ntronica_item['url'],
 							'image' => $ntronica_item['image'],
 							'width' => 622,
 							'height' => 414,
@@ -50,7 +54,7 @@ $ntronica_products = array(
 		</div>
 
 		<div class="products__more">
-			<a class="link-more" href="#" data-title="LEARN MORE">
+			<a class="link-more" href="<?php echo esc_url(home_url('/products/')); ?>" data-title="LEARN MORE">
 				<span>LEARN MORE</span>
 			</a>
 		</div>

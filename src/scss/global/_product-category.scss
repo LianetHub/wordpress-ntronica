@@ -1,0 +1,70 @@
+@use "../variables" as *;
+@use "../mixins" as *;
+
+.product-category {
+	padding-block: rem(72) rem(56);
+	&__title { margin-bottom: rem(20); }
+	&__intro {
+		display: grid;
+		gap: rem(18);
+		margin-bottom: rem(24);
+	}
+	&__grid {
+		display: grid;
+		grid-template-columns: minmax(0, 1fr);
+		gap: rem(28) rem(14);
+	}
+	.product-card { min-width: 0; }
+	.product-card__media { aspect-ratio: 1; }
+	.product-card__title {
+		font-family: $font-text;
+		font-size: rem(15);
+		font-weight: 400;
+		line-height: 1.2;
+		margin-top: rem(12);
+	}
+	@media (min-width: $md6) {
+		padding-block: rem(72) rem(72);
+		&__title { margin-bottom: rem(24); }
+		&__intro {
+			grid-template-columns: repeat(2, minmax(0, 1fr));
+			column-gap: rem(24);
+			margin-bottom: rem(18);
+		}
+		&__grid {
+			grid-template-columns: repeat(2, minmax(0, 1fr));
+			gap: rem(28) rem(24);
+		}
+	}
+	@media (min-width: $md5) {
+		padding-block: rem(98) rem(48);
+		&__intro { margin-bottom: rem(20); }
+	}
+	@media (min-width: $md4) {
+		padding-block: rem(94) rem(176);
+		&__title { margin-bottom: rem(24); }
+		&__intro { margin-bottom: rem(24); }
+		&__grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+	}
+	@media (min-width: $md3) {
+		padding-block: rem(114) rem(80);
+		&__title { margin-bottom: rem(32); }
+		&__intro { margin-bottom: rem(28); }
+		&__grid { row-gap: rem(32); }
+		.product-card__title { font-size: rem(18); margin-top: rem(16); }
+	}
+	@media (min-width: $md2) {
+		padding-block: rem(114) rem(96);
+		&__title { margin-bottom: rem(36); }
+		&__intro { margin-bottom: rem(76); }
+		&__grid { row-gap: rem(44); }
+		.product-card__title { font-size: rem(21); margin-top: rem(18); }
+	}
+	@media (min-width: $md1) {
+		padding-block: rem(146) rem(110);
+		&__title { margin-bottom: rem(44); }
+		&__intro { margin-bottom: rem(70); }
+		&__grid { row-gap: rem(50); }
+		.product-card__title { font-size: rem(26); margin-top: rem(24); }
+	}
+}

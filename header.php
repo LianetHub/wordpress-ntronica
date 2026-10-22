@@ -103,6 +103,19 @@
 						'crumbs'  => ntronica_get_vacancy_crumbs(),
 					)
 				);
+			} elseif (is_tax('product_category')) {
+				get_template_part(
+					'components/templates-parts/sticky-navbar',
+					null,
+					array(
+						'variant' => 'breadcrumbs',
+						'theme' => 'light',
+						'crumbs' => array(
+							array('label' => 'Products', 'url' => home_url('/products/')),
+							array('label' => ntronica_get_product_category_display_name(get_queried_object()), 'url' => ''),
+						),
+					)
+				);
 			} elseif (is_singular('product')) {
 				get_template_part(
 					'components/templates-parts/sticky-navbar',

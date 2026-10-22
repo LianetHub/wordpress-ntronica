@@ -58,6 +58,7 @@ $ntronica_thin_films = array(
 						'product',
 						array(
 							'title'     => $ntronica_item['title'],
+							'url'       => ntronica_get_product_category_url($ntronica_item['title']),
 							'image'     => $ntronica_products_img . $ntronica_item['file'],
 							'image_alt' => $ntronica_item['alt'],
 							'width'     => 461,

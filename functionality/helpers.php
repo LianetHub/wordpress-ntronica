@@ -224,9 +224,9 @@ function ntronica_get_vacancy_crumbs($post_id = null)
 }
 
 /**
- * Breadcrumb crumbs for a product: Products — Inspection — Title.
+ * Breadcrumb crumbs for a product: Products, category, title.
  *
- * The middle crumb is mock copy; the post type carries no taxonomy yet.
+ * The middle crumb uses the category that determines the product permalink.
  *
  * @param int|null $post_id Post ID.
  * @return array<int, array{label: string, url: string}>
@@ -235,14 +235,18 @@ function ntronica_get_product_crumbs($post_id = null)
 {
 	$post_id = $post_id ? (int) $post_id : get_the_ID();
 
+	$terms = wp_get_object_terms($post_id, 'product_category', array('orderby' => 'term_id'));
+	$category = ! is_wp_error($terms) && $terms ? $terms[0] : null;
+	$category_url = $category ? get_term_link($category) : '';
+
 	return array(
 		array(
 			'label' => 'Products',
 			'url'   => home_url('/products/'),
 		),
 		array(
-			'label' => 'Inspection',
-			'url'   => '',
+			'label' => $category ? ntronica_get_product_category_display_name($category) : 'Uncategorized',
+			'url'   => ! is_wp_error($category_url) ? $category_url : '',
 		),
 		array(
 			'label' => get_the_title($post_id),

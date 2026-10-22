@@ -3757,7 +3757,7 @@ body.page-template-page-contacts, body.error404, body.search, body.page-template
 }
 @media (min-width: 1664.98px) {
   .careers-team__text {
-    line-height: 1.1428571429;
+    line-height: 1.2;
   }
 }
 @media (min-width: 2559.98px) {
@@ -7421,12 +7421,6 @@ body.page-template-page-contacts, body.error404, body.search, body.page-template
   color: #ffffff;
   cursor: pointer;
 }
-@media (min-width: 767.98px) {
-  .cookie-notice__close {
-    width: 0.75rem;
-    height: 0.75rem;
-  }
-}
 @media (min-width: 1023.98px) {
   .cookie-notice__close {
     top: 1.75rem;
@@ -7441,8 +7435,6 @@ body.page-template-page-contacts, body.error404, body.search, body.page-template
 @media (min-width: 1439.98px) {
   .cookie-notice__close {
     top: 1rem;
-    width: 1rem;
-    height: 1rem;
   }
 }
 @media (min-width: 1664.98px) {
@@ -7466,16 +7458,16 @@ body.page-template-page-contacts, body.error404, body.search, body.page-template
   height: 100%;
 }
 .cookie-notice__close .icon path {
-  stroke-width: 0.15625rem;
+  stroke-width: 0.078125rem;
 }
 @media (min-width: 1439.98px) {
   .cookie-notice__close .icon path {
-    stroke-width: 0.21875rem;
+    stroke-width: 0.109375rem;
   }
 }
 @media (min-width: 2559.98px) {
   .cookie-notice__close .icon path {
-    stroke-width: 0.28125rem;
+    stroke-width: 0.140625rem;
   }
 }
 @media (any-hover: hover) {
@@ -7490,7 +7482,7 @@ body.page-template-page-contacts, body.error404, body.search, body.page-template
 .cookie-notice__manage-head {
   --gutter-y: 1.3125rem;
   padding-right: 1.5rem;
-  padding-bottom: 1.125rem;
+  padding-bottom: 2.375rem;
 }
 @media (min-width: 767.98px) {
   .cookie-notice__manage-head {

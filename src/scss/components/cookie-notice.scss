@@ -122,11 +122,6 @@ $logo-viewbox-width: 234;
 		color: $color-white;
 		cursor: pointer;
 
-		@media (min-width: $md6) {
-			width: rem(12);
-			height: rem(12);
-		}
-
 		@media (min-width: $md5) {
 			top: 1.75rem;
 			right: rem(30);
@@ -138,8 +133,7 @@ $logo-viewbox-width: 234;
 
 		@media (min-width: $md3) {
 			top: 1rem;
-			width: rem(16);
-			height: rem(16);
+			
 		}
 
 		@media (min-width: $md2) {
@@ -161,14 +155,14 @@ $logo-viewbox-width: 234;
 			height: 100%;
 
 			path {
-				stroke-width: rem(2.5);
+				stroke-width: rem(1.25);
 
 				@media (min-width:$md3) {
-					stroke-width: rem(3.5);
+					stroke-width: rem(1.75);
 				}
 
 				@media (min-width:$md1) {
-					stroke-width: rem(4.5);
+					stroke-width: rem(2.25);
 
 				}
 			}
@@ -190,7 +184,7 @@ $logo-viewbox-width: 234;
 	&__manage-head {
 		--gutter-y: #{rem(21)};
 		padding-right: rem(24);
-		padding-bottom: rem(18);
+		padding-bottom: rem(38);
 
 		@media (min-width: $md6) {
 			--gutter-y: #{rem(17)};

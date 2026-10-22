@@ -85,6 +85,15 @@ $ntronica_spec_columns = array(
 		),
 	),
 );
+
+$ntronica_spec_columns[] = array(
+    'title' => 'Plasma 300-01',
+    'values' => array('Si, SiO2, SiNx', 'Up to 300 mm', 'ICP RIE', '100:1', '± 3,0 %', '1–8 μm/min', 'Automatic load lock with dual cassette handling and substrate alignment', '1800 × 2400 mm'),
+);
+$ntronica_spec_columns[] = array(
+    'title' => 'Plasma 300-02',
+    'values' => array('Si, compound semiconductors', 'Up to 300 mm', 'Deep reactive ion etching', '150:1', '± 2,5 %', 'Up to 12 μm/min', 'Cassette-to-cassette with optional SMIF interface', '2100 × 2600 mm'),
+);
 ?>
 <section class="product-specs">
 	<div class="container">
@@ -92,11 +101,11 @@ $ntronica_spec_columns = array(
 
 		<div class="row product-specs__layout">
 			<div class="col-5 col-md-4 col-xxl-3 product-specs__labels">
-				<p class="product-specs__col-title">Parameter</p>
+				<p class="product-specs__col-title"><span>Parameter</span></p>
 
 				<?php foreach ($ntronica_spec_rows as $ntronica_row) : ?>
 					<p class="text-block product-specs__cell product-specs__label<?php echo $ntronica_row['tall'] ? ' product-specs__cell--tall' : ''; ?>">
-						<?php echo esc_html($ntronica_row['label']); ?>
+						<span><?php echo esc_html($ntronica_row['label']); ?></span>
 					</p>
 				<?php endforeach; ?>
 			</div>
@@ -105,14 +114,13 @@ $ntronica_spec_columns = array(
 				<div class="swiper product-specs__slider">
 					<div class="swiper-wrapper">
 						<?php foreach ($ntronica_spec_columns as $ntronica_index => $ntronica_column) : ?>
-							<?php $ntronica_value_mod = 0 === $ntronica_index ? ' product-specs__value--current' : ''; ?>
 							<div class="swiper-slide product-specs__column">
-								<p class="product-specs__col-title"><?php echo esc_html($ntronica_column['title']); ?></p>
+								<p class="product-specs__col-title"><span><?php echo esc_html($ntronica_column['title']); ?></span></p>
 
 								<?php foreach ($ntronica_column['values'] as $ntronica_row_index => $ntronica_value) : ?>
 									<?php $ntronica_tall = ! empty($ntronica_spec_rows[$ntronica_row_index]['tall']); ?>
-									<p class="text-block product-specs__cell product-specs__value<?php echo esc_attr($ntronica_value_mod); ?><?php echo $ntronica_tall ? ' product-specs__cell--tall' : ''; ?>">
-										<?php echo esc_html($ntronica_value); ?>
+									<p class="text-block product-specs__cell product-specs__value<?php echo $ntronica_tall ? ' product-specs__cell--tall' : ''; ?>">
+										<span><?php echo esc_html($ntronica_value); ?></span>
 									</p>
 								<?php endforeach; ?>
 							</div>

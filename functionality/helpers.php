@@ -335,8 +335,8 @@ function ntronica_get_nav_tree()
 					'label' => 'All about microchips',
 				),
 				array(
-					'href'  => '#lorem-ipsum',
-					'label' => 'Lorem ipsum',
+					'href'  => '#microchip-topics',
+					'label' => 'Microchip topics',
 				),
 				array(
 					'href'  => '#processes',

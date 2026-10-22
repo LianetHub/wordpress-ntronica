@@ -6,46 +6,59 @@
  * @package ntronica
  */
 
-$ntronica_topics = array_fill(
-	0,
-	4,
-	'Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidlaoreet. Lorem ipsum dolor sit amet, consectetuer adipiscing elit.'
+$ntronica_topics = array(
+	array(
+		'title' => 'What a chip is',
+		'text'  => 'An integrated circuit is a network of transistors and passive elements formed in and on a single-crystal silicon. The transistor is the switch; enough of them create logic and memory. The structure is built by repeating deposition, lithography, etching, and heat treatment across the wafer. A modern die packs tens of billions of switches into a few square centimeters.',
+	),
+	array(
+		'title' => 'How chips are made',
+		'text'  => 'A wafer enters the fab bare and leaves carrying hundreds of finished dies. Between those points lie epitaxy, deposition, lithography, etching, doping, annealing, planarization and cleaning — each repeated for every layer. An advanced device takes 500 to 1,000 steps to complete and the wafer travels tens of kilometers inside the fab before diced.',
+	),
+	array(
+		'title' => 'Why nanometers matter',
+		'text'  => 'Printed features are smaller than the wavelength of visible light: a transistor gate is a few dozen atoms across, while a human hair is 100,000 nm wide. At that scale, one particle, a fraction of a degree of drift, or a nanometer of misalignment turns a working die into scrap. Metrology is part of the process, and equipment is specified by how little it drifts rather than by how fast it runs.',
+	),
+	array(
+		'title' => 'Moore’s law today',
+		'text'  => 'In 1965, Gordon Moore noticed that transistor counts per chip were doubling every year, and the industry has tracked that curve ever since. Geometric shrink is slowing, so density now also comes from new architectures, materials, and stacking: 3D integration, GaN & SiC power devices, advanced packaging. Being first with a denser generation has always paid for the chipmakers.',
+	),
 );
 ?>
 <section class="tech-microchips" id="microchips">
 	<div class="container">
-		<h2 class="title tech-microchips__title">All about microchips</h2>
+		<h2 class="tech-microchips__title title">All about microchips</h2>
 
 		<div class="row tech-microchips__intro">
 			<div class="col-12 col-md-6">
 				<div class="text-block">
-					<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Lorem ipsum dolor sit amet, consectetuer adipiscing sit amet, consectetuer. Lorem ipsum dolor sit amet, consectetuer adipiscing sit.</p>
+					<p>Microchips are the smallest structures humanity makes in volume — and the foundation of everything from a phone to a power grid. Here is what a chip is, how it is built layer by layer, and where our equipment fits into that flow.</p>
 				</div>
 			</div>
 			<div class="col-12 col-md-6">
 				<div class="text-block-alternate">
-					<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod.</p>
+					<p>A single die holds billions of transistors, formed through hundreds of steps on a wafer under a millimetre thick. Each step is spans the wafer with nanometre accuracy and needs dedicated equipment, process control and metrology.</p>
 				</div>
 			</div>
 			<div class="col-12 col-md-6">
 				<div class="text-block">
-					<p>There are two major ways to categorize microchips: by functionality and by type of integrated circuitry. In terms of circuitry, a chip can be analog, digital, or mixed. The difference between analog and digital function has to do with the electric signals they process. In digital chips, the signals are binary. In analog chips, the signals are continuous, meaning they can take on any value within a given range, and they use more traditional circuit elements (resistors, capacitors and occasionally inductors). In terms of functionality, there are four main categories: Logic chips, Memory chips, application-specific integrated chips (ASICs).</p>
+					<p>Chips are classified in two ways: by what they do and by the circuitry inside them. By circuitry, a chip is analogue, digital, or mixed-signal. Digital circuits work with binary levels; analogue circuits handle continuous signals using resistors, capacitors, and inductors. By function, the main families are logic, memory, application-specific circuits (ASIC), and systems-on-chip (SoC), which combine analogue and digital blocks on one die. Power and RF devices on GaN and SiC form a class of their own — built on dedicated equipment and judged by breakdown voltage and thermal behaviour rather than by transistor count.</p>
 				</div>
 			</div>
 			<div class="col-12 col-md-6">
 				<div class="text-block">
-					<p>The two most common types of chips, Logic chips and Memory chips, are digital: they manipulate and store bits and bytes using transistors. ASICs and SoCs are mainly a mix of analog and digital. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonum.</p>
+					<p>Manufacturing is a cycle repeated for every layer: deposit a film, print the pattern, etch it, clean, planarize, then measure. An advanced device stacks up to a hundred layers, each aligned to the one beneath it within a few nanometers. Several hundred steps and about three months separate a bare wafer from packaged chips — so yield depends less on any single tool than on how tightly the whole sequence is held. That is why metrology and inspection sit between the process steps rather than after them, and why a fab is kept thousands of times cleaner than outside air.</p>
 				</div>
 			</div>
 		</div>
 
-		<div class="row tech-microchips__cards" id="lorem-ipsum">
+		<div class="row tech-microchips__cards" id="microchip-topics">
 			<?php foreach ($ntronica_topics as $ntronica_topic) : ?>
 				<div class="col-12 col-md-6">
 					<div class="tech-microchips__card">
-						<h3 class="subtitle fs-italic tech-microchips__heading">Lorem ipsum sit amet</h3>
+						<h3 class="subtitle fs-italic tech-microchips__heading"><?php echo esc_html($ntronica_topic['title']); ?></h3>
 						<ul class="feature-list">
-							<li><?php echo esc_html($ntronica_topic); ?></li>
+							<li><?php echo esc_html($ntronica_topic['text']); ?></li>
 						</ul>
 					</div>
 				</div>

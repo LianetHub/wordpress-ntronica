@@ -3025,6 +3025,9 @@ body.page-template-page-contacts, body.error404, body.search, body.page-template
 .progress-slider {
   position: relative;
   background-color: #000000;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   color: #ffffff;
   padding-top: 3.125rem;
   padding-bottom: 3.125rem;
@@ -3073,25 +3076,13 @@ body.page-template-page-contacts, body.error404, body.search, body.page-template
   position: relative;
   overflow: hidden;
 }
+.progress-slider__slider .swiper-wrapper {
+  height: auto;
+}
 .progress-slider__slide {
   position: relative;
   box-sizing: border-box;
-  min-height: 25rem;
-}
-@media (min-width: 767.98px) {
-  .progress-slider__slide {
-    min-height: 30rem;
-  }
-}
-@media (min-width: 1439.98px) {
-  .progress-slider__slide {
-    min-height: 33.75rem;
-  }
-}
-@media (min-width: 2559.98px) {
-  .progress-slider__slide {
-    min-height: 43.6875rem;
-  }
+  height: auto;
 }
 .progress-slider__body {
   position: relative;
@@ -3165,6 +3156,9 @@ body.page-template-page-contacts, body.error404, body.search, body.page-template
   color: #ffffff;
 }
 .progress-slider__index {
+  position: static;
+  width: auto;
+  flex-shrink: 0;
   font-family: "Nanotronica_Title", system-ui, -apple-system, "Segoe UI", sans-serif;
   font-weight: 700;
   color: #ffffff;
@@ -4078,7 +4072,7 @@ body.page-template-page-contacts, body.error404, body.search, body.page-template
 }
 
 .product {
-  --rule-width: 0.0625rem;
+  --rule-width: 1px;
   padding-top: 4.5rem;
 }
 @media (min-width: 1023.98px) {
@@ -4088,19 +4082,19 @@ body.page-template-page-contacts, body.error404, body.search, body.page-template
 }
 @media (min-width: 1439.98px) {
   .product {
-    --rule-width: 0.09375rem;
+    --rule-width: 1px;
     padding-top: 5.5rem;
   }
 }
 @media (min-width: 1664.98px) {
   .product {
-    --rule-width: 0.125rem;
+    --rule-width: 1px;
     padding-top: 6.125rem;
   }
 }
 @media (min-width: 2559.98px) {
   .product {
-    --rule-width: 0.15625rem;
+    --rule-width: 1px;
     padding-top: 9.625rem;
   }
 }
@@ -4324,7 +4318,7 @@ body.page-template-page-contacts, body.error404, body.search, body.page-template
   padding-top: 2.25rem;
 }
 .product__process .feature-list {
-  --marker-col: rem(74);
+  --marker-col: 4.625rem;
 }
 @media (min-width: 767.98px) {
   .product__process {
@@ -4442,7 +4436,7 @@ body.page-template-page-contacts, body.error404, body.search, body.page-template
 }
 
 .product-specs {
-  --rule-width: 0.0625rem;
+  --rule-width: 1px;
   --spec-row-height: 3.25rem;
   --spec-row-height-tall: 3.25rem;
   --spec-row-pad: 0.5rem;
@@ -4462,7 +4456,7 @@ body.page-template-page-contacts, body.error404, body.search, body.page-template
 }
 @media (min-width: 1439.98px) {
   .product-specs {
-    --rule-width: 0.09375rem;
+    --rule-width: 1px;
     --spec-row-height: 4.375rem;
     --spec-row-height-tall: 4.375rem;
     --spec-row-pad: 0.875rem;
@@ -4472,7 +4466,7 @@ body.page-template-page-contacts, body.error404, body.search, body.page-template
 }
 @media (min-width: 1664.98px) {
   .product-specs {
-    --rule-width: 0.125rem;
+    --rule-width: 1px;
     --spec-row-height: 3.625rem;
     --spec-row-height-tall: 5.125rem;
     --spec-row-pad: 1.0625rem;
@@ -4482,7 +4476,7 @@ body.page-template-page-contacts, body.error404, body.search, body.page-template
 }
 @media (min-width: 2559.98px) {
   .product-specs {
-    --rule-width: 0.15625rem;
+    --rule-width: 1px;
     --spec-row-height: 4.5rem;
     --spec-row-height-tall: 6.5rem;
     --spec-row-pad: 1.25rem;
@@ -4510,13 +4504,8 @@ body.page-template-page-contacts, body.error404, body.search, body.page-template
   }
 }
 .product-specs__layout {
-  --gutter-x: 0.875rem;
+  --gutter-x: 0px;
   --gutter-y: 0rem;
-}
-@media (min-width: 767.98px) {
-  .product-specs__layout {
-    --gutter-x: 1.5rem;
-  }
 }
 .product-specs__col-title {
   display: flex;
@@ -4550,7 +4539,16 @@ body.page-template-page-contacts, body.error404, body.search, body.page-template
   }
 }
 .product-specs__labels .product-specs__cell::after {
+  content: "";
+  background-color: #fff;
   left: 0;
+  right: auto;
+  width: var(--spec-table-width, 100%);
+  z-index: 2;
+  pointer-events: none;
+}
+.product-specs__labels .product-specs__cell:last-child::after {
+  content: none;
 }
 .product-specs__cell {
   position: relative;
@@ -4559,13 +4557,10 @@ body.page-template-page-contacts, body.error404, body.search, body.page-template
   padding-bottom: var(--spec-row-pad);
 }
 .product-specs__cell::after {
-  content: "";
   position: absolute;
-  right: calc(-0.5 * var(--gutter-x));
   bottom: 0;
-  left: calc(-0.5 * var(--gutter-x));
   height: var(--rule-width);
-  background-color: #000000;
+  background-color: #ffffff;
 }
 .product-specs__cell:last-child::after {
   content: none;
@@ -4576,8 +4571,36 @@ body.page-template-page-contacts, body.error404, body.search, body.page-template
 .product-specs__label {
   font-weight: 700;
 }
-.product-specs__value--current {
+.product-specs__slider {
+  overflow: hidden;
+}
+.product-specs__col-title, .product-specs__cell {
+  box-sizing: border-box;
+}
+.product-specs__col-title > span, .product-specs__cell > span {
+  display: block;
+  width: 100%;
+  overflow-wrap: anywhere;
+}
+.product-specs__column {
+  width: 100%;
+  color: #ffffff;
+}
+.product-specs__column .product-specs__col-title {
+  color: inherit;
+}
+.product-specs__column.swiper-slide-active {
   color: #000000;
+}
+@media (min-width: 767.98px) {
+  .product-specs__column {
+    width: calc((100% - 24px) / 2);
+  }
+}
+@media (min-width: 1439.98px) {
+  .product-specs__column {
+    width: calc((100% - 48px) / 3);
+  }
 }
 .product-specs__column {
   height: auto;
@@ -4587,6 +4610,11 @@ body.page-template-page-contacts, body.error404, body.search, body.page-template
   align-items: center;
   justify-content: space-between;
   padding-top: 0.75rem;
+}
+.product-specs__nav .swiper-button-prev,
+.product-specs__nav .swiper-button-next {
+  width: auto;
+  height: auto;
 }
 @media (min-width: 2559.98px) {
   .product-specs__nav {
@@ -4621,6 +4649,16 @@ body.page-template-page-contacts, body.error404, body.search, body.page-template
     padding-top: 7.125rem;
     padding-bottom: 4.25rem;
   }
+}
+
+.product__image-link {
+  display: block;
+  cursor: zoom-in;
+}
+
+.product-gallery__caption {
+  color: inherit;
+  text-decoration: none;
 }
 
 .tech-microchips {

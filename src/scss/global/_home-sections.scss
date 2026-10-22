@@ -618,6 +618,9 @@
 .progress-slider {
 	position: relative;
 	background-color: $color-black;
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
 	color: $color-white;
 	padding-top: rem(50);
 	padding-bottom: rem(50);
@@ -662,25 +665,17 @@
 	&__slider {
 		position: relative;
 		overflow: hidden;
+
+		.swiper-wrapper {
+			height: auto;
+		}
 	}
 
 	// progress-slider__slide
 	&__slide {
 		position: relative;
 		box-sizing: border-box;
-		min-height: rem(400);
-
-		@media (min-width: $md6) {
-			min-height: rem(480);
-		}
-
-		@media (min-width: $md3) {
-			min-height: rem(540);
-		}
-
-		@media (min-width: $md1) {
-			min-height: rem(699);
-		}
+		height: auto;
 	}
 
 
@@ -760,6 +755,9 @@
 
 	// progress-slider__index
 	&__index {
+		position: static;
+		width: auto;
+		flex-shrink: 0;
 		font-family: $font-title;
 		font-weight: 700;
 		color: $color-white;

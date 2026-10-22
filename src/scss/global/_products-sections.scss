@@ -183,7 +183,7 @@
 }
 
 .product {
-	--rule-width: #{rem(1)};
+	--rule-width: 1px;
 
 
 	padding-top: rem(72);
@@ -193,19 +193,19 @@
 	}
 
 	@media (min-width: $md3) {
-		--rule-width: #{rem(1.5)};
+		--rule-width: 1px;
 
 		padding-top: rem(88);
 	}
 
 	@media (min-width: $md2) {
-		--rule-width: #{rem(2)};
+		--rule-width: 1px;
 
 		padding-top: rem(98);
 	}
 
 	@media (min-width: $md1) {
-		--rule-width: #{rem(2.5)};
+		--rule-width: 1px;
 
 		padding-top: rem(154);
 	}
@@ -438,7 +438,7 @@
 		padding-top: rem(36);
 
 		.feature-list {
-			--marker-col: rem(74);
+			--marker-col: #{rem(74)};
 		}
 
 		@media (min-width: $md6) {
@@ -558,13 +558,9 @@
 	}
 }
 
-// The "Parameter" column sits outside the Swiper, so rows only line up while
-// every cell in a row resolves to the same height. Row heights are therefore
-// fixed per breakpoint and budget two lines of copy; where a product column is
-// narrow enough for a value to wrap, every row gets the two-line height so the
-// static labels keep tracking the slides.
+// Row minimums preserve the layout; JS synchronizes natural content heights.
 .product-specs {
-	--rule-width: #{rem(1)};
+	--rule-width: 1px;
 	--spec-row-height: #{rem(52)};
 	--spec-row-height-tall: #{rem(52)};
 	--spec-row-pad: #{rem(8)};
@@ -584,7 +580,7 @@
 	}
 
 	@media (min-width: $md3) {
-		--rule-width: #{rem(1.5)};
+		--rule-width: 1px;
 		--spec-row-height: #{rem(70)};
 		--spec-row-height-tall: #{rem(70)};
 		--spec-row-pad: #{rem(14)};
@@ -594,7 +590,7 @@
 	}
 
 	@media (min-width: $md2) {
-		--rule-width: #{rem(2)};
+		--rule-width: 1px;
 		--spec-row-height: #{rem(58)};
 		--spec-row-height-tall: #{rem(82)};
 		--spec-row-pad: #{rem(17)};
@@ -604,7 +600,7 @@
 	}
 
 	@media (min-width: $md1) {
-		--rule-width: #{rem(2.5)};
+		--rule-width: 1px;
 		--spec-row-height: #{rem(72)};
 		--spec-row-height-tall: #{rem(104)};
 		--spec-row-pad: #{rem(20)};
@@ -633,12 +629,8 @@
 
 	// product-specs__layout
 	&__layout {
-		--gutter-x: #{rem(14)};
+		--gutter-x: 0px;
 		--gutter-y: #{rem(0)};
-
-		@media (min-width: $md6) {
-			--gutter-x: #{rem(24)};
-		}
 	}
 
 	// product-specs__col-title
@@ -674,9 +666,19 @@
 	// product-specs__labels
 	&__labels {
 
-		// the rule starts at the content edge, so it only bleeds to the right
+		// One stationary rule spans the labels, gutter and entire slider viewport.
 		.product-specs__cell::after {
+			content: "";
+			background-color: #fff;
 			left: 0;
+			right: auto;
+			width: var(--spec-table-width, 100%);
+			z-index: 2;
+			pointer-events: none;
+		}
+
+		.product-specs__cell:last-child::after {
+			content: none;
 		}
 	}
 
@@ -687,15 +689,11 @@
 		padding-top: var(--spec-row-pad);
 		padding-bottom: var(--spec-row-pad);
 
-		// bleeds into the gutters so the rules read as one line across the table
 		&::after {
-			content: "";
 			position: absolute;
-			right: calc(-0.5 * var(--gutter-x));
 			bottom: 0;
-			left: calc(-0.5 * var(--gutter-x));
 			height: var(--rule-width);
-			background-color: $color-black;
+			background-color: $color-white;
 		}
 
 		&:last-child::after {
@@ -713,13 +711,23 @@
 		font-weight: 700;
 	}
 
-	// product-specs__value
-	&__value {
+	&__slider {
+		overflow: hidden;
+	}
 
-		// the machine this page is about reads as the active column
-		&--current {
-			color: $color-black;
-		}
+	&__col-title,
+	&__cell {
+		box-sizing: border-box;
+		> span { display: block; width: 100%; overflow-wrap: anywhere; }
+	}
+
+	&__column {
+		width: 100%;
+		color: $color-white;
+		.product-specs__col-title { color: inherit; }
+		&.swiper-slide-active { color: $color-black; }
+		@media (min-width: 767.98px) { width: calc((100% - 24px) / 2); }
+		@media (min-width: 1439.98px) { width: calc((100% - 48px) / 3); }
 	}
 
 	// product-specs__column
@@ -733,6 +741,12 @@
 		align-items: center;
 		justify-content: space-between;
 		padding-top: rem(12);
+
+		.swiper-button-prev,
+		.swiper-button-next {
+			width: auto;
+			height: auto;
+		}
 
 		@media (min-width: $md1) {
 			padding-top: rem(20);
@@ -763,4 +777,9 @@
 		padding-top: rem(114);
 		padding-bottom: rem(68);
 	}
+}
+.product__image-link { display: block; cursor: zoom-in; }
+.product-gallery__caption {
+	color: inherit;
+	text-decoration: none;
 }

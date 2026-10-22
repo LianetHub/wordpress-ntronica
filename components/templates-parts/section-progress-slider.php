@@ -6,7 +6,7 @@
  * @package ntronica
  */
 
-$ntronica_home_img = IMG_PATH . '/home/';
+$ntronica_home_img = IMG_PATH . '/progress-slider/';
 
 $ntronica_processes = array(
 	array(
@@ -60,14 +60,14 @@ $ntronica_processes = array(
 	),
 );
 ?>
-<section class="progress-slider" id="processes">
+<section class="progress-slider" id="processes" style="background-image: url('<?php echo esc_url($ntronica_processes[0]['image']); ?>');">
 	<div class="container">
 		<h2 class="title-md progress-slider__header">Technological processes</h2>
 
 		<div class="swiper progress-slider__slider">
 			<div class="swiper-wrapper">
 				<?php foreach ($ntronica_processes as $ntronica_item) : ?>
-					<div class="swiper-slide progress-slider__slide" background-image="<?php echo esc_url($ntronica_item['image']); ?>">
+					<div class="swiper-slide progress-slider__slide" data-background="<?php echo esc_url($ntronica_item['image']); ?>">
 
 						<div class="progress-slider__body">
 							<h3 class="subtitle progress-slider__process-title">
@@ -89,15 +89,15 @@ $ntronica_processes = array(
 								<?php endif; ?>
 							</div>
 
-							<div class="progress-slider__footer">
-								<?php ntronica_slider_nav_button('prev', 'Previous process'); ?>
-								<span class="progress-slider__index"><?php echo esc_html($ntronica_item['index']); ?></span>
-								<?php ntronica_slider_nav_button('next', 'Next process'); ?>
-							</div>
 						</div>
 					</div>
 				<?php endforeach; ?>
 			</div>
+		</div>
+		<div class="progress-slider__footer">
+			<?php ntronica_slider_nav_button('prev', 'Previous process'); ?>
+			<span class="progress-slider__index"></span>
+			<?php ntronica_slider_nav_button('next', 'Next process'); ?>
 		</div>
 	</div>
 </section>

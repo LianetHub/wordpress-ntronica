@@ -32,15 +32,18 @@ $ntronica_quick_specs = array(
 $ntronica_gallery = array(
 	array(
 		'file' => 'front-view.webp',
+		'caption' => 'Front View',
 		'alt'  => 'Plasma 200-01 etching tool, front view with the process chamber open',
 	),
 	array(
-		'file' => 'front-view.webp',
-		'alt'  => 'Plasma 200-01 cabinet with the signal tower and operator controls',
+		'file' => 'side-view.webp',
+		'caption' => 'Side View',
+		'alt'  => 'Plasma 200-01 etching tool, side view',
 	),
 	array(
-		'file' => 'front-view.webp',
-		'alt'  => 'Plasma 200-01 wafer loading shelf next to the process chamber',
+		'file' => 'top-view.webp',
+		'caption' => 'Top View',
+		'alt'  => 'Plasma 200-01 etching tool, top view',
 	),
 );
 
@@ -120,19 +123,25 @@ $ntronica_micrographs = array(
 				<div class="swiper product-gallery">
 					<div class="swiper-wrapper">
 						<?php foreach ($ntronica_gallery as $ntronica_slide) : ?>
-							<div class="swiper-slide">
+							<?php
+							// Use the existing photo until the additional views are uploaded.
+							$ntronica_slide_file = file_exists(get_template_directory() . '/assets/img/products/plasma-200-01/' . $ntronica_slide['file']) ? $ntronica_slide['file'] : 'front-view.webp';
+							?>
+							<div class="swiper-slide" data-caption="<?php echo esc_attr($ntronica_slide['caption']); ?>">
+								<a class="product__image-link" href="<?php echo esc_url($ntronica_product_img . $ntronica_slide_file); ?>" data-fancybox="product-images" data-caption="<?php echo esc_attr($ntronica_slide['caption']); ?>">
 								<img
 									class="product-gallery__img"
-									src="<?php echo esc_url($ntronica_product_img . $ntronica_slide['file']); ?>"
+									src="<?php echo esc_url($ntronica_product_img . $ntronica_slide_file); ?>"
 									alt="<?php echo esc_attr($ntronica_slide['alt']); ?>"
 									width="945"
 									height="945">
+								</a>
 							</div>
 						<?php endforeach; ?>
 					</div>
 
 					<div class="product-gallery__footer">
-						<p class="text-block product-gallery__caption">Front view</p>
+						<p class="text-block product-gallery__caption" aria-live="polite"><?php echo esc_html($ntronica_gallery[0]['caption']); ?></p>
 						<div class="slider-nav product-gallery__nav">
 							<?php ntronica_slider_nav_button('prev', 'Previous view'); ?>
 							<p class="text-block slider-nav__fraction" aria-live="polite"></p>
@@ -178,6 +187,7 @@ $ntronica_micrographs = array(
 		<div class="row product__micrographs">
 			<?php foreach ($ntronica_micrographs as $ntronica_shot) : ?>
 				<div class="col-6 col-md-3">
+					<a class="product__image-link" href="<?php echo esc_url($ntronica_product_img . $ntronica_shot['file']); ?>" data-fancybox="product-images">
 					<img
 						class="product__micrograph"
 						src="<?php echo esc_url($ntronica_product_img . $ntronica_shot['file']); ?>"
@@ -185,6 +195,7 @@ $ntronica_micrographs = array(
 						width="461"
 						height="306"
 						loading="lazy">
+					</a>
 				</div>
 			<?php endforeach; ?>
 		</div>

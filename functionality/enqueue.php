@@ -58,6 +58,10 @@ function ntronica_enqueue_styles()
     }
 
     $main_css = STYLES_DIR . '/style.min.css';
+    $fancybox_css = STYLES_DIR . '/libs/fancybox.css';
+    if (is_singular('product') && file_exists($fancybox_css)) {
+        wp_enqueue_style('fancybox', STYLES_PATH . '/libs/fancybox.css', array(), ntronica_asset_ver($fancybox_css));
+    }
     if (file_exists($main_css)) {
         wp_enqueue_style(
             'ntronica-style',
@@ -139,6 +143,12 @@ function ntronica_enqueue_scripts()
     $app_deps      = array('jquery');
 
     wp_enqueue_script('jquery');
+
+    $fancybox_js = JS_DIR . '/libs/fancybox.umd.js';
+    if (is_singular('product') && file_exists($fancybox_js)) {
+        wp_enqueue_script('fancybox', JS_PATH . '/libs/fancybox.umd.js', array(), ntronica_asset_ver($fancybox_js), array('in_footer' => true, 'strategy' => 'defer'));
+        $app_deps[] = 'fancybox';
+    }
 
     $swiper_js = JS_DIR . '/libs/swiper-bundle.min.js';
     if (file_exists($swiper_js)) {

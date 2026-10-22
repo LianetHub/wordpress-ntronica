@@ -26,6 +26,9 @@ const components = {
 };
 
 document.addEventListener("DOMContentLoaded", () => {
+	if (typeof Fancybox !== "undefined") {
+		Fancybox.bind('.product [data-fancybox]', {});
+	}
 	for (const [selector, Component] of Object.entries(components)) {
 		document.querySelectorAll(selector).forEach((el) => new Component(el));
 	}

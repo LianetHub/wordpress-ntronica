@@ -1,7 +1,23 @@
 @use "../variables" as *;
 @use "../mixins" as *;
+@use "../typography";
 
 .utility {
+	--utility-gap: #{rem(20)};
+	--utility-section-gap: #{rem(40)};
+
+	@media (min-width: $md3) {
+		--utility-gap: #{rem(24)};
+		--utility-section-gap: #{rem(56)};
+	}
+
+	@media (min-width: $md2) {
+		--utility-gap: #{rem(30)};
+		--utility-section-gap: #{rem(70)};
+		padding-bottom: rem(70);
+	}
+
+
 	flex: 1 1 auto;
 	display: flex;
 	flex-direction: column;
@@ -18,16 +34,7 @@
 
 	// utility__title 
 	&__title {
-		margin-bottom: rem(12);
-
-
-		@media (min-width: $md2) {
-			margin-bottom: rem(32);
-		}
-
-		@media (min-width: $md1) {
-			margin-bottom: rem(24);
-		}
+		margin-bottom: 0;
 	}
 
 	// utility__text
@@ -121,25 +128,55 @@
 		color: $color-white;
 	}
 
-	// utility__content — policy prose
+	// Classless Gutenberg content for utility pages.
 	&__content {
-		color: $color-white;
-
-		>*+* {
-			margin-top: rem(16);
-
-			@media (min-width: $md6) {
-				margin-top: rem(20);
-			}
-
-			@media (min-width: $md1) {
-				margin-top: rem(24);
-			}
-		}
+		@extend .text-block-alternate;
 
 		a {
 			color: inherit;
 			text-decoration: underline;
+		}
+		line-height: 1.2;
+
+		@media (min-width: $md5) {
+			width: calc(50% - #{rem(12)});
+		}
+
+		> * + * {
+			margin-top: var(--utility-gap);
+		}
+
+		h2 {
+			@extend .title-md;
+			line-height: 1;
+			margin-top: var(--utility-section-gap);
+		}
+
+		p:has(> strong:only-child > em:only-child) {
+			@extend .subtitle;
+			line-height: 1.1071428571;
+		}
+
+		ul {
+			@extend .feature-list;
+			line-height: 1.2;
+
+			@media (min-width: $md2) and (max-width: $md1) {
+				--marker-size: #{rem(14)};
+				--marker-offset: #{rem(4)};
+			}
+		}
+
+		strong {
+			font-weight: 700;
+		}
+
+		em {
+			font-style: italic;
+		}
+
+		@media (min-width: $md2) and (max-width: $md1) {
+			font-size: rem(20);
 		}
 	}
 }

@@ -3029,19 +3029,31 @@ body.page-template-page-contacts, body.error404, body.search, body.page-template
   background-position: center;
   background-repeat: no-repeat;
   color: #ffffff;
-  padding-top: 3.125rem;
-  padding-bottom: 3.125rem;
+  padding-top: 2.5rem;
+  padding-bottom: 2.5rem;
 }
 @media (min-width: 767.98px) {
   .progress-slider {
-    padding-top: 3.75rem;
-    padding-bottom: 3.75rem;
+    padding-top: 2.5rem;
+    padding-bottom: 2.75rem;
+  }
+}
+@media (min-width: 1023.98px) {
+  .progress-slider {
+    padding-top: 2.375rem;
+    padding-bottom: 3.125rem;
+  }
+}
+@media (min-width: 1199.98px) {
+  .progress-slider {
+    padding-top: 2.375rem;
+    padding-bottom: 3.125rem;
   }
 }
 @media (min-width: 1439.98px) {
   .progress-slider {
-    padding-top: 4.375rem;
-    padding-bottom: 5.125rem;
+    padding-top: 1.875rem;
+    padding-bottom: 4rem;
   }
 }
 @media (min-width: 1664.98px) {
@@ -3060,25 +3072,43 @@ body.page-template-page-contacts, body.error404, body.search, body.page-template
   position: relative;
   z-index: 2;
   color: #ffffff;
-  margin-bottom: 1.5rem;
+  margin-bottom: 0.625rem;
+  line-height: 0.7;
 }
 @media (min-width: 767.98px) {
   .progress-slider__header {
-    margin-bottom: 1.875rem;
+    max-width: 50%;
+    line-height: 0.9615384615;
+    margin-bottom: 1.25rem;
+  }
+}
+@media (min-width: 1023.98px) {
+  .progress-slider__header {
+    max-width: none;
+    line-height: 0.8666666667;
+    margin-bottom: 1.25rem;
+  }
+}
+@media (min-width: 1199.98px) {
+  .progress-slider__header {
+    margin-bottom: 0.9375rem;
   }
 }
 @media (min-width: 1439.98px) {
   .progress-slider__header {
-    margin-bottom: 1.625rem;
+    line-height: 1.4545454545;
+    margin-bottom: 0;
   }
 }
 @media (min-width: 1664.98px) {
   .progress-slider__header {
+    line-height: 0.7222222222;
     margin-bottom: 1rem;
   }
 }
 @media (min-width: 2559.98px) {
   .progress-slider__header {
+    line-height: 1.2;
     margin-bottom: 1.625rem;
   }
 }
@@ -3099,19 +3129,39 @@ body.page-template-page-contacts, body.error404, body.search, body.page-template
   z-index: 1;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  height: 100%;
-  padding-top: 1.5rem;
-  padding-bottom: 1.5rem;
+  height: auto;
+  padding-top: 1.25rem;
+  padding-bottom: 0;
   box-sizing: border-box;
 }
 @media (min-width: 767.98px) {
   .progress-slider__body {
+    height: auto;
+    padding-top: 1.25rem;
+    padding-bottom: 1.25rem;
+  }
+}
+@media (min-width: 1023.98px) {
+  .progress-slider__body {
+    height: auto;
+    padding-top: 1.25rem;
+    padding-bottom: 1.25rem;
+  }
+}
+@media (min-width: 1199.98px) {
+  .progress-slider__body {
+    height: 100%;
     padding-top: 1.875rem;
     padding-bottom: 1.875rem;
   }
 }
 @media (min-width: 1439.98px) {
+  .progress-slider__body {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
+}
+@media (min-width: 1664.98px) {
   .progress-slider__body {
     padding-top: 2.5rem;
     padding-bottom: 2.5rem;
@@ -3121,36 +3171,65 @@ body.page-template-page-contacts, body.error404, body.search, body.page-template
   color: #ffffff;
   font-style: italic;
   margin-bottom: 1rem;
+  font-size: 1.125rem;
+  line-height: 1.0555555556;
 }
 @media (min-width: 767.98px) {
+  .progress-slider__process-title {
+    line-height: 1;
+    margin-bottom: 1.3125rem;
+  }
+}
+@media (min-width: 1023.98px) {
+  .progress-slider__process-title {
+    margin-bottom: 1.3rem;
+  }
+}
+@media (min-width: 1199.98px) {
   .progress-slider__process-title {
     margin-bottom: 1.5rem;
   }
 }
 @media (min-width: 1439.98px) {
   .progress-slider__process-title {
-    margin-bottom: 2.25rem;
+    font-size: 1.5rem;
+    line-height: 1.5;
+    margin-bottom: 0;
   }
 }
 @media (min-width: 1664.98px) {
   .progress-slider__process-title {
+    font-size: 1.75rem;
+    line-height: 1.1428571429;
     margin-bottom: 0.125rem;
   }
 }
 @media (min-width: 2559.98px) {
   .progress-slider__process-title {
+    font-size: 2.25rem;
+    line-height: 0.9444444444;
     margin-bottom: 2.25rem;
   }
 }
 .progress-slider__text-row {
   --gutter-x: 1.5rem;
-  --gutter-y: 1rem;
+  --gutter-y: 0;
   margin-bottom: 1.875rem;
   color: #ffffff;
 }
 @media (min-width: 767.98px) {
   .progress-slider__text-row {
     --gutter-y: 0;
+    margin-bottom: 1.875rem;
+  }
+}
+@media (min-width: 1023.98px) {
+  .progress-slider__text-row {
+    margin-bottom: 1.875rem;
+  }
+}
+@media (min-width: 1439.98px) {
+  .progress-slider__text-row {
     margin-bottom: 2.5rem;
   }
 }
@@ -3158,17 +3237,79 @@ body.page-template-page-contacts, body.error404, body.search, body.page-template
   color: #ffffff;
 }
 .progress-slider__footer {
+  width: calc(50% + 0.4375rem);
+  --gutter-x: 0.875rem;
+  --gutter-y: 0;
+  margin-top: 0;
+}
+.progress-slider__footer > * {
+  width: 33.333333%;
+}
+@media (min-width: 767.98px) {
+  .progress-slider__footer > * {
+    width: 8.33333333%;
+  }
+}
+@media (min-width: 767.98px) {
+  .progress-slider__footer {
+    width: auto;
+    --gutter-x: 1.5rem;
+    --gutter-y: 1rem;
+    margin-top: 0;
+  }
+}
+@media (min-width: 1023.98px) {
+  .progress-slider__footer {
+    margin-top: calc(-1 * var(--gutter-y));
+  }
+}
+.progress-slider__footer {
   align-items: center;
 }
 .progress-slider__footer .swiper-button-prev,
 .progress-slider__footer .swiper-button-next {
   color: #ffffff;
+  width: 1.5rem;
+  height: 1.375rem;
 }
-@media (min-width: 1664.98px) {
+@media (min-width: 767.98px) {
   .progress-slider__footer .swiper-button-prev,
   .progress-slider__footer .swiper-button-next {
     width: 1.5rem;
     height: 1.375rem;
+  }
+}
+.progress-slider__footer .swiper-button-prev .icon,
+.progress-slider__footer .swiper-button-next .icon {
+  width: 1.5625rem;
+  height: 1.0625rem;
+}
+@media (min-width: 767.98px) {
+  .progress-slider__footer .swiper-button-prev .icon,
+  .progress-slider__footer .swiper-button-next .icon {
+    width: 1.5625rem;
+    height: 1.0625rem;
+  }
+}
+@media (min-width: 1439.98px) {
+  .progress-slider__footer .swiper-button-prev .icon,
+  .progress-slider__footer .swiper-button-next .icon {
+    width: 1.4375rem;
+    height: 0.9375rem;
+  }
+}
+@media (min-width: 1664.98px) {
+  .progress-slider__footer .swiper-button-prev .icon,
+  .progress-slider__footer .swiper-button-next .icon {
+    width: 1.5625rem;
+    height: 1.0625rem;
+  }
+}
+@media (min-width: 2559.98px) {
+  .progress-slider__footer .swiper-button-prev .icon,
+  .progress-slider__footer .swiper-button-next .icon {
+    width: 1.9375rem;
+    height: 1.25rem;
   }
 }
 @media (min-width: 2559.98px) {
@@ -3186,19 +3327,29 @@ body.page-template-page-contacts, body.error404, body.search, body.page-template
   font-family: "Nanotronica_Text", system-ui, -apple-system, "Segoe UI", sans-serif;
   font-weight: 700;
   color: #ffffff;
-  font-size: 3rem;
-  line-height: 0.75;
+  font-size: 3.375rem;
+  font-weight: 400;
+  line-height: 0.7037037037;
 }
 @media (min-width: 767.98px) {
   .progress-slider__index {
-    font-size: 4rem;
-    line-height: 0.75;
+    font-size: 3.875rem;
+    font-weight: 400;
+    line-height: 0.6935483871;
+  }
+}
+@media (min-width: 1023.98px) {
+  .progress-slider__index {
+    font-size: 4.375rem;
+    font-weight: 400;
+    line-height: 0.6714285714;
   }
 }
 @media (min-width: 1439.98px) {
   .progress-slider__index {
-    font-size: 5.5rem;
-    line-height: 0.7045454545;
+    font-size: 5rem;
+    font-weight: 400;
+    line-height: 0.6875;
   }
 }
 @media (min-width: 1664.98px) {
@@ -4816,21 +4967,34 @@ body.page-template-page-contacts, body.error404, body.search, body.page-template
 
 .tech-microchips {
   padding-top: 1.875rem;
-  padding-bottom: 2.5rem;
+  padding-bottom: 1.625rem;
 }
 @media (min-width: 767.98px) {
   .tech-microchips {
-    padding-bottom: 3.5rem;
+    padding-bottom: 3.125rem;
+  }
+}
+@media (min-width: 1023.98px) {
+  .tech-microchips {
+    padding-top: 2.25rem;
+    padding-bottom: 3.125rem;
+  }
+}
+@media (min-width: 1199.98px) {
+  .tech-microchips {
+    padding-top: 1.875rem;
+    padding-bottom: 4.375rem;
   }
 }
 @media (min-width: 1439.98px) {
   .tech-microchips {
-    padding-top: 3.125rem;
+    padding-top: 2.5rem;
     padding-bottom: 5rem;
   }
 }
 @media (min-width: 1664.98px) {
   .tech-microchips {
+    padding-top: 3.125rem;
     padding-bottom: 6rem;
   }
 }
@@ -4841,34 +5005,69 @@ body.page-template-page-contacts, body.error404, body.search, body.page-template
   }
 }
 .tech-microchips__title {
-  margin-bottom: 1rem;
+  margin-bottom: 0.9375rem;
+  line-height: 1.2;
+}
+@media (min-width: 767.98px) {
+  .tech-microchips__title {
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+    line-height: 1;
+  }
+}
+@media (min-width: 1023.98px) {
+  .tech-microchips__title {
+    font-size: 1.625rem;
+    line-height: 0.9230769231;
+  }
 }
 @media (min-width: 1439.98px) {
   .tech-microchips__title {
+    font-size: 2rem;
+    line-height: 0.78125;
     margin-bottom: 1.5rem;
   }
 }
 @media (min-width: 1664.98px) {
   .tech-microchips__title {
+    font-size: 2.25rem;
+    line-height: 0.6666666667;
     margin-bottom: 0;
     padding-bottom: 2rem;
   }
 }
 @media (min-width: 2559.98px) {
   .tech-microchips__title {
+    font-size: 2.875rem;
+    line-height: 0.6956521739;
     padding-bottom: 0;
     margin-bottom: 2.25rem;
   }
 }
 .tech-microchips__intro {
   --gutter-x: 0.875rem;
-  --gutter-y: 1rem;
+  --gutter-y: 0.9375rem;
 }
 @media (min-width: 767.98px) {
   .tech-microchips__intro {
     --gutter-x: 1.5rem;
-    --gutter-y: 1.5rem;
+    --gutter-y: 1rem;
     align-items: start;
+  }
+}
+@media (min-width: 1023.98px) {
+  .tech-microchips__intro {
+    --gutter-y: 1.125rem;
+  }
+}
+@media (min-width: 1199.98px) {
+  .tech-microchips__intro {
+    --gutter-y: 2.7rem;
+  }
+}
+@media (min-width: 1439.98px) {
+  .tech-microchips__intro {
+    --gutter-y: 1.5rem;
   }
 }
 @media (min-width: 2559.98px) {
@@ -4878,14 +5077,33 @@ body.page-template-page-contacts, body.error404, body.search, body.page-template
 }
 .tech-microchips__cards {
   --gutter-x: 0.875rem;
-  --gutter-y: 1.75rem;
-  margin-top: 1.875rem;
+  --gutter-y: 0.75rem;
+  margin-top: 0;
 }
 @media (min-width: 767.98px) {
   .tech-microchips__cards {
     --gutter-x: 1.5rem;
-    --gutter-y: 2.25rem;
-    margin-top: 2.5rem;
+    --gutter-y: 2.5rem;
+    margin-top: 0;
+  }
+}
+@media (min-width: 1023.98px) {
+  .tech-microchips__cards {
+    --gutter-x: 1.5rem;
+    margin-top: 0;
+    --gutter-y: 2.5rem;
+  }
+}
+@media (min-width: 1199.98px) {
+  .tech-microchips__cards {
+    margin-top: -0.25rem;
+    --gutter-y: 2.5rem;
+  }
+}
+@media (min-width: 1439.98px) {
+  .tech-microchips__cards {
+    margin-top: 0;
+    --gutter-y: 2.5rem;
   }
 }
 @media (min-width: 1664.98px) {
@@ -4903,10 +5121,74 @@ body.page-template-page-contacts, body.error404, body.search, body.page-template
 .tech-microchips__card {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: 0.75rem;
+}
+@media (min-width: 767.98px) {
+  .tech-microchips__card {
+    gap: 1rem;
+  }
+}
+.tech-microchips__card .feature-list {
+  padding-left: 3.6875rem;
+  line-height: 1.2857142857;
+}
+@media (min-width: 767.98px) {
+  .tech-microchips__card .feature-list {
+    line-height: 1.1428571429;
+  }
+}
+@media (min-width: 1439.98px) {
+  .tech-microchips__card .feature-list {
+    line-height: 1.1176470588;
+  }
+}
+@media (min-width: 767.98px) {
+  .tech-microchips__card .feature-list {
+    padding-left: 3.6875rem;
+  }
+}
+@media (min-width: 1023.98px) {
+  .tech-microchips__card .feature-list {
+    padding-left: 0;
+  }
+}
+.tech-microchips__card .feature-list > li {
+  padding-left: 0;
+}
+@media (min-width: 767.98px) {
+  .tech-microchips__card .feature-list > li {
+    padding-left: 0;
+  }
+}
+@media (min-width: 1023.98px) {
+  .tech-microchips__card .feature-list > li {
+    padding-left: 3.625rem;
+  }
+}
+@media (min-width: 1199.98px) {
+  .tech-microchips__card .feature-list > li {
+    padding-left: calc(var(--marker-col) + var(--marker-gap));
+  }
 }
 .tech-microchips__card .feature-list > li::before {
   display: none;
+}
+@media (min-width: 1023.98px) {
+  .tech-microchips__card .feature-list {
+    --marker-col: 3rem;
+    --marker-gap: 0.625rem;
+  }
+}
+@media (min-width: 1199.98px) {
+  .tech-microchips__card .feature-list {
+    --marker-gap: 0.625rem;
+  }
+}
+@media (min-width: 1439.98px) {
+  .tech-microchips__card .feature-list {
+    --marker-col: 4.25rem;
+    --marker-gap: 1.5rem;
+  }
 }
 @media (min-width: 1664.98px) {
   .tech-microchips__card .feature-list {
@@ -4934,6 +5216,29 @@ body.page-template-page-contacts, body.error404, body.search, body.page-template
     gap: 1.875rem;
   }
 }
+.tech-microchips__heading {
+  line-height: 1.125;
+}
+@media (min-width: 767.98px) {
+  .tech-microchips__heading {
+    line-height: 0.6666666667;
+  }
+}
+@media (min-width: 1023.98px) {
+  .tech-microchips__heading {
+    line-height: 0.6666666667;
+  }
+}
+@media (min-width: 1199.98px) {
+  .tech-microchips__heading {
+    line-height: 0.6666666667;
+  }
+}
+@media (min-width: 1439.98px) {
+  .tech-microchips__heading {
+    line-height: 0.6666666667;
+  }
+}
 @media (min-width: 1664.98px) {
   .tech-microchips__heading {
     line-height: 0.6785714286;
@@ -4942,6 +5247,24 @@ body.page-template-page-contacts, body.error404, body.search, body.page-template
 @media (min-width: 2559.98px) {
   .tech-microchips__heading {
     line-height: 0.9444444444;
+  }
+}
+.tech-microchips__more {
+  margin: 1.875rem 0 1rem;
+  text-transform: uppercase;
+  line-height: 0.7333333333;
+}
+@media (min-width: 767.98px) {
+  .tech-microchips__more {
+    display: none;
+  }
+}
+.tech-microchips:not(.is-expanded) .tech-microchips__extra {
+  display: none;
+}
+@media (min-width: 767.98px) {
+  .tech-microchips:not(.is-expanded) .tech-microchips__extra {
+    display: block;
   }
 }
 

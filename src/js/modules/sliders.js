@@ -18,13 +18,13 @@ export class Slider {
 
 		const fractionPagination = fractionEl
 			? {
-					el: fractionEl,
-					type: "fraction",
-					formatFractionCurrent: padFraction,
-					formatFractionTotal: padFraction,
-					renderFraction: (currentClass, totalClass) =>
-						`<span class="${currentClass}"></span>/<span class="${totalClass}"></span>`,
-				}
+				el: fractionEl,
+				type: "fraction",
+				formatFractionCurrent: padFraction,
+				formatFractionTotal: padFraction,
+				renderFraction: (currentClass, totalClass) =>
+					`<span class="${currentClass}"></span>/<span class="${totalClass}"></span>`,
+			}
 			: undefined;
 
 		if (el.classList.contains("news-feed-slider")) {

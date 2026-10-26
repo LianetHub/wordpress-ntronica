@@ -1,20 +1,32 @@
+@use "sass:math";
 @use "../variables" as *;
 @use "../mixins" as *;
 
 .tech-microchips {
 	padding-top: rem(30);
-	padding-bottom: rem(40);
+	padding-bottom: rem(26);
 
 	@media (min-width: $md6) {
-		padding-bottom: rem(56);
+		padding-bottom: rem(50);
+	}
+
+	@media (min-width: $md5) {
+		padding-top: rem(36);
+		padding-bottom: rem(50);
+	}
+
+	@media (min-width: $md4) {
+		padding-top: rem(30);
+		padding-bottom: rem(70);
 	}
 
 	@media (min-width: $md3) {
-		padding-top: rem(50);
+		padding-top: rem(40);
 		padding-bottom: rem(80);
 	}
 
 	@media (min-width: $md2) {
+		padding-top: rem(50);
 		padding-bottom: rem(96);
 	}
 
@@ -25,18 +37,36 @@
 
 	// tech-microchips__title
 	&__title {
-		margin-bottom: rem(16);
+		margin-bottom: rem(15);
+		line-height: math.div(24, 20);
+
+		@media (min-width: $md6) {
+			margin-bottom: rem(16);
+			font-size: rem(24);
+			line-height: 1;
+		}
+
+		@media (min-width: $md5) {
+			font-size: rem(26);
+			line-height: calc(24 / 26);
+		}
 
 		@media (min-width: $md3) {
+			font-size: rem(32);
+			line-height: calc(25 / 32);
 			margin-bottom: rem(24);
 		}
 
 		@media (min-width: $md2) {
+			font-size: rem(36);
+			line-height: calc(24 / 36);
 			margin-bottom: 0;
 			padding-bottom: rem(32);
 		}
 
 		@media (min-width: $md1) {
+			font-size: rem(46);
+			line-height: calc(32 / 46);
 			padding-bottom: 0;
 			margin-bottom: rem(36);
 		}
@@ -45,12 +75,24 @@
 	// tech-microchips__intro
 	&__intro {
 		--gutter-x: #{rem(14)};
-		--gutter-y: #{rem(16)};
+		--gutter-y: #{rem(15)};
 
 		@media (min-width: $md6) {
 			--gutter-x: #{rem(24)};
-			--gutter-y: #{rem(24)};
+			--gutter-y: 1rem;
 			align-items: start;
+		}
+
+		@media (min-width: $md5) {
+			--gutter-y: 1.125rem;
+		}
+
+		@media (min-width: $md4) {
+			--gutter-y: 2.7rem;
+		}
+
+		@media (min-width: $md3) {
+			--gutter-y: #{rem(24)};
 		}
 
 		@media (min-width: $md1) {
@@ -61,13 +103,29 @@
 	// tech-microchips__cards
 	&__cards {
 		--gutter-x: #{rem(14)};
-		--gutter-y: #{rem(28)};
-		margin-top: rem(30);
+		--gutter-y: #{rem(12)};
+		margin-top: 0;
 
 		@media (min-width: $md6) {
 			--gutter-x: #{rem(24)};
-			--gutter-y: #{rem(36)};
-			margin-top: rem(40);
+			--gutter-y: #{rem(40)};
+			margin-top: 0;
+		}
+
+		@media (min-width: $md5) {
+			--gutter-x: #{rem(24)};
+			margin-top: 0;
+			--gutter-y: #{rem(40)};
+		}
+
+		@media (min-width: $md4) {
+			margin-top: rem(-4);
+			--gutter-y: #{rem(40)};
+		}
+
+		@media (min-width: $md3) {
+			margin-top: 0;
+			--gutter-y: #{rem(40)};
 		}
 
 		@media (min-width: $md2) {
@@ -85,11 +143,63 @@
 	&__card {
 		display: flex;
 		flex-direction: column;
-		gap: rem(16);
+		gap: rem(12);
+
+		@media (min-width: $md6) {
+			gap: rem(16);
+		}
 
 		.feature-list {
+			padding-left: rem(59);
+			line-height: math.div(18, 14);
+
+			@media (min-width: $md6) {
+				line-height: math.div(16, 14);
+			}
+
+			@media (min-width: $md3) {
+				line-height: math.div(19, 17);
+			}
+
+			@media (min-width: $md6) {
+				padding-left: rem(59);
+			}
+
+			@media (min-width: $md5) {
+				padding-left: 0;
+			}
+
+			> li {
+				padding-left: 0;
+				@media (min-width: $md6) {
+					padding-left: 0;
+				}
+
+				@media (min-width: $md5) {
+					padding-left: rem(58);
+				}
+
+				@media (min-width: $md4) {
+					padding-left: calc(var(--marker-col) + var(--marker-gap));
+				}
+			}
+
 			> li::before {
 				display: none;
+			}
+
+			@media (min-width: $md5) {
+				--marker-col: #{rem(48)};
+				--marker-gap: #{rem(10)};
+			}
+
+			@media (min-width: $md4) {
+				--marker-gap: #{rem(10)};
+			}
+
+			@media (min-width: $md3) {
+				--marker-col: #{rem(68)};
+				--marker-gap: #{rem(24)};
 			}
 
 			@media (min-width: $md2) {
@@ -117,12 +227,48 @@
 	}
 
 	&__heading {
+		line-height: math.div(18, 16);
+
+		@media (min-width: $md6) {
+			line-height: calc(12 / 18);
+		}
+
+		@media (min-width: $md5) {
+			line-height: calc(12 / 18);
+		}
+
+		@media (min-width: $md4) {
+			line-height: calc(12 / 18);
+		}
+
+		@media (min-width: $md3) {
+			line-height: calc(16 / 24);
+		}
+
 		@media (min-width: $md2) {
 			line-height: calc(19 / 28);
 		}
 
 		@media (min-width: $md1) {
 			line-height: calc(34 / 36);
+		}
+	}
+
+	&__more {
+		margin: rem(30) 0 rem(16);
+		text-transform: uppercase;
+		line-height: math.div(11, 15);
+
+		@media (min-width: $md6) {
+			display: none;
+		}
+	}
+
+	&:not(.is-expanded) &__extra {
+		display: none;
+
+		@media (min-width: $md6) {
+			display: block;
 		}
 	}
 }

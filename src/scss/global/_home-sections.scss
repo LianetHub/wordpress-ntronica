@@ -622,17 +622,27 @@
 	background-position: center;
 	background-repeat: no-repeat;
 	color: $color-white;
-	padding-top: rem(50);
-	padding-bottom: rem(50);
+	padding-top: rem(40);
+	padding-bottom: rem(40);
 
 	@media (min-width: $md6) {
-		padding-top: rem(60);
-		padding-bottom: rem(60);
+		padding-top: rem(40);
+		padding-bottom: rem(44);
+	}
+
+	@media (min-width: $md5) {
+		padding-top: rem(38);
+		padding-bottom: rem(50);
+	}
+
+	@media (min-width: $md4) {
+		padding-top: rem(38);
+		padding-bottom: rem(50);
 	}
 
 	@media (min-width: $md3) {
-		padding-top: rem(70);
-		padding-bottom: rem(82);
+		padding-top: rem(30);
+		padding-bottom: rem(64);
 	}
 
 	@media (min-width: $md2) {
@@ -650,21 +660,37 @@
 		position: relative;
 		z-index: 2;
 		color: $color-white;
-		margin-bottom: rem(24);
+		margin-bottom: rem(10);
+		line-height: math.div(14, 20);
 
 		@media (min-width: $md6) {
-			margin-bottom: rem(30);
+			max-width: 50%;
+			line-height: math.div(25, 26);
+			margin-bottom: rem(20);
+		}
+
+		@media (min-width: $md5) {
+			max-width: none;
+			line-height: math.div(26, 30);
+			margin-bottom: rem(20);
+		}
+
+		@media (min-width: $md4) {
+			margin-bottom: rem(15);
 		}
 
 		@media (min-width: $md3) {
-			margin-bottom: rem(26);
+			line-height: math.div(32, 22);
+			margin-bottom: 0;
 		}
 
 		@media (min-width: $md2) {
+			line-height: math.div(26, 36);
 			margin-bottom: rem(16);
 		}
 
 		@media (min-width: $md1) {
+			line-height: 1.2;
 			margin-bottom: rem(26);
 		}
 	}
@@ -693,18 +719,35 @@
 		z-index: 1;
 		display: flex;
 		flex-direction: column;
-		justify-content: space-between;
-		height: 100%;
-		padding-top: rem(24);
-		padding-bottom: rem(24);
+		height: auto;
+		padding-top: rem(20);
+		padding-bottom: 0;
 		box-sizing: border-box;
 
 		@media (min-width: $md6) {
+			height: auto;
+			padding-top: rem(20);
+			padding-bottom: rem(20);
+		}
+
+		@media (min-width: $md5) {
+				height: auto;
+			padding-top: rem(20);
+			padding-bottom: rem(20);
+		}
+
+		@media (min-width: $md4) {
+			height: 100%;
 			padding-top: rem(30);
 			padding-bottom: rem(30);
 		}
 
 		@media (min-width: $md3) {
+			padding-top: rem(32);
+			padding-bottom: rem(32);
+		}
+
+		@media (min-width: $md2) {
 			padding-top: rem(40);
 			padding-bottom: rem(40);
 		}
@@ -715,20 +758,37 @@
 		color: $color-white;
 		font-style: italic;
 		margin-bottom: rem(16);
+		font-size: rem(18);
+		line-height: math.div(19, 18);
 
 		@media (min-width: $md6) {
+			line-height: 1;
+			margin-bottom: rem(21);
+		}
+
+		@media (min-width: $md5) {
+			margin-bottom: 1.3rem;
+		}
+
+		@media (min-width: $md4) {
 			margin-bottom: rem(24);
 		}
 
 		@media (min-width: $md3) {
-			margin-bottom: rem(36);
+			font-size: rem(24);
+			line-height: math.div(24, 16);
+			margin-bottom: 0;
 		}
 
 		@media (min-width: $md2) {
+			font-size: rem(28);
+			line-height: math.div(32, 28);
 			margin-bottom: rem(2);
 		}
 
 		@media (min-width: $md1) {
+			font-size: rem(36);
+			line-height: math.div(34, 36);
 			margin-bottom: rem(36);
 		}
 	}
@@ -736,12 +796,20 @@
 	// progress-slider__text-row
 	&__text-row {
 		--gutter-x: #{rem(24)};
-		--gutter-y: #{rem(16)};
+		--gutter-y: 0;
 		margin-bottom: rem(30);
 		color: $color-white;
 
 		@media (min-width: $md6) {
 			--gutter-y: 0;
+			margin-bottom: rem(30);
+		}
+
+		@media (min-width: $md5) {
+			margin-bottom: rem(30);
+		}
+
+		@media (min-width: $md3) {
 			margin-bottom: rem(40);
 		}
 
@@ -752,6 +820,30 @@
 
 	// .progress-slider__footer
 	&__footer {
+		width: calc(50% + #{rem(7)});
+		--gutter-x: #{rem(14)};
+		--gutter-y: 0;
+		margin-top: 0;
+
+		> * {
+			width: 33.333333%;
+
+			@media (min-width: $md6) {
+				width: 8.33333333%;
+			}
+		}
+
+		@media (min-width: $md6) {
+			width: auto;
+			--gutter-x: #{rem(24)};
+			--gutter-y: 1rem;
+			margin-top: 0;
+		}
+
+		@media (min-width: $md5) {
+			margin-top: calc(-1 * var(--gutter-y));
+		}
+
 
 		align-items: center;
 
@@ -759,10 +851,36 @@
 		.swiper-button-prev,
 		.swiper-button-next {
 			color: $color-white;
+			width: rem(24);
+			height: rem(22);
 
-			@media (min-width: $md2) {
+			@media (min-width: $md6) {
 				width: rem(24);
 				height: rem(22);
+			}
+
+			.icon {
+				width: rem(25);
+				height: rem(17);
+				@media (min-width: $md6) {
+					width: rem(25);
+					height: rem(17);
+				}
+
+				@media (min-width: $md3) {
+					width: rem(23);
+					height: rem(15);
+				}
+
+				@media (min-width: $md2) {
+					width: rem(25);
+					height: rem(17);
+				}
+
+				@media (min-width: $md1) {
+					width: rem(31);
+					height: rem(20);
+				}
 			}
 
 			@media (min-width: $md1) {
@@ -782,17 +900,26 @@
 		font-family: $font-text;
 		font-weight: 700;
 		color: $color-white;
-		font-size: rem(48);
-		line-height: math.div(36, 48);
+		font-size: rem(54);
+		font-weight: 400;
+		line-height: math.div(38, 54);
 
 		@media (min-width: $md6) {
-			font-size: rem(64);
-			line-height: math.div(48, 64);
+			font-size: rem(62);
+			font-weight: 400;
+			line-height: math.div(43, 62);
+		}
+
+		@media (min-width: $md5) {
+			font-size: rem(70);
+			font-weight: 400;
+			line-height: math.div(47, 70);
 		}
 
 		@media (min-width: $md3) {
-			font-size: rem(88);
-			line-height: math.div(62, 88);
+			font-size: rem(80);
+			font-weight: 400;
+			line-height: math.div(55, 80);
 		}
 
 		@media (min-width: $md2) {

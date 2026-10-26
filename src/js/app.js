@@ -1,3 +1,4 @@
+import { Microchips } from "./modules/microchips.js";
 /**
  * Theme frontend entry (ntronica).
  */
@@ -11,6 +12,7 @@ import { SiteMenu } from "./modules/siteMenu.js";
 import { Slider } from "./modules/sliders.js";
 
 const components = {
+	".tech-microchips": Microchips,
 	".sidebar": SiteMenu,
 	".page-hero": PageHero,
 	".progress-slider__slider": Slider,

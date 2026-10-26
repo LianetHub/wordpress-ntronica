@@ -49,14 +49,14 @@ $ntronica_processes = array(
 		'index'  => '6',
 		'image'  => $ntronica_home_img . 'process-metrology.webp',
 		'text_1' => 'Metrology, inspection, and analytics encompass all measurements and tests used to verify that a wafer meets specifications before proceeding to the next process step. Metrology measures physical properties such as film thickness, refractive index, and line width.',
-		'text_2' => '',
+		'text_2' => 'A chip is only as good as the numbers behind it. Between steps, the fab checks how wide a line came out, how precisely one layer lands on another, and whether a film is a few atoms off — then feeds that data back, so the next wafer hits the target closer.',
 	),
 	array(
 		'title'  => 'Inspection & Analytics',
 		'index'  => '7',
 		'image'  => $ntronica_home_img . 'process-inspection.webp',
 		'text_1' => 'Inspection detects defects (particles, scratches, pattern anomalies) using optical or electron beam tools. Analytics includes spectroscopic and imaging techniques to identify contamination or process drift. These processes are distributed throughout the manufacturing flow to monitor quality, control yields, and enable rapid feedback to upstream equipment.',
-		'text_2' => '',
+		'text_2' => 'A single particle can cost a whole die. Inspection is a search through billions of features for the one that went wrong: fast optical scans flag suspects, an electron beam takes a closer look, and smart sorting tells real threats from harmless noise. The payoff comes when every defect is traced back to the step and the tool that caused it.',
 	),
 );
 ?>

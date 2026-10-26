@@ -6,6 +6,11 @@
  * @package ntronica
  */
 
+
+
+$ntronica_microchips_extra = 'Manufacturing is a cycle repeated for every layer: deposit a&nbsp;film, print the pattern, etch it, clean, planarize, then measure. An advanced device stacks up to a hundred layers, each aligned to the one beneath it within a few nanometers. Several hundred steps and about three months separate a bare wafer from packaged chips — so yield depends less on any single tool than on how tightly the whole sequence is held. That is why metrology and inspection sit between the process steps rather than after them, and why a fab is kept thousands of times cleaner than outside air.';
+$ntronica_has_microchips_extra = trim(wp_strip_all_tags($ntronica_microchips_extra)) !== '';
+
 $ntronica_topics = array(
 	array(
 		'title' => 'What a chip is',
@@ -45,12 +50,18 @@ $ntronica_topics = array(
 					<p>Chips are classified in two ways: by what they do and by the circuitry inside them. By circuitry, a chip is analogue, digital, or mixed-signal. Digital circuits work with binary levels; analogue circuits handle continuous signals using resistors, capacitors, and inductors. By function, the main families are logic, memory, application-specific circuits (ASIC), and systems-on-chip (SoC), which combine analogue and digital blocks on one die. Power and RF devices on GaN and SiC form a class of their own — built on dedicated equipment and judged by breakdown voltage and thermal behaviour rather than by transistor count.</p>
 				</div>
 			</div>
-			<div class="col-12 col-md-6">
-				<div class="text-block">
-					<p>Manufacturing is a cycle repeated for every layer: deposit a&nbsp;film, print the pattern, etch it, clean, planarize, then measure. An advanced device stacks up to a hundred layers, each aligned to the one beneath it within a few nanometers. Several hundred steps and about three months separate a bare wafer from packaged chips — so yield depends less on any single tool than on how tightly the whole sequence is held. That is why metrology and inspection sit between the process steps rather than after them, and why a fab is kept thousands of times cleaner than outside air.</p>
+			<?php if ($ntronica_has_microchips_extra) : ?>
+				<div class="col-12 col-md-6 tech-microchips__extra" id="microchips-extra">
+					<div class="text-block">
+						<p><?php echo wp_kses_post($ntronica_microchips_extra); ?></p>
+					</div>
 				</div>
-			</div>
+			<?php endif; ?>
 		</div>
+
+		<?php if ($ntronica_has_microchips_extra) : ?>
+			<button class="link-more tech-microchips__more" type="button" data-default-text="Show more" data-expanded-text="Show less" data-title="Show more" aria-expanded="false" aria-controls="microchips-extra" hidden><span>Show more</span></button>
+		<?php endif; ?>
 
 		<div class="row tech-microchips__cards" id="microchip-topics">
 			<?php foreach ($ntronica_topics as $ntronica_topic) : ?>

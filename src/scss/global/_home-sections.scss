@@ -635,6 +635,16 @@
 		padding-bottom: rem(82);
 	}
 
+	@media (min-width: $md2) {
+		padding-top: rem(60);
+		padding-bottom: rem(66);
+	}
+
+	@media (min-width: $md1) {
+		padding-top: rem(70);
+		padding-bottom: rem(82);
+	}
+
 	// progress-slider__header
 	&__header {
 		position: relative;
@@ -647,6 +657,14 @@
 		}
 
 		@media (min-width: $md3) {
+			margin-bottom: rem(26);
+		}
+
+		@media (min-width: $md2) {
+			margin-bottom: rem(16);
+		}
+
+		@media (min-width: $md1) {
 			margin-bottom: rem(26);
 		}
 	}
@@ -705,6 +723,14 @@
 		@media (min-width: $md3) {
 			margin-bottom: rem(36);
 		}
+
+		@media (min-width: $md2) {
+			margin-bottom: rem(2);
+		}
+
+		@media (min-width: $md1) {
+			margin-bottom: rem(36);
+		}
 	}
 
 	// progress-slider__text-row
@@ -729,9 +755,20 @@
 
 		align-items: center;
 
+
 		.swiper-button-prev,
 		.swiper-button-next {
 			color: $color-white;
+
+			@media (min-width: $md2) {
+				width: rem(24);
+				height: rem(22);
+			}
+
+			@media (min-width: $md1) {
+				width: auto;
+				height: auto;
+			}
 		}
 
 	}
@@ -759,11 +796,13 @@
 		}
 
 		@media (min-width: $md2) {
-			font-size: rem(100);
-			line-height: math.div(70, 100);
+			font-size: rem(90);
+			font-weight: 400;
+			line-height: math.div(64, 90);
 		}
 
 		@media (min-width: $md1) {
+			font-weight: 700;
 			font-size: rem(120);
 			line-height: math.div(84, 120);
 		}

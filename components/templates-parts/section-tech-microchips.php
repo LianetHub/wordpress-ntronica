@@ -47,7 +47,7 @@ $ntronica_topics = array(
 			</div>
 			<div class="col-12 col-md-6">
 				<div class="text-block">
-					<p>Manufacturing is a cycle repeated for every layer: deposit a film, print the pattern, etch it, clean, planarize, then measure. An advanced device stacks up to a hundred layers, each aligned to the one beneath it within a few nanometers. Several hundred steps and about three months separate a bare wafer from packaged chips — so yield depends less on any single tool than on how tightly the whole sequence is held. That is why metrology and inspection sit between the process steps rather than after them, and why a fab is kept thousands of times cleaner than outside air.</p>
+					<p>Manufacturing is a cycle repeated for every layer: deposit a&nbsp;film, print the pattern, etch it, clean, planarize, then measure. An advanced device stacks up to a hundred layers, each aligned to the one beneath it within a few nanometers. Several hundred steps and about three months separate a bare wafer from packaged chips — so yield depends less on any single tool than on how tightly the whole sequence is held. That is why metrology and inspection sit between the process steps rather than after them, and why a fab is kept thousands of times cleaner than outside air.</p>
 				</div>
 			</div>
 		</div>

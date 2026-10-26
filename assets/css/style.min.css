@@ -3041,19 +3041,7 @@ body.page-template-page-contacts, body.error404, body.search, body.page-template
 @media (min-width: 1439.98px) {
   .progress-slider {
     padding-top: 4.375rem;
-    padding-bottom: 4.375rem;
-  }
-}
-@media (min-width: 1664.98px) {
-  .progress-slider {
-    padding-top: 5rem;
-    padding-bottom: 5rem;
-  }
-}
-@media (min-width: 2559.98px) {
-  .progress-slider {
-    padding-top: 6.25rem;
-    padding-bottom: 6.25rem;
+    padding-bottom: 5.125rem;
   }
 }
 .progress-slider__header {
@@ -3069,7 +3057,7 @@ body.page-template-page-contacts, body.error404, body.search, body.page-template
 }
 @media (min-width: 1439.98px) {
   .progress-slider__header {
-    margin-bottom: 2.5rem;
+    margin-bottom: 1.625rem;
   }
 }
 .progress-slider__slider {
@@ -3109,6 +3097,7 @@ body.page-template-page-contacts, body.error404, body.search, body.page-template
 }
 .progress-slider__process-title {
   color: #ffffff;
+  font-style: italic;
   margin-bottom: 1rem;
 }
 @media (min-width: 767.98px) {
@@ -3118,7 +3107,7 @@ body.page-template-page-contacts, body.error404, body.search, body.page-template
 }
 @media (min-width: 1439.98px) {
   .progress-slider__process-title {
-    margin-bottom: 2rem;
+    margin-bottom: 2.25rem;
   }
 }
 .progress-slider__text-row {
@@ -3137,19 +3126,7 @@ body.page-template-page-contacts, body.error404, body.search, body.page-template
   color: #ffffff;
 }
 .progress-slider__footer {
-  display: flex;
   align-items: center;
-  gap: 1.25rem;
-}
-@media (min-width: 767.98px) {
-  .progress-slider__footer {
-    gap: 1.875rem;
-  }
-}
-@media (min-width: 1439.98px) {
-  .progress-slider__footer {
-    gap: 2.5rem;
-  }
 }
 .progress-slider__footer .swiper-button-prev,
 .progress-slider__footer .swiper-button-next {
@@ -3157,9 +3134,10 @@ body.page-template-page-contacts, body.error404, body.search, body.page-template
 }
 .progress-slider__index {
   position: static;
-  width: auto;
+  text-align: center;
+  width: 100%;
   flex-shrink: 0;
-  font-family: "Nanotronica_Title", system-ui, -apple-system, "Segoe UI", sans-serif;
+  font-family: "Nanotronica_Text", system-ui, -apple-system, "Segoe UI", sans-serif;
   font-weight: 700;
   color: #ffffff;
   font-size: 3rem;
@@ -3188,6 +3166,10 @@ body.page-template-page-contacts, body.error404, body.search, body.page-template
     font-size: 7.5rem;
     line-height: 0.7;
   }
+}
+.progress-slider__next {
+  display: flex;
+  justify-content: flex-end;
 }
 
 .overview {
@@ -4831,7 +4813,7 @@ body.page-template-page-contacts, body.error404, body.search, body.page-template
 }
 @media (min-width: 2559.98px) {
   .tech-microchips__intro {
-    --gutter-y: 2.125rem;
+    --gutter-y: 3.75rem;
   }
 }
 .tech-microchips__cards {
@@ -4849,13 +4831,21 @@ body.page-template-page-contacts, body.error404, body.search, body.page-template
 @media (min-width: 2559.98px) {
   .tech-microchips__cards {
     --gutter-y: 3.125rem;
-    margin-top: 3.75rem;
+    margin-top: 0.625rem;
   }
 }
 .tech-microchips__card {
   display: flex;
   flex-direction: column;
   gap: 1rem;
+}
+.tech-microchips__card .feature-list > li::before {
+  display: none;
+}
+@media (min-width: 2559.98px) {
+  .tech-microchips__card .feature-list {
+    line-height: 1.1851851852;
+  }
 }
 @media (min-width: 1439.98px) {
   .tech-microchips__card {
@@ -4864,7 +4854,7 @@ body.page-template-page-contacts, body.error404, body.search, body.page-template
 }
 @media (min-width: 2559.98px) {
   .tech-microchips__card {
-    gap: 2.25rem;
+    gap: 1.875rem;
   }
 }
 

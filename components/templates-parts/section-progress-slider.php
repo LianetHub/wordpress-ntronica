@@ -94,10 +94,16 @@ $ntronica_processes = array(
 				<?php endforeach; ?>
 			</div>
 		</div>
-		<div class="progress-slider__footer">
-			<?php ntronica_slider_nav_button('prev', 'Previous process'); ?>
-			<span class="progress-slider__index"></span>
-			<?php ntronica_slider_nav_button('next', 'Next process'); ?>
+		<div class="progress-slider__footer row">
+			<div class="col-1 progress-slider__prev">
+				<?php ntronica_slider_nav_button('prev', 'Previous process'); ?>
+			</div>
+			<div class="col-1">
+				<div class="progress-slider__index"></div>
+			</div>
+			<div class="col-1 progress-slider__next">
+				<?php ntronica_slider_nav_button('next', 'Next process'); ?>
+			</div>
 		</div>
 	</div>
 </section>

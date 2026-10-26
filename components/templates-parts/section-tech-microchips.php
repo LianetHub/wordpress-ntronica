@@ -36,7 +36,7 @@ $ntronica_topics = array(
 				</div>
 			</div>
 			<div class="col-12 col-md-6">
-				<div class="text-block-alternate">
+				<div class="text-block">
 					<p>A single die holds billions of transistors, formed through hundreds of steps on a wafer under a millimetre thick. Each step is spans the wafer with nanometre accuracy and needs dedicated equipment, process control and metrology.</p>
 				</div>
 			</div>

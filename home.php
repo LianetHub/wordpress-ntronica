@@ -26,8 +26,8 @@ if ($ntronica_blog_id && has_post_thumbnail($ntronica_blog_id)) {
 	}
 }
 
-// Temporary mock content — real WP posts wiring comes later.
-$ntronica_news_lead = 'Updates from our labs, events, and partnerships across the microelectronics equipment cycle — from process development to production tools.';
+// Temporary mock content 
+$ntronica_news_lead = 'We actively participate in a wide range of industry events — exhibitions, scientific and business conferences, workshops, and more. Stay tuned for updates on where you can meet us next';
 
 $ntronica_news_article_url = ntronica_get_news_article_url();
 

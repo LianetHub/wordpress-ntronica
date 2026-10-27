@@ -114,7 +114,7 @@ $ntronica_micrographs = array(
 							<?php endforeach; ?>
 						</dl>
 
-						<a class="btn-box product__contact" href="#contacts">CONTACT US</a>
+						<a class="btn-box product__contact" href="<?php echo esc_url(home_url('/contacts/')); ?>">CONTACT US</a>
 					</div>
 				</div>
 			</div>
@@ -129,12 +129,12 @@ $ntronica_micrographs = array(
 							?>
 							<div class="swiper-slide" data-caption="<?php echo esc_attr($ntronica_slide['caption']); ?>">
 								<a class="product__image-link" href="<?php echo esc_url($ntronica_product_img . $ntronica_slide_file); ?>" data-fancybox="product-images" data-caption="<?php echo esc_attr($ntronica_slide['caption']); ?>">
-								<img
-									class="product-gallery__img"
-									src="<?php echo esc_url($ntronica_product_img . $ntronica_slide_file); ?>"
-									alt="<?php echo esc_attr($ntronica_slide['alt']); ?>"
-									width="945"
-									height="945">
+									<img
+										class="product-gallery__img"
+										src="<?php echo esc_url($ntronica_product_img . $ntronica_slide_file); ?>"
+										alt="<?php echo esc_attr($ntronica_slide['alt']); ?>"
+										width="945"
+										height="945">
 								</a>
 							</div>
 						<?php endforeach; ?>
@@ -188,13 +188,13 @@ $ntronica_micrographs = array(
 			<?php foreach ($ntronica_micrographs as $ntronica_shot) : ?>
 				<div class="col-6 col-md-3">
 					<a class="product__image-link" href="<?php echo esc_url($ntronica_product_img . $ntronica_shot['file']); ?>" data-fancybox="product-images">
-					<img
-						class="product__micrograph"
-						src="<?php echo esc_url($ntronica_product_img . $ntronica_shot['file']); ?>"
-						alt="<?php echo esc_attr($ntronica_shot['alt']); ?>"
-						width="461"
-						height="306"
-						loading="lazy">
+						<img
+							class="product__micrograph"
+							src="<?php echo esc_url($ntronica_product_img . $ntronica_shot['file']); ?>"
+							alt="<?php echo esc_attr($ntronica_shot['alt']); ?>"
+							width="461"
+							height="306"
+							loading="lazy">
 					</a>
 				</div>
 			<?php endforeach; ?>

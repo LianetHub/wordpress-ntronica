@@ -18,7 +18,7 @@
 
 	// Right inset keeps the collapsed content box equal to the logo crop:
 	// 50 − 14 − 9 = 27, so the mark clips with the bar instead of on its own.
-	padding: 0 rem(9) rem(12) rem(14);
+	padding: 0 rem(9) var(--sidebar-logo-bottom) rem(14);
 	background-color: $color-black;
 	color: $color-white;
 	cursor: pointer;
@@ -30,20 +30,20 @@
 	}
 
 	@media (min-width: $md6) {
-		padding: rem(12) rem(9) rem(12) rem(14);
+		padding: rem(12) rem(9) var(--sidebar-logo-bottom) rem(14);
 	}
 
 	@media (min-width: $md5) {
 		justify-content: space-between;
 		width: rem($sidebar-width-1200);
 		// 76 − 18 − 19 = 39
-		padding: rem(18) rem(19) rem(18) rem(18);
+		padding: rem(18) rem(19) var(--sidebar-logo-bottom) rem(18);
 	}
 
 	@media (min-width: $md1) {
 		width: rem($sidebar-width-2560);
 		// Collapsed bar is 88: 88 − 20 − 16 = 52
-		padding: rem(16) rem(16) rem(18) rem(20);
+		padding: rem(16) rem(16) var(--sidebar-logo-bottom) rem(20);
 	}
 
 	&.is-open {
@@ -199,29 +199,6 @@
 			}
 		}
 
-		.sidebar__logo {
-			max-width: rem(167);
-
-			@media (min-width: $md5) {
-				max-width: rem(242);
-			}
-
-			@media (min-width: $md1) {
-				max-width: rem(293);
-			}
-
-			svg {
-				width: rem(167);
-
-				@media (min-width: $md5) {
-					width: rem(242);
-				}
-
-				@media (min-width: $md1) {
-					width: rem(293);
-				}
-			}
-		}
 	}
 
 	// sidebar__lang
@@ -396,33 +373,18 @@
 		min-width: 0;
 		overflow: hidden;
 		width: 100%;
-		max-width: rem(133);
+		max-width: var(--sidebar-logo-width);
 		height: auto;
 		padding: 0;
 		text-align: left;
 		color: inherit;
 
-		@media (min-width: $md5) {
-			max-width: rem(193);
-		}
-
-		@media (min-width: $md1) {
-			max-width: rem(234);
-		}
-
 		svg {
 			display: block;
-			width: rem(133);
+			width: var(--sidebar-logo-width);
 			max-width: none;
 			height: auto;
 
-			@media (min-width: $md5) {
-				width: rem(193);
-			}
-
-			@media (min-width: $md1) {
-				width: rem(234);
-			}
 		}
 	}
 }

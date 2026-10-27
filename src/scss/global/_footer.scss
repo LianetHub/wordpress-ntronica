@@ -3,6 +3,13 @@
 @use "../mixins" as *;
 
 .footer {
+	--footer-height: #{rem(322)};
+	--footer-font-size: #{rem(12)};
+	--footer-line-height: #{rem(15)};
+	--footer-padding-top: #{rem(26)};
+	// Nanotronica Text's final line descent, including the browser's line-box rounding.
+	// Desktop rows use the larger company text's descent (last-baseline alignment).
+	--footer-baseline-descent: #{rem(3)};
 	--footer-label: #{rem(31)};
 	--footer-label-gap: #{rem(5)};
 	--footer-marker: #{rem(9)};
@@ -11,27 +18,51 @@
 	--footer-content-offset: calc(var(--footer-marker-track) + var(--footer-text-gap));
 	background-color: $color-footer;
 	color: $color-muted;
-	padding-top: rem(26);
-	padding-bottom: rem(26);
+	display: flex;
+	min-height: var(--footer-height);
+	padding-top: var(--footer-padding-top);
+	// Align the final text baseline with the top of Short Logo in either language.
+	padding-bottom: calc(var(--sidebar-short-logo-inset) - var(--footer-baseline-descent));
 
-	@media (min-width: $md5) {
-		padding-top: rem(34);
-		padding-bottom: rem(44);
+	> .container {
+		display: flex;
 	}
 
-	@media (min-width: $md2) {
-		--footer-label: #{rem(40)};
-		--footer-label-gap: #{rem(5)};
-		--footer-marker: #{rem(9)};
+	@media (min-width: $md6) {
+		--footer-height: #{rem(144)};
 		--footer-text-gap: #{rem(7)};
 	}
 
+	@media (min-width: $md5) {
+		--footer-height: #{rem(160)};
+		--footer-padding-top: #{rem(34)};
+	}
+
+	@media (min-width: $md3) {
+		--footer-height: #{rem(125)};
+		--footer-baseline-descent: #{rem(4)};
+	}
+
+	@media (min-width: $md2) {
+		--footer-height: #{rem(136)};
+		--footer-font-size: #{rem(15)};
+		--footer-line-height: #{rem(18)};
+		--footer-label: #{rem(39)};
+		--footer-label-gap: #{rem(5)};
+		--footer-marker: #{rem(11)};
+		--footer-text-gap: #{rem(10)};
+	}
+
 	@media (min-width: $md1) {
-		--footer-label: #{rem(42)};
-		--footer-label-gap: #{rem(13)};
+		--footer-height: #{rem(166)};
+		--footer-font-size: #{rem(18)};
+		--footer-line-height: #{rem(21)};
+		--footer-baseline-descent: #{rem(5)};
+		--footer-label: #{rem(47)};
+		--footer-label-gap: #{rem(7)};
 		--footer-marker: #{rem(13)};
 		--footer-text-gap: #{rem(13)};
-		padding-top: rem(43);
+		--footer-padding-top: #{rem(43)};
 	}
 
 	a {
@@ -47,22 +78,66 @@
 
 	// footer__grid
 	&__grid {
-		--gutter-x: #{rem(24)};
-		--gutter-y: #{rem(24)};
-		align-items: start;
+		display: grid;
+		flex: 1;
+		grid-template-columns: minmax(0, 1fr);
+		gap: rem(24);
+		margin: 0;
+		align-content: space-between;
+		align-items: last baseline;
+
+		> div {
+			width: auto;
+			min-width: 0;
+			padding: 0;
+			margin: 0;
+		}
+
+		@media (min-width: $md6) {
+			grid-template-columns: repeat(3, minmax(0, 1fr));
+			// Allow for the heading's CSS line box instead of Figma's trimmed text box.
+			row-gap: min(#{rem(24)}, calc(var(--footer-height) - var(--footer-padding-top) - var(--sidebar-short-logo-inset) + var(--footer-baseline-descent) - #{rem(12 + 60)}));
+		}
+
+		@media (min-width: $md3) {
+			grid-template-columns: repeat(4, minmax(0, 1fr));
+			align-content: end;
+		}
 	}
 
 	// footer__copy
 	&__copy {
 		.row {
-			--gutter-y: #{rem(2)};
-
-			@media (min-width:$md6) {
-				--gutter-y: #{rem(4)};
-			}
+			--gutter-y: 0;
 
 			@media (min-width: $md3) {
 				--gutter-y: #{rem(7)};
+			}
+
+			@media (min-width: $md2) {
+				--gutter-y: #{rem(14)};
+			}
+
+			@media (min-width: $md1) {
+				--gutter-y: #{rem(12)};
+			}
+		}
+
+		@media (min-width: $md6) and (max-width: ($md3 - 0.02px)) {
+			display: contents;
+
+			> .row {
+				display: contents;
+
+				> div {
+					width: auto;
+					padding: 0;
+					margin: 0;
+				}
+
+				> div:last-child {
+					grid-column: 2 / -1;
+				}
 			}
 		}
 	}
@@ -78,9 +153,13 @@
 			line-height: math.div(12, 15);
 		}
 
+		@media (min-width: $md3) {
+			line-height: math.div(18, 15);
+		}
+
 		@media (min-width: $md2) {
 			font-size: rem(18);
-			line-height: math.div(18, 15);
+			line-height: math.div(16, 18);
 		}
 
 		@media (min-width: $md1) {
@@ -102,16 +181,15 @@
 		}
 
 		@media (min-width: $md3) {
-			margin-top: rem(4);
 			line-height: math.div(18, 15);
 		}
 
 		@media (min-width:$md2) {
 			font-size: rem(18);
+			line-height: math.div(21, 18);
 		}
 
 		@media (min-width: $md1) {
-			margin-top: rem(6);
 			font-size: rem(21);
 			line-height: math.div(24, 21);
 		}
@@ -150,22 +228,27 @@
 		--font-cap: 0.704em;
 		--marker-top: calc((1lh - var(--font-ascent) - var(--font-descent)) / 2 + var(--font-ascent) - var(--font-cap));
 		--marker-bottom: calc((1lh - var(--font-ascent) - var(--font-descent)) / 2 + var(--font-descent));
-		--address-text: #{rem(240)};
+		--address-text: #{rem(271)};
 		position: relative;
 		max-width: calc(var(--footer-content-offset) + var(--address-text));
 		padding-left: var(--footer-content-offset);
 		font-family: $font-family;
 		font-weight: 400;
-		font-size: rem(12);
-		line-height: math.div(15, 12);
+		font-size: var(--footer-font-size);
+		line-height: var(--footer-line-height);
 
-		@media (min-width:$md5) {
+		@media (min-width:$md6) {
 			--address-text: #{rem(160)};
+
+			> span {
+				display: block;
+				white-space: nowrap;
+			}
 		}
 
 		@media (min-width: $md2) {
 			font-size: rem(15);
-			--address-text: #{rem(187)};
+			--address-text: #{rem(259)};
 		}
 
 		@media (min-width: $md1) {
@@ -207,8 +290,8 @@
 		--marker-gap: var(--footer-text-gap);
 		font-family: $font-family;
 		font-weight: 400;
-		font-size: rem(12);
-		line-height: math.div(15, 12);
+		font-size: var(--footer-font-size);
+		line-height: var(--footer-line-height);
 		color: inherit;
 
 		@media (min-width:$md2) {
@@ -237,8 +320,8 @@
 	&__links {
 		font-family: $font-family;
 		font-weight: 700;
-		font-size: rem(12);
-		line-height: math.div(15, 12);
+		font-size: var(--footer-font-size);
+		line-height: var(--footer-line-height);
 
 		@media (min-width:$md2) {
 			font-size: rem(15);
@@ -252,6 +335,12 @@
 
 	// footer__search
 	&__search {
+		--search-line-width: #{rem(1.5)};
+
+		@media (min-width: $md2) {
+			--search-line-width: #{rem(2)};
+		}
+
 		.search-form--footer {
 			font-family: $font-family;
 			font-weight: 700;
@@ -265,18 +354,36 @@
 			line-height: inherit;
 		}
 
+		.search-form__field::after {
+			content: "";
+			position: absolute;
+			right: 0;
+			bottom: 0;
+			left: 0;
+			height: var(--search-line-width);
+			background: currentColor;
+			pointer-events: none;
+		}
+
 		.search-form__input {
-			min-height: rem(26);
-			padding: rem(8) rem(22) rem(2) 0;
-			border-bottom: rem(1) solid currentColor;
+			display: block;
+			min-height: 0;
+			height: rem(24);
+			padding: rem(2) rem(22) rem(2) 0;
+			border-bottom: 0;
+			appearance: none;
 			font-family: inherit;
 			font-size: inherit;
 			font-weight: 400;
 			line-height: inherit;
 			color: inherit;
 
+			@media (min-width: $md2) {
+				height: rem(28);
+			}
+
 			@media (min-width: $md1) {
-				min-height: rem(35);
+				height: rem(35);
 			}
 		}
 	}
@@ -287,10 +394,10 @@
 		flex-wrap: wrap;
 		justify-content: space-between;
 		gap: rem(12);
-		margin-top: rem(4);
+		margin-top: rem(6);
 
-		@media (min-width: $md3) {
-			margin-top: rem(6);
+		@media (min-width: $md2) {
+			margin-top: rem(8);
 		}
 
 		@media (min-width: $md1) {

@@ -42,7 +42,10 @@
 
 			<div class="col-12 col-md-4 col-xxl-3">
 				<address class="footer__address" data-label="Add">
-					8 Ulsoor Road, Yellapa Chetty Layout, Ulsoor, Bangaluru, Karnataka, 560042,&nbsp;India
+					<span>8 Ulsoor Road, Yellapa</span>
+					<span>Chetty Layout, Ulsoor,</span>
+					<span>Bangaluru, Karnataka,</span>
+					<span>560042,&nbsp;India</span>
 				</address>
 			</div>
 
@@ -54,7 +57,6 @@
 					<div class="footer__policies">
 						<a class="footer__link" href="<?php echo esc_url(home_url('/privacy-policy/')); ?>">Privacy policy</a>
 						<a class="footer__link" href="<?php echo esc_url(home_url('/terms-of-use/')); ?>">Terms of use</a>
-						<!-- <a class="footer__link" href="#cookie-notice" data-cookie-settings>Cookie settings</a> -->
 					</div>
 				</div>
 			</div>

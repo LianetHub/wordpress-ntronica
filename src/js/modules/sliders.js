@@ -119,9 +119,11 @@ export class Slider {
 				watchOverflow: true,
 				autoHeight: false,
 				slidesPerView: 1,
-				spaceBetween: 0,
+				spaceBetween: 24,
 				speed: 0,
-				allowTouchMove: true,
+				allowTouchMove: false,
+				simulateTouch: false,
+				grabCursor: false,
 				navigation: {
 					prevEl: section.querySelector(".swiper-button-prev"),
 					nextEl: section.querySelector(".swiper-button-next"),

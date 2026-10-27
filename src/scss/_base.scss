@@ -1,4 +1,5 @@
 @use "sass:color";
+@use "sass:math";
 @use "variables" as *;
 @use "mixins" as *;
 
@@ -88,6 +89,11 @@ body {
 
 .wrapper {
 	--sidebar-width: #{rem($sidebar-width)};
+	--sidebar-logo-width: #{rem(133)};
+	--sidebar-logo-bottom: #{rem(12)};
+	// Distance from the SVG bottom to the top of its central square (viewBox 234 × 34).
+	--sidebar-short-logo-ratio: #{math.div(34 - 15.1039, 234)};
+	--sidebar-short-logo-inset: calc(var(--sidebar-logo-bottom) + var(--sidebar-logo-width) * var(--sidebar-short-logo-ratio));
 	display: flex;
 	flex-direction: column;
 	min-height: 100%;
@@ -95,6 +101,8 @@ body {
 
 	@media (min-width: $md5) {
 		--sidebar-width: #{rem($sidebar-width-1024)};
+		--sidebar-logo-width: #{rem(193)};
+		--sidebar-logo-bottom: #{rem(18)};
 	}
 
 	@media (min-width: $md4) {
@@ -103,15 +111,24 @@ body {
 
 	@media (min-width: $md1) {
 		--sidebar-width: #{rem($sidebar-width-2560)};
+		--sidebar-logo-width: #{rem(234)};
 	}
 
 	&:has(.sidebar--language-ru) {
+		--sidebar-logo-width: #{rem(167)};
+		--sidebar-short-logo-ratio: #{math.div(34 - 15.0371, 293)};
+
+		@media (min-width: $md5) {
+			--sidebar-logo-width: #{rem(242)};
+		}
+
 		@media (min-width: $md4) {
 			--sidebar-width: #{rem($sidebar-width-1200-ru)};
 		}
 
 		@media (min-width: $md1) {
 			--sidebar-width: #{rem($sidebar-width-2560-ru)};
+			--sidebar-logo-width: #{rem(293)};
 		}
 	}
 }

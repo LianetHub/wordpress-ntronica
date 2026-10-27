@@ -6,10 +6,10 @@
  * @package ntronica
  */
 ?>
-<section class="overview" id="overview">
+<section class="overview overview--home" id="overview">
 	<div class="container">
 		<div class="row overview__layout">
-			<div class="col-12 col-md-6">
+			<div class="col-12 col-md-6 overview__summary">
 				<h2 class="title overview__title">Company overview</h2>
 				<div class="text-block overview__intro">
 					<p>Every day at N-tronica, we create tools that enable the production of&nbsp;the chips powering our world. From large-scale manufacturing to advanced R&amp;D, our work helps accelerate innovation and bring new technologies to life faster. We take pride in contributing to devices that are faster, smarter, and more efficient.</p>
@@ -21,7 +21,7 @@
 				</div>
 			</div>
 
-			<div class="col-12 col-md-6">
+			<div class="col-12 col-md-6 overview__details">
 				<p class="subtitle fs-italic overview__subtitle">Key features:</p>
 				<ul class="overview__features feature-list">
 					<li>We design and manufacture etching, deposition, and epitaxy tools— key elements in the semiconductor production process.</li>

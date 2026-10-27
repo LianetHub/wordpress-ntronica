@@ -5,6 +5,228 @@
 .overview {
 	padding-top: 0;
 
+	&.overview--home {
+		padding-top: rem(30);
+		padding-bottom: 0;
+
+		@media (min-width: $md6) {
+			padding-top: rem(30);
+			padding-bottom: 0;
+		}
+
+		@media (min-width: $md5) {
+			padding-top: rem(36);
+			padding-bottom: 0;
+		}
+
+		@media (min-width: $md3) {
+			padding-top: rem(40);
+			padding-bottom: 0;
+		}
+
+		@media (min-width: $md2) {
+			padding-top: rem(50);
+			padding-bottom: 0;
+		}
+
+		@media (min-width: $md1) {
+			padding-top: rem(90);
+			padding-bottom: 0;
+		}
+
+		.overview__layout {
+			display: grid;
+			grid-template-columns: minmax(0, 1fr);
+			margin: 0;
+
+			>* {
+				margin-top: 0;
+				padding: 0;
+
+				@media (min-width: $md6) {
+					margin-top: var(--gutter-y);
+					padding-inline: calc(var(--gutter-x) * 0.5);
+				}
+			}
+
+			@media (min-width: $md6) {
+				display: flex;
+				margin-top: calc(-1 * var(--gutter-y));
+				margin-inline: calc(-0.5 * var(--gutter-x));
+				align-items: stretch;
+			}
+		}
+
+
+		.overview__subtitle {
+			margin-top: 0;
+			font-size: rem(18);
+			line-height: math.div(14, 18);
+
+			@media (min-width: $md6) {
+				line-height: 1;
+			}
+
+			@media (min-width: $md3) {
+				font-size: rem(24);
+				line-height: math.div(24, 16);
+			}
+
+			@media (min-width: $md2) {
+				font-size: rem(28);
+				line-height: math.div(32, 28);
+			}
+
+			@media (min-width: $md1) {
+				font-size: rem(36);
+				line-height: math.div(34, 36);
+			}
+		}
+
+		.overview__details {
+			grid-row: 3;
+			padding-top: rem(30);
+
+			@media (min-width: $md6) {
+				padding-top: 0;
+			}
+		}
+
+		.overview__title {
+			grid-row: 1;
+			line-height: math.div(14, 20);
+
+			@media (min-width: $md6) {
+				line-height: math.div(24, 26);
+			}
+
+			@media (min-width: $md3) {
+				line-height: math.div(25, 32);
+			}
+
+			@media (min-width: $md2) {
+				line-height: math.div(24, 36);
+			}
+
+			@media (min-width: $md1) {
+				line-height: math.div(32, 46);
+			}
+		}
+
+		.overview__summary {
+			display: contents;
+			flex-direction: column;
+
+			@media (min-width: $md6) {
+				display: flex;
+			}
+		}
+
+		.overview__intro {
+			grid-row: 2;
+			margin-top: rem(15);
+			margin-bottom: 0;
+
+			@media (min-width: $md6) {
+				margin-top: rem(16);
+				margin-bottom: rem(30);
+			}
+
+			@media (min-width: $md3) {
+				margin-top: rem(24);
+			}
+
+			@media (min-width: $md2) {
+				margin-top: rem(30);
+			}
+
+			@media (min-width: $md1) {
+				margin-top: rem(36);
+			}
+		}
+
+		.overview__more {
+			grid-row: 4;
+			margin-top: rem(30);
+
+			@media (min-width: $md6) {
+				margin-top: auto;
+			}
+
+			.link-more {
+				display: block;
+				line-height: math.div(11, 15);
+
+				@media (min-width: $md6) {
+					display: block;
+					line-height: math.div(11, 15);
+				}
+
+				@media (min-width: $md3) {
+					display: block;
+					line-height: math.div(13, 18);
+				}
+
+				@media (min-width: $md2) {
+					display: block;
+					line-height: math.div(15, 21);
+				}
+
+				@media (min-width: $md1) {
+					line-height: math.div(19, 26);
+				}
+			}
+		}
+
+		.overview__features {
+			--marker-col: #{rem(56)};
+			--marker-gap: #{rem(11)};
+			--marker-size: #{rem(11)};
+			gap: rem(6);
+			line-height: math.div(16, 14);
+
+			@media (min-width: $md6) {
+				--marker-col: #{rem(56)};
+				--marker-gap: #{rem(11)};
+				--marker-size: #{rem(11)};
+				gap: rem(6);
+				line-height: math.div(16, 14);
+			}
+
+			@media (min-width: $md4) {
+				--marker-col: #{rem(56)};
+				--marker-gap: #{rem(11)};
+				--marker-size: #{rem(11)};
+				gap: rem(6);
+				line-height: math.div(18, 14);
+			}
+
+			@media (min-width: $md3) {
+				--marker-col: #{rem(63)};
+				--marker-gap: #{rem(13)};
+				--marker-size: #{rem(13)};
+				gap: rem(8);
+				line-height: math.div(21, 17);
+			}
+
+			@media (min-width: $md2) {
+				--marker-col: #{rem(73)};
+				--marker-gap: #{rem(15)};
+				--marker-size: #{rem(15)};
+				gap: rem(8);
+				line-height: math.div(24, 20);
+			}
+
+			@media (min-width: $md1) {
+				--marker-col: #{rem(94)};
+				--marker-gap: #{rem(19)};
+				--marker-size: #{rem(19)};
+				gap: rem(10);
+				line-height: 1.1;
+			}
+		}
+	}
+
 	@media (min-width: $md6) {
 		padding-top: rem(18);
 	}
@@ -127,6 +349,11 @@
 
 		@media (min-width: $md1) {
 			margin-top: rem(70);
+
+			.link-more {
+				display: block;
+				line-height: math.div(19, 26);
+			}
 		}
 	}
 }
@@ -139,24 +366,49 @@
 	}
 
 	@media (min-width: $md4) {
-		padding-top: rem(90);
+		padding-top: rem(70);
 	}
 
 	@media (min-width: $md3) {
-		padding-top: rem(100);
+		padding-top: rem(80);
 	}
 
 	@media (min-width: $md2) {
-		padding-top: rem(120);
+		padding-top: rem(96);
 	}
 
 	@media (min-width: $md1) {
-		padding-top: rem(170);
+		padding-top: rem(130);
 	}
 
 	// products__title
 	&__title {
-		margin-bottom: rem(20);
+		margin-bottom: rem(15);
+		line-height: math.div(14, 20);
+
+		@media (min-width: $md6) {
+			line-height: math.div(24, 26);
+		}
+
+		@media (min-width: $md3) {
+			line-height: math.div(25, 32);
+		}
+
+		@media (min-width: $md2) {
+			line-height: math.div(24, 36);
+		}
+
+		@media (min-width: $md1) {
+			line-height: math.div(32, 46);
+		}
+
+		@media (min-width: $md6) {
+			margin-bottom: rem(15);
+		}
+
+		@media (min-width: $md5) {
+			margin-bottom: rem(16);
+		}
 
 		@media (min-width: $md3) {
 			margin-bottom: rem(24);
@@ -178,14 +430,17 @@
 
 		@media (min-width: $md6) {
 			max-width: rem(318);
+			margin-bottom: rem(40);
 		}
 
 		@media (min-width: $md5) {
 			max-width: rem(378);
+			margin-bottom: rem(36);
 		}
 
 		@media (min-width: $md4) {
 			max-width: rem(408);
+			margin-bottom: rem(36);
 		}
 
 		@media (min-width: $md3) {
@@ -195,10 +450,11 @@
 
 		@media (min-width: $md2) {
 			max-width: rem(672);
-			margin-bottom: rem(70);
+			margin-bottom: rem(50);
 		}
 
 		@media (min-width: $md1) {
+			margin-bottom: rem(70);
 			max-width: rem(945);
 		}
 	}
@@ -229,6 +485,26 @@
 
 	// products__more
 	&__more {
+		.link-more {
+			line-height: math.div(11, 15);
+
+			@media (min-width: $md6) {
+				line-height: math.div(11, 15);
+			}
+
+			@media (min-width: $md3) {
+				line-height: math.div(13, 18);
+			}
+
+			@media (min-width: $md2) {
+				line-height: math.div(15, 21);
+			}
+
+			@media (min-width: $md1) {
+				line-height: math.div(32, 26);
+			}
+		}
+
 		margin-bottom: rem(50);
 
 		@media (min-width: $md6) {
@@ -236,19 +512,49 @@
 		}
 
 		@media (min-width: $md4) {
-			margin-bottom: rem(90);
+			margin-bottom: rem(70);
 		}
 
 		@media (min-width: $md3) {
-			margin-bottom: rem(100);
+			margin-bottom: rem(80);
 		}
 
 		@media (min-width: $md2) {
-			margin-bottom: rem(110);
+			margin-bottom: rem(96);
 		}
 
 		@media (min-width: $md1) {
-			margin-bottom: rem(170);
+			margin-bottom: rem(130);
+		}
+	}
+
+	.product-card__title {
+		font-size: rem(18);
+		margin-top: rem(12);
+		line-height: math.div(20, 18);
+
+		@media (min-width: $md6) {
+			font-size: rem(18);
+			margin-top: rem(12);
+			line-height: math.div(20, 18);
+		}
+
+		@media (min-width: $md3) {
+			font-size: rem(24);
+			margin-top: rem(16);
+			line-height: math.div(26, 24);
+		}
+
+		@media (min-width: $md2) {
+			font-size: rem(28);
+			margin-top: rem(14);
+			line-height: math.div(30, 28);
+		}
+
+		@media (min-width: $md1) {
+			font-size: rem(36);
+			margin-top: rem(20);
+			line-height: math.div(38, 36);
 		}
 	}
 }
@@ -507,7 +813,6 @@
 	// info__list
 	&__list {
 		font-family: $font-family;
-		// Nanotronica Text: OS/2 sTypoAscender 912, sTypoDescender -192, sCapHeight 704 (1000 UPM)
 		--font-ascent: 0.912em;
 		--font-descent: 0.192em;
 		--font-cap: 0.704em;
@@ -731,7 +1036,7 @@
 		}
 
 		@media (min-width: $md5) {
-				height: auto;
+			height: auto;
 			padding-top: rem(20);
 			padding-bottom: rem(20);
 		}
@@ -744,12 +1049,17 @@
 
 		@media (min-width: $md3) {
 			padding-top: rem(32);
-			padding-bottom: rem(32);
+			padding-bottom: rem(13);
 		}
 
 		@media (min-width: $md2) {
 			padding-top: rem(40);
+			padding-bottom: rem(20);
+		}
+
+		@media (min-width:$md1) {
 			padding-bottom: rem(40);
+
 		}
 	}
 
@@ -777,13 +1087,11 @@
 		@media (min-width: $md3) {
 			font-size: rem(24);
 			line-height: math.div(24, 16);
-			margin-bottom: 0;
 		}
 
 		@media (min-width: $md2) {
 			font-size: rem(28);
 			line-height: math.div(32, 28);
-			margin-bottom: rem(2);
 		}
 
 		@media (min-width: $md1) {
@@ -825,7 +1133,7 @@
 		--gutter-y: 0;
 		margin-top: 0;
 
-		> * {
+		>* {
 			width: 33.333333%;
 
 			@media (min-width: $md6) {
@@ -862,6 +1170,7 @@
 			.icon {
 				width: rem(25);
 				height: rem(17);
+
 				@media (min-width: $md6) {
 					width: rem(25);
 					height: rem(17);

@@ -35,6 +35,9 @@ get_template_part(
 <?php get_template_part('components/templates-parts/section', 'products'); ?>
 <?php get_template_part('components/templates-parts/section', 'progress-slider'); ?>
 <?php
+// Temporarily hidden on the front page: Events & news and Open Positions.
+// Keep these calls for possible re-enabling later.
+/*
 get_template_part(
 	'components/templates-parts/section',
 	'news',
@@ -42,8 +45,9 @@ get_template_part(
 		'items' => $ntronica_news_items,
 	)
 );
+get_template_part('components/templates-parts/section', 'vacancies');
+*/
 ?>
-<?php get_template_part('components/templates-parts/section', 'vacancies'); ?>
 <?php get_template_part('components/templates-parts/section', 'info'); ?>
 <?php get_template_part('components/templates-parts/section', 'contact'); ?>
 

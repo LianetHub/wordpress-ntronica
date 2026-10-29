@@ -297,7 +297,7 @@ $logo-viewbox-width: 234;
 		--check-track: #{rem(66)};
 		position: relative;
 		display: grid;
-		grid-template-columns: var(--check-track) minmax(0, 1fr);
+		grid-template-columns: var(--check-track) 1fr;
 		row-gap: rem(5);
 		align-items: start;
 		cursor: pointer;

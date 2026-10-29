@@ -37,6 +37,7 @@ $ntronica_intro = ntronica_get_product_category_intro($ntronica_category->slug);
 					'image_alt' => $ntronica_item['title'] . ' semiconductor manufacturing equipment',
 					'width' => 1351,
 					'height' => 1351,
+					'modifier' => 'small',
 				)); ?>
 			<?php endforeach; ?>
 		</div>

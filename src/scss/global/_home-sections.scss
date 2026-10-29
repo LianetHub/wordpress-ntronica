@@ -36,7 +36,7 @@
 
 		.overview__layout {
 			display: grid;
-			grid-template-columns: minmax(0, 1fr);
+			grid-template-columns: 1fr;
 			margin: 0;
 
 			>* {
@@ -349,8 +349,11 @@
 
 		@media (min-width: $md1) {
 			margin-top: rem(70);
+		}
 
-			.link-more {
+		// link-more
+		.link-more {
+			@media (min-width: $md1) {
 				display: block;
 				line-height: math.div(19, 26);
 			}

@@ -48,25 +48,25 @@
 
 		@media (min-width: $md5) {
 			font-size: rem(26);
-			line-height: calc(24 / 26);
+			line-height: math.div(24, 26);
 		}
 
 		@media (min-width: $md3) {
 			font-size: rem(32);
-			line-height: calc(25 / 32);
+			line-height: math.div(25, 32);
 			margin-bottom: rem(24);
 		}
 
 		@media (min-width: $md2) {
 			font-size: rem(36);
-			line-height: calc(24 / 36);
+			line-height: math.div(24, 36);
 			margin-bottom: 0;
 			padding-bottom: rem(32);
 		}
 
 		@media (min-width: $md1) {
 			font-size: rem(46);
-			line-height: calc(32 / 46);
+			line-height: math.div(32, 46);
 			padding-bottom: 0;
 			margin-bottom: rem(36);
 		}
@@ -206,14 +206,14 @@
 				--marker-gap: #{rem(10)};
 				--marker-col: #{rem(73)};
 				font-size: rem(20);
-				line-height: calc(24 / 20);
+				line-height: math.div(24, 20);
 			}
 
 			@media (min-width: $md1) {
 				--marker-gap: #{rem(19)};
 				--marker-col: #{rem(94)};
 				font-size: rem(27);
-				line-height: calc(32 / 27);
+				line-height: math.div(32, 27);
 			}
 		}
 
@@ -230,27 +230,27 @@
 		line-height: math.div(18, 16);
 
 		@media (min-width: $md6) {
-			line-height: calc(12 / 18);
+			line-height: math.div(12, 18);
 		}
 
 		@media (min-width: $md5) {
-			line-height: calc(12 / 18);
+			line-height: math.div(12, 18);
 		}
 
 		@media (min-width: $md4) {
-			line-height: calc(12 / 18);
+			line-height: math.div(12, 18);
 		}
 
 		@media (min-width: $md3) {
-			line-height: calc(16 / 24);
+			line-height: math.div(16, 24);
 		}
 
 		@media (min-width: $md2) {
-			line-height: calc(19 / 28);
+			line-height: math.div(19, 28);
 		}
 
 		@media (min-width: $md1) {
-			line-height: calc(34 / 36);
+			line-height: math.div(34, 36);
 		}
 	}
 

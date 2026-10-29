@@ -14,6 +14,7 @@
  *     @type string $image_alt Optional alt; defaults to title.
  *     @type int    $width     Image width. Default 622.
  *     @type int    $height    Image height. Default 412.
+ *     @type string $modifier  Optional BEM modifier (e.g. small).
  * }
  */
 
@@ -30,11 +31,17 @@ $ntronica_card = wp_parse_args(
 		'image_alt' => '',
 		'width'     => 622,
 		'height'    => 412,
+		'modifier'  => '',
 	)
 );
 
 if ('' === $ntronica_card['url']) {
 	return;
+}
+
+$ntronica_class = 'product-card';
+if ('' !== $ntronica_card['modifier']) {
+	$ntronica_class .= ' product-card--' . sanitize_html_class($ntronica_card['modifier']);
 }
 
 $ntronica_image_alt = $ntronica_card['image_alt'];
@@ -44,7 +51,7 @@ if ('' === $ntronica_image_alt) {
 
 $ntronica_has_image = '' !== $ntronica_card['image'];
 ?>
-<a class="product-card" href="<?php echo esc_url($ntronica_card['url']); ?>">
+<a class="<?php echo esc_attr($ntronica_class); ?>" href="<?php echo esc_url($ntronica_card['url']); ?>">
 	<div class="product-card__media" <?php echo $ntronica_has_image ? '' : ' aria-hidden="true"'; ?>>
 		<?php if ($ntronica_has_image) : ?>
 			<img

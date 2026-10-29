@@ -80,7 +80,7 @@
 	&__grid {
 		display: grid;
 		flex: 1;
-		grid-template-columns: minmax(0, 1fr);
+		grid-template-columns: 1fr;
 		gap: rem(24);
 		margin: 0;
 		align-content: space-between;
@@ -94,13 +94,13 @@
 		}
 
 		@media (min-width: $md6) {
-			grid-template-columns: repeat(3, minmax(0, 1fr));
+			grid-template-columns: repeat(3, 1fr);
 			// Allow for the heading's CSS line box instead of Figma's trimmed text box.
 			row-gap: min(#{rem(24)}, calc(var(--footer-height) - var(--footer-padding-top) - var(--sidebar-short-logo-inset) + var(--footer-baseline-descent) - #{rem(12 + 60)}));
 		}
 
 		@media (min-width: $md3) {
-			grid-template-columns: repeat(4, minmax(0, 1fr));
+			grid-template-columns: repeat(4, 1fr);
 			align-content: end;
 		}
 	}
@@ -125,17 +125,23 @@
 
 		@media (min-width: $md6) and (max-width: ($md3 - 0.02px)) {
 			display: contents;
+		}
 
-			> .row {
+		> .row {
+			@media (min-width: $md6) and (max-width: ($md3 - 0.02px)) {
 				display: contents;
+			}
 
-				> div {
+			> div {
+				@media (min-width: $md6) and (max-width: ($md3 - 0.02px)) {
 					width: auto;
 					padding: 0;
 					margin: 0;
 				}
+			}
 
-				> div:last-child {
+			> div:last-child {
+				@media (min-width: $md6) and (max-width: ($md3 - 0.02px)) {
 					grid-column: 2 / -1;
 				}
 			}
@@ -239,11 +245,6 @@
 
 		@media (min-width:$md6) {
 			--address-text: #{rem(160)};
-
-			> span {
-				display: block;
-				white-space: nowrap;
-			}
 		}
 
 		@media (min-width: $md2) {
@@ -255,6 +256,13 @@
 			--address-text: #{rem(259)};
 			font-size: rem(18);
 			line-height: math.div(21, 18);
+		}
+
+		> span {
+			@media (min-width: $md6) {
+				display: block;
+				white-space: nowrap;
+			}
 		}
 
 		&::before {

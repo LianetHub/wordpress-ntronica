@@ -112,6 +112,40 @@
 			line-height: math.div(38, 36);
 		}
 	}
+
+	// product-card--small
+	&--small {
+		min-width: 0;
+
+		// product-card__media
+		.product-card__media {
+			aspect-ratio: 1;
+		}
+
+		// product-card__title
+		.product-card__title {
+			font-family: $font-text;
+			font-size: rem(15);
+			font-weight: 400;
+			line-height: 1.2;
+			margin-top: rem(12);
+
+			@media (min-width: $md3) {
+				font-size: rem(18);
+				margin-top: rem(16);
+			}
+
+			@media (min-width: $md2) {
+				font-size: rem(21);
+				margin-top: rem(18);
+			}
+
+			@media (min-width: $md1) {
+				font-size: rem(26);
+				margin-top: rem(24);
+			}
+		}
+	}
 }
 
 .news-card {

@@ -93,11 +93,6 @@
 
 		@media (max-width:$md6) {
 			padding-top: rem(21);
-
-			.sticky-navbar__lang {
-				display: none;
-			}
-
 		}
 
 		@media (min-width: $md5) {
@@ -120,8 +115,16 @@
 			padding-bottom: rem(87);
 		}
 
+		// sticky-navbar__inner
 		.sticky-navbar__inner {
 			align-items: center;
+		}
+
+		// sticky-navbar__lang
+		.sticky-navbar__lang {
+			@media (max-width: $md6) {
+				display: none;
+			}
 		}
 
 		.lang-switcher {

@@ -7,7 +7,7 @@
 @mixin initial-slider-grid($columns, $rows, $group-size, $gap) {
 	>.swiper-wrapper {
 		display: grid;
-		grid-template-columns: repeat($columns, minmax(0, 1fr));
+		grid-template-columns: repeat($columns, 1fr);
 		grid-template-rows: repeat($rows, 1fr);
 		gap: rem($gap);
 		width: 100%;

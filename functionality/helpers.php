@@ -339,10 +339,6 @@ function ntronica_get_nav_tree()
 					'label' => 'All about microchips',
 				),
 				array(
-					'href'  => '#microchip-topics',
-					'label' => 'Microchip topics',
-				),
-				array(
 					'href'  => '#processes',
 					'label' => 'Chip making processes',
 				),

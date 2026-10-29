@@ -1213,35 +1213,29 @@
 		font-weight: 700;
 		color: $color-white;
 		font-size: rem(54);
-		font-weight: 400;
 		line-height: math.div(38, 54);
 
 		@media (min-width: $md6) {
 			font-size: rem(62);
-			font-weight: 400;
 			line-height: math.div(43, 62);
 		}
 
 		@media (min-width: $md5) {
 			font-size: rem(70);
-			font-weight: 400;
 			line-height: math.div(47, 70);
 		}
 
 		@media (min-width: $md3) {
 			font-size: rem(80);
-			font-weight: 400;
 			line-height: math.div(55, 80);
 		}
 
 		@media (min-width: $md2) {
 			font-size: rem(90);
-			font-weight: 400;
 			line-height: math.div(64, 90);
 		}
 
 		@media (min-width: $md1) {
-			font-weight: 700;
 			font-size: rem(120);
 			line-height: math.div(84, 120);
 		}

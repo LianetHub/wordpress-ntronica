@@ -40,6 +40,16 @@
 						'nav'       => ntronica_get_page_section_nav('about'),
 					)
 				);
+			} elseif (is_page('technology') || is_page_template('page-technology.php')) {
+				get_template_part(
+					'components/templates-parts/sticky-navbar',
+					null,
+					array(
+						'variant'   => 'nav',
+						'nav_label' => 'Technology sections',
+						'nav'       => ntronica_get_page_section_nav('technology'),
+					)
+				);
 			} elseif (is_page('products')) {
 				get_template_part(
 					'components/templates-parts/sticky-navbar',

@@ -30,5 +30,10 @@
 				</ul>
 			</div>
 		</div>
+		<div class="overview__more overview__more--mobile">
+			<a class="link-more" href="<?php echo esc_url(home_url('/about/')); ?>" data-title="LEARN MORE">
+				<span>LEARN MORE</span>
+			</a>
+		</div>
 	</div>
 </section>

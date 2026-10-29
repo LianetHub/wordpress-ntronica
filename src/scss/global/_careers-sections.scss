@@ -188,28 +188,3 @@
 		}
 	}
 }
-
-.vacancy+.contact {
-	padding-top: rem(50);
-	padding-bottom: rem(50);
-
-	@media (min-width: $md5) {
-		padding-top: rem(70);
-		padding-bottom: rem(70);
-	}
-
-	@media (min-width: $md3) {
-		padding-top: rem(80);
-		padding-bottom: rem(80);
-	}
-
-	@media (min-width: $md2) {
-		padding-top: rem(96);
-		padding-bottom: rem(90);
-	}
-
-	@media (min-width: $md1) {
-		padding-top: rem(114);
-		padding-bottom: rem(68);
-	}
-}

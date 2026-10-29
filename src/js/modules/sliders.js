@@ -121,7 +121,7 @@ export class Slider {
 				slidesPerView: 1,
 				spaceBetween: 24,
 				speed: 0,
-				allowTouchMove: false,
+				allowTouchMove: true,
 				simulateTouch: false,
 				grabCursor: false,
 				navigation: {

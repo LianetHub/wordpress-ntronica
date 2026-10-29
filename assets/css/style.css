@@ -5690,13 +5690,13 @@ body.page-template-page-contacts, body.error404, body.search, body.page-template
     line-height: 0.9444444444;
   }
 }
-.tech-microchips__more {
+.tech-microchips__more.link-more {
   margin: 1.875rem 0 1rem;
   text-transform: uppercase;
   line-height: 0.7333333333;
 }
 @media (min-width: 767.98px) {
-  .tech-microchips__more {
+  .tech-microchips__more.link-more {
     display: none;
   }
 }
@@ -7197,12 +7197,7 @@ body.page-template-page-contacts, body.error404, body.search, body.page-template
   color: #000000;
 }
 .form__consent a {
-  text-decoration: underline;
-}
-@media (any-hover: hover) {
-  .form__consent a:hover {
-    text-decoration: none;
-  }
+  text-decoration: none;
 }
 .form__consent .wpcf7-list-item {
   margin-left: 0;

@@ -254,7 +254,8 @@
 		}
 	}
 
-	&__more {
+	// tech-microchips__more
+	&__more.link-more {
 		margin: rem(30) 0 rem(16);
 		text-transform: uppercase;
 		line-height: math.div(11, 15);

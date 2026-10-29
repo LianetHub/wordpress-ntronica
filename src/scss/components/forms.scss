@@ -505,13 +505,7 @@
         color: $color-black;
 
         a {
-            text-decoration: underline;
-
-            @media (any-hover: hover) {
-                &:hover {
-                    text-decoration: none;
-                }
-            }
+            text-decoration: none;
         }
 
         .wpcf7-list-item {

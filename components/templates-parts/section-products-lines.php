@@ -26,7 +26,7 @@ $ntronica_lines = array(
 	array(
 		'id'    => 'process-control',
 		'title' => 'Process control',
-		'text'  => $ntronica_lines_text,
+		'text'  => 'Process control equipment refers to tools for measuring, analyzing, and inspecting semiconductor wafers during manufacturing, ensuring each step meets specs and delivers consistent, high-quality results. We develop complex tools and offer non-contact profilometers for surface relief measurement and 3D inspection systems for wire bonds after bonding and before packaging.',
 		'items' => array(
 			array(
 				'title' => 'Metrology',

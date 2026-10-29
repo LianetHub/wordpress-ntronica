@@ -47,6 +47,28 @@
 	width: 100%;
 	transition: background-color 200ms ease-in-out, color 200ms ease-in-out;
 
+	// Homepage navbar: fade in after the hero, hide immediately on return.
+	&[data-reveal-after-hero] {
+		opacity: 0;
+		visibility: hidden;
+		pointer-events: none;
+		transition: none;
+
+		&[data-variant="nav"] {
+			@media (max-width: $md6) {
+				display: block;
+				padding-block: rem(15);
+			}
+		}
+
+		&.is-visible {
+			opacity: 1;
+			visibility: visible;
+			pointer-events: auto;
+			transition: opacity 100ms ease-in-out;
+		}
+	}
+
 	// nav variant
 	&[data-variant="nav"] {
 		padding-top: rem(0);

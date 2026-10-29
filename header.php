@@ -28,6 +28,7 @@
 					array(
 						'variant' => 'nav',
 						'nav'     => array(),
+						'reveal_after_hero' => true,
 					)
 				);
 			} elseif (is_page('about')) {

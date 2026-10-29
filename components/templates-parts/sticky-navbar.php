@@ -12,6 +12,7 @@
  *     @type array<int,array{href:string,label:string}> $nav   Nav links (nav variant).
  *     @type array<int,array{label:string,url?:string}> $crumbs Mock crumbs (breadcrumbs variant).
  *     @type bool          $show_breadcrumbs Show Rank Math breadcrumbs (breadcrumbs variant).
+ *     @type bool          $reveal_after_hero Show only after the homepage hero leaves the viewport.
  * }
  */
 
@@ -30,6 +31,9 @@ $show_breadcrumbs = isset($args['show_breadcrumbs']) ? (bool) $args['show_breadc
 $ntronica_navbar_attrs = ' data-variant="' . esc_attr($variant) . '"';
 if ('' !== $theme) {
 	$ntronica_navbar_attrs .= ' data-theme="' . esc_attr($theme) . '"';
+}
+if (! empty($args['reveal_after_hero'])) {
+	$ntronica_navbar_attrs .= ' data-reveal-after-hero';
 }
 ?>
 

@@ -7756,7 +7756,7 @@ body.page-template-page-contacts, body.error404, body.search, body.page-template
 @media (min-width: 767.98px) {
   .page-hero--home {
     aspect-ratio: 768/1024;
-    padding-top: 5.5rem;
+    padding-top: 0.6875rem;
     padding-bottom: 0;
     min-height: 0;
   }
@@ -7777,7 +7777,7 @@ body.page-template-page-contacts, body.error404, body.search, body.page-template
 @media (min-width: 1439.98px) {
   .page-hero--home {
     aspect-ratio: 1440/1095;
-    padding-top: 5rem;
+    padding-top: 1.0625rem;
     padding-bottom: 0;
     min-height: 0;
   }
@@ -7785,14 +7785,14 @@ body.page-template-page-contacts, body.error404, body.search, body.page-template
 @media (min-width: 1664.98px) {
   .page-hero--home {
     aspect-ratio: 1665/1095;
-    padding-top: 4.75rem;
+    padding-top: 0.6875rem;
   }
 }
 @media (min-width: 2559.98px) {
   .page-hero--home {
     aspect-ratio: 2560/1440;
     min-height: 0;
-    padding-top: 7.375rem;
+    padding-top: 0.875rem;
     padding-bottom: 0;
   }
 }
@@ -7804,8 +7804,15 @@ body.page-template-page-contacts, body.error404, body.search, body.page-template
   align-self: auto;
   max-width: none;
   width: 100%;
+  font-family: "Nanotronica_Reduct", system-ui, -apple-system, "Segoe UI", sans-serif;
   font-size: 2.625rem;
   line-height: 1.2380952381;
+}
+.page-hero--home .page-hero__tagline > span {
+  clip-path: none;
+}
+.page-hero--home .page-hero__tagline::before {
+  content: none;
 }
 @media (min-width: 767.98px) {
   .page-hero--home .page-hero__tagline {
@@ -7873,6 +7880,24 @@ body.page-template-page-contacts, body.error404, body.search, body.page-template
   background-color: transparent;
   width: 100%;
   transition: background-color 200ms ease-in-out, color 200ms ease-in-out;
+}
+.sticky-navbar[data-reveal-after-hero] {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: none;
+}
+@media (max-width: 767.98px) {
+  .sticky-navbar[data-reveal-after-hero][data-variant=nav] {
+    display: block;
+    padding-block: 0.9375rem;
+  }
+}
+.sticky-navbar[data-reveal-after-hero].is-visible {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transition: opacity 100ms ease-in-out;
 }
 .sticky-navbar[data-variant=nav] {
   padding-top: 0rem;

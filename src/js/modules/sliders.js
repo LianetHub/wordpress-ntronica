@@ -15,6 +15,12 @@ export class Slider {
 		const nextEl = el.querySelector(".swiper-button-next");
 		const fractionEl = el.querySelector(".slider-nav__fraction");
 		const padFraction = (n) => String(n).padStart(2, "0");
+		// Swiper shares spaceBetween between axes; the design uses a separate row gap.
+		const updateGridRows = (swiper) => {
+			swiper.slides.forEach((slide) => {
+				slide.style.marginTop = slide.row > 0 ? "var(--slider-row-gap)" : "";
+			});
+		};
 
 		const fractionPagination = fractionEl
 			? {
@@ -29,6 +35,7 @@ export class Slider {
 
 		if (el.classList.contains("news-feed-slider")) {
 			new Swiper(el, {
+				on: { slidesUpdated: updateGridRows },
 				watchOverflow: true,
 				slidesPerView: 2,
 				slidesPerGroup: 6,
@@ -173,10 +180,11 @@ export class Slider {
 
 		if (el.classList.contains("media-publications-slider")) {
 			new Swiper(el, {
+				on: { slidesUpdated: updateGridRows },
 				watchOverflow: true,
 				slidesPerView: 1,
 				slidesPerGroup: 3,
-				spaceBetween: 30,
+				spaceBetween: 24,
 				speed: 0,
 				allowTouchMove: true,
 				grid: {
@@ -192,6 +200,12 @@ export class Slider {
 							rows: 2,
 							fill: "row",
 						},
+					},
+					2559.98: {
+						slidesPerView: 3,
+						slidesPerGroup: 6,
+						spaceBetween: 43,
+						grid: { rows: 2, fill: "row" },
 					},
 				},
 				navigation: {

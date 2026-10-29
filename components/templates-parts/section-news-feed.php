@@ -67,7 +67,7 @@ $ntronica_items = is_array($ntronica_feed['items']) ? $ntronica_feed['items'] : 
 								'title' => isset($ntronica_item['title']) ? $ntronica_item['title'] : '',
 								'url'   => isset($ntronica_item['url']) ? $ntronica_item['url'] : '#',
 								'image' => isset($ntronica_item['image']) ? $ntronica_item['image'] : '',
-								'class' => 'swiper-slide',
+								'class' => 'news-card--feed swiper-slide',
 							)
 						);
 						?>

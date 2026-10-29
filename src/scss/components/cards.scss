@@ -285,6 +285,24 @@
 
 		}
 	}
+
+	// news-card--feed
+	&--feed {
+		min-height: 0;
+
+		.news-card__title {
+			margin-top: rem(3);
+			font-family: $font-robert;
+
+			@media (min-width: $md3) {
+				margin-top: rem(10);
+			}
+
+			@media (min-width: $md1) {
+				margin-top: rem(15);
+			}
+		}
+	}
 }
 
 .vacancy-card {

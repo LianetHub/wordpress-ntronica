@@ -3,6 +3,7 @@
  * One card per slide; grid layout via Swiper (news / media).
  */
 import { initProductSpecs } from "./productSpecs.js";
+import { initProgressSlider } from "./progressSlider.js";
 
 export class Slider {
 	constructor(el) {
@@ -15,6 +16,7 @@ export class Slider {
 		const nextEl = el.querySelector(".swiper-button-next");
 		const fractionEl = el.querySelector(".slider-nav__fraction");
 		const padFraction = (n) => String(n).padStart(2, "0");
+
 		// Swiper shares spaceBetween between axes; the design uses a separate row gap.
 		const updateGridRows = (swiper) => {
 			swiper.slides.forEach((slide) => {
@@ -70,81 +72,7 @@ export class Slider {
 			el.classList.contains("progress-slider__slider") ||
 			el.classList.contains("progress-slider")
 		) {
-			const section = el.closest(".progress-slider") || el;
-			const indexEl = section.querySelector(".progress-slider__index");
-			const backgrounds = new Map();
-			let requestedBackground;
-			const loadBackground = (url) => {
-				if (backgrounds.has(url)) return backgrounds.get(url);
-				const image = new Image();
-				image.decoding = "async";
-				image.fetchPriority = "low";
-				const entry = { image, ready: false };
-				backgrounds.set(url, entry);
-				entry.promise = new Promise((resolve, reject) => {
-					image.onerror = reject;
-					if (typeof image.decode !== "function") image.onload = resolve;
-					image.src = url;
-					if (typeof image.decode === "function") image.decode().then(resolve, reject);
-				}).then(() => {
-					entry.ready = true;
-					return true;
-				}).catch(() => {
-					backgrounds.delete(url);
-					return false;
-				});
-				return entry;
-			};
-			const preloadBackgrounds = () => {
-				const urls = [...new Set(Array.from(el.querySelectorAll("[data-background]"), slide => slide.dataset.background))];
-				const preloadNext = async () => {
-					while (urls.length) await loadBackground(urls.shift()).promise;
-				};
-				const start = () => {
-					void preloadNext();
-					void preloadNext();
-				};
-				if ("requestIdleCallback" in window) window.requestIdleCallback(start, { timeout: 2000 });
-				else window.setTimeout(start, 0);
-			};
-			if (document.readyState === "complete") preloadBackgrounds();
-			else window.addEventListener("load", preloadBackgrounds, { once: true });
-			const updateBackground = (swiper) => {
-				const image = swiper.slides[swiper.activeIndex]?.dataset.background;
-				requestedBackground = image;
-				if (!image) return;
-				const entry = loadBackground(image);
-				const apply = () => {
-					if (requestedBackground === image && section.isConnected) {
-						section.style.backgroundImage = `url(${JSON.stringify(image)})`;
-					}
-				};
-				if (entry.ready) apply();
-				else void entry.promise.then(loaded => { if (loaded) apply(); });
-			};
-			new Swiper(el, {
-				watchOverflow: true,
-				autoHeight: false,
-				slidesPerView: 1,
-				spaceBetween: 24,
-				speed: 0,
-				allowTouchMove: true,
-				simulateTouch: false,
-				grabCursor: false,
-				navigation: {
-					prevEl: section.querySelector(".swiper-button-prev"),
-					nextEl: section.querySelector(".swiper-button-next"),
-				},
-				pagination: {
-					el: indexEl,
-					type: "fraction",
-					renderFraction: (currentClass) => `<span class="${currentClass}"></span>`,
-				},
-				on: {
-					init: updateBackground,
-					slideChange: updateBackground,
-				},
-			});
+			initProgressSlider(el);
 			return;
 		}
 
@@ -153,9 +81,13 @@ export class Slider {
 			el.classList.contains("product-gallery")
 		) {
 			const caption = el.querySelector(".product-gallery__caption");
+
 			const updateCaption = (swiper) => {
-				if (caption) caption.textContent = swiper.slides[swiper.activeIndex]?.dataset.caption || "";
+				if (!caption) return;
+				caption.textContent =
+					swiper.slides[swiper.activeIndex]?.dataset.caption || "";
 			};
+
 			new Swiper(el, {
 				loop: el.classList.contains("product-gallery") && slideCount > 1,
 				watchOverflow: true,
@@ -168,7 +100,10 @@ export class Slider {
 					nextEl,
 				},
 				pagination: fractionPagination,
-				on: { init: updateCaption, slideChange: updateCaption },
+				on: {
+					init: updateCaption,
+					slideChange: updateCaption,
+				},
 			});
 			return;
 		}
@@ -205,7 +140,10 @@ export class Slider {
 						slidesPerView: 3,
 						slidesPerGroup: 6,
 						spaceBetween: 43,
-						grid: { rows: 2, fill: "row" },
+						grid: {
+							rows: 2,
+							fill: "row",
+						},
 					},
 				},
 				navigation: {

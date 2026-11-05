@@ -1,33 +1,74 @@
-/** Keep the fixed labels and every machine aligned, including offscreen slides. */
+/**
+ * Product specs table: keep label column and machine slides row-aligned.
+ */
+
+function measureCellHeight(cell) {
+	const style = getComputedStyle(cell);
+	const contentHeight = cell.firstElementChild.getBoundingClientRect().height;
+	const padding =
+		(parseFloat(style.paddingTop) || 0) +
+		(parseFloat(style.paddingBottom) || 0);
+
+	return Math.max(parseFloat(style.minHeight) || 0, contentHeight + padding);
+}
+
 export function initProductSpecs(el) {
 	const section = el.closest(".product-specs");
-	const columns = [...section.querySelectorAll(".product-specs__labels, .swiper-slide")];
-	const rows = columns.map(column => [...column.querySelectorAll(".product-specs__col-title, .product-specs__cell")]);
+	const columns = [
+		...section.querySelectorAll(".product-specs__labels, .swiper-slide"),
+	];
+	const rows = columns.map((column) => [
+		...column.querySelectorAll(".product-specs__col-title, .product-specs__cell"),
+	]);
+
 	let frame = 0;
 	let destroyed = false;
+
 	const syncRows = () => {
 		frame = 0;
 		if (destroyed) return;
-		const tableWidth = el.getBoundingClientRect().right - rows[0][0].getBoundingClientRect().left;
-		if (tableWidth > 0) section.style.setProperty("--spec-table-width", `${tableWidth}px`);
-		const heights = rows[0].map((_, index) => Math.ceil(Math.max(...rows.map(column => {
-			const cell = column[index];
-			const style = getComputedStyle(cell);
-			return Math.max(parseFloat(style.minHeight) || 0,
-				cell.firstElementChild.getBoundingClientRect().height +
-				(parseFloat(style.paddingTop) || 0) + (parseFloat(style.paddingBottom) || 0));
-		}))));
-		rows.forEach(column => column.forEach((cell, index) => {
-			const height = `${heights[index]}px`;
-			if (cell.style.height !== height) cell.style.height = height;
-		}));
+
+		const tableWidth =
+			el.getBoundingClientRect().right -
+			rows[0][0].getBoundingClientRect().left;
+
+		if (tableWidth > 0) {
+			section.style.setProperty("--spec-table-width", `${tableWidth}px`);
+		}
+
+		const heights = rows[0].map((_, index) => {
+			const maxHeight = Math.max(
+				...rows.map((column) => measureCellHeight(column[index])),
+			);
+			return Math.ceil(maxHeight);
+		});
+
+		rows.forEach((column) => {
+			column.forEach((cell, index) => {
+				const height = `${heights[index]}px`;
+				if (cell.style.height !== height) {
+					cell.style.height = height;
+				}
+			});
+		});
 	};
+
 	const schedule = () => {
-		if (!frame && !destroyed) frame = requestAnimationFrame(syncRows);
+		if (!frame && !destroyed) {
+			frame = requestAnimationFrame(syncRows);
+		}
 	};
-	const observer = typeof ResizeObserver !== "undefined" ? new ResizeObserver(schedule) : null;
-	// Observe natural content sizes, so setting the row height cannot cause a loop.
-	rows.flat().forEach(cell => observer?.observe(cell.firstElementChild));
+
+	const observer =
+		typeof ResizeObserver !== "undefined"
+			? new ResizeObserver(schedule)
+			: null;
+
+	// Observe content nodes so setting row height cannot loop via ResizeObserver.
+	rows.flat().forEach((cell) => {
+		observer?.observe(cell.firstElementChild);
+	});
+
 	window.addEventListener("resize", schedule);
 	document.fonts?.ready.then(schedule);
 
@@ -37,11 +78,16 @@ export function initProductSpecs(el) {
 		spaceBetween: 14,
 		speed: 100,
 		allowTouchMove: true,
-		// Leave enough trailing space for the last machine to reach the left edge.
+		// Trailing space so the last machine can reach the left edge.
 		slidesOffsetAfter() {
-			return Math.max(0, this.size - el.querySelector(".swiper-slide").getBoundingClientRect().width);
+			const slide = el.querySelector(".swiper-slide");
+			return Math.max(0, this.size - slide.getBoundingClientRect().width);
 		},
-		breakpoints: { 767.98: { spaceBetween: 24 } },
+		breakpoints: {
+			767.98: {
+				spaceBetween: 24,
+			},
+		},
 		navigation: {
 			prevEl: el.querySelector(".swiper-button-prev"),
 			nextEl: el.querySelector(".swiper-button-next"),
@@ -57,6 +103,7 @@ export function initProductSpecs(el) {
 			},
 		},
 	});
+
 	syncRows();
 	return swiper;
 }

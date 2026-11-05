@@ -1,3 +1,5 @@
+import crypto from 'crypto';
+import fs from 'fs/promises';
 import path from 'path';
 import { promisify } from 'util';
 import gulp from 'gulp';
@@ -13,9 +15,15 @@ import {
 const glob = promisify( globCb );
 
 const DEBOUNCE_MS = 400;
+const MANIFEST_NAME = '.sftp-deploy-manifest.json';
+const HASH_ALGO = 'sha1';
+
 let pendingPaths = new Set();
 let debounceTimer = null;
 let deployQueue = Promise.resolve();
+
+/** In-memory copy of remote manifest; kept fresh across deploy + watch uploads. */
+let manifestCache = null;
 
 function log( message ) {
 	console.log( `[SFTP] ${ message }` );
@@ -29,9 +37,101 @@ function remoteFilePath( localPath ) {
 	return toPosix( path.posix.join( ftpEnv.FTP_REMOTE_PATH, toPosix( localPath ) ) );
 }
 
+function remoteManifestPath() {
+	return remoteFilePath( MANIFEST_NAME );
+}
+
+function isForceFullDeploy() {
+	return (
+		process.argv.includes( '--ftp-full' ) ||
+		process.env.FTP_FORCE_FULL === '1'
+	);
+}
+
+function emptyManifest() {
+	return { version: 1, files: {} };
+}
+
+async function hashFile( localPath ) {
+	const data = await fs.readFile( localPath );
+	return crypto.createHash( HASH_ALGO ).update( data ).digest( 'hex' );
+}
+
+async function buildLocalHashes( localPaths ) {
+	const entries = await Promise.all(
+		localPaths.map( async ( localPath ) => {
+			const hash = await hashFile( localPath );
+			return [ toPosix( localPath ), hash ];
+		} )
+	);
+	return Object.fromEntries( entries );
+}
+
+async function downloadRemoteManifest( sftp ) {
+	const remotePath = remoteManifestPath();
+
+	try {
+		const exists = await sftp.exists( remotePath );
+		if ( ! exists ) {
+			log( 'No remote manifest — full upload' );
+			return emptyManifest();
+		}
+
+		const buffer = await sftp.get( remotePath );
+		const raw = Buffer.isBuffer( buffer )
+			? buffer.toString( 'utf8' )
+			: String( buffer );
+		const parsed = JSON.parse( raw );
+
+		if ( ! parsed || typeof parsed.files !== 'object' ) {
+			log( 'Remote manifest invalid — full upload' );
+			return emptyManifest();
+		}
+
+		log(
+			`Remote manifest: ${ Object.keys( parsed.files ).length } file(s)`
+		);
+		return { version: 1, files: parsed.files };
+	} catch ( error ) {
+		log( `Manifest download failed (${ error.message }) — full upload` );
+		return emptyManifest();
+	}
+}
+
 async function ensureRemoteDir( sftp, remoteFile ) {
 	const remoteDir = path.posix.dirname( remoteFile );
 	await sftp.mkdir( remoteDir, true );
+}
+
+async function uploadManifest( sftp, manifest ) {
+	const remotePath = remoteManifestPath();
+	await ensureRemoteDir( sftp, remotePath );
+	await sftp.put(
+		Buffer.from( JSON.stringify( manifest, null, 2 ), 'utf8' ),
+		remotePath
+	);
+	manifestCache = manifest;
+}
+
+function pickChangedPaths( localHashes, remoteManifest, forceFull ) {
+	if ( forceFull ) {
+		return Object.keys( localHashes );
+	}
+
+	const remoteFiles = remoteManifest.files || {};
+	return Object.keys( localHashes ).filter(
+		( localPath ) => localHashes[ localPath ] !== remoteFiles[ localPath ]
+	);
+}
+
+function mergeManifest( base, localHashes, uploadedPaths ) {
+	const files = { ...( base.files || {} ) };
+
+	for ( const localPath of uploadedPaths ) {
+		files[ localPath ] = localHashes[ localPath ];
+	}
+
+	return { version: 1, files };
 }
 
 async function uploadFiles( localPaths, label ) {
@@ -41,7 +141,12 @@ async function uploadFiles( localPaths, label ) {
 		return;
 	}
 
-	const uniquePaths = [ ...new Set( localPaths.map( toPosix ) ) ].filter( Boolean );
+	const uniquePaths = [ ...new Set( localPaths.map( toPosix ) ) ]
+		.filter( Boolean )
+		.filter(
+			( filePath ) => path.posix.basename( filePath ) !== MANIFEST_NAME
+		);
+
 	if ( ! uniquePaths.length ) {
 		await sftp.end();
 		return;
@@ -51,15 +156,54 @@ async function uploadFiles( localPaths, label ) {
 		log( label );
 	}
 
-	log( `Uploading ${ uniquePaths.length } file(s)...` );
-
 	try {
-		for ( const localPath of uniquePaths ) {
+		const forceFull = isForceFullDeploy();
+		if ( forceFull ) {
+			log( 'Force full deploy (--ftp-full / FTP_FORCE_FULL=1)' );
+		}
+
+		const localHashes = await buildLocalHashes( uniquePaths );
+
+		if ( ! manifestCache ) {
+			manifestCache = forceFull
+				? emptyManifest()
+				: await downloadRemoteManifest( sftp );
+		}
+
+		const toUpload = pickChangedPaths(
+			localHashes,
+			manifestCache,
+			forceFull
+		);
+		const skipped = uniquePaths.length - toUpload.length;
+
+		if ( skipped > 0 ) {
+			log( `Skip unchanged: ${ skipped }` );
+		}
+
+		if ( ! toUpload.length ) {
+			log( 'Nothing to upload — all files match remote manifest' );
+			return;
+		}
+
+		log( `Uploading ${ toUpload.length } file(s)...` );
+
+		for ( const localPath of toUpload ) {
 			const remotePath = remoteFilePath( localPath );
 			await ensureRemoteDir( sftp, remotePath );
 			await sftp.fastPut( localPath, remotePath );
 			log( `↑ ${ localPath }` );
 		}
+
+		const nextManifest = mergeManifest(
+			manifestCache,
+			localHashes,
+			toUpload
+		);
+		await uploadManifest( sftp, nextManifest );
+		log(
+			`Manifest updated (${ Object.keys( nextManifest.files ).length } file(s))`
+		);
 	} finally {
 		await sftp.end();
 	}

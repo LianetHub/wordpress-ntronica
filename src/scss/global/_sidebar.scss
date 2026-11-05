@@ -35,6 +35,12 @@
 
 	@media (min-width: $md5) {
 		justify-content: space-between;
+		width: rem($sidebar-width-open-1024);
+		// Keep the full short mark inside the 52px collapsed bar.
+		padding: rem(12) rem(11) var(--sidebar-logo-bottom) rem(13);
+	}
+
+	@media (min-width: $md4) {
 		width: rem($sidebar-width-1200);
 		// 76 − 18 − 19 = 39
 		padding: rem(18) rem(19) var(--sidebar-logo-bottom) rem(18);
@@ -86,9 +92,13 @@
 		}
 
 		@media (min-width: $md5) {
+			width: rem($sidebar-width-open-1024);
+			touch-action: auto;
+		}
+
+		@media (min-width: $md4) {
 			width: rem($sidebar-width-1200);
 			padding-top: rem(18);
-			touch-action: auto;
 		}
 
 		@media (min-width: $md1) {
@@ -148,6 +158,10 @@
 			width: rem($sidebar-width-1024);
 		}
 
+		@media (min-width: $md4) {
+			width: rem($sidebar-width-collapsed-1200);
+		}
+
 		@media (min-width: $md1) {
 			width: rem(88);
 		}
@@ -175,6 +189,10 @@
 			}
 
 			@media (min-width: $md5) {
+				width: rem($sidebar-width-open-1024-ru);
+			}
+
+			@media (min-width: $md4) {
 				width: rem($sidebar-width-1200-ru);
 			}
 
@@ -186,6 +204,10 @@
 		// sidebar.sidebar--language-ru:not(.is-collapsed)
 		&:not(.is-collapsed) {
 			@media (min-width: $md5) {
+				width: rem($sidebar-width-open-1024-ru);
+			}
+
+			@media (min-width: $md4) {
 				width: rem($sidebar-width-1200-ru);
 			}
 
@@ -259,6 +281,11 @@
 
 		@media (min-width: $md5) {
 			display: block;
+			margin-left: rem(1);
+		}
+
+		@media (min-width: $md4) {
+			margin-left: 0;
 		}
 	}
 
@@ -273,7 +300,7 @@
 			gap: rem(6);
 		}
 
-		@media (min-width: $md5) {
+		@media (min-width: $md4) {
 			gap: rem(2);
 		}
 

@@ -1,45 +1,47 @@
 /**
- * Homepage: static hero and navigation revealed after it scrolls out.
- * Other pages: instant reduct wipe on scroll.
+ * Page hero: reduct wipe on scroll.
+ * Homepage also reveals sticky nav after the hero leaves the viewport.
  */
 export class PageHero {
 	constructor(el) {
-		if (el.classList.contains("page-hero--home")) {
-			this.initHomeNavbar(el);
-			return;
-		}
-
 		this.targets = [
 			el.querySelector(".page-hero__title[data-title]"),
 			el.querySelector(".page-hero__tagline[data-title]"),
 		].filter(Boolean);
 
-		if (!this.targets.length) return;
+		if (this.targets.length) {
+			this.updateWipe = () => {
+				const wipe = window.scrollY > 0 ? "100%" : "0%";
+				this.targets.forEach((t) => {
+					t.style.setProperty("--hero-wipe", wipe);
+				});
+			};
 
-		this.update = () => {
-			const wipe = window.scrollY > 0 ? "100%" : "0%";
-			this.targets.forEach((t) =>
-				t.style.setProperty("--hero-wipe", wipe),
-			);
-		};
+			this.updateWipe();
+			window.addEventListener("scroll", this.updateWipe, { passive: true });
+		}
 
-		this.update();
-		window.addEventListener("scroll", this.update, { passive: true });
+		if (el.classList.contains("page-hero--home")) {
+			this.initHomeNavbar(el);
+		}
 	}
 
 	initHomeNavbar(hero) {
 		const navbar = document.querySelector(".sticky-navbar[data-reveal-after-hero]");
 		if (!navbar) return;
 
-		this.update = () => {
-			navbar.classList.toggle("is-visible", hero.getBoundingClientRect().bottom <= 0);
+		this.updateNavbar = () => {
+			navbar.classList.toggle(
+				"is-visible",
+				hero.getBoundingClientRect().bottom <= 0,
+			);
 		};
 
-		this.update();
-		window.addEventListener("scroll", this.update, { passive: true });
-		window.addEventListener("resize", this.update);
-		window.addEventListener("pageshow", this.update);
-		this.resizeObserver = new ResizeObserver(this.update);
+		this.updateNavbar();
+		window.addEventListener("scroll", this.updateNavbar, { passive: true });
+		window.addEventListener("resize", this.updateNavbar);
+		window.addEventListener("pageshow", this.updateNavbar);
+		this.resizeObserver = new ResizeObserver(this.updateNavbar);
 		this.resizeObserver.observe(hero);
 	}
 }

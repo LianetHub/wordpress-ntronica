@@ -101,12 +101,14 @@ body {
 
 	@media (min-width: $md5) {
 		--sidebar-width: #{rem($sidebar-width-1024)};
-		--sidebar-logo-width: #{rem(193)};
-		--sidebar-logo-bottom: #{rem(18)};
+		--sidebar-logo-width: #{rem(133.483)};
+		--sidebar-logo-bottom: #{rem(11.564)};
 	}
 
 	@media (min-width: $md4) {
 		--sidebar-width: #{rem($sidebar-width-1200)};
+		--sidebar-logo-width: #{rem(193)};
+		--sidebar-logo-bottom: #{rem(18)};
 	}
 
 	@media (min-width: $md1) {
@@ -119,11 +121,12 @@ body {
 		--sidebar-short-logo-ratio: #{math.div(34 - 15.0371, 293)};
 
 		@media (min-width: $md5) {
-			--sidebar-logo-width: #{rem(242)};
+			--sidebar-logo-width: #{rem(167.063)};
 		}
 
 		@media (min-width: $md4) {
 			--sidebar-width: #{rem($sidebar-width-1200-ru)};
+			--sidebar-logo-width: #{rem(242)};
 		}
 
 		@media (min-width: $md1) {

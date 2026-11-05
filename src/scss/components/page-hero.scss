@@ -51,7 +51,7 @@
 	@media (min-width: $md1) {
 		min-height: rem(1100);
 		aspect-ratio: 2560 / 1100;
-		padding-top: rem(118);
+		padding-top: rem(102);
 		padding-bottom: rem(82);
 	}
 
@@ -248,17 +248,8 @@
 			align-self: auto;
 			max-width: none;
 			width: 100%;
-			font-family: $font-reduct;
 			font-size: rem(42);
 			line-height: math.div(52, 42);
-
-			>span {
-				clip-path: none;
-			}
-
-			&::before {
-				content: none;
-			}
 
 			@media (min-width: $md6) {
 				--tagline-pad: 0;

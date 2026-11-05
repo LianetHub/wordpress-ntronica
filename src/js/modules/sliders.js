@@ -5,10 +5,25 @@
 import { initProductSpecs } from "./productSpecs.js";
 import { initProgressSlider } from "./progressSlider.js";
 
+const SLIDER_SELECTOR = [
+	".progress-slider__slider",
+	".news-feed-slider",
+	".news-article-slider",
+	".media-publications-slider",
+	".product-gallery",
+	".product-specs__slider",
+].join(", ");
+
 export class Slider {
-	constructor(el) {
+	static init() {
 		if (typeof Swiper === "undefined") return;
 
+		document.querySelectorAll(SLIDER_SELECTOR).forEach((el) => {
+			new Slider(el);
+		});
+	}
+
+	constructor(el) {
 		const slideCount = el.querySelectorAll(".swiper-slide").length;
 		if (!slideCount) return;
 
@@ -68,18 +83,13 @@ export class Slider {
 			return;
 		}
 
-		if (
-			el.classList.contains("progress-slider__slider") ||
-			el.classList.contains("progress-slider")
-		) {
+		if (el.classList.contains("progress-slider__slider") ||
+			el.classList.contains("progress-slider")) {
 			initProgressSlider(el);
 			return;
 		}
 
-		if (
-			el.classList.contains("news-article-slider") ||
-			el.classList.contains("product-gallery")
-		) {
+		if (el.classList.contains("news-article-slider") || el.classList.contains("product-gallery")) {
 			const caption = el.querySelector(".product-gallery__caption");
 
 			const updateCaption = (swiper) => {

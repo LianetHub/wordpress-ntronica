@@ -54,16 +54,21 @@
 			line-height: math.div(14, 20);
 
 			@media (min-width: $md6) {
+				// Match the visible cap tops of Nanotronica and CoFo without moving the body columns.
+				position: relative;
+				top: rem(7);
 				min-height: rem(20);
 				line-height: math.div(20, 26);
 			}
 
 			@media (min-width: $md3) {
+				top: rem(6);
 				min-height: rem(25);
 				line-height: math.div(25, 32);
 			}
 
 			@media (min-width: $md2) {
+				top: rem(7);
 				min-height: rem(26);
 				line-height: math.div(24, 36);
 			}

@@ -3,6 +3,8 @@
 /**
  * WPML language switcher.
  *
+ * @param array $args Optional switch_label_format for the accessible label (%s is the language name).
+ *
  * @package ntronica
  */
 
@@ -17,6 +19,8 @@ $languages = apply_filters('wpml_active_languages', null, [
 if (empty($languages) || ! is_array($languages)) {
 	return;
 }
+
+$switch_label_format = $args['switch_label_format'] ?? 'Switch to %s';
 
 foreach ($languages as $language) {
 	if (! empty($language['active'])) {
@@ -36,7 +40,7 @@ foreach ($languages as $language) {
 		href="<?php echo esc_url($url); ?>"
 		hreflang="<?php echo esc_attr(strtolower($code)); ?>"
 		lang="<?php echo esc_attr(strtolower($code)); ?>"
-		aria-label="<?php echo esc_attr(sprintf('Switch to %s', $name)); ?>">
+		aria-label="<?php echo esc_attr(sprintf($switch_label_format, $name)); ?>">
 		<?php echo esc_html($code); ?>
 	</a>
 <?php

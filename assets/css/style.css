@@ -4668,6 +4668,8 @@ body.has-cookie-notice .site-body {
   }
 
   .overview.overview--home .overview__title {
+    position: relative;
+    top: 0.4375rem;
     min-height: 1.25rem;
     line-height: 0.7692307692;
   }
@@ -6985,6 +6987,7 @@ body.has-cookie-notice .site-body {
   }
 
   .overview.overview--home .overview__title {
+    top: 0.375rem;
     min-height: 1.5625rem;
     line-height: 0.78125;
   }
@@ -7878,6 +7881,7 @@ body.has-cookie-notice .site-body {
   }
 
   .overview.overview--home .overview__title {
+    top: 0.4375rem;
     min-height: 1.625rem;
     line-height: 0.6666666667;
   }

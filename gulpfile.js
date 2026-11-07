@@ -118,7 +118,7 @@ const dev = gulp.series(
 	ftpDeployAssets,
 	gulp.parallel( watcher, server )
 );
-const build = gulp.series( reset, mainTasks );
+const build = gulp.series( reset, mainTasks, ftpDeployAssets );
 const deployZIP = gulp.series( reset, mainTasks, zip );
 
 export { dev };

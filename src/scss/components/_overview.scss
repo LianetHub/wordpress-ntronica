@@ -1,0 +1,241 @@
+@use "sass:math";
+@use "../variables" as *;
+@use "../mixins" as *;
+
+.overview {
+	padding-top: rem(30);
+	padding-bottom: 0;
+
+	@media (min-width: $md6) {
+		padding-top: rem(36);
+	}
+
+	@media (min-width: $md5) {
+		padding-top: rem(42);
+	}
+
+	@media (min-width: $md4) {
+		padding-top: rem(36);
+	}
+
+	@media (min-width: $md3) {
+		padding-top: rem(40);
+	}
+
+	@media (min-width: $md2) {
+		padding-top: rem(50);
+	}
+
+	@media (min-width: $md1) {
+		padding-top: rem(90);
+	}
+
+	// overview__layout
+	&__layout {
+		--gutter-x: #{rem(24)};
+		--gutter-y: #{rem(30)};
+
+		@media (min-width: $md6) {
+			--gutter-y: 0;
+			align-items: stretch;
+		}
+	}
+
+	// overview__summary
+	&__summary {
+		display: flex;
+		flex-direction: column;
+	}
+
+	// overview__title
+	&__title {
+		line-height: math.div(14, 20);
+
+		@media (min-width: $md6) {
+			min-height: rem(20);
+			line-height: math.div(20, 26);
+		}
+
+		@media (min-width: $md3) {
+			min-height: rem(25);
+			line-height: math.div(25, 32);
+		}
+
+		@media (min-width: $md2) {
+			min-height: rem(26);
+			line-height: math.div(24, 36);
+		}
+
+		@media (min-width: $md1) {
+			min-height: rem(33);
+			line-height: math.div(32, 46);
+		}
+	}
+
+	// overview__subtitle
+	&__subtitle {
+		margin-top: 0;
+		font-size: rem(18);
+		line-height: math.div(13, 18);
+
+		@media (min-width: $md6) {
+			min-height: rem(20);
+			padding-top: rem(7);
+		}
+
+		@media (min-width: $md3) {
+			min-height: rem(25);
+			padding-top: rem(8);
+			font-size: rem(24);
+			line-height: math.div(16, 24);
+		}
+
+		@media (min-width: $md2) {
+			min-height: rem(26);
+			padding-top: rem(7);
+			font-size: rem(28);
+			line-height: math.div(19, 28);
+		}
+
+		@media (min-width: $md1) {
+			min-height: rem(33);
+			padding-top: rem(8);
+			font-size: rem(36);
+			line-height: math.div(25, 36);
+		}
+	}
+
+	// overview__intro
+	&__intro {
+		margin-top: rem(15);
+		margin-bottom: 0;
+
+		@media (min-width: $md6) {
+			margin-top: rem(16);
+		}
+
+		@media (min-width: $md3) {
+			margin-top: rem(24);
+		}
+
+		@media (min-width: $md2) {
+			margin-top: rem(30);
+		}
+
+		@media (min-width: $md1) {
+			margin-top: rem(36);
+		}
+	}
+
+	// overview__features
+	// Preserve overview metrics over the generic feature-list breakpoint rules.
+	.overview__features {
+		--marker-col: #{rem(56)};
+		--marker-gap: #{rem(11)};
+		--marker-size: #{rem(11)};
+		margin-top: rem(16);
+		gap: rem(6);
+		line-height: math.div(16, 14);
+
+		@media (min-width: $md4) {
+			line-height: math.div(18, 14);
+		}
+
+		@media (min-width: $md3) {
+			--marker-col: #{rem(63)};
+			--marker-gap: #{rem(13)};
+			--marker-size: #{rem(13)};
+			margin-top: rem(24);
+			gap: rem(8);
+			line-height: math.div(21, 17);
+		}
+
+		@media (min-width: $md2) {
+			--marker-col: #{rem(73)};
+			--marker-gap: #{rem(15)};
+			--marker-size: #{rem(15)};
+			margin-top: rem(30);
+			line-height: math.div(24, 20);
+		}
+
+		@media (min-width: $md1) {
+			--marker-col: #{rem(94)};
+			--marker-gap: #{rem(19)};
+			--marker-size: #{rem(19)};
+			margin-top: rem(36);
+			gap: rem(12);
+			line-height: math.div(29, 27);
+		}
+	}
+
+	// overview__more
+	&__more {
+		display: none;
+		margin-top: auto;
+		padding-top: rem(30);
+
+		@media (min-width: $md6) {
+			display: block;
+		}
+
+		// overview__more--mobile
+		&--mobile {
+			display: block;
+
+			@media (min-width: $md6) {
+				display: none;
+			}
+		}
+
+		.link-more {
+			display: block;
+			line-height: math.div(11, 15);
+
+			@media (min-width: $md3) {
+				line-height: math.div(13, 18);
+			}
+
+			@media (min-width: $md2) {
+				line-height: math.div(15, 21);
+			}
+
+			@media (min-width: $md1) {
+				line-height: math.div(19, 26);
+			}
+		}
+	}
+
+	// overview__lang
+	&__lang {
+		display: none;
+		margin-bottom: rem(10);
+		font-family: $font-family;
+		font-weight: 700;
+		font-size: rem(15);
+		line-height: math.div(12, 15);
+		color: $color-black;
+		text-align: right;
+		text-transform: lowercase;
+
+		@media (min-width: $md6) {
+			display: block;
+		}
+
+		@media (min-width: $md3) {
+			margin-bottom: rem(12);
+			font-size: rem(18);
+			line-height: math.div(14, 18);
+		}
+
+		@media (min-width: $md2) {
+			font-size: rem(21);
+			line-height: math.div(15, 21);
+		}
+
+		@media (min-width: $md1) {
+			margin-bottom: rem(50);
+			font-size: rem(25);
+			line-height: math.div(19, 25);
+		}
+	}
+}

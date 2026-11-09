@@ -2,105 +2,27 @@
 @use "../variables" as *;
 @use "../mixins" as *;
 
-.overview {
-	padding-top: rem(30);
+.overview--about {
 	padding-bottom: rem(14);
 
 	@media (min-width: $md6) {
-		padding-top: rem(30);
 		padding-bottom: rem(24);
 	}
 
 	@media (min-width: $md4) {
-		padding-top: rem(30);
 		padding-bottom: rem(36);
 	}
 
 	@media (min-width: $md3) {
-		padding-top: rem(52);
 		padding-bottom: rem(40);
 	}
 
 	@media (min-width: $md2) {
-		padding-top: rem(50);
 		padding-bottom: rem(52);
 	}
 
 	@media (min-width: $md1) {
-		padding-top: rem(95);
 		padding-bottom: rem(70);
-	}
-
-	// overview__layout
-	&__layout {
-		--gutter-x: #{rem(24)};
-		--gutter-y: #{rem(16)};
-
-		@media (min-width: $md6) {
-			--gutter-y: #{rem(20)};
-			align-items: start;
-		}
-
-		@media (min-width: $md3) {
-			--gutter-y: #{rem(24)};
-		}
-
-		@media (min-width: $md1) {
-			--gutter-y: #{rem(36)};
-		}
-	}
-
-	// overview__subtitle
-	&__subtitle {
-		margin-top: rem(14);
-
-		@media (min-width: $md6) {
-			margin-top: 0;
-		}
-	}
-
-	// overview__intro
-	&__intro {
-		margin-top: rem(16);
-
-		@media (min-width: $md6) {
-			margin-top: rem(16);
-		}
-
-		@media (min-width: $md3) {
-			margin-top: rem(24);
-		}
-
-		@media (min-width: $md2) {
-			margin-top: rem(32);
-		}
-
-		@media (min-width: $md1) {
-			margin-top: rem(36);
-		}
-	}
-
-	// overview__features
-	&__features {
-		margin-top: rem(16);
-
-		@media (min-width: $md6) {
-			margin-top: rem(16);
-		}
-
-		@media (min-width: $md3) {
-			margin-top: rem(12);
-		}
-
-		@media (min-width: $md2) {
-			margin-top: rem(22);
-		}
-
-		@media (min-width: $md1) {
-			gap: rem(20);
-			line-height: 1.1;
-			margin-top: rem(32);
-		}
 	}
 }
 

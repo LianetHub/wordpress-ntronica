@@ -6,7 +6,7 @@
  * @package ntronica
  */
 ?>
-<section class="overview overview--home" id="overview">
+<section class="overview" id="overview">
 	<div class="container">
 		<div class="row overview__layout">
 			<div class="col-12 col-md-6 overview__summary">

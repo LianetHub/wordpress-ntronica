@@ -29,3 +29,5 @@ require_once FUNC_PATH . 'product.php';
 require_once FUNC_PATH . 'integrations.php';
 require_once FUNC_PATH . 'consent.php';
 require_once FUNC_PATH . 'analytics.php';
+require_once FUNC_PATH . 'acf.php';
+require_once FUNC_PATH . 'wpml-acf.php';

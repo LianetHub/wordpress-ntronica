@@ -1,53 +1,36 @@
 <?php
 
 /**
- * Front page template 
+ * Front page template — powered by ACF
  *
  * @package ntronica
  */
 
 get_header();
 
-// Temporary mock content — real WP posts wiring comes later.
-$ntronica_news_items = array_fill(
-	0,
-	4,
-	array(
-		'date'  => '25.01.2023',
-		'title' => 'Lorem ipsum dolor',
-		'url'   => ntronica_get_news_article_url(),
-	)
+$ntronica_hero_tagline = get_field('hero_tagline');
+$ntronica_hero_image   = get_field('hero_image');
+
+$ntronica_fp_hero_args = array(
+    'title'   => '',
+    'tagline' => is_string($ntronica_hero_tagline) && '' !== $ntronica_hero_tagline
+        ? $ntronica_hero_tagline
+        : 'Technological language of the future',
+    'image'   => is_string($ntronica_hero_image) && '' !== $ntronica_hero_image
+        ? $ntronica_hero_image
+        : IMG_PATH . '/home/hero.webp',
 );
 ?>
-
 <?php
 get_template_part(
-	'components/templates-parts/section',
-	'page-hero',
-	array(
-		'title'   => '',
-		'tagline' => 'Technological language of the future',
-		'image'   => IMG_PATH . '/home/hero.webp',
-	)
+    'components/templates-parts/section',
+    'page-hero',
+    $ntronica_fp_hero_args
 );
 ?>
 <?php get_template_part('components/templates-parts/section', 'home-overview'); ?>
 <?php get_template_part('components/templates-parts/section', 'products'); ?>
 <?php get_template_part('components/templates-parts/section', 'progress-slider'); ?>
-<?php
-// Temporarily hidden on the front page: Events & news and Open Positions.
-// Keep these calls for possible re-enabling later.
-/*
-get_template_part(
-	'components/templates-parts/section',
-	'news',
-	array(
-		'items' => $ntronica_news_items,
-	)
-);
-get_template_part('components/templates-parts/section', 'vacancies');
-*/
-?>
 <?php get_template_part('components/templates-parts/section', 'info'); ?>
 <?php get_template_part('components/templates-parts/section', 'contact'); ?>
 

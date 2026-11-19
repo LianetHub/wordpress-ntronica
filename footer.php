@@ -1,10 +1,30 @@
 <?php
 
 /**
- * Footer
+ * Footer — powered by ACF
  *
  * @package ntronica
  */
+
+$ntronica_email_1       = get_field('ntronica_footer_email_1', 'option');
+$ntronica_email_2       = get_field('ntronica_footer_email_2', 'option');
+$ntronica_phone         = get_field('ntronica_footer_phone', 'option');
+$ntronica_website       = get_field('ntronica_footer_website', 'option');
+$ntronica_address       = get_field('ntronica_footer_address', 'option');
+$ntronica_privacy_url   = get_field('ntronica_footer_privacy_url', 'option');
+$ntronica_terms_url     = get_field('ntronica_footer_terms_url', 'option');
+
+$ntronica_email_1     = is_string($ntronica_email_1) && '' !== $ntronica_email_1 ? $ntronica_email_1 : 'contact@ntronica.com';
+$ntronica_email_2     = is_string($ntronica_email_2) && '' !== $ntronica_email_2 ? $ntronica_email_2 : 'business@ntronica.com';
+$ntronica_phone       = is_string($ntronica_phone) && '' !== $ntronica_phone ? $ntronica_phone : '+91 221-234-5678';
+$ntronica_website     = is_string($ntronica_website) && '' !== $ntronica_website ? $ntronica_website : 'https://www.ntronica.com';
+$ntronica_privacy_url = is_string($ntronica_privacy_url) && '' !== $ntronica_privacy_url ? $ntronica_privacy_url : home_url('/privacy-policy/');
+$ntronica_terms_url   = is_string($ntronica_terms_url) && '' !== $ntronica_terms_url ? $ntronica_terms_url : home_url('/terms-of-use/');
+
+$ntronica_address_lines = array();
+if (is_string($ntronica_address) && '' !== $ntronica_address) {
+	$ntronica_address_lines = explode("\n", str_replace(array("\r\n", "\r"), "\n", $ntronica_address));
+}
 ?>
 </main>
 <footer class="footer">
@@ -28,25 +48,29 @@
 			<div class="col-12 col-md-4 col-xxl-3">
 				<ul class="feature-list">
 					<li data-label="Mail" data-label-short="Eml">
-						<a href="mailto:contact@ntronica.com">contact@ntronica.com</a> <br>
-						<a href="mailto:business@ntronica.com">business@ntronica.com</a>
+						<a href="mailto:<?php echo esc_attr($ntronica_email_1); ?>"><?php echo esc_html($ntronica_email_1); ?></a><br>
+						<a href="mailto:<?php echo esc_attr($ntronica_email_2); ?>"><?php echo esc_html($ntronica_email_2); ?></a>
 					</li>
 					<li data-label="Tel">
-						<a href="tel:+912212345678">+91 221-234-5678</a>
+						<a href="tel:<?php echo esc_attr(preg_replace('/[^\d+]/', '', $ntronica_phone)); ?>"><?php echo esc_html($ntronica_phone); ?></a>
 					</li>
 					<li data-label="Web">
-						<a href="https://www.ntronica.com">www.ntronica.com</a>
+						<a href="<?php echo esc_url($ntronica_website); ?>"><?php echo esc_html(preg_replace('#^https?://#', '', $ntronica_website)); ?></a>
 					</li>
 				</ul>
 			</div>
 
 			<div class="col-12 col-md-4 col-xxl-3">
+				<?php if (! empty($ntronica_address_lines)) : ?>
 				<address class="footer__address" data-label="Add">
-					<span>8 Ulsoor Road, Yellapa</span>
-					<span>Chetty Layout, Ulsoor,</span>
-					<span>Bangaluru, Karnataka,</span>
-					<span>560042,&nbsp;India</span>
+					<?php foreach ($ntronica_address_lines as $ntronica_line) : ?>
+						<?php $ntronica_line = trim($ntronica_line); ?>
+						<?php if ('' !== $ntronica_line) : ?>
+						<span><?php echo esc_html($ntronica_line); ?></span>
+						<?php endif; ?>
+					<?php endforeach; ?>
 				</address>
+				<?php endif; ?>
 			</div>
 
 			<div class="col-12 col-md-4 col-xxl-3">
@@ -55,8 +79,8 @@
 						<?php get_search_form(array('ntronica_variant' => 'footer')); ?>
 					</div>
 					<div class="footer__policies">
-						<a class="footer__link" href="<?php echo esc_url(home_url('/privacy-policy/')); ?>">Privacy policy</a>
-						<a class="footer__link" href="<?php echo esc_url(home_url('/terms-of-use/')); ?>">Terms of use</a>
+						<a class="footer__link" href="<?php echo esc_url($ntronica_privacy_url); ?>">Privacy policy</a>
+						<a class="footer__link" href="<?php echo esc_url($ntronica_terms_url); ?>">Terms of use</a>
 					</div>
 				</div>
 			</div>

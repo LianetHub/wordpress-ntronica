@@ -309,6 +309,13 @@ function ntronica_get_nav_tree()
 		return $ntronica_tree;
 	}
 
+	$ntronica_acf_tree = function_exists('ntronica_acf_get_nav_tree') ? ntronica_acf_get_nav_tree() : array();
+
+	if (! empty($ntronica_acf_tree)) {
+		$ntronica_tree = $ntronica_acf_tree;
+		return $ntronica_tree;
+	}
+
 	$ntronica_tree = array(
 		array(
 			'slug'     => 'about',
@@ -460,7 +467,22 @@ function ntronica_is_nav_item_current($slug)
 		return is_home() || is_singular('post');
 	}
 
-	return is_page($slug);
+	if (is_page($slug)) {
+		return true;
+	}
+
+	$ntronica_tree = ntronica_get_nav_tree();
+	foreach ($ntronica_tree as $ntronica_item) {
+		if ($slug === $ntronica_item['slug'] && isset($ntronica_item['url'])) {
+			$ntronica_request_path = wp_parse_url(wp_unslash($_SERVER['REQUEST_URI'] ?? ''), PHP_URL_PATH);
+			$ntronica_item_path    = wp_parse_url($ntronica_item['url'], PHP_URL_PATH);
+			if (is_string($ntronica_request_path) && is_string($ntronica_item_path) && rtrim($ntronica_request_path, '/') === rtrim($ntronica_item_path, '/')) {
+				return true;
+			}
+		}
+	}
+
+	return false;
 }
 
 /**

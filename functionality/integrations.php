@@ -24,94 +24,53 @@ function ntronica_cf7_contact_messages()
 }
 
 /**
- * Replace SWV error text for one rule, if its field is in the map.
+ * Override SWV error messages for the Contact form via filter.
  *
- * @param object               $rule     SWV rule.
- * @param array<string,string> $messages Field name => tip.
+ * CF7 6.x made rule $error readonly, so we use the dedicated filter instead
+ * of modifying the property by reflection.
  */
-function ntronica_cf7_set_rule_error($rule, $messages)
-{
-	if (! is_object($rule)) {
-		return;
-	}
+add_filter(
+	'wpcf7_swv_rule_error_message',
+	function ($message, $rule) {
+		static $messages = null;
 
-	try {
-		$reflection = new ReflectionObject($rule);
-	} catch (ReflectionException $exception) {
-		unset($exception);
-		return;
-	}
-
-	if ($reflection->hasProperty('properties')) {
-		$property = $reflection->getProperty('properties');
-		$property->setAccessible(true);
-		$props = $property->getValue($rule);
-		if (is_array($props) && isset($props['field'], $messages[$props['field']])) {
-			$props['error'] = $messages[$props['field']];
-			$property->setValue($rule, $props);
-			return;
+		if (null === $messages) {
+			$messages = ntronica_cf7_contact_messages();
 		}
-	}
 
-	if (! $reflection->hasProperty('field') || ! $reflection->hasProperty('error')) {
-		return;
-	}
+		if (! is_object($rule)) {
+			return $message;
+		}
 
-	$field_prop = $reflection->getProperty('field');
-	$error_prop = $reflection->getProperty('error');
-	$field_prop->setAccessible(true);
-	$error_prop->setAccessible(true);
-	$field = $field_prop->getValue($rule);
-	if (is_string($field) && isset($messages[$field])) {
-		$error_prop->setValue($rule, $messages[$field]);
-	}
-}
-
-/**
- * Custom required/format tips for the Contact us form.
- *
- * @param object $schema       WPCF7_SWV_Schema.
- * @param object $contact_form WPCF7_ContactForm.
- */
-function ntronica_cf7_contact_schema($schema, $contact_form)
-{
-	if (! is_object($contact_form) || ! method_exists($contact_form, 'hash')) {
-		return;
-	}
-	if ('9a6010d' !== (string) $contact_form->hash()) {
-		return;
-	}
-	if (! is_object($schema)) {
-		return;
-	}
-
-	$rules = array();
-	if (method_exists($schema, 'rules')) {
-		$rules = $schema->rules();
-	} else {
+		$field = null;
 		try {
-			$reflection = new ReflectionObject($schema);
-			if ($reflection->hasProperty('rules')) {
-				$property = $reflection->getProperty('rules');
-				$property->setAccessible(true);
-				$rules = $property->getValue($schema);
+			$reflection = new ReflectionObject($rule);
+			if ($reflection->hasProperty('properties')) {
+				$prop = $reflection->getProperty('properties');
+				$prop->setAccessible(true);
+				$props = $prop->getValue($rule);
+				if (is_array($props) && isset($props['field'])) {
+					$field = $props['field'];
+				}
+			} elseif ($reflection->hasProperty('field')) {
+				$prop = $reflection->getProperty('field');
+				$prop->setAccessible(true);
+				$field = $prop->getValue($rule);
 			}
 		} catch (ReflectionException $exception) {
 			unset($exception);
-			$rules = array();
+			return $message;
 		}
-	}
 
-	if (! is_array($rules)) {
-		return;
-	}
+		if (is_string($field) && isset($messages[$field])) {
+			return $messages[$field];
+		}
 
-	$messages = ntronica_cf7_contact_messages();
-	foreach ($rules as $rule) {
-		ntronica_cf7_set_rule_error($rule, $messages);
-	}
-}
-add_action('wpcf7_swv_create_schema', 'ntronica_cf7_contact_schema', 20, 2);
+		return $message;
+	},
+	10,
+	2
+);
 
 /**
  * Keep acceptance clicks from validating the fields above the checkbox.

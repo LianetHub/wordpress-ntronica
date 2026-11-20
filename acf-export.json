@@ -916,92 +916,6 @@
                 "new_lines": ""
             },
             {
-                "key": "field_ntronica_fp_products_items",
-                "label": "Products Items",
-                "name": "products_items",
-                "aria-label": "",
-                "type": "repeater",
-                "instructions": "",
-                "required": 0,
-                "conditional_logic": 0,
-                "wrapper": {
-                    "width": "",
-                    "class": "",
-                    "id": ""
-                },
-                "layout": "table",
-                "pagination": 0,
-                "min": 0,
-                "max": 0,
-                "collapsed": "",
-                "button_label": "Add Product",
-                "rows_per_page": 20,
-                "sub_fields": [
-                    {
-                        "key": "field_ntronica_fp_products_item_title",
-                        "label": "Title",
-                        "name": "title",
-                        "aria-label": "",
-                        "type": "text",
-                        "instructions": "",
-                        "required": 1,
-                        "conditional_logic": 0,
-                        "wrapper": {
-                            "width": "",
-                            "class": "",
-                            "id": ""
-                        },
-                        "default_value": "",
-                        "maxlength": 256,
-                        "placeholder": "",
-                        "prepend": "",
-                        "append": ""
-                    },
-                    {
-                        "key": "field_ntronica_fp_products_item_url",
-                        "label": "URL",
-                        "name": "url",
-                        "aria-label": "",
-                        "type": "url",
-                        "instructions": "",
-                        "required": 1,
-                        "conditional_logic": 0,
-                        "wrapper": {
-                            "width": "",
-                            "class": "",
-                            "id": ""
-                        },
-                        "default_value": "",
-                        "placeholder": ""
-                    },
-                    {
-                        "key": "field_ntronica_fp_products_item_image",
-                        "label": "Image",
-                        "name": "image",
-                        "aria-label": "",
-                        "type": "image",
-                        "instructions": "",
-                        "required": 0,
-                        "conditional_logic": 0,
-                        "wrapper": {
-                            "width": "",
-                            "class": "",
-                            "id": ""
-                        },
-                        "return_format": "url",
-                        "library": "all",
-                        "min_width": "",
-                        "min_height": "",
-                        "min_size": "",
-                        "max_width": "",
-                        "max_height": "",
-                        "max_size": "",
-                        "mime_types": "",
-                        "preview_size": "medium"
-                    }
-                ]
-            },
-            {
                 "key": "field_ntronica_fp_products_link_url",
                 "label": "Products \"Learn More\" URL",
                 "name": "products_link_url",
@@ -1087,7 +1001,7 @@
                 "rows_per_page": 20,
                 "sub_fields": [
                     {
-                        "key": "field_ntronica_fp_slider_item_title",
+                        "key": "field_ntronica_slider_item_title",
                         "label": "Title",
                         "name": "title",
                         "aria-label": "",
@@ -1107,7 +1021,7 @@
                         "append": ""
                     },
                     {
-                        "key": "field_ntronica_fp_slider_item_index",
+                        "key": "field_ntronica_slider_item_index",
                         "label": "Index",
                         "name": "index",
                         "aria-label": "",
@@ -1127,7 +1041,7 @@
                         "append": ""
                     },
                     {
-                        "key": "field_ntronica_fp_slider_item_image",
+                        "key": "field_ntronica_slider_item_image",
                         "label": "Background Image",
                         "name": "image",
                         "aria-label": "",
@@ -1152,7 +1066,7 @@
                         "preview_size": "full"
                     },
                     {
-                        "key": "field_ntronica_fp_slider_item_text_1",
+                        "key": "field_ntronica_slider_item_text_1",
                         "label": "Text Column 1",
                         "name": "text_1",
                         "aria-label": "",
@@ -1172,7 +1086,7 @@
                         "new_lines": ""
                     },
                     {
-                        "key": "field_ntronica_fp_slider_item_text_2",
+                        "key": "field_ntronica_slider_item_text_2",
                         "label": "Text Column 2",
                         "name": "text_2",
                         "aria-label": "",
@@ -1192,184 +1106,6 @@
                         "new_lines": ""
                     }
                 ]
-            },
-            {
-                "key": "field_ntronica_fp_info_title",
-                "label": "Info Section Title",
-                "name": "info_title",
-                "aria-label": "",
-                "type": "text",
-                "instructions": "",
-                "required": 0,
-                "conditional_logic": 0,
-                "wrapper": {
-                    "width": "",
-                    "class": "",
-                    "id": ""
-                },
-                "default_value": "Company information",
-                "maxlength": 256,
-                "placeholder": "",
-                "prepend": "",
-                "append": ""
-            },
-            {
-                "key": "field_ntronica_fp_info_text",
-                "label": "Info Text",
-                "name": "info_text",
-                "aria-label": "",
-                "type": "textarea",
-                "instructions": "",
-                "required": 0,
-                "conditional_logic": 0,
-                "wrapper": {
-                    "width": "",
-                    "class": "",
-                    "id": ""
-                },
-                "default_value": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.",
-                "maxlength": "",
-                "rows": 6,
-                "placeholder": "",
-                "new_lines": ""
-            },
-            {
-                "key": "field_ntronica_fp_info_email_1",
-                "label": "Info Email 1",
-                "name": "info_email_1",
-                "aria-label": "",
-                "type": "email",
-                "instructions": "",
-                "required": 0,
-                "conditional_logic": 0,
-                "wrapper": {
-                    "width": "",
-                    "class": "",
-                    "id": ""
-                },
-                "default_value": "contact@ntronica.com",
-                "placeholder": "",
-                "prepend": "",
-                "append": ""
-            },
-            {
-                "key": "field_ntronica_fp_info_email_2",
-                "label": "Info Email 2",
-                "name": "info_email_2",
-                "aria-label": "",
-                "type": "email",
-                "instructions": "",
-                "required": 0,
-                "conditional_logic": 0,
-                "wrapper": {
-                    "width": "",
-                    "class": "",
-                    "id": ""
-                },
-                "default_value": "info@ntronica.com",
-                "placeholder": "",
-                "prepend": "",
-                "append": ""
-            },
-            {
-                "key": "field_ntronica_fp_info_phone",
-                "label": "Info Phone",
-                "name": "info_phone",
-                "aria-label": "",
-                "type": "text",
-                "instructions": "",
-                "required": 0,
-                "conditional_logic": 0,
-                "wrapper": {
-                    "width": "",
-                    "class": "",
-                    "id": ""
-                },
-                "default_value": "+91 221-234-5678",
-                "maxlength": "",
-                "placeholder": "",
-                "prepend": "",
-                "append": ""
-            },
-            {
-                "key": "field_ntronica_fp_info_address",
-                "label": "Info Address",
-                "name": "info_address",
-                "aria-label": "",
-                "type": "textarea",
-                "instructions": "",
-                "required": 0,
-                "conditional_logic": 0,
-                "wrapper": {
-                    "width": "",
-                    "class": "",
-                    "id": ""
-                },
-                "default_value": "8 Ulsoor Road, Yellapa Chetty Layout, Sivan Chetty Gardens, Ulsoor (Halasuru), Bengaluru, Bengaluru North, Karnataka, 560042, India",
-                "maxlength": "",
-                "rows": 4,
-                "placeholder": "",
-                "new_lines": ""
-            },
-            {
-                "key": "field_ntronica_fp_info_cin",
-                "label": "Info CIN",
-                "name": "info_cin",
-                "aria-label": "",
-                "type": "text",
-                "instructions": "",
-                "required": 0,
-                "conditional_logic": 0,
-                "wrapper": {
-                    "width": "",
-                    "class": "",
-                    "id": ""
-                },
-                "default_value": "U46521KA2025FTC210805",
-                "maxlength": "",
-                "placeholder": "",
-                "prepend": "",
-                "append": ""
-            },
-            {
-                "key": "field_ntronica_fp_contact_title",
-                "label": "Contact Section Title",
-                "name": "contact_title",
-                "aria-label": "",
-                "type": "text",
-                "instructions": "",
-                "required": 0,
-                "conditional_logic": 0,
-                "wrapper": {
-                    "width": "",
-                    "class": "",
-                    "id": ""
-                },
-                "default_value": "Contact us",
-                "maxlength": 256,
-                "placeholder": "",
-                "prepend": "",
-                "append": ""
-            },
-            {
-                "key": "field_ntronica_fp_contact_form_id",
-                "label": "Contact Form 7 ID",
-                "name": "contact_form_id",
-                "aria-label": "",
-                "type": "text",
-                "instructions": "",
-                "required": 0,
-                "conditional_logic": 0,
-                "wrapper": {
-                    "width": "",
-                    "class": "",
-                    "id": ""
-                },
-                "default_value": "9a6010d",
-                "maxlength": 64,
-                "placeholder": "",
-                "prepend": "",
-                "append": ""
             }
         ],
         "location": [
@@ -1730,6 +1466,46 @@
                 "rows": 4,
                 "placeholder": "",
                 "new_lines": ""
+            },
+            {
+                "key": "field_ntronica_info_address",
+                "label": "Info Address",
+                "name": "ntronica_info_address",
+                "aria-label": "",
+                "type": "textarea",
+                "instructions": "Displayed in the company information section on front page and contacts page.",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "8 Ulsoor Road, Yellapa Chetty Layout, Sivan Chetty Gardens, Ulsoor (Halasuru), Bengaluru, Bengaluru North, Karnataka, 560042, India",
+                "maxlength": "",
+                "rows": 4,
+                "placeholder": "",
+                "new_lines": ""
+            },
+            {
+                "key": "field_ntronica_info_cin",
+                "label": "Info CIN",
+                "name": "ntronica_info_cin",
+                "aria-label": "",
+                "type": "text",
+                "instructions": "Displayed in the company information section on front page and contacts page.",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "U46521KA2025FTC210805",
+                "maxlength": "",
+                "placeholder": "",
+                "prepend": "",
+                "append": ""
             },
             {
                 "key": "field_ntronica_footer_privacy_url",
@@ -2224,6 +2000,144 @@
                         "append": ""
                     }
                 ]
+            },
+            {
+                "key": "field_ntronica_info_title",
+                "label": "Info Title",
+                "name": "ntronica_info_title",
+                "aria-label": "",
+                "type": "text",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "Company information",
+                "maxlength": 256,
+                "placeholder": "",
+                "prepend": "",
+                "append": ""
+            },
+            {
+                "key": "field_ntronica_info_text",
+                "label": "Info Text",
+                "name": "ntronica_info_text",
+                "aria-label": "",
+                "type": "textarea",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.",
+                "maxlength": "",
+                "rows": 6,
+                "placeholder": "",
+                "new_lines": ""
+            },
+            {
+                "key": "field_ntronica_info_email_1",
+                "label": "Info Email 1",
+                "name": "ntronica_info_email_1",
+                "aria-label": "",
+                "type": "email",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "contact@ntronica.com",
+                "placeholder": "",
+                "prepend": "",
+                "append": ""
+            },
+            {
+                "key": "field_ntronica_info_email_2",
+                "label": "Info Email 2",
+                "name": "ntronica_info_email_2",
+                "aria-label": "",
+                "type": "email",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "info@ntronica.com",
+                "placeholder": "",
+                "prepend": "",
+                "append": ""
+            },
+            {
+                "key": "field_ntronica_info_phone",
+                "label": "Info Phone",
+                "name": "ntronica_info_phone",
+                "aria-label": "",
+                "type": "text",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "+91 221-234-5678",
+                "maxlength": "",
+                "placeholder": "",
+                "prepend": "",
+                "append": ""
+            },
+            {
+                "key": "field_ntronica_contact_title",
+                "label": "Contact Title",
+                "name": "ntronica_contact_title",
+                "aria-label": "",
+                "type": "text",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "Contact us",
+                "maxlength": 256,
+                "placeholder": "",
+                "prepend": "",
+                "append": ""
+            },
+            {
+                "key": "field_ntronica_contact_form_id",
+                "label": "Contact Form 7 ID",
+                "name": "ntronica_contact_form_id",
+                "aria-label": "",
+                "type": "text",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "9a6010d",
+                "maxlength": 64,
+                "placeholder": "",
+                "prepend": "",
+                "append": ""
             }
         ],
         "location": [
@@ -2405,6 +2319,157 @@
                     "param": "post_type",
                     "operator": "==",
                     "value": "vacancy"
+                }
+            ]
+        ],
+        "menu_order": 0,
+        "position": "normal",
+        "style": "default",
+        "label_placement": "top",
+        "instruction_placement": "label",
+        "hide_on_screen": "",
+        "active": true,
+        "description": "",
+        "show_in_rest": 0
+    },
+    {
+        "_wpml_note": "Contacts page fields. After importing, configure WPML > Settings > Custom Fields Translation per field.",
+        "key": "group_ntronica_contacts_page",
+        "title": "Contacts Page",
+        "fields": [
+            {
+                "key": "field_ntronica_contacts_hero_title",
+                "label": "Hero Title",
+                "name": "contacts_hero_title",
+                "aria-label": "",
+                "type": "text",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "Contacts",
+                "maxlength": 128,
+                "placeholder": "",
+                "prepend": "",
+                "append": ""
+            },
+            {
+                "key": "field_ntronica_contacts_hero_tagline",
+                "label": "Hero Tagline",
+                "name": "contacts_hero_tagline",
+                "aria-label": "",
+                "type": "textarea",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "We develop innovative equipment to enable the full cycle of microelectronics production and complex r&d activities",
+                "maxlength": "",
+                "rows": 3,
+                "placeholder": "",
+                "new_lines": ""
+            },
+            {
+                "key": "field_ntronica_contacts_hero_image",
+                "label": "Hero Image",
+                "name": "contacts_hero_image",
+                "aria-label": "",
+                "type": "image",
+                "instructions": "Recommended size: 1920x600px",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "return_format": "url",
+                "preview_size": "large",
+                "library": "all",
+                "min_width": "",
+                "min_height": "",
+                "min_size": "",
+                "max_width": "",
+                "max_height": "",
+                "max_size": "",
+                "mime_types": ""
+            },
+            {
+                "key": "field_ntronica_contacts_rep_title",
+                "label": "Representative Section Title",
+                "name": "contacts_rep_title",
+                "aria-label": "",
+                "type": "text",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "Our representative",
+                "maxlength": 128,
+                "placeholder": "",
+                "prepend": "",
+                "append": ""
+            },
+            {
+                "key": "field_ntronica_contacts_rep_address",
+                "label": "Representative Address",
+                "name": "contacts_rep_address",
+                "aria-label": "",
+                "type": "text",
+                "instructions": "Full address used for the Google Maps iframe embed.",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "8 Ulsoor Road, Yellapa Chetty Layout, Sivan Chetty Gardens, Ulsoor (Halasuru), Bengaluru, Bengaluru North, Karnataka, 560042, India",
+                "maxlength": 512,
+                "placeholder": "",
+                "prepend": "",
+                "append": ""
+            },
+            {
+                "key": "field_ntronica_contacts_rep_map_zoom",
+                "label": "Map Zoom Level",
+                "name": "contacts_rep_map_zoom",
+                "aria-label": "",
+                "type": "number",
+                "instructions": "Google Maps zoom level (1-20).",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": 16,
+                "min": 1,
+                "max": 20,
+                "placeholder": "",
+                "prepend": "",
+                "append": ""
+            }
+        ],
+        "location": [
+            [
+                {
+                    "param": "page_template",
+                    "operator": "==",
+                    "value": "page-contacts.php"
                 }
             ]
         ],

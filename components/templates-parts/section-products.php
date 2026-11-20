@@ -8,7 +8,6 @@
 
 $ntronica_title      = get_field('products_title');
 $ntronica_lead       = get_field('products_lead');
-$ntronica_items      = get_field('products_items');
 $ntronica_link_url   = get_field('products_link_url');
 $ntronica_link_text  = get_field('products_link_text');
 
@@ -16,6 +15,16 @@ $ntronica_title     = is_string($ntronica_title) && '' !== $ntronica_title ? $nt
 $ntronica_lead      = is_string($ntronica_lead) ? $ntronica_lead : '';
 $ntronica_link_url  = is_string($ntronica_link_url) && '' !== $ntronica_link_url ? $ntronica_link_url : home_url('/products/');
 $ntronica_link_text = is_string($ntronica_link_text) && '' !== $ntronica_link_text ? $ntronica_link_text : 'LEARN MORE';
+
+$ntronica_products_query = new WP_Query(
+	array(
+		'post_type'      => 'product',
+		'posts_per_page' => -1,
+		'orderby'        => 'title',
+		'order'          => 'ASC',
+	)
+);
+$ntronica_has_products = $ntronica_products_query->have_posts();
 ?>
 <section class="products" id="products">
 	<div class="container">
@@ -24,17 +33,15 @@ $ntronica_link_text = is_string($ntronica_link_text) && '' !== $ntronica_link_te
 		<p class="text-block products__lead"><?php echo esc_html($ntronica_lead); ?></p>
 		<?php endif; ?>
 
-		<?php if (! empty($ntronica_items) && is_array($ntronica_items)) : ?>
+		<?php if ($ntronica_has_products) : ?>
 		<div class="row products__grid">
-			<?php foreach ($ntronica_items as $ntronica_item) : ?>
+			<?php while ($ntronica_products_query->have_posts()) : $ntronica_products_query->the_post(); ?>
 				<?php
-				$ntronica_item_title = isset($ntronica_item['title']) ? (string) $ntronica_item['title'] : '';
-				$ntronica_item_url   = isset($ntronica_item['url']) ? (string) $ntronica_item['url'] : '';
-				$ntronica_item_image = isset($ntronica_item['image']) ? (string) $ntronica_item['image'] : '';
-
-				if ('' === $ntronica_item_title || '' === $ntronica_item_url) {
-					continue;
-				}
+				$ntronica_product_id    = get_the_ID();
+				$ntronica_product_title = get_the_title();
+				$ntronica_product_url   = get_permalink();
+				$ntronica_product_image = get_the_post_thumbnail_url($ntronica_product_id, 'large');
+				$ntronica_product_image = is_string($ntronica_product_image) ? $ntronica_product_image : '';
 				?>
 				<div class="col-12 col-md-4">
 					<?php
@@ -42,16 +49,16 @@ $ntronica_link_text = is_string($ntronica_link_text) && '' !== $ntronica_link_te
 						'components/templates-parts/card',
 						'product',
 						array(
-							'title'  => $ntronica_item_title,
-							'url'    => $ntronica_item_url,
-							'image'  => '' !== $ntronica_item_image ? $ntronica_item_image : IMG_PATH . '/home/product-thin-films.webp',
+							'title'  => $ntronica_product_title,
+							'url'    => $ntronica_product_url,
+							'image'  => '' !== $ntronica_product_image ? $ntronica_product_image : IMG_PATH . '/home/product-thin-films.webp',
 							'width'  => 622,
 							'height' => 414,
 						)
 					);
 					?>
 				</div>
-			<?php endforeach; ?>
+			<?php endwhile; wp_reset_postdata(); ?>
 		</div>
 		<?php endif; ?>
 

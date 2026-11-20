@@ -6,13 +6,13 @@
  * @package ntronica
  */
 
-$ntronica_title     = get_field('info_title');
-$ntronica_text      = get_field('info_text');
-$ntronica_email_1   = get_field('info_email_1');
-$ntronica_email_2   = get_field('info_email_2');
-$ntronica_phone     = get_field('info_phone');
-$ntronica_address   = get_field('info_address');
-$ntronica_cin       = get_field('info_cin');
+$ntronica_title     = get_field('ntronica_info_title', 'option');
+$ntronica_text      = get_field('ntronica_info_text', 'option');
+$ntronica_email_1   = get_field('ntronica_info_email_1', 'option');
+$ntronica_email_2   = get_field('ntronica_info_email_2', 'option');
+$ntronica_phone     = get_field('ntronica_info_phone', 'option');
+$ntronica_address   = get_field('ntronica_info_address', 'option');
+$ntronica_cin       = get_field('ntronica_info_cin', 'option');
 
 $ntronica_title   = is_string($ntronica_title) && '' !== $ntronica_title ? $ntronica_title : 'Company information';
 $ntronica_text    = is_string($ntronica_text) ? $ntronica_text : '';

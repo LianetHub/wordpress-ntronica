@@ -63,10 +63,27 @@ add_filter(
                         ),
                     ),
                     array(
-                        'name' => 'sticky_nav_contacts',
+                        'name' => 'sticky_nav_front_page',
                         'type' => 'repeater',
                         'children' => array(
                             array('name' => 'label', 'type' => 'text'),
+                        ),
+                    ),
+                    array('name' => 'ntronica_info_address', 'type' => 'textarea'),
+                    array('name' => 'ntronica_info_cin', 'type' => 'text'),
+                    array('name' => 'ntronica_info_title', 'type' => 'text'),
+                    array('name' => 'ntronica_info_text', 'type' => 'textarea'),
+                    array('name' => 'ntronica_info_email_1', 'type' => 'text'),
+                    array('name' => 'ntronica_info_email_2', 'type' => 'text'),
+                    array('name' => 'ntronica_info_phone', 'type' => 'text'),
+                    array('name' => 'ntronica_contact_title', 'type' => 'text'),
+                    array('name' => 'ntronica_contact_form_id', 'type' => 'text'),
+                    array('name' => 'ntronica_slider_title', 'type' => 'text'),
+                    array(
+                        'name' => 'ntronica_slider_items',
+                        'type' => 'repeater',
+                        'children' => array(
+                            array('name' => 'title', 'type' => 'text'),
                         ),
                     ),
                 ),
@@ -112,6 +129,19 @@ add_filter(
                             array('name' => 'alt', 'type' => 'text'),
                         ),
                     ),
+                ),
+            ),
+        );
+
+        // Contacts page translatable texts.
+        $config['wpml-config'][] = array(
+            'admin-texts' => array(
+                'key' => 'ntronica_contacts_page',
+                'children' => array(
+                    array('name' => 'contacts_hero_title', 'type' => 'text'),
+                    array('name' => 'contacts_hero_tagline', 'type' => 'textarea'),
+                    array('name' => 'contacts_rep_title', 'type' => 'text'),
+                    array('name' => 'contacts_rep_address', 'type' => 'text'),
                 ),
             ),
         );

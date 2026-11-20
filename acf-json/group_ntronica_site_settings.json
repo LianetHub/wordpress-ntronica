@@ -339,6 +339,46 @@
             "new_lines": ""
         },
         {
+            "key": "field_ntronica_info_address",
+            "label": "Info Address",
+            "name": "ntronica_info_address",
+            "aria-label": "",
+            "type": "textarea",
+            "instructions": "Displayed in the company information section on front page and contacts page.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "8 Ulsoor Road, Yellapa Chetty Layout, Sivan Chetty Gardens, Ulsoor (Halasuru), Bengaluru, Bengaluru North, Karnataka, 560042, India",
+            "maxlength": "",
+            "rows": 4,
+            "placeholder": "",
+            "new_lines": ""
+        },
+        {
+            "key": "field_ntronica_info_cin",
+            "label": "Info CIN",
+            "name": "ntronica_info_cin",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Displayed in the company information section on front page and contacts page.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "U46521KA2025FTC210805",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
             "key": "field_ntronica_footer_privacy_url",
             "label": "Privacy Policy URL",
             "name": "ntronica_footer_privacy_url",
@@ -831,6 +871,144 @@
                     "append": ""
                 }
             ]
+        },
+        {
+            "key": "field_ntronica_info_title",
+            "label": "Info Section Title",
+            "name": "ntronica_info_title",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Company information",
+            "maxlength": 256,
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_ntronica_info_text",
+            "label": "Info Text",
+            "name": "ntronica_info_text",
+            "aria-label": "",
+            "type": "textarea",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.",
+            "maxlength": "",
+            "rows": 6,
+            "placeholder": "",
+            "new_lines": ""
+        },
+        {
+            "key": "field_ntronica_info_email_1",
+            "label": "Info Email 1",
+            "name": "ntronica_info_email_1",
+            "aria-label": "",
+            "type": "email",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "contact@ntronica.com",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_ntronica_info_email_2",
+            "label": "Info Email 2",
+            "name": "ntronica_info_email_2",
+            "aria-label": "",
+            "type": "email",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "info@ntronica.com",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_ntronica_info_phone",
+            "label": "Info Phone",
+            "name": "ntronica_info_phone",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "+91 221-234-5678",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_ntronica_contact_title",
+            "label": "Contact Section Title",
+            "name": "ntronica_contact_title",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Contact us",
+            "maxlength": 256,
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_ntronica_contact_form_id",
+            "label": "Contact Form 7 ID",
+            "name": "ntronica_contact_form_id",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "9a6010d",
+            "maxlength": 64,
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
         }
     ],
     "location": [

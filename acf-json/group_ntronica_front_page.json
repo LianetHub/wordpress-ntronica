@@ -29,7 +29,7 @@
             "name": "hero_image",
             "aria-label": "",
             "type": "image",
-            "instructions": "",
+            "instructions": "Recommended size: 1920x600px",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -38,6 +38,7 @@
                 "id": ""
             },
             "return_format": "url",
+            "preview_size": "large",
             "library": "all",
             "min_width": "",
             "min_height": "",
@@ -45,12 +46,11 @@
             "max_width": "",
             "max_height": "",
             "max_size": "",
-            "mime_types": "",
-            "preview_size": "full"
+            "mime_types": ""
         },
         {
             "key": "field_ntronica_fp_overview_title",
-            "label": "Overview Title",
+            "label": "Overview Section Title",
             "name": "overview_title",
             "aria-label": "",
             "type": "text",
@@ -62,7 +62,7 @@
                 "class": "",
                 "id": ""
             },
-            "default_value": "Company overview",
+            "default_value": "We combine the best equipment and proven technologies",
             "maxlength": 256,
             "placeholder": "",
             "prepend": "",
@@ -82,18 +82,18 @@
                 "class": "",
                 "id": ""
             },
-            "default_value": "Every day at N-tronica, we create tools that enable the production of the chips powering our world. From large-scale manufacturing to advanced R&D, our work helps accelerate innovation and bring new technologies to life faster. We take pride in contributing to devices that are faster, smarter, and more efficient.",
+            "default_value": "We are developing unique equipment for microelectronics production. Our solutions help bring innovations to life in R&D centers and manufacturing facilities worldwide.",
             "maxlength": "",
-            "rows": 5,
+            "rows": 6,
             "placeholder": "",
             "new_lines": ""
         },
         {
             "key": "field_ntronica_fp_overview_link_url",
-            "label": "Overview \"Learn More\" URL",
+            "label": "Overview Link URL",
             "name": "overview_link_url",
             "aria-label": "",
-            "type": "page_link",
+            "type": "url",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -102,18 +102,12 @@
                 "class": "",
                 "id": ""
             },
-            "post_type": [
-                "page"
-            ],
-            "post_status": "",
-            "taxonomy": "",
-            "allow_null": 0,
-            "allow_archives": 0,
-            "multiple": 0
+            "default_value": "https://dev.ntronica.com/about/",
+            "placeholder": ""
         },
         {
             "key": "field_ntronica_fp_overview_link_text",
-            "label": "Overview \"Learn More\" Text",
+            "label": "Overview Link Text",
             "name": "overview_link_text",
             "aria-label": "",
             "type": "text",
@@ -145,15 +139,15 @@
                 "class": "",
                 "id": ""
             },
-            "default_value": "Key features:",
-            "maxlength": 128,
+            "default_value": "Our solutions",
+            "maxlength": 256,
             "placeholder": "",
             "prepend": "",
             "append": ""
         },
         {
             "key": "field_ntronica_fp_overview_features",
-            "label": "Overview Features List",
+            "label": "Overview Features",
             "name": "overview_features",
             "aria-label": "",
             "type": "repeater",
@@ -175,7 +169,7 @@
             "sub_fields": [
                 {
                     "key": "field_ntronica_fp_overview_feature_text",
-                    "label": "Feature Text",
+                    "label": "Text",
                     "name": "text",
                     "aria-label": "",
                     "type": "textarea",
@@ -209,7 +203,7 @@
                 "class": "",
                 "id": ""
             },
-            "default_value": "Products",
+            "default_value": "Products & Solutions",
             "maxlength": 256,
             "placeholder": "",
             "prepend": "",
@@ -229,104 +223,18 @@
                 "class": "",
                 "id": ""
             },
-            "default_value": "We design and manufacture semiconductor manufacturing tools suitable for both R&D labs and mass production at various scales. Our equipment is available in stand-alone and cluster configurations.",
+            "default_value": "A wide range of advanced equipment for microelectronics production and scientific research",
             "maxlength": "",
             "rows": 4,
             "placeholder": "",
             "new_lines": ""
         },
         {
-            "key": "field_ntronica_fp_products_items",
-            "label": "Products Items",
-            "name": "products_items",
-            "aria-label": "",
-            "type": "repeater",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "layout": "table",
-            "pagination": 0,
-            "min": 0,
-            "max": 0,
-            "collapsed": "",
-            "button_label": "Add Product",
-            "rows_per_page": 20,
-            "sub_fields": [
-                {
-                    "key": "field_ntronica_fp_products_item_title",
-                    "label": "Title",
-                    "name": "title",
-                    "aria-label": "",
-                    "type": "text",
-                    "instructions": "",
-                    "required": 1,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "default_value": "",
-                    "maxlength": 256,
-                    "placeholder": "",
-                    "prepend": "",
-                    "append": ""
-                },
-                {
-                    "key": "field_ntronica_fp_products_item_url",
-                    "label": "URL",
-                    "name": "url",
-                    "aria-label": "",
-                    "type": "url",
-                    "instructions": "",
-                    "required": 1,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "default_value": "",
-                    "placeholder": ""
-                },
-                {
-                    "key": "field_ntronica_fp_products_item_image",
-                    "label": "Image",
-                    "name": "image",
-                    "aria-label": "",
-                    "type": "image",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "return_format": "url",
-                    "library": "all",
-                    "min_width": "",
-                    "min_height": "",
-                    "min_size": "",
-                    "max_width": "",
-                    "max_height": "",
-                    "max_size": "",
-                    "mime_types": "",
-                    "preview_size": "medium"
-                }
-            ]
-        },
-        {
             "key": "field_ntronica_fp_products_link_url",
-            "label": "Products \"Learn More\" URL",
+            "label": "Products Link URL",
             "name": "products_link_url",
             "aria-label": "",
-            "type": "page_link",
+            "type": "url",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -335,18 +243,12 @@
                 "class": "",
                 "id": ""
             },
-            "post_type": [
-                "page"
-            ],
-            "post_status": "",
-            "taxonomy": "",
-            "allow_null": 0,
-            "allow_archives": 0,
-            "multiple": 0
+            "default_value": "https://dev.ntronica.com/products/",
+            "placeholder": ""
         },
         {
             "key": "field_ntronica_fp_products_link_text",
-            "label": "Products \"Learn More\" Text",
+            "label": "Products Link Text",
             "name": "products_link_text",
             "aria-label": "",
             "type": "text",
@@ -512,184 +414,6 @@
                     "new_lines": ""
                 }
             ]
-        },
-        {
-            "key": "field_ntronica_fp_info_title",
-            "label": "Info Section Title",
-            "name": "info_title",
-            "aria-label": "",
-            "type": "text",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "Company information",
-            "maxlength": 256,
-            "placeholder": "",
-            "prepend": "",
-            "append": ""
-        },
-        {
-            "key": "field_ntronica_fp_info_text",
-            "label": "Info Text",
-            "name": "info_text",
-            "aria-label": "",
-            "type": "textarea",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.",
-            "maxlength": "",
-            "rows": 6,
-            "placeholder": "",
-            "new_lines": ""
-        },
-        {
-            "key": "field_ntronica_fp_info_email_1",
-            "label": "Info Email 1",
-            "name": "info_email_1",
-            "aria-label": "",
-            "type": "email",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "contact@ntronica.com",
-            "placeholder": "",
-            "prepend": "",
-            "append": ""
-        },
-        {
-            "key": "field_ntronica_fp_info_email_2",
-            "label": "Info Email 2",
-            "name": "info_email_2",
-            "aria-label": "",
-            "type": "email",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "info@ntronica.com",
-            "placeholder": "",
-            "prepend": "",
-            "append": ""
-        },
-        {
-            "key": "field_ntronica_fp_info_phone",
-            "label": "Info Phone",
-            "name": "info_phone",
-            "aria-label": "",
-            "type": "text",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "+91 221-234-5678",
-            "maxlength": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": ""
-        },
-        {
-            "key": "field_ntronica_fp_info_address",
-            "label": "Info Address",
-            "name": "info_address",
-            "aria-label": "",
-            "type": "textarea",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "8 Ulsoor Road, Yellapa Chetty Layout, Sivan Chetty Gardens, Ulsoor (Halasuru), Bengaluru, Bengaluru North, Karnataka, 560042, India",
-            "maxlength": "",
-            "rows": 4,
-            "placeholder": "",
-            "new_lines": ""
-        },
-        {
-            "key": "field_ntronica_fp_info_cin",
-            "label": "Info CIN",
-            "name": "info_cin",
-            "aria-label": "",
-            "type": "text",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "U46521KA2025FTC210805",
-            "maxlength": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": ""
-        },
-        {
-            "key": "field_ntronica_fp_contact_title",
-            "label": "Contact Section Title",
-            "name": "contact_title",
-            "aria-label": "",
-            "type": "text",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "Contact us",
-            "maxlength": 256,
-            "placeholder": "",
-            "prepend": "",
-            "append": ""
-        },
-        {
-            "key": "field_ntronica_fp_contact_form_id",
-            "label": "Contact Form 7 ID",
-            "name": "contact_form_id",
-            "aria-label": "",
-            "type": "text",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "9a6010d",
-            "maxlength": 64,
-            "placeholder": "",
-            "prepend": "",
-            "append": ""
         }
     ],
     "location": [

@@ -1,0 +1,151 @@
+{
+    "_wpml_note": "Contacts page fields. After importing, configure WPML > Settings > Custom Fields Translation per field.",
+    "key": "group_ntronica_contacts_page",
+    "title": "Contacts Page",
+    "fields": [
+        {
+            "key": "field_ntronica_contacts_hero_title",
+            "label": "Hero Title",
+            "name": "contacts_hero_title",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Contacts",
+            "maxlength": 128,
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_ntronica_contacts_hero_tagline",
+            "label": "Hero Tagline",
+            "name": "contacts_hero_tagline",
+            "aria-label": "",
+            "type": "textarea",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "We develop innovative equipment to enable the full cycle of microelectronics production and complex r&d activities",
+            "maxlength": "",
+            "rows": 3,
+            "placeholder": "",
+            "new_lines": ""
+        },
+        {
+            "key": "field_ntronica_contacts_hero_image",
+            "label": "Hero Image",
+            "name": "contacts_hero_image",
+            "aria-label": "",
+            "type": "image",
+            "instructions": "Recommended size: 1920x600px",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "url",
+            "preview_size": "large",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": ""
+        },
+        {
+            "key": "field_ntronica_contacts_rep_title",
+            "label": "Representative Section Title",
+            "name": "contacts_rep_title",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Our representative",
+            "maxlength": 128,
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_ntronica_contacts_rep_address",
+            "label": "Representative Address",
+            "name": "contacts_rep_address",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Full address used for the Google Maps iframe embed.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "8 Ulsoor Road, Yellapa Chetty Layout, Sivan Chetty Gardens, Ulsoor (Halasuru), Bengaluru, Bengaluru North, Karnataka, 560042, India",
+            "maxlength": 512,
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_ntronica_contacts_rep_map_zoom",
+            "label": "Map Zoom Level",
+            "name": "contacts_rep_map_zoom",
+            "aria-label": "",
+            "type": "number",
+            "instructions": "Google Maps zoom level (1-20).",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": 16,
+            "min": 1,
+            "max": 20,
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "page_template",
+                "operator": "==",
+                "value": "page-contacts.php"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0
+}

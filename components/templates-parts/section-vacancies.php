@@ -1,51 +1,41 @@
 <?php
 
 /**
- * Section: Open positions
+ * Section: Open positions — powered by WP_Query
  *
  * @package ntronica
  */
 
-$ntronica_vacancy_url = home_url('/careers/customer-support-engineer/');
+$ntronica_title = get_field('careers_vacancies_title');
+$ntronica_title = is_string($ntronica_title) && '' !== $ntronica_title ? $ntronica_title : 'Open positions';
 
-$vacancies = array(
-	array(
-		'date'    => '25.01.2023',
-		'title'   => 'Lorem ipsum dolor consectetuer',
-		'url'     => $ntronica_vacancy_url,
-		'excerpt' => 'Quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat nostrud exerci tation',
-	),
-	array(
-		'date'    => '25.01.2023',
-		'title'   => 'Lorem ipsum dolor consectetuer',
-		'url'     => $ntronica_vacancy_url,
-		'excerpt' => 'Quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat nostrud exerci tation',
-	),
-	array(
-		'date'    => '25.01.2023',
-		'title'   => 'Lorem ipsum dolor consectetuer',
-		'url'     => $ntronica_vacancy_url,
-		'excerpt' => 'Quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat nostrud exerci tation',
-	),
-);
-
+$ntronica_query = new WP_Query(array(
+	'post_type'      => 'vacancy',
+	'posts_per_page' => -1,
+	'orderby'        => 'date',
+	'order'          => 'DESC',
+));
 ?>
 <section class="vacancies" id="careers">
 	<div class="container">
 		<h2 class="title vacancies__title">
-			Open positions
+			<?php echo esc_html($ntronica_title); ?>
 		</h2>
 
+		<?php if ($ntronica_query->have_posts()) : ?>
 		<div class="row vacancies__grid">
-			<?php foreach ($vacancies as $ntronica_item) : ?>
+			<?php while ($ntronica_query->have_posts()) : $ntronica_query->the_post(); ?>
 				<div class="col-12 col-md-4">
-					<a href="<?php echo esc_url($ntronica_item['url']); ?>" class="vacancy-card">
-						<span class="text-block vacancy-card__date"><?php echo esc_html($ntronica_item['date']); ?></span>
-						<span class="subtitle vacancy-card__title"><?php echo esc_html($ntronica_item['title']); ?></span>
-						<span class="text-lead vacancy-card__excerpt"><?php echo esc_html($ntronica_item['excerpt']); ?></span>
+					<a href="<?php the_permalink(); ?>" class="vacancy-card">
+						<span class="text-block vacancy-card__date"><?php echo esc_html(get_the_date()); ?></span>
+						<span class="subtitle vacancy-card__title"><?php the_title(); ?></span>
+						<span class="text-lead vacancy-card__excerpt"><?php echo esc_html(get_field('vacancy_excerpt')); ?></span>
 					</a>
 				</div>
-			<?php endforeach; ?>
+			<?php endwhile; ?>
 		</div>
+		<?php endif; ?>
+
+		<?php wp_reset_postdata(); ?>
 	</div>
 </section>

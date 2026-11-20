@@ -1,0 +1,193 @@
+{
+    "_wpml_note": "Vacancy post type fields. After importing, configure WPML > Settings > Custom Fields Translation per field.",
+    "key": "group_ntronica_vacancy",
+    "title": "Vacancy",
+    "fields": [
+        {
+            "key": "field_ntronica_vacancy_team",
+            "label": "Team",
+            "name": "vacancy_team",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "e.g. Customer support",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "33",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Customer support",
+            "maxlength": 128,
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_ntronica_vacancy_experience",
+            "label": "Work Experience",
+            "name": "vacancy_experience",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "e.g. 2-3 years",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "33",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "2-3 years",
+            "maxlength": 128,
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_ntronica_vacancy_education",
+            "label": "Education Background",
+            "name": "vacancy_education",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "e.g. Physics, Computer Science, Chemical Engineering, Materials Science",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "34",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Physics, Computer Science, Chemical Engineering, Materials Science",
+            "maxlength": 256,
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_ntronica_vacancy_excerpt",
+            "label": "Excerpt (short description)",
+            "name": "vacancy_excerpt",
+            "aria-label": "",
+            "type": "textarea",
+            "instructions": "Brief description shown in the vacancies list on Careers page.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat nostrud exerci tation",
+            "maxlength": "",
+            "rows": 3,
+            "placeholder": "",
+            "new_lines": ""
+        },
+        {
+            "key": "field_ntronica_vacancy_responsibilities",
+            "label": "Responsibilities",
+            "name": "vacancy_responsibilities",
+            "aria-label": "",
+            "type": "repeater",
+            "instructions": "List of responsibilities for this vacancy.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "table",
+            "pagination": 0,
+            "min": 0,
+            "max": 0,
+            "collapsed": "",
+            "button_label": "Add Responsibility",
+            "rows_per_page": 20,
+            "sub_fields": [
+                {
+                    "key": "field_ntronica_vacancy_responsibility_text",
+                    "label": "Text",
+                    "name": "text",
+                    "aria-label": "",
+                    "type": "textarea",
+                    "instructions": "",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "rows": 2,
+                    "placeholder": "",
+                    "new_lines": ""
+                }
+            ]
+        },
+        {
+            "key": "field_ntronica_vacancy_requirements",
+            "label": "Requirements",
+            "name": "vacancy_requirements",
+            "aria-label": "",
+            "type": "repeater",
+            "instructions": "List of requirements for this vacancy.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "table",
+            "pagination": 0,
+            "min": 0,
+            "max": 0,
+            "collapsed": "",
+            "button_label": "Add Requirement",
+            "rows_per_page": 20,
+            "sub_fields": [
+                {
+                    "key": "field_ntronica_vacancy_requirement_text",
+                    "label": "Text",
+                    "name": "text",
+                    "aria-label": "",
+                    "type": "textarea",
+                    "instructions": "",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "rows": 2,
+                    "placeholder": "",
+                    "new_lines": ""
+                }
+            ]
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "vacancy"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0
+}

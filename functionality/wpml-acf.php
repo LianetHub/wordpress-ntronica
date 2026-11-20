@@ -27,27 +27,91 @@ add_filter(
             'admin-texts' => array(
                 'key' => 'ntronica_site_settings',
                 'children' => array(
-                    array('name' => 'logo_en_svg', 'type' => 'textarea'),
-                    array('name' => 'logo_ru_svg', 'type' => 'textarea'),
                     array(
-                        'name' => 'ntronica_header_menu',
+                        'name' => 'sticky_nav_about',
                         'type' => 'repeater',
                         'children' => array(
                             array('name' => 'label', 'type' => 'text'),
-                            array(
-                                'name' => 'children',
-                                'type' => 'repeater',
-                                'children' => array(
-                                    array('name' => 'label', 'type' => 'text'),
-                                ),
-                            ),
                         ),
                     ),
-                    array('name' => 'ntronica_footer_email_1', 'type' => 'email'),
-                    array('name' => 'ntronica_footer_email_2', 'type' => 'email'),
-                    array('name' => 'ntronica_footer_phone', 'type' => 'text'),
-                    array('name' => 'ntronica_footer_website', 'type' => 'url'),
-                    array('name' => 'ntronica_footer_address', 'type' => 'textarea'),
+                    array(
+                        'name' => 'sticky_nav_technology',
+                        'type' => 'repeater',
+                        'children' => array(
+                            array('name' => 'label', 'type' => 'text'),
+                        ),
+                    ),
+                    array(
+                        'name' => 'sticky_nav_products',
+                        'type' => 'repeater',
+                        'children' => array(
+                            array('name' => 'label', 'type' => 'text'),
+                        ),
+                    ),
+                    array(
+                        'name' => 'sticky_nav_news',
+                        'type' => 'repeater',
+                        'children' => array(
+                            array('name' => 'label', 'type' => 'text'),
+                        ),
+                    ),
+                    array(
+                        'name' => 'sticky_nav_careers',
+                        'type' => 'repeater',
+                        'children' => array(
+                            array('name' => 'label', 'type' => 'text'),
+                        ),
+                    ),
+                    array(
+                        'name' => 'sticky_nav_contacts',
+                        'type' => 'repeater',
+                        'children' => array(
+                            array('name' => 'label', 'type' => 'text'),
+                        ),
+                    ),
+                ),
+            ),
+        );
+
+        // About page translatable texts.
+        $config['wpml-config'][] = array(
+            'admin-texts' => array(
+                'key' => 'ntronica_about_page',
+                'children' => array(
+                    array('name' => 'about_hero_title', 'type' => 'text'),
+                    array('name' => 'about_hero_tagline', 'type' => 'textarea'),
+                    array('name' => 'about_overview_title', 'type' => 'text'),
+                    array('name' => 'about_overview_intro', 'type' => 'textarea'),
+                    array('name' => 'about_overview_subtitle', 'type' => 'text'),
+                    array(
+                        'name' => 'about_overview_features',
+                        'type' => 'repeater',
+                        'children' => array(
+                            array('name' => 'text', 'type' => 'textarea'),
+                        ),
+                    ),
+                    array('name' => 'about_goal_title', 'type' => 'text'),
+                    array('name' => 'about_goal_text', 'type' => 'textarea'),
+                    array('name' => 'about_stats_title', 'type' => 'text'),
+                    array('name' => 'about_stats_text_left', 'type' => 'textarea'),
+                    array('name' => 'about_stats_text_right', 'type' => 'textarea'),
+                    array(
+                        'name' => 'about_stats_items',
+                        'type' => 'repeater',
+                        'children' => array(
+                            array('name' => 'value', 'type' => 'text'),
+                            array('name' => 'label', 'type' => 'text'),
+                        ),
+                    ),
+                    array('name' => 'about_solutions_lead', 'type' => 'textarea'),
+                    array(
+                        'name' => 'about_solutions_items',
+                        'type' => 'repeater',
+                        'children' => array(
+                            array('name' => 'title', 'type' => 'text'),
+                            array('name' => 'alt', 'type' => 'text'),
+                        ),
+                    ),
                 ),
             ),
         );

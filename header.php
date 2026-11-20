@@ -22,76 +22,100 @@
 		<div class="site-body">
 			<?php
 			if (is_front_page()) {
+				$sticky_nav = get_field('sticky_nav_front_page', 'option');
 				get_template_part(
 					'components/templates-parts/sticky-navbar',
 					null,
 					array(
 						'variant' => 'nav',
-						'nav'     => array(),
-						'reveal_after_hero' => true,
+						'nav_label' => 'Front page sections',
+						'nav'     => $sticky_nav,
 					)
 				);
 			} elseif (is_page('about')) {
+				$sticky_nav = get_field('sticky_nav_about', 'option');
+				if (empty($sticky_nav)) {
+					$sticky_nav = ntronica_get_page_section_nav('about');
+				}
 				get_template_part(
 					'components/templates-parts/sticky-navbar',
 					null,
 					array(
 						'variant'   => 'nav',
 						'nav_label' => 'About sections',
-						'nav'       => ntronica_get_page_section_nav('about'),
+						'nav'       => $sticky_nav,
 					)
 				);
 			} elseif (is_page('technology') || is_page_template('page-technology.php')) {
+				$sticky_nav = get_field('sticky_nav_technology', 'option');
+				if (empty($sticky_nav)) {
+					$sticky_nav = ntronica_get_page_section_nav('technology');
+				}
 				get_template_part(
 					'components/templates-parts/sticky-navbar',
 					null,
 					array(
 						'variant'   => 'nav',
 						'nav_label' => 'Technology sections',
-						'nav'       => ntronica_get_page_section_nav('technology'),
+						'nav'       => $sticky_nav,
 					)
 				);
 			} elseif (is_page('products')) {
+				$sticky_nav = get_field('sticky_nav_products', 'option');
+				if (empty($sticky_nav)) {
+					$sticky_nav = ntronica_get_page_section_nav('products');
+				}
 				get_template_part(
 					'components/templates-parts/sticky-navbar',
 					null,
 					array(
 						'variant'   => 'nav',
 						'nav_label' => 'Products sections',
-						'nav'       => ntronica_get_page_section_nav('products'),
+						'nav'       => $sticky_nav,
 					)
 				);
 			} elseif (is_page('careers')) {
+				$sticky_nav = get_field('sticky_nav_careers', 'option');
+				if (empty($sticky_nav)) {
+					$sticky_nav = ntronica_get_page_section_nav('careers');
+				}
 				get_template_part(
 					'components/templates-parts/sticky-navbar',
 					null,
 					array(
 						'variant'   => 'nav',
 						'nav_label' => 'Careers sections',
-						'nav'       => ntronica_get_page_section_nav('careers'),
+						'nav'       => $sticky_nav,
 					)
 				);
 			} elseif (is_page('contacts')) {
+				$sticky_nav = get_field('sticky_nav_contacts', 'option');
+				if (empty($sticky_nav)) {
+					$sticky_nav = ntronica_get_page_section_nav('contacts');
+				}
 				get_template_part(
 					'components/templates-parts/sticky-navbar',
 					null,
 					array(
 						'variant'   => 'nav',
 						'nav_label' => 'Contacts sections',
-						'nav'       => ntronica_get_page_section_nav('contacts'),
+						'nav'       => $sticky_nav,
 					)
 				);
 			} elseif (is_home()) {
 				$ntronica_blog_id    = (int) get_option('page_for_posts');
 				$ntronica_nav_title  = $ntronica_blog_id ? get_the_title($ntronica_blog_id) : 'News';
-
+				$sticky_nav = get_field('sticky_nav_news', 'option');
+				if (empty($sticky_nav)) {
+					$sticky_nav = ntronica_get_page_section_nav('news');
+				}
 				get_template_part(
 					'components/templates-parts/sticky-navbar',
 					null,
 					array(
 						'variant'   => 'nav',
 						'nav_label' => $ntronica_nav_title . ' sections',
-						'nav'       => ntronica_get_page_section_nav('news'),
+						'nav'       => $sticky_nav,
 					)
 				);
 			} elseif (is_singular('post')) {

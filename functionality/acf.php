@@ -11,6 +11,18 @@ if (! defined('ABSPATH')) {
 }
 
 // ──────────────────────────────────────────────────────
+// ACF JSON sync path
+// ──────────────────────────────────────────────────────
+add_filter('acf/settings/load_json', function ($paths) {
+    $paths[] = get_template_directory() . '/wp-content/acf-json';
+    return $paths;
+});
+
+add_filter('acf/settings/save_json', function ($path) {
+    return get_template_directory() . '/wp-content/acf-json';
+});
+
+// ──────────────────────────────────────────────────────
 // Options page
 // ──────────────────────────────────────────────────────
 add_action(

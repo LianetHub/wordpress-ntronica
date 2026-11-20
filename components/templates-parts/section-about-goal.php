@@ -1,22 +1,26 @@
 <?php
 
 /**
- * About: Our goal
+ * About: Our goal — powered by ACF
  *
  * @package ntronica
  */
 
-$ntronica_about_img = IMG_PATH . '/about/';
+$ntronica_title = get_field('about_goal_title');
+$ntronica_text  = get_field('about_goal_text');
+$ntronica_image = get_field('about_goal_image');
+
+$ntronica_title = is_string($ntronica_title) && '' !== $ntronica_title ? $ntronica_title : 'Our goal';
+$ntronica_text  = is_string($ntronica_text) && '' !== $ntronica_text ? $ntronica_text : 'We are here to help our customers solve their toughest technological challenges, whether in a lab or a fab. It\'s an exciting journey, and to unlock its full potential, we actively seek partnerships that lift everyone.';
+$ntronica_image = is_string($ntronica_image) && '' !== $ntronica_image ? $ntronica_image : IMG_PATH . '/about/goal.webp';
 ?>
 <section class="about-goal" id="goal">
 	<div class="container">
 		<div class="row about-goal__layout">
 			<div class="col-12 col-md-6">
-				<h2 class="title about-goal__title">Our goal</h2>
+				<h2 class="title about-goal__title"><?php echo esc_html($ntronica_title); ?></h2>
 				<div class="text-block about-goal__text">
-					<p>
-						We are here to help our customers solve their toughest technological challenges, whether in a lab or a fab. It's an exciting journey, and to unlock its full potential, we actively seek partnerships that lift everyone.
-					</p>
+					<p><?php echo esc_html($ntronica_text); ?></p>
 				</div>
 			</div>
 
@@ -24,7 +28,7 @@ $ntronica_about_img = IMG_PATH . '/about/';
 				<div class="about-goal__media">
 					<img
 						class="about-goal__img"
-						src="<?php echo esc_url($ntronica_about_img . 'goal.webp'); ?>"
+						src="<?php echo esc_url($ntronica_image); ?>"
 						alt="Laboratory equipment"
 						loading="lazy"
 						width="945"

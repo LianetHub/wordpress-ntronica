@@ -1,9 +1,7 @@
 <?php
 
 /**
- * Single vacancy: hero facts and two lists.
- *
- * Mock copy lives in the template. It is not loaded from fields.
+ * Single vacancy: hero facts and two lists — powered by ACF
  *
  * @package ntronica
  */
@@ -11,46 +9,26 @@
 $ntronica_facts = array(
 	array(
 		'label' => 'TEAM',
-		'value' => 'Customer support',
+		'value' => get_field('vacancy_team'),
 	),
 	array(
 		'label' => 'WORK EXPERIENCE',
-		'value' => '2-3 years',
+		'value' => get_field('vacancy_experience'),
 	),
 	array(
 		'label' => 'EDUCATION BACKGROUND',
-		'value' => 'Physics, Computer Science, Chemical Engineering, Materials Science',
+		'value' => get_field('vacancy_education'),
 	),
 );
 
 $ntronica_lists = array(
 	array(
 		'title' => 'Responsibilities',
-		'items' => array(
-			'Evaluate and diagnose problems and make appropriate repairs',
-			'Work with co-workers, customer & field support in isolating and solving problems',
-			'Maintain and optimize equipment on a daily basis to enhance functionality and prevent problems',
-			'Customer interface: daily machine status, PM status, machine time, P/T in/out communication with customer',
-			'Perform administrative and coordination duties, including pass-downs, work orders, field service reports, system problem reports, and monthly reports',
-			'Prepare written technical reports on an independent basis',
-			'Handling tool/parts for service actions with high quality',
-			'Should expect to spend more than 50% of the time inside the clean room working with mechanical and electrical equipment',
-			'Can work flexibly, can accept overtime working',
-			'Have initiative to communicate with colleagues and learn from them',
-			'Can accept manager/leader’s flexible arrangement based on company business needs',
-		),
+		'items' => get_field('vacancy_responsibilities'),
 	),
 	array(
 		'title' => 'Requirements',
-		'items' => array(
-			'Bachelor degree in an engineering field or equivalent experience, mechanical aptitude, and knowledge of pneumatics, hydraulics, electronics, semiconductor processes, relevant software, and related',
-			'Knowledge of safety procedures required',
-			'Sufficient oral and written English level',
-			'Good communication skill - Good cooperation with team members',
-			'Flexibility for OT , working in holidays',
-			'Strong ownership and commitment level',
-			'Active in learning, eager to dig into technical detail',
-		),
+		'items' => get_field('vacancy_requirements'),
 	),
 );
 ?>
@@ -61,10 +39,17 @@ $ntronica_lists = array(
 
 			<ul class="row vacancy__facts">
 				<?php foreach ($ntronica_facts as $ntronica_fact) : ?>
+					<?php
+					$ntronica_value = isset($ntronica_fact['value']) && is_string($ntronica_fact['value']) && '' !== $ntronica_fact['value']
+						? $ntronica_fact['value']
+						: '';
+					?>
+					<?php if ('' !== $ntronica_value) : ?>
 					<li class="col-12 col-md-4">
 						<p class="text-block vacancy__label"><?php echo esc_html($ntronica_fact['label']); ?></p>
-						<p class="text-block vacancy__value"><?php echo esc_html($ntronica_fact['value']); ?></p>
+						<p class="text-block vacancy__value"><?php echo esc_html($ntronica_value); ?></p>
 					</li>
+					<?php endif; ?>
 				<?php endforeach; ?>
 			</ul>
 		</div>
@@ -74,14 +59,24 @@ $ntronica_lists = array(
 		<div class="container">
 			<div class="row vacancy__lists">
 				<?php foreach ($ntronica_lists as $ntronica_list) : ?>
+					<?php $ntronica_items = is_array($ntronica_list['items']) ? $ntronica_list['items'] : array(); ?>
+					<?php if (! empty($ntronica_items)) : ?>
 					<div class="col-12 col-md-6">
 						<h2 class="subtitle fs-italic vacancy__subtitle"><?php echo esc_html($ntronica_list['title']); ?></h2>
 						<ul class="feature-list">
-							<?php foreach ($ntronica_list['items'] as $ntronica_item) : ?>
-								<li><?php echo esc_html($ntronica_item); ?></li>
+							<?php foreach ($ntronica_items as $ntronica_item) : ?>
+								<?php
+								$ntronica_text = isset($ntronica_item['text']) && is_string($ntronica_item['text'])
+									? $ntronica_item['text']
+									: '';
+								?>
+								<?php if ('' !== $ntronica_text) : ?>
+								<li><?php echo esc_html($ntronica_text); ?></li>
+								<?php endif; ?>
 							<?php endforeach; ?>
 						</ul>
 					</div>
+					<?php endif; ?>
 				<?php endforeach; ?>
 			</div>
 		</div>

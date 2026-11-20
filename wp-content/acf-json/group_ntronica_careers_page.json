@@ -1,0 +1,170 @@
+{
+    "_wpml_note": "Careers page fields. After importing, configure WPML > Settings > Custom Fields Translation per field.",
+    "key": "group_ntronica_careers_page",
+    "title": "Careers Page",
+    "fields": [
+        {
+            "key": "field_ntronica_careers_hero_title",
+            "label": "Hero Title",
+            "name": "careers_hero_title",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Page title (h1).",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Careers",
+            "maxlength": 256,
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_ntronica_careers_hero_tagline",
+            "label": "Hero Tagline",
+            "name": "careers_hero_tagline",
+            "aria-label": "",
+            "type": "textarea",
+            "instructions": "Intro text displayed above the title.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Join us on our journey to solve the most exciting technological challenges and shape the future through innovation",
+            "maxlength": "",
+            "rows": 3,
+            "placeholder": "",
+            "new_lines": ""
+        },
+        {
+            "key": "field_ntronica_careers_hero_image",
+            "label": "Hero Background Image",
+            "name": "careers_hero_image",
+            "aria-label": "",
+            "type": "image",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "url",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": "",
+            "preview_size": "full"
+        },
+        {
+            "key": "field_ntronica_careers_team_title",
+            "label": "Team Section Title",
+            "name": "careers_team_title",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Section #team heading.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Our team",
+            "maxlength": 256,
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_ntronica_careers_team_tagline",
+            "label": "Team Tagline",
+            "name": "careers_team_tagline",
+            "aria-label": "",
+            "type": "textarea",
+            "instructions": "Left-column tagline paragraph.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Our team brings together exceptional developers, engineers, technologists, and constructors \u2014 all inspired by the technological challenges we tackle. There is also a great deal of analytical and creative work in what we do, so we've gathered designers, marketers, and analysts who are genuinely excited by the chip making process.",
+            "maxlength": "",
+            "rows": 5,
+            "placeholder": "",
+            "new_lines": ""
+        },
+        {
+            "key": "field_ntronica_careers_team_text",
+            "label": "Team Text",
+            "name": "careers_team_text",
+            "aria-label": "",
+            "type": "textarea",
+            "instructions": "Right-column text. Supports multiple paragraphs separated by newlines.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "We welcome people from all backgrounds. What matters most is sharing our passion for progress and our aspirations for the future of the industry. And we believe the best ideas emerge when curious minds come together \u2014 so we support continuous learning, encourage bold thinking, and grow as one team.\n\nReady to make an impact? Check out our open roles and join the team.",
+            "maxlength": "",
+            "rows": 8,
+            "placeholder": "",
+            "new_lines": ""
+        },
+        {
+            "key": "field_ntronica_careers_vacancies_title",
+            "label": "Vacancies Section Title",
+            "name": "careers_vacancies_title",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Section #careers heading.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Open positions",
+            "maxlength": 256,
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "page_template",
+                "operator": "==",
+                "value": "page-careers.php"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0
+}

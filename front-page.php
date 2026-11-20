@@ -19,6 +19,7 @@ $ntronica_fp_hero_args = array(
     'image'   => is_string($ntronica_hero_image) && '' !== $ntronica_hero_image
         ? $ntronica_hero_image
         : IMG_PATH . '/home/hero.webp',
+    'nav'     => ntronica_get_page_section_nav('front_page'),
 );
 ?>
 <?php

@@ -1,0 +1,2421 @@
+[
+    {
+        "_wpml_note": "About page fields. After importing, configure WPML > Settings > Custom Fields Translation per field.",
+        "key": "group_ntronica_about_page",
+        "title": "About Page",
+        "fields": [
+            {
+                "key": "field_ntronica_about_hero_title",
+                "label": "Hero Title",
+                "name": "about_hero_title",
+                "aria-label": "",
+                "type": "text",
+                "instructions": "Page title (h1).",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "50",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "About",
+                "maxlength": 256,
+                "placeholder": "",
+                "prepend": "",
+                "append": ""
+            },
+            {
+                "key": "field_ntronica_about_hero_tagline",
+                "label": "Hero Tagline",
+                "name": "about_hero_tagline",
+                "aria-label": "",
+                "type": "textarea",
+                "instructions": "Intro text displayed above the title.",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "50",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "We develop innovative equipment to enable the full cycle of microelectronics production and complex r&d activities",
+                "maxlength": "",
+                "rows": 3,
+                "placeholder": "",
+                "new_lines": ""
+            },
+            {
+                "key": "field_ntronica_about_hero_image",
+                "label": "Hero Background Image",
+                "name": "about_hero_image",
+                "aria-label": "",
+                "type": "image",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "return_format": "url",
+                "library": "all",
+                "min_width": "",
+                "min_height": "",
+                "min_size": "",
+                "max_width": "",
+                "max_height": "",
+                "max_size": "",
+                "mime_types": "",
+                "preview_size": "full"
+            },
+            {
+                "key": "field_ntronica_about_overview_title",
+                "label": "Overview Title",
+                "name": "about_overview_title",
+                "aria-label": "",
+                "type": "text",
+                "instructions": "Section #overview heading.",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "Company overview",
+                "maxlength": 256,
+                "placeholder": "",
+                "prepend": "",
+                "append": ""
+            },
+            {
+                "key": "field_ntronica_about_overview_intro",
+                "label": "Overview Intro",
+                "name": "about_overview_intro",
+                "aria-label": "",
+                "type": "textarea",
+                "instructions": "Left-column intro paragraph.",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "Every day at N-tronica, we create tools that enable the production of the chips powering our world. From large-scale manufacturing to advanced R&D, our work helps accelerate innovation and bring new technologies to life faster. We take pride in contributing to devices that are faster, smarter, and more efficient.",
+                "maxlength": "",
+                "rows": 5,
+                "placeholder": "",
+                "new_lines": ""
+            },
+            {
+                "key": "field_ntronica_about_overview_subtitle",
+                "label": "Overview Subtitle",
+                "name": "about_overview_subtitle",
+                "aria-label": "",
+                "type": "text",
+                "instructions": "Subtitle before the feature list (e.g. \"Key features:\").",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "Key features:",
+                "maxlength": 128,
+                "placeholder": "",
+                "prepend": "",
+                "append": ""
+            },
+            {
+                "key": "field_ntronica_about_overview_features",
+                "label": "Overview Features",
+                "name": "about_overview_features",
+                "aria-label": "",
+                "type": "repeater",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "layout": "table",
+                "pagination": 0,
+                "min": 0,
+                "max": 0,
+                "collapsed": "",
+                "button_label": "Add Feature",
+                "rows_per_page": 20,
+                "sub_fields": [
+                    {
+                        "key": "field_ntronica_about_overview_feature_text",
+                        "label": "Feature Text",
+                        "name": "text",
+                        "aria-label": "",
+                        "type": "textarea",
+                        "instructions": "",
+                        "required": 1,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "default_value": "",
+                        "maxlength": "",
+                        "rows": 3,
+                        "placeholder": "",
+                        "new_lines": ""
+                    }
+                ]
+            },
+            {
+                "key": "field_ntronica_about_goal_title",
+                "label": "Goal Title",
+                "name": "about_goal_title",
+                "aria-label": "",
+                "type": "text",
+                "instructions": "Section #goal heading.",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "Our goal",
+                "maxlength": 256,
+                "placeholder": "",
+                "prepend": "",
+                "append": ""
+            },
+            {
+                "key": "field_ntronica_about_goal_text",
+                "label": "Goal Text",
+                "name": "about_goal_text",
+                "aria-label": "",
+                "type": "textarea",
+                "instructions": "Left-column paragraph.",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "We are here to help our customers solve their toughest technological challenges, whether in a lab or a fab. It's an exciting journey, and to unlock its full potential, we actively seek partnerships that lift everyone.",
+                "maxlength": "",
+                "rows": 5,
+                "placeholder": "",
+                "new_lines": ""
+            },
+            {
+                "key": "field_ntronica_about_goal_image",
+                "label": "Goal Image",
+                "name": "about_goal_image",
+                "aria-label": "",
+                "type": "image",
+                "instructions": "Right-column image.",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "return_format": "url",
+                "library": "all",
+                "min_width": "",
+                "min_height": "",
+                "min_size": "",
+                "max_width": "",
+                "max_height": "",
+                "max_size": "",
+                "mime_types": "",
+                "preview_size": "large"
+            },
+            {
+                "key": "field_ntronica_about_stats_title",
+                "label": "Stats / About Us Title",
+                "name": "about_stats_title",
+                "aria-label": "",
+                "type": "text",
+                "instructions": "Section #about-us heading.",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "About us",
+                "maxlength": 256,
+                "placeholder": "",
+                "prepend": "",
+                "append": ""
+            },
+            {
+                "key": "field_ntronica_about_stats_text_left",
+                "label": "Stats Text (Left)",
+                "name": "about_stats_text_left",
+                "aria-label": "",
+                "type": "textarea",
+                "instructions": "Left-column text.",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "For more than six decades, we've been growing, building, and learning.\n\nWe've moved alongside the semiconductor industry as it evolved \u2014 constantly discovering new frontiers. And by now, we have something to share.",
+                "maxlength": "",
+                "rows": 6,
+                "placeholder": "",
+                "new_lines": ""
+            },
+            {
+                "key": "field_ntronica_about_stats_text_right",
+                "label": "Stats Text (Right)",
+                "name": "about_stats_text_right",
+                "aria-label": "",
+                "type": "textarea",
+                "instructions": "Right-column text (Lorem ipsum placeholder shown here).",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidlaoreet. Lorem ipsum dolor sit amet, consectetuer adipiscing elit.",
+                "maxlength": "",
+                "rows": 8,
+                "placeholder": "",
+                "new_lines": ""
+            },
+            {
+                "key": "field_ntronica_about_stats_items",
+                "label": "Stats Grid Items",
+                "name": "about_stats_items",
+                "aria-label": "",
+                "type": "repeater",
+                "instructions": "Four stat items: value + label.",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "layout": "table",
+                "pagination": 0,
+                "min": 0,
+                "max": 20,
+                "collapsed": "",
+                "button_label": "Add Stat",
+                "rows_per_page": 20,
+                "sub_fields": [
+                    {
+                        "key": "field_ntronica_about_stats_item_value",
+                        "label": "Value",
+                        "name": "value",
+                        "aria-label": "",
+                        "type": "text",
+                        "instructions": "e.g. 3k+, 600, 250+, 60+",
+                        "required": 1,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "default_value": "",
+                        "maxlength": 32,
+                        "placeholder": "",
+                        "prepend": "",
+                        "append": ""
+                    },
+                    {
+                        "key": "field_ntronica_about_stats_item_label",
+                        "label": "Label",
+                        "name": "label",
+                        "aria-label": "",
+                        "type": "text",
+                        "instructions": "e.g. Machines made, IP objects",
+                        "required": 1,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "default_value": "",
+                        "maxlength": 128,
+                        "placeholder": "",
+                        "prepend": "",
+                        "append": ""
+                    }
+                ]
+            },
+            {
+                "key": "field_ntronica_about_solutions_lead",
+                "label": "Solutions Lead",
+                "name": "about_solutions_lead",
+                "aria-label": "",
+                "type": "textarea",
+                "instructions": "Section #solutions heading / lead text.",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "We develop and manufacture solutions for the following technological processes.",
+                "maxlength": "",
+                "rows": 3,
+                "placeholder": "",
+                "new_lines": ""
+            },
+            {
+                "key": "field_ntronica_about_solutions_items",
+                "label": "Solutions Items",
+                "name": "about_solutions_items",
+                "aria-label": "",
+                "type": "repeater",
+                "instructions": "Solutions cards \u2014 title, URL, image, alt text.",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "layout": "table",
+                "pagination": 0,
+                "min": 0,
+                "max": 0,
+                "collapsed": "",
+                "button_label": "Add Solution",
+                "rows_per_page": 20,
+                "sub_fields": [
+                    {
+                        "key": "field_ntronica_about_solutions_item_title",
+                        "label": "Title",
+                        "name": "title",
+                        "aria-label": "",
+                        "type": "text",
+                        "instructions": "",
+                        "required": 1,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "default_value": "",
+                        "maxlength": 256,
+                        "placeholder": "",
+                        "prepend": "",
+                        "append": ""
+                    },
+                    {
+                        "key": "field_ntronica_about_solutions_item_url",
+                        "label": "URL",
+                        "name": "url",
+                        "aria-label": "",
+                        "type": "url",
+                        "instructions": "",
+                        "required": 1,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "default_value": "",
+                        "placeholder": ""
+                    },
+                    {
+                        "key": "field_ntronica_about_solutions_item_image",
+                        "label": "Image",
+                        "name": "image",
+                        "aria-label": "",
+                        "type": "image",
+                        "instructions": "",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "return_format": "url",
+                        "library": "all",
+                        "min_width": "",
+                        "min_height": "",
+                        "min_size": "",
+                        "max_width": "",
+                        "max_height": "",
+                        "max_size": "",
+                        "mime_types": "",
+                        "preview_size": "medium"
+                    },
+                    {
+                        "key": "field_ntronica_about_solutions_item_alt",
+                        "label": "Image Alt Text",
+                        "name": "alt",
+                        "aria-label": "",
+                        "type": "text",
+                        "instructions": "",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "default_value": "",
+                        "maxlength": 256,
+                        "placeholder": "",
+                        "prepend": "",
+                        "append": ""
+                    }
+                ]
+            }
+        ],
+        "location": [
+            [
+                {
+                    "param": "page_template",
+                    "operator": "==",
+                    "value": "page-about.php"
+                }
+            ]
+        ],
+        "menu_order": 0,
+        "position": "normal",
+        "style": "default",
+        "label_placement": "top",
+        "instruction_placement": "label",
+        "hide_on_screen": "",
+        "active": true,
+        "description": "",
+        "show_in_rest": 0
+    },
+    {
+        "_wpml_note": "Careers page fields. After importing, configure WPML > Settings > Custom Fields Translation per field.",
+        "key": "group_ntronica_careers_page",
+        "title": "Careers Page",
+        "fields": [
+            {
+                "key": "field_ntronica_careers_hero_title",
+                "label": "Hero Title",
+                "name": "careers_hero_title",
+                "aria-label": "",
+                "type": "text",
+                "instructions": "Page title (h1).",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "50",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "Careers",
+                "maxlength": 256,
+                "placeholder": "",
+                "prepend": "",
+                "append": ""
+            },
+            {
+                "key": "field_ntronica_careers_hero_tagline",
+                "label": "Hero Tagline",
+                "name": "careers_hero_tagline",
+                "aria-label": "",
+                "type": "textarea",
+                "instructions": "Intro text displayed above the title.",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "50",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "Join us on our journey to solve the most exciting technological challenges and shape the future through innovation",
+                "maxlength": "",
+                "rows": 3,
+                "placeholder": "",
+                "new_lines": ""
+            },
+            {
+                "key": "field_ntronica_careers_hero_image",
+                "label": "Hero Background Image",
+                "name": "careers_hero_image",
+                "aria-label": "",
+                "type": "image",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "return_format": "url",
+                "library": "all",
+                "min_width": "",
+                "min_height": "",
+                "min_size": "",
+                "max_width": "",
+                "max_height": "",
+                "max_size": "",
+                "mime_types": "",
+                "preview_size": "full"
+            },
+            {
+                "key": "field_ntronica_careers_team_title",
+                "label": "Team Section Title",
+                "name": "careers_team_title",
+                "aria-label": "",
+                "type": "text",
+                "instructions": "Section #team heading.",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "Our team",
+                "maxlength": 256,
+                "placeholder": "",
+                "prepend": "",
+                "append": ""
+            },
+            {
+                "key": "field_ntronica_careers_team_tagline",
+                "label": "Team Tagline",
+                "name": "careers_team_tagline",
+                "aria-label": "",
+                "type": "textarea",
+                "instructions": "Left-column tagline paragraph.",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "Our team brings together exceptional developers, engineers, technologists, and constructors \u2014 all inspired by the technological challenges we tackle. There is also a great deal of analytical and creative work in what we do, so we've gathered designers, marketers, and analysts who are genuinely excited by the chip making process.",
+                "maxlength": "",
+                "rows": 5,
+                "placeholder": "",
+                "new_lines": ""
+            },
+            {
+                "key": "field_ntronica_careers_team_text",
+                "label": "Team Text",
+                "name": "careers_team_text",
+                "aria-label": "",
+                "type": "textarea",
+                "instructions": "Right-column text. Supports multiple paragraphs separated by newlines.",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "We welcome people from all backgrounds. What matters most is sharing our passion for progress and our aspirations for the future of the industry. And we believe the best ideas emerge when curious minds come together \u2014 so we support continuous learning, encourage bold thinking, and grow as one team.\n\nReady to make an impact? Check out our open roles and join the team.",
+                "maxlength": "",
+                "rows": 8,
+                "placeholder": "",
+                "new_lines": ""
+            },
+            {
+                "key": "field_ntronica_careers_vacancies_title",
+                "label": "Vacancies Section Title",
+                "name": "careers_vacancies_title",
+                "aria-label": "",
+                "type": "text",
+                "instructions": "Section #careers heading.",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "Open positions",
+                "maxlength": 256,
+                "placeholder": "",
+                "prepend": "",
+                "append": ""
+            }
+        ],
+        "location": [
+            [
+                {
+                    "param": "page_template",
+                    "operator": "==",
+                    "value": "page-careers.php"
+                }
+            ]
+        ],
+        "menu_order": 0,
+        "position": "normal",
+        "style": "default",
+        "label_placement": "top",
+        "instruction_placement": "label",
+        "hide_on_screen": "",
+        "active": true,
+        "description": "",
+        "show_in_rest": 0
+    },
+    {
+        "_wpml_note": "Front Page fields. After importing, configure WPML > Settings > Custom Fields Translation per field.",
+        "key": "group_ntronica_front_page",
+        "title": "Front Page",
+        "fields": [
+            {
+                "key": "field_ntronica_fp_hero_heading",
+                "label": "Hero Tagline",
+                "name": "hero_tagline",
+                "aria-label": "",
+                "type": "text",
+                "instructions": "Displayed as h1 on the front page.",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "Technological language of the future",
+                "maxlength": 256,
+                "placeholder": "",
+                "prepend": "",
+                "append": ""
+            },
+            {
+                "key": "field_ntronica_fp_hero_image",
+                "label": "Hero Background Image",
+                "name": "hero_image",
+                "aria-label": "",
+                "type": "image",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "return_format": "url",
+                "library": "all",
+                "min_width": "",
+                "min_height": "",
+                "min_size": "",
+                "max_width": "",
+                "max_height": "",
+                "max_size": "",
+                "mime_types": "",
+                "preview_size": "full"
+            },
+            {
+                "key": "field_ntronica_fp_overview_title",
+                "label": "Overview Title",
+                "name": "overview_title",
+                "aria-label": "",
+                "type": "text",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "Company overview",
+                "maxlength": 256,
+                "placeholder": "",
+                "prepend": "",
+                "append": ""
+            },
+            {
+                "key": "field_ntronica_fp_overview_intro",
+                "label": "Overview Intro",
+                "name": "overview_intro",
+                "aria-label": "",
+                "type": "textarea",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "Every day at N-tronica, we create tools that enable the production of the chips powering our world. From large-scale manufacturing to advanced R&D, our work helps accelerate innovation and bring new technologies to life faster. We take pride in contributing to devices that are faster, smarter, and more efficient.",
+                "maxlength": "",
+                "rows": 5,
+                "placeholder": "",
+                "new_lines": ""
+            },
+            {
+                "key": "field_ntronica_fp_overview_link_url",
+                "label": "Overview \"Learn More\" URL",
+                "name": "overview_link_url",
+                "aria-label": "",
+                "type": "page_link",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "post_type": [
+                    "page"
+                ],
+                "post_status": "",
+                "taxonomy": "",
+                "allow_null": 0,
+                "allow_archives": 0,
+                "multiple": 0
+            },
+            {
+                "key": "field_ntronica_fp_overview_link_text",
+                "label": "Overview \"Learn More\" Text",
+                "name": "overview_link_text",
+                "aria-label": "",
+                "type": "text",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "LEARN MORE",
+                "maxlength": 64,
+                "placeholder": "",
+                "prepend": "",
+                "append": ""
+            },
+            {
+                "key": "field_ntronica_fp_overview_subtitle",
+                "label": "Overview Subtitle",
+                "name": "overview_subtitle",
+                "aria-label": "",
+                "type": "text",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "Key features:",
+                "maxlength": 128,
+                "placeholder": "",
+                "prepend": "",
+                "append": ""
+            },
+            {
+                "key": "field_ntronica_fp_overview_features",
+                "label": "Overview Features List",
+                "name": "overview_features",
+                "aria-label": "",
+                "type": "repeater",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "layout": "table",
+                "pagination": 0,
+                "min": 0,
+                "max": 0,
+                "collapsed": "",
+                "button_label": "Add Feature",
+                "rows_per_page": 20,
+                "sub_fields": [
+                    {
+                        "key": "field_ntronica_fp_overview_feature_text",
+                        "label": "Feature Text",
+                        "name": "text",
+                        "aria-label": "",
+                        "type": "textarea",
+                        "instructions": "",
+                        "required": 1,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "default_value": "",
+                        "maxlength": "",
+                        "rows": 3,
+                        "placeholder": "",
+                        "new_lines": ""
+                    }
+                ]
+            },
+            {
+                "key": "field_ntronica_fp_products_title",
+                "label": "Products Section Title",
+                "name": "products_title",
+                "aria-label": "",
+                "type": "text",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "Products",
+                "maxlength": 256,
+                "placeholder": "",
+                "prepend": "",
+                "append": ""
+            },
+            {
+                "key": "field_ntronica_fp_products_lead",
+                "label": "Products Lead",
+                "name": "products_lead",
+                "aria-label": "",
+                "type": "textarea",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "We design and manufacture semiconductor manufacturing tools suitable for both R&D labs and mass production at various scales. Our equipment is available in stand-alone and cluster configurations.",
+                "maxlength": "",
+                "rows": 4,
+                "placeholder": "",
+                "new_lines": ""
+            },
+            {
+                "key": "field_ntronica_fp_products_items",
+                "label": "Products Items",
+                "name": "products_items",
+                "aria-label": "",
+                "type": "repeater",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "layout": "table",
+                "pagination": 0,
+                "min": 0,
+                "max": 0,
+                "collapsed": "",
+                "button_label": "Add Product",
+                "rows_per_page": 20,
+                "sub_fields": [
+                    {
+                        "key": "field_ntronica_fp_products_item_title",
+                        "label": "Title",
+                        "name": "title",
+                        "aria-label": "",
+                        "type": "text",
+                        "instructions": "",
+                        "required": 1,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "default_value": "",
+                        "maxlength": 256,
+                        "placeholder": "",
+                        "prepend": "",
+                        "append": ""
+                    },
+                    {
+                        "key": "field_ntronica_fp_products_item_url",
+                        "label": "URL",
+                        "name": "url",
+                        "aria-label": "",
+                        "type": "url",
+                        "instructions": "",
+                        "required": 1,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "default_value": "",
+                        "placeholder": ""
+                    },
+                    {
+                        "key": "field_ntronica_fp_products_item_image",
+                        "label": "Image",
+                        "name": "image",
+                        "aria-label": "",
+                        "type": "image",
+                        "instructions": "",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "return_format": "url",
+                        "library": "all",
+                        "min_width": "",
+                        "min_height": "",
+                        "min_size": "",
+                        "max_width": "",
+                        "max_height": "",
+                        "max_size": "",
+                        "mime_types": "",
+                        "preview_size": "medium"
+                    }
+                ]
+            },
+            {
+                "key": "field_ntronica_fp_products_link_url",
+                "label": "Products \"Learn More\" URL",
+                "name": "products_link_url",
+                "aria-label": "",
+                "type": "page_link",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "post_type": [
+                    "page"
+                ],
+                "post_status": "",
+                "taxonomy": "",
+                "allow_null": 0,
+                "allow_archives": 0,
+                "multiple": 0
+            },
+            {
+                "key": "field_ntronica_fp_products_link_text",
+                "label": "Products \"Learn More\" Text",
+                "name": "products_link_text",
+                "aria-label": "",
+                "type": "text",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "LEARN MORE",
+                "maxlength": 64,
+                "placeholder": "",
+                "prepend": "",
+                "append": ""
+            },
+            {
+                "key": "field_ntronica_fp_slider_title",
+                "label": "Slider Section Title",
+                "name": "slider_title",
+                "aria-label": "",
+                "type": "text",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "Technological processes",
+                "maxlength": 256,
+                "placeholder": "",
+                "prepend": "",
+                "append": ""
+            },
+            {
+                "key": "field_ntronica_fp_slider_items",
+                "label": "Slider Items",
+                "name": "slider_items",
+                "aria-label": "",
+                "type": "repeater",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "layout": "block",
+                "pagination": 0,
+                "min": 0,
+                "max": 0,
+                "collapsed": "",
+                "button_label": "Add Process",
+                "rows_per_page": 20,
+                "sub_fields": [
+                    {
+                        "key": "field_ntronica_fp_slider_item_title",
+                        "label": "Title",
+                        "name": "title",
+                        "aria-label": "",
+                        "type": "text",
+                        "instructions": "",
+                        "required": 1,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "default_value": "",
+                        "maxlength": 256,
+                        "placeholder": "",
+                        "prepend": "",
+                        "append": ""
+                    },
+                    {
+                        "key": "field_ntronica_fp_slider_item_index",
+                        "label": "Index",
+                        "name": "index",
+                        "aria-label": "",
+                        "type": "text",
+                        "instructions": "",
+                        "required": 1,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "default_value": "",
+                        "maxlength": 8,
+                        "placeholder": "",
+                        "prepend": "",
+                        "append": ""
+                    },
+                    {
+                        "key": "field_ntronica_fp_slider_item_image",
+                        "label": "Background Image",
+                        "name": "image",
+                        "aria-label": "",
+                        "type": "image",
+                        "instructions": "",
+                        "required": 1,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "return_format": "url",
+                        "library": "all",
+                        "min_width": "",
+                        "min_height": "",
+                        "min_size": "",
+                        "max_width": "",
+                        "max_height": "",
+                        "max_size": "",
+                        "mime_types": "",
+                        "preview_size": "full"
+                    },
+                    {
+                        "key": "field_ntronica_fp_slider_item_text_1",
+                        "label": "Text Column 1",
+                        "name": "text_1",
+                        "aria-label": "",
+                        "type": "textarea",
+                        "instructions": "",
+                        "required": 1,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "default_value": "",
+                        "maxlength": "",
+                        "rows": 4,
+                        "placeholder": "",
+                        "new_lines": ""
+                    },
+                    {
+                        "key": "field_ntronica_fp_slider_item_text_2",
+                        "label": "Text Column 2",
+                        "name": "text_2",
+                        "aria-label": "",
+                        "type": "textarea",
+                        "instructions": "",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "default_value": "",
+                        "maxlength": "",
+                        "rows": 4,
+                        "placeholder": "",
+                        "new_lines": ""
+                    }
+                ]
+            },
+            {
+                "key": "field_ntronica_fp_info_title",
+                "label": "Info Section Title",
+                "name": "info_title",
+                "aria-label": "",
+                "type": "text",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "Company information",
+                "maxlength": 256,
+                "placeholder": "",
+                "prepend": "",
+                "append": ""
+            },
+            {
+                "key": "field_ntronica_fp_info_text",
+                "label": "Info Text",
+                "name": "info_text",
+                "aria-label": "",
+                "type": "textarea",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.",
+                "maxlength": "",
+                "rows": 6,
+                "placeholder": "",
+                "new_lines": ""
+            },
+            {
+                "key": "field_ntronica_fp_info_email_1",
+                "label": "Info Email 1",
+                "name": "info_email_1",
+                "aria-label": "",
+                "type": "email",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "contact@ntronica.com",
+                "placeholder": "",
+                "prepend": "",
+                "append": ""
+            },
+            {
+                "key": "field_ntronica_fp_info_email_2",
+                "label": "Info Email 2",
+                "name": "info_email_2",
+                "aria-label": "",
+                "type": "email",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "info@ntronica.com",
+                "placeholder": "",
+                "prepend": "",
+                "append": ""
+            },
+            {
+                "key": "field_ntronica_fp_info_phone",
+                "label": "Info Phone",
+                "name": "info_phone",
+                "aria-label": "",
+                "type": "text",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "+91 221-234-5678",
+                "maxlength": "",
+                "placeholder": "",
+                "prepend": "",
+                "append": ""
+            },
+            {
+                "key": "field_ntronica_fp_info_address",
+                "label": "Info Address",
+                "name": "info_address",
+                "aria-label": "",
+                "type": "textarea",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "8 Ulsoor Road, Yellapa Chetty Layout, Sivan Chetty Gardens, Ulsoor (Halasuru), Bengaluru, Bengaluru North, Karnataka, 560042, India",
+                "maxlength": "",
+                "rows": 4,
+                "placeholder": "",
+                "new_lines": ""
+            },
+            {
+                "key": "field_ntronica_fp_info_cin",
+                "label": "Info CIN",
+                "name": "info_cin",
+                "aria-label": "",
+                "type": "text",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "U46521KA2025FTC210805",
+                "maxlength": "",
+                "placeholder": "",
+                "prepend": "",
+                "append": ""
+            },
+            {
+                "key": "field_ntronica_fp_contact_title",
+                "label": "Contact Section Title",
+                "name": "contact_title",
+                "aria-label": "",
+                "type": "text",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "Contact us",
+                "maxlength": 256,
+                "placeholder": "",
+                "prepend": "",
+                "append": ""
+            },
+            {
+                "key": "field_ntronica_fp_contact_form_id",
+                "label": "Contact Form 7 ID",
+                "name": "contact_form_id",
+                "aria-label": "",
+                "type": "text",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "9a6010d",
+                "maxlength": 64,
+                "placeholder": "",
+                "prepend": "",
+                "append": ""
+            }
+        ],
+        "location": [
+            [
+                {
+                    "param": "page_type",
+                    "operator": "==",
+                    "value": "front_page"
+                }
+            ]
+        ],
+        "menu_order": 0,
+        "position": "normal",
+        "style": "default",
+        "label_placement": "top",
+        "instruction_placement": "label",
+        "hide_on_screen": "",
+        "active": true,
+        "description": "",
+        "show_in_rest": 0
+    },
+    {
+        "_wpml_note": "After importing, go to WPML > Settings > Custom Fields Translation and configure each field as marked below (Translate / Copy). ACFML will then show translated fields in each language editor.",
+        "key": "group_ntronica_site_settings",
+        "title": "Site Settings",
+        "fields": [
+            {
+                "key": "field_ntronica_logo_svg",
+                "label": "Logo SVG",
+                "name": "logo_svg",
+                "aria-label": "",
+                "type": "textarea",
+                "instructions": "Paste the logo SVG markup here.",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "maxlength": "",
+                "rows": 6,
+                "placeholder": "",
+                "new_lines": ""
+            },
+            {
+                "key": "field_ntronica_logo_image",
+                "label": "Logo Image \u2014 fallback if SVG empty",
+                "name": "logo_image",
+                "aria-label": "",
+                "type": "image",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "return_format": "url",
+                "library": "all",
+                "min_width": "",
+                "min_height": "",
+                "min_size": "",
+                "max_width": "",
+                "max_height": "",
+                "max_size": "",
+                "mime_types": "",
+                "preview_size": "medium"
+            },
+            {
+                "key": "field_ntronica_logo_width",
+                "label": "Logo SVG Width (px)",
+                "name": "logo_width",
+                "aria-label": "",
+                "type": "number",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": 234,
+                "min": 1,
+                "max": 9999,
+                "placeholder": "",
+                "step": "",
+                "prepend": "",
+                "append": ""
+            },
+            {
+                "key": "field_ntronica_logo_height",
+                "label": "Logo SVG Height (px)",
+                "name": "logo_height",
+                "aria-label": "",
+                "type": "number",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": 34,
+                "min": 1,
+                "max": 9999,
+                "placeholder": "",
+                "step": "",
+                "prepend": "",
+                "append": ""
+            },
+            {
+                "key": "field_ntronica_header_menu",
+                "label": "Header Menu Items",
+                "name": "ntronica_header_menu",
+                "aria-label": "",
+                "type": "repeater",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "layout": "table",
+                "pagination": 0,
+                "min": 0,
+                "max": 0,
+                "collapsed": "",
+                "button_label": "Add Menu Item",
+                "rows_per_page": 20,
+                "sub_fields": [
+                    {
+                        "key": "field_ntronica_header_menu_slug",
+                        "label": "Slug",
+                        "name": "slug",
+                        "aria-label": "",
+                        "type": "text",
+                        "instructions": "Unique identifier (e.g. about, technology)",
+                        "required": 1,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "default_value": "",
+                        "maxlength": 64,
+                        "placeholder": "",
+                        "prepend": "",
+                        "append": ""
+                    },
+                    {
+                        "key": "field_ntronica_header_menu_label",
+                        "label": "Label",
+                        "name": "label",
+                        "aria-label": "",
+                        "type": "text",
+                        "instructions": "",
+                        "required": 1,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "default_value": "",
+                        "maxlength": 128,
+                        "placeholder": "",
+                        "prepend": "",
+                        "append": ""
+                    },
+                    {
+                        "key": "field_ntronica_header_menu_url",
+                        "label": "URL",
+                        "name": "url",
+                        "aria-label": "",
+                        "type": "page_link",
+                        "instructions": "",
+                        "required": 1,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "post_type": [
+                            "page"
+                        ],
+                        "post_status": "",
+                        "taxonomy": "",
+                        "allow_null": 0,
+                        "allow_archives": 1,
+                        "multiple": 0
+                    },
+                    {
+                        "key": "field_ntronica_header_menu_children",
+                        "label": "Sub-items",
+                        "name": "children",
+                        "aria-label": "",
+                        "type": "repeater",
+                        "instructions": "",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "layout": "table",
+                        "pagination": 0,
+                        "min": 0,
+                        "max": 0,
+                        "collapsed": "",
+                        "button_label": "Add Sub-item",
+                        "rows_per_page": 20,
+                        "sub_fields": [
+                            {
+                                "key": "field_ntronica_header_menu_child_href",
+                                "label": "Anchor",
+                                "name": "href",
+                                "aria-label": "",
+                                "type": "text",
+                                "instructions": "Anchor ID (e.g. #overview)",
+                                "required": 0,
+                                "conditional_logic": 0,
+                                "wrapper": {
+                                    "width": "",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "default_value": "",
+                                "maxlength": 64,
+                                "placeholder": "",
+                                "prepend": "",
+                                "append": ""
+                            },
+                            {
+                                "key": "field_ntronica_header_menu_child_label",
+                                "label": "Label",
+                                "name": "label",
+                                "aria-label": "",
+                                "type": "text",
+                                "instructions": "",
+                                "required": 1,
+                                "conditional_logic": 0,
+                                "wrapper": {
+                                    "width": "",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "default_value": "",
+                                "maxlength": 128,
+                                "placeholder": "",
+                                "prepend": "",
+                                "append": ""
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "key": "field_ntronica_footer_email_1",
+                "label": "Footer Email 1",
+                "name": "ntronica_footer_email_1",
+                "aria-label": "",
+                "type": "email",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "contact@ntronica.com",
+                "placeholder": "",
+                "prepend": "",
+                "append": ""
+            },
+            {
+                "key": "field_ntronica_footer_email_2",
+                "label": "Footer Email 2",
+                "name": "ntronica_footer_email_2",
+                "aria-label": "",
+                "type": "email",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "business@ntronica.com",
+                "placeholder": "",
+                "prepend": "",
+                "append": ""
+            },
+            {
+                "key": "field_ntronica_footer_phone",
+                "label": "Footer Phone",
+                "name": "ntronica_footer_phone",
+                "aria-label": "",
+                "type": "text",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "+91 221-234-5678",
+                "maxlength": "",
+                "placeholder": "",
+                "prepend": "",
+                "append": ""
+            },
+            {
+                "key": "field_ntronica_footer_website",
+                "label": "Footer Website",
+                "name": "ntronica_footer_website",
+                "aria-label": "",
+                "type": "url",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "https://www.ntronica.com",
+                "placeholder": ""
+            },
+            {
+                "key": "field_ntronica_footer_address",
+                "label": "Footer Address",
+                "name": "ntronica_footer_address",
+                "aria-label": "",
+                "type": "textarea",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "8 Ulsoor Road, Yellapa\nChetty Layout, Ulsoor,\nBangaluru, Karnataka,\n560042, India",
+                "maxlength": "",
+                "rows": 4,
+                "placeholder": "",
+                "new_lines": ""
+            },
+            {
+                "key": "field_ntronica_footer_privacy_url",
+                "label": "Privacy Policy URL",
+                "name": "ntronica_footer_privacy_url",
+                "aria-label": "",
+                "type": "page_link",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "post_type": [
+                    "page"
+                ],
+                "post_status": "",
+                "taxonomy": "",
+                "allow_null": 0,
+                "allow_archives": 0,
+                "multiple": 0
+            },
+            {
+                "key": "field_ntronica_footer_terms_url",
+                "label": "Terms of Use URL",
+                "name": "ntronica_footer_terms_url",
+                "aria-label": "",
+                "type": "page_link",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "post_type": [
+                    "page"
+                ],
+                "post_status": "",
+                "taxonomy": "",
+                "allow_null": 0,
+                "allow_archives": 0,
+                "multiple": 0
+            },
+            {
+                "key": "field_ntronica_sticky_nav_about",
+                "label": "Sticky Nav \u2014 About",
+                "name": "sticky_nav_about",
+                "aria-label": "",
+                "type": "repeater",
+                "instructions": "Links shown in the sticky navbar on the About page.",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "layout": "table",
+                "pagination": 0,
+                "min": 0,
+                "max": 0,
+                "collapsed": "",
+                "button_label": "Add Link",
+                "rows_per_page": 20,
+                "sub_fields": [
+                    {
+                        "key": "field_ntronica_sticky_nav_about_href",
+                        "label": "Anchor",
+                        "name": "href",
+                        "aria-label": "",
+                        "type": "text",
+                        "instructions": "e.g. #overview",
+                        "required": 1,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "default_value": "",
+                        "maxlength": 64,
+                        "placeholder": "",
+                        "prepend": "",
+                        "append": ""
+                    },
+                    {
+                        "key": "field_ntronica_sticky_nav_about_label",
+                        "label": "Label",
+                        "name": "label",
+                        "aria-label": "",
+                        "type": "text",
+                        "instructions": "e.g. Company overview",
+                        "required": 1,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "default_value": "",
+                        "maxlength": 256,
+                        "placeholder": "",
+                        "prepend": "",
+                        "append": ""
+                    }
+                ]
+            },
+            {
+                "key": "field_ntronica_sticky_nav_technology",
+                "label": "Sticky Nav \u2014 Technology",
+                "name": "sticky_nav_technology",
+                "aria-label": "",
+                "type": "repeater",
+                "instructions": "Links shown in the sticky navbar on the Technology page.",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "layout": "table",
+                "pagination": 0,
+                "min": 0,
+                "max": 0,
+                "collapsed": "",
+                "button_label": "Add Link",
+                "rows_per_page": 20,
+                "sub_fields": [
+                    {
+                        "key": "field_ntronica_sticky_nav_technology_href",
+                        "label": "Anchor",
+                        "name": "href",
+                        "aria-label": "",
+                        "type": "text",
+                        "instructions": "e.g. #microchips",
+                        "required": 1,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "default_value": "",
+                        "maxlength": 64,
+                        "placeholder": "",
+                        "prepend": "",
+                        "append": ""
+                    },
+                    {
+                        "key": "field_ntronica_sticky_nav_technology_label",
+                        "label": "Label",
+                        "name": "label",
+                        "aria-label": "",
+                        "type": "text",
+                        "instructions": "e.g. All about microchips",
+                        "required": 1,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "default_value": "",
+                        "maxlength": 256,
+                        "placeholder": "",
+                        "prepend": "",
+                        "append": ""
+                    }
+                ]
+            },
+            {
+                "key": "field_ntronica_sticky_nav_products",
+                "label": "Sticky Nav \u2014 Products",
+                "name": "sticky_nav_products",
+                "aria-label": "",
+                "type": "repeater",
+                "instructions": "Links shown in the sticky navbar on the Products page.",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "layout": "table",
+                "pagination": 0,
+                "min": 0,
+                "max": 0,
+                "collapsed": "",
+                "button_label": "Add Link",
+                "rows_per_page": 20,
+                "sub_fields": [
+                    {
+                        "key": "field_ntronica_sticky_nav_products_href",
+                        "label": "Anchor",
+                        "name": "href",
+                        "aria-label": "",
+                        "type": "text",
+                        "instructions": "e.g. #thin-films",
+                        "required": 1,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "default_value": "",
+                        "maxlength": 64,
+                        "placeholder": "",
+                        "prepend": "",
+                        "append": ""
+                    },
+                    {
+                        "key": "field_ntronica_sticky_nav_products_label",
+                        "label": "Label",
+                        "name": "label",
+                        "aria-label": "",
+                        "type": "text",
+                        "instructions": "e.g. Thin films equipment",
+                        "required": 1,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "default_value": "",
+                        "maxlength": 256,
+                        "placeholder": "",
+                        "prepend": "",
+                        "append": ""
+                    }
+                ]
+            },
+            {
+                "key": "field_ntronica_sticky_nav_news",
+                "label": "Sticky Nav \u2014 News",
+                "name": "sticky_nav_news",
+                "aria-label": "",
+                "type": "repeater",
+                "instructions": "Links shown in the sticky navbar on the News page.",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "layout": "table",
+                "pagination": 0,
+                "min": 0,
+                "max": 0,
+                "collapsed": "",
+                "button_label": "Add Link",
+                "rows_per_page": 20,
+                "sub_fields": [
+                    {
+                        "key": "field_ntronica_sticky_nav_news_href",
+                        "label": "Anchor",
+                        "name": "href",
+                        "aria-label": "",
+                        "type": "text",
+                        "instructions": "e.g. #events",
+                        "required": 1,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "default_value": "",
+                        "maxlength": 64,
+                        "placeholder": "",
+                        "prepend": "",
+                        "append": ""
+                    },
+                    {
+                        "key": "field_ntronica_sticky_nav_news_label",
+                        "label": "Label",
+                        "name": "label",
+                        "aria-label": "",
+                        "type": "text",
+                        "instructions": "e.g. Events & news",
+                        "required": 1,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "default_value": "",
+                        "maxlength": 256,
+                        "placeholder": "",
+                        "prepend": "",
+                        "append": ""
+                    }
+                ]
+            },
+            {
+                "key": "field_ntronica_sticky_nav_careers",
+                "label": "Sticky Nav \u2014 Careers",
+                "name": "sticky_nav_careers",
+                "aria-label": "",
+                "type": "repeater",
+                "instructions": "Links shown in the sticky navbar on the Careers page.",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "layout": "table",
+                "pagination": 0,
+                "min": 0,
+                "max": 0,
+                "collapsed": "",
+                "button_label": "Add Link",
+                "rows_per_page": 20,
+                "sub_fields": [
+                    {
+                        "key": "field_ntronica_sticky_nav_careers_href",
+                        "label": "Anchor",
+                        "name": "href",
+                        "aria-label": "",
+                        "type": "text",
+                        "instructions": "e.g. #team",
+                        "required": 1,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "default_value": "",
+                        "maxlength": 64,
+                        "placeholder": "",
+                        "prepend": "",
+                        "append": ""
+                    },
+                    {
+                        "key": "field_ntronica_sticky_nav_careers_label",
+                        "label": "Label",
+                        "name": "label",
+                        "aria-label": "",
+                        "type": "text",
+                        "instructions": "e.g. Our team",
+                        "required": 1,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "default_value": "",
+                        "maxlength": 256,
+                        "placeholder": "",
+                        "prepend": "",
+                        "append": ""
+                    }
+                ]
+            },
+            {
+                "key": "field_ntronica_sticky_nav_contacts",
+                "label": "Sticky Nav \u2014 Contacts",
+                "name": "sticky_nav_contacts",
+                "aria-label": "",
+                "type": "repeater",
+                "instructions": "Links shown in the sticky navbar on the Contacts page.",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "layout": "table",
+                "pagination": 0,
+                "min": 0,
+                "max": 0,
+                "collapsed": "",
+                "button_label": "Add Link",
+                "rows_per_page": 20,
+                "sub_fields": [
+                    {
+                        "key": "field_ntronica_sticky_nav_contacts_href",
+                        "label": "Anchor",
+                        "name": "href",
+                        "aria-label": "",
+                        "type": "text",
+                        "instructions": "e.g. #about",
+                        "required": 1,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "default_value": "",
+                        "maxlength": 64,
+                        "placeholder": "",
+                        "prepend": "",
+                        "append": ""
+                    },
+                    {
+                        "key": "field_ntronica_sticky_nav_contacts_label",
+                        "label": "Label",
+                        "name": "label",
+                        "aria-label": "",
+                        "type": "text",
+                        "instructions": "e.g. Company information",
+                        "required": 1,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "default_value": "",
+                        "maxlength": 256,
+                        "placeholder": "",
+                        "prepend": "",
+                        "append": ""
+                    }
+                ]
+            },
+            {
+                "key": "field_ntronica_sticky_nav_front_page",
+                "label": "Sticky Nav \u2014 Front Page",
+                "name": "sticky_nav_front_page",
+                "aria-label": "",
+                "type": "repeater",
+                "instructions": "Links shown in the sticky navbar on the Front Page.",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "layout": "table",
+                "pagination": 0,
+                "min": 0,
+                "max": 0,
+                "collapsed": "",
+                "button_label": "Add Link",
+                "rows_per_page": 20,
+                "sub_fields": [
+                    {
+                        "key": "field_ntronica_sticky_nav_front_page_href",
+                        "label": "Anchor",
+                        "name": "href",
+                        "aria-label": "",
+                        "type": "text",
+                        "instructions": "e.g. #hero",
+                        "required": 1,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "default_value": "",
+                        "maxlength": 64,
+                        "placeholder": "",
+                        "prepend": "",
+                        "append": ""
+                    },
+                    {
+                        "key": "field_ntronica_sticky_nav_front_page_label",
+                        "label": "Label",
+                        "name": "label",
+                        "aria-label": "",
+                        "type": "text",
+                        "instructions": "e.g. Hero",
+                        "required": 1,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "default_value": "",
+                        "maxlength": 256,
+                        "placeholder": "",
+                        "prepend": "",
+                        "append": ""
+                    }
+                ]
+            }
+        ],
+        "location": [
+            [
+                {
+                    "param": "options_page",
+                    "operator": "==",
+                    "value": "acf-options-site-settings"
+                }
+            ]
+        ],
+        "menu_order": 0,
+        "position": "normal",
+        "style": "default",
+        "label_placement": "top",
+        "instruction_placement": "label",
+        "hide_on_screen": "",
+        "active": true,
+        "description": "",
+        "show_in_rest": 0
+    },
+    {
+        "_wpml_note": "Vacancy post type fields. After importing, configure WPML > Settings > Custom Fields Translation per field.",
+        "key": "group_ntronica_vacancy",
+        "title": "Vacancy",
+        "fields": [
+            {
+                "key": "field_ntronica_vacancy_team",
+                "label": "Team",
+                "name": "vacancy_team",
+                "aria-label": "",
+                "type": "text",
+                "instructions": "e.g. Customer support",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "33",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "Customer support",
+                "maxlength": 128,
+                "placeholder": "",
+                "prepend": "",
+                "append": ""
+            },
+            {
+                "key": "field_ntronica_vacancy_experience",
+                "label": "Work Experience",
+                "name": "vacancy_experience",
+                "aria-label": "",
+                "type": "text",
+                "instructions": "e.g. 2-3 years",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "33",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "2-3 years",
+                "maxlength": 128,
+                "placeholder": "",
+                "prepend": "",
+                "append": ""
+            },
+            {
+                "key": "field_ntronica_vacancy_education",
+                "label": "Education Background",
+                "name": "vacancy_education",
+                "aria-label": "",
+                "type": "text",
+                "instructions": "e.g. Physics, Computer Science, Chemical Engineering, Materials Science",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "34",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "Physics, Computer Science, Chemical Engineering, Materials Science",
+                "maxlength": 256,
+                "placeholder": "",
+                "prepend": "",
+                "append": ""
+            },
+            {
+                "key": "field_ntronica_vacancy_responsibilities",
+                "label": "Responsibilities",
+                "name": "vacancy_responsibilities",
+                "aria-label": "",
+                "type": "repeater",
+                "instructions": "List of responsibilities for this vacancy.",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "layout": "table",
+                "pagination": 0,
+                "min": 0,
+                "max": 0,
+                "collapsed": "",
+                "button_label": "Add Responsibility",
+                "rows_per_page": 20,
+                "sub_fields": [
+                    {
+                        "key": "field_ntronica_vacancy_responsibility_text",
+                        "label": "Text",
+                        "name": "text",
+                        "aria-label": "",
+                        "type": "textarea",
+                        "instructions": "",
+                        "required": 1,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "default_value": "",
+                        "maxlength": "",
+                        "rows": 2,
+                        "placeholder": "",
+                        "new_lines": ""
+                    }
+                ]
+            },
+            {
+                "key": "field_ntronica_vacancy_requirements",
+                "label": "Requirements",
+                "name": "vacancy_requirements",
+                "aria-label": "",
+                "type": "repeater",
+                "instructions": "List of requirements for this vacancy.",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "layout": "table",
+                "pagination": 0,
+                "min": 0,
+                "max": 0,
+                "collapsed": "",
+                "button_label": "Add Requirement",
+                "rows_per_page": 20,
+                "sub_fields": [
+                    {
+                        "key": "field_ntronica_vacancy_requirement_text",
+                        "label": "Text",
+                        "name": "text",
+                        "aria-label": "",
+                        "type": "textarea",
+                        "instructions": "",
+                        "required": 1,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "default_value": "",
+                        "maxlength": "",
+                        "rows": 2,
+                        "placeholder": "",
+                        "new_lines": ""
+                    }
+                ]
+            }
+        ],
+        "location": [
+            [
+                {
+                    "param": "post_type",
+                    "operator": "==",
+                    "value": "vacancy"
+                }
+            ]
+        ],
+        "menu_order": 0,
+        "position": "normal",
+        "style": "default",
+        "label_placement": "top",
+        "instruction_placement": "label",
+        "hide_on_screen": "",
+        "active": true,
+        "description": "",
+        "show_in_rest": 0
+    }
+]

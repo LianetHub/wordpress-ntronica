@@ -21,9 +21,7 @@ if (empty($ntronica_sidebar_items)) {
 ?>
 <aside class="sidebar is-collapsed sidebar--language-<?php echo esc_attr($current_language); ?>" aria-label="<?php echo esc_attr($ntronica_sidebar_is_ru ? 'Основная навигация' : 'Primary'); ?>">
 	<div class="sidebar__lang">
-		<?php get_template_part('components/templates-parts/lang-switcher', null, array(
-			'switch_label_format' => $ntronica_sidebar_is_ru ? 'Переключить язык на %s' : 'Switch to %s',
-		)); ?>
+		<?php get_template_part('components/templates-parts/lang-switcher'); ?>
 	</div>
 	<button class="sidebar__close" type="button">
 		<span class="screen-reader-text"><?php echo esc_html($ntronica_sidebar_is_ru ? 'Закрыть меню' : 'Close menu'); ?></span>

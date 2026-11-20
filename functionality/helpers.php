@@ -318,6 +318,37 @@ function ntronica_get_nav_tree()
 
 	$ntronica_tree = array(
 		array(
+			'slug'     => 'front_page',
+			'label'    => 'Front Page',
+			'url'      => home_url('/'),
+			'children' => array(
+				array(
+					'href'  => '#hero',
+					'label' => 'Hero',
+				),
+				array(
+					'href'  => '#overview',
+					'label' => 'Company overview',
+				),
+				array(
+					'href'  => '#products',
+					'label' => 'Products',
+				),
+				array(
+					'href'  => '#processes',
+					'label' => 'Technological processes',
+				),
+				array(
+					'href'  => '#info',
+					'label' => 'Company information',
+				),
+				array(
+					'href'  => '#contacts',
+					'label' => 'Contact us',
+				),
+			),
+		),
+		array(
 			'slug'     => 'about',
 			'label'    => 'About',
 			'url'      => home_url('/about/'),
@@ -463,6 +494,10 @@ function ntronica_get_page_section_nav($slug)
  */
 function ntronica_is_nav_item_current($slug)
 {
+	if ('front_page' === $slug) {
+		return is_front_page();
+	}
+
 	if ('news' === $slug) {
 		return is_home() || is_singular('post');
 	}

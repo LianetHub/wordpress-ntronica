@@ -1,44 +1,58 @@
 <?php
 
 /**
- * About: About us / stats
+ * About: About us / stats — powered by ACF
  *
  * @package ntronica
  */
+
+$ntronica_title       = get_field('about_stats_title');
+$ntronica_text_left   = get_field('about_stats_text_left');
+$ntronica_text_right  = get_field('about_stats_text_right');
+$ntronica_stats_items = get_field('about_stats_items');
+
+$ntronica_title       = is_string($ntronica_title) && '' !== $ntronica_title ? $ntronica_title : 'About us';
+$ntronica_text_left   = is_string($ntronica_text_left) && '' !== $ntronica_text_left ? $ntronica_text_left : "For more than six decades, we've been growing, building, and learning.\n\nWe've moved alongside the semiconductor industry as it evolved \u2014 constantly discovering new frontiers. And by now, we have something to share.";
+$ntronica_text_right  = is_string($ntronica_text_right) && '' !== $ntronica_text_right ? $ntronica_text_right : 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidlaoreet. Lorem ipsum dolor sit amet, consectetuer adipiscing elit.';
+$ntronica_stats_items = is_array($ntronica_stats_items) ? $ntronica_stats_items : array();
+
+$ntronica_left_paragraphs = explode("\n", str_replace(array("\r\n", "\r"), "\n", $ntronica_text_left));
 ?>
 <section class="about-stats" id="about-us">
 	<div class="container">
-		<h2 class="title about-stats__title">About us</h2>
+		<h2 class="title about-stats__title"><?php echo esc_html($ntronica_title); ?></h2>
 
 		<div class="row about-stats__intro">
 			<div class="col-12 col-md-6">
 				<div class="text-block about-stats__text">
-					<p>For more than six decades, we've been growing, building, and learning.</p>
-					<p>We've moved alongside the semiconductor industry as it evolved — constantly discovering new frontiers. And by now, we have something to share.</p>
+					<?php foreach ($ntronica_left_paragraphs as $ntronica_paragraph) : ?>
+						<?php $ntronica_paragraph = trim($ntronica_paragraph); ?>
+						<?php if ('' !== $ntronica_paragraph) : ?>
+						<p><?php echo esc_html($ntronica_paragraph); ?></p>
+						<?php endif; ?>
+					<?php endforeach; ?>
 				</div>
 			</div>
 			<div class="col-12 col-md-6">
-				<p class="text-block-alternate">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidlaoreet. Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</p>
+				<p class="text-block-alternate"><?php echo esc_html($ntronica_text_right); ?></p>
 			</div>
 		</div>
 
+		<?php if (! empty($ntronica_stats_items)) : ?>
 		<ul class="row about-stats__grid">
-			<li class="col-6 col-md-3">
-				<p class="about-stats__value">3k+</p>
-				<p class="about-stats__label subtitle">Machines made</p>
-			</li>
-			<li class="col-6 col-md-3">
-				<p class="about-stats__value">600</p>
-				<p class="about-stats__label subtitle">IP objects</p>
-			</li>
-			<li class="col-6 col-md-3">
-				<p class="about-stats__value">250+</p>
-				<p class="about-stats__label subtitle">Professionals</p>
-			</li>
-			<li class="col-6 col-md-3">
-				<p class="about-stats__value">60+</p>
-				<p class="about-stats__label subtitle">Years' experience</p>
-			</li>
+			<?php foreach ($ntronica_stats_items as $ntronica_stat) : ?>
+				<?php
+				$ntronica_value = isset($ntronica_stat['value']) && is_string($ntronica_stat['value']) ? $ntronica_stat['value'] : '';
+				$ntronica_label = isset($ntronica_stat['label']) && is_string($ntronica_stat['label']) ? $ntronica_stat['label'] : '';
+				?>
+				<?php if ('' !== $ntronica_value && '' !== $ntronica_label) : ?>
+				<li class="col-6 col-md-3">
+					<p class="about-stats__value"><?php echo esc_html($ntronica_value); ?></p>
+					<p class="about-stats__label subtitle"><?php echo esc_html($ntronica_label); ?></p>
+				</li>
+				<?php endif; ?>
+			<?php endforeach; ?>
 		</ul>
+		<?php endif; ?>
 	</div>
 </section>

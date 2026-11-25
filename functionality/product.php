@@ -38,7 +38,7 @@ function ntronica_register_product_post_type()
 				'slug'       => 'products/%product_category%',
 				'with_front' => false,
 			),
-			'supports'      => array('title'),
+			'supports'      => array('title', 'thumbnail'),
 		)
 	);
 

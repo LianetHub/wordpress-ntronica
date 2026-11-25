@@ -38,7 +38,7 @@ function ntronica_register_vacancy_post_type()
 				'slug'       => 'careers',
 				'with_front' => false,
 			),
-			'supports'      => array('title'),
+			'supports'      => array('title', 'thumbnail'),
 		)
 	);
 

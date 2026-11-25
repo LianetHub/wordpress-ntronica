@@ -153,6 +153,18 @@ add_filter(
 );
 
 /**
+ * Declare vacancy and product post types as translatable in WPML.
+ */
+add_filter(
+    'wpml_post_types',
+    function ($post_types) {
+        $post_types['vacancy']->translation = 1;
+        $post_types['product']->translation = 1;
+        return $post_types;
+    }
+);
+
+/**
  * Retrieve ACF option field with WPML String Translation fallback.
  *
  * @param string $field_name ACF field name.

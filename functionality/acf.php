@@ -23,6 +23,43 @@ add_filter('acf/settings/save_json', function ($path) {
 });
 
 // ──────────────────────────────────────────────────────
+// Product category image field
+// ──────────────────────────────────────────────────────
+add_action(
+    'acf/init',
+    function () {
+        if (! function_exists('acf_add_local_field_group')) {
+            return;
+        }
+
+        acf_add_local_field_group(array(
+            'key'      => 'group_product_category',
+            'title'    => 'Category Image',
+            'location' => array(
+                array(
+                    array(
+                        'param'    => 'taxonomy',
+                        'operator' => '==',
+                        'value'    => 'product_category',
+                    ),
+                ),
+            ),
+            'fields'   => array(
+                array(
+                    'key'           => 'field_category_image',
+                    'label'         => 'Image',
+                    'name'          => 'category_image',
+                    'type'          => 'image',
+                    'return_format' => 'url',
+                    'library'       => 'all',
+                    'preview_size'  => 'medium',
+                ),
+            ),
+        ));
+    }
+);
+
+// ──────────────────────────────────────────────────────
 // Options page
 // ──────────────────────────────────────────────────────
 add_action(

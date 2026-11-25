@@ -28,6 +28,9 @@ $ntronica_intro_paragraphs = get_field('product_category_intro', 'product_catego
 if (! is_array($ntronica_intro_paragraphs)) {
 	$ntronica_intro_paragraphs = array();
 }
+
+$ntronica_category_image = get_field('category_image', 'product_category_' . $ntronica_category->term_id);
+$ntronica_category_image = is_string($ntronica_category_image) ? $ntronica_category_image : '';
 ?>
 <section class="product-category" aria-labelledby="product-category-title">
 	<div class="container">

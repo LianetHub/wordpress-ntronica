@@ -12,8 +12,8 @@ $ntronica_hero_title   = get_field('careers_hero_title');
 $ntronica_hero_tagline = get_field('careers_hero_tagline');
 $ntronica_hero_image   = get_field('careers_hero_image');
 
-$ntronica_hero_title   = is_string($ntronica_hero_title) && '' !== $ntronica_hero_title ? $ntronica_hero_title : 'Careers';
-$ntronica_hero_tagline = is_string($ntronica_hero_tagline) && '' !== $ntronica_hero_tagline ? $ntronica_hero_tagline : 'Join us on our journey to solve the most exciting technological challenges and shape the future through innovation';
+$ntronica_hero_title   = is_string($ntronica_hero_title) && '' !== $ntronica_hero_title ? $ntronica_hero_title : '';
+$ntronica_hero_tagline = is_string($ntronica_hero_tagline) && '' !== $ntronica_hero_tagline ? $ntronica_hero_tagline : '';
 $ntronica_hero_image   = is_string($ntronica_hero_image) && '' !== $ntronica_hero_image ? $ntronica_hero_image : IMG_PATH . '/careers/hero.webp';
 ?>
 

@@ -7,7 +7,7 @@
  */
 
 $ntronica_title = get_field('careers_vacancies_title');
-$ntronica_title = is_string($ntronica_title) && '' !== $ntronica_title ? $ntronica_title : 'Open positions';
+$ntronica_title = is_string($ntronica_title) && '' !== $ntronica_title ? $ntronica_title : '';
 
 $ntronica_query = new WP_Query(array(
 	'post_type'      => 'vacancy',

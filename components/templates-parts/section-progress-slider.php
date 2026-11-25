@@ -9,9 +9,7 @@
 $ntronica_slider_title = get_field('slider_title');
 $ntronica_slider_items = get_field('slider_items');
 
-$ntronica_slider_title = is_string($ntronica_slider_title) && '' !== $ntronica_slider_title
-    ? $ntronica_slider_title
-    : 'Technological processes';
+$ntronica_slider_title = is_string($ntronica_slider_title) ? $ntronica_slider_title : '';
 
 $ntronica_slider_items = is_array($ntronica_slider_items) ? $ntronica_slider_items : array();
 

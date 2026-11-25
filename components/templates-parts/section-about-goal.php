@@ -10,8 +10,8 @@ $ntronica_title = get_field('about_goal_title');
 $ntronica_text  = get_field('about_goal_text');
 $ntronica_image = get_field('about_goal_image');
 
-$ntronica_title = is_string($ntronica_title) && '' !== $ntronica_title ? $ntronica_title : 'Our goal';
-$ntronica_text  = is_string($ntronica_text) && '' !== $ntronica_text ? $ntronica_text : 'We are here to help our customers solve their toughest technological challenges, whether in a lab or a fab. It\'s an exciting journey, and to unlock its full potential, we actively seek partnerships that lift everyone.';
+$ntronica_title = is_string($ntronica_title) && '' !== $ntronica_title ? $ntronica_title : '';
+$ntronica_text  = is_string($ntronica_text) && '' !== $ntronica_text ? $ntronica_text : '';
 $ntronica_image = is_string($ntronica_image) && '' !== $ntronica_image ? $ntronica_image : IMG_PATH . '/about/goal.webp';
 ?>
 <section class="about-goal" id="goal">

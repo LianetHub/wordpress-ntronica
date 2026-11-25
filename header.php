@@ -147,7 +147,7 @@
 						'theme' => 'light',
 						'crumbs' => array(
 							array('label' => 'Products', 'url' => home_url('/products/')),
-							array('label' => ntronica_get_product_category_display_name(get_queried_object()), 'url' => ''),
+							array('label' => get_queried_object()->name, 'url' => ''),
 						),
 					)
 				);

@@ -6,11 +6,16 @@
  * @package ntronica
  */
 
-$ntronica_lead  = get_field('about_solutions_lead');
-$ntronica_items = get_field('about_solutions_items');
+$ntronica_lead = get_field('about_solutions_lead');
 
-$ntronica_lead  = is_string($ntronica_lead) && '' !== $ntronica_lead ? $ntronica_lead : 'We develop and manufacture solutions for the following technological processes.';
-$ntronica_items = is_array($ntronica_items) ? $ntronica_items : array();
+$ntronica_lead = is_string($ntronica_lead) ? $ntronica_lead : '';
+
+$ntronica_categories = get_terms(array(
+	'taxonomy'   => 'product_category',
+	'hide_empty' => false,
+	'orderby'    => 'name',
+	'order'      => 'ASC',
+));
 ?>
 <section class="about-solutions" id="solutions">
 	<div class="container">
@@ -20,31 +25,31 @@ $ntronica_items = is_array($ntronica_items) ? $ntronica_items : array();
 			</div>
 		</div>
 
+		<?php if (! empty($ntronica_categories) && ! is_wp_error($ntronica_categories)) : ?>
 		<ul class="row about-solutions__grid">
-			<?php foreach ($ntronica_items as $ntronica_item) : ?>
+			<?php foreach ($ntronica_categories as $ntronica_cat) : ?>
 				<?php
-				$ntronica_title = isset($ntronica_item['title']) && is_string($ntronica_item['title']) ? $ntronica_item['title'] : '';
-				$ntronica_url   = isset($ntronica_item['url']) && is_string($ntronica_item['url']) ? $ntronica_item['url'] : '';
-				$ntronica_image = isset($ntronica_item['image']) && is_string($ntronica_item['image']) ? $ntronica_item['image'] : '';
-				$ntronica_alt   = isset($ntronica_item['alt']) && is_string($ntronica_item['alt']) ? $ntronica_item['alt'] : $ntronica_title;
+				$ntronica_cat_url   = get_term_link($ntronica_cat);
+				$ntronica_cat_title = $ntronica_cat->name;
+				$ntronica_cat_image = '';
 				?>
-				<?php if ('' !== $ntronica_title && '' !== $ntronica_url) : ?>
 				<li class="col-12 col-md-4">
 					<?php
 					get_template_part(
 						'components/templates-parts/card',
 						'product',
 						array(
-							'title'     => $ntronica_title,
-							'url'       => $ntronica_url,
-							'image'     => $ntronica_image,
-							'image_alt' => $ntronica_alt,
+							'title'  => $ntronica_cat_title,
+							'url'    => is_string($ntronica_cat_url) ? $ntronica_cat_url : '',
+							'image'  => '' !== $ntronica_cat_image ? $ntronica_cat_image : IMG_PATH . '/home/product-thin-films.webp',
+							'width'  => 622,
+							'height' => 414,
 						)
 					);
 					?>
 				</li>
-				<?php endif; ?>
 			<?php endforeach; ?>
 		</ul>
+		<?php endif; ?>
 	</div>
 </section>

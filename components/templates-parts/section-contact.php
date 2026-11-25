@@ -9,8 +9,8 @@
 $ntronica_title       = get_field('ntronica_contact_title', 'option');
 $ntronica_form_id     = get_field('ntronica_contact_form_id', 'option');
 
-$ntronica_title   = is_string($ntronica_title) && '' !== $ntronica_title ? $ntronica_title : 'Contact us';
-$ntronica_form_id = is_string($ntronica_form_id) && '' !== $ntronica_form_id ? $ntronica_form_id : '9a6010d';
+$ntronica_title   = is_string($ntronica_title) && '' !== $ntronica_title ? $ntronica_title : '';
+$ntronica_form_id = is_string($ntronica_form_id) && '' !== $ntronica_form_id ? $ntronica_form_id : '';
 ?>
 <section class="contact" id="contacts">
     <div class="container">

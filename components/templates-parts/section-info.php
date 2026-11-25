@@ -14,11 +14,11 @@ $ntronica_phone     = get_field('ntronica_info_phone', 'option');
 $ntronica_address   = get_field('ntronica_info_address', 'option');
 $ntronica_cin       = get_field('ntronica_info_cin', 'option');
 
-$ntronica_title   = is_string($ntronica_title) && '' !== $ntronica_title ? $ntronica_title : 'Company information';
+$ntronica_title   = is_string($ntronica_title) && '' !== $ntronica_title ? $ntronica_title : '';
 $ntronica_text    = is_string($ntronica_text) ? $ntronica_text : '';
-$ntronica_email_1 = is_string($ntronica_email_1) && '' !== $ntronica_email_1 ? $ntronica_email_1 : 'contact@ntronica.com';
-$ntronica_email_2 = is_string($ntronica_email_2) && '' !== $ntronica_email_2 ? $ntronica_email_2 : 'info@ntronica.com';
-$ntronica_phone   = is_string($ntronica_phone) && '' !== $ntronica_phone ? $ntronica_phone : '+91 221-234-5678';
+$ntronica_email_1 = is_string($ntronica_email_1) && '' !== $ntronica_email_1 ? $ntronica_email_1 : '';
+$ntronica_email_2 = is_string($ntronica_email_2) && '' !== $ntronica_email_2 ? $ntronica_email_2 : '';
+$ntronica_phone   = is_string($ntronica_phone) && '' !== $ntronica_phone ? $ntronica_phone : '';
 $ntronica_address = is_string($ntronica_address) && '' !== $ntronica_address ? $ntronica_address : '';
 $ntronica_cin     = is_string($ntronica_cin) && '' !== $ntronica_cin ? $ntronica_cin : '';
 ?>

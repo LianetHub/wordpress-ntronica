@@ -11,9 +11,9 @@ $ntronica_text_left   = get_field('about_stats_text_left');
 $ntronica_text_right  = get_field('about_stats_text_right');
 $ntronica_stats_items = get_field('about_stats_items');
 
-$ntronica_title       = is_string($ntronica_title) && '' !== $ntronica_title ? $ntronica_title : 'About us';
-$ntronica_text_left   = is_string($ntronica_text_left) && '' !== $ntronica_text_left ? $ntronica_text_left : "For more than six decades, we've been growing, building, and learning.\n\nWe've moved alongside the semiconductor industry as it evolved \u2014 constantly discovering new frontiers. And by now, we have something to share.";
-$ntronica_text_right  = is_string($ntronica_text_right) && '' !== $ntronica_text_right ? $ntronica_text_right : 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidlaoreet. Lorem ipsum dolor sit amet, consectetuer adipiscing elit.';
+$ntronica_title       = is_string($ntronica_title) && '' !== $ntronica_title ? $ntronica_title : '';
+$ntronica_text_left   = is_string($ntronica_text_left) && '' !== $ntronica_text_left ? $ntronica_text_left : '';
+$ntronica_text_right  = is_string($ntronica_text_right) && '' !== $ntronica_text_right ? $ntronica_text_right : '';
 $ntronica_stats_items = is_array($ntronica_stats_items) ? $ntronica_stats_items : array();
 
 $ntronica_left_paragraphs = explode("\n", str_replace(array("\r\n", "\r"), "\n", $ntronica_text_left));

@@ -13,9 +13,7 @@ $ntronica_hero_image   = get_field('hero_image');
 
 $ntronica_fp_hero_args = array(
     'title'   => '',
-    'tagline' => is_string($ntronica_hero_tagline) && '' !== $ntronica_hero_tagline
-        ? $ntronica_hero_tagline
-        : 'Technological language of the future',
+    'tagline' => is_string($ntronica_hero_tagline) ? $ntronica_hero_tagline : '',
     'image'   => is_string($ntronica_hero_image) && '' !== $ntronica_hero_image
         ? $ntronica_hero_image
         : IMG_PATH . '/home/hero.webp',

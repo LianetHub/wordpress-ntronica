@@ -11,9 +11,9 @@ $ntronica_intro    = get_field('about_overview_intro');
 $ntronica_subtitle = get_field('about_overview_subtitle');
 $ntronica_features = get_field('about_overview_features');
 
-$ntronica_title    = is_string($ntronica_title) && '' !== $ntronica_title ? $ntronica_title : 'Company overview';
-$ntronica_intro    = is_string($ntronica_intro) && '' !== $ntronica_intro ? $ntronica_intro : 'Every day at N-tronica, we create tools that enable the production of the chips powering our world. From large-scale manufacturing to advanced R&amp;D, our work helps accelerate innovation and bring new technologies to life faster. We take pride in contributing to devices that are faster, smarter, and more efficient.';
-$ntronica_subtitle = is_string($ntronica_subtitle) && '' !== $ntronica_subtitle ? $ntronica_subtitle : 'Key features:';
+$ntronica_title    = is_string($ntronica_title) && '' !== $ntronica_title ? $ntronica_title : '';
+$ntronica_intro    = is_string($ntronica_intro) && '' !== $ntronica_intro ? $ntronica_intro : '';
+$ntronica_subtitle = is_string($ntronica_subtitle) && '' !== $ntronica_subtitle ? $ntronica_subtitle : '';
 $ntronica_features = is_array($ntronica_features) ? $ntronica_features : array();
 ?>
 <section class="overview overview--about" id="overview">

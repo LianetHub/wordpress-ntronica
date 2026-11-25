@@ -70,34 +70,7 @@ function ntronica_get_product_categories()
 	);
 }
 
-/** Preserve editor-renamed terms while matching the design's default label. */
-function ntronica_get_product_category_display_name($term)
-{
-	return 'Inspection and Analytics' === $term->name ? 'Inspection & Analytics' : $term->name;
-}
 
-/** Temporary category copy; product lists remain mock data. */
-function ntronica_get_product_category_intro($slug)
-{
-	$planarization = 'Planarization is critical for multilevel interconnect structures, where uneven surfaces can cause photolithography focus errors and poor step coverage during later depositions. Post-CMP cleaning removes slurry residues and particles, restoring a clean surface for the next manufacturing step.';
-	$metrology = 'Metrology, inspection, and analytics comprise the tests used to verify that a wafer meets specifications before the next process step. Metrology measures properties such as film thickness, refractive index, and critical dimensions. Inspection detects defects including particles, scratches, and pattern anomalies.';
-	$copy = array(
-		'epitaxy' => array(
-			'Epitaxy is the process of growing a crystalline layer on a substrate, where the new layer inherits the crystal orientation of the wafer. In GaN MOCVD (Metal-Organic Chemical Vapor Deposition), metalorganic precursors and hydride gases like ammonia react on heated substrate to form thin films of gallium nitride and III-N compounds.',
-			'Metalorganic precursors and ammonia react on a heated substrate to form thin films. This process is essential for manufacturing high-frequency and high-power devices, including HEMTs, UHF transistors, LEDs, and laser diodes.',
-		),
-		'deposition' => array('Deposition refers to the application of thin films of dielectric, semiconductor, or metal materials onto a wafer surface. Techniques such as PECVD, ICP-CVD, and sputtering are commonly used to deposit layers like SiO₂, Si₃N₄, and various metals.'),
-		'etching' => array(
-			'Etching is the selective removal of material from the wafer surface to transfer patterns defined by lithography. It is broadly classified into wet (chemical) and dry (plasma-based) etching.',
-			'Dry etching, including RIE (Reactive Ion Etching) and ICP (Inductively Coupled Plasma), provides directional (anisotropic) profiles essential for fine feature definition.',
-		),
-		'thermal-processing' => array('Thermal operations use controlled heating to modify material properties without melting the wafer. Rapid Thermal Annealing (RTA) heats the wafer quickly to activate dopants after ion implantation, repair crystal damage, or form silicides and ohmic contacts.'),
-		'planarization' => array('Chemical Mechanical Planarization (CMP) is a process that combines chemical etching with mechanical polishing to flatten the wafer surface. It removes topographic variations caused by previous process steps, such as deposition or etching, creating a globally flat surface.', $planarization),
-		'metrology' => array($metrology),
-		'inspection-and-analytics' => array($metrology, $planarization),
-	);
-	return $copy[$slug] ?? array();
-}
 
 function ntronica_get_product_category_slug($name)
 {
@@ -118,30 +91,7 @@ function ntronica_get_product_category_url($name)
 	return $url && ! is_wp_error($url) ? $url : home_url('/products/' . $slug . '/');
 }
 
-/** Retry on failure; never overwrite terms or an existing product assignment. */
-function ntronica_seed_product_categories()
-{
-	if ('1' === get_option('ntronica_product_categories_version')) {
-		return;
-	}
-	foreach (ntronica_get_product_categories() as $slug => $label) {
-		if (! term_exists($slug, 'product_category')) {
-			$result = wp_insert_term($label, 'product_category', array('slug' => $slug));
-			if (is_wp_error($result)) {
-				return;
-			}
-		}
-	}
-	$product = get_page_by_path('plasma-200-01', OBJECT, 'product');
-	if ($product && ! has_term('', 'product_category', $product)) {
-		$result = wp_set_object_terms($product->ID, 'etching', 'product_category');
-		if (is_wp_error($result)) {
-			return;
-		}
-	}
-	update_option('ntronica_product_categories_version', '1', false);
-}
-add_action('init', 'ntronica_seed_product_categories', 20);
+
 
 /** A single-select editor avoids ambiguous product URLs. */
 function ntronica_product_category_meta_box($post)

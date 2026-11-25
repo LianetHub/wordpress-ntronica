@@ -1,0 +1,69 @@
+{
+    "_wpml_note": "Product category taxonomy fields. After importing, configure WPML > Settings > Custom Fields Translation per field.",
+    "key": "group_ntronica_product_category",
+    "title": "Product Category",
+    "fields": [
+        {
+            "key": "field_ntronica_product_category_intro",
+            "label": "Intro Paragraphs",
+            "name": "product_category_intro",
+            "aria-label": "",
+            "type": "repeater",
+            "instructions": "Introductory paragraphs shown at the top of the product category page.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "table",
+            "pagination": 0,
+            "min": 0,
+            "max": 0,
+            "collapsed": "",
+            "button_label": "Add Paragraph",
+            "rows_per_page": 20,
+            "sub_fields": [
+                {
+                    "key": "field_ntronica_product_category_intro_paragraph",
+                    "label": "Paragraph",
+                    "name": "paragraph",
+                    "aria-label": "",
+                    "type": "textarea",
+                    "instructions": "",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "rows": 3,
+                    "placeholder": "",
+                    "new_lines": ""
+                }
+            ]
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "taxonomy",
+                "operator": "==",
+                "value": "product_category"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0
+}

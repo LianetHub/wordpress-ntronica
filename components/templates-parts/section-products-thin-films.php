@@ -6,61 +6,51 @@
  * @package ntronica
  */
 
-$ntronica_products_img = IMG_PATH . '/products/';
-
-$ntronica_thin_films = array(
-	array(
-		'title' => 'Epitaxy',
-		'file'  => 'epitaxy.webp',
-		'alt'   => 'Wafer handling assembly for epitaxy tools',
-	),
-	array(
-		'title' => 'Deposition',
-		'file'  => 'deposition.webp',
-		'alt'   => 'Deposition tool components in a process chamber',
-	),
-	array(
-		'title' => 'Etching',
-		'file'  => 'etching.webp',
-		'alt'   => 'Blue process chemistry during etching',
-	),
-	array(
-		'title' => 'Thermal processing',
-		'file'  => 'thermal.webp',
-		'alt'   => 'Wafers in a thermal processing tool',
-	),
-);
+$ntronica_title    = isset($args['title']) ? $args['title'] : 'Thin films equipment';
+$ntronica_intro_c1 = isset($args['intro_c1']) ? $args['intro_c1'] : '';
+$ntronica_intro_c2 = isset($args['intro_c2']) ? $args['intro_c2'] : '';
+$ntronica_items    = isset($args['items']) && is_array($args['items']) ? $args['items'] : array();
 ?>
 <section class="products-thin-films" id="thin-films">
 	<div class="container">
-		<h2 class="title products-thin-films__title">Thin films equipment</h2>
+		<h2 class="title products-thin-films__title"><?php echo esc_html($ntronica_title); ?></h2>
 
+		<?php if ('' !== $ntronica_intro_c1 || '' !== $ntronica_intro_c2) : ?>
 		<div class="row products-thin-films__intro">
+			<?php if ('' !== $ntronica_intro_c1) : ?>
 			<div class="col-12 col-md-6">
 				<div class="text-block products-thin-films__text">
-					<p>Thin film equipment creates, modifies, or removes ultra-thin material layers essential to semiconductor device performance, enabling precise control of thickness, composition, and uniformity across wafers.</p>
+					<p><?php echo esc_html($ntronica_intro_c1); ?></p>
 				</div>
 			</div>
-
+			<?php endif; ?>
+			<?php if ('' !== $ntronica_intro_c2) : ?>
 			<div class="col-12 col-md-6">
 				<div class="text-block-alternate products-thin-films__text">
-					<p>We supply machines compatible with a range of technologies, such as ICP RIE (Inductively Coupled Plasma Reactive Ion Etching), DRIE (Deep Reactive Ion Etching), and GaN MOCVD (Gallium Nitride Metal-Organic Chemical Vapor Deposition). </p>
+					<p><?php echo esc_html($ntronica_intro_c2); ?></p>
 				</div>
 			</div>
+			<?php endif; ?>
 		</div>
+		<?php endif; ?>
 
+		<?php if (! empty($ntronica_items)) : ?>
 		<div class="row products-thin-films__grid">
-			<?php foreach ($ntronica_thin_films as $ntronica_item) : ?>
+			<?php foreach ($ntronica_items as $ntronica_item) :
+				$ntronica_title_text = isset($ntronica_item['title']) ? $ntronica_item['title'] : '';
+				$ntronica_image      = isset($ntronica_item['image']) ? $ntronica_item['image'] : '';
+				$ntronica_alt        = isset($ntronica_item['alt']) && '' !== $ntronica_item['alt'] ? $ntronica_item['alt'] : $ntronica_title_text;
+			?>
 				<div class="col-6 col-md-3">
 					<?php
 					get_template_part(
 						'components/templates-parts/card',
 						'product',
 						array(
-							'title'     => $ntronica_item['title'],
-							'url'       => ntronica_get_product_category_url($ntronica_item['title']),
-							'image'     => $ntronica_products_img . $ntronica_item['file'],
-							'image_alt' => $ntronica_item['alt'],
+							'title'     => $ntronica_title_text,
+							'url'       => ntronica_get_product_category_url($ntronica_title_text),
+							'image'     => '' !== $ntronica_image ? $ntronica_image : IMG_PATH . '/products/' . sanitize_title($ntronica_title_text) . '.webp',
+							'image_alt' => $ntronica_alt,
 							'width'     => 461,
 							'height'    => 307,
 						)
@@ -69,5 +59,6 @@ $ntronica_thin_films = array(
 				</div>
 			<?php endforeach; ?>
 		</div>
+		<?php endif; ?>
 	</div>
 </section>

@@ -1,0 +1,412 @@
+{
+    "_wpml_note": "Products page fields. After importing, configure WPML > Settings > Custom Fields Translation per field.",
+    "key": "group_ntronica_products_page",
+    "title": "Products Page",
+    "fields": [
+        {
+            "key": "field_ntronica_products_hero_title",
+            "label": "Hero Title",
+            "name": "products_hero_title",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Page title (h1).",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Products",
+            "maxlength": 256,
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_ntronica_products_hero_tagline",
+            "label": "Hero Tagline",
+            "name": "products_hero_tagline",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Tagline displayed below the title.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "We develop and manufacture equipment for the critical technological operations required to produce a modern chip",
+            "maxlength": 512,
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_ntronica_products_hero_image",
+            "label": "Hero Background Image",
+            "name": "products_hero_image",
+            "aria-label": "",
+            "type": "image",
+            "instructions": "Recommended size: 1920x600px",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "url",
+            "preview_size": "large",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": ""
+        },
+        {
+            "key": "field_ntronica_products_thin_films_title",
+            "label": "Thin Films Section Title",
+            "name": "products_thin_films_title",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Thin films equipment",
+            "maxlength": 256,
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_ntronica_products_thin_films_intro_col1",
+            "label": "Thin Films Intro Column 1",
+            "name": "products_thin_films_intro_col1",
+            "aria-label": "",
+            "type": "textarea",
+            "instructions": "Left column intro text.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Thin film equipment creates, modifies, or removes ultra-thin material layers essential to semiconductor device performance, enabling precise control of thickness, composition, and uniformity across wafers.",
+            "maxlength": "",
+            "rows": 4,
+            "placeholder": "",
+            "new_lines": ""
+        },
+        {
+            "key": "field_ntronica_products_thin_films_intro_col2",
+            "label": "Thin Films Intro Column 2",
+            "name": "products_thin_films_intro_col2",
+            "aria-label": "",
+            "type": "textarea",
+            "instructions": "Right column intro text.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "We supply machines compatible with a range of technologies, such as ICP RIE (Inductively Coupled Plasma Reactive Ion Etching), DRIE (Deep Reactive Ion Etching), and GaN MOCVD (Gallium Nitride Metal-Organic Chemical Vapor Deposition).",
+            "maxlength": "",
+            "rows": 4,
+            "placeholder": "",
+            "new_lines": ""
+        },
+        {
+            "key": "field_ntronica_products_thin_films_items",
+            "label": "Thin Films Category Cards",
+            "name": "products_thin_films_items",
+            "aria-label": "",
+            "type": "repeater",
+            "instructions": "Category cards shown in the thin films section grid.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "table",
+            "pagination": 0,
+            "min": 0,
+            "max": 0,
+            "collapsed": "",
+            "button_label": "Add Category Card",
+            "rows_per_page": 20,
+            "sub_fields": [
+                {
+                    "key": "field_ntronica_products_tf_item_title",
+                    "label": "Title",
+                    "name": "title",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "Category name (e.g. Epitaxy, Deposition).",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "33",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": 256,
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": ""
+                },
+                {
+                    "key": "field_ntronica_products_tf_item_image",
+                    "label": "Image",
+                    "name": "image",
+                    "aria-label": "",
+                    "type": "image",
+                    "instructions": "Card background image.",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "33",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "url",
+                    "preview_size": "medium",
+                    "library": "all",
+                    "min_width": "",
+                    "min_height": "",
+                    "min_size": "",
+                    "max_width": "",
+                    "max_height": "",
+                    "max_size": "",
+                    "mime_types": ""
+                },
+                {
+                    "key": "field_ntronica_products_tf_item_alt",
+                    "label": "Image Alt",
+                    "name": "alt",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "Alt text for the card image.",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "34",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": 256,
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": ""
+                }
+            ]
+        },
+        {
+            "key": "field_ntronica_products_lines",
+            "label": "Product Lines",
+            "name": "products_lines",
+            "aria-label": "",
+            "type": "repeater",
+            "instructions": "Product lines shown in the bottom section (Wet process equipment, Process control).",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "block",
+            "pagination": 0,
+            "min": 0,
+            "max": 0,
+            "collapsed": "",
+            "button_label": "Add Product Line",
+            "rows_per_page": 20,
+            "sub_fields": [
+                {
+                    "key": "field_ntronica_products_line_id",
+                    "label": "Anchor ID",
+                    "name": "anchor_id",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "HTML id attribute (e.g. wet-process, process-control).",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "33",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": 64,
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": ""
+                },
+                {
+                    "key": "field_ntronica_products_line_title",
+                    "label": "Title",
+                    "name": "title",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "Section heading.",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "33",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": 256,
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": ""
+                },
+                {
+                    "key": "field_ntronica_products_line_text",
+                    "label": "Description",
+                    "name": "text",
+                    "aria-label": "",
+                    "type": "textarea",
+                    "instructions": "Descriptive paragraph.",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "34",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "rows": 4,
+                    "placeholder": "",
+                    "new_lines": ""
+                },
+                {
+                    "key": "field_ntronica_products_line_items",
+                    "label": "Category Cards",
+                    "name": "items",
+                    "aria-label": "",
+                    "type": "repeater",
+                    "instructions": "Category cards within this product line.",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "layout": "table",
+                    "pagination": 0,
+                    "min": 1,
+                    "max": 0,
+                    "collapsed": "",
+                    "button_label": "Add Category Card",
+                    "rows_per_page": 20,
+                    "sub_fields": [
+                        {
+                            "key": "field_ntronica_products_line_item_title",
+                            "label": "Title",
+                            "name": "title",
+                            "aria-label": "",
+                            "type": "text",
+                            "instructions": "Category name.",
+                            "required": 1,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "33",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "maxlength": 256,
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": ""
+                        },
+                        {
+                            "key": "field_ntronica_products_line_item_image",
+                            "label": "Image",
+                            "name": "image",
+                            "aria-label": "",
+                            "type": "image",
+                            "instructions": "Card background image.",
+                            "required": 1,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "33",
+                                "class": "",
+                                "id": ""
+                            },
+                            "return_format": "url",
+                            "preview_size": "medium",
+                            "library": "all",
+                            "min_width": "",
+                            "min_height": "",
+                            "min_size": "",
+                            "max_width": "",
+                            "max_height": "",
+                            "max_size": "",
+                            "mime_types": ""
+                        },
+                        {
+                            "key": "field_ntronica_products_line_item_alt",
+                            "label": "Image Alt",
+                            "name": "alt",
+                            "aria-label": "",
+                            "type": "text",
+                            "instructions": "Alt text for the card image.",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "34",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "maxlength": 256,
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": ""
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "page_template",
+                "operator": "==",
+                "value": "page-products.php"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0
+}

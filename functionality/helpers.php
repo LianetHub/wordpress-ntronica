@@ -245,7 +245,7 @@ function ntronica_get_product_crumbs($post_id = null)
 			'url'   => home_url('/products/'),
 		),
 		array(
-			'label' => $category ? ntronica_get_product_category_display_name($category) : 'Uncategorized',
+			'label' => $category ? $category->name : 'Uncategorized',
 			'url'   => ! is_wp_error($category_url) ? $category_url : '',
 		),
 		array(
@@ -553,6 +553,71 @@ function ntronica_icon($name, $class = '', $view_box = '')
 		esc_attr($name),
 		$view_box_attr
 	);
+}
+
+/**
+ * Convert a WP_Query of posts to items arrays for section template parts.
+ *
+ * @param WP_Query|null $query  WP_Query with 'post' post type.
+ * @param string        $format 'news' for section-news, 'feed' for section-news-feed, 'media' for section-media-publications.
+ * @return array
+ */
+function ntronica_query_to_items($query, $format = 'media')
+{
+	$items = array();
+
+	if (! $query instanceof WP_Query || ! $query->have_posts()) {
+		return $items;
+	}
+
+	while ($query->have_posts()) {
+		$query->the_post();
+
+		$item = array(
+			'date'  => get_the_date(),
+			'title' => get_the_title(),
+			'url'   => get_permalink(),
+		);
+
+		if ('news' === $format || 'feed' === $format) {
+			$image = get_the_post_thumbnail_url(get_the_ID(), 'medium');
+			if ($image) {
+				$item['image'] = $image;
+			}
+		}
+
+		if ('media' === $format) {
+			$excerpt = get_the_excerpt();
+			$item['excerpt'] = $excerpt ? $excerpt : '';
+		}
+
+		$items[] = $item;
+	}
+
+	wp_reset_postdata();
+
+	return $items;
+}
+
+/**
+ * Category description by ID, or a fallback lead.
+ *
+ * @param int    $term_id  Category term ID.
+ * @param string $fallback Fallback text.
+ * @return string
+ */
+function ntronica_get_category_lead_by_id($term_id, $fallback = '')
+{
+	if ($term_id < 1) {
+		return $fallback;
+	}
+
+	$ntronica_term = get_term((int) $term_id, 'category');
+	if ($ntronica_term && ! is_wp_error($ntronica_term) && '' !== $ntronica_term->description) {
+		return $ntronica_term->description;
+	}
+
+	return $fallback;
 }
 
 /**

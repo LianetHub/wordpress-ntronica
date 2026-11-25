@@ -14,10 +14,10 @@ $ntronica_address       = get_field('ntronica_footer_address', 'option');
 $ntronica_privacy_url   = get_field('ntronica_footer_privacy_url', 'option');
 $ntronica_terms_url     = get_field('ntronica_footer_terms_url', 'option');
 
-$ntronica_email_1     = is_string($ntronica_email_1) && '' !== $ntronica_email_1 ? $ntronica_email_1 : 'contact@ntronica.com';
-$ntronica_email_2     = is_string($ntronica_email_2) && '' !== $ntronica_email_2 ? $ntronica_email_2 : 'business@ntronica.com';
-$ntronica_phone       = is_string($ntronica_phone) && '' !== $ntronica_phone ? $ntronica_phone : '+91 221-234-5678';
-$ntronica_website     = is_string($ntronica_website) && '' !== $ntronica_website ? $ntronica_website : 'https://www.ntronica.com';
+$ntronica_email_1     = is_string($ntronica_email_1) && '' !== $ntronica_email_1 ? $ntronica_email_1 : '';
+$ntronica_email_2     = is_string($ntronica_email_2) && '' !== $ntronica_email_2 ? $ntronica_email_2 : '';
+$ntronica_phone       = is_string($ntronica_phone) && '' !== $ntronica_phone ? $ntronica_phone : '';
+$ntronica_website     = is_string($ntronica_website) && '' !== $ntronica_website ? $ntronica_website : '';
 $ntronica_privacy_url = is_string($ntronica_privacy_url) && '' !== $ntronica_privacy_url ? $ntronica_privacy_url : home_url('/privacy-policy/');
 $ntronica_terms_url   = is_string($ntronica_terms_url) && '' !== $ntronica_terms_url ? $ntronica_terms_url : home_url('/terms-of-use/');
 

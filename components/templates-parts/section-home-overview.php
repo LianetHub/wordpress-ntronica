@@ -13,11 +13,11 @@ $ntronica_link_text   = get_field('overview_link_text');
 $ntronica_subtitle    = get_field('overview_subtitle');
 $ntronica_features    = get_field('overview_features');
 
-$ntronica_title    = is_string($ntronica_title) && '' !== $ntronica_title ? $ntronica_title : 'Company overview';
+$ntronica_title    = is_string($ntronica_title) && '' !== $ntronica_title ? $ntronica_title : '';
 $ntronica_intro    = is_string($ntronica_intro) ? $ntronica_intro : '';
-$ntronica_link_url = is_string($ntronica_link_url) && '' !== $ntronica_link_url ? $ntronica_link_url : home_url('/about/');
-$ntronica_link_text = is_string($ntronica_link_text) && '' !== $ntronica_link_text ? $ntronica_link_text : 'LEARN MORE';
-$ntronica_subtitle = is_string($ntronica_subtitle) && '' !== $ntronica_subtitle ? $ntronica_subtitle : 'Key features:';
+$ntronica_link_url = is_string($ntronica_link_url) && '' !== $ntronica_link_url ? $ntronica_link_url : '';
+$ntronica_link_text = is_string($ntronica_link_text) && '' !== $ntronica_link_text ? $ntronica_link_text : '';
+$ntronica_subtitle = is_string($ntronica_subtitle) && '' !== $ntronica_subtitle ? $ntronica_subtitle : '';
 ?>
 <section class="overview" id="overview">
 	<div class="container">

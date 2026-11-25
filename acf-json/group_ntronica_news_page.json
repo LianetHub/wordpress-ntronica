@@ -1,0 +1,225 @@
+{
+    "_wpml_note": "News/Blog page fields (shown on the page set as Posts page). After importing, configure WPML > Settings > Custom Fields Translation per field.",
+    "key": "group_ntronica_news_page",
+    "title": "News Page",
+    "fields": [
+        {
+            "key": "field_ntronica_news_hero_title",
+            "label": "Hero Title",
+            "name": "news_hero_title",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Page title (h1). Leave empty to use the page title.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": 256,
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_ntronica_news_hero_tagline",
+            "label": "Hero Tagline",
+            "name": "news_hero_tagline",
+            "aria-label": "",
+            "type": "textarea",
+            "instructions": "Intro text displayed above the title. Leave empty to use the page excerpt.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "rows": 3,
+            "placeholder": "",
+            "new_lines": ""
+        },
+        {
+            "key": "field_ntronica_news_hero_image",
+            "label": "Hero Background Image",
+            "name": "news_hero_image",
+            "aria-label": "",
+            "type": "image",
+            "instructions": "Leave empty to use the page featured image.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "url",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": "",
+            "preview_size": "full"
+        },
+        {
+            "key": "field_ntronica_news_events_category",
+            "label": "Events & News Category",
+            "name": "news_events_category",
+            "aria-label": "",
+            "type": "taxonomy",
+            "instructions": "Select the category for the Events & news block.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "33",
+                "class": "",
+                "id": ""
+            },
+            "taxonomy": "category",
+            "add_term": 0,
+            "save_terms": 0,
+            "load_terms": 0,
+            "return_format": "id",
+            "field_type": "select",
+            "allow_null": 1,
+            "multiple": 0,
+            "bidirectional": 0,
+            "bidirectional_target": []
+        },
+        {
+            "key": "field_ntronica_news_events_lead",
+            "label": "Events & News Lead",
+            "name": "news_events_lead",
+            "aria-label": "",
+            "type": "textarea",
+            "instructions": "Intro text for the Events & news block. Leave empty to use the category description.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "33",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "rows": 3,
+            "placeholder": "",
+            "new_lines": ""
+        },
+        {
+            "key": "field_ntronica_news_press_category",
+            "label": "Press Releases Category",
+            "name": "news_press_category",
+            "aria-label": "",
+            "type": "taxonomy",
+            "instructions": "Select the category for the Press releases block.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "33",
+                "class": "",
+                "id": ""
+            },
+            "taxonomy": "category",
+            "add_term": 0,
+            "save_terms": 0,
+            "load_terms": 0,
+            "return_format": "id",
+            "field_type": "select",
+            "allow_null": 1,
+            "multiple": 0,
+            "bidirectional": 0,
+            "bidirectional_target": []
+        },
+        {
+            "key": "field_ntronica_news_press_lead",
+            "label": "Press Releases Lead",
+            "name": "news_press_lead",
+            "aria-label": "",
+            "type": "textarea",
+            "instructions": "Intro text for the Press releases block. Leave empty to use the category description.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "33",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "rows": 3,
+            "placeholder": "",
+            "new_lines": ""
+        },
+        {
+            "key": "field_ntronica_news_media_category",
+            "label": "Media Publications Category",
+            "name": "news_media_category",
+            "aria-label": "",
+            "type": "taxonomy",
+            "instructions": "Select the category for the Media publications block.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "33",
+                "class": "",
+                "id": ""
+            },
+            "taxonomy": "category",
+            "add_term": 0,
+            "save_terms": 0,
+            "load_terms": 0,
+            "return_format": "id",
+            "field_type": "select",
+            "allow_null": 1,
+            "multiple": 0,
+            "bidirectional": 0,
+            "bidirectional_target": []
+        },
+        {
+            "key": "field_ntronica_news_media_lead",
+            "label": "Media Publications Lead",
+            "name": "news_media_lead",
+            "aria-label": "",
+            "type": "textarea",
+            "instructions": "Intro text for the Media publications block. Leave empty to use the category description.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "33",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "rows": 3,
+            "placeholder": "",
+            "new_lines": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "page_type",
+                "operator": "==",
+                "value": "posts_page"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0
+}

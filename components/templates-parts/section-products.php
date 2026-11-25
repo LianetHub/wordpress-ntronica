@@ -11,10 +11,10 @@ $ntronica_lead       = get_field('products_lead');
 $ntronica_link_url   = get_field('products_link_url');
 $ntronica_link_text  = get_field('products_link_text');
 
-$ntronica_title     = is_string($ntronica_title) && '' !== $ntronica_title ? $ntronica_title : 'Products';
+$ntronica_title     = is_string($ntronica_title) && '' !== $ntronica_title ? $ntronica_title : '';
 $ntronica_lead      = is_string($ntronica_lead) ? $ntronica_lead : '';
-$ntronica_link_url  = is_string($ntronica_link_url) && '' !== $ntronica_link_url ? $ntronica_link_url : home_url('/products/');
-$ntronica_link_text = is_string($ntronica_link_text) && '' !== $ntronica_link_text ? $ntronica_link_text : 'LEARN MORE';
+$ntronica_link_url  = is_string($ntronica_link_url) && '' !== $ntronica_link_url ? $ntronica_link_url : '';
+$ntronica_link_text = is_string($ntronica_link_text) && '' !== $ntronica_link_text ? $ntronica_link_text : '';
 
 $ntronica_products_query = new WP_Query(
 	array(

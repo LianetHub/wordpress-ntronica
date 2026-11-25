@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Footer — powered by ACF
+ * Footer
  *
  * @package ntronica
  */

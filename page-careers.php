@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Template Name: Careers page — powered by ACF
+ * Template Name: Careers page
  *
  * @package ntronica
  */

@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Single vacancy: hero facts and two lists — powered by ACF
+ * Single vacancy: hero facts and two lists
  *
  * @package ntronica
  */

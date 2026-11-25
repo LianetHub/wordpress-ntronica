@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Section: Products — powered by ACF
+ * Section: Products
  *
  * @package ntronica
  */

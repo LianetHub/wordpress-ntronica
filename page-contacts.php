@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Template Name: Contacts page — powered by ACF
+ * Template Name: Contacts page
  *
  * @package ntronica
  */

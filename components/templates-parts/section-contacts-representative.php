@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Contacts: Our representative — powered by ACF
+ * Contacts: Our representative
  *
  * @package ntronica
  */

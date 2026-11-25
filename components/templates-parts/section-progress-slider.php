@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Section: Technological Processes (Progress Slider) — powered by ACF
+ * Section: Technological Processes (Progress Slider)
  *
  * @package ntronica
  */

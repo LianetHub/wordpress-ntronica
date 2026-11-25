@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Template Name: About page — powered by ACF
+ * Template Name: About page
  *
  * @package ntronica
  */

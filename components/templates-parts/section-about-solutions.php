@@ -1,7 +1,7 @@
 <?php
 
 /**
- * About: Technological processes / solutions — powered by ACF
+ * About: Technological processes / solutions
  *
  * @package ntronica
  */

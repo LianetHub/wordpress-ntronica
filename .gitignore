@@ -15,6 +15,10 @@
 .cursorrules
 /.cursor
 
+/acf-json/
+/acf-export.json
+/split_acf.py
+
 wp-config.php
 debug.log
 

@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Front page template — powered by ACF
+ * Front page template
  *
  * @package ntronica
  */

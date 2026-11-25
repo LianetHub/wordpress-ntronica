@@ -1,7 +1,7 @@
 <?php
 
 /**
- * About: About us / stats — powered by ACF
+ * About: About us / stats
  *
  * @package ntronica
  */

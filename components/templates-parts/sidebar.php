@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Primary sidebar navigation — powered by ACF
+ * Primary sidebar navigation
  *
  * @package ntronica
  */

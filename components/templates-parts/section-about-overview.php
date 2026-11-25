@@ -1,7 +1,7 @@
 <?php
 
 /**
- * About: Company overview — powered by ACF
+ * About: Company overview
  *
  * @package ntronica
  */

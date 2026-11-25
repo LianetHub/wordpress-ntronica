@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Careers: Our team — powered by ACF
+ * Careers: Our team
  *
  * @package ntronica
  */

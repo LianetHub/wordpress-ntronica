@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Section: Contact us — powered by ACF
+ * Section: Contact us
  *
  * @package ntronica
  */

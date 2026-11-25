@@ -1,7 +1,7 @@
 <?php
 
 /**
- * About: Our goal — powered by ACF
+ * About: Our goal
  *
  * @package ntronica
  */

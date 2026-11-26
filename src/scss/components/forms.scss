@@ -466,7 +466,7 @@
 
     &__consent {
         display: flex;
-        align-items: flex-start;
+        align-items: last baseline;
         gap: rem(12);
         font-family: $font-family;
         font-weight: 400;

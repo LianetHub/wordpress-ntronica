@@ -22,14 +22,13 @@
 		<div class="site-body">
 			<?php
 			if (is_front_page()) {
-				$sticky_nav = get_field('sticky_nav_front_page', 'option');
 				get_template_part(
 					'components/templates-parts/sticky-navbar',
 					null,
 					array(
-						'variant' => 'nav',
-						'nav_label' => 'Front page sections',
-						'nav'     => $sticky_nav,
+						'variant'           => 'nav',
+						'nav'               => array(),
+						'reveal_after_hero' => true,
 					)
 				);
 			} elseif (is_page('about')) {

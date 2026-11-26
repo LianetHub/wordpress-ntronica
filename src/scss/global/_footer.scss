@@ -269,10 +269,12 @@
 			content: "";
 			position: absolute;
 			top: var(--marker-top);
+			top: round(nearest, var(--marker-top), 1px);
 			left: calc(var(--footer-label) + var(--footer-label-gap));
 			width: var(--footer-marker);
 			background-color: currentColor;
 			bottom: var(--marker-bottom);
+			bottom: round(nearest, var(--marker-bottom), 1px);
 		}
 
 		&[data-label]::after {
@@ -314,12 +316,14 @@
 		>li {
 			&::before {
 				top: var(--marker-top);
+				top: round(nearest, var(--marker-top), 1px);
 				height: var(--marker-size);
 			}
 
 			&:has(br)::before {
 				height: auto;
 				bottom: var(--marker-bottom);
+				bottom: round(nearest, var(--marker-bottom), 1px);
 			}
 		}
 	}

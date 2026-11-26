@@ -307,7 +307,6 @@
         font-family: $font-family;
         font-weight: 400;
         font-size: rem(15);
-        line-height: math.div(11, 15);
         color: $color-black;
         text-transform: uppercase;
         cursor: pointer;
@@ -323,19 +322,16 @@
         @media (min-width: $md3) {
             height: rem(50);
             font-size: rem(18);
-            line-height: math.div(13, 18);
         }
 
         @media (min-width: $md2) {
             height: rem(60);
             font-size: rem(21);
-            line-height: math.div(15, 21);
         }
 
         @media (min-width: $md1) {
             height: rem(74);
             font-size: rem(26);
-            line-height: math.div(19, 26);
         }
 
         .wpcf7-form-control-wrap {
@@ -445,10 +441,29 @@
         }
     }
 
+    // Even line boxes avoid half-pixel offsets inside the even-height buttons.
+    &__file,
+    &__submit {
+        line-height: rem(12);
+
+        @media (min-width: $md3) {
+            line-height: rem(14);
+        }
+
+        @media (min-width: $md2) {
+            line-height: rem(16);
+        }
+
+        @media (min-width: $md1) {
+            line-height: rem(20);
+        }
+    }
+
     &__submit {
         & input {
             background: transparent;
             color: inherit;
+            line-height: inherit;
             cursor: pointer;
         }
 
@@ -465,6 +480,7 @@
     }
 
     &__consent {
+        --consent-text-width: #{rem(277)};
         display: flex;
         align-items: last baseline;
         gap: rem(12);
@@ -473,6 +489,12 @@
         font-size: rem(12);
         line-height: math.div(15, 12);
         color: $color-black;
+
+        // Keep the design's line breaks as the form column grows.
+        > span:last-child {
+            min-width: 0;
+            max-width: var(--consent-text-width);
+        }
 
         a {
             text-decoration: none;
@@ -492,19 +514,44 @@
         }
 
 
+        @media (max-width: 429.98px) {
+            align-items: flex-start;
+
+            .form__checkbox {
+                display: block;
+                // Center the 21px checkbox on the first 15px text line.
+                margin-top: rem(-3);
+            }
+        }
+
+        @media (min-width: $md6) {
+            --consent-text-width: #{rem(274)};
+        }
+
+        @media (min-width: $md5) {
+            --consent-text-width: #{rem(325)};
+        }
+
+        @media (min-width: $md4) {
+            --consent-text-width: #{rem(227)};
+        }
+
         @media (min-width: $md3) {
+            --consent-text-width: #{rem(302)};
             gap: rem(14);
             font-size: rem(15);
             line-height: math.div(18, 15);
         }
 
         @media (min-width: $md2) {
+            --consent-text-width: #{rem(386)};
             gap: rem(18);
             font-size: rem(18);
             line-height: math.div(22, 18);
         }
 
         @media (min-width: $md1) {
+            --consent-text-width: #{rem(546)};
             gap: rem(20);
             font-size: rem(21);
             line-height: math.div(24, 21);

@@ -1044,10 +1044,12 @@ body.page-template-page-policy {
   content: "";
   position: absolute;
   top: var(--marker-top);
+  top: round(nearest, var(--marker-top), 1px);
   left: calc(var(--footer-label) + var(--footer-label-gap));
   width: var(--footer-marker);
   background-color: currentColor;
   bottom: var(--marker-bottom);
+  bottom: round(nearest, var(--marker-bottom), 1px);
 }
 
 .footer__address[data-label]::after {
@@ -1078,12 +1080,14 @@ body.page-template-page-policy {
 
 .footer .feature-list > li::before {
   top: var(--marker-top);
+  top: round(nearest, var(--marker-top), 1px);
   height: var(--marker-size);
 }
 
 .footer .feature-list > li:has(br)::before {
   height: auto;
   bottom: var(--marker-bottom);
+  bottom: round(nearest, var(--marker-bottom), 1px);
 }
 
 .footer__links {
@@ -2835,7 +2839,6 @@ body.page-template-page-policy {
   font-family: "Nanotronica_Text", system-ui, -apple-system, "Segoe UI", sans-serif;
   font-weight: 400;
   font-size: 0.9375rem;
-  line-height: 0.7333333333;
   color: #000000;
   text-transform: uppercase;
   cursor: pointer;
@@ -2919,9 +2922,15 @@ body.page-template-page-policy {
   width: 100%;
 }
 
+.form__file,
+.form__submit {
+  line-height: 0.75rem;
+}
+
 .form__submit input {
   background: transparent;
   color: inherit;
+  line-height: inherit;
   cursor: pointer;
 }
 
@@ -2937,6 +2946,7 @@ body.page-template-page-policy {
 }
 
 .form__consent {
+  --consent-text-width: 17.3125rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -2949,6 +2959,11 @@ body.page-template-page-policy {
   font-size: 0.75rem;
   line-height: 1.25;
   color: #000000;
+}
+
+.form__consent > span:last-child {
+  min-width: 0;
+  max-width: var(--consent-text-width);
 }
 
 .form__consent a {
@@ -4673,10 +4688,6 @@ body.has-cookie-notice .site-body {
     margin-bottom: 2.5rem;
   }
 
-  .products__grid {
-    --gutter-y: 0rem;
-  }
-
   .products__more .link-more {
     line-height: 0.7333333333;
   }
@@ -5297,6 +5308,10 @@ body.has-cookie-notice .site-body {
 
   .form__actions {
     gap: 1.5rem;
+  }
+
+  .form__consent {
+    --consent-text-width: 17.125rem;
   }
 
   .search-form--page .search-form__input {
@@ -5958,6 +5973,10 @@ body.has-cookie-notice .site-body {
     width: calc(50% - 0.75rem);
   }
 
+  .form__consent {
+    --consent-text-width: 20.3125rem;
+  }
+
   .form__checkbox {
     -ms-flex-preferred-size: 1.5625rem;
         flex-basis: 1.5625rem;
@@ -6503,6 +6522,10 @@ body.has-cookie-notice .site-body {
 
   .form__row .column--phone {
     margin-right: 0;
+  }
+
+  .form__consent {
+    --consent-text-width: 14.1875rem;
   }
 
   .page-hero {
@@ -7448,7 +7471,6 @@ body.has-cookie-notice .site-body {
   .form__file {
     height: 3.125rem;
     font-size: 1.125rem;
-    line-height: 0.7222222222;
   }
 
   .form__file-remove {
@@ -7460,7 +7482,13 @@ body.has-cookie-notice .site-body {
     gap: 2rem;
   }
 
+  .form__file,
+  .form__submit {
+    line-height: 0.875rem;
+  }
+
   .form__consent {
+    --consent-text-width: 18.875rem;
     gap: 0.875rem;
     font-size: 0.9375rem;
     line-height: 1.2;
@@ -8259,7 +8287,6 @@ body.has-cookie-notice .site-body {
   .form__file {
     height: 3.75rem;
     font-size: 1.3125rem;
-    line-height: 0.7142857143;
   }
 
   .form__file-remove {
@@ -8271,7 +8298,13 @@ body.has-cookie-notice .site-body {
     gap: 2.25rem;
   }
 
+  .form__file,
+  .form__submit {
+    line-height: 1rem;
+  }
+
   .form__consent {
+    --consent-text-width: 24.125rem;
     gap: 1.125rem;
     font-size: 1.125rem;
     line-height: 1.2222222222;
@@ -9178,7 +9211,6 @@ body.has-cookie-notice .site-body {
   .form__file {
     height: 4.625rem;
     font-size: 1.625rem;
-    line-height: 0.7307692308;
   }
 
   .form__file-list {
@@ -9195,7 +9227,13 @@ body.has-cookie-notice .site-body {
     gap: 2.75rem;
   }
 
+  .form__file,
+  .form__submit {
+    line-height: 1.25rem;
+  }
+
   .form__consent {
+    --consent-text-width: 34.125rem;
     gap: 1.25rem;
     font-size: 1.3125rem;
     line-height: 1.1428571429;
@@ -9442,6 +9480,19 @@ body.has-cookie-notice .site-body {
 
   .sticky-navbar[data-variant=breadcrumbs] .sticky-navbar__lang {
     display: none;
+  }
+}
+
+@media (max-width: 429.98px) {
+  .form__consent {
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+  }
+
+  .form__consent .form__checkbox {
+    display: block;
+    margin-top: -0.1875rem;
   }
 }
 

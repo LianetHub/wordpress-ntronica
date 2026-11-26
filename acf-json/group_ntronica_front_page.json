@@ -8,8 +8,8 @@
             "label": "Hero Tagline",
             "name": "hero_tagline",
             "aria-label": "",
-            "type": "text",
-            "instructions": "Displayed as h1 on the front page.",
+            "type": "textarea",
+            "instructions": "Displayed as h1 on the front page. Put each intended line on a separate line (Enter).",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -20,8 +20,8 @@
             "default_value": "Technological language of the future",
             "maxlength": 256,
             "placeholder": "",
-            "prepend": "",
-            "append": ""
+            "rows": 3,
+            "new_lines": "br"
         },
         {
             "key": "field_ntronica_fp_hero_image",

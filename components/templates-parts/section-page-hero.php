@@ -34,6 +34,8 @@ $ntronica_hero_class = 'page-hero';
 
 if (! $ntronica_has_title) {
 	$ntronica_hero_class .= ' page-hero--home';
+	$ntronica_tagline_html = wp_kses($ntronica_hero['tagline'], array('br' => array()));
+	$ntronica_tagline_text = wp_strip_all_tags(preg_replace('/<br\s*\/?>[\r\n]*/i', "\n", $ntronica_tagline_html));
 }
 
 ?>
@@ -48,8 +50,8 @@ if (! $ntronica_has_title) {
 			<h1 class="page-hero__title" data-title="<?php echo esc_attr($ntronica_hero['title']); ?>"><span><?php echo esc_html($ntronica_hero['title']); ?></span></h1>
 		<?php else : ?>
 			<div class="row">
-				<div class="col-12 col-md-6 offset-md-6 col-xxl-4 offset-xxl-8 page-hero__tagline-column">
-					<h1 class="page-hero__tagline<?php echo false !== strpos($ntronica_hero['tagline'], "\n") ? ' page-hero__tagline--lines' : ''; ?>" data-title="<?php echo esc_attr($ntronica_hero['tagline']); ?>"><span><?php echo esc_html($ntronica_hero['tagline']); ?></span></h1>
+				<div class="col-12 col-md-6 offset-md-6 col-xxl-4 offset-xxl-8">
+					<h1 class="page-hero__tagline" data-title="<?php echo esc_attr($ntronica_tagline_text); ?>"><span><?php echo $ntronica_tagline_html; ?></span></h1>
 				</div>
 			</div>
 		<?php endif; ?>

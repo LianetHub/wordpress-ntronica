@@ -517,6 +517,8 @@
         height: rem(21);
         margin-top: rem(1);
         border: rem(2) solid $color-black;
+        border-radius: 0;
+        -webkit-appearance: none;
         appearance: none;
         background: $color-white;
         cursor: pointer;

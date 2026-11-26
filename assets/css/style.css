@@ -2967,9 +2967,10 @@ body.page-template-page-policy {
   height: 1.3125rem;
   margin-top: 0.0625rem;
   border: 0.125rem solid #000000;
+  border-radius: 0;
   -webkit-appearance: none;
-     -moz-appearance: none;
-          appearance: none;
+  -moz-appearance: none;
+       appearance: none;
   background: #ffffff;
   cursor: pointer;
   -webkit-transition: background-color 0.1s ease-in-out, border-color 0.1s ease-in-out, color 0.1s ease-in-out;

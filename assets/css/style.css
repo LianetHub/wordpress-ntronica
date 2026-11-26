@@ -1325,7 +1325,7 @@ body.page-template-page-policy {
   --gutter-y: 1.875rem;
 }
 
-.info__list {
+.info .info__list {
   font-family: "Nanotronica_Text", system-ui, -apple-system, "Segoe UI", sans-serif;
   --font-ascent: 0.912em;
   --font-descent: 0.192em;
@@ -1340,13 +1340,13 @@ body.page-template-page-policy {
   line-height: 1.2;
 }
 
-.info__list > li::before {
+.info .info__list > li::before {
   top: var(--marker-top);
   height: var(--marker-size);
 }
 
-.info__list > li:has(br)::before,
-.info__list > li:has(address)::before {
+.info .info__list > li:has(br)::before,
+.info .info__list > li:has(address)::before {
   height: auto;
   bottom: var(--marker-bottom);
 }
@@ -7035,7 +7035,7 @@ body.has-cookie-notice .site-body {
     line-height: 0.78125;
   }
 
-  .info__list {
+  .info .info__list {
     --marker-size: 0.8125rem;
     --marker-gap: 0.875rem;
     --marker-col: 3.9375rem;
@@ -7902,7 +7902,7 @@ body.has-cookie-notice .site-body {
     line-height: 0.7222222222;
   }
 
-  .info__list {
+  .info .info__list {
     --marker-size: 1rem;
     --marker-gap: 1rem;
     --marker-col: 4.625rem;
@@ -8745,7 +8745,7 @@ body.has-cookie-notice .site-body {
     line-height: 0.6956521739;
   }
 
-  .info__list {
+  .info .info__list {
     --marker-size: 1.1875rem;
     --marker-gap: 1.1875rem;
     --marker-col: 5.875rem;

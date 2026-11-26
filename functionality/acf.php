@@ -22,6 +22,29 @@ add_filter('acf/settings/save_json', function ($path) {
     return get_template_directory() . '/acf-json';
 });
 
+// Keep the homepage tagline editable with deliberate, plain-text line breaks.
+add_filter('acf/load_field/key=field_ntronica_fp_hero_heading', function ($field) {
+    $field['type']         = 'textarea';
+    $field['rows']         = 3;
+    $field['new_lines']    = '';
+    $field['instructions'] = 'Displayed as h1 on the front page. Put each intended line on a separate line (Enter).';
+    return $field;
+});
+
+add_filter('acf/load_value/key=field_ntronica_fp_hero_heading', function ($value) {
+    if (! is_string($value)) {
+        return $value;
+    }
+
+    // Format the existing English slogan without replacing editable content
+    // or imposing the English word grouping on translations/custom text.
+    return preg_replace(
+        '/^(Technological)\s+(language)\s+(of the future)$/iu',
+        "$1\n$2\n$3",
+        trim(str_replace(array("\r\n", "\r"), "\n", $value))
+    );
+});
+
 // ──────────────────────────────────────────────────────
 // Product category image field
 // ──────────────────────────────────────────────────────

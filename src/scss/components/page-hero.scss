@@ -243,13 +243,25 @@
 			}
 		}
 
+		.page-hero__tagline-column {
+			container-type: inline-size;
+		}
+
 		.page-hero__tagline {
+			--home-tagline-size: #{rem(42)};
 			--tagline-pad: 0;
 			align-self: auto;
 			max-width: none;
 			width: 100%;
-			font-size: rem(42);
+			font-size: var(--home-tagline-size);
 			line-height: math.div(52, 42);
+
+			&.page-hero__tagline--lines {
+				// Both the visible text and data-title overlay inherit the breaks.
+				white-space: pre;
+				// "Technological" measures 7.568em in both Nanotronica fonts.
+				font-size: min(var(--home-tagline-size), calc(100cqi / 7.6));
+			}
 
 			@media (min-width: $md6) {
 				--tagline-pad: 0;
@@ -258,19 +270,19 @@
 			}
 
 			@media (min-width: $md3) {
-				font-size: rem(45);
+				--home-tagline-size: #{rem(45)};
 				line-height: math.div(54, 45);
 			}
 
 			@media (min-width: $md2) {
-				font-size: rem(54);
+				--home-tagline-size: #{rem(54)};
 				line-height: math.div(60, 54);
 			}
 
 			@media (min-width: $md1) {
 				--tagline-pad: 0;
 				max-width: rem(622);
-				font-size: rem(82);
+				--home-tagline-size: #{rem(82)};
 				line-height: math.div(90, 82);
 			}
 		}

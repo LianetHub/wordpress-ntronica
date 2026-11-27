@@ -418,6 +418,11 @@
 
 	// info__title
 	&__title {
+		body.lang-ru & {
+			@media (max-width: ($md6 - 0.02px)) {
+				line-height: 1.1;
+			}
+		}
 		margin-bottom: rem(15);
 		line-height: math.div(14, 20);
 
@@ -458,6 +463,10 @@
 
 	// info__list
 	.info__list {
+		body.lang-ru & {
+			--marker-col: calc(4em + var(--marker-size));
+			overflow-wrap: anywhere;
+		}
 		font-family: $font-family;
 		--font-ascent: 0.912em;
 		--font-descent: 0.192em;

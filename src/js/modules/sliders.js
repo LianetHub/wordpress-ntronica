@@ -17,6 +17,9 @@ const SLIDER_SELECTOR = [
 export class Slider {
 	static init() {
 		if (typeof Swiper === "undefined") return;
+		if (window.ntronicaI18n?.swiper) {
+			Swiper.extendDefaults({ a11y: window.ntronicaI18n.swiper });
+		}
 
 		document.querySelectorAll(SLIDER_SELECTOR).forEach((el) => {
 			new Slider(el);

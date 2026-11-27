@@ -75,9 +75,9 @@ $ntronica_items = is_array($ntronica_feed['items']) ? $ntronica_feed['items'] : 
 				</div>
 
 				<div class="slider-nav news-feed__nav">
-					<?php ntronica_slider_nav_button('prev', sprintf('Previous %s', $ntronica_nav_prefix)); ?>
+					<?php ntronica_slider_nav_button('prev', sprintf(ntronica_ui_text('Previous: %s'), $ntronica_nav_prefix)); ?>
 					<p class="text-block slider-nav__fraction" aria-live="polite"></p>
-					<?php ntronica_slider_nav_button('next', sprintf('Next %s', $ntronica_nav_prefix)); ?>
+					<?php ntronica_slider_nav_button('next', sprintf(ntronica_ui_text('Next: %s'), $ntronica_nav_prefix)); ?>
 				</div>
 			</div>
 		<?php endif; ?>

@@ -20,6 +20,7 @@ define('FAV_DIR', get_template_directory() . '/assets');
 define('JS_DIR', get_template_directory() . '/assets/js');
 define('STYLES_DIR', get_template_directory() . '/assets/css');
 
+require_once FUNC_PATH . 'localization.php';
 require_once FUNC_PATH . 'setup.php';
 require_once FUNC_PATH . 'cleanup.php';
 require_once FUNC_PATH . 'enqueue.php';
@@ -31,6 +32,3 @@ require_once FUNC_PATH . 'consent.php';
 require_once FUNC_PATH . 'analytics.php';
 require_once FUNC_PATH . 'acf.php';
 require_once FUNC_PATH . 'wpml-acf.php';
-
-
-

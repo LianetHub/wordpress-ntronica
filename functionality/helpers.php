@@ -108,7 +108,7 @@ function ntronica_get_news_url()
 		return get_permalink($ntronica_blog_id);
 	}
 
-	return home_url('/news/');
+	return ntronica_page_url('news');
 }
 
 /**
@@ -152,7 +152,7 @@ function ntronica_get_news_article_url()
 function ntronica_get_mock_news_article()
 {
 	$ntronica_image = IMG_PATH . '/news/article.webp';
-	$ntronica_alt   = 'Technicians in cleanroom suits in a semiconductor facility';
+	$ntronica_alt   = ntronica_ui_text('Technicians in cleanroom suits in a semiconductor facility');
 
 	return array(
 		'title'      => 'Lorem ipsum dolor sit',
@@ -160,8 +160,8 @@ function ntronica_get_mock_news_article()
 		'datetime'   => '2023-01-25',
 		'lead'       => 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.',
 		'paragraphs' => array(
-			'It may require more than one hundred tools to produce a single modern chip. Our goal is to cover at least half of those tools — whether you are performing research & development or running mass production. We are currently present across multiple stages of chip production, such as etching and deposition, epitaxy, thermal operations, and Chemical Mechanical Planarization (CMP).',
-			'It may require more than one hundred tools to produce a single modern chip. Our goal is to cover at least half of those tools — whether you are performing research & development or running mass production.',
+			ntronica_ui_text('It may require more than one hundred tools to produce a single modern chip. Our goal is to cover at least half of those tools — whether you are performing research & development or running mass production. We are currently present across multiple stages of chip production, such as etching and deposition, epitaxy, thermal operations, and Chemical Mechanical Planarization (CMP).'),
+			ntronica_ui_text('It may require more than one hundred tools to produce a single modern chip. Our goal is to cover at least half of those tools — whether you are performing research & development or running mass production.'),
 		),
 		'gallery'    => array(
 			array(
@@ -191,7 +191,7 @@ function ntronica_get_news_article_crumbs()
 
 	return array(
 		array(
-			'label' => 'News',
+			'label' => ntronica_ui_text('News'),
 			'url'   => ntronica_get_news_url(),
 		),
 		array(
@@ -213,8 +213,8 @@ function ntronica_get_vacancy_crumbs($post_id = null)
 
 	return array(
 		array(
-			'label' => 'Careers',
-			'url'   => home_url('/careers/'),
+			'label' => ntronica_ui_text('Careers'),
+			'url'   => ntronica_page_url('careers'),
 		),
 		array(
 			'label' => get_the_title($post_id),
@@ -241,11 +241,11 @@ function ntronica_get_product_crumbs($post_id = null)
 
 	return array(
 		array(
-			'label' => 'Products',
-			'url'   => home_url('/products/'),
+			'label' => ntronica_ui_text('Products'),
+			'url'   => ntronica_page_url('products'),
 		),
 		array(
-			'label' => $category ? $category->name : 'Uncategorized',
+			'label' => $category ? $category->name : ntronica_ui_text('Uncategorized'),
 			'url'   => ! is_wp_error($category_url) ? $category_url : '',
 		),
 		array(
@@ -303,11 +303,6 @@ function ntronica_render_breadcrumbs($crumbs)
  */
 function ntronica_get_nav_tree()
 {
-	static $ntronica_tree = null;
-
-	if (null !== $ntronica_tree) {
-		return $ntronica_tree;
-	}
 
 	$ntronica_acf_tree = function_exists('ntronica_acf_get_nav_tree') ? ntronica_acf_get_nav_tree() : array();
 
@@ -319,146 +314,146 @@ function ntronica_get_nav_tree()
 	$ntronica_tree = array(
 		array(
 			'slug'     => 'front_page',
-			'label'    => 'Front Page',
+			'label'    => ntronica_ui_text('Front Page'),
 			'url'      => home_url('/'),
 			'children' => array(
 				array(
 					'href'  => '#hero',
-					'label' => 'Hero',
+					'label' => ntronica_ui_text('Hero'),
 				),
 				array(
 					'href'  => '#overview',
-					'label' => 'Company overview',
+					'label' => ntronica_ui_text('Company overview'),
 				),
 				array(
 					'href'  => '#products',
-					'label' => 'Products',
+					'label' => ntronica_ui_text('Products'),
 				),
 				array(
 					'href'  => '#processes',
-					'label' => 'Technological processes',
+					'label' => ntronica_ui_text('Technological processes'),
 				),
 				array(
 					'href'  => '#info',
-					'label' => 'Company information',
+					'label' => ntronica_ui_text('Company information'),
 				),
 				array(
 					'href'  => '#contacts',
-					'label' => 'Contact us',
+					'label' => ntronica_ui_text('Contact us'),
 				),
 			),
 		),
 		array(
 			'slug'     => 'about',
-			'label'    => 'About',
-			'url'      => home_url('/about/'),
+			'label'    => ntronica_ui_text('About'),
+			'url'      => ntronica_page_url('about'),
 			'children' => array(
 				array(
 					'href'  => '#overview',
-					'label' => 'Company overview',
+					'label' => ntronica_ui_text('Company overview'),
 				),
 				array(
 					'href'  => '#goal',
-					'label' => 'Our goal',
+					'label' => ntronica_ui_text('Our goal'),
 				),
 				array(
 					'href'  => '#about-us',
-					'label' => 'About us',
+					'label' => ntronica_ui_text('About us'),
 				),
 			),
 		),
 		array(
 			'slug'     => 'technology',
-			'label'    => 'Technology',
-			'url'      => home_url('/technology/'),
+			'label'    => ntronica_ui_text('Technology'),
+			'url'      => ntronica_page_url('technology'),
 			'children' => array(
 				array(
 					'href'  => '#microchips',
-					'label' => 'All about microchips',
+					'label' => ntronica_ui_text('All about microchips'),
 				),
 				array(
 					'href'  => '#processes',
-					'label' => 'Chip making processes',
+					'label' => ntronica_ui_text('Chip making processes'),
 				),
 				array(
 					'href'  => '#media',
-					'label' => 'Media publications',
+					'label' => ntronica_ui_text('Media publications'),
 				),
 			),
 		),
 		array(
 			'slug'     => 'products',
-			'label'    => 'Products',
-			'url'      => home_url('/products/'),
+			'label'    => ntronica_ui_text('Products'),
+			'url'      => ntronica_page_url('products'),
 			'children' => array(
 				array(
 					'href'  => '#thin-films',
-					'label' => 'Thin films equipment',
+					'label' => ntronica_ui_text('Thin films equipment'),
 				),
 				array(
 					'href'  => '#wet-process',
-					'label' => 'Wet process equipment',
+					'label' => ntronica_ui_text('Wet process equipment'),
 				),
 				array(
 					'href'  => '#process-control',
-					'label' => 'Process control',
+					'label' => ntronica_ui_text('Process control'),
 				),
 			),
 		),
 		array(
 			'slug'     => 'news',
-			'label'    => 'News',
+			'label'    => ntronica_ui_text('News'),
 			'url'      => ntronica_get_news_url(),
 			'children' => array(
 				array(
 					'href'  => '#events',
-					'label' => 'Events & news',
+					'label' => ntronica_ui_text('Events & news'),
 				),
 				array(
 					'href'  => '#press',
-					'label' => 'Press releases',
+					'label' => ntronica_ui_text('Press releases'),
 				),
 				array(
 					'href'  => '#media',
-					'label' => 'Mass media publications',
+					'label' => ntronica_ui_text('Mass media publications'),
 				),
 			),
 		),
 		array(
 			'slug'     => 'careers',
-			'label'    => 'Careers',
-			'url'      => home_url('/careers/'),
+			'label'    => ntronica_ui_text('Careers'),
+			'url'      => ntronica_page_url('careers'),
 			'children' => array(
 				array(
 					'href'  => '#team',
-					'label' => 'Our team',
+					'label' => ntronica_ui_text('Our team'),
 				),
 				array(
 					'href'  => '#careers',
-					'label' => 'Open positions',
+					'label' => ntronica_ui_text('Open positions'),
 				),
 				array(
 					'href'  => '#contacts',
-					'label' => 'Contact us',
+					'label' => ntronica_ui_text('Contact us'),
 				),
 			),
 		),
 		array(
 			'slug'     => 'contacts',
-			'label'    => 'Contacts',
-			'url'      => home_url('/contacts/'),
+			'label'    => ntronica_ui_text('Contacts'),
+			'url'      => ntronica_page_url('contacts'),
 			'children' => array(
 				array(
 					'href'  => '#about',
-					'label' => 'Company information',
+					'label' => ntronica_ui_text('Company information'),
 				),
 				array(
 					'href'  => '#our-representative',
-					'label' => 'Our representative',
+					'label' => ntronica_ui_text('Our representative'),
 				),
 				array(
 					'href'  => '#contacts',
-					'label' => 'Contact us',
+					'label' => ntronica_ui_text('Contact us'),
 				),
 			),
 		),
@@ -633,7 +628,7 @@ function ntronica_slider_nav_button($direction, $aria_label)
 	<button
 		type="button"
 		class="swiper-button-<?php echo esc_attr($direction); ?>"
-		aria-label="<?php echo esc_attr($aria_label); ?>">
+		aria-label="<?php echo esc_attr(ntronica_ui_text($aria_label)); ?>">
 		<?php ntronica_icon('arrow-' . $direction, '', '0 0 29 19'); ?>
 		<?php ntronica_icon('arrow-' . $direction . '-hover', '', '0 0 29 19'); ?>
 	</button>

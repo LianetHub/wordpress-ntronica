@@ -18,15 +18,15 @@ foreach ($ntronica_languages as $ntronica_lang) {
 	if (! empty($ntronica_lang['active'])) {
 		continue;
 	}
-	?>
+?>
 	<a
 		class="lang-switcher"
 		href="<?php echo esc_url($ntronica_lang['url']); ?>"
 		hreflang="<?php echo esc_attr($ntronica_lang['language_code']); ?>"
 		lang="<?php echo esc_attr($ntronica_lang['language_code']); ?>"
-		aria-label="<?php echo esc_attr(sprintf('Switch to %s', $ntronica_lang['native_name'])); ?>">
+		aria-label="<?php echo esc_attr(sprintf(ntronica_ui_text('Switch to %s'), $ntronica_lang['native_name'])); ?>">
 		<?php echo esc_html(strtoupper($ntronica_lang['language_code'])); ?>
 	</a>
-	<?php
+<?php
 	break;
 }

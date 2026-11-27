@@ -29,28 +29,28 @@ $ntronica_cin     = is_string($ntronica_cin) && '' !== $ntronica_cin ? $ntronica
 		<div class="row info__grid">
 			<div class="col-12 col-md-6">
 				<?php if ('' !== $ntronica_text) : ?>
-				<div class="text-block info__text">
-					<p><?php echo esc_html($ntronica_text); ?></p>
-				</div>
+					<div class="text-block info__text">
+						<p><?php echo esc_html($ntronica_text); ?></p>
+					</div>
 				<?php endif; ?>
 			</div>
 
 			<div class="col-12 col-md-6">
 				<ul class="info__list feature-list">
-					<li data-label="Mail">
+					<li data-label="<?php echo esc_attr(ntronica_ui_text('Mail')); ?>">
 						<a href="mailto:<?php echo esc_attr($ntronica_email_1); ?>"><?php echo esc_html($ntronica_email_1); ?></a><br>
 						<a href="mailto:<?php echo esc_attr($ntronica_email_2); ?>"><?php echo esc_html($ntronica_email_2); ?></a>
 					</li>
-					<li data-label="Tel">
+					<li data-label="<?php echo esc_attr(ntronica_ui_text('Tel')); ?>">
 						<a href="tel:<?php echo esc_attr(preg_replace('/[^\d+]/', '', $ntronica_phone)); ?>"><?php echo esc_html($ntronica_phone); ?></a>
 					</li>
 					<?php if ('' !== $ntronica_address) : ?>
-					<li data-label="Add">
-						<address><?php echo esc_html($ntronica_address); ?></address>
-					</li>
+						<li data-label="<?php echo esc_attr(ntronica_ui_text('Add')); ?>">
+							<address><?php echo esc_html($ntronica_address); ?></address>
+						</li>
 					<?php endif; ?>
 					<?php if ('' !== $ntronica_cin) : ?>
-					<li data-label="CIN"><?php echo esc_html($ntronica_cin); ?></li>
+						<li data-label="CIN"><?php echo esc_html($ntronica_cin); ?></li>
 					<?php endif; ?>
 				</ul>
 			</div>

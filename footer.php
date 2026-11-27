@@ -18,8 +18,8 @@ $ntronica_email_1     = is_string($ntronica_email_1) && '' !== $ntronica_email_1
 $ntronica_email_2     = is_string($ntronica_email_2) && '' !== $ntronica_email_2 ? $ntronica_email_2 : '';
 $ntronica_phone       = is_string($ntronica_phone) && '' !== $ntronica_phone ? $ntronica_phone : '';
 $ntronica_website     = is_string($ntronica_website) && '' !== $ntronica_website ? $ntronica_website : '';
-$ntronica_privacy_url = is_string($ntronica_privacy_url) && '' !== $ntronica_privacy_url ? $ntronica_privacy_url : home_url('/privacy-policy/');
-$ntronica_terms_url   = is_string($ntronica_terms_url) && '' !== $ntronica_terms_url ? $ntronica_terms_url : home_url('/terms-of-use/');
+$ntronica_privacy_url = is_string($ntronica_privacy_url) && '' !== $ntronica_privacy_url ? $ntronica_privacy_url : ntronica_page_url('privacy-policy');
+$ntronica_terms_url   = is_string($ntronica_terms_url) && '' !== $ntronica_terms_url ? $ntronica_terms_url : ntronica_page_url('terms-of-use');
 
 $ntronica_address_lines = array();
 if (is_string($ntronica_address) && '' !== $ntronica_address) {
@@ -33,28 +33,32 @@ if (is_string($ntronica_address) && '' !== $ntronica_address) {
 			<div class="col-12 col-xxl-3 footer__copy">
 				<div class="row">
 					<div class="col-12 col-md-4 col-xxl-12">
-						<p class="footer__year">Copyright (c) 2025-2026</p>
+						<p class="footer__year"><?php echo esc_html(ntronica_ui_text('Copyright (c) 2025-2026')); ?></p>
 					</div>
 					<div class="col-12 col-md-8 col-xxl-12">
-						<p class="footer__company">Nanotronica India
-							<span class="footer__company--desktop-text">Private Limited Company</span>
-							<span class="footer__company--tablet-text">Pvt Ltd</span>
-							<span class="footer__company--mobile-text">Private Limited</span>
-						</p>
+						<?php if ('ru' === ntronica_current_language()) : ?>
+							<p class="footer__company">Нанотроника</p>
+						<?php else : ?>
+							<p class="footer__company">Nanotronica India
+								<span class="footer__company--desktop-text">Private Limited Company</span>
+								<span class="footer__company--tablet-text">Pvt Ltd</span>
+								<span class="footer__company--mobile-text">Private Limited</span>
+							</p>
+						<?php endif; ?>
 					</div>
 				</div>
 			</div>
 
 			<div class="col-12 col-md-4 col-xxl-3">
 				<ul class="feature-list">
-					<li data-label="Mail" data-label-short="Eml">
+					<li data-label="<?php echo esc_attr(ntronica_ui_text('Mail')); ?>" data-label-short="<?php echo esc_attr(ntronica_ui_text('Eml')); ?>">
 						<a href="mailto:<?php echo esc_attr($ntronica_email_1); ?>"><?php echo esc_html($ntronica_email_1); ?></a><br>
 						<a href="mailto:<?php echo esc_attr($ntronica_email_2); ?>"><?php echo esc_html($ntronica_email_2); ?></a>
 					</li>
-					<li data-label="Tel">
+					<li data-label="<?php echo esc_attr(ntronica_ui_text('Tel')); ?>">
 						<a href="tel:<?php echo esc_attr(preg_replace('/[^\d+]/', '', $ntronica_phone)); ?>"><?php echo esc_html($ntronica_phone); ?></a>
 					</li>
-					<li data-label="Web">
+					<li data-label="<?php echo esc_attr(ntronica_ui_text('Web')); ?>">
 						<a href="<?php echo esc_url($ntronica_website); ?>"><?php echo esc_html(preg_replace('#^https?://#', '', $ntronica_website)); ?></a>
 					</li>
 				</ul>
@@ -62,14 +66,14 @@ if (is_string($ntronica_address) && '' !== $ntronica_address) {
 
 			<div class="col-12 col-md-4 col-xxl-3">
 				<?php if (! empty($ntronica_address_lines)) : ?>
-				<address class="footer__address" data-label="Add">
-					<?php foreach ($ntronica_address_lines as $ntronica_line) : ?>
-						<?php $ntronica_line = trim($ntronica_line); ?>
-						<?php if ('' !== $ntronica_line) : ?>
-						<span><?php echo esc_html($ntronica_line); ?></span>
-						<?php endif; ?>
-					<?php endforeach; ?>
-				</address>
+					<address class="footer__address" data-label="<?php echo esc_attr(ntronica_ui_text('Add')); ?>">
+						<?php foreach ($ntronica_address_lines as $ntronica_line) : ?>
+							<?php $ntronica_line = trim($ntronica_line); ?>
+							<?php if ('' !== $ntronica_line) : ?>
+								<span><?php echo esc_html($ntronica_line); ?></span>
+							<?php endif; ?>
+						<?php endforeach; ?>
+					</address>
 				<?php endif; ?>
 			</div>
 
@@ -79,8 +83,8 @@ if (is_string($ntronica_address) && '' !== $ntronica_address) {
 						<?php get_search_form(array('ntronica_variant' => 'footer')); ?>
 					</div>
 					<div class="footer__policies">
-						<a class="footer__link" href="<?php echo esc_url($ntronica_privacy_url); ?>">Privacy policy</a>
-						<a class="footer__link" href="<?php echo esc_url($ntronica_terms_url); ?>">Terms of use</a>
+						<a class="footer__link" href="<?php echo esc_url($ntronica_privacy_url); ?>"><?php echo esc_html(ntronica_ui_text('Privacy policy')); ?></a>
+						<a class="footer__link" href="<?php echo esc_url($ntronica_terms_url); ?>"><?php echo esc_html(ntronica_ui_text('Terms of use')); ?></a>
 					</div>
 				</div>
 			</div>

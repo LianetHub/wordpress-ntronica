@@ -50,7 +50,7 @@ if (! $ntronica_has_title) {
 			<h1 class="page-hero__title" data-title="<?php echo esc_attr($ntronica_hero['title']); ?>"><span><?php echo esc_html($ntronica_hero['title']); ?></span></h1>
 		<?php else : ?>
 			<div class="row">
-				<div class="col-12 col-md-6 offset-md-6 col-xxl-4 offset-xxl-8">
+				<div class="col-12 col-md-6 offset-md-6 col-xxl-4 offset-xxl-8 page-hero__tagline-column">
 					<h1 class="page-hero__tagline" data-title="<?php echo esc_attr($ntronica_tagline_text); ?>"><span><?php echo $ntronica_tagline_html; ?></span></h1>
 				</div>
 			</div>

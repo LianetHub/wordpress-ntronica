@@ -24,7 +24,7 @@ get_header();
 		the_posts_navigation();
 		?>
 	<?php else : ?>
-		<p>Nothing found.</p>
+		<p><?php echo esc_html(ntronica_ui_text('Nothing found.')); ?></p>
 	<?php endif; ?>
 </div>
 <?php

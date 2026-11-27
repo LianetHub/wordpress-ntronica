@@ -28,6 +28,18 @@
 		display: flex;
 	}
 
+	body.lang-ru & {
+		--footer-label: 4em;
+		overflow-wrap: anywhere;
+
+		.footer__address {
+			max-width: none;
+			> span {
+				white-space: normal;
+			}
+		}
+	}
+
 	@media (min-width: $md6) {
 		--footer-height: #{rem(144)};
 		--footer-text-gap: #{rem(7)};

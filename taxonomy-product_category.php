@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Product category: real products via WP_Query.
  *
@@ -71,7 +72,7 @@ $ntronica_category_image = is_string($ntronica_category_image) ? $ntronica_categ
 			</div>
 		<?php else : ?>
 			<div class="product-category__empty">
-				<p class="text-block">No products found in this category.</p>
+				<p class="text-block"><?php echo esc_html(ntronica_ui_text('No products found in this category.')); ?></p>
 			</div>
 		<?php endif; ?>
 	</div>

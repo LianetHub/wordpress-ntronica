@@ -24,7 +24,7 @@ $ntronica_map_src = 'https://maps.google.com/maps?q=' . rawurlencode($ntronica_a
 			<iframe
 				class="contacts-representative__iframe"
 				src="<?php echo esc_url($ntronica_map_src); ?>"
-				title="Map of N-tronica representative location"
+				title="<?php echo esc_attr(ntronica_ui_text('Map of N-tronica representative location')); ?>"
 				loading="lazy"
 				referrerpolicy="no-referrer-when-downgrade"
 				allowfullscreen></iframe>

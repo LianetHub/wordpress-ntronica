@@ -29,7 +29,7 @@ $ntronica_image = is_string($ntronica_image) && '' !== $ntronica_image ? $ntroni
 					<img
 						class="about-goal__img"
 						src="<?php echo esc_url($ntronica_image); ?>"
-						alt="Laboratory equipment"
+						alt="<?php echo esc_attr(ntronica_ui_text('Laboratory equipment')); ?>"
 						loading="lazy"
 						width="945"
 						height="515">

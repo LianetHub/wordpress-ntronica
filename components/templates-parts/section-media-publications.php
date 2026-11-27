@@ -25,9 +25,7 @@ $ntronica_items = is_array($ntronica_media['items']) ? $ntronica_media['items'] 
 ?>
 <section class="media-publications" id="media">
 	<div class="container">
-		<h2 class="title media-publications__title">
-			Media publications
-		</h2>
+		<h2 class="title media-publications__title"><?php echo esc_html(ntronica_ui_text('Media publications')); ?></h2>
 
 		<?php if ($ntronica_items) : ?>
 			<div class="swiper media-publications-slider">

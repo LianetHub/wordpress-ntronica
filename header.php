@@ -41,7 +41,7 @@
 					null,
 					array(
 						'variant'   => 'nav',
-						'nav_label' => 'About sections',
+						'nav_label' => ntronica_ui_text('About sections'),
 						'nav'       => $sticky_nav,
 					)
 				);
@@ -55,7 +55,7 @@
 					null,
 					array(
 						'variant'   => 'nav',
-						'nav_label' => 'Technology sections',
+						'nav_label' => ntronica_ui_text('Technology sections'),
 						'nav'       => $sticky_nav,
 					)
 				);
@@ -69,7 +69,7 @@
 					null,
 					array(
 						'variant'   => 'nav',
-						'nav_label' => 'Products sections',
+						'nav_label' => ntronica_ui_text('Products sections'),
 						'nav'       => $sticky_nav,
 					)
 				);
@@ -83,7 +83,7 @@
 					null,
 					array(
 						'variant'   => 'nav',
-						'nav_label' => 'Careers sections',
+						'nav_label' => ntronica_ui_text('Careers sections'),
 						'nav'       => $sticky_nav,
 					)
 				);
@@ -97,13 +97,13 @@
 					null,
 					array(
 						'variant'   => 'nav',
-						'nav_label' => 'Contacts sections',
+						'nav_label' => ntronica_ui_text('Contacts sections'),
 						'nav'       => $sticky_nav,
 					)
 				);
 			} elseif (is_home()) {
 				$ntronica_blog_id    = (int) get_option('page_for_posts');
-				$ntronica_nav_title  = $ntronica_blog_id ? get_the_title($ntronica_blog_id) : 'News';
+				$ntronica_nav_title  = $ntronica_blog_id ? get_the_title($ntronica_blog_id) : ntronica_ui_text('News');
 				$sticky_nav = get_field('sticky_nav_news', 'option');
 				if (empty($sticky_nav)) {
 					$sticky_nav = ntronica_get_page_section_nav('news');
@@ -113,7 +113,7 @@
 					null,
 					array(
 						'variant'   => 'nav',
-						'nav_label' => $ntronica_nav_title . ' sections',
+						'nav_label' => sprintf(ntronica_ui_text('Sections: %s'), $ntronica_nav_title),
 						'nav'       => $sticky_nav,
 					)
 				);
@@ -145,7 +145,7 @@
 						'variant' => 'breadcrumbs',
 						'theme' => 'light',
 						'crumbs' => array(
-							array('label' => 'Products', 'url' => home_url('/products/')),
+							array('label' => ntronica_ui_text('Products'), 'url' => ntronica_page_url('products')),
 							array('label' => get_queried_object()->name, 'url' => ''),
 						),
 					)

@@ -496,6 +496,12 @@
             max-width: var(--consent-text-width);
         }
 
+        body.lang-ru & {
+            > span:last-child {
+                max-width: none;
+            }
+        }
+
         a {
             text-decoration: none;
         }

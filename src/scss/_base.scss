@@ -45,26 +45,6 @@
 	}
 }
 
-body:has(.sidebar--language-ru) {
-	.container {
-		@media (min-width: $md4) {
-			padding-left: rem(380); // 321 + 59
-		}
-
-		@media (min-width: $md3) {
-			padding-left: rem(380);
-		}
-
-		@media (min-width: $md2) {
-			padding-left: rem(380);
-		}
-
-		@media (min-width: $md1) {
-			padding-left: rem(426); // 367 + 59
-		}
-	}
-}
-
 body {
 	font-family: $font-family;
 	color: $color-text;

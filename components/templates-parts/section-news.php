@@ -26,7 +26,7 @@ $ntronica_news_url = ntronica_get_news_url();
 ?>
 <section class="news" id="news">
 	<div class="container">
-		<h2 class="title news__title">Events &amp; news</h2>
+		<h2 class="title news__title"><?php echo esc_html(ntronica_ui_text('Events & news')); ?></h2>
 		<p class="text-block news__lead">
 			<?php echo esc_html(ntronica_get_category_lead('events', '')); ?>
 		</p>
@@ -53,8 +53,8 @@ $ntronica_news_url = ntronica_get_news_url();
 		<?php endif; ?>
 
 		<div class="news__more">
-			<a class="link-more" href="<?php echo esc_url($ntronica_news_url); ?>" data-title="LEARN MORE">
-				<span>LEARN MORE</span>
+			<a class="link-more" href="<?php echo esc_url($ntronica_news_url); ?>" data-title="<?php echo esc_attr(ntronica_ui_text('LEARN MORE')); ?>">
+				<span><?php echo esc_html(ntronica_ui_text('LEARN MORE')); ?></span>
 			</a>
 		</div>
 	</div>

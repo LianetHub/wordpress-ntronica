@@ -178,6 +178,8 @@ function ntronica_enqueue_scripts()
             )
         );
 
+        wp_localize_script('ntronica-app', 'ntronicaI18n', ntronica_frontend_translations());
+
         wp_localize_script(
             'ntronica-app',
             'ntronicaAnalytics',

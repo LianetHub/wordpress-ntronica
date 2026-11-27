@@ -17,12 +17,12 @@ $ntronica_default_image = IMG_PATH . '/progress-slider/process-epitaxy.webp';
 $ntronica_bg_image      = $ntronica_default_image;
 
 if (! empty($ntronica_slider_items)) {
-    $ntronica_first_image = isset($ntronica_slider_items[0]['image'])
-        ? (string) $ntronica_slider_items[0]['image']
-        : '';
-    if ('' !== $ntronica_first_image) {
-        $ntronica_bg_image = $ntronica_first_image;
-    }
+	$ntronica_first_image = isset($ntronica_slider_items[0]['image'])
+		? (string) $ntronica_slider_items[0]['image']
+		: '';
+	if ('' !== $ntronica_first_image) {
+		$ntronica_bg_image = $ntronica_first_image;
+	}
 }
 ?>
 <section class="progress-slider" id="processes" style="background-image: url('<?php echo esc_url($ntronica_bg_image); ?>');">
@@ -50,14 +50,14 @@ if (! empty($ntronica_slider_items)) {
 
 							<div class="row progress-slider__text-row">
 								<?php if ('' !== $ntronica_item_text1) : ?>
-								<div class="col-12 col-md-6">
-									<p class="text-block"><?php echo esc_html($ntronica_item_text1); ?></p>
-								</div>
+									<div class="col-12 col-md-6">
+										<p class="text-block"><?php echo esc_html($ntronica_item_text1); ?></p>
+									</div>
 								<?php endif; ?>
 								<?php if ('' !== $ntronica_item_text2) : ?>
-								<div class="col-12 col-md-6">
-									<p class="text-block"><?php echo esc_html($ntronica_item_text2); ?></p>
-								</div>
+									<div class="col-12 col-md-6">
+										<p class="text-block"><?php echo esc_html($ntronica_item_text2); ?></p>
+									</div>
 								<?php endif; ?>
 							</div>
 						</div>
@@ -67,13 +67,13 @@ if (! empty($ntronica_slider_items)) {
 		</div>
 		<div class="progress-slider__footer row">
 			<div class="col-1 progress-slider__prev">
-				<?php ntronica_slider_nav_button('prev', 'Previous process'); ?>
+				<?php ntronica_slider_nav_button('prev', ntronica_ui_text('Previous process')); ?>
 			</div>
 			<div class="col-1">
 				<div class="progress-slider__index"></div>
 			</div>
 			<div class="col-1 progress-slider__next">
-				<?php ntronica_slider_nav_button('next', 'Next process'); ?>
+				<?php ntronica_slider_nav_button('next', ntronica_ui_text('Next process')); ?>
 			</div>
 		</div>
 	</div>

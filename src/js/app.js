@@ -22,7 +22,9 @@ const components = {
 
 document.addEventListener("DOMContentLoaded", () => {
 	if (typeof Fancybox !== "undefined") {
-		Fancybox.bind(".product [data-fancybox]", {});
+		Fancybox.bind(".product [data-fancybox]", {
+			l10n: window.ntronicaI18n?.fancybox || {},
+		});
 	}
 
 	Slider.init();

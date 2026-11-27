@@ -11,6 +11,13 @@ export class FormController {
 	constructor(el) {
 		this.form = el;
 		this.root = el.querySelector(".form");
+		this.ui = window.ntronicaI18n?.form || {};
+		this.fieldMessages = {
+			...fieldMessages,
+			"your-name": this.root?.dataset.nameError || this.ui.nameError || fieldMessages["your-name"],
+			email: this.root?.dataset.emailError || this.ui.emailError || fieldMessages.email,
+			phone: this.root?.dataset.phoneError || this.ui.phoneError || fieldMessages.phone,
+		};
 		this.success = el.querySelector(".form__success");
 		this.againBtn = el.querySelector(".form__again");
 		this.submitWrap = el.querySelector(".form__submit");
@@ -57,8 +64,8 @@ export class FormController {
 			this.submitBtn.dataset.defaultText =
 				fromWrap.defaultText || this.submitBtn.value;
 		}
-		if (!this.submitBtn.dataset.sendingText && fromWrap.sendingText) {
-			this.submitBtn.dataset.sendingText = fromWrap.sendingText;
+		if (!this.submitBtn.dataset.sendingText && (fromWrap.sendingText || this.ui.sending)) {
+			this.submitBtn.dataset.sendingText = fromWrap.sendingText || this.ui.sending;
 		}
 	}
 
@@ -351,7 +358,7 @@ export class FormController {
 		listContainer.innerHTML = "";
 		const wrap = input.closest(this.selectors.fileWrap);
 		const removeLabel =
-			wrap?.dataset.removeLabel || this.form.dataset.removeLabel || "";
+			wrap?.dataset.removeLabel || this.form.dataset.removeLabel || this.ui.removeFile || "";
 
 		files.forEach((file, index) => {
 			const item = document.createElement("div");
@@ -378,8 +385,8 @@ export class FormController {
 		const label = wrap.querySelector(this.selectors.fileLabel);
 		if (!label) return;
 
-		const addLabel = wrap.dataset.addLabel || "ADD FILE";
-		const replaceLabel = wrap.dataset.replaceLabel || "REPLACE FILE";
+		const addLabel = wrap.dataset.addLabel || this.ui.addFile || "ADD FILE";
+		const replaceLabel = wrap.dataset.replaceLabel || this.ui.replaceFile || "REPLACE FILE";
 		label.textContent = hasFiles ? replaceLabel : addLabel;
 	}
 
@@ -495,7 +502,7 @@ export class FormController {
 			.forEach((field) => {
 				if (this.isControlFilled(field)) return;
 				valid = false;
-				const message = fieldMessages[field.name];
+				const message = this.fieldMessages[field.name];
 				if (message) this.showFieldError(field, message);
 			});
 
@@ -509,7 +516,7 @@ export class FormController {
 				valid = false;
 				this.showFieldError(
 					field,
-					fieldMessages[field.name] || fieldMessages.email,
+					this.fieldMessages[field.name] || this.fieldMessages.email,
 				);
 			});
 
@@ -517,7 +524,7 @@ export class FormController {
 			const shown = String(mask.value ?? "").trim();
 			if (!shown || mask.masked?.isComplete) return;
 			valid = false;
-			this.showFieldError(field, fieldMessages.phone);
+			this.showFieldError(field, this.fieldMessages.phone);
 		});
 
 		const acceptances = this.form.querySelectorAll(

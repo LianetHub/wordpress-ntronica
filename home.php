@@ -13,7 +13,7 @@ get_header();
 $ntronica_blog_id = (int) get_option('page_for_posts');
 
 // Hero fields: ACF override → page title → fallback.
-$ntronica_title   = $ntronica_blog_id ? get_the_title($ntronica_blog_id) : 'News';
+$ntronica_title   = $ntronica_blog_id ? get_the_title($ntronica_blog_id) : ntronica_ui_text('News');
 $ntronica_tagline = $ntronica_blog_id ? get_the_excerpt($ntronica_blog_id) : '';
 $ntronica_image   = IMG_PATH . '/news/hero.webp';
 
@@ -139,44 +139,44 @@ get_template_part(
 ?>
 <?php if (! empty($ntronica_events_items)) : ?>
 <?php
-get_template_part(
-	'components/templates-parts/section',
-	'news-feed',
-	array(
-		'id'    => 'events',
-		'title' => 'Events & news',
-		'lead'  => $ntronica_events_lead,
-		'items' => $ntronica_events_items,
-	)
-);
+	get_template_part(
+		'components/templates-parts/section',
+		'news-feed',
+		array(
+			'id'    => 'events',
+			'title' => ntronica_ui_text('Events & news'),
+			'lead'  => $ntronica_events_lead,
+			'items' => $ntronica_events_items,
+		)
+	);
 ?>
 <?php endif; ?>
 
 <?php if (! empty($ntronica_press_items)) : ?>
 <?php
-get_template_part(
-	'components/templates-parts/section',
-	'news-feed',
-	array(
-		'id'       => 'press',
-		'title'    => 'Press releases',
-		'lead'     => $ntronica_press_lead,
-		'modifier' => 'press',
-		'items'    => $ntronica_press_items,
-	)
-);
+	get_template_part(
+		'components/templates-parts/section',
+		'news-feed',
+		array(
+			'id'       => 'press',
+			'title'    => ntronica_ui_text('Press releases'),
+			'lead'     => $ntronica_press_lead,
+			'modifier' => 'press',
+			'items'    => $ntronica_press_items,
+		)
+	);
 ?>
 <?php endif; ?>
 
 <?php if (! empty($ntronica_media_items)) : ?>
 <?php
-get_template_part(
-	'components/templates-parts/section',
-	'media-publications',
-	array(
-		'items' => $ntronica_media_items,
-	)
-);
+	get_template_part(
+		'components/templates-parts/section',
+		'media-publications',
+		array(
+			'items' => $ntronica_media_items,
+		)
+	);
 ?>
 <?php endif; ?>
 

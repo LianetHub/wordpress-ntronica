@@ -16,6 +16,15 @@ add_filter('wpcf7_autop_or_not', '__return_false');
  */
 function ntronica_cf7_contact_messages()
 {
+	$form = function_exists('wpcf7_get_current_contact_form') ? wpcf7_get_current_contact_form() : null;
+	$is_ru = $form ? 0 === strpos($form->locale(), 'ru') : (function_exists('ntronica_current_language') && 'ru' === ntronica_current_language());
+	if ($is_ru) {
+		return array(
+			'your-name' => 'Введите ваше имя',
+			'email' => 'Введите корректный адрес электронной почты',
+			'phone' => 'Введите корректный номер телефона',
+		);
+	}
 	return array(
 		'your-name' => 'Enter your name',
 		'email'     => 'Enter a valid e-mail',
@@ -32,11 +41,7 @@ function ntronica_cf7_contact_messages()
 add_filter(
 	'wpcf7_swv_rule_error_message',
 	function ($message, $rule) {
-		static $messages = null;
-
-		if (null === $messages) {
-			$messages = ntronica_cf7_contact_messages();
-		}
+		$messages = ntronica_cf7_contact_messages();
 
 		if (! is_object($rule)) {
 			return $message;

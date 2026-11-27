@@ -30,7 +30,7 @@ $ntronica_has_value = '' !== $ntronica_query;
 	method="get"
 	class="<?php echo esc_attr($ntronica_form_class); ?>"
 	action="<?php echo esc_url(home_url('/')); ?>">
-	<label class="<?php echo esc_attr($ntronica_label_class); ?>" for="<?php echo esc_attr($ntronica_search_id); ?>">Search</label>
+	<label class="<?php echo esc_attr($ntronica_label_class); ?>" for="<?php echo esc_attr($ntronica_search_id); ?>"><?php echo esc_html(ntronica_ui_text('Search')); ?></label>
 	<div class="search-form__field">
 		<input
 			type="search"
@@ -40,18 +40,18 @@ $ntronica_has_value = '' !== $ntronica_query;
 			value="<?php echo esc_attr($ntronica_query); ?>"
 			autocomplete="off">
 		<?php if ($ntronica_is_page) : ?>
-			<button type="submit" class="search-form__submit" aria-label="Search" hidden>
+			<button type="submit" class="search-form__submit" aria-label="<?php echo esc_attr(ntronica_ui_text('Search')); ?>" hidden>
 				<span class="search-form__submit-icon" aria-hidden="true">→</span>
 			</button>
 		<?php endif; ?>
 		<button type="button"
 			class="search-form__clear"
-			aria-label="Clear"
+			aria-label="<?php echo esc_attr(ntronica_ui_text('Clear')); ?>"
 			<?php echo $ntronica_has_value ? '' : ' hidden'; ?>>
 			<?php ntronica_icon('clear', 'search-form__clear-icon'); ?>
 		</button>
 	</div>
 	<?php if (! $ntronica_is_page) : ?>
-		<button type="submit" class="search-form__submit screen-reader-text">Search</button>
+		<button type="submit" class="search-form__submit screen-reader-text"><?php echo esc_html(ntronica_ui_text('Search')); ?></button>
 	<?php endif; ?>
 </form>

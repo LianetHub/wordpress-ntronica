@@ -25,21 +25,21 @@ get_template_part(
 	'components/templates-parts/section',
 	'page-hero',
 	array(
-		'title'   => 'News',
+		'title'   => ntronica_ui_text('News'),
 		'image'   => IMG_PATH . '/news/hero.webp',
-		'tagline' => 'We develop innovative equipment to enable the full cycle of microelectronics production and complex r&d activities',
+		'tagline' => ntronica_ui_text('We develop innovative equipment to enable the full cycle of microelectronics production and complex r&d activities'),
 		'nav'     => array(
 			array(
 				'href'  => '#events',
-				'label' => 'Events & news',
+				'label' => ntronica_ui_text('Events & news'),
 			),
 			array(
 				'href'  => '#press',
-				'label' => 'Press releases',
+				'label' => ntronica_ui_text('Press releases'),
 			),
 			array(
 				'href'  => '#media',
-				'label' => 'Media publications',
+				'label' => ntronica_ui_text('Media publications'),
 			),
 		),
 	)
@@ -51,7 +51,7 @@ get_template_part(
 	'news-feed',
 	array(
 		'id'    => 'events',
-		'title' => 'Events & news',
+		'title' => ntronica_ui_text('Events & news'),
 		'lead'  => $ntronica_news_lead,
 		'items' => $ntronica_news_items,
 	)
@@ -63,7 +63,7 @@ get_template_part(
 	'news-feed',
 	array(
 		'id'       => 'press',
-		'title'    => 'Press releases',
+		'title'    => ntronica_ui_text('Press releases'),
 		'lead'     => $ntronica_news_lead,
 		'modifier' => 'press',
 		'items'    => $ntronica_news_items,

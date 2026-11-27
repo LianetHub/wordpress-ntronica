@@ -260,7 +260,8 @@
             "default_value": "contact@ntronica.com",
             "placeholder": "",
             "prepend": "",
-            "append": ""
+            "append": "",
+            "wpml_cf_preferences": 2
         },
         {
             "key": "field_ntronica_footer_email_2",
@@ -279,7 +280,8 @@
             "default_value": "business@ntronica.com",
             "placeholder": "",
             "prepend": "",
-            "append": ""
+            "append": "",
+            "wpml_cf_preferences": 2
         },
         {
             "key": "field_ntronica_footer_phone",
@@ -299,7 +301,8 @@
             "maxlength": "",
             "placeholder": "",
             "prepend": "",
-            "append": ""
+            "append": "",
+            "wpml_cf_preferences": 2
         },
         {
             "key": "field_ntronica_footer_website",
@@ -316,7 +319,8 @@
                 "id": ""
             },
             "default_value": "https://www.ntronica.com",
-            "placeholder": ""
+            "placeholder": "",
+            "wpml_cf_preferences": 2
         },
         {
             "key": "field_ntronica_footer_address",
@@ -336,7 +340,8 @@
             "maxlength": "",
             "rows": 4,
             "placeholder": "",
-            "new_lines": ""
+            "new_lines": "",
+            "wpml_cf_preferences": 2
         },
         {
             "key": "field_ntronica_info_address",
@@ -376,7 +381,8 @@
             "maxlength": "",
             "placeholder": "",
             "prepend": "",
-            "append": ""
+            "append": "",
+            "wpml_cf_preferences": 2
         },
         {
             "key": "field_ntronica_footer_privacy_url",
@@ -929,7 +935,8 @@
             "default_value": "contact@ntronica.com",
             "placeholder": "",
             "prepend": "",
-            "append": ""
+            "append": "",
+            "wpml_cf_preferences": 2
         },
         {
             "key": "field_ntronica_info_email_2",
@@ -948,7 +955,8 @@
             "default_value": "info@ntronica.com",
             "placeholder": "",
             "prepend": "",
-            "append": ""
+            "append": "",
+            "wpml_cf_preferences": 2
         },
         {
             "key": "field_ntronica_info_phone",
@@ -968,7 +976,8 @@
             "maxlength": "",
             "placeholder": "",
             "prepend": "",
-            "append": ""
+            "append": "",
+            "wpml_cf_preferences": 2
         },
         {
             "key": "field_ntronica_contact_title",

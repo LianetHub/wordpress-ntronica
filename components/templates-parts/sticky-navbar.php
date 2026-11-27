@@ -21,7 +21,7 @@ if (! isset($args) || ! is_array($args)) {
 }
 
 $variant = isset($args['variant']) && is_string($args['variant']) ? $args['variant'] : 'nav';
-$nav_label = isset($args['nav_label']) ? (string) $args['nav_label'] : 'Page navigation';
+$nav_label = isset($args['nav_label']) ? (string) $args['nav_label'] : ntronica_ui_text('Page navigation');
 $theme = isset($args['theme']) && is_string($args['theme']) ? $args['theme'] : '';
 
 $nav = isset($args['nav']) && is_array($args['nav']) ? $args['nav'] : array();

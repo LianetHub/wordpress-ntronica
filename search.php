@@ -16,16 +16,16 @@ $ntronica_results = new WP_Query(array(
 $ntronica_found   = $ntronica_results->have_posts() ? $ntronica_results->post_count : 0;
 ?>
 
-<section class="utility" aria-label="Search">
+<section class="utility" aria-label="<?php echo esc_attr(ntronica_ui_text('Search')); ?>">
 	<div class="container">
-		<h1 class="title-md utility__title">Search</h1>
+		<h1 class="title-md utility__title"><?php echo esc_html(ntronica_ui_text('Search')); ?></h1>
 
 		<div class="utility__form">
 			<?php get_search_form(array('ntronica_variant' => 'page')); ?>
 		</div>
 
 		<p class="text-block utility__count">
-			<span>RESULTS: </span>
+			<span><?php echo esc_html(ntronica_ui_text('RESULTS: ')); ?></span>
 			<strong><?php echo esc_html((string) $ntronica_found); ?></strong>
 		</p>
 
@@ -42,7 +42,7 @@ $ntronica_found   = $ntronica_results->have_posts() ? $ntronica_results->post_co
 				wp_reset_postdata(); ?>
 			</div>
 		<?php else : ?>
-			<p class="utility__empty text-lead">Nothing found.</p>
+			<p class="utility__empty text-lead"><?php echo esc_html(ntronica_ui_text('Nothing found.')); ?></p>
 		<?php endif; ?>
 	</div>
 </section>

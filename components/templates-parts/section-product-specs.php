@@ -68,45 +68,45 @@ if (! is_wp_error($ntronica_terms) && ! empty($ntronica_terms)) {
 }
 ?>
 <?php if (! empty($ntronica_spec_rows)) : ?>
-<section class="product-specs">
-	<div class="container">
-		<h2 class="title product-specs__title">Machine Characteristics</h2>
+	<section class="product-specs">
+		<div class="container">
+			<h2 class="title product-specs__title"><?php echo esc_html(ntronica_ui_text('Machine Characteristics')); ?></h2>
 
-		<div class="row product-specs__layout">
-			<div class="col-5 col-md-4 col-xxl-3 product-specs__labels">
-				<p class="product-specs__col-title"><span>Parameter</span></p>
+			<div class="row product-specs__layout">
+				<div class="col-5 col-md-4 col-xxl-3 product-specs__labels">
+					<p class="product-specs__col-title"><span><?php echo esc_html(ntronica_ui_text('Parameter')); ?></span></p>
 
-				<?php foreach ($ntronica_spec_rows as $ntronica_row) : ?>
-					<p class="text-block product-specs__cell product-specs__label<?php echo ! empty($ntronica_row['tall']) ? ' product-specs__cell--tall' : ''; ?>">
-						<span><?php echo esc_html($ntronica_row['label']); ?></span>
-					</p>
-				<?php endforeach; ?>
-			</div>
+					<?php foreach ($ntronica_spec_rows as $ntronica_row) : ?>
+						<p class="text-block product-specs__cell product-specs__label<?php echo ! empty($ntronica_row['tall']) ? ' product-specs__cell--tall' : ''; ?>">
+							<span><?php echo esc_html($ntronica_row['label']); ?></span>
+						</p>
+					<?php endforeach; ?>
+				</div>
 
-			<div class="col-7 col-md-8 col-xxl-9 product-specs__columns">
-				<div class="swiper product-specs__slider">
-					<div class="swiper-wrapper">
-						<?php foreach ($ntronica_spec_columns as $ntronica_index => $ntronica_column) : ?>
-							<div class="swiper-slide product-specs__column">
-								<p class="product-specs__col-title"><span><?php echo esc_html($ntronica_column['title']); ?></span></p>
+				<div class="col-7 col-md-8 col-xxl-9 product-specs__columns">
+					<div class="swiper product-specs__slider">
+						<div class="swiper-wrapper">
+							<?php foreach ($ntronica_spec_columns as $ntronica_index => $ntronica_column) : ?>
+								<div class="swiper-slide product-specs__column">
+									<p class="product-specs__col-title"><span><?php echo esc_html($ntronica_column['title']); ?></span></p>
 
-								<?php foreach ($ntronica_column['values'] as $ntronica_row_index => $ntronica_value) : ?>
-									<?php $ntronica_tall = ! empty($ntronica_spec_rows[$ntronica_row_index]['tall']); ?>
-									<p class="text-block product-specs__cell product-specs__value<?php echo $ntronica_tall ? ' product-specs__cell--tall' : ''; ?>">
-										<span><?php echo esc_html($ntronica_value); ?></span>
-									</p>
-								<?php endforeach; ?>
-							</div>
-						<?php endforeach; ?>
-					</div>
+									<?php foreach ($ntronica_column['values'] as $ntronica_row_index => $ntronica_value) : ?>
+										<?php $ntronica_tall = ! empty($ntronica_spec_rows[$ntronica_row_index]['tall']); ?>
+										<p class="text-block product-specs__cell product-specs__value<?php echo $ntronica_tall ? ' product-specs__cell--tall' : ''; ?>">
+											<span><?php echo esc_html($ntronica_value); ?></span>
+										</p>
+									<?php endforeach; ?>
+								</div>
+							<?php endforeach; ?>
+						</div>
 
-					<div class="product-specs__nav">
-						<?php ntronica_slider_nav_button('prev', 'Previous machine'); ?>
-						<?php ntronica_slider_nav_button('next', 'Next machine'); ?>
+						<div class="product-specs__nav">
+							<?php ntronica_slider_nav_button('prev', ntronica_ui_text('Previous machine')); ?>
+							<?php ntronica_slider_nav_button('next', ntronica_ui_text('Next machine')); ?>
+						</div>
 					</div>
 				</div>
 			</div>
 		</div>
-	</div>
-</section>
+	</section>
 <?php endif; ?>

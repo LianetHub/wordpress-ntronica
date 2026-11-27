@@ -35,7 +35,7 @@ $ntronica_gallery = isset($ntronica_article['gallery']) && is_array($ntronica_ar
 	<header class="news-article__hero">
 		<div class="container">
 			<?php if ($ntronica_crumbs) : ?>
-				<nav class="news-article__crumbs" aria-label="<?php echo esc_attr('Breadcrumb'); ?>">
+				<nav class="news-article__crumbs" aria-label="<?php echo esc_attr(ntronica_ui_text('Breadcrumb')); ?>">
 					<?php ntronica_render_breadcrumbs($ntronica_crumbs); ?>
 				</nav>
 			<?php endif; ?>
@@ -73,9 +73,9 @@ $ntronica_gallery = isset($ntronica_article['gallery']) && is_array($ntronica_ar
 						<button
 							type="button"
 							class="link-more news-article__share"
-							data-title="SHARE THIS ARTICLE"
-							aria-label="<?php echo esc_attr('Share this article'); ?>">
-							<span>SHARE THIS ARTICLE</span>
+							data-title="<?php echo esc_attr(ntronica_ui_text('SHARE THIS ARTICLE')); ?>"
+							aria-label="<?php echo esc_attr(ntronica_ui_text('Share this article')); ?>">
+							<span><?php echo esc_html(ntronica_ui_text('SHARE THIS ARTICLE')); ?></span>
 						</button>
 					</div>
 				</div>
@@ -107,9 +107,9 @@ $ntronica_gallery = isset($ntronica_article['gallery']) && is_array($ntronica_ar
 							</div>
 
 							<div class="slider-nav news-article__nav">
-								<?php ntronica_slider_nav_button('prev', 'Previous image'); ?>
+								<?php ntronica_slider_nav_button('prev', ntronica_ui_text('Previous image')); ?>
 								<p class="text-block slider-nav__fraction" aria-live="polite"></p>
-								<?php ntronica_slider_nav_button('next', 'Next image'); ?>
+								<?php ntronica_slider_nav_button('next', ntronica_ui_text('Next image')); ?>
 							</div>
 						</div>
 					</div>

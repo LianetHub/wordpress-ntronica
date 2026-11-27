@@ -2965,12 +2965,13 @@ body.lang-ru .info .info__list {
 
 .form__consent {
   --consent-text-width: 17.3125rem;
+  --consent-checkbox-size: 1.4375rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: last baseline;
-      -ms-flex-align: last baseline;
-          align-items: last baseline;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
   gap: 0.75rem;
   font-family: "Nanotronica_Text", system-ui, -apple-system, "Segoe UI", sans-serif;
   font-weight: 400;
@@ -2996,13 +2997,21 @@ body.lang-ru .form__consent > span:last-child {
   margin-left: 0;
 }
 
+.form__consent .wpcf7-form-control-wrap,
+.form__consent .wpcf7-acceptance,
+.form__consent .wpcf7-list-item {
+  display: contents;
+}
+
 .form__checkbox {
+  display: block;
   -webkit-box-flex: 0;
-      -ms-flex: 0 0 1.3125rem;
-          flex: 0 0 1.3125rem;
-  width: 1.3125rem;
-  height: 1.3125rem;
-  margin-top: 0.0625rem;
+      -ms-flex: 0 0 var(--consent-checkbox-size);
+          flex: 0 0 var(--consent-checkbox-size);
+  width: var(--consent-checkbox-size);
+  height: var(--consent-checkbox-size);
+  font: inherit;
+  margin-top: 0.1875rem;
   border: 0.125rem solid #000000;
   border-radius: 0;
   -webkit-appearance: none;
@@ -6008,13 +6017,6 @@ body.has-cookie-notice .site-body {
     --consent-text-width: 20.3125rem;
   }
 
-  .form__checkbox {
-    -ms-flex-preferred-size: 1.5625rem;
-        flex-basis: 1.5625rem;
-    width: 1.5625rem;
-    height: 1.5625rem;
-  }
-
   .page-hero {
     padding-bottom: 1.625rem;
     min-height: 39rem;
@@ -7517,16 +7519,14 @@ body.has-cookie-notice .site-body {
 
   .form__consent {
     --consent-text-width: 18.875rem;
+    --consent-checkbox-size: 1.8125rem;
     gap: 0.875rem;
     font-size: 0.9375rem;
     line-height: 1.2;
   }
 
   .form__checkbox {
-    -ms-flex-preferred-size: 1.8125rem;
-        flex-basis: 1.8125rem;
-    width: 1.8125rem;
-    height: 1.8125rem;
+    margin-top: 0.25rem;
   }
 
   .form__success {
@@ -8334,17 +8334,14 @@ body.has-cookie-notice .site-body {
 
   .form__consent {
     --consent-text-width: 24.125rem;
+    --consent-checkbox-size: 2.1875rem;
     gap: 1.125rem;
     font-size: 1.125rem;
     line-height: 1.2222222222;
   }
 
   .form__checkbox {
-    -ms-flex-preferred-size: 2.125rem;
-        flex-basis: 2.125rem;
-    width: 2.125rem;
-    height: 2.25rem;
-    margin-top: 0.125rem;
+    margin-top: 0.3125rem;
   }
 
   .form__success {
@@ -9264,16 +9261,10 @@ body.has-cookie-notice .site-body {
 
   .form__consent {
     --consent-text-width: 34.125rem;
+    --consent-checkbox-size: 2.4375rem;
     gap: 1.25rem;
     font-size: 1.3125rem;
     line-height: 1.1428571429;
-  }
-
-  .form__checkbox {
-    -ms-flex-preferred-size: 2.4375rem;
-        flex-basis: 2.4375rem;
-    width: 2.4375rem;
-    height: 2.4375rem;
   }
 
   .form__success {
@@ -9520,19 +9511,6 @@ body.has-cookie-notice .site-body {
 
   body.lang-ru .page-hero--home .page-hero__tagline {
     font-size: clamp(1.25rem, (100vw - 8.25rem) / 9.1, 2.625rem);
-  }
-}
-
-@media (max-width: 429.98px) {
-  .form__consent {
-    -webkit-box-align: start;
-        -ms-flex-align: start;
-            align-items: flex-start;
-  }
-
-  .form__consent .form__checkbox {
-    display: block;
-    margin-top: -0.1875rem;
   }
 }
 

@@ -481,8 +481,9 @@
 
     &__consent {
         --consent-text-width: #{rem(277)};
+        --consent-checkbox-size: #{rem(23)};
         display: flex;
-        align-items: last baseline;
+        align-items: flex-start;
         gap: rem(12);
         font-family: $font-family;
         font-weight: 400;
@@ -510,23 +511,19 @@
             margin-left: 0;
         }
 
+        // Let the input align with the text, without CF7's inline line boxes.
+        .wpcf7-form-control-wrap,
+        .wpcf7-acceptance,
+        .wpcf7-list-item {
+            display: contents;
+        }
+
         .form__consent--tablet-text {
             @media (max-width:$md3) {
                 @media (min-width:$md4) {
                     display: none;
 
                 }
-            }
-        }
-
-
-        @media (max-width: 429.98px) {
-            align-items: flex-start;
-
-            .form__checkbox {
-                display: block;
-                // Center the 21px checkbox on the first 15px text line.
-                margin-top: rem(-3);
             }
         }
 
@@ -544,6 +541,7 @@
 
         @media (min-width: $md3) {
             --consent-text-width: #{rem(302)};
+            --consent-checkbox-size: #{rem(29)};
             gap: rem(14);
             font-size: rem(15);
             line-height: math.div(18, 15);
@@ -551,6 +549,7 @@
 
         @media (min-width: $md2) {
             --consent-text-width: #{rem(386)};
+            --consent-checkbox-size: #{rem(35)};
             gap: rem(18);
             font-size: rem(18);
             line-height: math.div(22, 18);
@@ -558,6 +557,7 @@
 
         @media (min-width: $md1) {
             --consent-text-width: #{rem(546)};
+            --consent-checkbox-size: #{rem(39)};
             gap: rem(20);
             font-size: rem(21);
             line-height: math.div(24, 21);
@@ -565,10 +565,13 @@
     }
 
     &__checkbox {
-        flex: 0 0 rem(21);
-        width: rem(21);
-        height: rem(21);
-        margin-top: rem(1);
+        display: block;
+        flex: 0 0 var(--consent-checkbox-size);
+        width: var(--consent-checkbox-size);
+        height: var(--consent-checkbox-size);
+        font: inherit;
+        // Align with the top of the first line's letters, regardless of wrapping.
+        margin-top: rem(3);
         border: rem(2) solid $color-black;
         border-radius: 0;
         -webkit-appearance: none;
@@ -580,29 +583,12 @@
             border-color 0.1s ease-in-out,
             color 0.1s ease-in-out;
 
-        @media (min-width: $md5) {
-            flex-basis: rem(25);
-            width: rem(25);
-            height: rem(25);
-        }
-
         @media (min-width: $md3) {
-            flex-basis: rem(29);
-            width: rem(29);
-            height: rem(29);
+            margin-top: rem(4);
         }
 
         @media (min-width: $md2) {
-            flex-basis: rem(34);
-            width: rem(34);
-            height: rem(36);
-            margin-top: rem(2);
-        }
-
-        @media (min-width: $md1) {
-            flex-basis: rem(39);
-            width: rem(39);
-            height: rem(39);
+            margin-top: rem(5);
         }
 
         &:checked {
